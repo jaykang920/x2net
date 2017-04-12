@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>x2net.xpiler</AssemblyName>
+    <RootNamespace>x2net.xpiler</RootNamespace>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <OutputType>Exe</OutputType>
+	<BaseOutputPath>../../bin</BaseOutputPath>
+	<BaseIntermediateOutputPath>../../obj</BaseIntermediateOutputPath>
+  </PropertyGroup>
+
+</Project>
