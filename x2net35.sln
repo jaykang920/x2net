@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net", "src\x2net\x2net35.csproj", "{BC1DEE18-8E8E-4014-B461-CD19F9FFBB9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net.xpiler", "src\xpiler\x2net.xpiler.csproj", "{0ED9EB12-3589-4483-B8F5-488706BA7036}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net.tests", "tests\x2net\x2net35.tests.csproj", "{8EE7D2FB-B64A-4251-8451-FE85155189D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC1DEE18-8E8E-4014-B461-CD19F9FFBB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1DEE18-8E8E-4014-B461-CD19F9FFBB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1DEE18-8E8E-4014-B461-CD19F9FFBB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1DEE18-8E8E-4014-B461-CD19F9FFBB9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED9EB12-3589-4483-B8F5-488706BA7036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED9EB12-3589-4483-B8F5-488706BA7036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED9EB12-3589-4483-B8F5-488706BA7036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED9EB12-3589-4483-B8F5-488706BA7036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE7D2FB-B64A-4251-8451-FE85155189D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE7D2FB-B64A-4251-8451-FE85155189D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE7D2FB-B64A-4251-8451-FE85155189D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE7D2FB-B64A-4251-8451-FE85155189D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

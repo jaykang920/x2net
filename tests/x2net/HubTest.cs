@@ -9,6 +9,9 @@ namespace x2net.tests
         {
             Hub instance = Hub.Instance;
             Assert.NotNull(instance);
+
+            Hub instance2 = Hub.Instance;
+            Assert.Same(instance, instance2);
         }
     }
 }

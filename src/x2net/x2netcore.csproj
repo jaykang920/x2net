@@ -5,7 +5,14 @@
     <RootNamespace>x2net</RootNamespace>
     <TargetFramework>netstandard1.4</TargetFramework>
 	<BaseOutputPath>../../bin</BaseOutputPath>
-	<BaseIntermediateOutputPath>../../obj</BaseIntermediateOutputPath>
+	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="../../GlobalAssemblyInfo.cs">
+      <Link>Properties/GlobalAssemblyInfo.cs</Link>
+	</Compile>
+  </ItemGroup>
+  
 </Project>
