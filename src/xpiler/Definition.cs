@@ -8,7 +8,7 @@ namespace x2net.xpiler
     /// <summary>
     /// Represents a reference specification.
     /// </summary>
-    class Reference
+    public class Reference
     {
         public string Target { get; set; }
 
@@ -21,7 +21,7 @@ namespace x2net.xpiler
     /// <summary>
     /// Represents an abstract definition.
     /// </summary>
-    abstract class Definition
+    public abstract class Definition
     {
         public string Name { get; set; }
 
@@ -31,7 +31,7 @@ namespace x2net.xpiler
     /// <summary>
     /// Represents a set of constants.
     /// </summary>
-    class ConstsDef : Definition
+    public class ConstsDef : Definition
     {
         /// <summary>
         /// Represents a constant definition.
@@ -61,7 +61,7 @@ namespace x2net.xpiler
     /// <summary>
     /// Represents a cell definition.
     /// </summary>
-    class CellDef : Definition
+    public class CellDef : Definition
     {
         /// <summary>
         /// Represents a cell property.

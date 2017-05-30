@@ -21,7 +21,7 @@ namespace x2net.xpiler
     /// <summary>
     /// Abstract base class for concrete formatter contexts.
     /// </summary>
-    abstract class FormatterContext
+    public abstract class FormatterContext
     {
         public Document Doc { get; set; }
         public StreamWriter Out { get; set; }

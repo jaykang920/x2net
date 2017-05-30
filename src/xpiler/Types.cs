@@ -6,7 +6,7 @@ using System.Text;
 
 namespace x2net.xpiler
 {
-    class TypeSpec
+    public class TypeSpec
     {
         public string Type { get; set; }
         public List<TypeSpec> Details { get; set; }

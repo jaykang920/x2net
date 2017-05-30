@@ -49,8 +49,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types.cs" />
-    <!--<Compile Include="XmlHandler.cs" />
-    <Compile Include="XmlSerializerHandler.cs" />-->
+    <Compile Include="XmlHandler.cs" />
     <Compile Include="Xpiler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

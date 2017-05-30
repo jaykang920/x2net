@@ -37,7 +37,11 @@ namespace x2net.xpiler
             options = new Options();
 
             handlers = new Dictionary<string, Handler>();
-            //handlers.Add(".xml", new XmlHandler());
+            handlers.Add(".xml", new XmlHandler());
+
+            var yamlHandler = new YamlHandler();
+            handlers.Add(".yml", yamlHandler);
+            handlers.Add(".yaml", yamlHandler);
 
             formatters = new Dictionary<string, Formatter>();
             formatters.Add("cs", new CSharpFormatter());

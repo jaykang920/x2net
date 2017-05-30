@@ -4,20 +4,25 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml.Serialization;
+
+using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace x2net.xpiler
 {
-    public class XmlHandler : Handler
+    public class YamlHandler : Handler
     {
         public bool Handle(string path, out Document doc)
         {
             doc = null;
 
-            XmlSerializer serializer = new XmlSerializer(typeof(x2));
-            using (var fs = new FileStream(path, FileMode.Open))
+            var deserializer = new DeserializerBuilder()
+                .WithNamingConvention(new CamelCaseNamingConvention())
+                .Build();
+
+            using (var sr = new StreamReader(new FileStream(path, FileMode.Open)))
             {
-                x2 o = (x2)serializer.Deserialize(fs);
+                var o = deserializer.Deserialize<x2>(sr);
 
                 Console.WriteLine(o.Namespace);
 
@@ -50,15 +55,13 @@ namespace x2net.xpiler
                 {
                     Console.WriteLine("def name={0}", def.Name);
 
-                    if (def.GetType() == typeof(Consts))
+                    if (def.Class == "consts")
                     {
-                        Consts c = (Consts)def;
-                        Console.WriteLine(c.Elements.Count);
+                        Console.WriteLine(def.Elements.Count);
                     }
                     else
                     {
-                        Cell c = (Cell)def;
-                        Console.WriteLine(c.Properties.Count);
+                        Console.WriteLine(def.Properties.Count);
                     }
                 }
             }
@@ -66,66 +69,41 @@ namespace x2net.xpiler
             return result;
         }
 
-        [XmlRoot("x2")]
         public class x2
         {
-            [XmlAttribute("namespace")]
             public string Namespace { get; set; }
 
-            [XmlArray("references")]
-            [XmlArrayItem("reference", Type = typeof(Ref))]
             public List<Ref> References { get; set; }
 
-            [XmlArray("definitions")]
-            [XmlArrayItem("consts", Type = typeof(Consts))]
-            [XmlArrayItem("cell", Type = typeof(Cell))]
-            [XmlArrayItem("event", Type = typeof(Event))]
             public List<Def> Definitions { get; set; }
         }
 
         public class Ref
         {
-            [XmlAttribute("target")]
             public string Target { get; set; }
         }
 
         public class Def
         {
-            [XmlAttribute("name")]
+            public string Class { get; set; }
             public string Name { get; set; }
-        }
-
-        public class Consts : Def
-        {
-            [XmlElement("const", Type = typeof(Element))]
-            public List<Element> Elements { get; set; }
-        }
-
-        public class Cell : Def
-        {
-            [XmlElement("property", Type = typeof(Property))]
-            public List<Property> Properties { get; set; }
-        }
-
-        public class Event : Cell
-        {
-            [XmlAttribute("id")]
+            public string Type { get; set; }
             public string Id { get; set; }
+            public List<Element> Elements { get; set; }
+            public List<Property> Properties { get; set; }
         }
 
         public class Element
         {
-            [XmlAttribute("name")]
             public string Name { get; set; }
+            public string Value { get; set; }
         }
 
         public class Property
         {
-            [XmlAttribute("name")]
             public string Name { get; set; }
-
-            [XmlAttribute("type")]
             public string Type { get; set; }
+			public string Default { get; set; }
         }
     }
 }

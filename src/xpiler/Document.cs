@@ -8,7 +8,7 @@ namespace x2net.xpiler
     /// <summary>
     /// Represents a single definition document.
     /// </summary>
-    class Document
+    public class Document
     {
         public string BaseName { get; set; }
         public string Namespace { get; set; }
