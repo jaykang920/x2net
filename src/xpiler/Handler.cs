@@ -4,10 +4,10 @@
 namespace x2net.xpiler
 {
     /// <summary>
-    /// Document file handler interface.
+    /// DefinitionUnit file handler interface.
     /// </summary>
     interface Handler
     {
-        bool Handle(string path, out Document doc);
+        bool Handle(string path, out Unit unit);
     }
 }

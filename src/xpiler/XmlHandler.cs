@@ -10,70 +10,115 @@ namespace x2net.xpiler
 {
     public class XmlHandler : Handler
     {
-        public bool Handle(string path, out Document doc)
+        public bool Handle(string path, out Unit unit)
         {
-            doc = null;
+            var serializer = new XmlSerializer(typeof(Root));
 
-            XmlSerializer serializer = new XmlSerializer(typeof(x2));
             using (var fs = new FileStream(path, FileMode.Open))
             {
-                x2 o = (x2)serializer.Deserialize(fs);
+                var root = (Root)serializer.Deserialize(fs);
 
-                Console.WriteLine(o.Namespace);
-
-                Console.WriteLine(o.Definitions.Count);
-
-                //Console.WriteLine(((Event)o.Definitions[1]).Properties.Count);
-
-                doc = ToDocument(o);
+                unit = Normalize(root);
             }
 
             return true;
         }
 
-        private Document ToDocument(x2 doc)
+        private Unit Normalize(Root root)
         {
-            Document result = new Document();
+            Unit unit = new Unit();
 
-            var refs = doc.References;
-            if (refs != null && refs.Count != 0)
+            unit.Namespace = root.Namespace;
+
+            if (root.References != null)
             {
-                foreach (var reference in refs)
+                for (int i = 0; i < root.References.Count; ++i)
                 {
-                    Console.WriteLine("ref target={0}", reference.Target);
+                    var r = root.References[i];
+                    if (r.GetType() == typeof(NamespaceRef))
+                    {
+                        var reference = new Reference();
+                        reference.Target = r.Target;
+                        unit.References.Add(reference);
+                    }
                 }
             }
-            var defs = doc.Definitions;
-            if (refs != null && refs.Count != 0)
-            {
-                foreach (var def in defs)
-                {
-                    Console.WriteLine("def name={0}", def.Name);
 
-                    if (def.GetType() == typeof(Consts))
+            if (root.Definitions != null)
+            {
+                for (int i = 0; i < root.Definitions.Count; ++i)
+                {
+                    var def = root.Definitions[i];
+                    if (def is Cell)
                     {
-                        Consts c = (Consts)def;
-                        Console.WriteLine(c.Elements.Count);
-                    }
-                    else
-                    {
+                        bool isEvent = (def.GetType() == typeof(Event));
                         Cell c = (Cell)def;
-                        Console.WriteLine(c.Properties.Count);
+                        CellDef definition = (isEvent ? new EventDef() : new CellDef());
+
+                        definition.Name = c.Name;
+                        definition.Base = c.Base;
+
+                        if (!String.IsNullOrEmpty(c.Local) && c.Local.ToLower() == "true")
+                        {
+                            definition.IsLocal = true;
+                        }
+                        if (isEvent)
+                        {
+                            ((EventDef)definition).Id = ((Event)c).Id;
+                        }
+
+                        if (c.Properties != null)
+                        {
+                            for (int j = 0; j < c.Properties.Count; ++j)
+                            {
+                                var p = c.Properties[j];
+                                var property = new CellDef.Property();
+                                property.Name = p.Name;
+                                property.TypeSpec = Types.Parse(p.Type);
+                                property.DefaultValue = p.Default;
+                                definition.Properties.Add(property);
+                            }
+                        }
+
+                        unit.Definitions.Add(definition);
+                    }
+                    else if (def.GetType() == typeof(Consts))
+                    {
+                        var c = (Consts)def;
+                        var definition = new ConstsDef();
+
+                        definition.Name = c.Name;
+                        definition.Type = c.Type;
+
+                        if (c.Elements != null)
+                        {
+                            for (int j = 0; j < c.Elements.Count; ++j)
+                            {
+                                var e = c.Elements[j];
+                                var constant = new ConstsDef.Constant();
+                                constant.Name = e.Name;
+                                constant.Value = e.Value;
+                                definition.Constants.Add(constant);
+                            }
+                        }
+
+                        unit.Definitions.Add(definition);
                     }
                 }
             }
 
-            return result;
+            return unit;
         }
 
         [XmlRoot("x2")]
-        public class x2
+        public class Root
         {
             [XmlAttribute("namespace")]
             public string Namespace { get; set; }
 
             [XmlArray("references")]
-            [XmlArrayItem("reference", Type = typeof(Ref))]
+            [XmlArrayItem("namespace", Type = typeof(NamespaceRef))]
+            [XmlArrayItem("file", Type = typeof(FileRef))]
             public List<Ref> References { get; set; }
 
             [XmlArray("definitions")]
@@ -89,6 +134,10 @@ namespace x2net.xpiler
             public string Target { get; set; }
         }
 
+        public class NamespaceRef : Ref { }
+
+        public class FileRef : Ref { }
+
         public class Def
         {
             [XmlAttribute("name")]
@@ -97,12 +146,18 @@ namespace x2net.xpiler
 
         public class Consts : Def
         {
+            [XmlAttribute("type")]
+            public string Type { get; set; }
             [XmlElement("const", Type = typeof(Element))]
             public List<Element> Elements { get; set; }
         }
 
         public class Cell : Def
         {
+            [XmlAttribute("base")]
+            public string Base { get; set; }
+            [XmlAttribute("local")]
+            public string Local { get; set; }
             [XmlElement("property", Type = typeof(Property))]
             public List<Property> Properties { get; set; }
         }
@@ -117,15 +172,18 @@ namespace x2net.xpiler
         {
             [XmlAttribute("name")]
             public string Name { get; set; }
+            [XmlText]
+            public string Value { get; set; }
         }
 
         public class Property
         {
             [XmlAttribute("name")]
             public string Name { get; set; }
-
             [XmlAttribute("type")]
             public string Type { get; set; }
+            [XmlText]
+            public string Default { get; set; }
         }
     }
 }

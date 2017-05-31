@@ -13,7 +13,7 @@ namespace x2net.xpiler
     {
         public abstract string Description { get; }
 
-        public abstract bool Format(Document doc, String outDir);
+        public abstract bool Format(Unit unit, String outDir);
 
         public abstract bool IsUpToDate(string path, string outDir);
     }
@@ -23,11 +23,12 @@ namespace x2net.xpiler
     /// </summary>
     public abstract class FormatterContext
     {
-        public Document Doc { get; set; }
-        public StreamWriter Out { get; set; }
+        public Unit Unit { get; set; }
+        public TextWriter Writer { get; set; }
 
         public abstract void FormatCell(CellDef def);
         public abstract void FormatConsts(ConstsDef def);
         public abstract void FormatReference(Reference def);
     }
 }
+                                                                                                                                                                                                 

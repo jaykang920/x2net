@@ -12,74 +12,116 @@ namespace x2net.xpiler
 {
     public class YamlHandler : Handler
     {
-        public bool Handle(string path, out Document doc)
+        public bool Handle(string path, out Unit unit)
         {
-            doc = null;
-
             var deserializer = new DeserializerBuilder()
-                .WithNamingConvention(new CamelCaseNamingConvention())
+                .WithNamingConvention(new HyphenatedNamingConvention())
                 .Build();
 
             using (var sr = new StreamReader(new FileStream(path, FileMode.Open)))
             {
-                var o = deserializer.Deserialize<x2>(sr);
+                var doc = deserializer.Deserialize<Document>(sr);
 
-                Console.WriteLine(o.Namespace);
-
-                Console.WriteLine(o.Definitions.Count);
-
-                //Console.WriteLine(((Event)o.Definitions[1]).Properties.Count);
-
-                doc = ToDocument(o);
+                unit = Normalize(doc);
             }
 
             return true;
         }
 
-        private Document ToDocument(x2 doc)
+        private Unit Normalize(Document doc)
         {
-            Document result = new Document();
+            Unit unit = new Unit();
 
-            var refs = doc.References;
-            if (refs != null && refs.Count != 0)
-            {
-                foreach (var reference in refs)
-                {
-                    Console.WriteLine("ref target={0}", reference.Target);
-                }
-            }
-            var defs = doc.Definitions;
-            if (refs != null && refs.Count != 0)
-            {
-                foreach (var def in defs)
-                {
-                    Console.WriteLine("def name={0}", def.Name);
+            unit.Namespace = doc.Namespace;
 
-                    if (def.Class == "consts")
+            if (doc.References != null)
+            {
+                for (int i = 0; i < doc.References.Count; ++i)
+                {
+                    var r = doc.References[i];
+                    if (!String.IsNullOrEmpty(r.Type) && r.Type.ToLower() == "namespace")
                     {
-                        Console.WriteLine(def.Elements.Count);
-                    }
-                    else
-                    {
-                        Console.WriteLine(def.Properties.Count);
+                        var reference = new Reference();
+                        reference.Target = r.Target;
+                        unit.References.Add(reference);
                     }
                 }
             }
 
-            return result;
+            if (doc.Definitions != null)
+            {
+                for (int i = 0; i < doc.Definitions.Count; ++i)
+                {
+                    var def = doc.Definitions[i];
+                    if (def.Class == "cell" || def.Class == "event")
+                    {
+                        bool isEvent = (def.Class == "event");
+                        CellDef definition = (isEvent ? new EventDef() : new CellDef());
+
+                        definition.Name = def.Name;
+                        definition.Base = def.Base;
+
+                        if (!String.IsNullOrEmpty(def.Local) && def.Local.ToLower() == "true")
+                        {
+                            definition.IsLocal = true;
+                        }
+                        if (isEvent)
+                        {
+                            ((EventDef)definition).Id = def.Id;
+                        }
+
+                        if (def.Properties != null)
+                        {
+                            for (int j = 0; j < def.Properties.Count; ++j)
+                            {
+                                var p = def.Properties[j];
+                                var property = new CellDef.Property();
+                                property.Name = p.Name;
+                                property.TypeSpec = Types.Parse(p.Type);
+                                property.DefaultValue = p.Default;
+                                definition.Properties.Add(property);
+                            }
+                        }
+
+                        unit.Definitions.Add(definition);
+                    }
+                    else if (def.Class == "consts")
+                    {
+                        var definition = new ConstsDef();
+
+                        definition.Name = def.Name;
+                        definition.Type = def.Type;
+
+                        if (def.Elements != null)
+                        {
+                            for (int j = 0; j < def.Elements.Count; ++j)
+                            {
+                                var e = def.Elements[j];
+                                var constant = new ConstsDef.Constant();
+                                constant.Name = e.Name;
+                                constant.Value = e.Value;
+                                definition.Constants.Add(constant);
+                            }
+                        }
+
+                        unit.Definitions.Add(definition);
+                    }
+                }
+            }
+
+            return unit;
         }
 
-        public class x2
+        public class Document
         {
             public string Namespace { get; set; }
-
             public List<Ref> References { get; set; }
-
             public List<Def> Definitions { get; set; }
         }
 
         public class Ref
         {
+            public string Type { get; set; }
             public string Target { get; set; }
         }
 
@@ -89,6 +131,8 @@ namespace x2net.xpiler
             public string Name { get; set; }
             public string Type { get; set; }
             public string Id { get; set; }
+            public string Base { get; set; }
+            public string Local { get; set; }
             public List<Element> Elements { get; set; }
             public List<Property> Properties { get; set; }
         }

@@ -6,6 +6,21 @@ using System.Collections.Generic;
 namespace x2net.xpiler
 {
     /// <summary>
+    /// Represents a single definition unit.
+    /// </summary>
+    public class Unit
+    {
+        public string BaseName { get; set; }
+        public string Namespace { get; set; }
+
+        public IList<Reference> References { get { return references; } }
+        public IList<Definition> Definitions { get { return definitions; } }
+
+        private IList<Reference> references = new List<Reference>();
+        private IList<Definition> definitions = new List<Definition>();
+    }
+
+    /// <summary>
     /// Represents a reference specification.
     /// </summary>
     public class Reference

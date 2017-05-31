@@ -37,7 +37,7 @@ namespace x2net.xpiler
                 {
                     case 's':
                         Spec = getopt.OptArg.ToLower();
-                        if (!Xpiler.Formatters.ContainsKey(Spec))
+                        if (!Program.Formatters.ContainsKey(Spec))
                         {
                             Console.Error.WriteLine(
                                 "error: unknown target formatter specified - {0}",
@@ -67,7 +67,7 @@ namespace x2net.xpiler
 
         static void PrintUsage()
         {
-            Console.WriteLine("usage: xpiler (options) [path...]");
+            Console.WriteLine("usage: x2net.xpiler (options) [path...]");
             Console.WriteLine(" options:");
             Console.WriteLine("  -f (--force)     : force all to be re-xpiled");
             Console.WriteLine("  -h (--help)      : print this message and quit");
@@ -75,7 +75,7 @@ namespace x2net.xpiler
             Console.WriteLine("  -r (--recursive) : process subdirectories recursively");
             Console.WriteLine("  -s (--spec) spec : specifies the target formatter");
 
-            foreach (var pair in Xpiler.Formatters)
+            foreach (var pair in Program.Formatters)
             {
                 Console.Write("{0,18} : {1}", pair.Key, pair.Value.Description);
                 if (pair.Key == DefaultSpec)
