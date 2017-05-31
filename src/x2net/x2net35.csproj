@@ -32,6 +32,28 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>../../bin/Release/net35/x2net.xml</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Unity|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>../../bin/Debug/unity</OutputPath>
+    <IntermediateOutputPath>obj/Debug/unity</IntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_WORKAROUND</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>../../bin/Debug/unity/x2net.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Unity|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>../../bin/Release/unity</OutputPath>
+    <IntermediateOutputPath>obj/Release/unity</IntermediateOutputPath>
+    <DefineConstants>UNITY_WORKAROUND</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>../../bin/Release/unity/x2net.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>

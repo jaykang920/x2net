@@ -17,7 +17,7 @@
     <Optimize>false</Optimize>
     <OutputPath>../../bin/Debug/net40</OutputPath>
     <IntermediateOutputPath>obj/Debug/net40</IntermediateOutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>../../bin/Debug/net40/x2net.xml</DocumentationFile>
@@ -27,7 +27,7 @@
     <Optimize>true</Optimize>
     <OutputPath>../../bin/Release/net40</OutputPath>
     <IntermediateOutputPath>obj/Release/net40</IntermediateOutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>NET40</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>../../bin/Release/net40/x2net.xml</DocumentationFile>
