@@ -90,7 +90,13 @@ namespace x2net.xpiler
                         var definition = new ConstsDef();
 
                         definition.Name = def.Name;
-                        definition.Type = def.Type;
+						
+                        var type = def.Type;
+                        if (String.IsNullOrEmpty(type))
+                        {
+                            type = "int32";
+                        }
+                        definition.Type = type;
 
                         if (def.Elements != null)
                         {

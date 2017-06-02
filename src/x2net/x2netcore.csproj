@@ -11,6 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Thread" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="../../GlobalAssemblyInfo.cs">
       <Link>Properties/GlobalAssemblyInfo.cs</Link>
 	</Compile>

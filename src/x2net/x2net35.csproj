@@ -10,6 +10,7 @@
     <AssemblyName>x2net</AssemblyName>
     <RootNamespace>x2net</RootNamespace>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,16 +22,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>../../bin/Debug/net35/x2net.xml</DocumentationFile>
+    <ConfigGroup>Debug</ConfigGroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>../../bin/Release/net35</OutputPath>
     <IntermediateOutputPath>obj/Release/net35</IntermediateOutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>../../bin/Release/net35/x2net.xml</DocumentationFile>
+    <ConfigGroup>Release</ConfigGroup>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug_Unity|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +46,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>../../bin/Debug/unity/x2net.xml</DocumentationFile>
+    <ConfigGroup>Debug</ConfigGroup>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Unity|AnyCPU'">
     <DebugType>pdbonly</DebugType>
@@ -53,6 +58,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>../../bin/Release/unity/x2net.xml</DocumentationFile>
+    <ConfigGroup>Release</ConfigGroup>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,10 +67,94 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Binder.cs" />
+    <Compile Include="Buffer.cs" />
+    <Compile Include="BufferTransform.cs" />
+    <Compile Include="BuiltinEvents.cs" />
+    <Compile Include="Case.cs" />
+    <Compile Include="Cell.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="ConfigSection.cs" />
+    <Compile Include="ConstsInfo.cs" />
+    <Compile Include="Coroutine.cs" />
+    <Compile Include="Deserializer.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="EventFactory.cs" />
+    <Compile Include="EventQueue.cs" />
+    <Compile Include="EventSink.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Extensions.Array.cs" />
+    <Compile Include="Extensions.Buffer.cs" />
+    <Compile Include="Extensions.Collections.cs" />
+    <Compile Include="Extensions.Coroutine.cs" />
+    <Compile Include="Extensions.Event.cs" />
+    <Compile Include="Fingerprint.cs" />
+    <Compile Include="Flow.cs" />
+    <Compile Include="Flows\EventBasedFlow.cs" />
+    <Compile Include="Flows\FrameBasedFlow.cs" />
+    <Compile Include="Flows\MultiThreadFlow.cs" />
+    <Compile Include="Flows\SingleThreadFlow.cs" />
+    <Compile Include="Flows\ThreadlessFlow.cs" />
+    <Compile Include="Flows\TimeFlow.cs" />
+    <Compile Include="Handler.cs" />
     <Compile Include="Hub.cs" />
+    <Compile Include="Link.cs" />
+    <Compile Include="Links\ClientLink.cs" />
+    <Compile Include="Links\LinkEvents.cs" />
+    <Compile Include="Links\LinkSession.cs" />
+    <Compile Include="Links\SendBuffer.cs" />
+    <Compile Include="Links\ServerLink.cs" />
+    <Compile Include="Links\SessionBasedLink.cs" />
+    <Compile Include="Links\Socket\AbstractTcpClient.cs" />
+    <Compile Include="Links\Socket\AbstractTcpServer.cs" />
+    <Compile Include="Links\Socket\AbstractTcpSession.cs" />
+    <Compile Include="Links\Socket\AbstractUdpLink.cs" />
+    <Compile Include="Links\Socket\AsyncTcpClient.cs" />
+    <Compile Include="Links\Socket\AsyncTcpServer.cs" />
+    <Compile Include="Links\Socket\AsyncTcpSession.cs" />
+    <Compile Include="Links\Socket\AsyncUdpLink.cs" />
+    <Compile Include="Links\Socket\TcpClient.cs" />
+    <Compile Include="Links\Socket\TcpServer.cs" />
+    <Compile Include="Links\Socket\TcpSession.cs" />
+    <Compile Include="Links\Socket\UdpLink.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queues\ConcurrentEventQueue.cs" />
+    <Compile Include="Queues\SynchronizedEventQueue.cs" />
+    <Compile Include="Scope.cs" />
+    <Compile Include="Serializer.cs" />
+    <Compile Include="Serializer.GetLength.cs" />
+    <Compile Include="Serializer.Write.cs" />
+    <Compile Include="Serializers\StringSerializer.cs" />
+    <Compile Include="Transforms\BlockCipher.cs" />
+    <Compile Include="Transforms\Inverse.cs" />
+    <Compile Include="Util\Capo.cs" />
+    <Compile Include="Util\Getopt.cs" />
+    <Compile Include="Util\Hash.cs" />
+    <Compile Include="Util\Hash.StaticUpdate.cs" />
+    <Compile Include="Util\Hash.Update.cs" />
+    <Compile Include="Util\Log.cs" />
+    <Compile Include="Util\Pool.cs" />
+    <Compile Include="Util\RangedIntPool.cs" />
+    <Compile Include="Util\ReadWriteLock.cs" />
+    <Compile Include="Util\SegmentPool.cs" />
+    <Compile Include="VerboseDeserializer.cs" />
+    <Compile Include="VerboseSerializer.cs" />
+    <Compile Include="Yields\WaitForCompletion.cs" />
+    <Compile Include="Yields\WaitForMultipleEvents.cs" />
+    <Compile Include="Yields\WaitForSeconds.cs" />
+    <Compile Include="Yields\WaitForSingleEvent.cs" />
+    <Compile Include="Yields\WaitHandlePool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BuiltinEvents.xml" />
+    <Content Include="Links\LinkEvents.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>pushd $(ProjectDir)
+..\..\bin\$(ConfigGroup)\x2net.xpiler.exe -f . Links
+popd</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

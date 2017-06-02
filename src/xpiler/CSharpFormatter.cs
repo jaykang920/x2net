@@ -48,7 +48,7 @@ namespace x2net.xpiler
             o.WriteLine("using System.Collections.Generic;");
             o.WriteLine("using System.Text;");
             o.WriteLine();
-            o.WriteLine("using x2;");
+            o.WriteLine("using x2net;");
             o.WriteLine();
 
             foreach (var reference in context.Unit.References)

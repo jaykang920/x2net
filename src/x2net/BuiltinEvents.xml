@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<x2 namespace="x2net">
+  <definitions>
+    <!-- Event type identifiers for built-in events. -->
+    <consts name="BuiltinEventType">
+        <const name="HeartbeatEvent">-1</const>
+
+        <const name="FlowStart">-2</const>
+        <const name="FlowStop">-3</const>
+
+        <const name="TimeoutEvent">-4</const>
+
+        <!-- -10 to -99 : reserved for links -->
+    </consts>
+
+    <!-- x2 subsystem heartbeat event. -->
+    <event name="HeartbeatEvent" id="BuiltinEventType.HeartbeatEvent"/>
+
+    <!-- A local event enqueued when a flow starts. -->
+    <event name="FlowStart" id="BuiltinEventType.FlowStart" local="true"/>
+    <!-- A local event enqueued when a flow stops.-->
+    <event name="FlowStop" id="BuiltinEventType.FlowStop" local="true"/>
+
+    <!-- A local timeout event. -->
+    <event name="TimeoutEvent" id="BuiltinEventType.TimeoutEvent" local="true">
+        <!-- Event key object. -->
+        <property name="Key" type="object"/>
+        <!-- Optional integer parameter -->
+        <property name="IntParam" type="int32"/>
+    </event>
+  </definitions>
+</x2>

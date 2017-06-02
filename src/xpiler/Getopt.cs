@@ -2,8 +2,6 @@
 // See the file LICENSE for details.
 
 using System;
-using System.IO;
-using System.Reflection;
 
 namespace x2net.xpiler
 {
@@ -369,8 +367,7 @@ namespace x2net.xpiler
                         if (opterr)
                         {
                             Console.Error.WriteLine(
-                                "{0}: option '{1}' doesn't allow an argument",
-                                Path.GetFileName(Assembly.GetEntryAssembly().Location),
+                                "option '{0}' doesn't allow an argument",
                                 args[optind - 1]
                                 );
                         }
@@ -390,8 +387,7 @@ namespace x2net.xpiler
                         if (opterr)
                         {
                             Console.Error.WriteLine(
-                                "{0}: option '{1}' requires an argument",
-                                Path.GetFileName(Assembly.GetEntryAssembly().Location),
+                                "option '{0}' requires an argument",
                                 args[optind - 1]
                                 );
                         }
@@ -409,8 +405,7 @@ namespace x2net.xpiler
                 if (opterr)
                 {
                     Console.Error.WriteLine(
-                        "{0}: option '{1}' is ambiguous",
-                        Path.GetFileName(Assembly.GetEntryAssembly().Location),
+                        "option '{0}' is ambiguous",
                         args[optind]
                         );
                 }
@@ -427,8 +422,7 @@ namespace x2net.xpiler
                 if (opterr)
                 {
                     Console.Error.WriteLine(
-                        "{0}: unrecognized option '{1}'",
-                        Path.GetFileName(Assembly.GetEntryAssembly().Location),
+                        "unrecognized option '{0}'",
                         args[optind]
                         );
                 }
@@ -468,8 +462,7 @@ namespace x2net.xpiler
                 if (opterr)
                 {
                     Console.Error.WriteLine(
-                        "{0}: {1} option -- {2}",
-                        Path.GetFileName(Assembly.GetEntryAssembly().Location),
+                        "{0} option -- {1}",
                         (posixlyCorrect ? "illegal" : "invalid"),
                         c
                         );
@@ -501,8 +494,7 @@ namespace x2net.xpiler
                         if (opterr)
                         {
                             Console.Error.WriteLine(
-                                "{0}: option requires an argument -- {1}",
-                                Path.GetFileName(Assembly.GetEntryAssembly().Location),
+                                "option requires an argument -- {0}",
                                 c);
                         }
                         optopt = c;

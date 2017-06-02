@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<x2 namespace="x2net/tests">
+  <definitions>
+    <consts name="SampleConsts" type="int32">
+        <const name="Const1">1</const>
+        <const name="Const2">2</const>
+    </consts>
+
+    <cell name="SampleCell1">
+        <property name="Foo" type="int32"/>
+        <property name="Bar" type="string"/>
+    </cell>
+
+    <cell name="SampleCell2" base="SampleCell1">
+        <property name="Baz" type="bool"/>
+    </cell>
+
+    <cell name="SampleCell3" base="SampleCell1">
+        <property name="Qux" type="bool"/>
+    </cell>
+
+    <cell name="SampleCell4" base="SampleCell2">
+        <property name="Quux" type="bool"/>
+    </cell>
+
+    <event name="SampleEvent1" id="1">
+        <property name="Foo" type="int32"/>
+        <property name="Bar" type="string"/>
+    </event>
+
+    <event name="SampleEvent2" id="2" base="SampleEvent1">
+        <property name="Baz" type="bool"/>
+    </event>
+
+    <event name="SampleEvent3" id="3" base="SampleEvent1">
+        <property name="Qux" type="bool"/>
+    </event>
+
+    <event name="SampleEvent4" id="4" base="SampleEvent2">
+        <property name="Quux" type="bool"/>
+    </event>
+
+    <event name="SampleEvent5" id="5">
+        <property name="SampleCell" type="SampleCell1"/>
+    </event>
+
+    <event name="SampleEvent6" id="6">
+        <property name="SampleCell" type="SampleCell2"/>
+    </event>
+  </definitions>
+</x2>

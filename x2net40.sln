@@ -3,11 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net", "src\x2net\x2net40.csproj", "{979B9807-EA1B-40C5-B563-E5FBFC72FDA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net40", "src\x2net\x2net40.csproj", "{979B9807-EA1B-40C5-B563-E5FBFC72FDA3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0ED9EB12-3589-4483-B8F5-488706BA7036} = {0ED9EB12-3589-4483-B8F5-488706BA7036}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net.xpiler", "src\xpiler\x2net.xpiler.csproj", "{0ED9EB12-3589-4483-B8F5-488706BA7036}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net.tests", "tests\x2net\x2net40.tests.csproj", "{5103EB86-8983-42AC-9A40-BA175965566F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net40.tests", "tests\x2net\x2net40.tests.csproj", "{5103EB86-8983-42AC-9A40-BA175965566F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
