@@ -35,11 +35,7 @@ namespace x2net
         /// </summary>
         public static void Register<T>() where T : Event
         {
-#if NETSTANDARD1_4
-            Register(typeof(T).GetTypeInfo());
-#else
             Register(typeof(T));
-#endif
         }
 
         /// <summary>
@@ -58,16 +54,10 @@ namespace x2net
         public static void Register(Assembly assembly, params Type[] baseTypes)
         {
             var eventType = typeof(Event);
-#if NETSTANDARD1_4
-            var types = assembly.DefinedTypes;
-            foreach (var type in types)
-            {
-#else
             var types = assembly.GetTypes();
             for (int i = 0, count = types.Length; i < count; ++i)
             {
                 var type = types[i];
-#endif
                 if (!type.IsSubclassOf(eventType))
                 {
                     continue;
@@ -94,16 +84,6 @@ namespace x2net
         /// <summary>
         /// Registers the specified type as a retrievable event.
         /// </summary>
-#if NETSTANDARD1_4
-        public static void Register(TypeInfo type)
-        {
-            PropertyInfo prop = type.GetDeclaredProperty("TypeId");
-            var typeId = (int)prop.GetValue(null, null);
-
-            MethodInfo method = type.GetDeclaredMethod("New");
-            var factoryMethod = (Func<Event>)
-                method.CreateDelegate(typeof(Func<Event>));
-#else
         public static void Register(Type type)
         {
             int typeId;
@@ -123,7 +103,6 @@ namespace x2net
                 BindingFlags.Public | BindingFlags.Static);
             factoryMethod = (Func<Event>)
                 Delegate.CreateDelegate(typeof(Func<Event>), method);
-#endif
 #endif
             Register(typeId, factoryMethod);
         }

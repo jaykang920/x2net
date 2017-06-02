@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
+using System.Xml;
 
 namespace x2net
 {
@@ -72,7 +73,7 @@ namespace x2net
 
             using (var rsa = new RSACryptoServiceProvider(rsaKeySize))
             {
-                rsa.FromXmlString(rsaPeerPublicKey);
+                ImportRsaParameters(rsa, rsaPeerPublicKey);
                 return rsa.Encrypt(challenge, false);
             }
         }
@@ -82,7 +83,7 @@ namespace x2net
             byte[] decrypted;
             using (var rsa = new RSACryptoServiceProvider(rsaKeySize))
             {
-                rsa.FromXmlString(rsaMyPrivateKey);
+                ImportRsaParameters(rsa, rsaMyPrivateKey);
                 decrypted = rsa.Decrypt(challenge, false);
 
                 decryptionKey = decrypted.SubArray(0, KeySizeInBytes);
@@ -95,7 +96,7 @@ namespace x2net
             // But if not, replay the data decrypted with our private key.
             using (var rsa = new RSACryptoServiceProvider(rsaKeySize))
             {
-                rsa.FromXmlString(rsaPeerPublicKey);
+                ImportRsaParameters(rsa, rsaPeerPublicKey);
                 return rsa.Encrypt(decrypted, false);
             }
         }
@@ -105,14 +106,14 @@ namespace x2net
             using (var rsa = new RSACryptoServiceProvider(rsaKeySize))
             {
                 byte[] expected = encryptionKey.Concat(encryptionIV);
-                
+
                 // If we're free from old mono of such as Unity3D,
                 // we can simply verify the peer signature.
                 //rsa.FromXmlString(rsaPeerPublicKey);
                 //return rsa.VerifyData(expected, new SHA1CryptoServiceProvider(), response);
-                
+
                 // But if not, verify the replayed data.
-                rsa.FromXmlString(rsaMyPrivateKey);
+                ImportRsaParameters(rsa, rsaMyPrivateKey);
                 byte[] actual = rsa.Decrypt(response, false);
                 return actual.EqualsExtended(expected);
             }
@@ -247,6 +248,43 @@ namespace x2net
 
                 return result;
             }
+        }
+
+        private void ImportRsaParameters(RSACryptoServiceProvider rsa, string xml)
+        {
+#if NETCORE
+            // Workaround for RSACryptoServiceProvider.FromXmlString
+            RSAParameters parameters = new RSAParameters();
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+
+            if (xmlDoc.DocumentElement.Name.Equals("RSAKeyValue"))
+            {
+                foreach (XmlNode node in xmlDoc.DocumentElement.ChildNodes)
+                {
+                    switch (node.Name)
+                    {
+                        case "Modulus": parameters.Modulus = Convert.FromBase64String(node.InnerText); break;
+                        case "Exponent": parameters.Exponent = Convert.FromBase64String(node.InnerText); break;
+                        case "P": parameters.P = Convert.FromBase64String(node.InnerText); break;
+                        case "Q": parameters.Q = Convert.FromBase64String(node.InnerText); break;
+                        case "DP": parameters.DP = Convert.FromBase64String(node.InnerText); break;
+                        case "DQ": parameters.DQ = Convert.FromBase64String(node.InnerText); break;
+                        case "InverseQ": parameters.InverseQ = Convert.FromBase64String(node.InnerText); break;
+                        case "D": parameters.D = Convert.FromBase64String(node.InnerText); break;
+                    }
+                }
+            }
+            else
+            {
+                throw new CryptographicException("Invalid XML RSA Parameters");
+            }
+
+            rsa.ImportParameters(parameters);
+#else
+            rsa.FromXmlString(xml);
+#endif
         }
 
         // In a real-world client/server production, each peer should use a

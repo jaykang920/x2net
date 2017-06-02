@@ -185,13 +185,7 @@ namespace x2net
             IPAddress ipAddress = null;
             try
             {
-#if NETSTANDARD1_4
-                var task = Dns.GetHostAddressesAsync(remoteHost);
-                task.Wait();
-                ipAddress = task.Result[0];
-#else
                 ipAddress = Dns.GetHostAddresses(remoteHost)[0];
-#endif
             }
             catch (Exception e)
             {

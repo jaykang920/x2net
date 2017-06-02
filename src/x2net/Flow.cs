@@ -338,11 +338,7 @@ namespace x2net
                     long totalMilliseconds = (long)(end - begin).TotalMilliseconds;
                     if (totalMilliseconds >= SlowHandlerLogThreshold)
                     {
-#if NETSTANDARD1_4
-                        var methodInfo = handler.Action.GetMethodInfo();
-#else
                         var methodInfo = handler.Action.Method;
-#endif
                         Log.Emit(SlowHandlerLogLevel,
                             "{0} slow handler {1:#,0}ms {2}.{3} on {4}",
                             Name, totalMilliseconds,
