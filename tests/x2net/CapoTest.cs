@@ -20,7 +20,7 @@ namespace x2net.tests
             Assert.Equal(4, window.Length);
 
             // Invalid offset initialization attempt never throws
-            Assert.DoesNotThrow(() => { window = new Capo<bool>(fp, 7); });
+            window = new Capo<bool>(fp, 7);
         }
 
         [Fact]
