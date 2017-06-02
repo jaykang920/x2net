@@ -157,7 +157,7 @@ namespace x2net
         public static void Load()
         {
             ConfigSection section = (ConfigSection)
-                ConfigurationManager.GetSection("x2clr");
+                ConfigurationManager.GetSection("x2net");
 
             LogLevel = section.Log.Level;
             HeartbeatInterval = section.Heartbeat.Interval;

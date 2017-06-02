@@ -8,7 +8,7 @@ using System.Configuration;
 namespace x2
 {
     /// <summary>
-    /// x2clr configuration section handler.
+    /// x2net configuration section handler.
     /// </summary>
     public sealed class ConfigSection : ConfigurationSection
     {
@@ -55,7 +55,7 @@ namespace x2
         }
     }
 
-    // x2clr/log configuration element handler
+    // x2net/log configuration element handler
     public class LogElement : ConfigurationElement
     {
         [ConfigurationProperty("level")]
@@ -66,7 +66,7 @@ namespace x2
         }
     }
 
-    // x2clr/heartbeat configuration element handler
+    // x2net/heartbeat configuration element handler
     public class HeartbeatElement : ConfigurationElement
     {
         [ConfigurationProperty("interval")]
@@ -77,7 +77,7 @@ namespace x2
         }
     }
 
-    // x2clr/flow configuration element handler
+    // x2net/flow configuration element handler
     public class FlowElement : ConfigurationElement
     {
         [ConfigurationProperty("logging")]
@@ -88,7 +88,7 @@ namespace x2
         }
     }
 
-    // x2clr/flow/logging configuration element handler
+    // x2net/flow/logging configuration element handler
     public class FlowLoggingElement : ConfigurationElement
     {
         [ConfigurationProperty("slowHandler")]
@@ -106,7 +106,7 @@ namespace x2
         }
     }
 
-    // x2clr/flow/logging/slowHandler configuration element handler
+    // x2net/flow/logging/slowHandler configuration element handler
     public class SlowHandlerElement : ConfigurationElement
     {
         [ConfigurationProperty("logLevel")]
@@ -124,7 +124,7 @@ namespace x2
         }
     }
 
-    // x2clr/flow/logging/longQueue configuration element handler
+    // x2net/flow/logging/longQueue configuration element handler
     public class LongQueueElement : ConfigurationElement
     {
         [ConfigurationProperty("logLevel")]
@@ -142,7 +142,7 @@ namespace x2
         }
     }
 
-    // x2clr/link configuration element handler
+    // x2net/link configuration element handler
     public class LinkElement : ConfigurationElement
     {
         [ConfigurationProperty("maxHandles")]
@@ -153,7 +153,7 @@ namespace x2
         }
     }
 
-    // x2clr/buffer configuration element handler
+    // x2net/buffer configuration element handler
     public class BufferElement : ConfigurationElement
     {
         [ConfigurationProperty("sizeExponent")]
@@ -171,7 +171,7 @@ namespace x2
         }
     }
 
-    // x2clr/buffer/sizeExponent configuration element handler
+    // x2net/buffer/sizeExponent configuration element handler
     public class SizeExponentElement : ConfigurationElement
     {
         [ConfigurationProperty("chunk")]
@@ -189,7 +189,7 @@ namespace x2
         }
     }
 
-    // x2clr/buffer/roomFactor configuration element handler
+    // x2net/buffer/roomFactor configuration element handler
     public class RoomFactorElement : ConfigurationElement
     {
         [ConfigurationProperty("minLevel")]
@@ -207,7 +207,7 @@ namespace x2
         }
     }
 
-    // x2clr/coroutine configuration element handler
+    // x2net/coroutine configuration element handler
     public class CoroutineElement : ConfigurationElement
     {
         [ConfigurationProperty("maxWaitHandles")]
