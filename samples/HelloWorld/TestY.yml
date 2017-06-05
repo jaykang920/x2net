@@ -1,0 +1,27 @@
+---
+namespace: x2/Examples/HelloWorld
+references:
+  - { type: namespace, target: abcd }
+  - { type: file, target: efgh }
+definitions:
+  - { class: consts, name: MyConsts, type: int32,
+      elements: [
+        { name: MyConst1, value: 1 },
+        { name: MyConst2, value: 2 },
+      ]
+    }
+  - { class: cell, name: MyCell,
+      properties: [
+        { name: MyProp, type: int32 },
+      ]
+    }
+  - { class: event, name: HelloReq, id: 1,
+      properties: [
+        { name: Name, type: string, default: noname },
+      ]
+    }
+  - { class: event, name: HelloResp, id: 2,
+      properties: [
+        { name: Result, type: string },
+      ]
+    }

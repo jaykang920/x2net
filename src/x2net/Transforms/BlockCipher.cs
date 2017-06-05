@@ -255,7 +255,7 @@ namespace x2net
         private void ImportRsaParameters(RSACryptoServiceProvider rsa, string xml)
         {
 #if NETCORE
-            // Workaround for RSACryptoServiceProvider.FromXmlString
+            // RSACryptoServiceProvider.FromXmlString workaround for .NET Core 2.0 preview
             RSAParameters parameters = new RSAParameters();
 
             XmlDocument xmlDoc = new XmlDocument();
