@@ -143,6 +143,41 @@ Requirements
 * .NET Core 2.0 or newer
 * Visual Studio 2017 (version 15.3) or newer
 
+Installation
+------------
+
+### Binary
+
+x2net can be installed via the [NuGet UI](https://docs.nuget.org/consume/package-manager-dialog) (as [x2net](https://www.nuget.org/packages/x2net)), or via the NuGet Package Manager console command:
+
+    PM> Install-Package x2net
+
+The xpiler converts x2 definition files into corresponding C# source code files.
+So most probably you will want to install the [x2net.xpiler](https://www.nuget.org/packages/x2net.xpiler) too.
+
+    PM> Install-Package x2net.xpiler
+
+### Source
+
+You may clone the latest source code of x2net from its [GitHub repository](https://github.com/jaykang920/x2net.git).
+
+Zipped archives containing specific tagged versions of the source code are available in [releases](https://github.com/jaykang920/x2net/releases).
+
+### Unity3D
+
+If you want to use x2net in Unity3D, you should build it with the conditional
+compile constant UNITY_WORKAROUND and drop the DLL into the Assets/Plugin folder.
+
+Documentation
+-------------
+
+[x2net wiki](https://github.com/jaykang920/x2net/wiki) can be a good start point to learn how x2net applications are organized.
+
+Contributions
+-------------
+
+We need your contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before you start.
+
 License
 -------
 
