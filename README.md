@@ -2,7 +2,7 @@ x2net
 =====
 
 x2net is the reference port of [x2](https://github.com/jaykang920/x2) written in
-C# targeting universal .NET environments covering Mono, .NET framework, and .NET
+C#, targeting universal .NET environments covering Mono, .NET framework, and .NET
 Core.
 
 Features
@@ -10,7 +10,8 @@ Features
 
 ### Distributable Application Architecture
 
-Writing distributed (including client/server) applications has never been this easy. You can flexibly make changes to the deployment topology of your
+Writing distributed (including client/server) applications has never been this
+easy. You can flexibly make changes to the deployment topology of your
 application, while your business logic remains unchanged.
 
 ### Communication Protocol Code Generation
@@ -133,6 +134,11 @@ Requirements
 
 * .NET framework 3.5 or newer equivalent environment to run
 * Visual Studio 2008 (9.0) or newer equivalent tool to compile C# 3.0
+
+### .NET Core
+
+* .NET Core 2.0 or newer
+* Visual Studio 2017 (version 15.3) or newer
 
 License
 -------

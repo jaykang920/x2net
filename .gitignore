@@ -2,9 +2,13 @@
 [Oo]bj/
 .nuget/
 .vs*/
-packages/
+[Pp]ackages/
+
 *.sln.*
 *.suo
 *.user
 *.userprefs
 *DS_Store
+
+tools/**
+!tools/packages.config
