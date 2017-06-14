@@ -12,3 +12,5 @@
 
 tools/**
 !tools/packages.config
+
+*.nupkg

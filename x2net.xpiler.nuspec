@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>x2net.xpiler</id>
+    <version>0.9.3</version>
+    <authors>Jae-jun Kang</authors>
+    <owners>Jae-jun Kang</owners>
+    <licenseUrl>https://github.com/jaykang920/x2net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/jaykang920/x2net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generates C# source code files out of x2 definition files.</description>
+    <copyright>Copyright © 2017 Jae-jun Kang</copyright>
+    <tags>x2 x2net xpiler</tags>
+  </metadata>
+
+  <files>
+    <file src="LICENSE"/>
+    <file src="bin\Release\x2net.xpiler.exe" target="tools"/>
+    <file src="bin\Release\x2net.xpiler.pdb" target="tools"/>
+  </files>
+</package>
