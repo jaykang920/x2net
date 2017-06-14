@@ -1,6 +1,8 @@
 x2net
 =====
 
+[![NuGet](http://img.shields.io/nuget/v/x2net.svg?style=flat)](https://www.nuget.org/packages/x2net/)
+
 x2net is the reference port of [x2](https://github.com/jaykang920/x2) written in
 C#, targeting universal .NET environments covering Mono, .NET framework, and .NET
 Core.
