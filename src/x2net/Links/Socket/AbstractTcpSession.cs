@@ -196,6 +196,7 @@ namespace x2net
             catch (System.IO.EndOfStreamException)
             {
                 // Need more to start parsing.
+                rxBuffer.Rewind();  // restore pos to start again
                 return false;
             }
             rxBuffer.Shrink(headerLength);
