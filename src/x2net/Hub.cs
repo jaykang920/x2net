@@ -136,6 +136,46 @@ namespace x2net
         }
 
         /// <summary>
+        /// Gets an array of attached flows by the given name.
+        /// </summary>
+        public Flow[] GetFlows(string name)
+        {
+            using (new ReadLock(rwlock))
+            {
+                List<Flow> matches = new List<Flow>();
+                for (int i = 0; i < flows.Count; ++i)
+                {
+                    var flow = flows[i];
+                    if (flow.Name == name)
+                    {
+                        matches.Add(flow);
+                    }
+                }
+                return matches.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// Gets an array of attached flows by the given type.
+        /// </summary>
+        public Flow[] GetFlows(Type type)
+        {
+            using (new ReadLock(rwlock))
+            {
+                List<Flow> matches = new List<Flow>();
+                for (int i = 0; i < flows.Count; ++i)
+                {
+                    var flow = flows[i];
+                    if (flow.GetType() == type)
+                    {
+                        matches.Add(flow);
+                    }
+                }
+                return matches.ToArray();
+            }
+        }
+
+        /// <summary>
         /// Posts up the specified event to the hub.
         /// </summary>
         public static void Post(Event e)
