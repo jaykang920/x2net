@@ -1,4 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project>
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
 
   <PropertyGroup>
     <AssemblyName>x2net.tests</AssemblyName>
@@ -28,5 +30,13 @@
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
+
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+
+  <PropertyGroup>
+    <PreBuildEvent>pushd "$(ProjectDir)"
+dotnet ../../bin/$(ConfigurationName)/netcoreapp2.0/x2net.xpiler.dll -f .
+popd</PreBuildEvent>
+  </PropertyGroup>
 
 </Project>
