@@ -56,8 +56,20 @@ Task("Build")
       XBuild("./x2net40.sln", settings =>
         settings.SetConfiguration(configuration));
     }
+});
 
-    /*DotNetCoreRestore("./x2netcore.sln");
+Task("Run-Unit-Tests")
+    .IsDependentOn("Build")
+    .Does(() =>
+{
+    XUnit2("./tests/**/bin/" + configuration + "/net35/*.tests.dll");
+    XUnit2("./tests/**/bin/" + configuration + "/net40/*.tests.dll");
+});
+
+Task("Core-Build")
+    .Does(() =>
+{
+    DotNetCoreRestore("./x2netcore.sln");
 
     var coreFramework = "netcoreapp2.0";
     var standardFramework = "netstandard2.0";
@@ -71,19 +83,16 @@ Task("Build")
         Framework = standardFramework,
         Configuration = configuration,
         OutputDirectory = outDir + Directory(standardFramework)
-    });*/
+    });
 });
 
-Task("Run-Unit-Tests")
-    .IsDependentOn("Build")
+Task("Core-Tests")
+    .IsDependentOn("Core-Build")
     .Does(() =>
 {
-    XUnit2("./tests/**/bin/" + configuration + "/net35/*.tests.dll");
-    XUnit2("./tests/**/bin/" + configuration + "/net40/*.tests.dll");
-
-    /*DotNetCoreTest("./tests/x2net/x2netcore.tests.csproj", new DotNetCoreTestSettings {
+    DotNetCoreTest("./tests/x2net/x2netcore.tests.csproj", new DotNetCoreTestSettings {
         Configuration = configuration
-    });*/
+    });
 });
 
 //////////////////////////////////////////////////////////////////////
@@ -92,6 +101,9 @@ Task("Run-Unit-Tests")
 
 Task("Default")
     .IsDependentOn("Run-Unit-Tests");
+
+Task("Core")
+    .IsDependentOn("Core-Tests");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
