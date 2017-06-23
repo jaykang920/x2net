@@ -1,4 +1,3 @@
-#tool nuget:?package=NUnit.ConsoleRunner&version=3.4.0
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
@@ -23,6 +22,11 @@ Task("Clean")
 {
     CleanDirectory(outDir);
     CleanDirectory(testDir);
+	
+	// Intermediate
+	CleanDirectory(Directory("./src/x2net/obj"));
+	CleanDirectory(Directory("./src/xpiler/obj"));
+	CleanDirectory(Directory("./tests/x2net/obj"));
 });
 
 Task("Restore-NuGet-Packages")
@@ -53,8 +57,21 @@ Task("Build")
         settings.SetConfiguration(configuration));
     }
 
-    //DotNetCoreRestore("./x2netcore.sln");
-    //DotNetCoreBuild("./x2netcore.sln");
+    /*DotNetCoreRestore("./x2netcore.sln");
+
+    var coreFramework = "netcoreapp2.0";
+    var standardFramework = "netstandard2.0";
+
+    DotNetCoreBuild("./src/xpiler/x2netcore.xpiler.csproj", new DotNetCoreBuildSettings {
+        Framework = coreFramework,
+        Configuration = configuration,
+        OutputDirectory = outDir + Directory(coreFramework)
+    });
+    DotNetCoreBuild("./src/x2net/x2netcore.csproj", new DotNetCoreBuildSettings {
+        Framework = standardFramework,
+        Configuration = configuration,
+        OutputDirectory = outDir + Directory(standardFramework)
+    });*/
 });
 
 Task("Run-Unit-Tests")
@@ -63,6 +80,10 @@ Task("Run-Unit-Tests")
 {
     XUnit2("./tests/**/bin/" + configuration + "/net35/*.tests.dll");
     XUnit2("./tests/**/bin/" + configuration + "/net40/*.tests.dll");
+
+    /*DotNetCoreTest("./tests/x2net/x2netcore.tests.csproj", new DotNetCoreTestSettings {
+        Configuration = configuration
+    });*/
 });
 
 //////////////////////////////////////////////////////////////////////
