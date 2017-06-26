@@ -12,6 +12,8 @@ namespace x2net
     /// </summary>
     public sealed class Hub
     {
+        // List of hub cases
+        private List<Case> cases;
         // List of all the flows attached to this hub
         private List<Flow> flows;
         // Explicit (named) channel subscription map
@@ -39,6 +41,7 @@ namespace x2net
         // Private constructor to prevent explicit instantiation
         private Hub()
         {
+            cases = new List<Case>();
             flows = new List<Flow>();
             subscriptions = new Dictionary<string, List<Flow>>();
 
@@ -48,6 +51,25 @@ namespace x2net
         ~Hub()
         {
             rwlock.Dispose();
+        }
+
+        /// <summary>
+        /// Adds the specified hub case to the hub.
+        /// </summary>
+        public Hub Add(Case c)
+        {
+            if (Object.ReferenceEquals(c, null))
+            {
+                throw new ArgumentNullException();
+            }
+            using (new WriteLock(rwlock))
+            {
+                if (!cases.Contains(c))
+                {
+                    cases.Add(c);
+                }
+            }
+            return this;
         }
 
         /// <summary>
@@ -183,6 +205,35 @@ namespace x2net
             Instance.Feed(e);
         }
 
+        /// <summary>
+        /// Removes the specified hub case from the hub.
+        /// </summary>
+        public Hub Remove(Case c)
+        {
+            if (Object.ReferenceEquals(c, null))
+            {
+                throw new ArgumentNullException();
+            }
+            using (new WriteLock(rwlock))
+            {
+                cases.Remove(c);
+            }
+            return this;
+        }
+
+        private void Setup()
+        {
+            List<Case> snapshot;
+            using (new ReadLock(rwlock))
+            {
+                snapshot = new List<Case>(cases);
+            }
+            for (int i = 0, count = snapshot.Count; i < count; ++i)
+            {
+                snapshot[i].Setup();
+            }
+        }
+
         private void StartFlows()
         {
             List<Flow> snapshot;
@@ -201,10 +252,32 @@ namespace x2net
         /// </summary>
         public static void Startup()
         {
+            Instance.Setup();
+
             Instance.StartFlows();
 
             TimeFlow.Default.ReserveRepetition(HeartbeatEvent,
                 new TimeSpan(0, 0, Config.HeartbeatInterval));
+        }
+
+        private void Teardown()
+        {
+            List<Case> snapshot;
+            using (new ReadLock(rwlock))
+            {
+                snapshot = new List<Case>(cases);
+            }
+            for (int i = snapshot.Count - 1; i >= 0; --i)
+            {
+                try
+                {
+                    snapshot[i].Teardown();
+                }
+                catch (Exception e)
+                {
+                    Log.Error("{0} teardown: {2}", snapshot[i].GetType().Name, e);
+                }
+            }
         }
 
         private void StopFlows()
@@ -222,7 +295,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Log.Error("{0} Shutdown: {2}", snapshot[i].Name, e);
+                    Log.Error("{0} shutdown: {2}", snapshot[i].Name, e);
                 }
             }
         }
@@ -241,6 +314,10 @@ namespace x2net
             catch (Exception)
             {
                 // nop
+            }
+            finally
+            {
+                Instance.Teardown();  // won't throw
             }
         }
 
@@ -360,6 +437,23 @@ namespace x2net
                     subscriptions.Remove(channel);
                 }
             }
+        }
+
+        /// <summary>
+        /// Represents a hub-scope case that are initialized and terminated
+        /// along with startup/shutdown of the hub.
+        /// </summary>
+        public abstract class Case
+        {
+            /// <summary>
+            /// Overridden by subclasses for initialization.
+            /// </summary>
+            public virtual void Setup() { }
+
+            /// <summary>
+            /// Overridden by subclasses for clean-up.
+            /// </summary>
+            public virtual void Teardown() { }
         }
 
         /// <summary>
