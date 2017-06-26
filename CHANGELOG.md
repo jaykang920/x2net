@@ -1,3 +1,7 @@
+## 0.9.5 (2017-06-26)
+
+NuGet packages now support .NET Core 2.0
+
 Features:
 
 - Hub: added Hub.Case class to support application level initialization/cleanup
