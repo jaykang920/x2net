@@ -10,6 +10,15 @@
 	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DefineConstants>NET40;NETCORE</DefineConstants>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>../../bin/Release/netstandard2.0/x2net.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>../../bin/Debug/netstandard2.0/x2net.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
