@@ -1,3 +1,7 @@
+## 0.9.6 (2017-06-27)
+
+Fixed NuGet packages for .NET Core
+
 ## 0.9.5 (2017-06-26)
 
 NuGet packages now support .NET Core 2.0
@@ -14,4 +18,4 @@ Features:
 
 BugFixes:
 
-- @barowa fixed TCP socket link framing error
+- @barowa fixed the TCP socket link packet framing bug
