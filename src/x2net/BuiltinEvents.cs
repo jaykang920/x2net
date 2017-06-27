@@ -8,6 +8,9 @@ using x2net;
 
 namespace x2net
 {
+    /// <summary>
+    /// Event type identifiers for built-in events.
+    /// </summary>
     public static class BuiltinEventType
     {
         public const int HeartbeatEvent = -1;
@@ -52,6 +55,9 @@ namespace x2net
         }
     }
 
+    /// <summary>
+    /// x2 subsystem heartbeat event.
+    /// </summary>
     public class HeartbeatEvent : Event
     {
         protected static new readonly Tag tag;
@@ -173,6 +179,9 @@ namespace x2net
         }
     }
 
+    /// <summary>
+    /// A local event enqueued when a flow starts.
+    /// </summary>
     public class FlowStart : Event
     {
         protected static new readonly Tag tag;
@@ -245,6 +254,9 @@ namespace x2net
         }
     }
 
+    /// <summary>
+    /// A local event enqueued when a flow stops.
+    /// </summary>
     public class FlowStop : Event
     {
         protected static new readonly Tag tag;
@@ -317,6 +329,9 @@ namespace x2net
         }
     }
 
+    /// <summary>
+    /// A local timeout event.
+    /// </summary>
     public class TimeoutEvent : Event
     {
         protected static new readonly Tag tag;
@@ -326,6 +341,9 @@ namespace x2net
         private object key_;
         private int intParam_;
 
+        /// <summary>
+        /// Event key object.
+        /// </summary>
         public object Key
         {
             get { return key_; }
@@ -336,6 +354,9 @@ namespace x2net
             }
         }
 
+        /// <summary>
+        /// Optional integer parameter
+        /// </summary>
         public int IntParam
         {
             get { return intParam_; }

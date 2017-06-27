@@ -12,14 +12,30 @@ namespace x2net.xpiler
     {
         public bool Handle(string path, out Unit unit)
         {
+            unit = null;
+            Root root;
+
             var serializer = new XmlSerializer(typeof(Root));
 
             using (var fs = new FileStream(path, FileMode.Open))
             {
-                var root = (Root)serializer.Deserialize(fs);
-
-                unit = Normalize(root);
+                try
+                {
+                    root = (Root)serializer.Deserialize(fs);
+                }
+                catch (InvalidOperationException)
+                {
+                    // Not a valid x2 document.
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return false;
+                }
             }
+
+            unit = Normalize(root);
 
             return true;
         }

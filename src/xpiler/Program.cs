@@ -37,7 +37,7 @@ namespace x2net.xpiler
             options = new Options();
 
             handlers = new Dictionary<string, Handler>();
-            handlers.Add(".xml", new XmlHandler());
+            handlers.Add(".xml", new CommentAwareXmlHandler());
 
 #if YAML_HANDLER
             var yamlHandler = new YamlHandler();
@@ -134,8 +134,6 @@ namespace x2net.xpiler
                 return;
             }
 
-            Console.WriteLine(filename);
-
             Unit unit;
             if (handler.Handle(path, out unit) == false)
             {
@@ -145,6 +143,8 @@ namespace x2net.xpiler
             {
                 return;
             }
+
+            Console.WriteLine(filename);
 
             unit.BaseName = Path.GetFileNameWithoutExtension(path);
 
