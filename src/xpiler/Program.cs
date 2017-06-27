@@ -134,6 +134,8 @@ namespace x2net.xpiler
                 return;
             }
 
+            Console.WriteLine(filename);
+
             Unit unit;
             if (handler.Handle(path, out unit) == false)
             {
@@ -143,8 +145,6 @@ namespace x2net.xpiler
             {
                 return;
             }
-
-            Console.WriteLine(filename);
 
             unit.BaseName = Path.GetFileNameWithoutExtension(path);
 
