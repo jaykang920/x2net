@@ -1,3 +1,7 @@
+Features:
+
+- xpiler handles XML comments again
+
 ## 0.9.6 (2017-06-27)
 
 Fixed NuGet packages for .NET Core
