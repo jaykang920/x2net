@@ -1,3 +1,5 @@
+## 0.9.7 (2017-07-04)
+
 Features:
 
 - xpiler handles XML comments again
