@@ -6,7 +6,7 @@ using System;
 namespace x2net
 {
     /// <summary>
-    /// Specifies the log level.
+    /// Specifies the trace level.
     /// </summary>
     public enum TraceLevel
     {
@@ -20,17 +20,17 @@ namespace x2net
     }
 
     /// <summary>
-    /// Represents the method that handles log calls.
+    /// Represents the method that handles trace calls.
     /// </summary>
     public delegate void TraceHandler(TraceLevel level, string message);
 
     /// <summary>
-    /// Represents the logging helper class.
+    /// Represents the tracing helper class.
     /// </summary>
     public static class Trace
     {
         /// <summary>
-        /// Gets or sets the application-provided log handler.
+        /// Gets or sets the application-provided trace handler.
         /// </summary>
         public static TraceHandler Handler { get; set; }
 
