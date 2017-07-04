@@ -2,6 +2,10 @@ Features:
 
 - xpiler handles XML comments again
 
+Changes:
+
+- changed the internal logger class name from Log to Trace
+
 ## 0.9.6 (2017-06-27)
 
 Fixed NuGet packages for .NET Core
