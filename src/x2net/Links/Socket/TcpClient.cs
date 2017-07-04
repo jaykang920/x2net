@@ -41,7 +41,7 @@ namespace x2net
             }
             catch (Exception e)
             {
-                Log.Error("{0} error connecting to {1} : {2}",
+                Trace.Error("{0} error connecting to {1} : {2}",
                     Name, endpoint, e.Message);
 
                 OnConnectError(socket, endpoint);
@@ -62,7 +62,7 @@ namespace x2net
             }
             catch (Exception e)
             {
-                Log.Warn("{0} error connecting to {1} : {2}",
+                Trace.Warn("{0} error connecting to {1} : {2}",
                     Name, remoteEndPoint, e.Message);
 
                 OnConnectError(socket, remoteEndPoint);

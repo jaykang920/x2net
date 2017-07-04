@@ -136,14 +136,14 @@ namespace x2net
             }
             if (!flag)
             {
-                Log.Info("{0} {1} unrecoverable session", Name, session.Handle);
+                Trace.Info("{0} {1} unrecoverable session", Name, session.Handle);
 
                 OnLinkSessionDisconnectedInternal(session.Handle, session);
                 return;
             }
             else if (!Object.ReferenceEquals(session, existing))
             {
-                Log.Warn("{0} {1} gave up session recovery", Name, session.Handle);
+                Trace.Warn("{0} {1} gave up session recovery", Name, session.Handle);
                 return;
             }
 
@@ -154,7 +154,7 @@ namespace x2net
             }
             if (!Object.ReferenceEquals(session, existing))
             {
-                Log.Warn("{0} {1} gave up session recovery", Name, session.Handle);
+                Trace.Warn("{0} {1} gave up session recovery", Name, session.Handle);
                 return;
             }
 
@@ -167,7 +167,7 @@ namespace x2net
                 recoveryTokens[session.Handle] = binderToken;
             }
 
-            Log.Trace("{0} {1} started recovery timer", Name, session.Handle);
+            Trace.Log("{0} {1} started recovery timer", Name, session.Handle);
         }
 
         internal void OnSessionReq(LinkSession session, SessionReq e)
@@ -185,7 +185,7 @@ namespace x2net
                 }
                 if (flag)
                 {
-                    Log.Trace("{0} {1} rxC={2} txC={3} rxS={4} txS={5} txSc={6}",
+                    Trace.Log("{0} {1} rxC={2} txC={3} rxS={4} txS={5} txSc={6}",
                         Name, existing.Handle, e.RxCounter, e.TxCounter,
                         existing.RxCounter, existing.TxCounter, existing.TxCompleted);
 
@@ -207,7 +207,7 @@ namespace x2net
                     }
                     if (!flag)
                     {
-                        Log.Warn("{0} {1} gave up session recovery",
+                        Trace.Warn("{0} {1} gave up session recovery",
                             Name, existing.Handle);
 
                         OnLinkSessionDisconnectedInternal(existing.Handle, existing);
@@ -244,7 +244,7 @@ namespace x2net
             // Issue a new session token for the given session.
             session.Token = Guid.NewGuid().ToString("N");
 
-            Log.Debug("{0} {1} issued session token {2}",
+            Trace.Debug("{0} {1} issued session token {2}",
                 Name, session.InternalHandle, session.Token);
 
             lock (recoverable)
@@ -276,7 +276,7 @@ namespace x2net
             }
             session.Release();
 
-            Log.Debug("{0} {1} session recovery timeout {1} {2}",
+            Trace.Debug("{0} {1} session recovery timeout {1} {2}",
                 Name, session.Handle, session.Token);
 
             lock (recoveryTokens)
@@ -304,7 +304,7 @@ namespace x2net
                 this.Flow.Unsubscribe(binderToken);
                 TimeFlow.Default.Cancel(binderToken.Key);
 
-                Log.Trace("{0} {1} canceled recovery timer", Name, handle);
+                Trace.Log("{0} {1} canceled recovery timer", Name, handle);
             }
         }
 

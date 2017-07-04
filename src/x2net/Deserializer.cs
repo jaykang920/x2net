@@ -39,7 +39,7 @@ namespace x2net
             }
             catch (Exception)
             {
-                Log.Error("Deserializer.Create : error reading event type id");
+                Trace.Error("Deserializer.Create : error reading event type id");
                 return null;
             }
             return EventFactory.Create(typeId);

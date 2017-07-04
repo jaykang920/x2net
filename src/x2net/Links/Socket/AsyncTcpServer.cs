@@ -97,18 +97,18 @@ namespace x2net
                 {
                     if (e.SocketError == SocketError.OperationAborted)
                     {
-                        Log.Info("{0} listening socket closed", Name);
+                        Trace.Info("{0} listening socket closed", Name);
                         return;
                     }
                     else
                     {
-                        Log.Error("{0} accept error : {1}", Name, e.SocketError);
+                        Trace.Error("{0} accept error : {1}", Name, e.SocketError);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Log.Error("{0} accept error : {1}", Name, ex.Message);
+                Trace.Error("{0} accept error : {1}", Name, ex.Message);
             }
 
             AcceptImpl(e);  // chain into the next accept

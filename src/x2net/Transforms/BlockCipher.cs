@@ -123,7 +123,7 @@ namespace x2net
 
         public int Transform(Buffer buffer, int length)
         {
-            Log.Trace("BlockCipher.Transform: input length {0}", length);
+            Trace.Log("BlockCipher.Transform: input length {0}", length);
 
             using (var encryptor = encryptionAlgorithm.CreateEncryptor(encryptionKey, encryptionIV))
             using (var ms = new MemoryStream(length + BlockSizeInBytes))
@@ -134,9 +134,9 @@ namespace x2net
                 // Multiple Write() calls are not properly handled there.
 
                 byte[] plaintext = buffer.ToArray();
-                if (Config.LogLevel <= LogLevel.Trace)
+                if (Config.TraceLevel <= TraceLevel.Trace)
                 {
-                    Log.Trace("BlockCipher.Transform: input {0}",
+                    Trace.Log("BlockCipher.Transform: input {0}",
                         BitConverter.ToString(plaintext, plaintext.Length - length, length));
                 }
                 cs.Write(plaintext, plaintext.Length - length, length);
@@ -148,9 +148,9 @@ namespace x2net
                 {
                     var segment = buffers[i];
 
-                    if (Config.LogLevel <= LogLevel.Trace)
+                    if (Config.TraceLevel <= TraceLevel.Trace)
                     {
-                        Log.Trace("BlockCipher.Transform: input block {0}",
+                        Trace.Log("BlockCipher.Transform: input block {0}",
                             BitConverter.ToString(segment.Array, segment.Offset, segment.Count));
                     }
 
@@ -163,9 +163,9 @@ namespace x2net
                 int result = (int)ms.Length;
                 var streamBuffer = ms.GetBuffer();
 
-                if (Config.LogLevel <= LogLevel.Trace)
+                if (Config.TraceLevel <= TraceLevel.Trace)
                 {
-                    Log.Trace("BlockCipher.Transform: output {0} {1}",
+                    Trace.Log("BlockCipher.Transform: output {0} {1}",
                         result, BitConverter.ToString(streamBuffer, 0, result));
                 }
 
@@ -182,7 +182,7 @@ namespace x2net
 
         public int InverseTransform(Buffer buffer, int length)
         {
-            Log.Trace("BlockCipher.InverseTransform: input length {0}", length);
+            Trace.Log("BlockCipher.InverseTransform: input length {0}", length);
 
             using (var decryptor = decryptionAlgorithm.CreateDecryptor(decryptionKey, decryptionIV))
             using (var ms = new MemoryStream(length))
@@ -196,9 +196,9 @@ namespace x2net
                 byte[] ciphertext = buffer.ToArray();
                 System.Buffer.BlockCopy(ciphertext, length - BlockSizeInBytes,
                     nextIV, 0, BlockSizeInBytes);
-                if (Config.LogLevel <= LogLevel.Trace)
+                if (Config.TraceLevel <= TraceLevel.Trace)
                 {
-                    Log.Trace("BlockCipher.InverseTransform: input {0}",
+                    Trace.Log("BlockCipher.InverseTransform: input {0}",
                         BitConverter.ToString(ciphertext, 0, length));
                 }
                 cs.Write(ciphertext, 0, length);
@@ -221,9 +221,9 @@ namespace x2net
                 {
                     var segment = buffers[i];
 
-                    if (Config.LogLevel <= LogLevel.Trace)
+                    if (Config.TraceLevel <= TraceLevel.Trace)
                     {
-                        Log.Trace("BlockCipher.InverseTransform: input block {0}",
+                        Trace.Log("BlockCipher.InverseTransform: input block {0}",
                             BitConverter.ToString(segment.Array, segment.Offset, segment.Count));
                     }
 
@@ -236,9 +236,9 @@ namespace x2net
                 int result = (int)ms.Length;
                 var streamBuffer = ms.GetBuffer();
 
-                if (Config.LogLevel <= LogLevel.Trace)
+                if (Config.TraceLevel <= TraceLevel.Trace)
                 {
-                    Log.Trace("BlockCipher.InverseTransform: output {0} {1}",
+                    Trace.Log("BlockCipher.InverseTransform: output {0} {1}",
                         result, BitConverter.ToString(streamBuffer, 0, result));
                 }
 

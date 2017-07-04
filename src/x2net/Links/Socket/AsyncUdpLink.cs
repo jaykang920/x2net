@@ -39,12 +39,12 @@ namespace x2net
             rxEventArgs.Completed -= OnReceiveFromCompleted;
             rxEventArgs.Dispose();
 
-            Log.Debug("{0} freed rxEventArgs", Name);
+            Trace.Debug("{0} freed rxEventArgs", Name);
 
             txEventArgs.Completed -= OnSendToCompleted;
             txEventArgs.Dispose();
 
-            Log.Debug("{0} freed txEventArgs", Name);
+            Trace.Debug("{0} freed txEventArgs", Name);
 
             base.Dispose(disposing);
         }
@@ -57,7 +57,7 @@ namespace x2net
             bool pending = socket.ReceiveFromAsync(rxEventArgs);
             if (!pending)
             {
-                Log.Debug("{0} ReceiveFromAsync completed immediately", Name);
+                Trace.Debug("{0} ReceiveFromAsync completed immediately", Name);
 
                 OnReceiveFrom(rxEventArgs);
             }
@@ -71,7 +71,7 @@ namespace x2net
             bool pending = socket.SendToAsync(txEventArgs);
             if (!pending)
             {
-                Log.Debug("{0} SendToAsync completed immediately", Name);
+                Trace.Debug("{0} SendToAsync completed immediately", Name);
 
                 OnSendTo(txEventArgs);
             }
@@ -112,7 +112,7 @@ namespace x2net
                 }
                 else
                 {
-                    Log.Warn("{0} recvfrom error {1}", Name, e.SocketError);
+                    Trace.Warn("{0} recvfrom error {1}", Name, e.SocketError);
                 }
             }
 
@@ -138,7 +138,7 @@ namespace x2net
                 }
                 else
                 {
-                    Log.Warn("{0} sendto error {1}", Name, e.SocketError);
+                    Trace.Warn("{0} sendto error {1}", Name, e.SocketError);
                 }
             }
 

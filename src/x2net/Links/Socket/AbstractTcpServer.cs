@@ -114,11 +114,11 @@ namespace x2net
 
                 AcceptInternal();
 
-                Log.Info("{0} listening on {1}", Name, endpoint);
+                Trace.Info("{0} listening on {1}", Name, endpoint);
             }
             catch (Exception e)
             {
-                Log.Error("{0} error listening on {1} : {2}",
+                Trace.Error("{0} error listening on {1} : {2}",
                     Name, endpoint, e.Message);
 
                 throw;
@@ -157,7 +157,7 @@ namespace x2net
 
                 tcpSession.BeginReceive(true);
 
-                Log.Info("{0} {1} accepted from {2}",
+                Trace.Info("{0} {1} accepted from {2}",
                     Name, tcpSession.InternalHandle, clientSocket.RemoteEndPoint);
 
                 return base.OnAcceptInternal(session);
@@ -165,7 +165,7 @@ namespace x2net
             }
             catch (ObjectDisposedException ode)
             {
-                Log.Warn("{0} {1} accept error: {2}",
+                Trace.Warn("{0} {1} accept error: {2}",
                     Name, tcpSession.InternalHandle, ode);
                 return false;
             }
@@ -204,7 +204,7 @@ namespace x2net
                     if (MaxKeepaliveFailureCount > 0 &&
                         failureCount > MaxKeepaliveFailureCount)
                     {
-                        Log.Warn("{0} {1} closed due to the keepalive failure",
+                        Trace.Warn("{0} {1} closed due to the keepalive failure",
                             Name, tcpSession.Handle);
 
                         tcpSession.OnDisconnect();

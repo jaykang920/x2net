@@ -128,7 +128,7 @@ namespace x2net
 
                         if (result > 1)
                         {
-                            Log.Info("{0} {1} keepalive failure count {2}",
+                            Trace.Info("{0} {1} keepalive failure count {2}",
                                 link.Name, InternalHandle, result);
                         }
                     }
@@ -143,7 +143,7 @@ namespace x2net
                 }
                 else
                 {
-                    Log.Trace("{0} {1} sent keepalive event",
+                    Trace.Log("{0} {1} sent keepalive event",
                         link.Name, InternalHandle);
 
                     Send(Hub.HeartbeatEvent);
@@ -169,7 +169,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Log.Warn("{0} {1} close : {2}",
+                    Trace.Warn("{0} {1} close : {2}",
                         Link.Name, InternalHandle, e.Message);
                 }
             }
@@ -222,11 +222,11 @@ namespace x2net
         {
             hasReceived = true;
 
-            LogLevel logLevel = 
+            TraceLevel traceLevel = 
                 (e.GetTypeId() == BuiltinEventType.HeartbeatEvent ?
-                LogLevel.Trace : LogLevel.Debug);
+                TraceLevel.Trace : TraceLevel.Debug);
 
-            Log.Emit(logLevel, "{0} {1} received event {2}",
+            Trace.Emit(traceLevel, "{0} {1} received event {2}",
                 link.Name, InternalHandle, e);
 
             base.OnEventReceived(e);
@@ -236,11 +236,11 @@ namespace x2net
         {
             hasSent = true;
 
-            LogLevel logLevel =
+            TraceLevel traceLevel =
                 (e.GetTypeId() == BuiltinEventType.HeartbeatEvent ?
-                LogLevel.Trace : LogLevel.Debug);
+                TraceLevel.Trace : TraceLevel.Debug);
 
-            if (Log.Handler != null && Config.LogLevel <= logLevel)
+            if (Trace.Handler != null && Config.TraceLevel <= traceLevel)
             {
                 // e.ToString() may crash if a composite property (list for example)
                 // of the event is changed in other threads.
@@ -254,7 +254,7 @@ namespace x2net
                     description = e.GetTypeTag().RuntimeType.Name;
                 }
 
-                Log.Emit(logLevel, "{0} {1} sent event {2}",
+                Trace.Emit(traceLevel, "{0} {1} sent event {2}",
                     link.Name, InternalHandle, description);
             }
 

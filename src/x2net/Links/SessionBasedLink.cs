@@ -66,7 +66,7 @@ namespace x2net
         /// </summary>
         internal void OnLinkSessionConnectedInternal(bool result, object context)
         {
-            Log.Info("{0} connected {1} {2}", Name, result, context);
+            Trace.Info("{0} connected {1} {2}", Name, result, context);
 
             if (result)
             {
@@ -93,7 +93,7 @@ namespace x2net
         /// </summary>
         internal void OnLinkSessionDisconnectedInternal(int handle, object context)
         {
-            Log.Info("{0} disconnected {1} {2}", Name, handle, context);
+            Trace.Info("{0} disconnected {1} {2}", Name, handle, context);
 
             if (handle == 0)
             {
@@ -134,7 +134,7 @@ namespace x2net
                 Context = context
             });
 
-            Log.Info("{0} recovered {1} {2}", Name, handle, context);
+            Trace.Info("{0} recovered {1} {2}", Name, handle, context);
         }
 
         internal abstract void OnInstantDisconnect(LinkSession session);

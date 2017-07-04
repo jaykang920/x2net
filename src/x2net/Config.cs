@@ -16,7 +16,7 @@ namespace x2net
         /// <summary>
         /// Gets or sets the minimum log level.
         /// </summary>
-        public static LogLevel LogLevel { get; set;}
+        public static TraceLevel TraceLevel { get; set;}
 
         /// <summary>
         /// Gets or sets the time interval, in seconds, of built-in heartbeat
@@ -33,11 +33,11 @@ namespace x2net
                     static SlowHandler()
                     {
                         // Default values
-                        LogLevel = LogLevel.Warning;
+                        TraceLevel = TraceLevel.Warning;
                         Threshold = 100;  // in milliseconds
                     }
 
-                    public static LogLevel LogLevel { get; set; }
+                    public static TraceLevel TraceLevel { get; set; }
                     public static int Threshold { get; set; }
                 }
 
@@ -46,11 +46,11 @@ namespace x2net
                     static SlowScope()
                     {
                         // Default values
-                        LogLevel = LogLevel.Warning;
+                        TraceLevel = TraceLevel.Warning;
                         Threshold = 200;  // in milliseconds
                     }
 
-                    public static LogLevel LogLevel { get; set; }
+                    public static TraceLevel TraceLevel { get; set; }
                     public static int Threshold { get; set; }
                 }
 
@@ -59,11 +59,11 @@ namespace x2net
                     static LongQueue()
                     {
                         // Default values
-                        LogLevel = LogLevel.Error;
+                        TraceLevel = TraceLevel.Error;
                         Threshold = 1000;
                     }
 
-                    public static LogLevel LogLevel { get; set; }
+                    public static TraceLevel TraceLevel { get; set; }
                     public static int Threshold { get; set; }
                 }
             }
@@ -144,7 +144,7 @@ namespace x2net
         static Config()
         {
             // Default values
-            LogLevel = LogLevel.Info;
+            TraceLevel = TraceLevel.Info;
             HeartbeatInterval = 5;  // in seconds
             MaxLinkHandles = 65536;
         }
@@ -159,13 +159,13 @@ namespace x2net
             ConfigSection section = (ConfigSection)
                 ConfigurationManager.GetSection("x2net");
 
-            LogLevel = section.Log.Level;
+            TraceLevel = section.Trace.Level;
             HeartbeatInterval = section.Heartbeat.Interval;
 
             FlowLoggingElement logging = section.Flow.Logging;
-            Flow.Logging.SlowHandler.LogLevel = logging.SlowHandler.LogLevel;
+            Flow.Logging.SlowHandler.TraceLevel = logging.SlowHandler.TraceLevel;
             Flow.Logging.SlowHandler.Threshold = logging.SlowHandler.Threshold;
-            Flow.Logging.LongQueue.LogLevel = logging.LongQueue.LogLevel;
+            Flow.Logging.LongQueue.TraceLevel = logging.LongQueue.TraceLevel;
             Flow.Logging.LongQueue.Threshold = logging.LongQueue.Threshold;
 
             MaxLinkHandles = section.Link.MaxHandles;

@@ -62,7 +62,7 @@ namespace x2net
             }
             catch (Exception e)
             {
-                Log.Error("{0} error disposing: {0}", e);
+                Trace.Error("{0} error disposing: {0}", e);
             }
 
             base.Dispose(disposing);
@@ -224,7 +224,7 @@ namespace x2net
             }
             catch (Exception e)
             {
-                Log.Warn("{0} recv error {1}", Name, e);
+                Trace.Warn("{0} recv error {1}", Name, e);
                 BeginReceiveFrom();
             }
         }
@@ -240,7 +240,7 @@ namespace x2net
 
                 if (count == 0)
                 {
-                    Log.Error("{0} no known peers - dropped event {1}", Name, e);
+                    Trace.Error("{0} no known peers - dropped event {1}", Name, e);
                     goto next;
                 }
 
@@ -252,7 +252,7 @@ namespace x2net
                 {
                     if (!map.TryGetValue(handle, out endPoint))
                     {
-                        Log.Error("{0} unknown handle {1} - dropped event {2}",
+                        Trace.Error("{0} unknown handle {1} - dropped event {2}",
                             Name, handle, e);
                         goto next;
                     }
@@ -263,7 +263,7 @@ namespace x2net
             int length = e.GetLength();
             if (length > txBuffer.BlockSize)
             {
-                Log.Error("{0} dropped big event {1}", Name, e);
+                Trace.Error("{0} dropped big event {1}", Name, e);
                 goto next;
             }
 
@@ -283,7 +283,7 @@ namespace x2net
 
                 Diag.IncrementEventsSent();
 
-                if (Log.Handler != null && Config.LogLevel <= LogLevel.Debug)
+                if (Trace.Handler != null && Config.TraceLevel <= TraceLevel.Debug)
                 {
                     // e.ToString() may crash if a composite property (list for example)
                     // of the event is changed in other threads.
@@ -297,7 +297,7 @@ namespace x2net
                         description = e.GetTypeTag().RuntimeType.Name;
                     }
 
-                    Log.Emit(LogLevel.Debug, "{0} {1} sent event {2}",
+                    Trace.Emit(TraceLevel.Debug, "{0} {1} sent event {2}",
                         Name, handle, description);
                 }
 
@@ -309,7 +309,7 @@ namespace x2net
             }
             catch (Exception ex)
             {
-                Log.Info("{0} send error {1}", Name, ex);
+                Trace.Info("{0} send error {1}", Name, ex);
             }
 
         next:
@@ -341,7 +341,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Log.Error("{0} {1} buffer inv transform error: {2}", Name, handle, e.Message);
+                    Trace.Error("{0} {1} buffer inv transform error: {2}", Name, handle, e.Message);
                     return;
                 }
             }
@@ -361,7 +361,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Log.Error("{0} {1} error loading event {2}: {3}", Name, handle, retrieved.GetTypeId(), e.ToString());
+                    Trace.Error("{0} {1} error loading event {2}: {3}", Name, handle, retrieved.GetTypeId(), e.ToString());
                     return;
                 }
 
@@ -374,7 +374,7 @@ namespace x2net
 
                 Diag.IncrementEventsReceived();
 
-                Log.Debug("{0} {1} received event {2}", Name, handle, retrieved);
+                Trace.Debug("{0} {1} received event {2}", Name, handle, retrieved);
             }
         }
 

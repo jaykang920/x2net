@@ -12,11 +12,11 @@ namespace x2
     /// </summary>
     public sealed class ConfigSection : ConfigurationSection
     {
-        [ConfigurationProperty("log")]
-        public LogElement Log
+        [ConfigurationProperty("trace")]
+        public TraceElement Trace
         {
-            get { return (LogElement)this["log"]; }
-            set { this["log"] = value; }
+            get { return (TarceElement)this["trace"]; }
+            set { this["trace"] = value; }
         }
 
         [ConfigurationProperty("heartbeat")]
@@ -55,13 +55,13 @@ namespace x2
         }
     }
 
-    // x2net/log configuration element handler
-    public class LogElement : ConfigurationElement
+    // x2net/trace configuration element handler
+    public class TraceElement : ConfigurationElement
     {
         [ConfigurationProperty("level")]
-        public LogLevel Level
+        public TarceLevel Level
         {
-            get { return (LogLevel)this["level"]; }
+            get { return (TraceLevel)this["level"]; }
             set { this["level"] = value; }
         }
     }
@@ -109,11 +109,11 @@ namespace x2
     // x2net/flow/logging/slowHandler configuration element handler
     public class SlowHandlerElement : ConfigurationElement
     {
-        [ConfigurationProperty("logLevel")]
-        public LogLevel LogLevel
+        [ConfigurationProperty("traceLevel")]
+        public TraceLevel TraceLevel
         {
-            get { return (LogLevel)this["logLevel"]; }
-            set { this["logLevel"] = value; }
+            get { return (TraceLevel)this["traceLevel"]; }
+            set { this["traceLevel"] = value; }
         }
 
         [ConfigurationProperty("threshold")]
@@ -127,11 +127,11 @@ namespace x2
     // x2net/flow/logging/longQueue configuration element handler
     public class LongQueueElement : ConfigurationElement
     {
-        [ConfigurationProperty("logLevel")]
-        public LogLevel LogLevel
+        [ConfigurationProperty("traceLevel")]
+        public TraceLevel TraceLevel
         {
-            get { return (LogLevel)this["logLevel"]; }
-            set { this["logLevel"] = value; }
+            get { return (TraceLevel)this["traceLevel"]; }
+            set { this["traceLevel"] = value; }
         }
 
         [ConfigurationProperty("threshold")]

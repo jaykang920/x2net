@@ -50,7 +50,7 @@ namespace x2net
             LinkSession currentSession = Session;
             if (Object.ReferenceEquals(currentSession, null))
             {
-                Log.Warn("{0} dropped event {1}", Name, e);
+                Trace.Warn("{0} dropped event {1}", Name, e);
                 return;
             }
             currentSession.Send(e);
@@ -66,7 +66,7 @@ namespace x2net
                     this.session = session;
                 }
 
-                Log.Debug("{0} {1} set session {2}",
+                Trace.Debug("{0} {1} set session {2}",
                     Name, session.Handle, session.Token);
             }
         }
@@ -77,7 +77,7 @@ namespace x2net
             {
                 if (!Object.ReferenceEquals(session, null))
                 {
-                    Log.Debug("{0} {1} cleared session {2}",
+                    Trace.Debug("{0} {1} cleared session {2}",
                         Name, session.Handle, session.Token);
 
                     session = null;
@@ -98,7 +98,7 @@ namespace x2net
 
             session.TakeOver(oldSession, retransmission);
 
-            Log.Debug("{0} {1} reset session {2}",
+            Trace.Debug("{0} {1} reset session {2}",
                 Name, session.Handle, session.Token);
         }
 
@@ -114,7 +114,7 @@ namespace x2net
             // Save the session token from the server.
             session.Token = e.Token;
 
-            Log.Trace("{0} {1} session token {2}",
+            Trace.Log("{0} {1} session token {2}",
                 Name, session.InternalHandle, e.Token);
 
             if (!String.IsNullOrEmpty(sessionToken))

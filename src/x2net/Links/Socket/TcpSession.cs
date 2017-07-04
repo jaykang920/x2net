@@ -30,7 +30,7 @@ namespace x2net
             catch (ObjectDisposedException) { }
             catch (Exception e)
             {
-                Log.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, e);
+                Trace.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, e);
 
                 OnDisconnect();
             }
@@ -45,7 +45,7 @@ namespace x2net
             catch (ObjectDisposedException) { }
             catch (Exception e)
             {
-                Log.Warn("{0} {1} send error {2}", link.Name, InternalHandle, e);
+                Trace.Warn("{0} {1} send error {2}", link.Name, InternalHandle, e);
 
                 OnDisconnect();
             }
@@ -65,7 +65,7 @@ namespace x2net
                 }
 
                 // (bytesTransferred == 0) implies a graceful shutdown
-                Log.Info("{0} {1} disconnected", link.Name, InternalHandle);
+                Trace.Info("{0} {1} disconnected", link.Name, InternalHandle);
             }
             catch (ObjectDisposedException)
             {
@@ -79,7 +79,7 @@ namespace x2net
                 {
                     return;
                 }
-                Log.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, e);
+                Trace.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, e);
             }
             OnDisconnect();
         }
@@ -102,7 +102,7 @@ namespace x2net
                 {
                     return;
                 }
-                Log.Warn("{0} {1} send error {2}", link.Name, InternalHandle, e);
+                Trace.Warn("{0} {1} send error {2}", link.Name, InternalHandle, e);
                 OnDisconnect();
             }
         }

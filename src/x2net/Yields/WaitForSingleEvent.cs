@@ -77,7 +77,7 @@ namespace x2net
                 WaitHandlePool.Release(waitHandle);
             }
 
-            Log.Error("WaitForSingleEvent timeout for {0}", handlerToken.Key);
+            Trace.Error("WaitForSingleEvent timeout for {0}", handlerToken.Key);
 
             coroutine.Result = null;  // indicates timeout
             coroutine.Continue();

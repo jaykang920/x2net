@@ -168,7 +168,7 @@ namespace x2net
         {
             if (String.IsNullOrEmpty(RemoteHost))
             {
-                Log.Error("{0} Connect: remote host is not specified", Name);
+                Trace.Error("{0} Connect: remote host is not specified", Name);
                 return;
             }
             Connect(RemoteHost, RemotePort);
@@ -189,7 +189,7 @@ namespace x2net
             }
             catch (Exception e)
             {
-                Log.Error("{0} error resolving target host {1} : {2}",
+                Trace.Error("{0} error resolving target host {1} : {2}",
                     Name, remoteHost, e.Message);
                 throw;
             }
@@ -300,7 +300,7 @@ namespace x2net
 
         private void Connect(Socket socket, EndPoint endpoint)
         {
-            Log.Info("{0} connecting to {1}", Name, endpoint);
+            Trace.Info("{0} connecting to {1}", Name, endpoint);
 
             startTime = DateTime.UtcNow;
 
@@ -312,7 +312,7 @@ namespace x2net
         {
             if (remoteEndPoint == null)
             {
-                Log.Error("{0} no reconnect target", Name);
+                Trace.Error("{0} no reconnect target", Name);
                 return;
             }
 
@@ -384,7 +384,7 @@ namespace x2net
             LinkSession currentSession = Session;
             if (!Object.ReferenceEquals(session, currentSession))
             {
-                Log.Warn("{0} gave up session recovery {1}", Name, session.Handle);
+                Trace.Warn("{0} gave up session recovery {1}", Name, session.Handle);
                 return;
             }
 
@@ -417,7 +417,7 @@ namespace x2net
 
             tcpSession.BeginReceive(true);
 
-            Log.Info("{0} {1} connected to {2}",
+            Trace.Info("{0} {1} connected to {2}",
                 Name, tcpSession.InternalHandle, socket.RemoteEndPoint);
             
             base.OnConnectInternal(session);
@@ -502,7 +502,7 @@ namespace x2net
             if (MaxKeepaliveFailureCount > 0 &&
                 failureCount > MaxKeepaliveFailureCount)
             {
-                Log.Warn("{0} {1} closed due to the keepalive failure",
+                Trace.Warn("{0} {1} closed due to the keepalive failure",
                     Name, tcpSession.Handle);
 
                 tcpSession.OnDisconnect();
@@ -551,7 +551,7 @@ namespace x2net
 
         private void OnTimeout(TimeoutEvent e)
         {
-            Log.Debug("{0} response timeout {1}", Name, e.Key);
+            Trace.Debug("{0} response timeout {1}", Name, e.Key);
 
             int waitHandle = (int)e.Key;
 

@@ -37,12 +37,12 @@ namespace x2net
             rxEventArgs.Completed -= OnReceiveCompleted;
             rxEventArgs.Dispose();
 
-            Log.Debug("{0} {1} freed recvEventArgs", link.Name, handle);
+            Trace.Debug("{0} {1} freed recvEventArgs", link.Name, handle);
 
             txEventArgs.Completed -= OnSendCompleted;
             txEventArgs.Dispose();
 
-            Log.Debug("{0} {1} freed sendEventArgs", link.Name, handle);
+            Trace.Debug("{0} {1} freed sendEventArgs", link.Name, handle);
 
             base.Dispose(disposing);
         }
@@ -58,7 +58,7 @@ namespace x2net
                 bool pending = socket.ReceiveAsync(rxEventArgs);
                 if (!pending)
                 {
-                    Log.Debug("{0} {1} ReceiveAsync completed immediately",
+                    Trace.Debug("{0} {1} ReceiveAsync completed immediately",
                         link.Name, handle);
 
                     OnReceive(rxEventArgs);
@@ -67,7 +67,7 @@ namespace x2net
             catch (ObjectDisposedException) { }
             catch (Exception e)
             {
-                Log.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, e);
+                Trace.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, e);
 
                 OnDisconnect();
             }
@@ -82,7 +82,7 @@ namespace x2net
                 bool pending = socket.SendAsync(txEventArgs);
                 if (!pending)
                 {
-                    Log.Debug("{0} {1} SendAsync completed immediately",
+                    Trace.Debug("{0} {1} SendAsync completed immediately",
                         link.Name, InternalHandle);
 
                     OnSend(txEventArgs);
@@ -91,7 +91,7 @@ namespace x2net
             catch (ObjectDisposedException) { }
             catch (Exception e)
             {
-                Log.Warn("{0} {1} send error {2}", link.Name, InternalHandle, e);
+                Trace.Warn("{0} {1} send error {2}", link.Name, InternalHandle, e);
 
                 OnDisconnect();
             }
@@ -125,12 +125,12 @@ namespace x2net
                             return;
                         }
                         // (e.BytesTransferred == 0) implies a graceful shutdown
-                        Log.Info("{0} {1} disconnected", link.Name, InternalHandle);
+                        Trace.Info("{0} {1} disconnected", link.Name, InternalHandle);
                         break;
                     case SocketError.OperationAborted:
                         return;
                     default:
-                        Log.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, e.SocketError);
+                        Trace.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, e.SocketError);
                         break;
                 }
             }
@@ -140,7 +140,7 @@ namespace x2net
             }
             catch (Exception ex)
             {
-                Log.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, ex);
+                Trace.Warn("{0} {1} recv error {2}", link.Name, InternalHandle, ex);
             }
             OnDisconnect();
         }
@@ -160,7 +160,7 @@ namespace x2net
                     case SocketError.OperationAborted:
                         return;
                     default:
-                        Log.Warn("{0} {1} send error {2}", link.Name, InternalHandle, e.SocketError);
+                        Trace.Warn("{0} {1} send error {2}", link.Name, InternalHandle, e.SocketError);
                         break;
                 }
             }
@@ -170,7 +170,7 @@ namespace x2net
             }
             catch (Exception ex)
             {
-                Log.Warn("{0} {1} send error {2}", link.Name, InternalHandle, ex);
+                Trace.Warn("{0} {1} send error {2}", link.Name, InternalHandle, ex);
             }
             OnDisconnect();
         }

@@ -52,13 +52,13 @@ namespace x2net
         /// </summary>
         public string Name { get { return name; } }
 
-        public LogLevel SlowHandlerLogLevel { get; set; }
+        public TraceLevel SlowHandlerTraceLevel { get; set; }
         public int SlowHandlerLogThreshold { get; set; }
 
-        public LogLevel SlowScopeLogLevel { get; set; }
+        public TraceLevel SlowScopeTraceLevel { get; set; }
         public int SlowScopeLogThreshold { get; set; }
 
-        public LogLevel LongQueueLogLevel { get; set; }
+        public TraceLevel LongQueueTraceLevel { get; set; }
         public int LongQueueLogThreshold { get; set; }
 
         static Flow()
@@ -74,11 +74,11 @@ namespace x2net
 
             ExceptionHandler = DefaultExceptionHandler;
 
-            SlowHandlerLogLevel = Config.Flow.Logging.SlowHandler.LogLevel;
+            SlowHandlerTraceLevel = Config.Flow.Logging.SlowHandler.TraceLevel;
             SlowHandlerLogThreshold = Config.Flow.Logging.SlowHandler.Threshold;
-            SlowScopeLogLevel = Config.Flow.Logging.SlowScope.LogLevel;
+            SlowScopeTraceLevel = Config.Flow.Logging.SlowScope.TraceLevel;
             SlowScopeLogThreshold = Config.Flow.Logging.SlowScope.Threshold;
-            LongQueueLogLevel = Config.Flow.Logging.LongQueue.LogLevel;
+            LongQueueTraceLevel = Config.Flow.Logging.LongQueue.TraceLevel;
             LongQueueLogThreshold = Config.Flow.Logging.LongQueue.Threshold;
         }
 
@@ -339,7 +339,7 @@ namespace x2net
                     if (totalMilliseconds >= SlowHandlerLogThreshold)
                     {
                         var methodInfo = handler.Action.Method;
-                        Log.Emit(SlowHandlerLogLevel,
+                        Trace.Emit(SlowHandlerTraceLevel,
                             "{0} slow handler {1:#,0}ms {2}.{3} on {4}",
                             Name, totalMilliseconds,
                             methodInfo.DeclaringType, methodInfo.Name, e);

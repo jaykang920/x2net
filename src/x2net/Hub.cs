@@ -275,7 +275,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Log.Error("{0} teardown: {2}", snapshot[i].GetType().Name, e);
+                    Trace.Error("{0} teardown: {2}", snapshot[i].GetType().Name, e);
                 }
             }
         }
@@ -295,7 +295,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Log.Error("{0} shutdown: {2}", snapshot[i].Name, e);
+                    Trace.Error("{0} shutdown: {2}", snapshot[i].Name, e);
                 }
             }
         }

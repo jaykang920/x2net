@@ -34,23 +34,26 @@ namespace x2net.xpiler
             var node = rootElem.FirstChild;
             for ( ; node != null; node = node.NextSibling)
             {
-                var elem = (XmlElement)node;
-                switch (elem.Name)
+                if (node.NodeType == XmlNodeType.Element)
                 {
-                    case "references":
-                        if (ParseReferences(unit, elem) == false)
-                        {
-                            return false;
-                        }
-                        break;
-                    case "definitions":
-                        if (ParseDefinitions(unit, elem) == false)
-                        {
-                            return false;
-                        }
-                        break;
-                    default:
-                        break;
+                    var elem = (XmlElement)node;
+                    switch (elem.Name)
+                    {
+                        case "references":
+                            if (ParseReferences(unit, elem) == false)
+                            {
+                                return false;
+                            }
+                            break;
+                        case "definitions":
+                            if (ParseDefinitions(unit, elem) == false)
+                            {
+                                return false;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
             return true;
@@ -61,21 +64,24 @@ namespace x2net.xpiler
             var node = elem.FirstChild;
             for (; node != null; node = node.NextSibling)
             {
-                var child = (XmlElement)node;
-                if (child.IsEmpty)
+                if (node.NodeType == XmlNodeType.Element)
                 {
-                    continue;
-                }
-                switch (child.Name)
-                {
-                    case "namespace":
-                        if (ParseReference(unit, child) == false)
-                        {
-                            return false;
-                        }
-                        break;
-                    default:
-                        break;
+                    var child = (XmlElement)node;
+                    //if (child.IsEmpty)
+                    //{
+                    //    continue;
+                    //}
+                    switch (child.Name)
+                    {
+                        case "namespace":
+                            if (ParseReference(unit, child) == false)
+                            {
+                                return false;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
             return true;

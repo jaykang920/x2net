@@ -163,7 +163,7 @@ namespace x2net
             int length = queue.Length;
             if (length >= LongQueueLogThreshold)
             {
-                Log.Emit(LongQueueLogLevel, "{0} queue length {1}", name, length);
+                Trace.Emit(LongQueueTraceLevel, "{0} queue length {1}", name, length);
             }
         }
 

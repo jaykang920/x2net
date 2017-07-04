@@ -235,7 +235,7 @@ namespace x2net
             disposed = true;
             connected = false;
 
-            Log.Info("{0} closed {1}", link.Name, this);
+            Trace.Info("{0} closed {1}", link.Name, this);
 
             if (link.SessionRecoveryEnabled == false &&
                 !Object.ReferenceEquals(BufferTransform, null))
@@ -277,7 +277,7 @@ namespace x2net
         {
             if (disposed && !link.SessionRecoveryEnabled)
             {
-                Log.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, e);
+                Trace.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, e);
                 return;
             }
 
@@ -286,7 +286,7 @@ namespace x2net
                 if (link.SessionRecoveryEnabled && !disposed &&
                     !connected && e.GetTypeId() > 0)  // not builtin events
                 {
-                    Log.Info("{0} {1} pre-establishment buffered {2}",
+                    Trace.Info("{0} {1} pre-establishment buffered {2}",
                         link.Name, InternalHandle, e);
                     preConnectionQueue.Add(e);
                     return;
@@ -296,7 +296,7 @@ namespace x2net
 
                 if (txFlag || disposed)
                 {
-                    //Log.Debug("{0} {1} buffered {2}", link.Name, InternalHandle, e);
+                    //Trace.Debug("{0} {1} buffered {2}", link.Name, InternalHandle, e);
                     return;
                 }
 
@@ -313,7 +313,7 @@ namespace x2net
                 handle = oldSession.Handle;
                 Token = oldSession.Token;
 
-                Log.Debug("{0} {1} session inheritance {2}",
+                Trace.Debug("{0} {1} session inheritance {2}",
                     link.Name, handle, Token);
 
                 BufferTransform = oldSession.BufferTransform;
@@ -349,7 +349,7 @@ namespace x2net
                             oldSession.buffersSent.Clear();
                         }
 
-                        Log.Info("{0} {1} pre-establishment buffered {2}",
+                        Trace.Info("{0} {1} pre-establishment buffered {2}",
                             link.Name, InternalHandle, preConnectionQueue.Count);
 
                         if (preConnectionQueue.Count != 0)
@@ -363,7 +363,7 @@ namespace x2net
                             oldSession.eventsToSend.Clear();
                         }
 
-                        Log.Info("{0} {1} eventsToSend {2}", link.Name, InternalHandle, eventsToSend.Count);
+                        Trace.Info("{0} {1} eventsToSend {2}", link.Name, InternalHandle, eventsToSend.Count);
                     }
 
                     connected = true;
@@ -449,7 +449,7 @@ namespace x2net
                         }
                         buffers2.Clear();
 
-                        Log.Info("{0} {1} pre-establishment buffered {2}",
+                        Trace.Info("{0} {1} pre-establishment buffered {2}",
                             link.Name, InternalHandle, preConnectionQueue.Count);
 
                         if (preConnectionQueue.Count != 0)
@@ -463,10 +463,10 @@ namespace x2net
                             oldSession.eventsToSend.Clear();
                         }
 
-                        Log.Info("{0} {1} eventsToSend {2}", link.Name, InternalHandle, eventsToSend.Count);
+                        Trace.Info("{0} {1} eventsToSend {2}", link.Name, InternalHandle, eventsToSend.Count);
                     }
 
-                    Log.Warn("{0} {1} retransmitting {2} events ({3} bytes)",
+                    Trace.Warn("{0} {1} retransmitting {2} events ({3} bytes)",
                         link.Name, InternalHandle, retransmission, lengthToSend);
 
                     connected = true;
@@ -574,7 +574,7 @@ namespace x2net
         {
             Diag.AddBytesReceived(bytesTransferred);
 
-            Log.Trace("{0} {1} received {2} byte(s)",
+            Trace.Log("{0} {1} received {2} byte(s)",
                 link.Name, InternalHandle, bytesTransferred);
 
             if (disposed)
@@ -606,7 +606,7 @@ namespace x2net
             {
                 rxBuffer.MarkToRead(lengthToReceive);
 
-                Log.Trace("{0} {1} marked {2} byte(s) to read",
+                Trace.Log("{0} {1} marked {2} byte(s) to read",
                     link.Name, InternalHandle, lengthToReceive);
 
                 if (BufferTransform != null && rxTransformReady && rxTransformed)
@@ -617,7 +617,7 @@ namespace x2net
                     }
                     catch (Exception e)
                     {
-                        Log.Error("{0} {1} buffer inv transform error: {2}",
+                        Trace.Error("{0} {1} buffer inv transform error: {2}",
                             link.Name, InternalHandle, e.Message);
                         goto next;
                     }
@@ -640,7 +640,7 @@ namespace x2net
                     }
                     catch (Exception e)
                     {
-                        Log.Error("{0} {1} error loading event {2}: {3}",
+                        Trace.Error("{0} {1} error loading event {2}: {3}",
                             link.Name, InternalHandle, retrieved.GetTypeId(), e.ToString());
                         goto next;
                     }
@@ -681,7 +681,7 @@ namespace x2net
 
         protected void OnDisconnect(object context)
         {
-            Log.Debug("{0} {1} OnDisconnect", link.Name, InternalHandle);
+            Trace.Debug("{0} {1} OnDisconnect", link.Name, InternalHandle);
 
             if (handle <= 0)
             {
@@ -705,7 +705,7 @@ namespace x2net
         {
             Diag.AddBytesSent(bytesTransferred);
 
-            Log.Trace("{0} {1} sent {2}/{3} byte(s)",
+            Trace.Log("{0} {1} sent {2}/{3} byte(s)",
                 link.Name, InternalHandle, bytesTransferred, lengthToSend);
 
             lock (syncRoot)
@@ -753,7 +753,7 @@ namespace x2net
                         }
                         catch (Exception ex)
                         {
-                            Log.Error("{0} {1} error handshaking : {2}",
+                            Trace.Error("{0} {1} error handshaking : {2}",
                                 link.Name, InternalHandle, ex.ToString());
                         }
                         if (response != null)
@@ -777,7 +777,7 @@ namespace x2net
                         }
                         catch (Exception ex)
                         {
-                            Log.Error("{0} {1} error finishing handshake : {2}",
+                            Trace.Error("{0} {1} error finishing handshake : {2}",
                                 link.Name, InternalHandle, ex.ToString());
                         }
                         Send(ack);

@@ -24,7 +24,7 @@ namespace x2net
             Func<Event> factoryMethod;
             if (!map.TryGetValue(typeId, out factoryMethod))
             {
-                Log.Error("EventFactory.Create : unknown event type id {0}", typeId);
+                Trace.Error("EventFactory.Create : unknown event type id {0}", typeId);
                 return null;
             }
             return factoryMethod();

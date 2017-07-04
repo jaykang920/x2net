@@ -102,7 +102,7 @@ namespace x2net
             }
             catch (Exception e)
             {
-                Log.Warn("error removing EventSink bindings : {0}", e);
+                Trace.Warn("error removing EventSink bindings : {0}", e);
             }
             finally
             {

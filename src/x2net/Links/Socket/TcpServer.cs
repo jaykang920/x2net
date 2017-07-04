@@ -45,12 +45,12 @@ namespace x2net
             }
             catch (ObjectDisposedException)
             {
-                Log.Info("{0} listening socket closed", Name);
+                Trace.Info("{0} listening socket closed", Name);
                 return;
             }
             catch (Exception e)
             {
-                Log.Error("{0} accept error : {1}", Name, e.Message);
+                Trace.Error("{0} accept error : {1}", Name, e.Message);
             }
 
             AcceptInternal();

@@ -114,7 +114,7 @@ namespace x2net
                 WaitHandlePool.Release(waitHandle);
             }
 
-            Log.Error("WaitForMultipleEvents timeout for {0}", expected);
+            Trace.Error("WaitForMultipleEvents timeout for {0}", expected);
 
             coroutine.Result = actual;  // incomplete array indicates timeout
             coroutine.Continue();

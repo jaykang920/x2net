@@ -82,7 +82,7 @@ namespace x2net
                     }
                 }
 
-                Log.Warn("{0} recvfrom error {1}", Name, e);
+                Trace.Warn("{0} recvfrom error {1}", Name, e);
             }
 
             BeginReceiveFrom();
@@ -112,7 +112,7 @@ namespace x2net
                     }
                 }
 
-                Log.Warn("{0} sendto error {1}", Name, e);
+                Trace.Warn("{0} sendto error {1}", Name, e);
             }
 
             OnSendToInternal(bytesTransferred);

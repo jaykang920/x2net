@@ -132,11 +132,11 @@
     <Compile Include="Util\Hash.cs" />
     <Compile Include="Util\Hash.StaticUpdate.cs" />
     <Compile Include="Util\Hash.Update.cs" />
-    <Compile Include="Util\Log.cs" />
     <Compile Include="Util\Pool.cs" />
     <Compile Include="Util\RangedIntPool.cs" />
     <Compile Include="Util\ReadWriteLock.cs" />
     <Compile Include="Util\SegmentPool.cs" />
+    <Compile Include="Util\Trace.cs" />
     <Compile Include="VerboseDeserializer.cs" />
     <Compile Include="VerboseSerializer.cs" />
     <Compile Include="Yields\WaitForCompletion.cs" />

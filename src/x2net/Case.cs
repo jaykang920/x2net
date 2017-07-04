@@ -146,7 +146,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Log.Error("{0} {1} Teardown: {2}",
+                    Trace.Error("{0} {1} Teardown: {2}",
                         holder.Name, snapshot[i].GetType().Name, e);
                 }
             }
