@@ -1,3 +1,9 @@
+## 0.9.8 (2017-07-06)
+
+Features:
+
+- Hub: added Insert() method to support hub case insertion.
+
 ## 0.9.7 (2017-07-04)
 
 Features:
