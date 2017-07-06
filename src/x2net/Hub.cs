@@ -198,6 +198,27 @@ namespace x2net
         }
 
         /// <summary>
+        /// Inserts the specified hub case to the hub, at the specified order.
+        /// </summary>
+        public Hub Insert(int index, Case c)
+        {
+            if (Object.ReferenceEquals(c, null))
+            {
+                throw new ArgumentNullException();
+            }
+            using (new WriteLock(rwlock))
+            {
+                if (!cases.Contains(c))
+                {
+                    if (index < 0) { index = 0; }
+                    if (index > cases.Count) { index = cases.Count; }
+                    cases.Insert(index, c);
+                }
+            }
+            return this;
+        }
+
+        /// <summary>
         /// Posts up the specified event to the hub.
         /// </summary>
         public static void Post(Event e)
