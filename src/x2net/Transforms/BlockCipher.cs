@@ -15,14 +15,9 @@ namespace x2net
     /// A simple example of BufferTransform that performs block encryption and
     /// decryption based on the keys exchanged by an asymmetric algorithm.
     /// </summary>
-    /// <remarks>
-    /// Illustration purpose only. Do NOT use this as is in production.
-    /// </remarks>
     public sealed class BlockCipher : IBufferTransform
     {
-        private const int blockSize = 128;
-        private const int keySize = 128;
-        private const int rsaKeySize = 512;
+        private Settings settings;
 
         private SymmetricAlgorithm encryptionAlgorithm;
         private SymmetricAlgorithm decryptionAlgorithm;
@@ -33,29 +28,65 @@ namespace x2net
         private byte[] encryptionIV;
         private byte[] decryptionIV;
 
-        private int BlockSizeInBytes { get { return (blockSize >> 3); } }
-        private int KeySizeInBytes { get { return (keySize >> 3); } }
+        private int BlockSizeInBytes { get { return (settings.BlockSize >> 3); } }
+        private int KeySizeInBytes { get { return (settings.KeySize >> 3); } }
 
-        public int HandshakeBlockLength { get { return (rsaKeySize >> 3); } }
+        public int HandshakeBlockLength { get { return (settings.RsaKeySize >> 3); } }
 
         public BlockCipher()
         {
+            settings = new Settings {
+                BlockSize = 128,
+                KeySize = 128,
+                RsaKeySize = 512,
+
+                Padding = PaddingMode.PKCS7,
+
+                // In a real-world client/server production, each peer should use a
+                // different RSA key pair.
+                RsaMyPrivateKey = @"
+<RSAKeyValue><Modulus>tCNTvJ3bN6uLsqiUMeDGaaUSXyS9bs0m8q2+tmh7QfMwAP9G8CEjFaxyjb
+391QeCDsX+lRNf4wsuTJvnbk8rGw==</Modulus><Exponent>AQAB</Exponent><P>8GQnZQd9C4vc
+PnezAYD7eTRf01Y52f3/mdhlEi3+1hU=</P><Q>v9Wg0aXwf1TBjnsubTmY9b8ZTnAw2CApHPpUe068+
+G8=</Q><DP>Ijj/6sAgKy6kEjiUQViNdHniUoHqBoDEjLBj4yytJOk=</DP><DQ>Q5lOAFKPOu9s/X5e
+z9J6Gi7rBf7211IN6s4zsvf+EzU=</DQ><InverseQ>UfiNSsb4iYaAhgbNp3pTFnvwn1uf1sKQoBN7m
+Mv0LpA=</InverseQ><D>MzlIen449B+n3enqGjTctvXlv4BnDbbwuFmHvb8ALcRKnY+e5BjF03CSzvK
+hDthiOoUk1O9KWo47g0FGaleJIQ==</D></RSAKeyValue>
+",
+                RsaPeerPublicKey = @"
+<RSAKeyValue><Modulus>tCNTvJ3bN6uLsqiUMeDGaaUSXyS9bs0m8q2+tmh7QfMwAP9G8CEjFaxyjb
+391QeCDsX+lRNf4wsuTJvnbk8rGw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+"
+            };
+
+            Initialize();
+        }
+
+        public BlockCipher(Settings settings)
+        {
+            this.settings = settings;
+
+            Initialize();
+        }
+
+        private void Initialize()
+        {
             encryptionAlgorithm = Aes.Create();
-            encryptionAlgorithm.BlockSize = blockSize;
-            encryptionAlgorithm.KeySize = keySize;
-            encryptionAlgorithm.Mode = CipherMode.CBC;
-            encryptionAlgorithm.Padding = PaddingMode.PKCS7;
+            encryptionAlgorithm.BlockSize = settings.BlockSize;
+            encryptionAlgorithm.KeySize = settings.KeySize;
+            encryptionAlgorithm.Mode = settings.Mode;
+            encryptionAlgorithm.Padding = settings.Padding;
 
             decryptionAlgorithm = Aes.Create();
-            decryptionAlgorithm.BlockSize = blockSize;
-            decryptionAlgorithm.KeySize = keySize;
-            decryptionAlgorithm.Mode = CipherMode.CBC;
-            decryptionAlgorithm.Padding = PaddingMode.PKCS7;
+            decryptionAlgorithm.BlockSize = settings.BlockSize;
+            decryptionAlgorithm.KeySize = settings.KeySize;
+            decryptionAlgorithm.Mode = settings.Mode;
+            decryptionAlgorithm.Padding = settings.Padding;
         }
 
         public object Clone()
         {
-            return new BlockCipher();
+            return new BlockCipher(settings);
         }
 
         public void Dispose()
@@ -73,9 +104,9 @@ namespace x2net
             encryptionKey = challenge.SubArray(0, KeySizeInBytes);
             encryptionIV = challenge.SubArray(KeySizeInBytes, BlockSizeInBytes);
 
-            using (var rsa = new RSACryptoServiceProvider(rsaKeySize))
+            using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
             {
-                ImportRsaParameters(rsa, rsaPeerPublicKey);
+                ImportRsaParameters(rsa, settings.RsaPeerPublicKey);
                 return rsa.Encrypt(challenge, false);
             }
         }
@@ -83,9 +114,9 @@ namespace x2net
         public byte[] Handshake(byte[] challenge)
         {
             byte[] decrypted;
-            using (var rsa = new RSACryptoServiceProvider(rsaKeySize))
+            using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
             {
-                ImportRsaParameters(rsa, rsaMyPrivateKey);
+                ImportRsaParameters(rsa, settings.RsaMyPrivateKey);
                 decrypted = rsa.Decrypt(challenge, false);
 
                 decryptionKey = decrypted.SubArray(0, KeySizeInBytes);
@@ -96,16 +127,16 @@ namespace x2net
                 //return rsa.SignData(decrypted, new SHA1CryptoServiceProvider());
             }
             // But if not, replay the data decrypted with our private key.
-            using (var rsa = new RSACryptoServiceProvider(rsaKeySize))
+            using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
             {
-                ImportRsaParameters(rsa, rsaPeerPublicKey);
+                ImportRsaParameters(rsa, settings.RsaPeerPublicKey);
                 return rsa.Encrypt(decrypted, false);
             }
         }
 
         public bool FinalizeHandshake(byte[] response)
         {
-            using (var rsa = new RSACryptoServiceProvider(rsaKeySize))
+            using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
             {
                 byte[] expected = encryptionKey.Concat(encryptionIV);
 
@@ -115,7 +146,7 @@ namespace x2net
                 //return rsa.VerifyData(expected, new SHA1CryptoServiceProvider(), response);
 
                 // But if not, verify the replayed data.
-                ImportRsaParameters(rsa, rsaMyPrivateKey);
+                ImportRsaParameters(rsa, settings.RsaMyPrivateKey);
                 byte[] actual = rsa.Decrypt(response, false);
                 return actual.EqualsExtended(expected);
             }
@@ -289,20 +320,22 @@ namespace x2net
 #endif
         }
 
-        // In a real-world client/server production, each peer should use a
-        // different RSA key pair.
-        private const string rsaMyPrivateKey = @"
-<RSAKeyValue><Modulus>tCNTvJ3bN6uLsqiUMeDGaaUSXyS9bs0m8q2+tmh7QfMwAP9G8CEjFaxyjb
-391QeCDsX+lRNf4wsuTJvnbk8rGw==</Modulus><Exponent>AQAB</Exponent><P>8GQnZQd9C4vc
-PnezAYD7eTRf01Y52f3/mdhlEi3+1hU=</P><Q>v9Wg0aXwf1TBjnsubTmY9b8ZTnAw2CApHPpUe068+
-G8=</Q><DP>Ijj/6sAgKy6kEjiUQViNdHniUoHqBoDEjLBj4yytJOk=</DP><DQ>Q5lOAFKPOu9s/X5e
-z9J6Gi7rBf7211IN6s4zsvf+EzU=</DQ><InverseQ>UfiNSsb4iYaAhgbNp3pTFnvwn1uf1sKQoBN7m
-Mv0LpA=</InverseQ><D>MzlIen449B+n3enqGjTctvXlv4BnDbbwuFmHvb8ALcRKnY+e5BjF03CSzvK
-hDthiOoUk1O9KWo47g0FGaleJIQ==</D></RSAKeyValue>
-";
-        private const string rsaPeerPublicKey = @"
-<RSAKeyValue><Modulus>tCNTvJ3bN6uLsqiUMeDGaaUSXyS9bs0m8q2+tmh7QfMwAP9G8CEjFaxyjb
-391QeCDsX+lRNf4wsuTJvnbk8rGw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
-";
+        public class Settings
+        {
+            public int BlockSize { get; set; }
+            public int KeySize { get; set; }
+            public int RsaKeySize { get; set; }
+
+            public CipherMode Mode { get; private set; }
+            public PaddingMode Padding { get; set; }
+
+            public string RsaMyPrivateKey { get; set; }
+            public string RsaPeerPublicKey { get; set; }
+
+            public Settings()
+            {
+                Mode = CipherMode.CBC;
+            }
+        }
     }
 }
