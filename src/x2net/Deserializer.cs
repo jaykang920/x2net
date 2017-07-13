@@ -14,7 +14,6 @@ namespace x2net
     public sealed class Deserializer
     {
         private Buffer buffer;
-        private int marker;
 
         /// <summary>
         /// Initializes a new Deserializer object that works on the specified
@@ -23,7 +22,6 @@ namespace x2net
         public Deserializer(Buffer buffer)
         {
             this.buffer = buffer;
-            marker = -1;
         }
 
         /// <summary>
@@ -435,8 +433,7 @@ namespace x2net
             ReadNonnegative(out length);
             if (length == 0) { return; }
 
-            int markerSaved = marker;
-            marker = buffer.Position + length;
+            int marker = buffer.Position + length;
 
             value = new T();
             value.Deserialize(this);
@@ -445,7 +442,6 @@ namespace x2net
             {
                 buffer.Position = marker;
             }
-            marker = markerSaved;
         }
 
         // Read helper methods
