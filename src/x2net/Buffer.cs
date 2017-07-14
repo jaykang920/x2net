@@ -369,22 +369,14 @@ namespace x2net
 
             if (count > 0)
             {
-                int roomFactor = 1 << level;
                 List<Segment> blocksToRemove = blocks.GetRange(index, count);
                 blocks.RemoveRange(index, count);
                 for (int i = 0; i < blocksToRemove.Count; ++i)
                 {
-                    Segment block = blocksToRemove[i];
-                    if (i < roomFactor)
-                    {
-                        blocks.Add(block);
-                    }
-                    else
-                    {
-                        SegmentPool.Release(blocksToRemove[i]);
-                    }
+                    SegmentPool.Release(blocksToRemove[i]);
                 }
             }
+
             Position = 0;
         }
 
