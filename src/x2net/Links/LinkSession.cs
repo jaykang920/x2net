@@ -134,7 +134,7 @@ namespace x2net
             set { connected = value; }
         }
 
-        internal virtual int InternalHandle { get { return handle; } }
+        protected internal virtual int InternalHandle { get { return handle; } }
 
         internal object SyncRoot { get { return syncRoot; } }
 
@@ -187,7 +187,7 @@ namespace x2net
 
         protected abstract void OnClose();
 
-        protected internal void CloseInternal()
+        public void CloseInternal()
         {
             Dispose();
         }
@@ -293,6 +293,56 @@ namespace x2net
                 }
 
                 eventsToSend.Add(e);
+
+                if (txFlag || disposed)
+                {
+                    //Trace.Debug("{0} {1} buffered {2}", link.Name, InternalHandle, e);
+                    return;
+                }
+
+                txFlag = true;
+            }
+
+            BeginSend();
+        }
+
+        /// <summary>
+        /// Sends out the specified events through this link session.
+        /// </summary>
+        public void Send(Event[] events)
+        {
+            if (disposed && !link.SessionRecoveryEnabled)
+            {
+                for (int i = 0; i < events.Length; ++i)
+                {
+                    Trace.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, events[i]);
+                }
+                return;
+            }
+
+            lock (syncRoot)
+            {
+                if (link.SessionRecoveryEnabled && !disposed &&
+                    !connected)  // not builtin events
+                {
+                    for (int i = 0; i < events.Length; ++i)
+                    {
+                        Event e = events[i];
+                        if (e.GetTypeId() <= 0) { continue; }
+
+                        Trace.Info("{0} {1} pre-establishment buffered {2}",
+                            link.Name, InternalHandle, e);
+
+                        preConnectionQueue.Add(e);
+                    }
+
+                    return;
+                }
+
+                for (int i = 0; i < events.Length; ++i)
+                {
+                    eventsToSend.Add(events[i]);
+                }
 
                 if (txFlag || disposed)
                 {
@@ -574,15 +624,18 @@ namespace x2net
         {
             Diag.AddBytesReceived(bytesTransferred);
 
-            Trace.Log("{0} {1} received {2} byte(s)",
-                link.Name, InternalHandle, bytesTransferred);
-
             if (disposed)
             {
                 return;
             }
 
             rxBuffer.Stretch(bytesTransferred);
+
+            if (Config.TraceLevel <= TraceLevel.Trace)
+            {
+                Trace.Log("{0} {1} recv {2}: {3}", link.Name, InternalHandle,
+                    bytesTransferred, rxBuffer.ToHexString());
+            }
 
             if (rxBeginning)
             {
@@ -658,15 +711,9 @@ namespace x2net
                 }
             next:
                 rxBuffer.Trim();
-                if (rxBuffer.IsEmpty)
+                if (rxBuffer.IsEmpty || !ParseHeader())
                 {
                     break;
-                }
-
-                if (!ParseHeader())
-                {
-                    BeginReceive(true);
-                    return;
                 }
 
                 if (rxBuffer.Length < lengthToReceive)
@@ -704,6 +751,21 @@ namespace x2net
         protected void OnSendInternal(int bytesTransferred)
         {
             Diag.AddBytesSent(bytesTransferred);
+
+            if (Config.TraceLevel <= TraceLevel.Trace)
+            {
+                for (int i = 0; i < buffersSending.Count; ++i)
+                {
+                    SendBuffer sendBuffer = buffersSending[i];
+
+                    Trace.Log("{0} {1} sent head {2}: {3}", link.Name,
+                        InternalHandle, sendBuffer.HeaderLength,
+                        BitConverter.ToString(sendBuffer.HeaderBytes, 0, sendBuffer.HeaderLength));
+                    Trace.Log("{0} {1} sent body {2}: {3}", link.Name,
+                        InternalHandle, sendBuffer.Buffer.Length,
+                        sendBuffer.Buffer.ToHexString());
+                }
+            }
 
             Trace.Log("{0} {1} sent {2}/{3} byte(s)",
                 link.Name, InternalHandle, bytesTransferred, lengthToSend);

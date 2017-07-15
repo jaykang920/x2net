@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace x2net
 {
@@ -316,6 +317,45 @@ namespace x2net
             byte[] array = new byte[Length];
             CopyTo(array, front, (int)Length);
             return array;
+        }
+
+        public string ToHexString()
+        {
+            int beginIndex = front >> sizeExponent;
+            int beginOffset = front & remainderMask;
+            int endIndex = back >> sizeExponent;
+            int endOffset = back & remainderMask;
+            if (beginIndex == endIndex)
+            {
+                return BitConverter.ToString(
+                    blocks[beginIndex].Array,
+                    blocks[beginIndex].Offset + beginOffset,
+                    endOffset - beginOffset);
+            }
+
+            var stringBuilder = new StringBuilder();
+
+            stringBuilder.Append(BitConverter.ToString(
+                blocks[beginIndex].Array,
+                blocks[beginIndex].Offset + beginOffset,
+                BlockSize - beginOffset));
+            for (int i = beginIndex + 1; i < endIndex; ++i)
+            {
+                stringBuilder.Append(' ');
+                stringBuilder.Append(BitConverter.ToString(
+                    blocks[i].Array,
+                    blocks[i].Offset,
+                    BlockSize));
+            }
+            if (endOffset != 0)
+            {
+                stringBuilder.Append(' ');
+                stringBuilder.Append(BitConverter.ToString(
+                    blocks[endIndex].Array,
+                    blocks[endIndex].Offset,
+                    endOffset));
+            }
+            return stringBuilder.ToString();
         }
 
         /// <summary>

@@ -58,7 +58,7 @@ namespace x2net
             get { return hasSent; }
         }
 
-        internal override int InternalHandle
+        protected internal override int InternalHandle
         {
             get
             {

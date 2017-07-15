@@ -64,7 +64,7 @@ namespace x2net
         /// <summary>
         /// Called internally when a new session creation attempt is completed.
         /// </summary>
-        internal void OnLinkSessionConnectedInternal(bool result, object context)
+        protected internal void OnLinkSessionConnectedInternal(bool result, object context)
         {
             Trace.Info("{0} connected {1} {2}", Name, result, context);
 
