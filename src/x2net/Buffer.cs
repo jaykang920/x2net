@@ -275,8 +275,8 @@ namespace x2net
 
         public void Reset()
         {
+            back = front = 0;
             Position = 0;
-            back = front;
         }
 
         /// <summary>

@@ -59,7 +59,7 @@ namespace x2net
         public void Reset()
         {
             headerLength = 0;
-            buffer.Trim();
+            buffer.Reset();
         }
     }
 
