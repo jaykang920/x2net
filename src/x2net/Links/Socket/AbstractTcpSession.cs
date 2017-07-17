@@ -258,7 +258,7 @@ namespace x2net
                     description = e.GetTypeTag().RuntimeType.Name;
                 }
 
-                Trace.Emit(traceLevel, "{0} {1} sent event {2}",
+                Trace.Emit(traceLevel, "{0} {1} sending event {2}",
                     link.Name, InternalHandle, description);
             }
 
