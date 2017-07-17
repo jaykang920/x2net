@@ -590,8 +590,14 @@ namespace x2net
 
                 var sendBuffer = buffersSending[i];
                 sendBuffer.Reset();
+
+                int typeId = e.GetTypeId();
+
+                Trace.Log("{0} {1} buffering to send #{2}/{3} : type {4}",
+                    link.Name, InternalHandle, i + 1, count, typeId);
+
                 Serializer serializer = new Serializer(sendBuffer.Buffer);
-                serializer.Write(e.GetTypeId());
+                serializer.Write(typeId);
                 e.Serialize(serializer);
 
                 bool transformed = false;
