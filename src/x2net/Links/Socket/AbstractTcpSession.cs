@@ -184,7 +184,7 @@ namespace x2net
 
             sendBuffer.HeaderLength = Serializer.WriteVariable(sendBuffer.HeaderBytes, header);
 
-            Trace.Log("{0} {1} built {2}-byte header {3} | {4|",
+            Trace.Log("{0} {1} built {2}-byte header {3} | {4}",
                 link.Name, InternalHandle, sendBuffer.HeaderLength,
                 sendBuffer.Buffer.Length, transformed);
         }
