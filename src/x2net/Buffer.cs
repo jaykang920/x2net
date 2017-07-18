@@ -380,9 +380,11 @@ namespace x2net
         public void Trim()
         {
             int index, count;
+
+            // position <- marker
             if (marker >= 0)
             {
-                if (position < marker)
+                if (position != marker)
                 {
                     Position = (marker - front);
                 }
@@ -391,20 +393,22 @@ namespace x2net
 
             if (position == back)
             {
+                // all the bytes consumed; leave only the leading block
                 index = 1;
                 count = blocks.Count - 1;
                 front = back = 0;
             }
             else
             {
+                // clip out leading blocks consumed
                 index = 0;
                 count = position >> sizeExponent;
                 if (count >= blocks.Count)
                 {
                     count = blocks.Count - 1;
                 }
-                back -= BlockSize * count;
                 front = position & remainderMask;
+                back -= BlockSize * count;
             }
 
             if (count > 0)
