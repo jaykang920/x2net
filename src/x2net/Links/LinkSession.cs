@@ -539,7 +539,10 @@ namespace x2net
 
         internal void BeginReceive(bool beginning)
         {
-            rxBeginning = beginning;
+            lock (syncRoot)
+            {
+                rxBeginning = beginning;
+            }
 
             ReceiveInternal();
         }
@@ -593,8 +596,8 @@ namespace x2net
 
                 int typeId = e.GetTypeId();
 
-                Trace.Log("{0} {1} buffering to send #{2}/{3} : type {4}",
-                    link.Name, InternalHandle, i + 1, count, typeId);
+                Trace.Log("{0} {1} buffering event type {2} to send (#{3}/{4})",
+                    link.Name, InternalHandle, typeId, i + 1, count);
 
                 Serializer serializer = new Serializer(sendBuffer.Buffer);
                 serializer.Write(typeId);
@@ -615,7 +618,13 @@ namespace x2net
                 OnEventSent(e);
             }
 
-            Interlocked.Add(ref txCounter, count);
+            lock (syncRoot)
+            {
+                Trace.Log("{0} {1} serialized {2} events to send ({3} bytes)",
+                    link.Name, InternalHandle, count, lengthToSend);
+
+                Interlocked.Add(ref txCounter, count);
+            }
 
             SendInternal();
         }
@@ -635,7 +644,10 @@ namespace x2net
                 return;
             }
 
-            rxBuffer.Stretch(bytesTransferred);
+            lock (syncRoot)
+            {
+                rxBuffer.Stretch(bytesTransferred);
+            }
 
             if (Config.TraceLevel <= TraceLevel.Trace)
             {
@@ -758,26 +770,26 @@ namespace x2net
         {
             Diag.AddBytesSent(bytesTransferred);
 
-            if (Config.TraceLevel <= TraceLevel.Trace)
-            {
-                for (int i = 0; i < buffersSending.Count; ++i)
-                {
-                    SendBuffer sendBuffer = buffersSending[i];
-
-                    Trace.Log("{0} {1} sent head {2}: {3}", link.Name,
-                        InternalHandle, sendBuffer.HeaderLength,
-                        BitConverter.ToString(sendBuffer.HeaderBytes, 0, sendBuffer.HeaderLength));
-                    Trace.Log("{0} {1} sent body {2}: {3}", link.Name,
-                        InternalHandle, sendBuffer.Buffer.Length,
-                        sendBuffer.Buffer.ToHexString());
-                }
-            }
-
-            Trace.Log("{0} {1} sent {2}/{3} byte(s)",
-                link.Name, InternalHandle, bytesTransferred, lengthToSend);
-
             lock (syncRoot)
             {
+                if (Config.TraceLevel <= TraceLevel.Trace)
+                {
+                    for (int i = 0; i < buffersSending.Count; ++i)
+                    {
+                        SendBuffer sendBuffer = buffersSending[i];
+
+                        Trace.Log("{0} {1} sent head {2}: {3}", link.Name,
+                            InternalHandle, sendBuffer.HeaderLength,
+                            BitConverter.ToString(sendBuffer.HeaderBytes, 0, sendBuffer.HeaderLength));
+                        Trace.Log("{0} {1} sent body {2}: {3}", link.Name,
+                            InternalHandle, sendBuffer.Buffer.Length,
+                            sendBuffer.Buffer.ToHexString());
+                    }
+                }
+
+                Trace.Log("{0} {1} sent {2}/{3} byte(s)",
+                    link.Name, InternalHandle, bytesTransferred, lengthToSend);
+
                 // Swap send buffers.
                 List<SendBuffer> temp = buffersSending;
                 buffersSending = buffersSent;
