@@ -204,19 +204,29 @@ namespace x2net
                 if (connected)
                 {
                     session.Send(e);
+                    return;
                 }
                 else
                 {
                     using (new WriteLock(rwlock))
                     {
-                        eventQueue.Add(e);
-                        if (connecting)
+                        // double check
+                        if (connected)
                         {
+                            session.Send(e);
                             return;
                         }
                         else
                         {
-                            connecting = true;
+                            eventQueue.Add(e);
+                            if (connecting)
+                            {
+                                return;
+                            }
+                            else
+                            {
+                                connecting = true;
+                            }
                         }
                     }
                 }
