@@ -478,19 +478,21 @@ namespace x2net
             }
         }
 
-        protected override void Setup()
+        protected override void SetupInternal()
         {
+            base.SetupInternal();
+
             Flow.SubscribeTo(Name);
 
             Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
             Bind(new TimeoutEvent { Key = this }, OnTimer);
         }
 
-        protected override void Teardown()
+        protected override void TeardownInternal()
         {
-            Flow.UnsubscribeFrom(Name);
+            base.TeardownInternal();
 
-            base.Teardown();
+            Flow.UnsubscribeFrom(Name);
         }
 
         private void OnHeartbeatEvent(HeartbeatEvent e)

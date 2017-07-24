@@ -229,14 +229,14 @@ namespace x2net
         /// </summary>
         protected override void SetupInternal()
         {
+            base.SetupInternal();
+
             Bind(new LinkSessionConnected { LinkName = Name },
                 OnLinkSessionConnected);
             Bind(new LinkSessionDisconnected { LinkName = Name },
                 OnLinkSessionDisconnected);
             Bind(new LinkSessionRecovered { LinkName = Name },
                 OnLinkSessionRecovered);
-
-            base.SetupInternal();
         }
 
         // LinkSessionConnected event handler

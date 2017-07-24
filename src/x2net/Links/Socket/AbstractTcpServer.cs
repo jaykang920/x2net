@@ -171,8 +171,10 @@ namespace x2net
             }
         }
 
-        protected override void Setup()
+        protected override void SetupInternal()
         {
+            base.SetupInternal();
+
             Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
         }
 
