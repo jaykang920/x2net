@@ -2,6 +2,10 @@ Features:
 
 - Transforms/BlockCipher: added configurable settings
 
+BugFixes:
+
+- AbstractTcpClient: fixed crash on close ConnectAndSend calls
+
 ## 0.9.8 (2017-07-06)
 
 Features:
