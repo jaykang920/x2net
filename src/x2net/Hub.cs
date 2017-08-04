@@ -273,12 +273,16 @@ namespace x2net
         /// </summary>
         public static void Startup()
         {
+            Trace.Info("starting up");
+
             Instance.Setup();
 
             Instance.StartFlows();
 
             TimeFlow.Default.ReserveRepetition(HeartbeatEvent,
                 new TimeSpan(0, 0, Config.HeartbeatInterval));
+
+            Trace.Debug("started");
         }
 
         private void Teardown()
@@ -326,6 +330,8 @@ namespace x2net
         /// </summary>
         public static void Shutdown()
         {
+            Trace.Info("shutting down");
+
             try
             {
                 TimeFlow.Default.CancelRepetition(HeartbeatEvent);
@@ -339,6 +345,8 @@ namespace x2net
             finally
             {
                 Instance.Teardown();  // won't throw
+
+                Trace.Debug("stopped");
             }
         }
 
