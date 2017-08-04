@@ -88,9 +88,15 @@ namespace x2net
             return null;
         }
 
-        public List<Event> TryDispatchAll()
+        public int TryDispatchAll()
         {
-            var result = new List<Event>();
+            return TryDispatchAll(null);
+        }
+
+        public int TryDispatchAll(List<Event> events)
+        {
+            int n = 0;
+            bool shouldCopy = !Object.ReferenceEquals(events, null);
             while (true)
             {
                 Event e;
@@ -98,10 +104,16 @@ namespace x2net
                 {
                     break;
                 }
+
                 Dispatch(e);
-                result.Add(e);
+
+                if (shouldCopy)
+                {
+                    events.Add(e);
+                }
+                ++n;
             }
-            return result;
+            return n;
         }
 
         public bool TryDequeue(out Event e)
