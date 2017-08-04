@@ -768,9 +768,15 @@ namespace x2net
 
         protected void OnSendInternal(int bytesTransferred)
         {
+            Diag.AddBytesSent(bytesTransferred);
+
             lock (syncRoot)
             {
-                Diag.AddBytesSent(bytesTransferred);
+                if (disposed)
+                {
+                    txFlag = false;
+                    return;
+                }
             }
 
             if (Config.TraceLevel <= TraceLevel.Trace)
@@ -801,11 +807,6 @@ namespace x2net
 
                 Interlocked.Add(ref txCompleted, buffersSent.Count);
 
-                if (disposed)
-                {
-                    txFlag = false;
-                    return;
-                }
                 if (eventsToSend.Count == 0)
                 {
                     eventsSending.Clear();

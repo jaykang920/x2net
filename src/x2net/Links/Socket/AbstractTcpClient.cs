@@ -482,7 +482,11 @@ namespace x2net
         {
             base.SetupInternal();
 
-            Flow.SubscribeTo(Name);
+            var holdingFlow = Flow;
+            if (!Object.ReferenceEquals(holdingFlow, null))
+            {
+                holdingFlow.SubscribeTo(Name);
+            }
 
             Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
             Bind(new TimeoutEvent { Key = this }, OnTimer);
@@ -490,9 +494,13 @@ namespace x2net
 
         protected override void TeardownInternal()
         {
-            base.TeardownInternal();
+            var holdingFlow = Flow;
+            if (!Object.ReferenceEquals(holdingFlow, null))
+            {
+                holdingFlow.UnsubscribeFrom(Name);
+            }
 
-            Flow.UnsubscribeFrom(Name);
+            base.TeardownInternal();
         }
 
         private void OnHeartbeatEvent(HeartbeatEvent e)

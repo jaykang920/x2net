@@ -91,9 +91,9 @@ namespace x2net
         /// </summary>
         protected override void TeardownInternal()
         {
-            base.TeardownInternal();
-
             Close();
+
+            base.TeardownInternal();
         }
 
         #region Diagnostics
