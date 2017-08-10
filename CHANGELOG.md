@@ -1,3 +1,10 @@
+## 0.9.10 (2017-08-10)
+
+Bugfixes:
+
+- LinkSession: fixed exception in SendInternal for a disposed session
+- *TcpClient: fixed exception in TeardownInternal
+
 ## 0.9.9 (2017-07-24)
 
 Features:
