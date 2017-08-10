@@ -639,13 +639,12 @@ namespace x2net
         {
             Diag.AddBytesReceived(bytesTransferred);
 
-            if (disposed)
-            {
-                return;
-            }
-
             lock (syncRoot)
             {
+                if (disposed)
+                {
+                    return;
+                }
                 rxBuffer.Stretch(bytesTransferred);
             }
 
