@@ -1,3 +1,9 @@
+## 0.9.11 (2017-08-22)
+
+Features:
+
+- Case: added OnStart/OnStop handlers to be invoked on flow start/stop
+
 ## 0.9.10 (2017-08-10)
 
 Bugfixes:

@@ -16,11 +16,19 @@ namespace x2net
         /// Initializes this case with the specified holding flow.
         /// </summary>
         void Setup(Flow holder);
-
         /// <summary>
         /// Cleans up this case with the specified holding flow.
         /// </summary>
         void Teardown(Flow holder);
+
+        /// <summary>
+        /// Called after the holding flow starts.
+        /// </summary>
+        void Start();
+        /// <summary>
+        /// Called before the holding flow stops.
+        /// </summary>
+        void Stop();
     }
 
     /// <summary>
@@ -59,6 +67,22 @@ namespace x2net
         }
 
         /// <summary>
+        /// <see cref="ICase.Start"/>
+        /// </summary>
+        public void Start()
+        {
+            OnStart();
+        }
+
+        /// <summary>
+        /// <see cref="ICase.Stop"/>
+        /// </summary>
+        public void Stop()
+        {
+            OnStop();
+        }
+
+        /// <summary>
         /// Overridden by subclasses to build a initialization chain.
         /// </summary>
         protected virtual void Setup() { }
@@ -83,6 +107,16 @@ namespace x2net
         {
             Teardown();
         }
+
+        /// <summary>
+        /// Overridden by subclasses to build a flow startup handler chain.
+        /// </summary>
+        protected virtual void OnStart() { }
+
+        /// <summary>
+        /// Overridden by subclasses to build a flow shutdown handler chain.
+        /// </summary>
+        protected virtual void OnStop() { }
     }
 
     public class CaseStack : ICase
@@ -148,6 +182,45 @@ namespace x2net
                 {
                     Trace.Error("{0} {1} Teardown: {2}",
                         holder.Name, snapshot[i].GetType().Name, e);
+                }
+            }
+        }
+
+        /// <summary>
+        /// <see cref="ICase.Start"/>
+        /// </summary>
+        public void Start()
+        {
+            List<ICase> snapshot;
+            lock (cases)
+            {
+                snapshot = new List<ICase>(cases);
+            }
+            for (int i = 0, count = snapshot.Count; i < count; ++i)
+            {
+                snapshot[i].Start();
+            }
+        }
+
+        /// <summary>
+        /// <see cref="ICase.Stop"/>
+        /// </summary>
+        public void Stop()
+        {
+            List<ICase> snapshot;
+            lock (cases)
+            {
+                snapshot = new List<ICase>(cases);
+            }
+            for (int i = snapshot.Count - 1; i >= 0; --i)
+            {
+                try
+                {
+                    snapshot[i].Stop();
+                }
+                catch
+                {
+                    // Silent here
                 }
             }
         }

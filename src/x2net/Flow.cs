@@ -415,11 +415,13 @@ namespace x2net
         private void OnFlowStart(FlowStart e)
         {
             OnStart();
+            caseStack.Start();
         }
 
         // FlowStop event handler
         private void OnFlowStop(FlowStop e)
         {
+            caseStack.Stop();
             OnStop();
         }
     }
