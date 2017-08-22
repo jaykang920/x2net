@@ -298,9 +298,9 @@ namespace x2net
                 {
                     snapshot[i].Teardown();
                 }
-                catch (Exception e)
+                catch
                 {
-                    Trace.Error("{0} teardown: {2}", snapshot[i].GetType().Name, e);
+                    // Silent here
                 }
             }
         }
