@@ -331,22 +331,19 @@ namespace x2net
         public static void Shutdown()
         {
             Trace.Info("shutting down");
-
             try
             {
                 TimeFlow.Default.CancelRepetition(HeartbeatEvent);
-
                 Instance.StopFlows();
             }
             catch (Exception)
             {
-                // nop
+                // no-op
             }
             finally
             {
-                Instance.Teardown();  // won't throw
-
                 Trace.Debug("stopped");
+                Instance.Teardown();  // won't throw
             }
         }
 
