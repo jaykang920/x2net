@@ -81,15 +81,14 @@ namespace x2net
                 }
                 position = adjusted;
                 int blockIndex = position >> sizeExponent;
+                // Prepare for BlockFeed() in GetByte/PutByte.
                 if ((blockIndex != 0) && ((position & remainderMask) == 0))
                 {
                     --blockIndex;
                 }
-                if (blockIndex != currentIndex)
-                {
-                    currentIndex = blockIndex;
-                    current = blocks[currentIndex];
-                }
+                // Force to update the current block.
+                currentIndex = blockIndex;
+                current = blocks[currentIndex];
             }
         }
 
