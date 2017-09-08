@@ -1,3 +1,14 @@
+## 0.9.12 (2017-09-08)
+
+Features:
+
+- Links/Socket: added AddressUtil class to support network address-related tasks
+
+BugFixes:
+
+- Buffer: fixed the bug that the current block is not updated properly after
+trimming exactly on buffer block boundaries
+
 ## 0.9.11 (2017-08-22)
 
 Features:
