@@ -62,7 +62,7 @@ namespace x2net.tests
             var blen = fp1.GetLength();
 
             var lengthInBytes = (((fp1.Length - 1) >> 3) + 1);
-            var expectedBytesLen = lengthInBytes  + Serializer.GetLengthVariableNonnegative(99);
+            var expectedBytesLen = lengthInBytes  + Serializer.GetLengthNonnegative(99);
 
             Assert.Equal(expectedBytesLen, blen);
         }

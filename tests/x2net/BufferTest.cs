@@ -38,7 +38,7 @@ namespace x2net.tests
         {
             var buf = new x2net.Buffer();
 
-            buf.EnsureCapacityToWrite(buf.BlockSize);  // numBlocks + 1
+            buf.EnsureCapacity(buf.BlockSize);  // numBlocks + 1
 
             buf.Position = 24;
 
@@ -56,7 +56,7 @@ namespace x2net.tests
             Assert.Equal(0, buf.Length);
             Assert.Equal(0, buf.Position);
 
-            buf.EnsureCapacityToWrite(buf.BlockSize);
+            buf.EnsureCapacity(buf.BlockSize);
 
             buf.MarkToRead(1024);
             buf.Position = 24;
