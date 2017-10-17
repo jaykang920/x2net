@@ -18,7 +18,7 @@ namespace x2net
         /// </summary>
         public void Write(bool value)
         {
-            buffer.EnsureCapacityToWrite(1);
+            buffer.EnsureCapacity(1);
             buffer.PutByte((byte)(value ? 1 : 0));
         }
 
@@ -27,7 +27,7 @@ namespace x2net
         /// </summary>
         public void Write(byte value)
         {
-            buffer.EnsureCapacityToWrite(1);
+            buffer.EnsureCapacity(1);
             buffer.PutByte(value);
         }
 
@@ -36,7 +36,7 @@ namespace x2net
         /// </summary>
         public void Write(sbyte value)
         {
-            buffer.EnsureCapacityToWrite(1);
+            buffer.EnsureCapacity(1);
             buffer.PutByte((byte)value);
         }
 
@@ -45,7 +45,7 @@ namespace x2net
         /// </summary>
         public void Write(short value)
         {
-            buffer.EnsureCapacityToWrite(2);
+            buffer.EnsureCapacity(2);
             buffer.PutByte((byte)(value >> 8));
             buffer.PutByte((byte)value);
         }
@@ -57,6 +57,15 @@ namespace x2net
         {
             // Zigzag encoding
             WriteVariable((uint)((value << 1) ^ (value >> 31)));
+        }
+
+        /// <summary>
+        /// Encodes a 32-bit non-negative integer into the underlying buffer.
+        /// </summary>
+        public void WriteNonnegative(int value)
+        {
+            if (value < 0) { throw new ArgumentOutOfRangeException(); }
+            WriteVariable((uint)value);
         }
 
         /// <summary>
@@ -93,12 +102,12 @@ namespace x2net
         {
             // UTF-8 encoding
             int length = GetLengthUTF8(value);
-            WriteVariableNonnegative(length);
+            WriteNonnegative(length);
             if (length == 0)
             {
                 return;
             }
-            buffer.EnsureCapacityToWrite(length);
+            buffer.EnsureCapacity(length);
             for (int i = 0, count = value.Length; i < count; ++i)
             {
                 var c = value[i];
@@ -139,7 +148,7 @@ namespace x2net
         public void Write(byte[] value)
         {
             int length = Object.ReferenceEquals(value, null) ? 0 : value.Length;
-            WriteVariableNonnegative(length);
+            WriteNonnegative(length);
             buffer.Write(value, 0, length);
         }
 
@@ -149,7 +158,7 @@ namespace x2net
         public void Write(List<bool> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -162,7 +171,7 @@ namespace x2net
         public void Write(List<byte> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -175,7 +184,7 @@ namespace x2net
         public void Write(List<sbyte> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -188,7 +197,7 @@ namespace x2net
         public void Write(List<short> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -201,7 +210,7 @@ namespace x2net
         public void Write(List<int> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -214,7 +223,7 @@ namespace x2net
         public void Write(List<long> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -228,7 +237,7 @@ namespace x2net
         public void Write(List<float> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -242,7 +251,7 @@ namespace x2net
         public void Write(List<double> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -255,7 +264,7 @@ namespace x2net
         public void Write(List<string> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -268,7 +277,7 @@ namespace x2net
         public void Write(List<DateTime> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -281,7 +290,7 @@ namespace x2net
         public void Write(List<List<int>> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -295,7 +304,7 @@ namespace x2net
         public void Write<T>(List<T> value) where T : Cell
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            WriteVariableNonnegative(count);
+            WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 Write(value[i]);
@@ -317,7 +326,7 @@ namespace x2net
             bool flag = true;
             int length = isNull ? 0 :
                 (partial ? value.GetLength(type, ref flag) : value.GetLength());
-            WriteVariableNonnegative(length);
+            WriteNonnegative(length);
             if (!isNull)
             {
                 if (partial)
@@ -340,7 +349,7 @@ namespace x2net
         /// </summary>
         private void WriteFixed(int value)
         {
-            buffer.EnsureCapacityToWrite(4);
+            buffer.EnsureCapacity(4);
             buffer.PutByte((byte)(value >> 24));
             buffer.PutByte((byte)(value >> 16));
             buffer.PutByte((byte)(value >> 8));
@@ -353,7 +362,7 @@ namespace x2net
         /// </summary>
         private void WriteFixed(long value)
         {
-            buffer.EnsureCapacityToWrite(8);
+            buffer.EnsureCapacity(8);
             buffer.PutByte((byte)(value >> 56));
             buffer.PutByte((byte)(value >> 48));
             buffer.PutByte((byte)(value >> 40));
@@ -372,7 +381,7 @@ namespace x2net
         {
             do
             {
-                buffer.EnsureCapacityToWrite(1);
+                buffer.EnsureCapacity(1);
                 byte b = (byte)(value & 0x7f);
                 value >>= 7;
                 if (value != 0)
@@ -407,7 +416,7 @@ namespace x2net
         {
             do
             {
-                buffer.EnsureCapacityToWrite(1);
+                buffer.EnsureCapacity(1);
                 byte b = (byte)(value & 0x7f);
                 value >>= 7;
                 if (value != 0)
@@ -416,15 +425,6 @@ namespace x2net
                 }
                 buffer.PutByte(b);
             } while (value != 0);
-        }
-
-        /// <summary>
-        /// Encodes a 32-bit non-negative integer into the underlying buffer.
-        /// </summary>
-        public void WriteVariableNonnegative(int value)
-        {
-            if (value < 0) { throw new ArgumentOutOfRangeException(); }
-            WriteVariable((uint)value);
         }
     }
 }

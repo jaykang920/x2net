@@ -100,10 +100,10 @@ namespace x2net
         public int ReadNonnegative(out int value)
         {
             uint unsigned;
-            int result = ReadVariable(out unsigned);
+            int bytes = ReadVariable(out unsigned);
             if (unsigned > Int32.MaxValue) { throw new OverflowException(); }
             value = (int)unsigned;
-            return result;
+            return bytes;
         }
 
         /// <summary>

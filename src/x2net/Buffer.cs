@@ -148,7 +148,7 @@ namespace x2net
 
         public void CopyFrom(byte[] buffer, int offset, int length)
         {
-            EnsureCapacityToWrite(length);
+            EnsureCapacity(length);
             int blockIndex = position >> sizeExponent;
             int dstOffset = position & remainderMask;
             int bytesToCopy, bytesCopied = 0;
@@ -449,7 +449,7 @@ namespace x2net
             }
         }
 
-        public void EnsureCapacityToWrite(int numBytes)
+        public void EnsureCapacity(int numBytes)
         {
             int required = position + numBytes;
             while (required >= Capacity)

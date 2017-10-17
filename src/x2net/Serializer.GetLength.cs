@@ -47,6 +47,16 @@ namespace x2net
         }
 
         /// <summary>
+        /// Gets the number of bytes required to encode the specified 32-bit
+        /// non-negative integer.
+        /// </summary>
+        public static int GetLengthNonnegative(int value)
+        {
+            if (value < 0) { throw new ArgumentOutOfRangeException(); }
+            return GetLengthVariable((uint)value);
+        }
+
+        /// <summary>
         /// Gets the number of bytes required to encode the specified 64-bit
         /// signed integer.
         /// </summary>
@@ -74,7 +84,7 @@ namespace x2net
         public static int GetLength(string value)
         {
             int length = GetLengthUTF8(value);
-            return GetLengthVariableNonnegative(length) + length;
+            return GetLengthNonnegative(length) + length;
         }
 
         /// <summary>
@@ -113,7 +123,7 @@ namespace x2net
         public static int GetLength(byte[] value)
         {
             int length = Object.ReferenceEquals(value, null) ? 0 : value.Length;
-            return GetLengthVariableNonnegative(length) + length;
+            return GetLengthNonnegative(length) + length;
         }
 
         /// <summary>
@@ -123,7 +133,7 @@ namespace x2net
         public static int GetLength(List<bool> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -138,7 +148,7 @@ namespace x2net
         public static int GetLength(List<byte> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -153,7 +163,7 @@ namespace x2net
         public static int GetLength(List<sbyte> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -168,7 +178,7 @@ namespace x2net
         public static int GetLength(List<short> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -183,7 +193,7 @@ namespace x2net
         public static int GetLength(List<int> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -198,7 +208,7 @@ namespace x2net
         public static int GetLength(List<long> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -213,7 +223,7 @@ namespace x2net
         public static int GetLength(List<float> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -228,7 +238,7 @@ namespace x2net
         public static int GetLength(List<double> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -243,7 +253,7 @@ namespace x2net
         public static int GetLength(List<string> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -258,7 +268,7 @@ namespace x2net
         public static int GetLength(List<DateTime> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -273,7 +283,7 @@ namespace x2net
         public static int GetLength(List<List<int>> value)
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -288,7 +298,7 @@ namespace x2net
         public static int GetLength<T>(List<T> value) where T : Cell
         {
             int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
-            int length = GetLengthVariableNonnegative(count);
+            int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
                 length += GetLength(value[i]);
@@ -312,7 +322,7 @@ namespace x2net
             bool flag = true;
             int length = isNull ? 0 :
                 (partial ? value.GetLength(type, ref flag) : value.GetLength());
-            return GetLengthVariableNonnegative(length) + length;
+            return GetLengthNonnegative(length) + length;
         }
 
         // GetLength helper methods
@@ -346,16 +356,6 @@ namespace x2net
             if ((value & 0xff00000000000000L) == 0) { return 8; }
             if ((value & 0x8000000000000000L) == 0) { return 9; }
             return 10;
-        }
-
-        /// <summary>
-        /// Gets the number of bytes required to encode the specified 32-bit
-        /// non-negative integer.
-        /// </summary>
-        public static int GetLengthVariableNonnegative(int value)
-        {
-            if (value < 0) { throw new ArgumentOutOfRangeException(); }
-            return GetLengthVariable((uint)value);
         }
     }
 }

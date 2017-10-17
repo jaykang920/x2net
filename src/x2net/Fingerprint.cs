@@ -257,13 +257,13 @@ namespace x2net
 
         public int GetLength()
         {
-            return Serializer.GetLengthVariableNonnegative(length)
+            return Serializer.GetLengthNonnegative(length)
                 + LengthInBytes;
         }
 
         public void Serialize(Serializer serializer)
         {
-            serializer.WriteVariableNonnegative(length);
+            serializer.WriteNonnegative(length);
             int lengthInBytes = LengthInBytes;
 
             int count = 0;

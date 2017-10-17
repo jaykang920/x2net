@@ -4,7 +4,7 @@
 namespace x2net.xpiler
 {
     /// <summary>
-    /// DefinitionUnit file handler interface.
+    /// Definition unit file handler interface.
     /// </summary>
     interface Handler
     {
