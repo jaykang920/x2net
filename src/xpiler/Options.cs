@@ -65,19 +65,19 @@ namespace x2net.xpiler
             return getopt.OptInd;
         }
 
-        static void PrintUsage()
+        private static void PrintUsage()
         {
             Console.WriteLine("usage: x2net.xpiler (options) [path...]");
             Console.WriteLine(" options:");
-            Console.WriteLine("  -f (--force)     : force all to be re-xpiled");
-            Console.WriteLine("  -h (--help)      : print this message and quit");
-            Console.WriteLine("  -o (--out-dir)   : output root directory");
-            Console.WriteLine("  -r (--recursive) : process subdirectories recursively");
-            Console.WriteLine("  -s (--spec) spec : specifies the target formatter");
+            Console.WriteLine("  -f (--force)       : force all to be re-xpiled");
+            Console.WriteLine("  -h (--help)        : print this message and quit");
+            Console.WriteLine("  -o (--out-dir) dir : specifies the output root directory");
+            Console.WriteLine("  -r (--recursive)   : process subdirectories recursively");
+            Console.WriteLine("  -s (--spec) spec   : specifies the target formatter");
 
             foreach (var pair in Program.Formatters)
             {
-                Console.Write("{0,18} : {1}", pair.Key, pair.Value.Description);
+                Console.Write("{0,20} : {1}", pair.Key, pair.Value.Description);
                 if (pair.Key == DefaultSpec)
                 {
                     Console.Write(" (default)");
