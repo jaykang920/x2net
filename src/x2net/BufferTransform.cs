@@ -101,6 +101,10 @@ namespace x2net
 
         public bool FinalizeHandshake(byte[] response)
         {
+            if (response == null) 
+            { 
+                return false; 
+            }
             int offset = 0;
             for (int i = 0, count = transforms.Count; i < count; ++i)
             {

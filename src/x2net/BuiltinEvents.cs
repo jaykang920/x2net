@@ -17,6 +17,7 @@ namespace x2net
         public const int FlowStart = -2;
         public const int FlowStop = -3;
         public const int TimeoutEvent = -4;
+        public const int PeriodicEvent = -5;
 
         private static ConstsInfo<int> info;
 
@@ -27,6 +28,7 @@ namespace x2net
             info.Add("FlowStart", -2);
             info.Add("FlowStop", -3);
             info.Add("TimeoutEvent", -4);
+            info.Add("PeriodicEvent", -5);
         }
 
         public static bool ContainsName(string name)
@@ -449,6 +451,152 @@ namespace x2net
                 return false;
             }
             TimeoutEvent o = (TimeoutEvent)other;
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                if (key_ != o.key_)
+                {
+                    return false;
+                }
+            }
+            if (touched[1])
+            {
+                if (intParam_ != o.intParam_)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        protected override void Describe(StringBuilder stringBuilder)
+        {
+            base.Describe(stringBuilder);
+            stringBuilder.AppendFormat(" Key={0}", key_);
+            stringBuilder.AppendFormat(" IntParam={0}", intParam_);
+        }
+    }
+
+    /// <summary>
+    /// A local periodically recurring event.
+    /// </summary>
+    public class PeriodicEvent : Event
+    {
+        protected static new readonly Tag tag;
+
+        public static new int TypeId { get { return tag.TypeId; } }
+
+        private object key_;
+        private int intParam_;
+
+        /// <summary>
+        /// Event key object.
+        /// </summary>
+        public object Key
+        {
+            get { return key_; }
+            set
+            {
+                fingerprint.Touch(tag.Offset + 0);
+                key_ = value;
+            }
+        }
+
+        /// <summary>
+        /// Optional integer parameter
+        /// </summary>
+        public int IntParam
+        {
+            get { return intParam_; }
+            set
+            {
+                fingerprint.Touch(tag.Offset + 1);
+                intParam_ = value;
+            }
+        }
+
+        static PeriodicEvent()
+        {
+            tag = new Tag(Event.tag, typeof(PeriodicEvent), 2,
+                    (int)BuiltinEventType.PeriodicEvent);
+        }
+
+        public new static PeriodicEvent New()
+        {
+            return new PeriodicEvent();
+        }
+
+        public PeriodicEvent()
+            : base(tag.NumProps)
+        {
+        }
+
+        protected PeriodicEvent(int length)
+            : base(length + tag.NumProps)
+        {
+        }
+
+        protected override bool EqualsTo(Cell other)
+        {
+            if (!base.EqualsTo(other))
+            {
+                return false;
+            }
+            PeriodicEvent o = (PeriodicEvent)other;
+            if (key_ != o.key_)
+            {
+                return false;
+            }
+            if (intParam_ != o.intParam_)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode(Fingerprint fingerprint)
+        {
+            var hash = new Hash(base.GetHashCode(fingerprint));
+            if (fingerprint.Length <= tag.Offset)
+            {
+                return hash.Code;
+            }
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                hash.Update(tag.Offset + 0);
+                hash.Update(key_);
+            }
+            if (touched[1])
+            {
+                hash.Update(tag.Offset + 1);
+                hash.Update(intParam_);
+            }
+            return hash.Code;
+        }
+
+        public override int GetTypeId()
+        {
+            return tag.TypeId;
+        }
+
+        public override Cell.Tag GetTypeTag() 
+        {
+            return tag;
+        }
+
+        public override Func<Event> GetFactoryMethod()
+        {
+            return PeriodicEvent.New;
+        }
+
+        protected override bool IsEquivalent(Cell other, Fingerprint fingerprint)
+        {
+            if (!base.IsEquivalent(other, fingerprint))
+            {
+                return false;
+            }
+            PeriodicEvent o = (PeriodicEvent)other;
             var touched = new Capo<bool>(fingerprint, tag.Offset);
             if (touched[0])
             {

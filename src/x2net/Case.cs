@@ -83,7 +83,7 @@ namespace x2net
         }
 
         /// <summary>
-        /// Overridden by subclasses to build a initialization chain.
+        /// Overridden by subclasses to build an initialization chain.
         /// </summary>
         protected virtual void Setup() { }
 

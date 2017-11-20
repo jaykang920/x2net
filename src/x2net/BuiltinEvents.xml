@@ -3,14 +3,15 @@
   <definitions>
     <!-- Event type identifiers for built-in events. -->
     <consts name="BuiltinEventType">
-        <const name="HeartbeatEvent">-1</const>
+      <const name="HeartbeatEvent">-1</const>
 
-        <const name="FlowStart">-2</const>
-        <const name="FlowStop">-3</const>
+      <const name="FlowStart">-2</const>
+      <const name="FlowStop">-3</const>
 
-        <const name="TimeoutEvent">-4</const>
+      <const name="TimeoutEvent">-4</const>
+      <const name="PeriodicEvent">-5</const>
 
-        <!-- -10 to -99 : reserved for links -->
+      <!-- -10 to -99 : reserved for links -->
     </consts>
 
     <!-- x2 subsystem heartbeat event. -->
@@ -23,10 +24,17 @@
 
     <!-- A local timeout event. -->
     <event name="TimeoutEvent" id="BuiltinEventType.TimeoutEvent" local="true">
-        <!-- Event key object. -->
-        <property name="Key" type="object"/>
-        <!-- Optional integer parameter -->
-        <property name="IntParam" type="int32"/>
+      <!-- Event key object. -->
+      <property name="Key" type="object"/>
+      <!-- Optional integer parameter -->
+      <property name="IntParam" type="int32"/>
+    </event>
+    <!-- A local periodically recurring event. -->
+    <event name="PeriodicEvent" id="BuiltinEventType.PeriodicEvent" local="true">
+      <!-- Event key object. -->
+      <property name="Key" type="object"/>
+      <!-- Optional integer parameter -->
+      <property name="IntParam" type="int32"/>
     </event>
   </definitions>
 </x2>

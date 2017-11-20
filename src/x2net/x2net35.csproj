@@ -147,7 +147,9 @@
     <Compile Include="Yields\WaitHandlePool.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BuiltinEvents.xml" />
+    <Content Include="BuiltinEvents.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Links\LinkEvents.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
