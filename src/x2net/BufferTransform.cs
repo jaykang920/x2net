@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace x2net
 {
+    /// <summary>
+    /// Defines methods to be implemented by concrete buffer transforms.
+    /// </summary>
     public interface IBufferTransform : IDisposable
     {
         int HandshakeBlockLength { get; }

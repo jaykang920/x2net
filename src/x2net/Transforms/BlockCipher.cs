@@ -37,25 +37,32 @@ namespace x2net
         {
             settings = new Settings {
                 BlockSize = 128,
-                KeySize = 128,
-                RsaKeySize = 512,
+                KeySize = 256,
+                RsaKeySize = 1024,
 
                 Padding = PaddingMode.PKCS7,
 
                 // In a real-world client/server production, each peer should use a
                 // different RSA key pair.
                 RsaMyPrivateKey = @"
-<RSAKeyValue><Modulus>tCNTvJ3bN6uLsqiUMeDGaaUSXyS9bs0m8q2+tmh7QfMwAP9G8CEjFaxyjb
-391QeCDsX+lRNf4wsuTJvnbk8rGw==</Modulus><Exponent>AQAB</Exponent><P>8GQnZQd9C4vc
-PnezAYD7eTRf01Y52f3/mdhlEi3+1hU=</P><Q>v9Wg0aXwf1TBjnsubTmY9b8ZTnAw2CApHPpUe068+
-G8=</Q><DP>Ijj/6sAgKy6kEjiUQViNdHniUoHqBoDEjLBj4yytJOk=</DP><DQ>Q5lOAFKPOu9s/X5e
-z9J6Gi7rBf7211IN6s4zsvf+EzU=</DQ><InverseQ>UfiNSsb4iYaAhgbNp3pTFnvwn1uf1sKQoBN7m
-Mv0LpA=</InverseQ><D>MzlIen449B+n3enqGjTctvXlv4BnDbbwuFmHvb8ALcRKnY+e5BjF03CSzvK
-hDthiOoUk1O9KWo47g0FGaleJIQ==</D></RSAKeyValue>
+<RSAKeyValue><Modulus>xtU+mTT9tOES5vLZeSAEvuWaa+FX4jUtH5iVFGSULCaBR6TtQ2TYUz1Jnt
+rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
+/12BoEHHmwb3CVq6dHGsxRLUKG0DYBWQk=</Modulus><Exponent>AQAB</Exponent><P>+3iHfNfD
+ARBhnHQ33OyJudsOWkFPwqOG575nkCntjW8RhepXaKPNRqmEu/cYN/Fr/nCmxxgW8Fp5HEI+gI7xZw==
+</P><Q>ymoD2gsEj0ksiph+UbkT3Amwx/SHOaRWTwWysL8xKicD0afqnGpHkUnoAUnEQFAnuDIB5D+rb
++6ulwsS6xCsDw==</Q><DP>2d2brJqV1PcnSlAaEepQjFfvwFwzSRM6Ds8UlH7u04k1qkrT/dFkSGMXn
+229asJb6O4aYAVL4mLP6J6v3dt54w==</DP><DQ>kLRhtIuT4uupEBwckkgBzpiO7SP/WFIH8c5dBMZq
+W3ww2r10mAXSzCdN2T3nMyMagjAd8hMieI7l+c1M5QeyOQ==</DQ><InverseQ>M+sgtHA0blhMUBdGG
+IYboxSEvPwPxoX5ORwgL/Zl3TOgxN1oM9i5EkmwKFcazAHKfL5eArtlmfELOcqPMFiyzQ==</Inverse
+Q><D>CBEw2AB5ZrRXEv25axusdZ5VNJlQ+oGT0htbuRcXl+78Ac8kPT7DNCVhbkuMocr4ykVDqy3MstW
+XzqLxNdl/ZSV9KvP6u5bcDQQeC9KbKQ5PpzGoGmMJNsVtXC0voOA3sYx9P+vVtEqhxn9eAKPOPqX9wRo
+9rMW9UZRtDcLiUj0=</D></RSAKeyValue>
 ",
                 RsaPeerPublicKey = @"
-<RSAKeyValue><Modulus>tCNTvJ3bN6uLsqiUMeDGaaUSXyS9bs0m8q2+tmh7QfMwAP9G8CEjFaxyjb
-391QeCDsX+lRNf4wsuTJvnbk8rGw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
+<RSAKeyValue><Modulus>xtU+mTT9tOES5vLZeSAEvuWaa+FX4jUtH5iVFGSULCaBR6TtQ2TYUz1Jnt
+rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
+/12BoEHHmwb3CVq6dHGsxRLUKG0DYBWQk=</Modulus><Exponent>AQAB</Exponent></RSAKeyVal
+ue>
 "
             };
 
