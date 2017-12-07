@@ -40,11 +40,9 @@ namespace x2net
                 KeySize = 256,
                 RsaKeySize = 1024,
 
-                Padding = PaddingMode.PKCS7,
-
                 // In a real-world client/server production, each peer should use a
                 // different RSA key pair.
-                RsaMyPrivateKey = @"
+                MyPrivateKey = @"
 <RSAKeyValue><Modulus>xtU+mTT9tOES5vLZeSAEvuWaa+FX4jUtH5iVFGSULCaBR6TtQ2TYUz1Jnt
 rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
 /12BoEHHmwb3CVq6dHGsxRLUKG0DYBWQk=</Modulus><Exponent>AQAB</Exponent><P>+3iHfNfD
@@ -58,7 +56,7 @@ Q><D>CBEw2AB5ZrRXEv25axusdZ5VNJlQ+oGT0htbuRcXl+78Ac8kPT7DNCVhbkuMocr4ykVDqy3MstW
 XzqLxNdl/ZSV9KvP6u5bcDQQeC9KbKQ5PpzGoGmMJNsVtXC0voOA3sYx9P+vVtEqhxn9eAKPOPqX9wRo
 9rMW9UZRtDcLiUj0=</D></RSAKeyValue>
 ",
-                RsaPeerPublicKey = @"
+                PeerPublicKey = @"
 <RSAKeyValue><Modulus>xtU+mTT9tOES5vLZeSAEvuWaa+FX4jUtH5iVFGSULCaBR6TtQ2TYUz1Jnt
 rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
 /12BoEHHmwb3CVq6dHGsxRLUKG0DYBWQk=</Modulus><Exponent>AQAB</Exponent></RSAKeyVal
@@ -81,14 +79,14 @@ ue>
             encryptionAlgorithm = Aes.Create();
             encryptionAlgorithm.BlockSize = settings.BlockSize;
             encryptionAlgorithm.KeySize = settings.KeySize;
-            encryptionAlgorithm.Mode = settings.Mode;
-            encryptionAlgorithm.Padding = settings.Padding;
+            encryptionAlgorithm.Mode = CipherMode.CBC;
+            encryptionAlgorithm.Padding = PaddingMode.PKCS7;
 
             decryptionAlgorithm = Aes.Create();
             decryptionAlgorithm.BlockSize = settings.BlockSize;
             decryptionAlgorithm.KeySize = settings.KeySize;
-            decryptionAlgorithm.Mode = settings.Mode;
-            decryptionAlgorithm.Padding = settings.Padding;
+            decryptionAlgorithm.Mode = CipherMode.CBC;
+            decryptionAlgorithm.Padding = PaddingMode.PKCS7;
         }
 
         public object Clone()
@@ -113,7 +111,7 @@ ue>
 
             using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
             {
-                ImportRsaParameters(rsa, settings.RsaPeerPublicKey);
+                ImportRsaParameters(rsa, settings.PeerPublicKey);
                 return rsa.Encrypt(challenge, false);
             }
         }
@@ -123,7 +121,7 @@ ue>
             byte[] decrypted;
             using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
             {
-                ImportRsaParameters(rsa, settings.RsaMyPrivateKey);
+                ImportRsaParameters(rsa, settings.MyPrivateKey);
                 decrypted = rsa.Decrypt(challenge, false);
 
                 decryptionKey = decrypted.SubArray(0, KeySizeInBytes);
@@ -136,7 +134,7 @@ ue>
             // But if not, replay the data decrypted with our private key.
             using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
             {
-                ImportRsaParameters(rsa, settings.RsaPeerPublicKey);
+                ImportRsaParameters(rsa, settings.PeerPublicKey);
                 return rsa.Encrypt(decrypted, false);
             }
         }
@@ -153,7 +151,7 @@ ue>
                 //return rsa.VerifyData(expected, new SHA1CryptoServiceProvider(), response);
 
                 // But if not, verify the replayed data.
-                ImportRsaParameters(rsa, settings.RsaMyPrivateKey);
+                ImportRsaParameters(rsa, settings.MyPrivateKey);
                 byte[] actual = rsa.Decrypt(response, false);
                 return actual.EqualsExtended(expected);
             }
@@ -333,16 +331,8 @@ ue>
             public int KeySize { get; set; }
             public int RsaKeySize { get; set; }
 
-            public CipherMode Mode { get; private set; }
-            public PaddingMode Padding { get; set; }
-
-            public string RsaMyPrivateKey { get; set; }
-            public string RsaPeerPublicKey { get; set; }
-
-            public Settings()
-            {
-                Mode = CipherMode.CBC;
-            }
+            public string MyPrivateKey { get; set; }
+            public string PeerPublicKey { get; set; }
         }
     }
 }
