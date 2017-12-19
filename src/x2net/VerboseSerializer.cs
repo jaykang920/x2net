@@ -25,11 +25,18 @@ namespace x2net
 
         // Name-value pair writers for composite types
         void Write(string name, byte[] value);
+        void Write(string name, List<bool> value);
+        void Write(string name, List<byte> value);
+        void Write(string name, List<sbyte> value);
+        void Write(string name, List<short> value);
         void Write(string name, List<int> value);
         void Write(string name, List<long> value);
         void Write(string name, List<float> value);
+        void Write(string name, List<double> value);
+        void Write(string name, List<string> value);
         void Write(string name, List<DateTime> value);
         void Write(string name, List<List<int>> value);
+        void Write(string name, List<List<string>> value);
         void Write<T>(string name, List<T> value) where T : Cell;
         void Write<T>(string name, T value) where T : Cell;
 
@@ -47,11 +54,18 @@ namespace x2net
 
         // Value writers for composite types
         void Write(byte[] value);
+        void Write(List<bool> value);
+        void Write(List<byte> value);
+        void Write(List<sbyte> value);
+        void Write(List<short> value);
         void Write(List<int> value);
         void Write(List<long> value);
         void Write(List<float> value);
+        void Write(List<double> value);
+        void Write(List<string> value);
         void Write(List<DateTime> value);
         void Write(List<List<int>> value);
+        void Write(List<List<string>> value);
         void Write<T>(List<T> value) where T : Cell;
         void Write<T>(T value) where T : Cell;
     }

@@ -25,11 +25,18 @@ namespace x2net
 
         // Name-value pair readers for composite types
         void Read(string name, out byte[] value);
+        void Read(string name, out List<bool> value);
+        void Read(string name, out List<byte> value);
+        void Read(string name, out List<sbyte> value);
+        void Read(string name, out List<short> value);
         void Read(string name, out List<int> value);
         void Read(string name, out List<long> value);
         void Read(string name, out List<float> value);
+        void Read(string name, out List<double> value);
+        void Read(string name, out List<string> value);
         void Read(string name, out List<DateTime> value);
         void Read(string name, out List<List<int>> value);
+        void Read(string name, out List<List<string>> value);
         void Read<T>(string name, out List<T> value) where T : Cell, new();
         void Read<T>(string name, out T value) where T : Cell, new();
 
@@ -47,11 +54,18 @@ namespace x2net
 
         // Value readers for composite types
         void Read(out byte[] value);
+        void Read(out List<bool> value);
+        void Read(out List<byte> value);
+        void Read(out List<sbyte> value);
+        void Read(out List<short> value);
         void Read(out List<int> value);
         void Read(out List<long> value);
         void Read(out List<float> value);
+        void Read(out List<double> value);
+        void Read(out List<string> value);
         void Read(out List<DateTime> value);
         void Read(out List<List<int>> value);
+        void Read(out List<List<string>> value);
         void Read<T>(out List<T> value) where T : Cell, new();
         void Read<T>(out T value) where T : Cell, new();
     }

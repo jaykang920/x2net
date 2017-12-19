@@ -91,6 +91,26 @@ namespace x2net
             WriteName(name);
             Write(value);
         }
+        public void Write(string name, List<bool> value)
+        {
+            WriteName(name);
+            Write(value);
+        }
+        public void Write(string name, List<byte> value)
+        {
+            WriteName(name);
+            Write(value);
+        }
+        public void Write(string name, List<sbyte> value)
+        {
+            WriteName(name);
+            Write(value);
+        }
+        public void Write(string name, List<short> value)
+        {
+            WriteName(name);
+            Write(value);
+        }
         public void Write(string name, List<int> value)
         {
             WriteName(name);
@@ -106,12 +126,27 @@ namespace x2net
             WriteName(name);
             Write(value);
         }
+        public void Write(string name, List<double> value)
+        {
+            WriteName(name);
+            Write(value);
+        }
+        public void Write(string name, List<string> value)
+        {
+            WriteName(name);
+            Write(value);
+        }
         public void Write(string name, List<DateTime> value)
         {
             WriteName(name);
             Write(value);
         }
         public void Write(string name, List<List<int>> value)
+        {
+            WriteName(name);
+            Write(value);
+        }
+        public void Write(string name, List<List<string>> value)
         {
             WriteName(name);
             Write(value);
@@ -181,6 +216,66 @@ namespace x2net
         {
 
         }
+        public void Write(List<bool> value)
+        {
+            if (Object.ReferenceEquals(value, null))
+            {
+                stringBuilder.Append("null");
+                return;
+            }
+            stringBuilder.Append('[');
+            for (int i = 0, count = value.Count; i < count; ++i)
+            {
+                if (i != 0) { stringBuilder.Append(','); }
+                Write(value[i]);
+            }
+            stringBuilder.Append(']');
+        }
+        public void Write(List<byte> value)
+        {
+            if (Object.ReferenceEquals(value, null))
+            {
+                stringBuilder.Append("null");
+                return;
+            }
+            stringBuilder.Append('[');
+            for (int i = 0, count = value.Count; i < count; ++i)
+            {
+                if (i != 0) { stringBuilder.Append(','); }
+                Write(value[i]);
+            }
+            stringBuilder.Append(']');
+        }
+        public void Write(List<sbyte> value)
+        {
+            if (Object.ReferenceEquals(value, null))
+            {
+                stringBuilder.Append("null");
+                return;
+            }
+            stringBuilder.Append('[');
+            for (int i = 0, count = value.Count; i < count; ++i)
+            {
+                if (i != 0) { stringBuilder.Append(','); }
+                Write(value[i]);
+            }
+            stringBuilder.Append(']');
+        }
+        public void Write(List<short> value)
+        {
+            if (Object.ReferenceEquals(value, null))
+            {
+                stringBuilder.Append("null");
+                return;
+            }
+            stringBuilder.Append('[');
+            for (int i = 0, count = value.Count; i < count; ++i)
+            {
+                if (i != 0) { stringBuilder.Append(','); }
+                Write(value[i]);
+            }
+            stringBuilder.Append(']');
+        }
         public void Write(List<int> value)
         {
             if (Object.ReferenceEquals(value, null))
@@ -226,6 +321,36 @@ namespace x2net
             }
             stringBuilder.Append(']');
         }
+        public void Write(List<double> value)
+        {
+            if (Object.ReferenceEquals(value, null))
+            {
+                stringBuilder.Append("null");
+                return;
+            }
+            stringBuilder.Append('[');
+            for (int i = 0, count = value.Count; i < count; ++i)
+            {
+                if (i != 0) { stringBuilder.Append(','); }
+                Write(value[i]);
+            }
+            stringBuilder.Append(']');
+        }
+        public void Write(List<string> value)
+        {
+            if (Object.ReferenceEquals(value, null))
+            {
+                stringBuilder.Append("null");
+                return;
+            }
+            stringBuilder.Append('[');
+            for (int i = 0, count = value.Count; i < count; ++i)
+            {
+                if (i != 0) { stringBuilder.Append(','); }
+                Write(value[i]);
+            }
+            stringBuilder.Append(']');
+        }
         public void Write(List<DateTime> value)
         {
             if (Object.ReferenceEquals(value, null))
@@ -242,6 +367,21 @@ namespace x2net
             stringBuilder.Append(']');
         }
         public void Write(List<List<int>> value)
+        {
+            if (Object.ReferenceEquals(value, null))
+            {
+                stringBuilder.Append("null");
+                return;
+            }
+            stringBuilder.Append('[');
+            for (int i = 0, count = value.Count; i < count; ++i)
+            {
+                if (i != 0) { stringBuilder.Append(','); }
+                Write(value[i]);
+            }
+            stringBuilder.Append(']');
+        }
+        public void Write(List<List<string>> value)
         {
             if (Object.ReferenceEquals(value, null))
             {
