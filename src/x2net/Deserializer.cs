@@ -407,6 +407,22 @@ namespace x2net
         }
 
         /// <summary>
+        /// Decodes an ordered list of string lists out of the underlying buffer.
+        /// </summary>
+        public void Read(out List<List<string>> value)
+        {
+            int count;
+            ReadNonnegative(out count);
+            value = new List<List<string>>();
+            for (int i = 0; i < count; ++i)
+            {
+                List<string> element;
+                Read(out element);
+                value.Add(element);
+            }
+        }
+
+        /// <summary>
         /// Decodes an ordered list of Cell-derived objects out of the
         /// underlying buffer.
         /// </summary>

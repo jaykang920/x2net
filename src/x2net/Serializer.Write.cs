@@ -298,6 +298,19 @@ namespace x2net
         }
 
         /// <summary>
+        /// Encodes an ordered list of string lists into the underlying buffer.
+        /// </summary>
+        public void Write(List<List<string>> value)
+        {
+            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            WriteNonnegative(count);
+            for (int i = 0; i < count; ++i)
+            {
+                Write(value[i]);
+            }
+        }
+
+        /// <summary>
         /// Encodes an ordered list of Cell-derived objects into the underlying
         /// buffer.
         /// </summary>
