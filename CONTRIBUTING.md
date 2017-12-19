@@ -26,9 +26,8 @@ include about the issue, the more likely it is to be resolved.
 
 ## Pull Requests
 
-When submitting a pull request to the [GitHub Pull Requests]
-(https://github.com/jaykang920/x2net/pulls), please make sure that your new or
-updated code:
+When submitting a pull request to the [GitHub Pull Requests](https://github.com/jaykang920/x2net/pulls),
+please make sure that your new or updated code:
 
 - Follows x2 and x2net style guides
 - Does not break any existing unit test
