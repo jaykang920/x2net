@@ -1,3 +1,9 @@
+## 0.9.13 (2017-12-19)
+
+Features:
+
+- added serialization support for more list types
+
 ## 0.9.12 (2017-09-08)
 
 Features:
