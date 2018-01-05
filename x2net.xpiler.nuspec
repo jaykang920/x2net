@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/jaykang920/x2net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Generates C# source code files out of x2 definition files.</description>
-    <copyright>Copyright © 2017 Jae-jun Kang</copyright>
+    <copyright>Copyright © 2017, 2018 Jae-jun Kang</copyright>
     <tags>x2 x2net xpiler</tags>
   </metadata>
 

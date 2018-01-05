@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2017 Jae-jun Kang
+﻿// Copyright (c) 2017, 2018 Jae-jun Kang
 // See the file LICENSE for details.
 
 using System;
@@ -118,86 +118,114 @@ namespace x2net
             }
         }
 
-        public void Bind<T>(T e, Action<T> handler)
+        public void Bind(Binder.Token binderToken)
+        {
+            var flow = Flow;
+            if (Object.ReferenceEquals(flow, null))
+            {
+                return;
+            }
+            flow.Subscribe(binderToken);
+        }
+
+        public Binder.Token? Bind<T>(T e, Action<T> handler)
             where T : Event
         {
             var flow = Flow;
-            if (flow != null)
+            if (Object.ReferenceEquals(flow, null))
             {
-                flow.Subscribe(e, handler);
+                return null;
             }
+            return flow.Subscribe(e, handler);
         }
 
-        public void Bind<T>(T e, Action<T> handler, Predicate<T> predicate)
+        public Binder.Token? Bind<T>(T e, Action<T> handler, Predicate<T> predicate)
             where T : Event
         {
             var flow = Flow;
-            if (flow != null)
+            if (Object.ReferenceEquals(flow, null))
             {
-                flow.Subscribe(e, handler, predicate);
+                return null;
             }
+            return flow.Subscribe(e, handler, predicate);
         }
 
-        public void Bind<T>(T e, Func<Coroutine, T, IEnumerator> handler)
+        public Binder.Token? Bind<T>(T e, Func<Coroutine, T, IEnumerator> handler)
             where T : Event
         {
             var flow = Flow;
-            if (flow != null)
+            if (Object.ReferenceEquals(flow, null))
             {
-                flow.Subscribe(e, handler);
+                return null;
             }
+            return flow.Subscribe(e, handler);
         }
 
-        public void Bind<T>(T e, Func<Coroutine, T, IEnumerator> handler,
+        public Binder.Token? Bind<T>(T e, Func<Coroutine, T, IEnumerator> handler,
             Predicate<T> predicate)
             where T : Event
         {
             var flow = Flow;
-            if (flow != null)
+            if (Object.ReferenceEquals(flow, null))
             {
-                flow.Subscribe(e, handler, predicate);
+                return null;
             }
+            return flow.Subscribe(e, handler, predicate);
         }
 
-        public void Unbind<T>(T e, Action<T> handler)
+        public void Unbind(Binder.Token binderToken)
+        {
+            var flow = Flow;
+            if (Object.ReferenceEquals(flow, null))
+            {
+                return;
+            }
+            flow.Unsubscribe(binderToken);
+        }
+
+        public Binder.Token? Unbind<T>(T e, Action<T> handler)
             where T : Event
         {
             var flow = Flow;
-            if (flow != null)
+            if (Object.ReferenceEquals(flow, null))
             {
-                flow.Unsubscribe(e, handler);
+                return null;
             }
+            return flow.Unsubscribe(e, handler);
         }
 
-        public void Unbind<T>(T e, Action<T> handler, Predicate<T> predicate)
+        public Binder.Token? Unbind<T>(T e, Action<T> handler, Predicate<T> predicate)
             where T : Event
         {
             var flow = Flow;
-            if (flow != null)
+            if (Object.ReferenceEquals(flow, null))
             {
-                flow.Unsubscribe(e, handler, predicate);
+                return null;
             }
+            return flow.Unsubscribe(e, handler, predicate);
         }
 
-        public void Unbind<T>(T e, Func<Coroutine, T, IEnumerator> handler)
+        public Binder.Token? Unbind<T>(T e, Func<Coroutine, T, IEnumerator> handler)
             where T : Event
         {
             var flow = Flow;
-            if (flow != null)
+            if (Object.ReferenceEquals(flow, null))
             {
-                flow.Unsubscribe(e, handler);
+                return null;
             }
+            return flow.Unsubscribe(e, handler);
         }
 
-        public void Unbind<T>(T e, Func<Coroutine, T, IEnumerator> handler,
+        public Binder.Token? Unbind<T>(T e, Func<Coroutine, T, IEnumerator> handler,
             Predicate<T> predicate)
             where T : Event
         {
             var flow = Flow;
-            if (flow != null)
+            if (Object.ReferenceEquals(flow, null))
             {
-                flow.Unsubscribe(e, handler, predicate);
+                return null;
             }
+            return flow.Unsubscribe(e, handler, predicate);
         }
 
         internal void AddBinding(Binder.Token binderToken)

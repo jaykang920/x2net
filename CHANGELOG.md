@@ -1,3 +1,9 @@
+## 0.9.15 (2018-01-05)
+
+Features:
+
+- EventSink: Bind/Unbind methods now returns the binder token
+
 ## 0.9.14 (2017-12-19)
 
 Features:

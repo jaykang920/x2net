@@ -1,10 +1,7 @@
-﻿// Copyright (c) 2017 Jae-jun Kang
-// See the file LICENSE for details.
-
-using System.Reflection;
+﻿using System.Reflection;
 
 [assembly: AssemblyProduct("x2net")]
-[assembly: AssemblyCopyright("Copyright © 2017 Jae-jun Kang")]
+[assembly: AssemblyCopyright("Copyright © 2017, 2018 Jae-jun Kang")]
 
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
@@ -12,5 +9,5 @@ using System.Reflection;
 [assembly: AssemblyConfiguration("Release")]
 #endif
 
-[assembly: AssemblyVersion("0.9.14.0")]
-[assembly: AssemblyFileVersion("0.9.14.0")]
+[assembly: AssemblyVersion("0.9.15.0")]
+[assembly: AssemblyFileVersion("0.9.15.0")]

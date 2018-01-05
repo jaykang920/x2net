@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2017 Jae-jun Kang
+﻿// Copyright (c) 2017, 2018 Jae-jun Kang
 // See the file LICENSE for details.
 
 namespace x2net.xpiler
