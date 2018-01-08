@@ -27,9 +27,13 @@ namespace x2net
         }
 
         /// <summary>
-        /// Gets the event to be posted on disposal.
+        /// Gets or sets the event to be posted on disposal.
         /// </summary>
-        public Event Event { get { return e; } }
+        public Event Event
+        {
+            get { return e; }
+            set { e = value; }
+        }
 
         /// <summary>
         /// A delegate type for hooking up Dispose notifications.
