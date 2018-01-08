@@ -1,3 +1,7 @@
+Features:
+
+- Scope: now supports setting event after instantiation
+
 ## 0.9.15 (2018-01-05)
 
 Features:
