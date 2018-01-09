@@ -14,7 +14,11 @@ namespace x2net
         : MultiThreadFlow<SynchronizedEventQueue>
 #endif
     {
+        public MultiThreadFlow() : base() { }
+
         public MultiThreadFlow(int numThreads) : base(numThreads) { }
+
+        public MultiThreadFlow(string name) : base(name) { }
 
         public MultiThreadFlow(string name, int numThreads) : base(name, numThreads) { }
     }
@@ -24,10 +28,20 @@ namespace x2net
         protected List<Thread> threads;
         protected int numThreads;
 
+        public MultiThreadFlow()
+            : this(Environment.ProcessorCount)
+        {
+        }
+
         public MultiThreadFlow(int numThreads)
         {
             threads = new List<Thread>();
             this.numThreads = numThreads;
+        }
+
+        public MultiThreadFlow(string name)
+            : this(name, Environment.ProcessorCount)
+        {
         }
 
         public MultiThreadFlow(string name, int numThreads)
