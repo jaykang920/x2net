@@ -70,6 +70,7 @@
     <Compile Include="Flows\MultiThreadFlow.cs" />
     <Compile Include="Flows\SingleThreadFlow.cs" />
     <Compile Include="Flows\ThreadlessFlow.cs" />
+    <Compile Include="Flows\ThreadPoolFlow.cs" />
     <Compile Include="Flows\TimeFlow.cs" />
     <Compile Include="Handler.cs" />
     <Compile Include="Hub.cs" />

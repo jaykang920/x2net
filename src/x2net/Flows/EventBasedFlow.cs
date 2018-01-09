@@ -9,7 +9,7 @@ using System.Threading;
 namespace x2net
 {
     /// <summary>
-    /// Abstract base class for event-based (waiting) execution flows.
+    /// Abstract base class for event-based (blocking) execution flows.
     /// </summary>
     public abstract class EventBasedFlow<T> : Flow where T : EventQueue, new()
     {
