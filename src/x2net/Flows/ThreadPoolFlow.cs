@@ -85,14 +85,16 @@ namespace x2net
         private void Handle(object o)
         {
             currentFlow = this;
-            equivalent = new EventEquivalent();
-            handlerChain = new List<Handler>();
+            if (Object.ReferenceEquals(equivalent, null))
+            {
+                equivalent = new EventEquivalent();
+            }
+            if (Object.ReferenceEquals(handlerChain, null))
+            {
+                handlerChain = new List<Handler>();
+            }
 
             Dispatch((Event)o);
-
-            handlerChain = null;
-            equivalent = null;
-            currentFlow = null;
         }
     }
 }
