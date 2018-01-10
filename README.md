@@ -71,13 +71,13 @@ public EchoServer : AsyncTcpServer
     
     protected override void Setup()
     {
+        EventFactory.Resiger<EchoReq>();
         Bind(new EchoResp(), Send);
         Listen(6789);
     }
     
     public static void Main()
     {
-        EventFactory.Resiger<EchoReq>();
         Hub.Instance
             .Attach(new SingleThreadFlow()
                 .Add(new EchoCase())
@@ -102,6 +102,7 @@ public EchoClient : AsyncTcpClient
     
     protected override void Setup()
     {
+        EventFactory.Resiger<EchoResp>();
         Bind(new EchoReq(), Send);
         Bind(new EchoResp(), resp => { Console.WriteLine(resp.Message); });
         Connect("127.0.0.1", 6789);
@@ -109,7 +110,6 @@ public EchoClient : AsyncTcpClient
     
     public static void Main()
     {
-        EventFactory.Resiger<EchoResp>();
         Hub.Instance
             .Attach(new SingleThreadFlow()
                 .Add(new EchoClient()));
