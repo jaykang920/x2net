@@ -43,11 +43,11 @@ namespace x2net
 
         static SessionBasedLink()
         {
-            EventFactory.Register(HandshakeReq.TypeId, HandshakeReq.New);
-            EventFactory.Register(HandshakeResp.TypeId, HandshakeResp.New);
-            EventFactory.Register(HandshakeAck.TypeId, HandshakeAck.New);
+            EventFactory.Global.Register(HandshakeReq.TypeId, HandshakeReq.New);
+            EventFactory.Global.Register(HandshakeResp.TypeId, HandshakeResp.New);
+            EventFactory.Global.Register(HandshakeAck.TypeId, HandshakeAck.New);
 
-            EventFactory.Register(SessionEnd.TypeId, SessionEnd.New);
+            EventFactory.Global.Register(SessionEnd.TypeId, SessionEnd.New);
         }
 
         /// <summary>

@@ -24,25 +24,6 @@ namespace x2net
             this.buffer = buffer;
         }
 
-        /// <summary>
-        /// Creates a new event instance, retrieving the type identifier from
-        /// this deserializer.
-        /// </summary>
-        public Event Create()
-        {
-            int typeId;
-            try
-            {
-                Read(out typeId);
-            }
-            catch (Exception)
-            {
-                Trace.Error("Deserializer.Create : error reading event type id");
-                return null;
-            }
-            return EventFactory.Create(typeId);
-        }
-
         // Overloaded Read for primitive types
 
         /// <summary>

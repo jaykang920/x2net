@@ -14,6 +14,8 @@ namespace x2net
     {
         private static HashSet<string> names;
 
+        public EventFactory EventFactory { get; private set; }
+
         /// <summary>
         /// Gets or sets the BufferTransform for this link.
         /// </summary>
@@ -45,6 +47,8 @@ namespace x2net
                 Name = name;
                 names.Add(name);
             }
+
+            EventFactory = new EventFactory();
         }
 
         ~Link()
@@ -58,6 +62,19 @@ namespace x2net
         public void Close()
         {
             Dispose();
+        }
+
+        /// <summary>
+        /// Creates a new event instance based on the specified type identifier.
+        /// </summary>
+        public Event CreateEvent(int typeId)
+        {
+            Event result = EventFactory.Create(typeId);
+            if (!Object.ReferenceEquals(result, null))
+            {
+                return result;
+            }
+            return EventFactory.Global.Create(typeId);
         }
 
         /// <summary>

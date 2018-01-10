@@ -273,7 +273,8 @@ namespace x2net.tests
         [Fact]
         public void TestPartialSerialization()
         {
-            EventFactory.Register<SampleEvent5>();
+            var eventFactory = new EventFactory();
+            eventFactory.Register<SampleEvent5>();
 
             var buffer = new x2net.Buffer();
 
@@ -299,8 +300,9 @@ namespace x2net.tests
 
             buffer.Rewind();
             Deserializer deserializer = new Deserializer(buffer);
-
-            var retrieved = deserializer.Create();
+            int typeId;
+            deserializer.Read(out typeId);
+            var retrieved = eventFactory.Create(typeId);
             retrieved.Deserialize(deserializer);
 
             var event11 = retrieved as SampleEvent5;
@@ -331,8 +333,8 @@ namespace x2net.tests
 
             buffer.Rewind();
             deserializer = new Deserializer(buffer);
-
-            retrieved = deserializer.Create();
+            deserializer.Read(out typeId);
+            retrieved = eventFactory.Create(typeId);
             retrieved.Deserialize(deserializer);
 
             var event12 = retrieved as SampleEvent5;

@@ -697,9 +697,21 @@ namespace x2net
                 Interlocked.Increment(ref rxCounter);
 
                 var deserializer = new Deserializer(rxBuffer);
-                Event retrieved = deserializer.Create();
-                if ((object)retrieved == null)
+                int typeId;
+                try
                 {
+                    deserializer.Read(out typeId);
+                }
+                catch (System.IO.EndOfStreamException)
+                {
+                    // Need more
+                    goto next;
+                }
+                Event retrieved = link.CreateEvent(typeId);
+                if (Object.ReferenceEquals(retrieved, null))
+                {
+                    Trace.Error("{0} {1} unknown event type id {2}",
+                        link.Name, InternalHandle, typeId);
                     goto next;
                 }
                 else

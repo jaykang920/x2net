@@ -75,7 +75,7 @@ namespace x2net
 
         static AbstractTcpServer()
         {
-            EventFactory.Register(HeartbeatEvent.TypeId, HeartbeatEvent.New);
+            EventFactory.Global.Register(HeartbeatEvent.TypeId, HeartbeatEvent.New);
         }
 
         /// <summary>

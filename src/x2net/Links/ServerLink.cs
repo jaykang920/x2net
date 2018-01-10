@@ -33,8 +33,8 @@ namespace x2net
 
         static ServerLink()
         {
-            EventFactory.Register(SessionReq.TypeId, SessionReq.New);
-            EventFactory.Register(SessionAck.TypeId, SessionAck.New);
+            EventFactory.Global.Register(SessionReq.TypeId, SessionReq.New);
+            EventFactory.Global.Register(SessionAck.TypeId, SessionAck.New);
         }
 
         /// <summary>

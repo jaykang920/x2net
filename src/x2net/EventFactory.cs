@@ -5,13 +5,24 @@ using System.Reflection;
 namespace x2net
 {
     /// <summary>
-    /// Holds a map of retrievable events and their factory method delegates.
+    /// Manages a map of retrievable event type identifiers and their factory
+    /// method delegates.
     /// </summary>
-    public static class EventFactory
+    public class EventFactory
     {
-        private static IDictionary<int, Func<Event>> map;
+        private IDictionary<int, Func<Event>> map;
+
+        /// <summary>
+        /// Gets the global event factory instance.
+        /// </summary>
+        public static EventFactory Global { get; private set; }
 
         static EventFactory()
+        {
+            Global = new EventFactory();
+        }
+
+        public EventFactory()
         {
             map = new Dictionary<int, Func<Event>>();
         }
@@ -19,12 +30,11 @@ namespace x2net
         /// <summary>
         /// Creates a new event instance of the specified type idendifier.
         /// </summary>
-        public static Event Create(int typeId)
+        public Event Create(int typeId)
         {
             Func<Event> factoryMethod;
             if (!map.TryGetValue(typeId, out factoryMethod))
             {
-                Trace.Error("EventFactory.Create : unknown event type id {0}", typeId);
                 return null;
             }
             return factoryMethod();
@@ -33,7 +43,7 @@ namespace x2net
         /// <summary>
         /// Registers the specified type parameter as a retrievable event.
         /// </summary>
-        public static void Register<T>() where T : Event
+        public void Register<T>() where T : Event
         {
             Register(typeof(T));
         }
@@ -42,7 +52,7 @@ namespace x2net
         /// Registers all the Event subclasses in the specified assembly as
         /// retrievable events.
         /// </summary>
-        public static void Register(Assembly assembly)
+        public void Register(Assembly assembly)
         {
             Register(assembly, null);
         }
@@ -51,7 +61,7 @@ namespace x2net
         /// Registers all the Event classes extending the optionally specified
         /// base classes as retrievable events.
         /// </summary>
-        public static void Register(Assembly assembly, params Type[] baseTypes)
+        public void Register(Assembly assembly, params Type[] baseTypes)
         {
             var eventType = typeof(Event);
             var types = assembly.GetTypes();
@@ -84,7 +94,7 @@ namespace x2net
         /// <summary>
         /// Registers the specified type as a retrievable event.
         /// </summary>
-        public static void Register(Type type)
+        public void Register(Type type)
         {
             int typeId;
             Func<Event> factoryMethod;
@@ -111,7 +121,7 @@ namespace x2net
         /// Registers a retrievable event type identifier with its factory
         /// method.
         /// </summary>
-        public static void Register(int typeId, Func<Event> factoryMethod)
+        public void Register(int typeId, Func<Event> factoryMethod)
         {
             Func<Event> existing;
             if (map.TryGetValue(typeId, out existing))

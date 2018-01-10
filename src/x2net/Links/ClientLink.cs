@@ -30,7 +30,7 @@ namespace x2net
 
         static ClientLink()
         {
-            EventFactory.Register(SessionResp.TypeId, SessionResp.New);
+            EventFactory.Global.Register(SessionResp.TypeId, SessionResp.New);
         }
 
         /// <summary>

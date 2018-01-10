@@ -1,5 +1,7 @@
 Features:
 
+- added support for link-local event factories
+- added ThreadPoolFlow which works with .NET managed thread pool
 - Scope: now supports setting event after instantiation
 
 ## 0.9.15 (2018-01-05)
