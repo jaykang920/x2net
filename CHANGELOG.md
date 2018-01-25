@@ -1,3 +1,7 @@
+Features:
+
+- removed AddressUtil
+
 ## 0.9.16 (2018-01-10)
 
 Features:

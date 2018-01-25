@@ -113,7 +113,6 @@
     <Compile Include="Links\Socket\AsyncTcpServer.cs" />
     <Compile Include="Links\Socket\AsyncTcpSession.cs" />
     <Compile Include="Links\Socket\AsyncUdpLink.cs" />
-    <Compile Include="Links\Socket\AddressUtil.cs" />
     <Compile Include="Links\Socket\TcpClient.cs" />
     <Compile Include="Links\Socket\TcpServer.cs" />
     <Compile Include="Links\Socket\TcpSession.cs" />

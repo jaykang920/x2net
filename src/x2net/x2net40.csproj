@@ -85,7 +85,6 @@
     <Compile Include="Links\Socket\AbstractTcpServer.cs" />
     <Compile Include="Links\Socket\AbstractTcpSession.cs" />
     <Compile Include="Links\Socket\AbstractUdpLink.cs" />
-    <Compile Include="Links\Socket\AddressUtil.cs" />
     <Compile Include="Links\Socket\AsyncTcpClient.cs" />
     <Compile Include="Links\Socket\AsyncTcpServer.cs" />
     <Compile Include="Links\Socket\AsyncTcpSession.cs" />
