@@ -1,5 +1,8 @@
+## 0.9.17 (2018-01-26)
+
 Features:
 
+- AbstractTcpClient: added Connect(string) interface
 - removed AddressUtil
 
 ## 0.9.16 (2018-01-10)

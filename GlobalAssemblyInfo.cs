@@ -9,5 +9,5 @@
 [assembly: AssemblyConfiguration("Release")]
 #endif
 
-[assembly: AssemblyVersion("0.9.16.0")]
-[assembly: AssemblyFileVersion("0.9.16.0")]
+[assembly: AssemblyVersion("0.9.17.0")]
+[assembly: AssemblyFileVersion("0.9.17.0")]
