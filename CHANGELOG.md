@@ -1,3 +1,10 @@
+## 0.9.18 (2018-01-26)
+
+Bugfixes:
+
+- ConcurrentEventQueue: fixed the bug that the final event is not properly
+  dequeued before closing
+
 ## 0.9.17 (2018-01-26)
 
 Features:
