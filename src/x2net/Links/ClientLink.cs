@@ -56,22 +56,6 @@ namespace x2net
             currentSession.Send(e);
         }
 
-        /// <summary>
-        /// Blocks the current thread while this link is busy to send events.
-        /// </summary>
-        public void WaitWhileBusy()
-        {
-            LinkSession currentSession = Session;
-            if (Object.ReferenceEquals(currentSession, null))
-            {
-                return;
-            }
-            while (currentSession.IsBusy)
-            {
-                Thread.Sleep(1);
-            }
-        }
-
         protected override void OnSessionConnectedInternal(bool result, object context)
         {
             if (result)
