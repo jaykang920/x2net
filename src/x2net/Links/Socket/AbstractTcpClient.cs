@@ -175,26 +175,54 @@ namespace x2net
         }
 
         /// <summary>
-        /// Connects to the specified host and port.
+        /// Connects to the specified remote address (host:port).
         /// </summary>
-        public void Connect(string remoteHost, int remotePort)
+        public void Connect(string address)
         {
-            RemoteHost = remoteHost;
-            RemotePort = remotePort;
+            Connect(address, 0);
+        }
 
-            IPAddress ipAddress = null;
+        /// <summary>
+        /// Connects to the specified remote address. The port parameter is used
+        /// when the given address does not contain a remote port number,
+        /// </summary>
+        public void Connect(string address, int port)
+        {
+            int index = address.LastIndexOf(':');
+            if (index >= 0 && address.Length > 15)
+            {
+                // Might be an IPv6 strig without a port specification.
+                if (address.Split(':').Length > 6 &&
+                    address.LastIndexOf("]:") < 0)
+                {
+                    index = -1;
+                }
+            }
+            if (0 < index && index < (address.Length - 1))
+            {
+                string portString = address.Substring(index + 1).Trim();
+                if (Int32.TryParse(portString, out port))
+                {
+                    address = address.Substring(0, index).Trim();
+                }
+            }
+
+            RemoteHost = address;
+            RemotePort = port;
+
+            IPAddress ip = null;
             try
             {
-                ipAddress = Dns.GetHostAddresses(remoteHost)[0];
+                ip = Dns.GetHostAddresses(address)[0];
             }
             catch (Exception e)
             {
                 Trace.Error("{0} error resolving target host {1} : {2}",
-                    Name, remoteHost, e.Message);
+                    Name, address, e.Message);
                 throw;
             }
 
-            Connect(ipAddress, remotePort);
+            Connect(ip, port);
         }
 
         public void ConnectAndSend(Event e)
