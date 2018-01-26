@@ -28,17 +28,17 @@ namespace x2net
 
         public override void Close(Event finalItem)
         {
-            closing = true;
             queue.Enqueue(finalItem);
+            closing = true;
         }
 
         public override Event Dequeue()
         {
             Event result = null;
 
-            while (!closing)
+            while (!queue.TryDequeue(out result))
             {
-                if (queue.TryDequeue(out result))
+                if (closing)
                 {
                     break;
                 }
