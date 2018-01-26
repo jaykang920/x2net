@@ -164,14 +164,20 @@ namespace x2net
             pendingRecords = new Dictionary<int, PendingRecord>();
         }
 
+        /// <summary>
+        /// Connects to the endpoint RemoteHost:RemotePort.
+        /// </summary>
         public void Connect()
         {
-            if (String.IsNullOrEmpty(RemoteHost))
-            {
-                Trace.Error("{0} Connect: remote host is not specified", Name);
-                return;
-            }
             Connect(RemoteHost, RemotePort);
+        }
+
+        /// <summary>
+        /// Synchronously connects to the endpoint RemoteHost:RemotePort.
+        /// </summary>
+        public void ConnectSync()
+        {
+            ConnectSync(RemoteHost, RemotePort);
         }
 
         /// <summary>
@@ -183,10 +189,35 @@ namespace x2net
         }
 
         /// <summary>
+        /// Synchronously connects to the specified remote address (host:port).
+        /// </summary>
+        public void ConnectSync(string address)
+        {
+            ConnectSync(address, 0);
+        }
+
+        /// <summary>
         /// Connects to the specified remote address. The port parameter is used
         /// when the given address does not contain a remote port number,
         /// </summary>
         public void Connect(string address, int port)
+        {
+            TryParseAddress(address, port);
+            Connect(HostToIPAddress(RemoteHost), RemotePort);
+        }
+
+        /// <summary>
+        /// Synchronously connects to the specified remote address. The por
+        /// parameter is used when the given address does not contain a remote
+        /// port number,
+        /// </summary>
+        public void ConnectSync(string address, int port)
+        {
+            TryParseAddress(address, port);
+            ConnectSync(HostToIPAddress(RemoteHost), RemotePort);
+        }
+
+        private void TryParseAddress(string address, int port)
         {
             int index = address.LastIndexOf(':');
             if (index >= 0 && address.Length > 15)
@@ -209,20 +240,20 @@ namespace x2net
 
             RemoteHost = address;
             RemotePort = port;
+        }
 
-            IPAddress ip = null;
+        private IPAddress HostToIPAddress(string host)
+        {
             try
             {
-                ip = Dns.GetHostAddresses(address)[0];
+                return Dns.GetHostAddresses(host)[0];
             }
             catch (Exception e)
             {
                 Trace.Error("{0} error resolving target host {1} : {2}",
-                    Name, address, e.Message);
+                    Name, host, e.Message);
                 throw;
             }
-
-            Connect(ip, port);
         }
 
         public void ConnectAndSend(Event e)
@@ -316,6 +347,23 @@ namespace x2net
             Connect(null, new IPEndPoint(ip, port));
         }
 
+
+        /// <summary>
+        /// Synchronously connects to the specified IP address and port.
+        /// </summary>
+        public void ConnectSync(IPAddress ip, int port)
+        {
+            connecting = true;
+
+            if (session != null &&
+                ((AbstractTcpSession)session).SocketConnected)
+            {
+                throw new InvalidOperationException();
+            }
+
+            ConnectSync(null, new IPEndPoint(ip, port));
+        }
+
         public void Disconnect()
         {
             LinkSession currentSession = Session;
@@ -343,6 +391,15 @@ namespace x2net
             startTime = DateTime.UtcNow;
 
             ConnectInternal(socket, endpoint);
+        }
+
+        private void ConnectSync(Socket socket, EndPoint endpoint)
+        {
+            Trace.Info("{0} synchronously connecting to {1}", Name, endpoint);
+
+            startTime = DateTime.UtcNow;
+
+            ConnectInternalSync(socket, endpoint);
         }
 
         // Reconnects to the last successful remote address.
@@ -432,9 +489,15 @@ namespace x2net
         }
 
         /// <summary>
-        /// Provides an actual implementation of Connect.
+        /// Provides an actual implementation of asynchronous Connect.
         /// </summary>
         protected abstract void ConnectInternal(Socket socket, EndPoint endpoint);
+
+
+        /// <summary>
+        /// Provides an actual implementation of synchronous Connect.
+        /// </summary>
+        protected abstract bool ConnectInternalSync(Socket socket, EndPoint endpoint);
 
         /// <summary>
         /// <see cref="ClientLink.OnConnectInternal"/>

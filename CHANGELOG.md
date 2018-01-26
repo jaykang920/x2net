@@ -1,3 +1,9 @@
+## 0.9.19 (2018-01-26)
+
+Features:
+
+*TcpClient: added synchronous connect interface
+
 ## 0.9.18 (2018-01-26)
 
 Bugfixes:

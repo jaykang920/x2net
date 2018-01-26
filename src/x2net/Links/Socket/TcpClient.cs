@@ -48,6 +48,38 @@ namespace x2net
             }
         }
 
+        /// <summary>
+        /// <see cref="AbstractTcpClient.ConnectInternalSync"/>
+        /// </summary>
+        protected override bool ConnectInternalSync(Socket socket, EndPoint endpoint)
+        {
+            try
+            {
+                if (Object.ReferenceEquals(socket, null))
+                {
+                    socket = new Socket(
+                        endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                }
+
+                remoteEndPoint = endpoint;
+
+                socket.Connect(endpoint);
+
+                OnConnectInternal(new TcpSession(this, socket));
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Trace.Error("{0} error connecting to {1} : {2}",
+                    Name, endpoint, e.Message);
+
+                OnConnectError(socket, endpoint);
+
+                return false;
+            }
+        }
+
         // Asynchronous callback for BeginConnect
         private void OnConnect(IAsyncResult asyncResult)
         {
