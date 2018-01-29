@@ -1,3 +1,7 @@
+Features:
+
+*TcpClient: removed synchronous connect interface
+
 ## 0.9.19 (2018-01-26)
 
 Features:

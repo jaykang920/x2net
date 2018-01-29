@@ -71,36 +71,6 @@ namespace x2net
             }
         }
 
-        /// <summary>
-        /// <see cref="AbstractTcpClient.ConnectInternalSync"/>
-        /// </summary>
-        protected override bool ConnectInternalSync(Socket socket, EndPoint endpoint)
-        {
-            try
-            {
-                if (Object.ReferenceEquals(socket, null))
-                {
-                    socket = new Socket(
-                        endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-                }
-
-                socket.Connect(endpoint);
-
-                OnConnectInternal(new AsyncTcpSession(this, socket));
-
-                return true;
-            }
-            catch (Exception e)
-            {
-                Trace.Error("{0} error connecting to {1} : {2}",
-                    Name, endpoint, e.Message);
-
-                OnConnectError(socket, endpoint);
-
-                return false;
-            }
-        }
-
         // Completed event handler for ConnectAsync
         private void OnConnectCompleted(object sender, SocketAsyncEventArgs e)
         {
