@@ -2,10 +2,8 @@
 // See the file LICENSE for details.
 
 using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
 
 namespace x2net
 {
@@ -18,9 +16,9 @@ namespace x2net
 
         private IPEndPoint remoteEndPoint;
 
-        private int keepaliveFailureCount;
-        private volatile bool hasReceived;
-        private volatile bool hasSent;
+        private volatile uint sendHeartBeatCount;
+        private volatile uint recvHeartBeatCount;
+
 
         /// <summary>
         /// Gets whether this session is currently connected or not.
@@ -48,16 +46,6 @@ namespace x2net
         /// </summary>
         public bool IgnoreKeepaliveFailure { get; set; }
 
-        internal bool HasReceived
-        {
-            get { return hasReceived; }
-        }
-
-        internal bool HasSent
-        {
-            get { return hasSent; }
-        }
-
         protected internal override int InternalHandle
         {
             get
@@ -78,6 +66,8 @@ namespace x2net
         {
             this.socket = socket;
             remoteEndPoint = socket.RemoteEndPoint as IPEndPoint;
+            sendHeartBeatCount = 0;
+            recvHeartBeatCount = 0;
         }
 
         /// <summary>
@@ -113,40 +103,21 @@ namespace x2net
         {
             int result = 0;
 
-            if (checkIncoming)
-            {
-                if (hasReceived)
-                {
-                    hasReceived = false;
-                    Interlocked.Exchange(ref keepaliveFailureCount, 0);
-                }
-                else
-                {
-                    if (!IgnoreKeepaliveFailure)
-                    {
-                        result = Interlocked.Increment(ref keepaliveFailureCount);
-
-                        if (result > 1)
-                        {
-                            Trace.Info("{0} {1} keepalive failure count {2}",
-                                link.Name, InternalHandle, result);
-                        }
-                    }
-                }
-            }
-
             if (checkOutgoing)
             {
-                if (hasSent)
-                {
-                    hasSent = false;
-                }
-                else
-                {
-                    Trace.Log("{0} {1} sent keepalive event",
-                        link.Name, InternalHandle);
+                Trace.Log("{0} {1} sent keepalive event",
+                    link.Name, InternalHandle);
 
-                    Send(Hub.HeartbeatEvent);
+                sendHeartBeatCount++;
+
+                Send(Hub.HeartbeatEvent);
+            }
+
+            if (checkIncoming)
+            {
+                if (!IgnoreKeepaliveFailure)
+                {
+                    result = (int)Math.Abs(recvHeartBeatCount - sendHeartBeatCount);
                 }
             }
 
@@ -224,7 +195,10 @@ namespace x2net
 
         protected override void OnEventReceived(Event e)
         {
-            hasReceived = true;
+            if (e.GetTypeId() == BuiltinEventType.HeartbeatEvent)
+            {
+                recvHeartBeatCount++;
+            }
 
             TraceLevel traceLevel = 
                 (e.GetTypeId() == BuiltinEventType.HeartbeatEvent ?
@@ -238,8 +212,6 @@ namespace x2net
 
         protected override void OnEventSent(Event e)
         {
-            hasSent = true;
-
             TraceLevel traceLevel =
                 (e.GetTypeId() == BuiltinEventType.HeartbeatEvent ?
                 TraceLevel.Trace : TraceLevel.Debug);

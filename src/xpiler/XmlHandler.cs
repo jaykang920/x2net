@@ -42,9 +42,9 @@ namespace x2net.xpiler
 
         private Unit Normalize(Root root)
         {
-            Unit unit = new Unit();
-
-            unit.Namespace = root.Namespace;
+            Unit unit = new Unit {
+                Namespace = root.Namespace
+            };
 
             if (root.References != null)
             {
@@ -53,8 +53,9 @@ namespace x2net.xpiler
                     var r = root.References[i];
                     if (r.GetType() == typeof(NamespaceRef))
                     {
-                        var reference = new Reference();
-                        reference.Target = r.Target;
+                        var reference = new Reference {
+                            Target = r.Target
+                        };
                         unit.References.Add(reference);
                     }
                 }
@@ -88,10 +89,11 @@ namespace x2net.xpiler
                             for (int j = 0; j < c.Properties.Count; ++j)
                             {
                                 var p = c.Properties[j];
-                                var property = new CellDef.Property();
-                                property.Name = p.Name;
-                                property.TypeSpec = Types.Parse(p.Type);
-                                property.DefaultValue = p.Default;
+                                var property = new CellDef.Property {
+                                    Name = p.Name,
+                                    TypeSpec = Types.Parse(p.Type),
+                                    DefaultValue = p.Default
+                                };
                                 definition.Properties.Add(property);
                             }
                         }
@@ -101,9 +103,9 @@ namespace x2net.xpiler
                     else if (def.GetType() == typeof(Consts))
                     {
                         var c = (Consts)def;
-                        var definition = new ConstsDef();
-
-                        definition.Name = c.Name;
+                        var definition = new ConstsDef {
+                            Name = c.Name
+                        };
 
                         var type = c.Type;
                         if (String.IsNullOrEmpty(type))
@@ -117,9 +119,10 @@ namespace x2net.xpiler
                             for (int j = 0; j < c.Elements.Count; ++j)
                             {
                                 var e = c.Elements[j];
-                                var constant = new ConstsDef.Constant();
-                                constant.Name = e.Name;
-                                constant.Value = e.Value;
+                                var constant = new ConstsDef.Constant {
+                                    Name = e.Name,
+                                    Value = e.Value
+                                };
                                 definition.Constants.Add(constant);
                             }
                         }

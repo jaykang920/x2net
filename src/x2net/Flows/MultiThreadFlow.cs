@@ -60,8 +60,9 @@ namespace x2net
                     caseStack.Setup(this);
                     for (int i = 0; i < numThreads; ++i)
                     {
-                        Thread thread = new Thread(Run);
-                        thread.Name = String.Format("{0} {1}", name, i + 1);
+                        Thread thread = new Thread(Run) {
+                            Name = String.Format("{0} {1}", name, i + 1)
+                        };
                         threads.Add(thread);
                         thread.Start();
                     }

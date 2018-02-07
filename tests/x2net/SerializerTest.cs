@@ -288,10 +288,11 @@ namespace x2net.tests
                 Baz = true
             };
 
-            var event1 = new SampleEvent5();  // has base
+            var event1 = new SampleEvent5 {
 
-            // base > base > base
-            event1.SampleCell = cell1;
+                // base > base > base
+                SampleCell = cell1
+            };  // has base
             Serializer serializer = new Serializer(buffer);
             serializer.Write(event1.GetTypeId());
             event1.Serialize(serializer);
@@ -322,8 +323,9 @@ namespace x2net.tests
             Assert.Equal(bufferLength, buffer.Length);
 
             {
-                var event2 = new SampleEvent6();  // has derived
-                event2.SampleCell = cell2;  // derived <= derived
+                var event2 = new SampleEvent6 {
+                    SampleCell = cell2  // derived <= derived
+                };  // has derived
                 var buffer2 = new x2net.Buffer();
                 serializer = new Serializer(buffer2);
                 serializer.Write(event2.GetTypeId());

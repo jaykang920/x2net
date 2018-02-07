@@ -118,8 +118,9 @@ namespace x2net
                 {
                     SetupInternal();
                     caseStack.Setup(this);
-                    thread = new Thread(this.Run);
-                    thread.Name = name;
+                    thread = new Thread(this.Run) {
+                        Name = name
+                    };
                     thread.Start();
                     if (queue != null)
                     {

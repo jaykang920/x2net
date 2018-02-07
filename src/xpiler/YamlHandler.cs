@@ -14,25 +14,36 @@ namespace x2net.xpiler
     {
         public bool Handle(string path, out Unit unit)
         {
+            unit = null;
+            Document doc;
+
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(new HyphenatedNamingConvention())
                 .Build();
 
             using (var sr = new StreamReader(new FileStream(path, FileMode.Open)))
             {
-                var doc = deserializer.Deserialize<Document>(sr);
-
-                unit = Normalize(doc);
+                try
+                {
+                    doc = deserializer.Deserialize<Document>(sr);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    return false;
+                }
             }
+
+            unit = Normalize(doc);
 
             return true;
         }
 
         private Unit Normalize(Document doc)
         {
-            Unit unit = new Unit();
-
-            unit.Namespace = doc.Namespace;
+            Unit unit = new Unit {
+                Namespace = doc.Namespace
+            };
 
             if (doc.References != null)
             {
@@ -41,8 +52,9 @@ namespace x2net.xpiler
                     var r = doc.References[i];
                     if (!String.IsNullOrEmpty(r.Type) && r.Type.ToLower() == "namespace")
                     {
-                        var reference = new Reference();
-                        reference.Target = r.Target;
+                        var reference = new Reference {
+                            Target = r.Target
+                        };
                         unit.References.Add(reference);
                     }
                 }
@@ -75,10 +87,11 @@ namespace x2net.xpiler
                             for (int j = 0; j < def.Properties.Count; ++j)
                             {
                                 var p = def.Properties[j];
-                                var property = new CellDef.Property();
-                                property.Name = p.Name;
-                                property.TypeSpec = Types.Parse(p.Type);
-                                property.DefaultValue = p.Default;
+                                var property = new CellDef.Property {
+                                    Name = p.Name,
+                                    TypeSpec = Types.Parse(p.Type),
+                                    DefaultValue = p.Default
+                                };
                                 definition.Properties.Add(property);
                             }
                         }
@@ -87,10 +100,10 @@ namespace x2net.xpiler
                     }
                     else if (def.Class == "consts")
                     {
-                        var definition = new ConstsDef();
+                        var definition = new ConstsDef {
+                            Name = def.Name
+                        };
 
-                        definition.Name = def.Name;
-						
                         var type = def.Type;
                         if (String.IsNullOrEmpty(type))
                         {
@@ -103,9 +116,10 @@ namespace x2net.xpiler
                             for (int j = 0; j < def.Elements.Count; ++j)
                             {
                                 var e = def.Elements[j];
-                                var constant = new ConstsDef.Constant();
-                                constant.Name = e.Name;
-                                constant.Value = e.Value;
+                                var constant = new ConstsDef.Constant {
+                                    Name = e.Name,
+                                    Value = e.Value
+                                };
                                 definition.Constants.Add(constant);
                             }
                         }

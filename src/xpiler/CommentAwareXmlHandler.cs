@@ -28,8 +28,9 @@ namespace x2net.xpiler
                 // Not a valid x2 document.
                 return true;
             }
-            unit = new Unit();
-            unit.Namespace = rootElem.GetAttribute("namespace");
+            unit = new Unit {
+                Namespace = rootElem.GetAttribute("namespace")
+            };
 
             var node = rootElem.FirstChild;
             for ( ; node != null; node = node.NextSibling)
@@ -136,8 +137,9 @@ namespace x2net.xpiler
             {
                 return false;
             }
-            Reference reference = new Reference();
-            reference.Target = target;
+            Reference reference = new Reference {
+                Target = target
+            };
             unit.References.Add(reference);
             return true;
         }
@@ -154,10 +156,11 @@ namespace x2net.xpiler
             {
                 type = "int32";  // default type
             }
-            var def = new ConstsDef();
-            def.Name = name;
-            def.Type = type;
-            def.Comment = comment;
+            var def = new ConstsDef {
+                Name = name,
+                Type = type,
+                Comment = comment
+            };
 
             string subComment = null;
             var node = elem.FirstChild;
@@ -204,10 +207,11 @@ namespace x2net.xpiler
             {
                 return false;
             }
-            var element = new ConstsDef.Constant();
-            element.Name = name;
-            element.Value = elem.InnerText.Trim();
-            element.Comment = comment;
+            var element = new ConstsDef.Constant {
+                Name = name,
+                Value = elem.InnerText.Trim(),
+                Comment = comment
+            };
             def.Constants.Add(element);
             return true;
         }
@@ -285,10 +289,11 @@ namespace x2net.xpiler
             {
                 return false;
             }
-            var property = new CellDef.Property();
-            property.Name = name;
-            property.DefaultValue = elem.InnerText.Trim();
-            property.Comment = comment;
+            var property = new CellDef.Property {
+                Name = name,
+                DefaultValue = elem.InnerText.Trim(),
+                Comment = comment
+            };
             def.Properties.Add(property);
 
             property.TypeSpec = Types.Parse(type);
