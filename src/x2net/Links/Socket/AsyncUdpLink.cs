@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Copyright (c) 2017, 2018 Jae-jun Kang
+// See the file LICENSE for details.
+
+using System;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
 
 namespace x2net
 {

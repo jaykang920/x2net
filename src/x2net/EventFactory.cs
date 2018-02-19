@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (c) 2017, 2018 Jae-jun Kang
+// See the file LICENSE for details.
+
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 

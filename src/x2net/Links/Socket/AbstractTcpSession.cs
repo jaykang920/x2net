@@ -19,7 +19,6 @@ namespace x2net
         private volatile uint sendHeartBeatCount;
         private volatile uint recvHeartBeatCount;
 
-
         /// <summary>
         /// Gets whether this session is currently connected or not.
         /// </summary>

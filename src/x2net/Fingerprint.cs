@@ -2,8 +2,6 @@
 // See the file LICENSE for details.
 
 using System;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace x2net
 {

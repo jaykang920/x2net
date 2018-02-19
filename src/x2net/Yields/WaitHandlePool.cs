@@ -2,7 +2,6 @@
 // See the file LICENSE for details.
 
 using System;
-using System.Collections;
 
 namespace x2net
 {

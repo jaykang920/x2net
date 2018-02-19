@@ -68,10 +68,6 @@ namespace x2net.xpiler
                 if (node.NodeType == XmlNodeType.Element)
                 {
                     var child = (XmlElement)node;
-                    //if (child.IsEmpty)
-                    //{
-                    //    continue;
-                    //}
                     switch (child.Name)
                     {
                         case "namespace":

@@ -6,8 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 
-using System.Reflection;
-
 namespace x2net
 {
     /// <summary>
