@@ -26,11 +26,6 @@ namespace x2net
             }
         }
 
-        static ClientLink()
-        {
-            EventFactory.Global.Register(SessionResp.TypeId, SessionResp.New);
-        }
-
         /// <summary>
         /// Initializes a new instance of the ClientLink class.
         /// </summary>
@@ -38,6 +33,22 @@ namespace x2net
             : base(name)
         {
             Diag = new Diagnostics();
+        }
+
+        /// <summary>
+        /// Tries to reconnect to the last successful remote address.
+        /// </summary>
+        public virtual void Reconnect() { }
+
+        public LinkSession ResetSession(LinkSession session)
+        {
+            LinkSession existing;
+            using (new WriteLock(rwlock))
+            {
+                existing = this.session;
+                this.session = session;
+            }
+            return existing;
         }
 
         /// <summary>
@@ -56,6 +67,11 @@ namespace x2net
 
         protected override void OnSessionConnectedInternal(bool result, object context)
         {
+            if (HasSessionStrategy)
+            {
+                SessionStrategy.OnSessionConnected(result, context);
+            }
+
             if (result)
             {
                 var session = (LinkSession)context;
@@ -81,62 +97,6 @@ namespace x2net
                     session = null;
                 }
             }
-        }
-
-        protected override void OnSessionRecoveredInternal(
-            int handle, object context, int retransmission)
-        {
-            LinkSession oldSession;
-            var session = (LinkSession)context;
-            using (new WriteLock(rwlock))
-            {
-                oldSession = this.session;
-                this.session = session;
-            }
-
-            session.TakeOver(oldSession, retransmission);
-
-            Trace.Debug("{0} {1} reset session {2}",
-                Name, session.Handle, session.Token);
-        }
-
-        internal void OnSessionResp(LinkSession session, SessionResp e)
-        {
-            LinkSession currentSession = Session;
-            string sessionToken = null;
-            if (!Object.ReferenceEquals(currentSession, null))
-            {
-                sessionToken = currentSession.Token;
-            }
-
-            // Save the session token from the server.
-            session.Token = e.Token;
-
-            Trace.Log("{0} {1} session token {2}",
-                Name, session.InternalHandle, e.Token);
-
-            if (!String.IsNullOrEmpty(sessionToken))
-            {
-                if (sessionToken.Equals(e.Token))
-                {
-                    // Recovered from instant disconnection.
-                    session.InheritFrom(this.session);
-
-                    session.Send(new SessionAck {
-                        _Transform = false,
-                        Recovered = true
-                    });
-
-                    OnLinkSessionRecoveredInternal(session.Handle, session, e.Retransmission);
-                    return;
-                }
-
-                OnLinkSessionDisconnectedInternal(currentSession.Handle, currentSession);
-            }
-
-            session.Send(new SessionAck { _Transform = false });
-
-            OnSessionSetup(session);
         }
 
         /// <summary>
@@ -169,32 +129,24 @@ namespace x2net
         protected virtual void OnConnectInternal(LinkSession session)
         {
             session.Polarity = true;
-
-            if (SessionRecoveryEnabled)
+            
+            if (HasChannelStrategy)
             {
-                SendSessionReq(session);
+                ChannelStrategy.BeforeSessionSetup(session);
+            }
+            if (HasHeartbeatStrategy)
+            {
+                HeartbeatStrategy.BeforeSessionSetup(session);
+            }
+            
+            if (HasSessionStrategy)
+            {
+                SessionStrategy.BeforeSessionSetup(session);
             }
             else
             {
                 OnSessionSetup(session);
             }
-        }
-
-        private void SendSessionReq(LinkSession session)
-        {
-            var req = new SessionReq { _Transform = false };
-
-            LinkSession currentSession = Session;
-            if (!Object.ReferenceEquals(currentSession, null) &&
-                !String.IsNullOrEmpty(currentSession.Token))
-            {
-                req.Token = currentSession.Token;
-                req.RxCounter = currentSession.RxCounter;
-                req.TxCounter = currentSession.TxCounter;
-                req.TxBuffered = currentSession.TxBuffered;
-            }
-
-            session.Send(req);
         }
     }
 }

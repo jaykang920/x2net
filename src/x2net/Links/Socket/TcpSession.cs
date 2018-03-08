@@ -34,7 +34,7 @@ namespace x2net
             }
         }
 
-        protected override void SendInternal()
+        internal protected override void SendInternal()
         {
             try
             {

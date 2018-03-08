@@ -25,11 +25,7 @@ namespace x2net
         private DateTime startTime;
         private EndPoint remoteEndPoint;
 
-        private volatile bool incomingKeepaliveEnabled;
-        private volatile bool outgoingKeepaliveEnabled;
-
         private volatile bool connecting;
-        private volatile bool recovering;
 
         private List<Event> eventQueue;
         private bool connected;
@@ -98,36 +94,6 @@ namespace x2net
         /// </summary>
         public int ReconnectDelay { get; set; }
 
-        // Keepalive properties
-
-        /// <summary>
-        /// Gets or sets a boolean value indicating whether this link checks
-        /// for incomming keepalive events
-        /// </summary>
-        public bool IncomingKeepaliveEnabled
-        {
-            get { return incomingKeepaliveEnabled; }
-            set { incomingKeepaliveEnabled = value; }
-        }
-        /// <summary>
-        /// Gets or sets a boolean value indicating whether this link emits
-        /// outgoing keepalive events.
-        /// </summary>
-        public bool OutgoingKeepaliveEnabled
-        {
-            get { return outgoingKeepaliveEnabled; }
-            set { outgoingKeepaliveEnabled = value; }
-        }
-        /// <summary>
-        /// Gets or sets the maximum number of successive keepalive failures
-        /// before the link closes the session.
-        /// </summary>
-        public int MaxKeepaliveFailureCount { get; set; }
-        /// <summary>
-        /// Gets or sets a boolean value indicating whether this link ignores
-        /// the keepalive failure limit instead of clsoing the session.
-        /// </summary>
-        public bool IgnoreKeepaliveFailure { get; set; }
 
         // Connect-on-Demand properties
 
@@ -343,8 +309,10 @@ namespace x2net
             ConnectInternal(socket, endpoint);
         }
 
-        // Reconnects to the last successful remote address.
-        private void Reconnect()
+        /// <summary>
+        /// <see cref="ClientLink.Reconnect"/>
+        /// </summary>
+        public override void Reconnect()
         {
             if (remoteEndPoint == null)
             {
@@ -365,7 +333,6 @@ namespace x2net
             base.OnSessionConnectedInternal(result, context);
 
             connecting = false;
-            recovering = false;
 
             if (result)
             {
@@ -413,20 +380,6 @@ namespace x2net
 
                 Reconnect();
             }
-        }
-
-        internal override void OnInstantDisconnect(LinkSession session)
-        {
-            LinkSession currentSession = Session;
-            if (!Object.ReferenceEquals(session, currentSession))
-            {
-                Trace.Warn("{0} gave up session recovery {1}", Name, session.Handle);
-                return;
-            }
-
-            recovering = true;
-
-            Reconnect();
         }
 
         /// <summary>
@@ -487,20 +440,15 @@ namespace x2net
 
                 connecting = false;
 
-                if (recovering)
+                if (HasSessionStrategy)
                 {
-                    recovering = false;
-
-                    LinkSession deadSession = Session;
-
-                    deadSession.Release();
-
-                    OnLinkSessionDisconnectedInternal(deadSession.Handle, deadSession);
+                    if (SessionStrategy.OnConnectError())
+                    {
+                        return;
+                    }
                 }
-                else
-                {
-                    OnLinkSessionConnectedInternal(false, endpoint);
-                }
+
+                OnLinkSessionConnectedInternal(false, endpoint);
             }
         }
 
@@ -514,7 +462,6 @@ namespace x2net
                 holdingFlow.SubscribeTo(Name);
             }
 
-            Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
             Bind(new TimeoutEvent { Key = this }, OnTimer);
         }
 
@@ -527,32 +474,6 @@ namespace x2net
             }
 
             base.TeardownInternal();
-        }
-
-        private void OnHeartbeatEvent(HeartbeatEvent e)
-        {
-            if (!IncomingKeepaliveEnabled && !OutgoingKeepaliveEnabled)
-            {
-                return;
-            }
-
-            var tcpSession = (AbstractTcpSession)Session;
-            if (tcpSession == null || !tcpSession.SocketConnected)
-            {
-                return;
-            }
-
-            int failureCount = tcpSession.Keepalive(
-                incomingKeepaliveEnabled, outgoingKeepaliveEnabled);
-
-            if (MaxKeepaliveFailureCount > 0 &&
-                failureCount > MaxKeepaliveFailureCount)
-            {
-                Trace.Warn("{0} {1} closed due to the keepalive failure",
-                    Name, tcpSession.Handle);
-
-                tcpSession.OnDisconnect();
-            }
         }
 
         private void OnTimer(TimeoutEvent e)

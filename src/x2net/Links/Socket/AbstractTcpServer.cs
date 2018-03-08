@@ -15,9 +15,6 @@ namespace x2net
     {
         protected Socket socket;
 
-        private volatile bool incomingKeepaliveEnabled;
-        private volatile bool outgoingKeepaliveEnabled;
-
         /// <summary>
         /// Gets whether this link is currently listening or not.
         /// </summary>
@@ -33,43 +30,6 @@ namespace x2net
         /// are not to use the Nagle algorithm.
         /// </summary>
         public bool NoDelay { get; set; }
-
-        // Keepalive properties
-
-        /// <summary>
-        /// Gets or sets a boolean value indicating whether this link checks
-        /// for incomming keepalive events
-        /// </summary>
-        public bool IncomingKeepaliveEnabled
-        {
-            get { return incomingKeepaliveEnabled; }
-            set
-            {
-                incomingKeepaliveEnabled = value;
-            }
-        }
-        /// <summary>
-        /// Gets or sets a boolean value indicating whether this link emits
-        /// outgoing keepalive events.
-        /// </summary>
-        public bool OutgoingKeepaliveEnabled
-        {
-            get { return outgoingKeepaliveEnabled; }
-            set
-            {
-                outgoingKeepaliveEnabled = value;
-            }
-        }
-        /// <summary>
-        /// Gets or sets the maximum number of successive keepalive failures
-        /// allowed before the link closes the session.
-        /// </summary>
-        public int MaxKeepaliveFailureCount { get; set; }
-        /// <summary>
-        /// Gets or sets a boolean value indicating whether this link ignores
-        /// keepalive failures.
-        /// </summary>
-        public bool IgnoreKeepaliveFailure { get; set; }
 
         static AbstractTcpServer()
         {
@@ -166,50 +126,6 @@ namespace x2net
                 Trace.Warn("{0} {1} accept error: {2}",
                     Name, tcpSession.InternalHandle, ode);
                 return false;
-            }
-        }
-
-        protected override void SetupInternal()
-        {
-            base.SetupInternal();
-
-            Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
-        }
-
-        private void OnHeartbeatEvent(HeartbeatEvent e)
-        {
-            if (!IncomingKeepaliveEnabled && !OutgoingKeepaliveEnabled)
-            {
-                return;
-            }
-
-            List<LinkSession> snapshot;
-            using (new ReadLock(rwlock))
-            {
-                snapshot = new List<LinkSession>(sessions.Count);
-                var list = sessions.Values;
-                for (int i = 0, count = list.Count; i < count; ++i)
-                {
-                    snapshot.Add(list[i]);
-                }
-            }
-            for (int i = 0, count = snapshot.Count; i < count; ++i)
-            {
-                var tcpSession = (AbstractTcpSession)snapshot[i];
-                if (tcpSession.SocketConnected)
-                {
-                    int failureCount = tcpSession.Keepalive(
-                        incomingKeepaliveEnabled, outgoingKeepaliveEnabled);
-
-                    if (MaxKeepaliveFailureCount > 0 &&
-                        failureCount > MaxKeepaliveFailureCount)
-                    {
-                        Trace.Warn("{0} {1} closed due to the keepalive failure",
-                            Name, tcpSession.Handle);
-
-                        tcpSession.OnDisconnect();
-                    }
-                }
             }
         }
     }

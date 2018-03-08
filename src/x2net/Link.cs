@@ -17,11 +17,6 @@ namespace x2net
         public EventFactory EventFactory { get; private set; }
 
         /// <summary>
-        /// Gets or sets the BufferTransform for this link.
-        /// </summary>
-        public IBufferTransform BufferTransform { get; set; }
-
-        /// <summary>
         /// Gets the name of this link.
         /// </summary>
         public string Name { get; private set; }
@@ -88,12 +83,6 @@ namespace x2net
         protected override void Dispose(bool disposing)
         {
             if (disposed) { return; }
-
-            if (BufferTransform != null)
-            {
-                BufferTransform.Dispose();
-                BufferTransform = null;
-            }
 
             lock (names)
             {

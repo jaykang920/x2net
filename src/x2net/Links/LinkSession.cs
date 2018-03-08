@@ -10,7 +10,7 @@ namespace x2net
     /// <summary>
     /// Abstract base class for concrete link sessions.
     /// </summary>
-    public abstract class LinkSession : IDisposable
+    public abstract partial class LinkSession : IDisposable
     {
         protected int handle;
         protected SessionBasedLink link;
@@ -29,10 +29,7 @@ namespace x2net
         protected int lengthToSend;
 
         protected bool rxBeginning;
-
         protected bool rxTransformed;
-        protected bool rxTransformReady;
-        protected bool txTransformReady;
 
         protected bool txFlag;
 
@@ -46,13 +43,6 @@ namespace x2net
         protected long txCompleted;
 
         protected volatile bool connected;
-
-        private List<Event> preConnectionQueue;
-
-        /// <summary>
-        /// Gets or sets the BufferTransform for this link session.
-        /// </summary>
-        public IBufferTransform BufferTransform { get; set; }
 
         /// <summary>
         /// Gets or sets the context object associated with this link session.
@@ -134,9 +124,66 @@ namespace x2net
             set { connected = value; }
         }
 
+        public bool Closing
+        {
+            get { return closing; }
+            set { closing = value; }
+        }
+
+        public bool Disposed
+        {
+            get { return disposed; }
+            set { disposed = value; }
+        }
+
+        public List<ArraySegment<byte>> TxBufferList
+        {
+            get { return txBufferList; }
+            set { txBufferList = value; }
+        }
+
+        public int LengthToSend
+        {
+            get { return lengthToSend; }
+            set { lengthToSend = value; }
+        }
+
+        public bool TxFlag
+        {
+            get { return txFlag; }
+            set { txFlag = value; }
+        }
+
+        public List<Event> EventsSending
+        {
+            get { return eventsSending; }
+            set { eventsSending = value; }
+        }
+        public List<Event> EventsToSend
+        {
+            get { return eventsToSend; }
+            set { eventsToSend = value; }
+        }
+        public List<SendBuffer> BuffersSending
+        {
+            get { return buffersSending; }
+            set { buffersSending = value; }
+        }
+        public List<SendBuffer> BuffersSent
+        {
+            get { return buffersSent; }
+            set { buffersSent = value; }
+        }
+
         protected internal virtual int InternalHandle { get { return handle; } }
 
         internal object SyncRoot { get { return syncRoot; } }
+
+        // Strategies
+
+        public ChannelStrategy.SubStrategy ChannelStrategy { get; set; }
+        public HeartbeatStrategy.SubStrategy HeartbeatStrategy { get; set; }
+        public SessionStrategy.SubStrategy SessionStrategy { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the LinkSession class.
@@ -154,11 +201,6 @@ namespace x2net
             buffersSending = new List<SendBuffer>();
             buffersSent = new List<SendBuffer>();
 
-            if (link.SessionRecoveryEnabled)
-            {
-                preConnectionQueue = new List<Event>();
-            }
-
             Diag = new Diagnostics(this);
         }
 
@@ -175,9 +217,9 @@ namespace x2net
         {
             closing = true;
 
-            if (link.SessionRecoveryEnabled)
+            if (link.HasSessionStrategy)
             {
-                Send(new SessionEnd { _Transform = false });
+                SessionStrategy.OnClose();
             }
 
             OnClose();
@@ -206,10 +248,9 @@ namespace x2net
 
         public void Release()
         {
-            if (!Object.ReferenceEquals(BufferTransform, null))
+            if (link.HasChannelStrategy)
             {
-                BufferTransform.Dispose();
-                BufferTransform = null;
+                ChannelStrategy.Release();
             }
 
             for (int i = 0, count = buffersSending.Count; i < count; ++i)
@@ -237,22 +278,18 @@ namespace x2net
 
             Trace.Info("{0} closed {1}", link.Name, this);
 
-            if (link.SessionRecoveryEnabled == false &&
-                !Object.ReferenceEquals(BufferTransform, null))
+            if (!link.HasSessionStrategy && link.HasChannelStrategy)
             {
-                BufferTransform.Dispose();
-                BufferTransform = null;
+                ChannelStrategy.Release();
             }
 
             txBufferList.Clear();
             rxBufferList.Clear();
             rxBuffer.Dispose();
 
-            if (link.SessionRecoveryEnabled)
+            if (link.HasSessionStrategy)
             {
-                // Postpone disposing send buffers
-
-                preConnectionQueue.Clear();
+                SessionStrategy.OnDispose();
             }
             else
             {
@@ -275,7 +312,7 @@ namespace x2net
         /// </summary>
         public void Send(Event e)
         {
-            if (disposed && !link.SessionRecoveryEnabled)
+            if (disposed && !link.HasSessionStrategy)
             {
                 Trace.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, e);
                 return;
@@ -283,20 +320,19 @@ namespace x2net
 
             lock (syncRoot)
             {
-                if (link.SessionRecoveryEnabled && !disposed &&
-                    !connected && e.GetTypeId() > 0)  // not builtin events
+                if (link.HasSessionStrategy)
                 {
-                    Trace.Info("{0} {1} pre-establishment buffered {2}",
-                        link.Name, InternalHandle, e);
-                    preConnectionQueue.Add(e);
-                    return;
+                    if (SessionStrategy.BeforeSend(e))
+                    {
+                        return;
+                    }
                 }
 
                 eventsToSend.Add(e);
 
                 if (txFlag || disposed)
                 {
-                    //Trace.Debug("{0} {1} buffered {2}", link.Name, InternalHandle, e);
+                    Trace.Debug("{0} {1} buffered {2}", link.Name, InternalHandle, e);
                     return;
                 }
 
@@ -311,7 +347,7 @@ namespace x2net
         /// </summary>
         public void Send(Event[] events)
         {
-            if (disposed && !link.SessionRecoveryEnabled)
+            if (disposed && !link.HasSessionStrategy)
             {
                 for (int i = 0; i < events.Length; ++i)
                 {
@@ -322,21 +358,15 @@ namespace x2net
 
             lock (syncRoot)
             {
-                if (link.SessionRecoveryEnabled && !disposed &&
-                    !connected)  // not builtin events
+                if (link.HasSessionStrategy)
                 {
                     for (int i = 0; i < events.Length; ++i)
                     {
-                        Event e = events[i];
-                        if (e.GetTypeId() <= 0) { continue; }
-
-                        Trace.Info("{0} {1} pre-establishment buffered {2}",
-                            link.Name, InternalHandle, e);
-
-                        preConnectionQueue.Add(e);
+                        if (SessionStrategy.BeforeSend(events[i]))
+                        {
+                            return;
+                        }
                     }
-
-                    return;
                 }
 
                 for (int i = 0; i < events.Length; ++i)
@@ -346,7 +376,7 @@ namespace x2net
 
                 if (txFlag || disposed)
                 {
-                    //Trace.Debug("{0} {1} buffered {2}", link.Name, InternalHandle, e);
+                    Trace.Debug("{0} {1} buffered {2} events", link.Name, InternalHandle, events.Length);
                     return;
                 }
 
@@ -354,187 +384,6 @@ namespace x2net
             }
 
             BeginSend();
-        }
-
-        internal void InheritFrom(LinkSession oldSession)
-        {
-            lock (syncRoot)
-            {
-                handle = oldSession.Handle;
-                Token = oldSession.Token;
-
-                Trace.Debug("{0} {1} session inheritance {2}",
-                    link.Name, handle, Token);
-
-                BufferTransform = oldSession.BufferTransform;
-                rxTransformReady = oldSession.rxTransformReady;
-                txTransformReady = oldSession.txTransformReady;
-            }
-        }
-
-        public void TakeOver(LinkSession oldSession, int retransmission)
-        {
-            if (retransmission == 0)
-            {
-                lock (syncRoot)
-                {
-                    lock (oldSession.syncRoot)
-                    {
-                        if (oldSession.buffersSending.Count != 0)
-                        {
-                            // Dispose them
-                            for (int i = 0, count = oldSession.buffersSending.Count; i < count; ++i)
-                            {
-                                oldSession.buffersSending[i].Dispose();
-                            }
-                            oldSession.buffersSending.Clear();
-                        }
-                        if (oldSession.buffersSent.Count != 0)
-                        {
-                            // Dispose them
-                            for (int i = 0, count = oldSession.buffersSent.Count; i < count; ++i)
-                            {
-                                oldSession.buffersSent[i].Dispose();
-                            }
-                            oldSession.buffersSent.Clear();
-                        }
-
-                        Trace.Info("{0} {1} pre-establishment buffered {2}",
-                            link.Name, InternalHandle, preConnectionQueue.Count);
-
-                        if (preConnectionQueue.Count != 0)
-                        {
-                            eventsToSend.InsertRange(0, preConnectionQueue);
-                            preConnectionQueue.Clear();
-                        }
-                        if (oldSession.eventsToSend.Count != 0)
-                        {
-                            eventsToSend.InsertRange(0, oldSession.eventsToSend);
-                            oldSession.eventsToSend.Clear();
-                        }
-
-                        Trace.Info("{0} {1} eventsToSend {2}", link.Name, InternalHandle, eventsToSend.Count);
-                    }
-
-                    connected = true;
-
-                    if (txFlag || eventsToSend.Count == 0)
-                    {
-                        return;
-                    }
-
-                    txFlag = true;
-                }
-
-                BeginSend();
-            }
-            else
-            {
-                Monitor.Enter(syncRoot);
-                try
-                {
-                    // Wait for any existing send to complete
-                    while (txFlag)
-                    {
-                        Monitor.Exit(syncRoot);
-                        Thread.Sleep(1);
-                        Monitor.Enter(syncRoot);
-                    }
-
-                    txBufferList.Clear();
-                    lengthToSend = 0;
-                    buffersSending.Clear();
-
-                    lock (oldSession.syncRoot)
-                    {
-                        List<SendBuffer> buffers1, buffers2;
-
-                        if (oldSession.TxCounter == oldSession.TxCompleted)
-                        {
-                            buffers1 = oldSession.buffersSending;
-                            buffers2 = oldSession.buffersSent;
-                        }
-                        else
-                        {
-                            buffers1 = oldSession.buffersSent;
-                            buffers2 = oldSession.buffersSending;
-                        }
-
-                        int numBuffers1ToDispose = oldSession.TxBuffered - retransmission;
-                        if (numBuffers1ToDispose > buffers1.Count)
-                        {
-                            numBuffers1ToDispose = buffers1.Count;
-                        }
-                        int numBuffers2ToDispose = buffers2.Count - retransmission;
-                        if (numBuffers2ToDispose < 0)
-                        {
-                            numBuffers2ToDispose = 0;
-                        }
-                        
-                        int i;
-
-                        for (i = 0; i < numBuffers1ToDispose; ++i)
-                        {
-                            buffers1[i].Dispose();
-                        }
-                        for (; i < buffers1.Count; ++i)
-                        {
-                            SendBuffer buffer = buffers1[i];
-                            buffersSending.Add(buffer);
-                            buffer.ListOccupiedSegments(txBufferList);
-                            lengthToSend += buffer.Length;
-                        }
-                        buffers1.Clear();
-
-                        for (i = 0; i < numBuffers2ToDispose; ++i)
-                        {
-                            buffers2[i].Dispose();
-                        }
-                        for (; i < buffers2.Count; ++i)
-                        {
-                            SendBuffer buffer = buffers2[i];
-                            buffersSending.Add(buffer);
-                            buffer.ListOccupiedSegments(txBufferList);
-                            lengthToSend += buffer.Length;
-                        }
-                        buffers2.Clear();
-
-                        Trace.Info("{0} {1} pre-establishment buffered {2}",
-                            link.Name, InternalHandle, preConnectionQueue.Count);
-
-                        if (preConnectionQueue.Count != 0)
-                        {
-                            eventsToSend.InsertRange(0, preConnectionQueue);
-                            preConnectionQueue.Clear();
-                        }
-                        if (oldSession.eventsToSend.Count != 0)
-                        {
-                            eventsToSend.InsertRange(0, oldSession.eventsToSend);
-                            oldSession.eventsToSend.Clear();
-                        }
-
-                        Trace.Info("{0} {1} eventsToSend {2}", link.Name, InternalHandle, eventsToSend.Count);
-                    }
-
-                    Trace.Warn("{0} {1} retransmitting {2} events ({3} bytes)",
-                        link.Name, InternalHandle, retransmission, lengthToSend);
-
-                    connected = true;
-
-                    txFlag = true;
-                }
-                finally
-                {
-                    Monitor.Exit(syncRoot);
-                }
-
-                Interlocked.Add(ref txCounter, retransmission);
-
-                SendInternal();
-            }
-
-            oldSession = null;
-            retransmission = 0;
         }
 
         internal void BeginReceive(bool beginning)
@@ -604,10 +453,10 @@ namespace x2net
                 e.Serialize(serializer);
 
                 bool transformed = false;
-                if (BufferTransform != null && txTransformReady && e._Transform)
+
+                if (link.HasChannelStrategy && e._Transform)
                 {
-                    BufferTransform.Transform(sendBuffer.Buffer, (int)sendBuffer.Buffer.Length);
-                    transformed = true;
+                    transformed = ChannelStrategy.BeforeSend(sendBuffer.Buffer, (int)sendBuffer.Buffer.Length);
                 }
 
                 BuildHeader(sendBuffer, transformed);
@@ -618,26 +467,31 @@ namespace x2net
                 OnEventSent(e);
             }
 
-            lock (syncRoot)
-            {
-                Trace.Log("{0} {1} serialized {2} events to send ({3} bytes)",
-                    link.Name, InternalHandle, count, lengthToSend);
-
-                Interlocked.Add(ref txCounter, count);
-            }
+            Trace.Log("{0} {1} serialized {2} events to send ({3} bytes)",
+                link.Name, InternalHandle, count, lengthToSend);
 
             SendInternal();
+        }
+
+        public void IncrementTxCounter(int value)
+        {
+            Interlocked.Add(ref txCounter, value);
         }
 
         protected abstract void BuildHeader(SendBuffer sendBuffer, bool transformed);
         protected abstract bool ParseHeader();
 
         protected abstract void ReceiveInternal();
-        protected abstract void SendInternal();
+        internal protected abstract void SendInternal();
 
         protected void OnReceiveInternal(int bytesTransferred)
         {
             Diag.AddBytesReceived(bytesTransferred);
+
+            if (link.HasHeartbeatStrategy)
+            {
+                HeartbeatStrategy.OnReceive();
+            }
 
             lock (syncRoot)
             {
@@ -679,11 +533,11 @@ namespace x2net
                 Trace.Log("{0} {1} marked {2} byte(s) to read",
                     link.Name, InternalHandle, lengthToReceive);
 
-                if (BufferTransform != null && rxTransformReady && rxTransformed)
+                if (link.HasChannelStrategy && rxTransformed)
                 {
                     try
                     {
-                        BufferTransform.InverseTransform(rxBuffer, lengthToReceive);
+                        ChannelStrategy.AfterReceive(rxBuffer, lengthToReceive);
                     }
                     catch (Exception e)
                     {
@@ -693,8 +547,6 @@ namespace x2net
                     }
                 }
                 rxBuffer.Rewind();
-
-                Interlocked.Increment(ref rxCounter);
 
                 var deserializer = new Deserializer(rxBuffer);
                 int typeId;
@@ -729,7 +581,25 @@ namespace x2net
 
                     OnEventReceived(retrieved);
 
-                    if (!Process(retrieved))
+                    // Consider subscribing/unsubscribing here.
+                    bool processed = false;
+                    if (link.HasChannelStrategy)
+                    {
+                        processed = ChannelStrategy.Process(retrieved);
+                    }
+                    if (!processed && link.HasHeartbeatStrategy)
+                    {
+                        processed = HeartbeatStrategy.Process(retrieved);
+                    }
+                    if (!processed && link.HasSessionStrategy)
+                    {
+                        processed = SessionStrategy.Process(retrieved);
+                    }
+                    if (!processed)
+                    {
+                        processed = Process(retrieved);
+                    }
+                    if (!processed)
                     {
                         retrieved._Handle = Handle;
 
@@ -764,11 +634,11 @@ namespace x2net
                 return;
             }
 
-            if (link.SessionRecoveryEnabled && !closing)
+            if (link.HasSessionStrategy && !closing)
             {
                 lock (syncRoot)
                 {
-                    link.OnInstantDisconnect(this);
+                    link.SessionStrategy.OnInstantDisconnect(this);
                 }
             }
             else
@@ -777,7 +647,7 @@ namespace x2net
             }
         }
 
-        protected void OnSendInternal(int bytesTransferred)
+        internal protected void OnSendInternal(int bytesTransferred)
         {
             Diag.AddBytesSent(bytesTransferred);
 
@@ -831,107 +701,26 @@ namespace x2net
 
         protected virtual bool Process(Event e)
         {
-            switch (e.GetTypeId())
-            {
-                case (int)LinkEventType.HandshakeReq:
-                    {
-                        var req = (HandshakeReq)e;
-                        var resp = new HandshakeResp { _Transform = false };
-                        byte[] response = null;
-                        try
-                        {
-                            ManualResetEvent waitHandle =
-                                LinkWaitHandlePool.Acquire(InternalHandle);
-                            waitHandle.WaitOne(new TimeSpan(0, 0, 30));
-                            LinkWaitHandlePool.Release(InternalHandle);
-                            response = BufferTransform.Handshake(req.Data);
-                        }
-                        catch (Exception ex)
-                        {
-                            Trace.Error("{0} {1} error handshaking : {2}",
-                                link.Name, InternalHandle, ex.ToString());
-                        }
-                        if (response != null)
-                        {
-                            resp.Data = response;
-                        }
-                        Send(resp);
-                    }
-                    break;
-                case (int)LinkEventType.HandshakeResp:
-                    {
-                        var ack = new HandshakeAck { _Transform = false };
-                        var resp = (HandshakeResp)e;
-                        try
-                        {
-                            if (BufferTransform.FinalizeHandshake(resp.Data))
-                            {
-                                rxTransformReady = true;
-                                ack.Result = true;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Trace.Error("{0} {1} error finishing handshake : {2}",
-                                link.Name, InternalHandle, ex.ToString());
-                        }
-                        Send(ack);
-                    }
-                    break;
-                case (int)LinkEventType.HandshakeAck:
-                    {
-                        var ack = (HandshakeAck)e;
-                        bool result = ack.Result;
-
-                        if (result)
-                        {
-                            txTransformReady = true;
-                        }
-
-                        link.OnLinkSessionConnectedInternal(result, (result ? this : null));
-                    }
-                    break;
-                case (int)LinkEventType.SessionReq:
-                    if (link.SessionRecoveryEnabled && polarity == false)
-                    {
-                        var server = (ServerLink)link;
-                        server.OnSessionReq(this, (SessionReq)e);
-                    }
-                    break;
-                case (int)LinkEventType.SessionResp:
-                    if (link.SessionRecoveryEnabled && polarity == true)
-                    {
-                        var client = (ClientLink)link;
-                        client.OnSessionResp(this, (SessionResp)e);
-                    }
-                    break;
-                case (int)LinkEventType.SessionAck:
-                    if (link.SessionRecoveryEnabled && polarity == false)
-                    {
-                        var server = (ServerLink)link;
-                        server.OnSessionAck(this, (SessionAck)e);
-                    }
-                    break;
-                case (int)LinkEventType.SessionEnd:
-                    if (link.SessionRecoveryEnabled)
-                    {
-                        closing = true;
-                    }
-                    break;
-                default:
-                    return false;
-            }
-            return true;
+            return false;
         }
 
         protected virtual void OnEventReceived(Event e)
         {
+            Interlocked.Increment(ref rxCounter);
+
             Diag.IncrementEventsReceived();
         }
 
         protected virtual void OnEventSent(Event e)
         {
+            Interlocked.Increment(ref txCounter);
+
             Diag.IncrementEventsSent();
+
+            if (link.HasHeartbeatStrategy)
+            {
+                HeartbeatStrategy.OnSend(e);
+            }
         }
 
         #region Diagnostics

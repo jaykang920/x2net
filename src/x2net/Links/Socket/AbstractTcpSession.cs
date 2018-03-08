@@ -179,19 +179,6 @@ namespace x2net
             return true;
         }
 
-        protected override bool Process(Event e)
-        {
-            switch (e.GetTypeId())
-            {
-                case BuiltinEventType.HeartbeatEvent:
-                    // Do nothing
-                    break;
-                default:
-                    return base.Process(e);
-            }
-            return true;
-        }
-
         protected override void OnEventReceived(Event e)
         {
             if (e.GetTypeId() == BuiltinEventType.HeartbeatEvent)

@@ -29,6 +29,11 @@ namespace x2net
         protected object syncRoot = new Object();
 
         /// <summary>
+        /// Gets or sets the BufferTransform for this link.
+        /// </summary>
+        public IBufferTransform BufferTransform { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the AbsractUdpLink class.
         /// </summary>
         protected AbstractUdpLink(string name)
@@ -57,6 +62,12 @@ namespace x2net
             try
             {
                 socket.Close();
+
+                if (BufferTransform != null)
+                {
+                    BufferTransform.Dispose();
+                    BufferTransform = null;
+                }
 
                 rxBuffer.Dispose();
                 txBuffer.Dispose();

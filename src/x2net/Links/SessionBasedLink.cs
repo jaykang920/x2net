@@ -7,28 +7,11 @@ using System.Threading;
 namespace x2net
 {
     /// <summary>
-    /// Abstract base class for session-based links.
+    /// Common abstract base class for session-based links.
     /// </summary>
     public abstract class SessionBasedLink : Link
     {
         protected ReaderWriterLockSlim rwlock;
-
-        private volatile bool sessionRecoveryEnabled;
-
-        /// <summary>
-        /// Gets or sets a boolean value inidicating whether this link supports
-        /// automatic session recovery on instant disconnection.
-        /// </summary>
-        public bool SessionRecoveryEnabled
-        {
-            get { return sessionRecoveryEnabled; }
-            set { sessionRecoveryEnabled = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the session recovery timeout (in seconds).
-        /// </summary>
-        public int SessionRecoveryTimeout { get; set; }
 
         /// <summary>
         /// A delegate type for hooking up event proprocess notifications.
@@ -41,13 +24,48 @@ namespace x2net
         /// </summary>
         public event PreprocessEventHandler Preprocess;
 
+        // Strategies
+
+        /// <summary>
+        /// Gets or sets the channel strategy object for this link.
+        /// </summary>
+        public ChannelStrategy ChannelStrategy { get; set; }
+        /// <summary>
+        /// Gets or sets the heartbeat strategy object for this link.
+        /// </summary>
+        public HeartbeatStrategy HeartbeatStrategy { get; set; }
+        /// <summary>
+        /// Gets or sets the session strategy object for this link.
+        /// </summary>
+        public SessionStrategy SessionStrategy { get; set; }
+
+        /// <summary>
+        /// Gets whether this link has active channel strategy or not.
+        /// </summary>
+        public bool HasChannelStrategy
+        {
+            get { return !ReferenceEquals(ChannelStrategy, null); }
+        }
+        /// <summary>
+        /// Gets whether this link has active heartbeat strategy or not.
+        /// </summary>
+        public bool HasHeartbeatStrategy
+        {
+            get { return !ReferenceEquals(HeartbeatStrategy, null); }
+        }
+        /// <summary>
+        /// Gets whether this link has active session strategy or not.
+        /// </summary>
+        public bool HasSessionStrategy
+        {
+            get { return !ReferenceEquals(SessionStrategy, null); }
+        }
+
         static SessionBasedLink()
         {
             EventFactory.Global.Register(HandshakeReq.TypeId, HandshakeReq.New);
             EventFactory.Global.Register(HandshakeResp.TypeId, HandshakeResp.New);
             EventFactory.Global.Register(HandshakeAck.TypeId, HandshakeAck.New);
-
-            EventFactory.Global.Register(SessionEnd.TypeId, SessionEnd.New);
         }
 
         /// <summary>
@@ -57,8 +75,6 @@ namespace x2net
             : base(name)
         {
             rwlock = new ReaderWriterLockSlim();
-
-            SessionRecoveryTimeout = 10;  // 10 seconds by default
         }
 
         /// <summary>
@@ -123,22 +139,6 @@ namespace x2net
             });
         }
 
-        internal void OnLinkSessionRecoveredInternal(
-            int handle, object context, int retransmission)
-        {
-            OnSessionRecoveredInternal(handle, context, retransmission);
-
-            Hub.Post(new LinkSessionRecovered {
-                LinkName = Name,
-                Handle = handle,
-                Context = context
-            });
-
-            Trace.Info("{0} recovered {1} {2}", Name, handle, context);
-        }
-
-        internal abstract void OnInstantDisconnect(LinkSession session);
-
         internal protected void OnPreprocess(LinkSession session, Event e)
         {
             if (Preprocess != null)
@@ -154,29 +154,14 @@ namespace x2net
         {
             if (disposed) { return; }
 
+            if (HasChannelStrategy)
+            {
+                ChannelStrategy.Release();
+            }
+
             rwlock.Dispose();
 
             base.Dispose(disposing);
-        }
-
-        /// <summary>
-        /// Called by a derived class to initiate a buffer transform handshake.
-        /// </summary>
-        protected void InitiateHandshake(LinkSession session)
-        {
-            if (Object.ReferenceEquals(BufferTransform, null))
-            {
-                return;
-            }
-
-            var bufferTransform = (IBufferTransform)BufferTransform.Clone();
-            session.BufferTransform = bufferTransform;
-            LinkWaitHandlePool.Acquire(session.InternalHandle).Set();
-
-            session.Send(new HandshakeReq {
-                _Transform = false,
-                Data = bufferTransform.InitializeHandshake()
-            });
         }
 
         /// <summary>
@@ -198,25 +183,13 @@ namespace x2net
         protected abstract void OnSessionDisconnectedInternal(int handle, object context);
 
         /// <summary>
-        /// Called when an existing link session is recovered.
-        /// </summary>
-        protected virtual void OnSessionRecovered(int handle, object context)
-        {
-        }
-
-        protected virtual void OnSessionRecoveredInternal(
-            int handle, object context, int retransmission)
-        {
-        }
-
-        /// <summary>
         /// Called when a new link session is ready for open.
         /// </summary>
-        protected void OnSessionSetup(LinkSession session)
+        public void OnSessionSetup(LinkSession session)
         {
-            if (BufferTransform != null)
+            if (HasChannelStrategy)
             {
-                InitiateHandshake(session);
+                ChannelStrategy.InitiateHandshake(session);
             }
             else
             {
@@ -235,8 +208,51 @@ namespace x2net
                 OnLinkSessionConnected);
             Bind(new LinkSessionDisconnected { LinkName = Name },
                 OnLinkSessionDisconnected);
-            Bind(new LinkSessionRecovered { LinkName = Name },
-                OnLinkSessionRecovered);
+
+            if (HasChannelStrategy)
+            {
+                ChannelStrategy.Link = this;
+                ChannelStrategy.Setup();
+            }
+            if (HasHeartbeatStrategy)
+            {
+                HeartbeatStrategy.Link = this;
+                HeartbeatStrategy.Setup();
+            }
+            if (HasSessionStrategy)
+            {
+                SessionStrategy.Link = this;
+                SessionStrategy.Setup();
+            }
+
+            if (HasHeartbeatStrategy)
+            {
+                Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
+            }
+        }
+
+        /// <summary>
+        /// <see cref="Case.TeardownInternal"/>
+        /// </summary>
+        protected override void TeardownInternal()
+        {
+            if (HasSessionStrategy)
+            {
+                SessionStrategy.Teardown();
+                SessionStrategy.Link = null;
+            }
+            if (HasHeartbeatStrategy)
+            {
+                HeartbeatStrategy.Teardown();
+                HeartbeatStrategy.Link = null;
+            }
+            if (HasChannelStrategy)
+            {
+                ChannelStrategy.Teardown();
+                ChannelStrategy.Link = null;
+            }
+
+            base.TeardownInternal();
         }
 
         // LinkSessionConnected event handler
@@ -251,10 +267,9 @@ namespace x2net
             OnSessionDisconnected(e.Handle, e.Context);
         }
 
-        // LinkSessionRecovered event handler
-        private void OnLinkSessionRecovered(LinkSessionRecovered e)
+        void OnHeartbeatEvent(HeartbeatEvent e)
         {
-            OnSessionRecovered(e.Handle, e.Context);
+            HeartbeatStrategy.OnHeartbeat();
         }
     }
 }
