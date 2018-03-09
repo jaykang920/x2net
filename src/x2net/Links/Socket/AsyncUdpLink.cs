@@ -58,8 +58,6 @@ namespace x2net
             bool pending = socket.ReceiveFromAsync(rxEventArgs);
             if (!pending)
             {
-                Trace.Debug("{0} ReceiveFromAsync completed immediately", Name);
-
                 OnReceiveFrom(rxEventArgs);
             }
         }
@@ -72,8 +70,6 @@ namespace x2net
             bool pending = socket.SendToAsync(txEventArgs);
             if (!pending)
             {
-                Trace.Debug("{0} SendToAsync completed immediately", Name);
-
                 OnSendTo(txEventArgs);
             }
         }

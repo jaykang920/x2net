@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<x2 namespace="hello">
+  <definitions>
+    <event name="HelloReq" id="1">
+        <property name="Name" type="string"/>
+    </event>
+    <event name="HelloResp" id="2">
+        <property name="Message" type="string"/>
+    </event>
+  </definitions>
+</x2>

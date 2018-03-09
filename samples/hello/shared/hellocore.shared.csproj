@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>hello.shared</AssemblyName>
+    <RootNamespace>hello</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\bin\Debug</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="pushd &quot;$(ProjectDir)&quot;&#xD;&#xA;dotnet ../../../bin/$(ConfigurationName)/netcoreapp2.0/x2net.xpiler.dll -f .&#xD;&#xA;popd" />
+  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\x2net\x2netcore.csproj" />
+  </ItemGroup>
+
+</Project>
