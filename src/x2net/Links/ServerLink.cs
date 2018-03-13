@@ -104,10 +104,6 @@ namespace x2net
             {
                 sessions.Remove(handle);
             }
-            if (HasSessionStrategy)
-            {
-                SessionStrategy.AfterSessionTeardown(session);
-            }
         }
 
         /// <summary>
@@ -146,14 +142,7 @@ namespace x2net
                 HeartbeatStrategy.BeforeSessionSetup(session);
             }
 
-            if (HasSessionStrategy)
-            {
-                SessionStrategy.BeforeSessionSetup(session);
-            }
-            else
-            {
-                OnSessionSetup(session);
-            }
+            OnSessionSetup(session);
             return true;
         }
 

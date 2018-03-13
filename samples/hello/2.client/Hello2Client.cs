@@ -21,9 +21,7 @@ namespace hello
         protected override void Setup()
         {
             EventFactory.Register<HelloResp>();
-
             Bind(new HelloReq(), Send);
-
             Connect("127.0.0.1", 6789);
         }
 

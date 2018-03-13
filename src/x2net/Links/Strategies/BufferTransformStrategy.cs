@@ -20,8 +20,7 @@ namespace x2net
 
         public override void BeforeSessionSetup(LinkSession linkSession)
         {
-            linkSession.ChannelStrategy = new BufferTransformSessionStrategy
-            {
+            linkSession.ChannelStrategy = new BufferTransformSessionStrategy {
                 Session = linkSession
             };
         }

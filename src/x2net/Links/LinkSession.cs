@@ -181,9 +181,17 @@ namespace x2net
 
         // Strategies
 
-        public ChannelStrategy.SubStrategy ChannelStrategy { get; set; }
-        public HeartbeatStrategy.SubStrategy HeartbeatStrategy { get; set; }
-        public SessionStrategy.SubStrategy SessionStrategy { get; set; }
+        public volatile ChannelStrategy.SubStrategy ChannelStrategy;
+        public volatile HeartbeatStrategy.SubStrategy HeartbeatStrategy;
+
+        public bool HasChannelStrategy
+        {
+            get { return !ReferenceEquals(ChannelStrategy, null); }
+        }
+        public bool HasHeartbeatStrategy
+        {
+            get { return !ReferenceEquals(HeartbeatStrategy, null); }
+        }
 
         /// <summary>
         /// Initializes a new instance of the LinkSession class.
@@ -217,11 +225,6 @@ namespace x2net
         {
             closing = true;
 
-            if (link.HasSessionStrategy)
-            {
-                SessionStrategy.OnClose();
-            }
-
             OnClose();
 
             CloseInternal();
@@ -248,7 +251,7 @@ namespace x2net
 
         public void Release()
         {
-            if (link.HasChannelStrategy)
+            if (HasChannelStrategy)
             {
                 ChannelStrategy.Release();
             }
@@ -278,7 +281,7 @@ namespace x2net
 
             Trace.Info("{0} closed {1}", link.Name, this);
 
-            if (!link.HasSessionStrategy && link.HasChannelStrategy)
+            if (HasChannelStrategy)
             {
                 ChannelStrategy.Release();
             }
@@ -287,24 +290,17 @@ namespace x2net
             rxBufferList.Clear();
             rxBuffer.Dispose();
 
-            if (link.HasSessionStrategy)
+            for (int i = 0, count = buffersSending.Count; i < count; ++i)
             {
-                SessionStrategy.OnDispose();
+                buffersSending[i].Dispose();
             }
-            else
-            {
-                for (int i = 0, count = buffersSending.Count; i < count; ++i)
-                {
-                    buffersSending[i].Dispose();
-                }
-                buffersSending.Clear();
+            buffersSending.Clear();
 
-                for (int i = 0, count = buffersSent.Count; i < count; ++i)
-                {
-                    buffersSent[i].Dispose();
-                }
-                buffersSent.Clear();
+            for (int i = 0, count = buffersSent.Count; i < count; ++i)
+            {
+                buffersSent[i].Dispose();
             }
+            buffersSent.Clear();
         }
 
         /// <summary>
@@ -312,7 +308,7 @@ namespace x2net
         /// </summary>
         public void Send(Event e)
         {
-            if (disposed && !link.HasSessionStrategy)
+            if (disposed)
             {
                 Trace.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, e);
                 return;
@@ -320,14 +316,6 @@ namespace x2net
 
             lock (syncRoot)
             {
-                if (link.HasSessionStrategy)
-                {
-                    if (SessionStrategy.BeforeSend(e))
-                    {
-                        return;
-                    }
-                }
-
                 eventsToSend.Add(e);
 
                 if (txFlag || disposed)
@@ -347,7 +335,7 @@ namespace x2net
         /// </summary>
         public void Send(Event[] events)
         {
-            if (disposed && !link.HasSessionStrategy)
+            if (disposed)
             {
                 for (int i = 0; i < events.Length; ++i)
                 {
@@ -358,17 +346,6 @@ namespace x2net
 
             lock (syncRoot)
             {
-                if (link.HasSessionStrategy)
-                {
-                    for (int i = 0; i < events.Length; ++i)
-                    {
-                        if (SessionStrategy.BeforeSend(events[i]))
-                        {
-                            return;
-                        }
-                    }
-                }
-
                 for (int i = 0; i < events.Length; ++i)
                 {
                     eventsToSend.Add(events[i]);
@@ -454,7 +431,7 @@ namespace x2net
 
                 bool transformed = false;
 
-                if (link.HasChannelStrategy && e._Transform)
+                if (HasChannelStrategy && e._Transform)
                 {
                     transformed = ChannelStrategy.BeforeSend(sendBuffer.Buffer, (int)sendBuffer.Buffer.Length);
                 }
@@ -488,7 +465,7 @@ namespace x2net
         {
             Diag.AddBytesReceived(bytesTransferred);
 
-            if (link.HasHeartbeatStrategy)
+            if (HasHeartbeatStrategy)
             {
                 HeartbeatStrategy.OnReceive();
             }
@@ -533,7 +510,7 @@ namespace x2net
                 Trace.Log("{0} {1} marked {2} byte(s) to read",
                     link.Name, InternalHandle, lengthToReceive);
 
-                if (link.HasChannelStrategy && rxTransformed)
+                if (HasChannelStrategy && rxTransformed)
                 {
                     try
                     {
@@ -583,17 +560,13 @@ namespace x2net
 
                     // Consider subscribing/unsubscribing here.
                     bool processed = false;
-                    if (link.HasChannelStrategy)
+                    if (HasChannelStrategy)
                     {
                         processed = ChannelStrategy.Process(retrieved);
                     }
-                    if (!processed && link.HasHeartbeatStrategy)
+                    if (!processed && HasHeartbeatStrategy)
                     {
                         processed = HeartbeatStrategy.Process(retrieved);
-                    }
-                    if (!processed && link.HasSessionStrategy)
-                    {
-                        processed = SessionStrategy.Process(retrieved);
                     }
                     if (!processed)
                     {
@@ -634,17 +607,7 @@ namespace x2net
                 return;
             }
 
-            if (link.HasSessionStrategy && !closing)
-            {
-                lock (syncRoot)
-                {
-                    link.SessionStrategy.OnInstantDisconnect(this);
-                }
-            }
-            else
-            {
-                link.OnLinkSessionDisconnectedInternal(handle, context);
-            }
+            link.OnLinkSessionDisconnectedInternal(handle, context);
         }
 
         internal protected void OnSendInternal(int bytesTransferred)
@@ -717,7 +680,7 @@ namespace x2net
 
             Diag.IncrementEventsSent();
 
-            if (link.HasHeartbeatStrategy)
+            if (HasHeartbeatStrategy)
             {
                 HeartbeatStrategy.OnSend(e);
             }

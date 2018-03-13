@@ -34,10 +34,6 @@ namespace x2net
         /// Gets or sets the heartbeat strategy object for this link.
         /// </summary>
         public HeartbeatStrategy HeartbeatStrategy { get; set; }
-        /// <summary>
-        /// Gets or sets the session strategy object for this link.
-        /// </summary>
-        public SessionStrategy SessionStrategy { get; set; }
 
         /// <summary>
         /// Gets whether this link has active channel strategy or not.
@@ -52,13 +48,6 @@ namespace x2net
         public bool HasHeartbeatStrategy
         {
             get { return !ReferenceEquals(HeartbeatStrategy, null); }
-        }
-        /// <summary>
-        /// Gets whether this link has active session strategy or not.
-        /// </summary>
-        public bool HasSessionStrategy
-        {
-            get { return !ReferenceEquals(SessionStrategy, null); }
         }
 
         static SessionBasedLink()
@@ -219,11 +208,6 @@ namespace x2net
                 HeartbeatStrategy.Link = this;
                 HeartbeatStrategy.Setup();
             }
-            if (HasSessionStrategy)
-            {
-                SessionStrategy.Link = this;
-                SessionStrategy.Setup();
-            }
 
             if (HasHeartbeatStrategy)
             {
@@ -236,11 +220,6 @@ namespace x2net
         /// </summary>
         protected override void TeardownInternal()
         {
-            if (HasSessionStrategy)
-            {
-                SessionStrategy.Teardown();
-                SessionStrategy.Link = null;
-            }
             if (HasHeartbeatStrategy)
             {
                 HeartbeatStrategy.Teardown();

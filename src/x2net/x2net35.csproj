@@ -120,7 +120,6 @@
     <Compile Include="Links\Strategies.cs" />
     <Compile Include="Links\Strategies\BufferTransformStrategy.cs" />
     <Compile Include="Links\Strategies\KeepaliveStrategy.cs" />
-    <Compile Include="Links\Strategies\SessionRecoveryStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queues\ConcurrentEventQueue.cs" />
     <Compile Include="Queues\SynchronizedEventQueue.cs" />

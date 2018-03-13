@@ -115,36 +115,10 @@ namespace x2net
         public virtual void OnSessionConnected(bool result, object context) { }
 
         public virtual bool OnConnectError() { return false; }
-    
+
         public abstract class SubStrategy : LinkSessionStrategy
         {
             public virtual bool BeforeSend(Event e) { return false; }
-        }
-    }
-
-    public abstract class SessionRecoveryStrategy : SessionStrategy
-    {
-        public Action<int, object> OnRecovery;
-
-        public abstract void OnSessionRecovered(int handle, object context, int retransmission);
-
-        public void OnLinkSessionRecovered(int handle, object context, int retransmission)
-        {
-            OnSessionRecovered(handle, context, retransmission);
-
-            if (!ReferenceEquals(OnRecovery, null))
-            {
-                OnRecovery(handle, context);
-            }
-
-            Hub.Post(new LinkSessionRecovered
-            {
-                LinkName = Link.Name,
-                Handle = handle,
-                Context = context
-            });
-
-            Trace.Info("{0} recovered {1} {2}", Link.Name, handle, context);
         }
     }
 }

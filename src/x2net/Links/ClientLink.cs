@@ -67,11 +67,6 @@ namespace x2net
 
         protected override void OnSessionConnectedInternal(bool result, object context)
         {
-            if (HasSessionStrategy)
-            {
-                SessionStrategy.OnSessionConnected(result, context);
-            }
-
             if (result)
             {
                 var session = (LinkSession)context;
@@ -139,14 +134,7 @@ namespace x2net
                 HeartbeatStrategy.BeforeSessionSetup(session);
             }
             
-            if (HasSessionStrategy)
-            {
-                SessionStrategy.BeforeSessionSetup(session);
-            }
-            else
-            {
-                OnSessionSetup(session);
-            }
+            OnSessionSetup(session);
         }
     }
 }

@@ -21,9 +21,7 @@ namespace hello
         protected override void Setup()
         {
             EventFactory.Register<HelloReq>();
-
             Bind(new HelloResp(), Send);
-
             Listen(6789);
         }
 

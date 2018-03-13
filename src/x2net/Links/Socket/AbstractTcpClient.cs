@@ -440,14 +440,6 @@ namespace x2net
 
                 connecting = false;
 
-                if (HasSessionStrategy)
-                {
-                    if (SessionStrategy.OnConnectError())
-                    {
-                        return;
-                    }
-                }
-
                 OnLinkSessionConnectedInternal(false, endpoint);
             }
         }
