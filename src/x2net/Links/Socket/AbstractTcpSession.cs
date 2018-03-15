@@ -34,14 +34,6 @@ namespace x2net
         /// </summary>
         public Socket Socket { get { return socket; } }
 
-        // Keepalive properties
-
-        /// <summary>
-        /// Gets or sets a boolean value indicating whether this link session
-        /// ignores keepalive failures.
-        /// </summary>
-        public bool IgnoreKeepaliveFailure { get; set; }
-
         protected internal override int InternalHandle
         {
             get
