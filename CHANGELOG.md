@@ -1,3 +1,5 @@
+## 0.10.0 (2018-03-15)
+
 Features:
 
 - introduced link strategies to encapsulate pluggable functionalities
