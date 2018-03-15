@@ -71,19 +71,16 @@ Task("Core-Build")
 {
     DotNetCoreRestore("./x2netcore.sln");
 
-    var coreFramework = "netcoreapp2.0";
-    var standardFramework = "netstandard2.0";
+    var targetFramework = "netcoreapp2.0";
+	
+	var buildSettings =  new DotNetCoreBuildSettings {
+        Framework = targetFramework,
+        Configuration = configuration,
+        OutputDirectory = outDir + Directory(targetFramework)
+    };
 
-    DotNetCoreBuild("./src/xpiler/x2netcore.xpiler.csproj", new DotNetCoreBuildSettings {
-        Framework = coreFramework,
-        Configuration = configuration,
-        OutputDirectory = outDir + Directory(coreFramework)
-    });
-    DotNetCoreBuild("./src/x2net/x2netcore.csproj", new DotNetCoreBuildSettings {
-        Framework = standardFramework,
-        Configuration = configuration,
-        OutputDirectory = outDir + Directory(standardFramework)
-    });
+    DotNetCoreBuild("./src/xpiler/x2netcore.xpiler.csproj", buildSettings);
+    DotNetCoreBuild("./src/x2net/x2netcore.csproj", buildSettings);
 });
 
 Task("Core-Tests")
