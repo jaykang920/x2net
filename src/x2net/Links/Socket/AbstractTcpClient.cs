@@ -290,16 +290,6 @@ namespace x2net
             currentSession.Close();
         }
 
-        public void TrySessionRecovery()
-        {
-            var tcpSession = (AbstractTcpSession)Session;
-            if (tcpSession == null || !tcpSession.SocketConnected)
-            {
-                return;
-            }
-            tcpSession.OnDisconnect();
-        }
-
         private void Connect(Socket socket, EndPoint endpoint)
         {
             Trace.Info("{0} connecting to {1}", Name, endpoint);

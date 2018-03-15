@@ -16,9 +16,6 @@ namespace x2net
 
         private IPEndPoint remoteEndPoint;
 
-        private volatile uint sendHeartBeatCount;
-        private volatile uint recvHeartBeatCount;
-
         /// <summary>
         /// Gets whether this session is currently connected or not.
         /// </summary>
@@ -65,8 +62,6 @@ namespace x2net
         {
             this.socket = socket;
             remoteEndPoint = socket.RemoteEndPoint as IPEndPoint;
-            sendHeartBeatCount = 0;
-            recvHeartBeatCount = 0;
         }
 
         /// <summary>
@@ -96,31 +91,6 @@ namespace x2net
         protected override void OnClose()
         {
             OnDisconnect(this);
-        }
-
-        internal int Keepalive(bool checkIncoming, bool checkOutgoing)
-        {
-            int result = 0;
-
-            if (checkOutgoing)
-            {
-                Trace.Log("{0} {1} sent keepalive event",
-                    link.Name, InternalHandle);
-
-                sendHeartBeatCount++;
-
-                Send(Hub.HeartbeatEvent);
-            }
-
-            if (checkIncoming)
-            {
-                if (!IgnoreKeepaliveFailure)
-                {
-                    result = (int)Math.Abs(recvHeartBeatCount - sendHeartBeatCount);
-                }
-            }
-
-            return result;
         }
 
         protected override void Dispose(bool disposing)
@@ -181,11 +151,6 @@ namespace x2net
 
         protected override void OnEventReceived(Event e)
         {
-            if (e.GetTypeId() == BuiltinEventType.HeartbeatEvent)
-            {
-                recvHeartBeatCount++;
-            }
-
             TraceLevel traceLevel = 
                 (e.GetTypeId() == BuiltinEventType.HeartbeatEvent ?
                 TraceLevel.Trace : TraceLevel.Debug);
