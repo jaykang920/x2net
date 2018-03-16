@@ -24,7 +24,7 @@ namespace x2net
         /// </summary>
         public event PreprocessEventHandler Preprocess;
 
-        // Strategies
+        // Link strategies
 
         /// <summary>
         /// Gets or sets the channel strategy object for this link.
@@ -50,13 +50,6 @@ namespace x2net
             get { return !ReferenceEquals(HeartbeatStrategy, null); }
         }
 
-        static SessionBasedLink()
-        {
-            EventFactory.Global.Register(HandshakeReq.TypeId, HandshakeReq.New);
-            EventFactory.Global.Register(HandshakeResp.TypeId, HandshakeResp.New);
-            EventFactory.Global.Register(HandshakeAck.TypeId, HandshakeAck.New);
-        }
-
         /// <summary>
         /// Initializes a new instance of the SessionBasedLink class.
         /// </summary>
@@ -69,7 +62,7 @@ namespace x2net
         /// <summary>
         /// Called internally when a new session creation attempt is completed.
         /// </summary>
-        protected internal void OnLinkSessionConnectedInternal(bool result, object context)
+        internal protected void OnLinkSessionConnectedInternal(bool result, object context)
         {
             Trace.Info("{0} connected {1} {2}", Name, result, context);
 
@@ -79,7 +72,7 @@ namespace x2net
                 lock (session.SyncRoot)
                 {
                     // Assign a new link session handle.
-                    session.Handle = HandlePool.Acquire();
+                    session.Handle = LinkHandlePool.Acquire();
                 }
                 session.Connected = true;
             }
@@ -96,7 +89,7 @@ namespace x2net
         /// <summary>
         /// Called internally when an existing link session is closed.
         /// </summary>
-        internal void OnLinkSessionDisconnectedInternal(int handle, object context)
+        internal protected void OnLinkSessionDisconnectedInternal(int handle, object context)
         {
             Trace.Info("{0} disconnected {1} {2}", Name, handle, context);
 
@@ -106,7 +99,7 @@ namespace x2net
             }
 
             // Release the link session handle.
-            HandlePool.Release(handle);
+            LinkHandlePool.Release(handle);
 
             var session = (LinkSession)context;
             session.Connected = false;
@@ -128,7 +121,10 @@ namespace x2net
             });
         }
 
-        internal protected void OnPreprocess(LinkSession session, Event e)
+        /// <summary>
+        /// Called internally when an event is ready for preprocessing.
+        /// </summary>
+        internal void OnPreprocess(LinkSession session, Event e)
         {
             if (Preprocess != null)
             {
@@ -174,8 +170,17 @@ namespace x2net
         /// <summary>
         /// Called when a new link session is ready for open.
         /// </summary>
-        public void OnSessionSetup(LinkSession session)
+        public void InitiateSession(LinkSession session)
         {
+            if (HasChannelStrategy)
+            {
+                ChannelStrategy.BeforeSessionSetup(session);
+            }
+            if (HasHeartbeatStrategy)
+            {
+                HeartbeatStrategy.BeforeSessionSetup(session);
+            }
+
             if (HasChannelStrategy)
             {
                 ChannelStrategy.InitiateHandshake(session);
@@ -207,10 +212,7 @@ namespace x2net
             {
                 HeartbeatStrategy.Link = this;
                 HeartbeatStrategy.Setup();
-            }
 
-            if (HasHeartbeatStrategy)
-            {
                 Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
             }
         }
@@ -246,7 +248,8 @@ namespace x2net
             OnSessionDisconnected(e.Handle, e.Context);
         }
 
-        void OnHeartbeatEvent(HeartbeatEvent e)
+        // HeartbeatEvent event handler
+        private void OnHeartbeatEvent(HeartbeatEvent e)
         {
             HeartbeatStrategy.OnHeartbeat();
         }

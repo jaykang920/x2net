@@ -22,6 +22,11 @@ namespace x2net
 
         public int ThresholdFailuerCount { get; set; }
 
+        static KeepaliveStrategy()
+        {
+            EventFactory.Global.Register(HeartbeatEvent.TypeId, HeartbeatEvent.New);
+        }
+
         protected KeepaliveStrategy()
         {
             IncomingHeartbeatEnabled = true;
@@ -168,9 +173,11 @@ namespace x2net
                 else
                 {
                     int result = Interlocked.Increment(ref successiveFailureCount);
-
-                    Trace.Info("{0} {1} keepalive failure count {2}",
-                        Session.Link.Name, Session.InternalHandle, result);
+                    if (result > 1)
+                    {
+                        Trace.Info("{0} {1} keepalive failure count {2}",
+                            Session.Link.Name, Session.InternalHandle, result);
+                    }
 
                     if (!Marked &&
                         result >= linkStrategy.ThresholdFailuerCount)

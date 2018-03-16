@@ -14,6 +14,9 @@ namespace x2net
     {
         private static HashSet<string> names;
 
+        /// <summary>
+        /// Gets the link-local event factory.
+        /// </summary>
         public EventFactory EventFactory { get; private set; }
 
         /// <summary>
@@ -38,12 +41,11 @@ namespace x2net
                     throw new ArgumentException(String.Format(
                         "link name {0} is already in use", name));
                 }
-
-                Name = name;
                 names.Add(name);
             }
 
             EventFactory = new EventFactory();
+            Name = name;
         }
 
         ~Link()
@@ -64,11 +66,13 @@ namespace x2net
         /// </summary>
         public Event CreateEvent(int typeId)
         {
+            // Try link-local event factory first.
             Event result = EventFactory.Create(typeId);
-            if (!Object.ReferenceEquals(result, null))
+            if (!ReferenceEquals(result, null))
             {
                 return result;
             }
+            // If not fount, try the global event factory.
             return EventFactory.Global.Create(typeId);
         }
 
@@ -210,69 +214,5 @@ namespace x2net
         }
 
         #endregion  // Diagnostics
-    }
-
-    internal static class HandlePool
-    {
-        private static RangedIntPool pool;
-
-        static HandlePool()
-        {
-            pool = new RangedIntPool(1, Config.MaxLinkHandles, true);
-        }
-
-        public static int Acquire()
-        {
-            return pool.Acquire();
-        }
-
-        public static void Release(int handle)
-        {
-            pool.Release(handle);
-        }
-    }
-
-    internal static class LinkWaitHandlePool
-    {
-        private static Pool<ManualResetEvent> pooled;
-        private static Dictionary<int, ManualResetEvent> active;
-
-        static LinkWaitHandlePool()
-        {
-            pooled = new Pool<ManualResetEvent>();
-            active = new Dictionary<int, ManualResetEvent>();
-        }
-
-        public static ManualResetEvent Acquire(int key)
-        {
-            ManualResetEvent waitHandle;
-            lock (active)
-            {
-                if (!active.TryGetValue(key, out waitHandle))
-                {
-                    waitHandle = pooled.Pop();
-                    if ((object)waitHandle == null)
-                    {
-                        waitHandle = new ManualResetEvent(false);
-                    }
-                    active.Add(key, waitHandle);
-                }
-            }
-            return waitHandle;
-        }
-
-        public static void Release(int key)
-        {
-            lock (active)
-            {
-                ManualResetEvent waitHandle;
-                if (active.TryGetValue(key, out waitHandle))
-                {
-                    active.Remove(key);
-                    waitHandle.Reset();
-                    pooled.Push(waitHandle);
-                }
-            }
-        }
     }
 }

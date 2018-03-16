@@ -13,6 +13,13 @@ namespace x2net
         /// </summary>
         public IBufferTransform BufferTransform { get; set; }
 
+        static BufferTransformStrategy()
+        {
+            EventFactory.Global.Register(HandshakeReq.TypeId, HandshakeReq.New);
+            EventFactory.Global.Register(HandshakeResp.TypeId, HandshakeResp.New);
+            EventFactory.Global.Register(HandshakeAck.TypeId, HandshakeAck.New);
+        }
+
         public override void Setup()
         {
             base.Setup();
@@ -37,7 +44,7 @@ namespace x2net
 
             var bufferTransform = (IBufferTransform)BufferTransform.Clone();
             sessionStrategy.BufferTransform = bufferTransform;
-            LinkWaitHandlePool.Acquire(session.InternalHandle).Set();
+            WaitSignalPool.Acquire(session.InternalHandle).Set();
 
             session.Send(new HandshakeReq {
                 _Transform = false,
@@ -89,9 +96,9 @@ namespace x2net
                         try
                         {
                             ManualResetEvent waitHandle =
-                                LinkWaitHandlePool.Acquire(Session.InternalHandle);
+                                WaitSignalPool.Acquire(Session.InternalHandle);
                             waitHandle.WaitOne(new TimeSpan(0, 0, 30));
-                            LinkWaitHandlePool.Release(Session.InternalHandle);
+                            WaitSignalPool.Release(Session.InternalHandle);
                             response = BufferTransform.Handshake(req.Data);
                         }
                         catch (Exception ex)

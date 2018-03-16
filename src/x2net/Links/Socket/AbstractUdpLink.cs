@@ -118,7 +118,7 @@ namespace x2net
             {
                 if (!reverseMap.TryGetValue(endPoint, out handle))
                 {
-                    handle = HandlePool.Acquire();
+                    handle = LinkHandlePool.Acquire();
                     using (new WriteLock(rwlock))
                     {
                         map.Add(handle, endPoint);
@@ -181,7 +181,7 @@ namespace x2net
                     reverseMap.Remove(endPoint);
                 }
             }
-            HandlePool.Release(handle);
+            LinkHandlePool.Release(handle);
         }
 
 
@@ -203,7 +203,7 @@ namespace x2net
                     reverseMap.Remove(endPoint);
                 }
             }
-            HandlePool.Release(handle);
+            LinkHandlePool.Release(handle);
         }
 
         /// <summary>

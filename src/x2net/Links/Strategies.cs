@@ -104,21 +104,4 @@ namespace x2net
             public virtual void OnSend(Event e) { }
         }
     }
-
-    /// <summary>
-    /// Common abstract base class for session management strategies.
-    /// </summary>
-    public abstract class SessionStrategy : SessionBasedLinkStrategy
-    {
-        public abstract void OnInstantDisconnect(LinkSession linkSession);
-
-        public virtual void OnSessionConnected(bool result, object context) { }
-
-        public virtual bool OnConnectError() { return false; }
-
-        public abstract class SubStrategy : LinkSessionStrategy
-        {
-            public virtual bool BeforeSend(Event e) { return false; }
-        }
-    }
 }

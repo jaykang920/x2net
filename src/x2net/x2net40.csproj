@@ -106,6 +106,7 @@
     <Compile Include="Serializers\StringSerializer.cs" />
     <Compile Include="Transforms\BlockCipher.cs" />
     <Compile Include="Transforms\Inverse.cs" />
+    <Compile Include="Util\WaitSignalPool.cs" />
     <Compile Include="Util\Capo.cs" />
     <Compile Include="Util\Getopt.cs" />
     <Compile Include="Util\Hash.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Util\Trace.cs" />
     <Compile Include="VerboseDeserializer.cs" />
     <Compile Include="VerboseSerializer.cs" />
+    <Compile Include="LinkHandlePool.cs" />
     <Compile Include="Yields\WaitForCompletion.cs" />
     <Compile Include="Yields\WaitForMultipleEvents.cs" />
     <Compile Include="Yields\WaitForSeconds.cs" />

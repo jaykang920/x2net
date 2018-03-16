@@ -124,17 +124,7 @@ namespace x2net
         protected virtual void OnConnectInternal(LinkSession session)
         {
             session.Polarity = true;
-            
-            if (HasChannelStrategy)
-            {
-                ChannelStrategy.BeforeSessionSetup(session);
-            }
-            if (HasHeartbeatStrategy)
-            {
-                HeartbeatStrategy.BeforeSessionSetup(session);
-            }
-            
-            OnSessionSetup(session);
+            InitiateSession(session);
         }
     }
 }

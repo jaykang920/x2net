@@ -109,11 +109,6 @@ namespace x2net
         public int DisconnectDelay { get; set; }
         public int ResponseTimeout { get; set; }
 
-        static AbstractTcpClient()
-        {
-            EventFactory.Global.Register(HeartbeatEvent.TypeId, HeartbeatEvent.New);
-        }
-
         /// <summary>
         /// Initializes a new instance of the AbstractTcpClient class.
         /// </summary>

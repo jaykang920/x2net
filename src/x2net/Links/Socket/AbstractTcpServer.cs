@@ -31,11 +31,6 @@ namespace x2net
         /// </summary>
         public bool NoDelay { get; set; }
 
-        static AbstractTcpServer()
-        {
-            EventFactory.Global.Register(HeartbeatEvent.TypeId, HeartbeatEvent.New);
-        }
-
         /// <summary>
         /// Initializes a new instance of the AbstractTcpServer class.
         /// </summary>

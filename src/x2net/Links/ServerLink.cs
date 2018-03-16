@@ -133,16 +133,7 @@ namespace x2net
         /// </summary>
         protected virtual bool OnAcceptInternal(LinkSession session)
         {
-            if (HasChannelStrategy)
-            {
-                ChannelStrategy.BeforeSessionSetup(session);
-            }
-            if (HasHeartbeatStrategy)
-            {
-                HeartbeatStrategy.BeforeSessionSetup(session);
-            }
-
-            OnSessionSetup(session);
+            InitiateSession(session);
             return true;
         }
 

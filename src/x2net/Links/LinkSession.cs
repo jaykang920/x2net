@@ -179,7 +179,7 @@ namespace x2net
 
         internal object SyncRoot { get { return syncRoot; } }
 
-        // Strategies
+        // Link session strategies
 
         public volatile ChannelStrategy.SubStrategy ChannelStrategy;
         public volatile HeartbeatStrategy.SubStrategy HeartbeatStrategy;
