@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E7084AD-FC19-4F29-B92A-C52C3EC5B91C}</ProjectGuid>
+    <ProjectGuid>{27AF7D97-7171-4C17-B6B8-24A504B45E33}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>hello</RootNamespace>
-    <AssemblyName>hello0</AssemblyName>
+    <AssemblyName>hello.tcp.client</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,17 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hello0.cs" />
+    <Compile Include="HelloTcpClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\x2net\x2net40.csproj">
+      <Project>{979b9807-ea1b-40c5-b563-e5fbfc72fda3}</Project>
+      <Name>x2net40</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\shared\hello.shared.csproj">
+      <Project>{61732f73-794b-48ec-8a65-e740a4cc21f0}</Project>
+      <Name>hello.shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

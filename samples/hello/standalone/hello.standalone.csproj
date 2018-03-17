@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{27AF7D97-7171-4C17-B6B8-24A504B45E33}</ProjectGuid>
+    <ProjectGuid>{0288B394-1CEC-4338-8F77-3E30D4FBA8B4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>hello</RootNamespace>
-    <AssemblyName>hello2.client</AssemblyName>
+    <AssemblyName>hello.standalone</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hello2Client.cs" />
+    <Compile Include="HelloStandalone.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\x2net\x2net40.csproj">

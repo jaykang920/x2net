@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>hello2.client</AssemblyName>
+    <AssemblyName>hello.standalone</AssemblyName>
     <RootNamespace>hello</RootNamespace>
     <OutputType>Exe</OutputType>
   </PropertyGroup>

@@ -7,7 +7,7 @@
     <ProjectGuid>{46EACC1A-FF78-4D60-83D7-F77DD656DB8C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>hello</RootNamespace>
-    <AssemblyName>hello2.server</AssemblyName>
+    <AssemblyName>hello.tcp.server</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hello2Server.cs" />
+    <Compile Include="HelloTcpServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\x2net\x2net40.csproj">

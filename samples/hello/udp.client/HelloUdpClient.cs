@@ -1,28 +1,32 @@
 using System;
+using System.Net;
 
 using x2net;
 
 namespace hello
 {
-    public class Hello2Server : AsyncTcpServer
+    public class HelloUdpClient : UdpLink
     {
-        public Hello2Server() : base("HelloServer")
+        private static int peerHandle;
+
+        public HelloUdpClient() : base("HelloClient")
         {
             // Uncomment the following block to enable channel encryption.
-            /*
-            ChannelStrategy = new BufferTransformStrategy {
-                BufferTransform = new BlockCipher()
-            };
-            */
-            // Uncomment the following line to enable heartbeat-based keepalive.
-            //HeartbeatStrategy = new ServerKeepaliveStrategy();
+            //BufferTransform = new BlockCipher();
         }
 
         protected override void Setup()
         {
-            EventFactory.Register<HelloReq>();
-            Bind(new HelloResp(), Send);
-            Listen(6789);
+            EventFactory.Register<HelloResp>();
+            Bind(new HelloReq(), (e) => {
+                e._Handle = peerHandle;
+                Send(e);
+            });
+
+            Bind(7891);
+            Listen();
+
+            peerHandle = AddEndPoint(new IPEndPoint(IPAddress.Loopback, 7890));
         }
 
         public static void Main()
@@ -32,8 +36,8 @@ namespace hello
 
             Hub.Instance
                 .Attach(new SingleThreadFlow()
-                    .Add(new HelloCase())
-                    .Add(new Hello2Server()));
+                    .Add(new OutputCase())
+                    .Add(new HelloUdpClient()));
 
             using (new Hub.Flows().Startup())
             {
@@ -44,6 +48,7 @@ namespace hello
                     {
                         break;
                     }
+                    new HelloReq() { Name = input }.Post();
                 }
             }
         }

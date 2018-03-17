@@ -2,7 +2,7 @@ using System;
 
 namespace hello
 {
-    public class Hello0
+    public class Hello
     {
         public static void Main()
         {

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>hello0</AssemblyName>
+    <AssemblyName>hello.udp.server</AssemblyName>
     <RootNamespace>hello</RootNamespace>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
@@ -14,5 +14,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\..\bin\Release</OutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\x2net\x2netcore.csproj" />
+    <ProjectReference Include="..\shared\hellocore.shared.csproj" />
+  </ItemGroup>
 
 </Project>

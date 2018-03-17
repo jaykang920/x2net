@@ -4,7 +4,7 @@ using x2net;
 
 namespace hello
 {
-    public class Hello1
+    public class HelloStandalone
     {
         public static void Main()
         {

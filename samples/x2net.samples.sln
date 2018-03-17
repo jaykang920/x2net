@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net40", "..\src\x2net\x2net40.csproj", "{979B9807-EA1B-40C5-B563-E5FBFC72FDA3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello.original", "hello\original\hello.original.csproj", "{0E7084AD-FC19-4F29-B92A-C52C3EC5B91C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello.shared", "hello\shared\hello.shared.csproj", "{61732F73-794B-48EC-8A65-E740A4CC21F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello0", "hello\0\hello0.csproj", "{0E7084AD-FC19-4F29-B92A-C52C3EC5B91C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello.standalone", "hello\standalone\hello.standalone.csproj", "{0288B394-1CEC-4338-8F77-3E30D4FBA8B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello1", "hello\1\hello1.csproj", "{0288B394-1CEC-4338-8F77-3E30D4FBA8B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello.tcp.client", "hello\tcp.client\hello.tcp.client.csproj", "{27AF7D97-7171-4C17-B6B8-24A504B45E33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello2.server", "hello\2.server\hello2.server.csproj", "{46EACC1A-FF78-4D60-83D7-F77DD656DB8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello.tcp.server", "hello\tcp.server\hello.tcp.server.csproj", "{46EACC1A-FF78-4D60-83D7-F77DD656DB8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello2.client", "hello\2.client\hello2.client.csproj", "{27AF7D97-7171-4C17-B6B8-24A504B45E33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello.udp.client", "hello\udp.client\hello.udp.client.csproj", "{FA8E75CE-AEA9-49BB-8AB3-C51E44147072}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hello.udp.server", "hello\udp.server\hello.udp.server.csproj", "{EDC72CF3-1924-411D-B874-D91C2322ADD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "x2net40", "..\src\x2net\x2net40.csproj", "{979B9807-EA1B-40C5-B563-E5FBFC72FDA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{27AF7D97-7171-4C17-B6B8-24A504B45E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27AF7D97-7171-4C17-B6B8-24A504B45E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27AF7D97-7171-4C17-B6B8-24A504B45E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA8E75CE-AEA9-49BB-8AB3-C51E44147072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA8E75CE-AEA9-49BB-8AB3-C51E44147072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA8E75CE-AEA9-49BB-8AB3-C51E44147072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA8E75CE-AEA9-49BB-8AB3-C51E44147072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC72CF3-1924-411D-B874-D91C2322ADD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC72CF3-1924-411D-B874-D91C2322ADD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC72CF3-1924-411D-B874-D91C2322ADD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC72CF3-1924-411D-B874-D91C2322ADD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
