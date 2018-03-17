@@ -140,8 +140,8 @@
     <Compile Include="Util\RangedIntPool.cs" />
     <Compile Include="Util\ReadWriteLock.cs" />
     <Compile Include="Util\SegmentPool.cs" />
+    <Compile Include="Util\SignalPool.cs" />
     <Compile Include="Util\Trace.cs" />
-    <Compile Include="Util\WaitSignalPool.cs" />
     <Compile Include="VerboseDeserializer.cs" />
     <Compile Include="VerboseSerializer.cs" />
     <Compile Include="Yields\WaitForCompletion.cs" />

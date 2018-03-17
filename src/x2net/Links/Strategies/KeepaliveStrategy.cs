@@ -90,7 +90,7 @@ namespace x2net
 
         public override void OnHeartbeat()
         {
-            List<LinkSession> snapshot = Link.TakeSessionsSnapshot();
+            var snapshot = Link.TakeSessionsSnapshot();
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
                 var linkSession = snapshot[i];

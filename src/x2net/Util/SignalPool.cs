@@ -7,12 +7,12 @@ using System.Threading;
 
 namespace x2net
 {
-    public static class WaitSignalPool
+    public static class SignalPool
     {
         private static Pool<ManualResetEvent> pooled;
         private static Dictionary<int, ManualResetEvent> active;
 
-        static WaitSignalPool()
+        static SignalPool()
         {
             pooled = new Pool<ManualResetEvent>();
             active = new Dictionary<int, ManualResetEvent>();
@@ -20,32 +20,32 @@ namespace x2net
 
         public static ManualResetEvent Acquire(int key)
         {
-            ManualResetEvent waitHandle;
+            ManualResetEvent signal;
             lock (active)
             {
-                if (!active.TryGetValue(key, out waitHandle))
+                if (!active.TryGetValue(key, out signal))
                 {
-                    waitHandle = pooled.Pop();
-                    if ((object)waitHandle == null)
+                    signal = pooled.Pop();
+                    if ((object)signal == null)
                     {
-                        waitHandle = new ManualResetEvent(false);
+                        signal = new ManualResetEvent(false);
                     }
-                    active.Add(key, waitHandle);
+                    active.Add(key, signal);
                 }
             }
-            return waitHandle;
+            return signal;
         }
 
         public static void Release(int key)
         {
             lock (active)
             {
-                ManualResetEvent waitHandle;
-                if (active.TryGetValue(key, out waitHandle))
+                ManualResetEvent signal;
+                if (active.TryGetValue(key, out signal))
                 {
                     active.Remove(key);
-                    waitHandle.Reset();
-                    pooled.Push(waitHandle);
+                    signal.Reset();
+                    pooled.Push(signal);
                 }
             }
         }

@@ -10,7 +10,10 @@ namespace x2net
     /// </summary>
     public abstract class ClientLink : SessionBasedLink
     {
-        protected LinkSession session;      // current link session
+        /// <summary>
+        /// Current link session.
+        /// </summary>
+        protected LinkSession session;
 
         /// <summary>
         /// Gets the current link session.
@@ -40,17 +43,6 @@ namespace x2net
         /// </summary>
         public virtual void Reconnect() { }
 
-        public LinkSession ResetSession(LinkSession session)
-        {
-            LinkSession existing;
-            using (new WriteLock(rwlock))
-            {
-                existing = this.session;
-                this.session = session;
-            }
-            return existing;
-        }
-
         /// <summary>
         /// Sends out the specified event through this link channel.
         /// </summary>
@@ -63,35 +55,6 @@ namespace x2net
                 return;
             }
             currentSession.Send(e);
-        }
-
-        protected override void OnSessionConnectedInternal(bool result, object context)
-        {
-            if (result)
-            {
-                var session = (LinkSession)context;
-                using (new WriteLock(rwlock))
-                {
-                    this.session = session;
-                }
-
-                Trace.Debug("{0} {1} set session {2}",
-                    Name, session.Handle, session.Token);
-            }
-        }
-
-        protected override void OnSessionDisconnectedInternal(int handle, object context)
-        {
-            using (new WriteLock(rwlock))
-            {
-                if (!Object.ReferenceEquals(session, null))
-                {
-                    Trace.Debug("{0} {1} cleared session {2}",
-                        Name, session.Handle, session.Token);
-
-                    session = null;
-                }
-            }
         }
 
         /// <summary>
@@ -125,6 +88,35 @@ namespace x2net
         {
             session.Polarity = true;
             InitiateSession(session);
+        }
+
+        protected override void OnSessionConnectedInternal(bool result, object context)
+        {
+            if (result)
+            {
+                var session = (LinkSession)context;
+                using (new WriteLock(rwlock))
+                {
+                    this.session = session;
+                }
+
+                Trace.Debug("{0} {1} set session {2}",
+                    Name, session.Handle, session.Token);
+            }
+        }
+
+        protected override void OnSessionDisconnectedInternal(int handle, object context)
+        {
+            using (new WriteLock(rwlock))
+            {
+                if (!Object.ReferenceEquals(session, null))
+                {
+                    Trace.Debug("{0} {1} cleared session {2}",
+                        Name, session.Handle, session.Token);
+
+                    session = null;
+                }
+            }
         }
     }
 }

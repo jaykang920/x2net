@@ -9,13 +9,13 @@ namespace hello
         public Hello2Client() : base("HelloClient")
         {
             // Uncomment the following block to enable channel encryption.
-            ///*
+            /*
             ChannelStrategy = new BufferTransformStrategy {
                 BufferTransform = new BlockCipher()
             };
-            //*/
+            */
             // Uncomment the following line to enable heartbeat-based keepalive.
-            HeartbeatStrategy = new ClientKeepaliveStrategy();
+            //HeartbeatStrategy = new ClientKeepaliveStrategy();
         }
 
         protected override void Setup()

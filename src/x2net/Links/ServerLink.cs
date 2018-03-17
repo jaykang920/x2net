@@ -16,6 +16,9 @@ namespace x2net
         /// </summary>
         protected SortedList<int, LinkSession> sessions;
 
+        /// <summary>
+        /// Gets the number of active sessions in this link.
+        /// </summary>
         public int SessionCount
         {
             get
@@ -43,22 +46,11 @@ namespace x2net
         /// </summary>
         public void Broadcast(Event e)
         {
-            List<LinkSession> snapshot = TakeSessionsSnapshot();
+            var snapshot = TakeSessionsSnapshot();
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
                 snapshot[i].Send(e);
             }
-        }
-
-        public LinkSession ResetSession(int handle, LinkSession session)
-        {
-            LinkSession existing;
-            using (new WriteLock(rwlock))
-            {
-                existing = sessions[handle];
-                sessions[handle] = session;
-            }
-            return existing;
         }
 
         /// <summary>
@@ -77,32 +69,11 @@ namespace x2net
             session.Send(e);
         }
 
-        public bool TryGetSession(int handle, out LinkSession session)
+        public IList<LinkSession> TakeSessionsSnapshot()
         {
             using (new ReadLock(rwlock))
             {
-                return sessions.TryGetValue(handle, out session);
-            }
-        }
-
-        protected override void OnSessionConnectedInternal(bool result, object context)
-        {
-            if (result)
-            {
-                var session = (LinkSession)context;
-                using (new WriteLock(rwlock))
-                {
-                    sessions.Add(session.Handle, session);
-                }
-            }
-        }
-
-        protected override void OnSessionDisconnectedInternal(int handle, object context)
-        {
-            var session = (LinkSession)context;
-            using (new WriteLock(rwlock))
-            {
-                sessions.Remove(handle);
+                return new List<LinkSession>(sessions.Values);
             }
         }
 
@@ -113,8 +84,8 @@ namespace x2net
         {
             if (disposed) { return; }
 
-            // Closes all the active sessions
-            List<LinkSession> snapshot = TakeSessionsSnapshot();
+            // Close all the active sessions.
+            var snapshot = TakeSessionsSnapshot();
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
                 snapshot[i].Close();
@@ -137,18 +108,25 @@ namespace x2net
             return true;
         }
 
-        public List<LinkSession> TakeSessionsSnapshot()
+        protected override void OnSessionConnectedInternal(bool result, object context)
         {
-            var result = new List<LinkSession>(sessions.Count);
-            using (new ReadLock(rwlock))
+            if (result)
             {
-                var values = sessions.Values;
-                for (int i = 0, count = values.Count; i < count; ++i)
+                var session = (LinkSession)context;
+                using (new WriteLock(rwlock))
                 {
-                    result.Add(values[i]);
+                    sessions.Add(session.Handle, session);
                 }
             }
-            return result;
+        }
+
+        protected override void OnSessionDisconnectedInternal(int handle, object context)
+        {
+            var session = (LinkSession)context;
+            using (new WriteLock(rwlock))
+            {
+                sessions.Remove(handle);
+            }
         }
     }
 }

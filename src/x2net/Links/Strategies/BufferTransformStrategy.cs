@@ -44,7 +44,7 @@ namespace x2net
 
             var bufferTransform = (IBufferTransform)BufferTransform.Clone();
             sessionStrategy.BufferTransform = bufferTransform;
-            WaitSignalPool.Acquire(session.InternalHandle).Set();
+            SignalPool.Acquire(session.InternalHandle).Set();
 
             session.Send(new HandshakeReq {
                 _Transform = false,
@@ -96,9 +96,9 @@ namespace x2net
                         try
                         {
                             ManualResetEvent waitHandle =
-                                WaitSignalPool.Acquire(Session.InternalHandle);
+                                SignalPool.Acquire(Session.InternalHandle);
                             waitHandle.WaitOne(new TimeSpan(0, 0, 30));
-                            WaitSignalPool.Release(Session.InternalHandle);
+                            SignalPool.Release(Session.InternalHandle);
                             response = BufferTransform.Handshake(req.Data);
                         }
                         catch (Exception ex)

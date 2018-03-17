@@ -106,7 +106,7 @@
     <Compile Include="Serializers\StringSerializer.cs" />
     <Compile Include="Transforms\BlockCipher.cs" />
     <Compile Include="Transforms\Inverse.cs" />
-    <Compile Include="Util\WaitSignalPool.cs" />
+    <Compile Include="Util\SignalPool.cs" />
     <Compile Include="Util\Capo.cs" />
     <Compile Include="Util\Getopt.cs" />
     <Compile Include="Util\Hash.cs" />
