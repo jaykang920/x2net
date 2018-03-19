@@ -17,13 +17,12 @@ namespace x2net
         protected bool polarity;
 
         protected Buffer rxBuffer;
+        protected List<SendBuffer> txBuffers;
         protected List<ArraySegment<byte>> rxBufferList;
         protected List<ArraySegment<byte>> txBufferList;
 
         protected List<Event> eventsSending;
         protected List<Event> eventsToSend;
-        protected List<SendBuffer> buffersSending;
-        protected List<SendBuffer> buffersSent;
 
         protected int lengthToReceive;
         protected int lengthToSend;
@@ -35,14 +34,8 @@ namespace x2net
 
         protected object syncRoot = new Object();
 
-        protected volatile bool closing;
-        protected volatile bool disposed;
-
-        protected long rxCounter;
-        protected long txCounter;
-        protected long txCompleted;
-
         protected volatile bool connected;
+        protected volatile bool disposed;
 
         /// <summary>
         /// Gets or sets the context object associated with this link session.
@@ -86,93 +79,11 @@ namespace x2net
         }
 
         /// <summary>
-        /// Gets or sets the session token for this session.
-        /// </summary>
-        public string Token { get; set; }
-
-        public long RxCounter
-        {
-            get { return Interlocked.Read(ref rxCounter); }
-        }
-
-        public long TxCounter
-        {
-            get { return Interlocked.Read(ref txCounter); }
-        }
-
-        public long TxCompleted
-        {
-            get { return Interlocked.Read(ref txCompleted); }
-        }
-
-        public int TxBuffered
-        {
-            get
-            {
-                lock (syncRoot)
-                {
-                    return buffersSending.Count + buffersSent.Count;
-                }
-            }
-        }
-
-        /// <summary>
         /// Gets or sets whether this link session is in connected state or not.
         /// </summary>
         public bool Connected {
             get { return connected; }
             set { connected = value; }
-        }
-
-        public bool Closing
-        {
-            get { return closing; }
-            set { closing = value; }
-        }
-
-        public bool Disposed
-        {
-            get { return disposed; }
-            set { disposed = value; }
-        }
-
-        public List<ArraySegment<byte>> TxBufferList
-        {
-            get { return txBufferList; }
-            set { txBufferList = value; }
-        }
-
-        public int LengthToSend
-        {
-            get { return lengthToSend; }
-            set { lengthToSend = value; }
-        }
-
-        public bool TxFlag
-        {
-            get { return txFlag; }
-            set { txFlag = value; }
-        }
-
-        public List<Event> EventsSending
-        {
-            get { return eventsSending; }
-            set { eventsSending = value; }
-        }
-        public List<Event> EventsToSend
-        {
-            get { return eventsToSend; }
-            set { eventsToSend = value; }
-        }
-        public List<SendBuffer> BuffersSending
-        {
-            get { return buffersSending; }
-            set { buffersSending = value; }
-        }
-        public List<SendBuffer> BuffersSent
-        {
-            get { return buffersSent; }
-            set { buffersSent = value; }
         }
 
         protected internal virtual int InternalHandle { get { return handle; } }
@@ -201,13 +112,12 @@ namespace x2net
             this.link = link;
 
             rxBuffer = new Buffer();
+            txBuffers = new List<SendBuffer>();
             rxBufferList = new List<ArraySegment<byte>>();
             txBufferList = new List<ArraySegment<byte>>();
 
             eventsSending = new List<Event>();
             eventsToSend = new List<Event>();
-            buffersSending = new List<SendBuffer>();
-            buffersSent = new List<SendBuffer>();
 
             Diag = new Diagnostics(this);
         }
@@ -223,8 +133,6 @@ namespace x2net
         /// </summary>
         public virtual void Close()
         {
-            closing = true;
-
             OnClose();
 
             CloseInternal();
@@ -249,26 +157,6 @@ namespace x2net
             GC.SuppressFinalize(this);
         }
 
-        public void Release()
-        {
-            if (HasChannelStrategy)
-            {
-                ChannelStrategy.Release();
-            }
-
-            for (int i = 0, count = buffersSending.Count; i < count; ++i)
-            {
-                buffersSending[i].Dispose();
-            }
-            buffersSending.Clear();
-
-            for (int i = 0, count = buffersSent.Count; i < count; ++i)
-            {
-                buffersSent[i].Dispose();
-            }
-            buffersSent.Clear();
-        }
-
         /// <summary>
         /// Frees managed or unmanaged resources.
         /// </summary>
@@ -290,17 +178,11 @@ namespace x2net
             rxBufferList.Clear();
             rxBuffer.Dispose();
 
-            for (int i = 0, count = buffersSending.Count; i < count; ++i)
+            for (int i = 0, count = txBuffers.Count; i < count; ++i)
             {
-                buffersSending[i].Dispose();
+                txBuffers[i].Dispose();
             }
-            buffersSending.Clear();
-
-            for (int i = 0, count = buffersSent.Count; i < count; ++i)
-            {
-                buffersSent[i].Dispose();
-            }
-            buffersSent.Clear();
+            txBuffers.Clear();
         }
 
         /// <summary>
@@ -308,52 +190,19 @@ namespace x2net
         /// </summary>
         public void Send(Event e)
         {
-            if (disposed)
-            {
-                Trace.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, e);
-                return;
-            }
-
             lock (syncRoot)
             {
-                eventsToSend.Add(e);
-
-                if (txFlag || disposed)
+                if (disposed)
                 {
-                    Trace.Debug("{0} {1} buffered {2}", link.Name, InternalHandle, e);
+                    Trace.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, e);
                     return;
                 }
 
-                txFlag = true;
-            }
+                eventsToSend.Add(e);
 
-            BeginSend();
-        }
-
-        /// <summary>
-        /// Sends out the specified events through this link session.
-        /// </summary>
-        public void Send(Event[] events)
-        {
-            if (disposed)
-            {
-                for (int i = 0; i < events.Length; ++i)
+                if (txFlag)
                 {
-                    Trace.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, events[i]);
-                }
-                return;
-            }
-
-            lock (syncRoot)
-            {
-                for (int i = 0; i < events.Length; ++i)
-                {
-                    eventsToSend.Add(events[i]);
-                }
-
-                if (txFlag || disposed)
-                {
-                    Trace.Debug("{0} {1} buffered {2} events", link.Name, InternalHandle, events.Length);
+                    Trace.Debug("{0} {1} buffered {2}", link.Name, InternalHandle, e);
                     return;
                 }
 
@@ -396,12 +245,12 @@ namespace x2net
             txBufferList.Clear();
             lengthToSend = 0;
             int count = eventsSending.Count;
-            int bufferCount = buffersSending.Count;
+            int bufferCount = txBuffers.Count;
             if (bufferCount < count)
             {
                 for (int i = 0, n = count - bufferCount; i < n; ++i)
                 {
-                    buffersSending.Add(new SendBuffer());
+                    txBuffers.Add(new SendBuffer());
                 }
             }
             else
@@ -409,15 +258,15 @@ namespace x2net
                 for (int i = 0, n = bufferCount - count; i < n; ++i)
                 {
                     int j = bufferCount - (i + 1);
-                    buffersSending[j].Dispose();
-                    buffersSending.RemoveAt(j);
+                    txBuffers[j].Dispose();
+                    txBuffers.RemoveAt(j);
                 }
             }
             for (int i = 0; i < count; ++i)
             {
                 Event e = eventsSending[i];
 
-                var sendBuffer = buffersSending[i];
+                var sendBuffer = txBuffers[i];
                 sendBuffer.Reset();
 
                 int typeId = e.GetTypeId();
@@ -448,11 +297,6 @@ namespace x2net
                 link.Name, InternalHandle, count, lengthToSend);
 
             SendInternal();
-        }
-
-        public void IncrementTxCounter(int value)
-        {
-            Interlocked.Add(ref txCounter, value);
         }
 
         protected abstract void BuildHeader(SendBuffer sendBuffer, bool transformed);
@@ -625,9 +469,9 @@ namespace x2net
 
             if (Config.TraceLevel <= TraceLevel.Trace)
             {
-                for (int i = 0; i < buffersSending.Count; ++i)
+                for (int i = 0; i < txBuffers.Count; ++i)
                 {
-                    SendBuffer sendBuffer = buffersSending[i];
+                    SendBuffer sendBuffer = txBuffers[i];
 
                     Trace.Log("{0} {1} sent head {2}: {3}", link.Name,
                         InternalHandle, sendBuffer.HeaderLength,
@@ -643,14 +487,6 @@ namespace x2net
 
             lock (syncRoot)
             {
-                // Swap send buffers.
-                List<SendBuffer> temp = buffersSending;
-                buffersSending = buffersSent;
-                buffersSent = temp;
-                temp = null;
-
-                Interlocked.Add(ref txCompleted, buffersSent.Count);
-
                 if (eventsToSend.Count == 0)
                 {
                     eventsSending.Clear();
@@ -669,15 +505,11 @@ namespace x2net
 
         protected virtual void OnEventReceived(Event e)
         {
-            Interlocked.Increment(ref rxCounter);
-
             Diag.IncrementEventsReceived();
         }
 
         protected virtual void OnEventSent(Event e)
         {
-            Interlocked.Increment(ref txCounter);
-
             Diag.IncrementEventsSent();
 
             if (HasHeartbeatStrategy)

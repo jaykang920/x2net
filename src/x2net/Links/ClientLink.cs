@@ -99,9 +99,6 @@ namespace x2net
                 {
                     this.session = session;
                 }
-
-                Trace.Debug("{0} {1} set session {2}",
-                    Name, session.Handle, session.Token);
             }
         }
 
@@ -109,11 +106,8 @@ namespace x2net
         {
             using (new WriteLock(rwlock))
             {
-                if (!Object.ReferenceEquals(session, null))
+                if (!ReferenceEquals(session, null))
                 {
-                    Trace.Debug("{0} {1} cleared session {2}",
-                        Name, session.Handle, session.Token);
-
                     session = null;
                 }
             }
