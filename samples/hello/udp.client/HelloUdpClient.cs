@@ -12,7 +12,7 @@ namespace hello
         public HelloUdpClient() : base("HelloClient")
         {
             // Uncomment the following block to enable channel encryption.
-            //BufferTransform = new BlockCipher();
+            //BufferTransform = new SimpleCipher();
         }
 
         protected override void Setup()

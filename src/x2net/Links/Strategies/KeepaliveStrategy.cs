@@ -68,8 +68,7 @@ namespace x2net
                 return;
             }
 
-            var sessionStrategy =
-                (KeepaliveSessionStrategy)linkSession.HeartbeatStrategy;
+            var sessionStrategy = linkSession.HeartbeatStrategy;
 
             if (sessionStrategy.OnHeartbeat())
             {
@@ -100,8 +99,7 @@ namespace x2net
                     continue;
                 }
 
-                var sessionStrategy =
-                    (KeepaliveSessionStrategy)linkSession.HeartbeatStrategy;
+                var sessionStrategy = linkSession.HeartbeatStrategy;
 
                 if (sessionStrategy.OnHeartbeat())
                 {

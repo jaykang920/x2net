@@ -40,12 +40,12 @@ namespace x2net
             rxEventArgs.Completed -= OnReceiveFromCompleted;
             rxEventArgs.Dispose();
 
-            Trace.Debug("{0} freed rxEventArgs", Name);
+            Trace.Log("{0} freed rxEventArgs", Name);
 
             txEventArgs.Completed -= OnSendToCompleted;
             txEventArgs.Dispose();
 
-            Trace.Debug("{0} freed txEventArgs", Name);
+            Trace.Log("{0} freed txEventArgs", Name);
 
             base.Dispose(disposing);
         }

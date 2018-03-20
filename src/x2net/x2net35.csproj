@@ -131,6 +131,7 @@
     <Compile Include="Serializers\StringSerializer.cs" />
     <Compile Include="Transforms\BlockCipher.cs" />
     <Compile Include="Transforms\Inverse.cs" />
+    <Compile Include="Transforms\SimpleCipher.cs" />
     <Compile Include="Util\Capo.cs" />
     <Compile Include="Util\Getopt.cs" />
     <Compile Include="Util\Hash.cs" />

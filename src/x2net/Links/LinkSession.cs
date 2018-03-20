@@ -174,8 +174,6 @@ namespace x2net
                 ChannelStrategy.Release();
             }
 
-            txBufferList.Clear();
-            rxBufferList.Clear();
             rxBuffer.Dispose();
 
             for (int i = 0, count = txBuffers.Count; i < count; ++i)
@@ -183,6 +181,9 @@ namespace x2net
                 txBuffers[i].Dispose();
             }
             txBuffers.Clear();
+
+            txBufferList.Clear();
+            rxBufferList.Clear();
         }
 
         /// <summary>
@@ -444,8 +445,6 @@ namespace x2net
 
         protected void OnDisconnect(object context)
         {
-            Trace.Debug("{0} {1} OnDisconnect", link.Name, InternalHandle);
-
             if (handle <= 0)
             {
                 return;
