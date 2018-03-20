@@ -17,10 +17,8 @@ namespace x2net
     /// </summary>
     public sealed class BlockCipher : IBufferTransform
     {
+        private SymmetricAlgorithm algorithm;
         private Settings settings;
-
-        private SymmetricAlgorithm encryptionAlgorithm;
-        private SymmetricAlgorithm decryptionAlgorithm;
 
         private byte[] encryptionKey;
         private byte[] decryptionKey;
@@ -75,17 +73,11 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
 
         private void Initialize()
         {
-            encryptionAlgorithm = Aes.Create();
-            encryptionAlgorithm.BlockSize = settings.BlockSize;
-            encryptionAlgorithm.KeySize = settings.KeySize;
-            encryptionAlgorithm.Mode = CipherMode.CBC;
-            encryptionAlgorithm.Padding = PaddingMode.PKCS7;
-
-            decryptionAlgorithm = Aes.Create();
-            decryptionAlgorithm.BlockSize = settings.BlockSize;
-            decryptionAlgorithm.KeySize = settings.KeySize;
-            decryptionAlgorithm.Mode = CipherMode.CBC;
-            decryptionAlgorithm.Padding = PaddingMode.PKCS7;
+            algorithm = Aes.Create();
+            algorithm.BlockSize = settings.BlockSize;
+            algorithm.KeySize = settings.KeySize;
+            algorithm.Mode = CipherMode.CBC;
+            algorithm.Padding = PaddingMode.PKCS7;
         }
 
         public object Clone()
@@ -95,8 +87,7 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
 
         public void Dispose()
         {
-            encryptionAlgorithm.Clear();
-            decryptionAlgorithm.Clear();
+            algorithm.Clear();
         }
 
         public byte[] InitializeHandshake()
@@ -160,7 +151,7 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
         {
             Trace.Log("BlockCipher.Transform: input length {0}", length);
 
-            using (var encryptor = encryptionAlgorithm.CreateEncryptor(encryptionKey, encryptionIV))
+            using (var encryptor = algorithm.CreateEncryptor(encryptionKey, encryptionIV))
             using (var ms = new MemoryStream(length + BlockSizeInBytes))
             using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
             {
@@ -219,7 +210,7 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
         {
             Trace.Log("BlockCipher.InverseTransform: input length {0}", length);
 
-            using (var decryptor = decryptionAlgorithm.CreateDecryptor(decryptionKey, decryptionIV))
+            using (var decryptor = algorithm.CreateDecryptor(decryptionKey, decryptionIV))
             using (var ms = new MemoryStream(length))
             using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
             {

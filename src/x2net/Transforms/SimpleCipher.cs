@@ -17,12 +17,12 @@ namespace x2net
     /// </summary>
     public sealed class SimpleCipher : IBufferTransform
     {
-        private Settings settings;
-
         private SymmetricAlgorithm algorithm;
+        private Settings settings;
 
         private int BlockSizeInBytes { get { return (settings.BlockSize >> 3); } }
         private int KeySizeInBytes { get { return (settings.KeySize >> 3); } }
+
         public int HandshakeBlockLength { get { return 0; } }
 
         public SimpleCipher()

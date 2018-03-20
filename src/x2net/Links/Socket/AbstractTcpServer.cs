@@ -101,10 +101,16 @@ namespace x2net
         protected override bool OnAcceptInternal(LinkSession session)
         {
             var tcpSession = (AbstractTcpSession)session;
-            var clientSocket = tcpSession.Socket;
 
             try
             {
+                if (!base.OnAcceptInternal(session))
+                {
+                    return false;
+                }
+
+                var clientSocket = tcpSession.Socket;
+
                 // Adjust client socket options.
                 clientSocket.NoDelay = NoDelay;
 
@@ -113,13 +119,13 @@ namespace x2net
                 Trace.Info("{0} {1} accepted from {2}",
                     Name, tcpSession.InternalHandle, clientSocket.RemoteEndPoint);
 
-                return base.OnAcceptInternal(session);
+                return true;
 
             }
-            catch (ObjectDisposedException ode)
+            catch (Exception ex)
             {
                 Trace.Warn("{0} {1} accept error: {2}",
-                    Name, tcpSession.InternalHandle, ode);
+                    Name, tcpSession.InternalHandle, ex);
                 return false;
             }
         }

@@ -377,6 +377,8 @@ namespace x2net
         /// </summary>
         protected override void OnConnectInternal(LinkSession session)
         {
+            base.OnConnectInternal(session);
+
             // Reset the retry counter.
             retryCount = 0;
 
@@ -393,8 +395,6 @@ namespace x2net
 
             Trace.Info("{0} {1} connected to {2}",
                 Name, tcpSession.InternalHandle, socket.RemoteEndPoint);
-            
-            base.OnConnectInternal(session);
         }
 
         /// <summary>
