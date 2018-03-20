@@ -5,9 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
-#if NETCORE
-using System.Xml;
-#endif
 
 namespace x2net
 {
@@ -156,14 +153,11 @@ namespace x2net
             using (var ms = new MemoryStream(length))
             using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
             {
-                byte[] nextIV = new byte[BlockSizeInBytes];
 #if UNITY_WORKAROUND
                 // Workaround for ancient mono 2.0 of Unity3D
                 // Multiple Write() calls are not properly handled there.
 
                 byte[] ciphertext = buffer.ToArray();
-                System.Buffer.BlockCopy(ciphertext, length - BlockSizeInBytes,
-                    nextIV, 0, BlockSizeInBytes);
                 if (Config.TraceLevel <= TraceLevel.Trace)
                 {
                     Trace.Log("SimpleCipher.InverseTransform: input {0}",
@@ -173,17 +167,6 @@ namespace x2net
 #else
                 var buffers = new List<ArraySegment<byte>>();
                 buffer.ListStartingSegments(buffers, length);
-
-                // Capture the last ciphertext block.
-                int bytesCopied = 0;
-                for (var i = buffers.Count - 1; bytesCopied < BlockSizeInBytes && i >= 0; --i)
-                {
-                    var segment = buffers[i];
-                    int bytesToCopy = Math.Min(segment.Count, BlockSizeInBytes);
-                    System.Buffer.BlockCopy(segment.Array, segment.Offset + segment.Count - bytesToCopy,
-                        nextIV, BlockSizeInBytes - bytesCopied - bytesToCopy, bytesToCopy);
-                    bytesCopied += bytesToCopy;
-                }
 
                 for (var i = 0; i < buffers.Count; ++i)
                 {

@@ -1,5 +1,6 @@
 Features:
 
+- Transforms: added SimpleCipher class
 - added udp link samples
 
 ## 0.10.0 (2018-03-15)
