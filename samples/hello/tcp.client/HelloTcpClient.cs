@@ -44,7 +44,7 @@ namespace hello
                     {
                         break;
                     }
-                    new HelloReq() { Name = input }.Post();
+                    new HelloReq { Name = input }.Post();
                 }
             }
         }

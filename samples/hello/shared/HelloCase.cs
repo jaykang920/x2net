@@ -13,7 +13,7 @@ namespace hello
 
         void OnHelloReq(HelloReq req)
         {
-            new HelloResp() {
+            new HelloResp {
                 Message = String.Format("Hello, {0}!", req.Name)
             }.InResponseOf(req).Post();
         }
