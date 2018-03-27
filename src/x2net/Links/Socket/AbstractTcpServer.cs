@@ -120,7 +120,6 @@ namespace x2net
                     Name, tcpSession.InternalHandle, clientSocket.RemoteEndPoint);
 
                 return true;
-
             }
             catch (Exception ex)
             {

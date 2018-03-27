@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\x2net\x2netcore.csproj" />
-    <ProjectReference Include="..\shared\hellocore.shared.csproj" />
+    <ProjectReference Include="..\shared\hello.shared.core.csproj" />
   </ItemGroup>
 
 </Project>

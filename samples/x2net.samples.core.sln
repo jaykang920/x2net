@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellocore.original", "hello\original\hellocore.original.csproj", "{22813AD7-13A9-41B7-9B88-CDA35674CF05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.original", "hello\original\hello.original.core.csproj", "{22813AD7-13A9-41B7-9B88-CDA35674CF05}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellocore.shared", "hello\shared\hellocore.shared.csproj", "{99B1C3D6-65DF-4970-920B-F29B712A3BDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.shared", "hello\shared\hello.shared.core.csproj", "{99B1C3D6-65DF-4970-920B-F29B712A3BDB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellocore.standalone", "hello\standalone\hellocore.standalone.csproj", "{F194C66D-2527-498D-AADD-4FF16B1EDC96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.standalone", "hello\standalone\hello.standalone.core.csproj", "{F194C66D-2527-498D-AADD-4FF16B1EDC96}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellocore.tcp.client", "hello\tcp.client\hellocore.tcp.client.csproj", "{DF30A6A8-0E35-4D13-AC50-D79A7CE63D5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.tcp.client", "hello\tcp.client\hello.tcp.client.core.csproj", "{DF30A6A8-0E35-4D13-AC50-D79A7CE63D5D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellocore.tcp.server", "hello\tcp.server\hellocore.tcp.server.csproj", "{F9052174-B944-4002-9F34-CA05ED9F59B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.tcp.server", "hello\tcp.server\hello.tcp.server.core.csproj", "{F9052174-B944-4002-9F34-CA05ED9F59B0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellocore.udp.client", "hello\udp.client\hellocore.udp.client.csproj", "{8712D5BD-0066-4928-9454-64FC5FED7DFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.udp.client", "hello\udp.client\hello.udp.client.core.csproj", "{8712D5BD-0066-4928-9454-64FC5FED7DFD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hellocore.udp.server", "hello\udp.server\hellocore.udp.server.csproj", "{E0CC99A7-BAB7-4253-9FE8-234443C1C9BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.udp.server", "hello\udp.server\hello.udp.server.core.csproj", "{E0CC99A7-BAB7-4253-9FE8-234443C1C9BC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2netcore", "..\src\x2net\x2netcore.csproj", "{5E4F3B22-E0B4-4E67-8CE7-E632D64F34AD}"
 EndProject
