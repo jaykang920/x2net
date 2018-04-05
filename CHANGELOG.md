@@ -1,3 +1,5 @@
+## 0.10.1 (2018-04-05)
+
 Features:
 
 - Transforms: added SimpleCipher class
