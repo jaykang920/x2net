@@ -20,6 +20,14 @@ namespace x2net
             return new WaitForSeconds(self, seconds);
         }
 
+        /// <summary>
+        /// Waits untill the next handler execution chance.
+        /// </summary>
+        public static Yield WaitForNothing(this Coroutine self)
+        {
+            return new WaitForNothing(self);
+        }
+
         // WaitForSingleEvent/Response
 
         /// <summary>
