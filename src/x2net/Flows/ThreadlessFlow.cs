@@ -69,7 +69,7 @@ namespace x2net
         public void Dispatch()
         {
             Event e = queue.Dequeue();
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 return;
             }
@@ -95,7 +95,7 @@ namespace x2net
         public int TryDispatchAll(List<Event> events)
         {
             int n = 0;
-            bool shouldCopy = !Object.ReferenceEquals(events, null);
+            bool shouldCopy = !ReferenceEquals(events, null);
             while (true)
             {
                 Event e;

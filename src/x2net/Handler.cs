@@ -22,7 +22,7 @@ namespace x2net
         /// </summary>
         public override bool Equals(object obj)
         {
-            if (Object.ReferenceEquals(this, obj))
+            if (ReferenceEquals(this, obj))
             {
                 return true;
             }

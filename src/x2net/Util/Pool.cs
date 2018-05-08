@@ -77,7 +77,7 @@ namespace x2net
         /// </remarks>
         public void Push(T item)
         {
-            if (Object.ReferenceEquals(item, null))
+            if (ReferenceEquals(item, null))
             {
                 throw new ArgumentNullException();
             }

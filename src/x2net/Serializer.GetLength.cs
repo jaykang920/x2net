@@ -92,7 +92,7 @@ namespace x2net
         private static int GetLengthUTF8(string value)
         {
             int length = 0;
-            if (!Object.ReferenceEquals(value, null))
+            if (!ReferenceEquals(value, null))
             {
                 for (int i = 0, count = value.Length; i < count; ++i)
                 {
@@ -120,7 +120,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(byte[] value)
         {
-            int length = Object.ReferenceEquals(value, null) ? 0 : value.Length;
+            int length = ReferenceEquals(value, null) ? 0 : value.Length;
             return GetLengthNonnegative(length) + length;
         }
 
@@ -130,7 +130,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<bool> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -145,7 +145,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<byte> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -160,7 +160,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<sbyte> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -175,7 +175,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<short> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -190,7 +190,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<int> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -205,7 +205,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<long> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -220,7 +220,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<float> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -235,7 +235,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<double> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -250,7 +250,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<string> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -265,7 +265,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<DateTime> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -280,7 +280,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<List<int>> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -295,7 +295,7 @@ namespace x2net
         /// </summary>
         public static int GetLength(List<List<string>> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -310,7 +310,7 @@ namespace x2net
         /// </summary>
         public static int GetLength<T>(List<T> value) where T : Cell
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             int length = GetLengthNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -325,7 +325,7 @@ namespace x2net
         /// </summary>
         public static int GetLength<T>(T value) where T : Cell
         {
-            bool isNull = Object.ReferenceEquals(value, null);
+            bool isNull = ReferenceEquals(value, null);
             bool partial = false;
             Type type = typeof(T);
             if (!isNull)

@@ -85,7 +85,7 @@ namespace x2net
         /// Implements IComparable(T).CompareTo interface.
         public int CompareTo(Fingerprint other)
         {
-            if (Object.ReferenceEquals(this, other))
+            if (ReferenceEquals(this, other))
             {
                 return 0;
             }
@@ -129,7 +129,7 @@ namespace x2net
         /// </summary>
         public override bool Equals(object obj)
         {
-            if (Object.ReferenceEquals(this, obj))
+            if (ReferenceEquals(this, obj))
             {
                 return true;
             }
@@ -189,7 +189,7 @@ namespace x2net
         /// </remarks>
         public bool Equivalent(Fingerprint other)
         {
-            if (Object.ReferenceEquals(this, other))
+            if (ReferenceEquals(this, other))
             {
                 return true;
             }

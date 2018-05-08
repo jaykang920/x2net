@@ -121,7 +121,7 @@ namespace x2net
         public void Bind(Binder.Token binderToken)
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return;
             }
@@ -132,7 +132,7 @@ namespace x2net
             where T : Event
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return null;
             }
@@ -143,7 +143,7 @@ namespace x2net
             where T : Event
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return null;
             }
@@ -154,7 +154,7 @@ namespace x2net
             where T : Event
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return null;
             }
@@ -166,7 +166,7 @@ namespace x2net
             where T : Event
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return null;
             }
@@ -176,7 +176,7 @@ namespace x2net
         public void Unbind(Binder.Token binderToken)
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return;
             }
@@ -187,7 +187,7 @@ namespace x2net
             where T : Event
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return null;
             }
@@ -198,7 +198,7 @@ namespace x2net
             where T : Event
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return null;
             }
@@ -209,7 +209,7 @@ namespace x2net
             where T : Event
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return null;
             }
@@ -221,7 +221,7 @@ namespace x2net
             where T : Event
         {
             var flow = Flow;
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 return null;
             }

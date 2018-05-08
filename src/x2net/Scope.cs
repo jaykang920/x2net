@@ -71,12 +71,12 @@ namespace x2net
             }
 
             if (binderToken.HasValue &&
-                !Object.ReferenceEquals(binderToken.Value.Key, null))
+                !ReferenceEquals(binderToken.Value.Key, null))
             {
                 Flow.Bind(binderToken.Value);
             }
 
-            if (!Object.ReferenceEquals(e, null))
+            if (!ReferenceEquals(e, null))
             {
                 Hub.Post(e);
             }

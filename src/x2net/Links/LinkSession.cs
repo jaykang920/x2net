@@ -382,7 +382,7 @@ namespace x2net
                     goto next;
                 }
                 Event retrieved = link.CreateEvent(typeId);
-                if (Object.ReferenceEquals(retrieved, null))
+                if (ReferenceEquals(retrieved, null))
                 {
                     Trace.Error("{0} {1} unknown event type id {2}",
                         link.Name, InternalHandle, typeId);

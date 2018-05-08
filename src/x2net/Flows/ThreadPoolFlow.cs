@@ -73,7 +73,7 @@ namespace x2net
             while (true)
             {
                 Event e = queue.Dequeue();
-                if (Object.ReferenceEquals(e, null))
+                if (ReferenceEquals(e, null))
                 {
                     break;
                 }
@@ -86,11 +86,11 @@ namespace x2net
         private void Handle(object o)
         {
             currentFlow = this;
-            if (Object.ReferenceEquals(equivalent, null))
+            if (ReferenceEquals(equivalent, null))
             {
                 equivalent = new EventEquivalent();
             }
-            if (Object.ReferenceEquals(handlerChain, null))
+            if (ReferenceEquals(handlerChain, null))
             {
                 handlerChain = new List<Handler>();
             }

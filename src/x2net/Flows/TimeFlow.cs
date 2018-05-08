@@ -395,7 +395,7 @@ namespace x2net
 
         public Timer.Token Reserve(Event e, double seconds)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }
@@ -404,7 +404,7 @@ namespace x2net
         
         public Timer.Token Reserve(Event e, TimeSpan delay)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }
@@ -413,7 +413,7 @@ namespace x2net
 
         public Timer.Token ReserveAtLocalTime(Event e, DateTime localTime)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }
@@ -422,7 +422,7 @@ namespace x2net
 
         public Timer.Token ReserveAtUniversalTime(Event e, DateTime universalTime)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }
@@ -436,7 +436,7 @@ namespace x2net
 
         public void Cancel(Event e)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }
@@ -445,7 +445,7 @@ namespace x2net
 
         public void ReserveRepetition(Event e, TimeSpan interval)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }
@@ -454,7 +454,7 @@ namespace x2net
 
         public void ReserveRepetition(Event e, DateTime nextUtcTime, TimeSpan interval)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }
@@ -463,7 +463,7 @@ namespace x2net
 
         public void CancelRepetition(Event e)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }

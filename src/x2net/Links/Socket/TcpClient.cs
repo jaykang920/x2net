@@ -29,7 +29,7 @@ namespace x2net
         {
             try
             {
-                if (Object.ReferenceEquals(socket, null))
+                if (ReferenceEquals(socket, null))
                 {
                     socket = new Socket(
                         endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);

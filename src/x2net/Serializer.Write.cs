@@ -145,7 +145,7 @@ namespace x2net
         /// </summary>
         public void Write(byte[] value)
         {
-            int length = Object.ReferenceEquals(value, null) ? 0 : value.Length;
+            int length = ReferenceEquals(value, null) ? 0 : value.Length;
             WriteNonnegative(length);
             buffer.Write(value, 0, length);
         }
@@ -155,7 +155,7 @@ namespace x2net
         /// </summary>
         public void Write(List<bool> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -168,7 +168,7 @@ namespace x2net
         /// </summary>
         public void Write(List<byte> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -181,7 +181,7 @@ namespace x2net
         /// </summary>
         public void Write(List<sbyte> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -194,7 +194,7 @@ namespace x2net
         /// </summary>
         public void Write(List<short> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -207,7 +207,7 @@ namespace x2net
         /// </summary>
         public void Write(List<int> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -220,7 +220,7 @@ namespace x2net
         /// </summary>
         public void Write(List<long> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -234,7 +234,7 @@ namespace x2net
         /// </summary>
         public void Write(List<float> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -248,7 +248,7 @@ namespace x2net
         /// </summary>
         public void Write(List<double> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -261,7 +261,7 @@ namespace x2net
         /// </summary>
         public void Write(List<string> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -274,7 +274,7 @@ namespace x2net
         /// </summary>
         public void Write(List<DateTime> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -287,7 +287,7 @@ namespace x2net
         /// </summary>
         public void Write(List<List<int>> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -300,7 +300,7 @@ namespace x2net
         /// </summary>
         public void Write(List<List<string>> value)
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -314,7 +314,7 @@ namespace x2net
         /// </summary>
         public void Write<T>(List<T> value) where T : Cell
         {
-            int count = Object.ReferenceEquals(value, null) ? 0 : value.Count;
+            int count = ReferenceEquals(value, null) ? 0 : value.Count;
             WriteNonnegative(count);
             for (int i = 0; i < count; ++i)
             {
@@ -327,7 +327,7 @@ namespace x2net
         /// </summary>
         public void Write<T>(T value) where T : Cell
         {
-            bool isNull = Object.ReferenceEquals(value, null);
+            bool isNull = ReferenceEquals(value, null);
             bool partial = false;
             Type type = typeof(T);
             if (!isNull)

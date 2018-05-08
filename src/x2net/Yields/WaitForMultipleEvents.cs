@@ -36,7 +36,7 @@ namespace x2net
         {
             this.coroutine = coroutine;
 
-            if (!Object.ReferenceEquals(requests, null))
+            if (!ReferenceEquals(requests, null))
             {
                 waitHandle = WaitHandlePool.Acquire();
                 for (int i = 0, count = requests.Length; i < count; ++i)
@@ -102,7 +102,7 @@ namespace x2net
         {
             for (int i = 0, count = actual.Length; i < count; ++i)
             {
-                if (Object.ReferenceEquals(actual[i], null))
+                if (ReferenceEquals(actual[i], null))
                 {
                     Flow.Unbind(handlerTokens[i]);
                 }
@@ -136,7 +136,7 @@ namespace x2net
                 double seconds, params Event[] responses)
             : base(coroutine, requests, seconds, responses)
         {
-            if (Object.ReferenceEquals(requests, null))
+            if (ReferenceEquals(requests, null))
             {
                 throw new ArgumentNullException();
             }

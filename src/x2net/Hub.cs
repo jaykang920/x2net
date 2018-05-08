@@ -58,7 +58,7 @@ namespace x2net
         /// </summary>
         public Hub Add(Case c)
         {
-            if (Object.ReferenceEquals(c, null))
+            if (ReferenceEquals(c, null))
             {
                 throw new ArgumentNullException();
             }
@@ -77,7 +77,7 @@ namespace x2net
         /// </summary>
         public Hub Attach(Flow flow)
         {
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 throw new ArgumentNullException();
             }
@@ -96,7 +96,7 @@ namespace x2net
         /// </summary>
         public Hub Detach(Flow flow)
         {
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 throw new ArgumentNullException();
             }
@@ -124,7 +124,7 @@ namespace x2net
 
         private void Feed(Event e)
         {
-            if (Object.ReferenceEquals(e, null))
+            if (ReferenceEquals(e, null))
             {
                 throw new ArgumentNullException();
             }
@@ -202,7 +202,7 @@ namespace x2net
         /// </summary>
         public Hub Insert(int index, Case c)
         {
-            if (Object.ReferenceEquals(c, null))
+            if (ReferenceEquals(c, null))
             {
                 throw new ArgumentNullException();
             }
@@ -231,7 +231,7 @@ namespace x2net
         /// </summary>
         public Hub Remove(Case c)
         {
-            if (Object.ReferenceEquals(c, null))
+            if (ReferenceEquals(c, null))
             {
                 throw new ArgumentNullException();
             }
@@ -352,7 +352,7 @@ namespace x2net
         /// </summary>
         internal void Subscribe(Flow flow, string channel)
         {
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 throw new ArgumentNullException();
             }
@@ -371,7 +371,7 @@ namespace x2net
         /// </summary>
         internal void Unsubscribe(Flow flow, string channel)
         {
-            if (Object.ReferenceEquals(flow, null))
+            if (ReferenceEquals(flow, null))
             {
                 throw new ArgumentNullException();
             }

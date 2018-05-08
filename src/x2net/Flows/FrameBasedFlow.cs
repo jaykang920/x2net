@@ -102,7 +102,7 @@ namespace x2net
         
         public override void Feed(Event e)
         {
-            if (Object.ReferenceEquals(queue, null))
+            if (ReferenceEquals(queue, null))
             {
                 return;
             }

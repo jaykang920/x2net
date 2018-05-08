@@ -39,7 +39,7 @@ namespace x2net
         /// </summary>
         public override bool Equals(object obj)
         {
-            if (Object.ReferenceEquals(this, obj))
+            if (ReferenceEquals(this, obj))
             {
                 return true;
             }
@@ -255,7 +255,7 @@ namespace x2net
 
         public static bool operator ==(Cell x, Cell y)
         {
-            if (Object.ReferenceEquals(x, y))
+            if (ReferenceEquals(x, y))
             {
                 return true;
             }

@@ -30,7 +30,7 @@ namespace x2net
         {
             this.coroutine = coroutine;
 
-            if (!Object.ReferenceEquals(request, null))
+            if (!ReferenceEquals(request, null))
             {
                 int waitHandle = WaitHandlePool.Acquire();
                 request._WaitHandle = waitHandle;
@@ -99,7 +99,7 @@ namespace x2net
                 Event response, double seconds)
             : base(coroutine, request, response, seconds)
         {
-            if (Object.ReferenceEquals(request, null))
+            if (ReferenceEquals(request, null))
             {
                 throw new ArgumentNullException();
             }

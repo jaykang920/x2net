@@ -12,7 +12,7 @@ namespace x2net
     {
         public static bool EqualsExtended<T>(this IList<T> self, IList<T> other)
         {
-            if (Object.ReferenceEquals(self, other))
+            if (ReferenceEquals(self, other))
             {
                 return true;
             }
@@ -66,7 +66,7 @@ namespace x2net
 
         public static string ToStringExtended<T>(this IList<T> self)
         {
-            if (Object.ReferenceEquals(self, null))
+            if (ReferenceEquals(self, null))
             {
                 return "null";
             }

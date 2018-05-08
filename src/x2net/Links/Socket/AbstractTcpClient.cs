@@ -278,7 +278,7 @@ namespace x2net
         public void Disconnect()
         {
             LinkSession currentSession = Session;
-            if (Object.ReferenceEquals(currentSession, null))
+            if (ReferenceEquals(currentSession, null))
             {
                 return;
             }
@@ -434,7 +434,7 @@ namespace x2net
             base.SetupInternal();
 
             var holdingFlow = Flow;
-            if (!Object.ReferenceEquals(holdingFlow, null))
+            if (!ReferenceEquals(holdingFlow, null))
             {
                 holdingFlow.SubscribeTo(Name);
             }
@@ -445,7 +445,7 @@ namespace x2net
         protected override void TeardownInternal()
         {
             var holdingFlow = Flow;
-            if (!Object.ReferenceEquals(holdingFlow, null))
+            if (!ReferenceEquals(holdingFlow, null))
             {
                 holdingFlow.UnsubscribeFrom(Name);
             }

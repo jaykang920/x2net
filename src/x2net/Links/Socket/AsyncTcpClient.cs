@@ -24,7 +24,7 @@ namespace x2net
 
         protected override void Dispose(bool disposing)
         {
-            if (!Object.ReferenceEquals(connectEventArgs, null))
+            if (!ReferenceEquals(connectEventArgs, null))
             {
                 connectEventArgs.Completed -= OnConnectCompleted;
                 connectEventArgs.Dispose();
@@ -41,12 +41,12 @@ namespace x2net
         {
             try
             {
-                if (Object.ReferenceEquals(socket, null))
+                if (ReferenceEquals(socket, null))
                 {
                     socket = new Socket(
                         endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 }
-                if (Object.ReferenceEquals(connectEventArgs, null))
+                if (ReferenceEquals(connectEventArgs, null))
                 {
                     connectEventArgs = new SocketAsyncEventArgs();
                     connectEventArgs.Completed += OnConnectCompleted;

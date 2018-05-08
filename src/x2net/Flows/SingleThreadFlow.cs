@@ -78,7 +78,7 @@ namespace x2net
             while (true)
             {
                 Event e = queue.Dequeue();
-                if (Object.ReferenceEquals(e, null))
+                if (ReferenceEquals(e, null))
                 {
                     break;
                 }

@@ -373,7 +373,7 @@ namespace x2net
                 return;
             }
             Event retrieved = CreateEvent(typeId);
-            if (Object.ReferenceEquals(retrieved, null))
+            if (ReferenceEquals(retrieved, null))
             {
                 Trace.Error("{0} {1} unknown event type id {2}",
                     Name, handle, typeId);

@@ -197,7 +197,7 @@ namespace x2net
         }
         public void Write(string value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -218,7 +218,7 @@ namespace x2net
         }
         public void Write(List<bool> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -233,7 +233,7 @@ namespace x2net
         }
         public void Write(List<byte> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -248,7 +248,7 @@ namespace x2net
         }
         public void Write(List<sbyte> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -263,7 +263,7 @@ namespace x2net
         }
         public void Write(List<short> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -278,7 +278,7 @@ namespace x2net
         }
         public void Write(List<int> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -293,7 +293,7 @@ namespace x2net
         }
         public void Write(List<long> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -308,7 +308,7 @@ namespace x2net
         }
         public void Write(List<float> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -323,7 +323,7 @@ namespace x2net
         }
         public void Write(List<double> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -338,7 +338,7 @@ namespace x2net
         }
         public void Write(List<string> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -353,7 +353,7 @@ namespace x2net
         }
         public void Write(List<DateTime> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -368,7 +368,7 @@ namespace x2net
         }
         public void Write(List<List<int>> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -383,7 +383,7 @@ namespace x2net
         }
         public void Write(List<List<string>> value)
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -398,7 +398,7 @@ namespace x2net
         }
         public void Write<T>(List<T> value) where T : Cell
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;
@@ -414,7 +414,7 @@ namespace x2net
         }
         public void Write<T>(T value) where T : Cell
         {
-            if (Object.ReferenceEquals(value, null))
+            if (ReferenceEquals(value, null))
             {
                 stringBuilder.Append("null");
                 return;

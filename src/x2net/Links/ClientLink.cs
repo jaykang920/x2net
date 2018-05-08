@@ -49,7 +49,7 @@ namespace x2net
         public override void Send(Event e)
         {
             LinkSession currentSession = Session;
-            if (Object.ReferenceEquals(currentSession, null))
+            if (ReferenceEquals(currentSession, null))
             {
                 Trace.Warn("{0} dropped event {1}", Name, e);
                 return;

@@ -55,7 +55,7 @@ namespace x2net
                     filter.Add(e.GetTypeId(), e.GetFingerprint());
 
                     var eventSink = handler.Action.Target as EventSink;
-                    if (!Object.ReferenceEquals(eventSink, null))
+                    if (!ReferenceEquals(eventSink, null))
                     {
                         eventSink.AddBinding(token);
                     }
@@ -141,7 +141,7 @@ namespace x2net
 
                 var token = new Token(e, handler);
                 var eventSink = handler.Action.Target as EventSink;
-                if (!Object.ReferenceEquals(eventSink, null))
+                if (!ReferenceEquals(eventSink, null))
                 {
                     eventSink.RemoveBinding(new Token(e, handler));
                 }
