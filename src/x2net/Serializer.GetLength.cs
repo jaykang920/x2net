@@ -325,16 +325,25 @@ namespace x2net
         /// </summary>
         public static int GetLength<T>(T value) where T : Cell
         {
-            bool isNull = ReferenceEquals(value, null);
+            if (ReferenceEquals(value, null)) { return 1; }
+
+            int length = 0;
             bool partial = false;
             Type type = typeof(T);
-            if (!isNull)
+            var e = value as Event;
+            if (!ReferenceEquals(e, null))
             {
-                if (type != value.GetType()) { partial = true; }
+                length = GetLength(e.GetTypeId());
             }
+            else if (type != value.GetType())
+            {
+                partial = true;
+            }
+
             bool flag = true;
-            int length = isNull ? 0 :
-                (partial ? value.GetLength(type, ref flag) : value.GetLength());
+            length += (partial ?
+                value.GetLength(type, ref flag) : value.GetLength());
+
             return GetLengthNonnegative(length) + length;
         }
 

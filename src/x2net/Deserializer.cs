@@ -13,6 +13,7 @@ namespace x2net
     public sealed class Deserializer
     {
         private Buffer buffer;
+        private EventFactory eventFactory;
 
         /// <summary>
         /// Initializes a new Deserializer object that works on the specified
@@ -21,6 +22,16 @@ namespace x2net
         public Deserializer(Buffer buffer)
         {
             this.buffer = buffer;
+        }
+
+        /// <summary>
+        /// Initializes a new Deserializer object that works on the specified
+        /// buffer and event factory.
+        /// </summary>
+        public Deserializer(Buffer buffer, EventFactory eventFactory)
+        {
+            this.buffer = buffer;
+            this.eventFactory = eventFactory;
         }
 
         // Overloaded Read for primitive types
@@ -431,8 +442,39 @@ namespace x2net
 
             int marker = buffer.Position + length;
 
-            value = new T();
-            value.Deserialize(this);
+            Type type = typeof(T);
+            Type eventType = typeof(Event);
+            if (type.IsSubclassOf(eventType) || type == eventType)
+            {
+                int typeId;
+                Read(out typeId);
+
+                Event e = null;
+                if (!ReferenceEquals(eventFactory, null))
+                {
+                    e = eventFactory.Create(typeId);
+                }
+                if (ReferenceEquals(e, null))
+                {
+                    e = EventFactory.Global.Create(typeId);
+                }
+                if (ReferenceEquals(e, null))
+                {
+                    Trace.Error("error deserializing {0}: unknown event type id {1}",
+                        type.Name, typeId);
+                }
+
+                value = (T)((Cell)e);
+            }
+            else
+            {
+                value = new T();
+            }
+
+            if (!ReferenceEquals(value, null))
+            {
+                value.Deserialize(this);
+            }
 
             if (buffer.Position != marker)
             {

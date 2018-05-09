@@ -1821,4 +1821,356 @@ namespace x2net.tests
             sampleCell_ = null;
         }
     }
+
+    public class SampleEvent7 : Event
+    {
+        protected static new readonly Tag tag;
+
+        public static new int TypeId { get { return tag.TypeId; } }
+
+        private SampleEvent1 sampleEvent_;
+
+        public SampleEvent1 SampleEvent
+        {
+            get { return sampleEvent_; }
+            set
+            {
+                fingerprint.Touch(tag.Offset + 0);
+                sampleEvent_ = value;
+            }
+        }
+
+        static SampleEvent7()
+        {
+            tag = new Tag(Event.tag, typeof(SampleEvent7), 1,
+                    7);
+        }
+
+        public new static SampleEvent7 New()
+        {
+            return new SampleEvent7();
+        }
+
+        public SampleEvent7()
+            : base(tag.NumProps)
+        {
+            Initialize();
+        }
+
+        protected SampleEvent7(int length)
+            : base(length + tag.NumProps)
+        {
+            Initialize();
+        }
+
+        protected override bool EqualsTo(Cell other)
+        {
+            if (!base.EqualsTo(other))
+            {
+                return false;
+            }
+            SampleEvent7 o = (SampleEvent7)other;
+            if (sampleEvent_ != o.sampleEvent_)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode(Fingerprint fingerprint)
+        {
+            var hash = new Hash(base.GetHashCode(fingerprint));
+            if (fingerprint.Length <= tag.Offset)
+            {
+                return hash.Code;
+            }
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                hash.Update(tag.Offset + 0);
+                hash.Update(sampleEvent_);
+            }
+            return hash.Code;
+        }
+
+        public override int GetTypeId()
+        {
+            return tag.TypeId;
+        }
+
+        public override Cell.Tag GetTypeTag() 
+        {
+            return tag;
+        }
+
+        public override Func<Event> GetFactoryMethod()
+        {
+            return SampleEvent7.New;
+        }
+
+        protected override bool IsEquivalent(Cell other, Fingerprint fingerprint)
+        {
+            if (!base.IsEquivalent(other, fingerprint))
+            {
+                return false;
+            }
+            SampleEvent7 o = (SampleEvent7)other;
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                if (sampleEvent_ != o.sampleEvent_)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public override void Deserialize(Deserializer deserializer)
+        {
+            base.Deserialize(deserializer);
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                deserializer.Read(out sampleEvent_);
+            }
+        }
+
+        public override void Deserialize(VerboseDeserializer deserializer)
+        {
+            base.Deserialize(deserializer);
+            deserializer.Read("SampleEvent", out sampleEvent_);
+        }
+
+        public override int GetLength(Type targetType, ref bool flag)
+        {
+            int length = base.GetLength(targetType, ref flag);
+            if (!flag) { return length; }
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                length += Serializer.GetLength(sampleEvent_);
+            }
+            if (targetType != null && targetType == typeof(SampleEvent7))
+            {
+                flag = false;
+            }
+            return length;
+        }
+
+        public override void Serialize(Serializer serializer,
+            Type targetType, ref bool flag)
+        {
+            base.Serialize(serializer, targetType, ref flag);
+            if (!flag) { return; }
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                serializer.Write(sampleEvent_);
+            }
+            if (targetType != null && targetType == typeof(SampleEvent7))
+            {
+                flag = false;
+            }
+        }
+
+        public override void Serialize(VerboseSerializer serializer,
+            Type targetType, ref bool flag)
+        {
+            base.Serialize(serializer, targetType, ref flag);
+            if (!flag) { return; }
+            serializer.Write("SampleEvent", sampleEvent_);
+            if (targetType != null && targetType == typeof(SampleEvent7))
+            {
+                flag = false;
+            }
+        }
+
+        protected override void Describe(StringBuilder stringBuilder)
+        {
+            base.Describe(stringBuilder);
+            stringBuilder.AppendFormat(" SampleEvent={0}", sampleEvent_);
+        }
+
+        private void Initialize()
+        {
+            sampleEvent_ = null;
+        }
+    }
+
+    public class SampleEvent8 : Event
+    {
+        protected static new readonly Tag tag;
+
+        public static new int TypeId { get { return tag.TypeId; } }
+
+        private SampleEvent2 sampleEvent_;
+
+        public SampleEvent2 SampleEvent
+        {
+            get { return sampleEvent_; }
+            set
+            {
+                fingerprint.Touch(tag.Offset + 0);
+                sampleEvent_ = value;
+            }
+        }
+
+        static SampleEvent8()
+        {
+            tag = new Tag(Event.tag, typeof(SampleEvent8), 1,
+                    8);
+        }
+
+        public new static SampleEvent8 New()
+        {
+            return new SampleEvent8();
+        }
+
+        public SampleEvent8()
+            : base(tag.NumProps)
+        {
+            Initialize();
+        }
+
+        protected SampleEvent8(int length)
+            : base(length + tag.NumProps)
+        {
+            Initialize();
+        }
+
+        protected override bool EqualsTo(Cell other)
+        {
+            if (!base.EqualsTo(other))
+            {
+                return false;
+            }
+            SampleEvent8 o = (SampleEvent8)other;
+            if (sampleEvent_ != o.sampleEvent_)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode(Fingerprint fingerprint)
+        {
+            var hash = new Hash(base.GetHashCode(fingerprint));
+            if (fingerprint.Length <= tag.Offset)
+            {
+                return hash.Code;
+            }
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                hash.Update(tag.Offset + 0);
+                hash.Update(sampleEvent_);
+            }
+            return hash.Code;
+        }
+
+        public override int GetTypeId()
+        {
+            return tag.TypeId;
+        }
+
+        public override Cell.Tag GetTypeTag() 
+        {
+            return tag;
+        }
+
+        public override Func<Event> GetFactoryMethod()
+        {
+            return SampleEvent8.New;
+        }
+
+        protected override bool IsEquivalent(Cell other, Fingerprint fingerprint)
+        {
+            if (!base.IsEquivalent(other, fingerprint))
+            {
+                return false;
+            }
+            SampleEvent8 o = (SampleEvent8)other;
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                if (sampleEvent_ != o.sampleEvent_)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public override void Deserialize(Deserializer deserializer)
+        {
+            base.Deserialize(deserializer);
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                deserializer.Read(out sampleEvent_);
+            }
+        }
+
+        public override void Deserialize(VerboseDeserializer deserializer)
+        {
+            base.Deserialize(deserializer);
+            deserializer.Read("SampleEvent", out sampleEvent_);
+        }
+
+        public override int GetLength(Type targetType, ref bool flag)
+        {
+            int length = base.GetLength(targetType, ref flag);
+            if (!flag) { return length; }
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                length += Serializer.GetLength(sampleEvent_);
+            }
+            if (targetType != null && targetType == typeof(SampleEvent8))
+            {
+                flag = false;
+            }
+            return length;
+        }
+
+        public override void Serialize(Serializer serializer,
+            Type targetType, ref bool flag)
+        {
+            base.Serialize(serializer, targetType, ref flag);
+            if (!flag) { return; }
+            var touched = new Capo<bool>(fingerprint, tag.Offset);
+            if (touched[0])
+            {
+                serializer.Write(sampleEvent_);
+            }
+            if (targetType != null && targetType == typeof(SampleEvent8))
+            {
+                flag = false;
+            }
+        }
+
+        public override void Serialize(VerboseSerializer serializer,
+            Type targetType, ref bool flag)
+        {
+            base.Serialize(serializer, targetType, ref flag);
+            if (!flag) { return; }
+            serializer.Write("SampleEvent", sampleEvent_);
+            if (targetType != null && targetType == typeof(SampleEvent8))
+            {
+                flag = false;
+            }
+        }
+
+        protected override void Describe(StringBuilder stringBuilder)
+        {
+            base.Describe(stringBuilder);
+            stringBuilder.AppendFormat(" SampleEvent={0}", sampleEvent_);
+        }
+
+        private void Initialize()
+        {
+            sampleEvent_ = null;
+        }
+    }
 }

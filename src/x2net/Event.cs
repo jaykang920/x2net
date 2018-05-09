@@ -246,8 +246,7 @@ namespace x2net
         /// </summary>
         public override int GetLength(Type targetType, ref bool flag)
         {
-            int length = Serializer.GetLength(GetTypeId());
-            length += base.GetLength(targetType, ref flag);
+            int length = base.GetLength(targetType, ref flag);
             var touched = new Capo<bool>(fingerprint, tag.Offset);
             if (touched[1])
             {

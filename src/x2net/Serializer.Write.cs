@@ -327,28 +327,44 @@ namespace x2net
         /// </summary>
         public void Write<T>(T value) where T : Cell
         {
-            bool isNull = ReferenceEquals(value, null);
+            if (ReferenceEquals(value, null))
+            {
+                WriteNonnegative(0);
+                return;
+            }
+
+            int length = 0;
             bool partial = false;
             Type type = typeof(T);
-            if (!isNull)
+            var e = value as Event;
+            if (!ReferenceEquals(e, null))
             {
-                if (type != value.GetType()) { partial = true; }
+                length = GetLength(e.GetTypeId());
             }
-            bool flag = true;
-            int length = isNull ? 0 :
-                (partial ? value.GetLength(type, ref flag) : value.GetLength());
-            WriteNonnegative(length);
-            if (!isNull)
+            else if (type != value.GetType())
             {
-                if (partial)
-                {
-                    flag = true;
-                    value.Serialize(this, type, ref flag);
-                }
-                else
-                {
-                    value.Serialize(this);
-                }
+                partial = true;
+            }
+
+            bool flag = true;
+            length += (partial ?
+                value.GetLength(type, ref flag) : value.GetLength());
+
+            WriteNonnegative(length);
+
+            if (!ReferenceEquals(e, null))
+            {
+                Write(e.GetTypeId());
+            }
+
+            if (partial)
+            {
+                flag = true;
+                value.Serialize(this, type, ref flag);
+            }
+            else
+            {
+                value.Serialize(this);
             }
         }
 

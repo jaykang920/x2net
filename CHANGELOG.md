@@ -1,3 +1,7 @@
+Features:
+
+- added full serialization support for embedded events
+
 ## 0.10.1 (2018-04-05)
 
 Features:

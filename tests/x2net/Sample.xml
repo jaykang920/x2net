@@ -47,5 +47,13 @@
     <event name="SampleEvent6" id="6">
         <property name="SampleCell" type="SampleCell2"/>
     </event>
+
+    <event name="SampleEvent7" id="7">
+      <property name="SampleEvent" type="SampleEvent1"/>
+    </event>
+
+    <event name="SampleEvent8" id="8">
+      <property name="SampleEvent" type="SampleEvent2"/>
+    </event>
   </definitions>
 </x2>

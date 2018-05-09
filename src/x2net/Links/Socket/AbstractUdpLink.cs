@@ -361,7 +361,7 @@ namespace x2net
             }
             rxBuffer.Rewind();
 
-            var deserializer = new Deserializer(rxBuffer);
+            var deserializer = new Deserializer(rxBuffer, EventFactory);
             int typeId;
             try
             {

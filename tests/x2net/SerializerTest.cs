@@ -342,8 +342,91 @@ namespace x2net.tests
             var event12 = retrieved as SampleEvent5;
             Assert.NotNull(event12);
 
+            Assert.True(event12.SampleCell is SampleCell1);
+
             Assert.Equal(event1.SampleCell.Foo, event12.SampleCell.Foo);
             Assert.Equal(event1.SampleCell.Bar, event12.SampleCell.Bar);
+        }
+
+        [Fact]
+        public void TestFullSerialization()
+        {
+            var eventFactory = new EventFactory();
+            eventFactory.Register<SampleEvent1>();
+            eventFactory.Register<SampleEvent2>();
+            eventFactory.Register<SampleEvent7>();
+
+            var buffer = new x2net.Buffer();
+
+            var event1 = new SampleEvent1 {  // base
+                Foo = 9,
+                Bar = "hello"
+            };
+            var event2 = new SampleEvent2 {  // derived
+                Foo = 9,
+                Bar = "hello",
+                Baz = true
+            };
+
+            var e = new SampleEvent7 {
+                // base > base > base
+                SampleEvent = event1
+            };  // has base
+            Serializer serializer = new Serializer(buffer);
+            serializer.Write(e.GetTypeId());
+            e.Serialize(serializer);
+
+            long bufferLength = buffer.Length;
+
+            buffer.Rewind();
+            Deserializer deserializer = new Deserializer(buffer, eventFactory);
+            int typeId;
+            deserializer.Read(out typeId);
+            var retrieved = eventFactory.Create(typeId);
+            retrieved.Deserialize(deserializer);
+
+            var e2 = retrieved as SampleEvent7;
+            Assert.NotNull(e2);
+
+            Assert.Equal(e.SampleEvent.Foo, e2.SampleEvent.Foo);
+            Assert.Equal(e.SampleEvent.Bar, e2.SampleEvent.Bar);
+
+            buffer.Reset();
+
+            // derived > base > base
+            e.SampleEvent = event2;  // base <= derived
+            serializer = new Serializer(buffer);
+            serializer.Write(e.GetTypeId());
+            e.Serialize(serializer);
+
+            Assert.True(bufferLength < buffer.Length);
+
+            {
+                var e3 = new SampleEvent8 {
+                    SampleEvent = event2  // derived <= derived
+                };  // has derived
+                var buffer2 = new x2net.Buffer();
+                serializer = new Serializer(buffer2);
+                serializer.Write(e3.GetTypeId());
+                e3.Serialize(serializer);
+                Assert.Equal(buffer2.Length, buffer.Length);
+            }
+
+            buffer.Rewind();
+            deserializer = new Deserializer(buffer, eventFactory);
+            deserializer.Read(out typeId);
+            retrieved = eventFactory.Create(typeId);
+            retrieved.Deserialize(deserializer);
+
+            var e4 = retrieved as SampleEvent7;
+            Assert.NotNull(e4);
+
+            var deserialized = e4.SampleEvent as SampleEvent2;
+            Assert.NotNull(deserialized);
+            Assert.True(deserialized.Baz);
+
+            Assert.Equal(e.SampleEvent.Foo, e4.SampleEvent.Foo);
+            Assert.Equal(e.SampleEvent.Bar, e4.SampleEvent.Bar);
         }
     }
 }
