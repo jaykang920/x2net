@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 using Xunit;
@@ -268,6 +269,102 @@ namespace x2net.tests
                 Assert.Equal(9, bytes);
                 Assert.Equal(0x7f00000000000000L >> 1, l);
             }
+        }
+
+        [Fact]
+        public void TestCollections()
+        {
+            var buffer = new x2net.Buffer();
+
+            // List
+            var list = new List<int> { 1, 2, 3 };
+
+            var serializer = new Serializer(buffer);
+            serializer.Write(list);
+
+            buffer.Rewind();
+            var deserializer = new Deserializer(buffer);
+
+            List<int> deserialized;
+            deserializer.Read(out deserialized);
+
+            Assert.NotNull(deserialized);
+            Assert.True(list.EqualsExtended(deserialized));
+
+            var list2 = new List<string> { "one", "two", "three" };
+
+            buffer.Reset();
+            serializer = new Serializer(buffer);
+            serializer.Write(list2);
+
+            buffer.Rewind();
+            deserializer = new Deserializer(buffer);
+
+            List<string> deserialized2;
+            deserializer.Read(out deserialized2);
+
+            Assert.NotNull(deserialized2);
+            Assert.True(list2.EqualsExtended(deserialized2));
+
+            // Nested list
+            var list3 = new List<List<int>>();
+            list3.Add(list);
+            list3.Add(list);
+            list3.Add(list);
+
+            buffer.Reset();
+            serializer = new Serializer(buffer);
+            serializer.Write(list3);
+
+            buffer.Rewind();
+            deserializer = new Deserializer(buffer);
+
+            List<List<int>> deserialized3;
+            deserializer.Read(out deserialized3);
+
+            Assert.NotNull(deserialized2);
+            Assert.Equal(list3[0][0], deserialized3[0][0]);
+            Assert.Equal(list3[1][1], deserialized3[1][1]);
+            Assert.Equal(list3[2][1], deserialized3[2][1]);
+            Assert.Equal(list3[2][2], deserialized3[2][2]);
+
+            // Map
+            var map = new Dictionary<int, string>();
+            map[1] = "one";
+            map[2] = "two";
+            map[3] = "three";
+
+            buffer.Reset();
+            serializer = new Serializer(buffer);
+            serializer.Write(map);
+
+            buffer.Rewind();
+            deserializer = new Deserializer(buffer);
+
+            Dictionary<int, string> deserialized4;
+            deserializer.Read(out deserialized4);
+
+            Assert.NotNull(deserialized4);
+            Assert.Equal(map[1], deserialized4[1]);
+
+            // Map of lists
+            var map2 = new Dictionary<string, List<SampleCell1>>();
+            map2.Add("key1",
+                new List<SampleCell1> { new SampleCell1 { Foo = 1 } });
+
+            buffer.Reset();
+            serializer = new Serializer(buffer);
+            serializer.Write(map2);
+
+            buffer.Rewind();
+            deserializer = new Deserializer(buffer);
+
+            Dictionary<string, List<SampleCell1>> deserialized5;
+            deserializer.Read(out deserialized5);
+
+            Assert.NotNull(deserialized5);
+            var key = "key1";
+            Assert.Equal(map2[key][0].Foo, deserialized5[key][0].Foo);
         }
 
         [Fact]

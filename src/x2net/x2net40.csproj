@@ -36,6 +36,7 @@
     <ConfigGroup>Release</ConfigGroup>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>

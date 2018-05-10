@@ -124,6 +124,9 @@ namespace x2net
             return GetLengthNonnegative(length) + length;
         }
 
+#if !NET40
+        // Obsolete list support without dynamic keyword
+
         /// <summary>
         /// Gets the number of bytes required to encode the specified ordered
         /// list of boolean values.
@@ -318,6 +321,7 @@ namespace x2net
             }
             return length;
         }
+#endif
 
         /// <summary>
         /// Gets the number of bytes required to encode the specified
@@ -346,6 +350,68 @@ namespace x2net
 
             return GetLengthNonnegative(length) + length;
         }
+
+#if NET40
+        // Generic list/map support with C# 4.0 dynamic keyword
+
+        public static int GetLength<T>(List<T> list)
+        {
+            bool isValueType = typeof(T).IsValueType;
+
+            int count = ReferenceEquals(list, null) ? 0 : list.Count;
+            int length = GetLengthNonnegative(count);
+            for (int i = 0; i < count; ++i)
+            {
+                T entry = list[i];
+                if (!isValueType && (object)entry == null)
+                {
+                    length += 1;
+                }
+                else
+                {
+                    length += GetLength((dynamic)entry);
+                }
+            }
+            return length;
+        }
+
+        public static int GetLength<T, U>(Dictionary<T, U> map)
+        {
+            bool isKeyValueType = typeof(T).IsValueType;
+            bool isValueValueType = typeof(U).IsValueType;
+
+            if (ReferenceEquals(map, null)) { return 1; }
+            int length = GetLengthNonnegative(map.Count);
+            foreach (var pair in map)
+            {
+                T key = pair.Key;
+                if (!isKeyValueType && (object)key == null)
+                {
+                    length += 1;
+                }
+                else
+                {
+                    length += GetLength((dynamic)key);
+                }
+
+                U value = pair.Value;
+                if (!isValueValueType && (object)value == null)
+                {
+                    length += 1;
+                }
+                else
+                {
+                    length += GetLength((dynamic)value);
+                }
+            }
+            return length;
+        }
+
+        private static int GetLength(dynamic value)
+        {
+            return GetLength(value);
+        }
+#endif
 
         // GetLength helper methods
 

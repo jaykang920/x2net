@@ -150,6 +150,9 @@ namespace x2net
             buffer.Write(value, 0, length);
         }
 
+#if !NET40
+        // Obsolete list support without dynamic keyword
+
         /// <summary>
         /// Encodes an ordered list of boolean values into the underlying buffer.
         /// </summary>
@@ -321,6 +324,7 @@ namespace x2net
                 Write(value[i]);
             }
         }
+#endif
 
         /// <summary>
         /// Encodes a Cell-derived objects into the underlying buffer.
@@ -367,6 +371,67 @@ namespace x2net
                 value.Serialize(this);
             }
         }
+
+#if NET40
+        // Generic list/map support with C# 4.0 dynamic keyword
+
+        public void Write<T>(List<T> list)
+        {
+            bool isValueType = typeof(T).IsValueType;
+
+            int count = ReferenceEquals(list, null) ? 0 : list.Count;
+            WriteNonnegative(count);
+            for (int i = 0; i < count; ++i)
+            {
+                T entry = list[i];
+                if (!isValueType && (object)entry == null)
+                {
+                    WriteNonnegative(0);
+                }
+                else
+                {
+                    Write((dynamic)entry);
+                }
+            }
+        }
+
+        public void Write<T, U>(Dictionary<T, U> map)
+        {
+            bool isKeyValueType = typeof(T).IsValueType;
+            bool isValueValueType = typeof(U).IsValueType;
+
+            int count = ReferenceEquals(map, null) ? 0 : map.Count;
+            WriteNonnegative(count);
+            if (count == 0) { return; }
+            foreach (var pair in map)
+            {
+                T key = pair.Key;
+                if (!isKeyValueType && (object)key == null)
+                {
+                    WriteNonnegative(0);
+                }
+                else
+                {
+                    Write((dynamic)key);
+                }
+                
+                U value = pair.Value;
+                if (!isValueValueType && (object)value == null)
+                {
+                    WriteNonnegative(0);
+                }
+                else
+                {
+                    Write((dynamic)value);
+                }
+            }
+        }
+
+        private void Write(dynamic value)
+        {
+            Write(value);
+        }
+#endif
 
         // Wrtie helper methods
 

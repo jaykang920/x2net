@@ -219,6 +219,9 @@ namespace x2net
             buffer.Read(value, 0, length);
         }
 
+#if !NET40
+        // Obsolete list support without dynamic keyword
+
         /// <summary>
         /// Decodes an ordered list of boolean values out of the underlying buffer.
         /// </summary>
@@ -429,6 +432,7 @@ namespace x2net
                 value.Add(element);
             }
         }
+#endif
 
         /// <summary>
         /// Decodes a Cell-derived objects out of the underlying buffer.
@@ -481,6 +485,132 @@ namespace x2net
                 buffer.Position = marker;
             }
         }
+
+#if NET40
+        // Generic list/map support with C# 4.0 dynamic keyword
+
+        public void Read<T>(out List<T> list)
+        {
+            int count;
+            ReadNonnegative(out count);
+            list = new List<T>();
+            for (int i = 0; i < count; ++i)
+            {
+                T entry = Default<T>();
+                entry = (T)Read_((dynamic)entry);
+                list.Add(entry);
+            }
+        }
+
+        public void Read<T, U>(out Dictionary<T, U> map)
+        {
+            int count;
+            ReadNonnegative(out count);
+            map = new Dictionary<T, U>();
+            for (int i = 0; i < count; ++i)
+            {
+                T key = Default<T>();
+                U value = Default<U>();
+                key = (T)Read_((dynamic)key);
+                value = (U)Read_((dynamic)value);
+                map.Add(key, value);
+            }
+        }
+
+        private T Default<T>()
+        {
+            var type = typeof(T);
+            if (type.IsValueType)
+            {
+                return default(T);
+            }
+            if (type == typeof(string))
+            {
+                return (T)(object)String.Empty;
+            }
+            if (type == typeof(byte[]))
+            {
+                return (T)(object)new byte[0];
+            }
+            return Activator.CreateInstance<T>();
+        }
+
+        private dynamic Read_(dynamic value)
+        {
+            return Read_(value);
+        }
+
+        private bool Read_(bool value)
+        {
+            Read(out value);
+            return value;
+        }
+        private byte Read_(byte value)
+        {
+            Read(out value);
+            return value;
+        }
+        private sbyte Read_(sbyte value)
+        {
+            Read(out value);
+            return value;
+        }
+        private short Read_(short value)
+        {
+            Read(out value);
+            return value;
+        }
+        private int Read_(int value)
+        {
+            Read(out value);
+            return value;
+        }
+        private long Read_(long value)
+        {
+            Read(out value);
+            return value;
+        }
+        private float Read_(float value)
+        {
+            Read(out value);
+            return value;
+        }
+        private double Read_(double value)
+        {
+            Read(out value);
+            return value;
+        }
+        private string Read_(string value)
+        {
+            Read(out value);
+            return value;
+        }
+        private DateTime Read_(DateTime value)
+        {
+            Read(out value);
+            return value;
+        }
+        private byte[] Read_(byte[] value)
+        {
+            Read(out value);
+            return value;
+        }
+        public T Read_<T>(T value) where T : Cell, new()
+        {
+            Read(out value);
+            return value;
+        }
+        public List<T> Read_<T>(List<T> value)
+        {
+            Read(out value);
+            return value;
+        }
+        public Dictionary<T, U> Read_<T, U>(Dictionary<T, U> value)
+        {
+            Read(out value);
+            return value;
+        }
+#endif
 
         // Read helper methods
 
