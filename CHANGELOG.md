@@ -1,6 +1,8 @@
+## 0.11.0 (2018-05-11)
+
 Features:
 
-- added full support for generic list and map types
+- added full support for generic list and map types (with C# 4.0 dynamic keyword)
 - added full serialization support for embedded events
 
 ## 0.10.1 (2018-04-05)

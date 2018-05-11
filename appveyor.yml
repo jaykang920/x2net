@@ -1,4 +1,4 @@
-version: 0.10.1.{build}
+version: 0.11.0.{build}
 image: Visual Studio 2017
 build_script:
 - cmd: PowerShell -Version 2.0 .\build.ps1
