@@ -174,12 +174,17 @@ namespace x2net
         public override string ToString()
         {
             var stringBuilder = new StringBuilder();
+            ToString(stringBuilder);
+            return stringBuilder.ToString();
+        }
+
+        protected void ToString(StringBuilder stringBuilder)
+        {
             stringBuilder
                 .Append(GetTypeTag().RuntimeType.Name)
                 .Append(" {");
             Describe(stringBuilder);
             stringBuilder.Append(" }");
-            return stringBuilder.ToString();
         }
 
         /// <summary>

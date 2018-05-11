@@ -238,8 +238,8 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Foo={0}", foo_);
-            stringBuilder.AppendFormat(" Bar=\"{0}\"", bar_.Replace("\"", "\\\""));
+            stringBuilder.AppendFormat(" Foo:{0}", foo_);
+            stringBuilder.AppendFormat(" Bar:{0}", bar_.ToStringEx());
         }
 
         private void Initialize()
@@ -398,7 +398,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Baz={0}", baz_);
+            stringBuilder.AppendFormat(" Baz:{0}", baz_);
         }
 
         private void Initialize()
@@ -556,7 +556,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Qux={0}", qux_);
+            stringBuilder.AppendFormat(" Qux:{0}", qux_);
         }
 
         private void Initialize()
@@ -714,7 +714,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Quux={0}", quux_);
+            stringBuilder.AppendFormat(" Quux:{0}", quux_);
         }
 
         private void Initialize()
@@ -931,8 +931,8 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Foo={0}", foo_);
-            stringBuilder.AppendFormat(" Bar=\"{0}\"", bar_.Replace("\"", "\\\""));
+            stringBuilder.AppendFormat(" Foo:{0}", foo_);
+            stringBuilder.AppendFormat(" Bar:{0}", bar_.ToStringEx());
         }
 
         private void Initialize()
@@ -1109,7 +1109,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Baz={0}", baz_);
+            stringBuilder.AppendFormat(" Baz:{0}", baz_);
         }
 
         private void Initialize()
@@ -1285,7 +1285,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Qux={0}", qux_);
+            stringBuilder.AppendFormat(" Qux:{0}", qux_);
         }
 
         private void Initialize()
@@ -1461,7 +1461,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Quux={0}", quux_);
+            stringBuilder.AppendFormat(" Quux:{0}", quux_);
         }
 
         private void Initialize()
@@ -1637,7 +1637,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" SampleCell={0}", sampleCell_);
+            stringBuilder.AppendFormat(" SampleCell:{0}", sampleCell_);
         }
 
         private void Initialize()
@@ -1813,7 +1813,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" SampleCell={0}", sampleCell_);
+            stringBuilder.AppendFormat(" SampleCell:{0}", sampleCell_);
         }
 
         private void Initialize()
@@ -1989,7 +1989,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" SampleEvent={0}", sampleEvent_);
+            stringBuilder.AppendFormat(" SampleEvent:{0}", sampleEvent_);
         }
 
         private void Initialize()
@@ -2165,7 +2165,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" SampleEvent={0}", sampleEvent_);
+            stringBuilder.AppendFormat(" SampleEvent:{0}", sampleEvent_);
         }
 
         private void Initialize()

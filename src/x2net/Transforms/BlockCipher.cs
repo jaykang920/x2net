@@ -143,7 +143,7 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
                 // But if not, verify the replayed data.
                 ImportRsaParameters(rsa, settings.MyPrivateKey);
                 byte[] actual = rsa.Decrypt(response, false);
-                return actual.EqualsExtended(expected);
+                return actual.EqualsEx(expected);
             }
         }
 

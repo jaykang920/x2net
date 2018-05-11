@@ -60,8 +60,9 @@
     <Compile Include="EventSink.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="Extensions.Array.cs" />
-    <Compile Include="Extensions.Buffer.cs" />
-    <Compile Include="Extensions.Collections.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Extensions.Equals.cs" />
+    <Compile Include="Extensions.ToString.cs" />
     <Compile Include="Extensions.Coroutine.cs" />
     <Compile Include="Extensions.Event.cs" />
     <Compile Include="Fingerprint.cs" />

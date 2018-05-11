@@ -22,21 +22,6 @@ namespace x2net
         }
 
         /// <summary>
-        /// Tests for the sequence equality of the specified byte arrays.
-        /// </summary>
-        public static bool EqualsExtended(this byte[] self, byte[] other)
-        {
-            if ((object)self == null && (object)other == null) { return true; }
-            if ((object)self == null || (object)other == null) { return false; }
-            if (self.Length != other.Length) { return false; }
-            for (int i = 0, length = self.Length; i < length; ++i)
-            {
-                if (self[i] != other[i]) { return false; }
-            }
-            return true;
-        }
-
-        /// <summary>
         /// Specialized SubArray extension method for byte arrays.
         /// </summary>
         public static byte[] SubArray(this byte[] self, int offset, int count)
@@ -57,12 +42,6 @@ namespace x2net
             T[] result = new T[count];
             Array.Copy(self, offset, result, 0, count);
             return result;
-        }
-
-        public static string ToStringExtended(this byte[] self)
-        {
-            if ((object)self == null) { return "null"; }
-            return BitConverter.ToString(self);
         }
     }
 }

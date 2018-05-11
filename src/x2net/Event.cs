@@ -93,13 +93,22 @@ namespace x2net
         }
 
         /// <summary>
+        /// Returns a string that describes the current object.
+        /// </summary>
+        public override string ToString()
+        {
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append(GetTypeId());
+            stringBuilder.Append(' ');
+            ToString(stringBuilder);
+            return stringBuilder.ToString();
+        }
+
+        /// <summary>
         /// Overridden by subclasses to build a ToString chain.
         /// </summary>
         protected override void Describe(StringBuilder stringBuilder)
         {
-            stringBuilder
-                .Append(' ')
-                .Append(GetTypeId());
         }
 
         /// <summary>

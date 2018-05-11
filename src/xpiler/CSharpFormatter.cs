@@ -382,7 +382,7 @@ namespace x2net.xpiler
                 {
                     if (Types.IsCollection(property.TypeSpec.Type))
                     {
-                        Out(2, "if (!Extensions.EqualsExtended({0}, o.{0}))", property.NativeName);
+                        Out(2, "if (!Extensions.EqualsEx({0}, o.{0}))", property.NativeName);
                     }
                     else
                     {
@@ -596,20 +596,15 @@ namespace x2net.xpiler
             Out(2, "base.Describe(stringBuilder);");
             foreach (var property in def.Properties)
             {
-                Indent(2);
-                if (Types.IsCollection(property.TypeSpec.Type))
+                if (Types.IsCollection(property.TypeSpec.Type)
+                    || property.NativeType == "string")
                 {
-                    Writer.WriteLine("stringBuilder.AppendFormat(\" {0}={{0}}\", {1}.ToStringExtended());",
-                        property.Name, property.NativeName);
-                }
-                else if (property.NativeType == "string")
-                {
-                    Writer.WriteLine("stringBuilder.AppendFormat(\" {0}=\\\"{{0}}\\\"\", {1}.Replace(\"\\\"\", \"\\\\\\\"\"));",
+                    Out(2, "stringBuilder.AppendFormat(\" {0}:{{0}}\", {1}.ToStringEx());",
                         property.Name, property.NativeName);
                 }
                 else
                 {
-                    Writer.WriteLine("stringBuilder.AppendFormat(\" {0}={{0}}\", {1});",
+                    Out(2, "stringBuilder.AppendFormat(\" {0}:{{0}}\", {1});",
                         property.Name, property.NativeName);
                 }
             }

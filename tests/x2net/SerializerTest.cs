@@ -289,7 +289,7 @@ namespace x2net.tests
             deserializer.Read(out deserialized);
 
             Assert.NotNull(deserialized);
-            Assert.True(list.EqualsExtended(deserialized));
+            Assert.True(list.EqualsEx(deserialized));
 
             // List<string>
             var list2 = new List<string> { "one", "two", "three" };
@@ -305,7 +305,7 @@ namespace x2net.tests
             deserializer.Read(out deserialized2);
 
             Assert.NotNull(deserialized2);
-            Assert.True(list2.EqualsExtended(deserialized2));
+            Assert.True(list2.EqualsEx(deserialized2));
 
             // List<List<int>>
             var list3 = new List<List<int>>();

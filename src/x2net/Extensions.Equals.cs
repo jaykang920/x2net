@@ -7,10 +7,25 @@ using System.Text;
 
 namespace x2net
 {
-    // Extensions.Collections
+    // Extensions.Equals
     public static partial class Extensions
     {
-        public static bool EqualsExtended<T>(this IList<T> self, IList<T> other)
+        /// <summary>
+        /// Tests for the sequence equality of the specified byte arrays.
+        /// </summary>
+        public static bool EqualsEx(this byte[] self, byte[] other)
+        {
+            if ((object)self == null && (object)other == null) { return true; }
+            if ((object)self == null || (object)other == null) { return false; }
+            if (self.Length != other.Length) { return false; }
+            for (int i = 0, length = self.Length; i < length; ++i)
+            {
+                if (self[i] != other[i]) { return false; }
+            }
+            return true;
+        }
+
+        public static bool EqualsEx<T>(this IList<T> self, IList<T> other)
         {
             if (ReferenceEquals(self, other))
             {
@@ -51,43 +66,14 @@ namespace x2net
             return true;
         }
 
+        public static bool Equivalent(this byte[] self, byte[] other)
+        {
+            return self.EqualsEx(other);
+        }
+
         public static bool Equivalent<T>(this IList<T> self, IList<T> other)
         {
-            return self.EqualsExtended(other);
-        }
-
-        public static void Resize<T>(this IList<T> self, int size)
-        {
-            while (self.Count < size)
-            {
-                self.Add(default(T));
-            }
-        }
-
-        public static string ToStringExtended<T>(this IList<T> self)
-        {
-            if (ReferenceEquals(self, null))
-            {
-                return "null";
-            }
-
-            var stringBuilder = new StringBuilder();
-
-            stringBuilder.Append("[");
-            for (int i = 0, count = self.Count; i < count; ++i)
-            {
-                if (i != 0)
-                {
-                    stringBuilder.Append(',');
-                }
-                stringBuilder.Append(' ');
-                T element = self[i];
-                stringBuilder.Append((object)element == null ?
-                    "null" : element.ToString());
-            }
-            stringBuilder.Append(" ]");
-
-            return stringBuilder.ToString();
+            return self.EqualsEx(other);
         }
     }
 }

@@ -213,9 +213,9 @@ namespace x2net
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" LinkName=\"{0}\"", linkName_.Replace("\"", "\\\""));
-            stringBuilder.AppendFormat(" Result={0}", result_);
-            stringBuilder.AppendFormat(" Context={0}", context_);
+            stringBuilder.AppendFormat(" LinkName:{0}", linkName_.ToStringEx());
+            stringBuilder.AppendFormat(" Result:{0}", result_);
+            stringBuilder.AppendFormat(" Context:{0}", context_);
         }
     }
 
@@ -378,9 +378,9 @@ namespace x2net
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" LinkName=\"{0}\"", linkName_.Replace("\"", "\\\""));
-            stringBuilder.AppendFormat(" Handle={0}", handle_);
-            stringBuilder.AppendFormat(" Context={0}", context_);
+            stringBuilder.AppendFormat(" LinkName:{0}", linkName_.ToStringEx());
+            stringBuilder.AppendFormat(" Handle:{0}", handle_);
+            stringBuilder.AppendFormat(" Context:{0}", context_);
         }
     }
 
@@ -432,7 +432,7 @@ namespace x2net
                 return false;
             }
             HandshakeReq o = (HandshakeReq)other;
-            if (!Extensions.EqualsExtended(data_, o.data_))
+            if (!Extensions.EqualsEx(data_, o.data_))
             {
                 return false;
             }
@@ -551,7 +551,7 @@ namespace x2net
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Data={0}", data_.ToStringExtended());
+            stringBuilder.AppendFormat(" Data:{0}", data_.ToStringEx());
         }
 
         private void Initialize()
@@ -608,7 +608,7 @@ namespace x2net
                 return false;
             }
             HandshakeResp o = (HandshakeResp)other;
-            if (!Extensions.EqualsExtended(data_, o.data_))
+            if (!Extensions.EqualsEx(data_, o.data_))
             {
                 return false;
             }
@@ -727,7 +727,7 @@ namespace x2net
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Data={0}", data_.ToStringExtended());
+            stringBuilder.AppendFormat(" Data:{0}", data_.ToStringEx());
         }
 
         private void Initialize()
@@ -903,7 +903,7 @@ namespace x2net
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Result={0}", result_);
+            stringBuilder.AppendFormat(" Result:{0}", result_);
         }
 
         private void Initialize()
