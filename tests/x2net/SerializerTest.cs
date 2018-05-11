@@ -276,7 +276,7 @@ namespace x2net.tests
         {
             var buffer = new x2net.Buffer();
 
-            // List
+            // List<int>
             var list = new List<int> { 1, 2, 3 };
 
             var serializer = new Serializer(buffer);
@@ -291,6 +291,7 @@ namespace x2net.tests
             Assert.NotNull(deserialized);
             Assert.True(list.EqualsExtended(deserialized));
 
+            // List<string>
             var list2 = new List<string> { "one", "two", "three" };
 
             buffer.Reset();
@@ -306,7 +307,7 @@ namespace x2net.tests
             Assert.NotNull(deserialized2);
             Assert.True(list2.EqualsExtended(deserialized2));
 
-            // Nested list
+            // List<List<int>>
             var list3 = new List<List<int>>();
             list3.Add(list);
             list3.Add(list);
@@ -328,6 +329,7 @@ namespace x2net.tests
             Assert.Equal(list3[2][1], deserialized3[2][1]);
             Assert.Equal(list3[2][2], deserialized3[2][2]);
 
+#if NET40
             // Map
             var map = new Dictionary<int, string>();
             map[1] = "one";
@@ -365,6 +367,7 @@ namespace x2net.tests
             Assert.NotNull(deserialized5);
             var key = "key1";
             Assert.Equal(map2[key][0].Foo, deserialized5[key][0].Foo);
+#endif
         }
 
         [Fact]
