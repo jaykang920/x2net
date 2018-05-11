@@ -382,7 +382,7 @@ namespace x2net.xpiler
                 {
                     if (Types.IsCollection(property.TypeSpec.Type))
                     {
-                        Out(2, "if (!Extensions.EqualsEx({0}, o.{0}))", property.NativeName);
+                        Out(2, "if (!{0}.EqualsEx(o.{0}))", property.NativeName);
                     }
                     else
                     {
@@ -461,20 +461,19 @@ namespace x2net.xpiler
             {
                 Out(2, "{0} o = ({0})other;", def.Name);
                 Out(2, "var touched = new Capo<bool>(fingerprint, tag.Offset);");
+
                 foreach (var property in def.Properties)
                 {
                     Out(2, "if (touched[{0}])", property.Index);
                     Out(2, "{");
-                    //if (Types.IsPrimitive(property.TypeSpec.Type))
-                    //{
-                        Out(3, "if ({0} != o.{0})", property.NativeName);
-                    //}
-                    /*
+                    if (Types.IsCollection(property.TypeSpec.Type))
+                    {
+                        Out(3, "if (!{0}.EqualsEx(o.{0}))", property.NativeName);
+                    }
                     else
                     {
-                        Indent(3); Out.WriteLine("if ((object){0} == null || !{0}.IsEquivalent(o.{0}))", property.NativeName);
+                        Out(3, "if ({0} != o.{0})", property.NativeName);
                     }
-                    */
                     Out(3, "{");
                     Out(4, "return false;");
                     Out(3, "}");
@@ -596,17 +595,8 @@ namespace x2net.xpiler
             Out(2, "base.Describe(stringBuilder);");
             foreach (var property in def.Properties)
             {
-                if (Types.IsCollection(property.TypeSpec.Type)
-                    || property.NativeType == "string")
-                {
-                    Out(2, "stringBuilder.AppendFormat(\" {0}:{{0}}\", {1}.ToStringEx());",
-                        property.Name, property.NativeName);
-                }
-                else
-                {
-                    Out(2, "stringBuilder.AppendFormat(\" {0}:{{0}}\", {1});",
-                        property.Name, property.NativeName);
-                }
+                Out(2, "stringBuilder.AppendFormat(\" {0}:{{0}}\", {1}.ToStringEx());",
+                    property.Name, property.NativeName);
             }
             Out(1, "}");
         }

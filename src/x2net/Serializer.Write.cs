@@ -377,10 +377,9 @@ namespace x2net
 
         public void Write<T>(List<T> list)
         {
-            bool isValueType = typeof(T).IsValueType;
-
             int count = ReferenceEquals(list, null) ? 0 : list.Count;
             WriteNonnegative(count);
+            bool isValueType = typeof(T).IsValueType;
             for (int i = 0; i < count; ++i)
             {
                 T entry = list[i];
@@ -397,12 +396,11 @@ namespace x2net
 
         public void Write<T, U>(Dictionary<T, U> map)
         {
-            bool isKeyValueType = typeof(T).IsValueType;
-            bool isValueValueType = typeof(U).IsValueType;
-
             int count = ReferenceEquals(map, null) ? 0 : map.Count;
             WriteNonnegative(count);
             if (count == 0) { return; }
+            bool isKeyValueType = typeof(T).IsValueType;
+            bool isValueValueType = typeof(U).IsValueType;
             foreach (var pair in map)
             {
                 T key = pair.Key;

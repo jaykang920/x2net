@@ -214,8 +214,8 @@ namespace x2net
         {
             base.Describe(stringBuilder);
             stringBuilder.AppendFormat(" LinkName:{0}", linkName_.ToStringEx());
-            stringBuilder.AppendFormat(" Result:{0}", result_);
-            stringBuilder.AppendFormat(" Context:{0}", context_);
+            stringBuilder.AppendFormat(" Result:{0}", result_.ToStringEx());
+            stringBuilder.AppendFormat(" Context:{0}", context_.ToStringEx());
         }
     }
 
@@ -379,8 +379,8 @@ namespace x2net
         {
             base.Describe(stringBuilder);
             stringBuilder.AppendFormat(" LinkName:{0}", linkName_.ToStringEx());
-            stringBuilder.AppendFormat(" Handle:{0}", handle_);
-            stringBuilder.AppendFormat(" Context:{0}", context_);
+            stringBuilder.AppendFormat(" Handle:{0}", handle_.ToStringEx());
+            stringBuilder.AppendFormat(" Context:{0}", context_.ToStringEx());
         }
     }
 
@@ -432,7 +432,7 @@ namespace x2net
                 return false;
             }
             HandshakeReq o = (HandshakeReq)other;
-            if (!Extensions.EqualsEx(data_, o.data_))
+            if (!data_.EqualsEx(o.data_))
             {
                 return false;
             }
@@ -480,7 +480,7 @@ namespace x2net
             var touched = new Capo<bool>(fingerprint, tag.Offset);
             if (touched[0])
             {
-                if (data_ != o.data_)
+                if (!data_.EqualsEx(o.data_))
                 {
                     return false;
                 }
@@ -608,7 +608,7 @@ namespace x2net
                 return false;
             }
             HandshakeResp o = (HandshakeResp)other;
-            if (!Extensions.EqualsEx(data_, o.data_))
+            if (!data_.EqualsEx(o.data_))
             {
                 return false;
             }
@@ -656,7 +656,7 @@ namespace x2net
             var touched = new Capo<bool>(fingerprint, tag.Offset);
             if (touched[0])
             {
-                if (data_ != o.data_)
+                if (!data_.EqualsEx(o.data_))
                 {
                     return false;
                 }
@@ -903,7 +903,7 @@ namespace x2net
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Result:{0}", result_);
+            stringBuilder.AppendFormat(" Result:{0}", result_.ToStringEx());
         }
 
         private void Initialize()

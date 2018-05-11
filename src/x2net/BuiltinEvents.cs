@@ -472,8 +472,8 @@ namespace x2net
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Key:{0}", key_);
-            stringBuilder.AppendFormat(" IntParam:{0}", intParam_);
+            stringBuilder.AppendFormat(" Key:{0}", key_.ToStringEx());
+            stringBuilder.AppendFormat(" IntParam:{0}", intParam_.ToStringEx());
         }
     }
 
@@ -618,8 +618,8 @@ namespace x2net
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Key:{0}", key_);
-            stringBuilder.AppendFormat(" IntParam:{0}", intParam_);
+            stringBuilder.AppendFormat(" Key:{0}", key_.ToStringEx());
+            stringBuilder.AppendFormat(" IntParam:{0}", intParam_.ToStringEx());
         }
     }
 }

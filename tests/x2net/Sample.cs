@@ -238,7 +238,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Foo:{0}", foo_);
+            stringBuilder.AppendFormat(" Foo:{0}", foo_.ToStringEx());
             stringBuilder.AppendFormat(" Bar:{0}", bar_.ToStringEx());
         }
 
@@ -398,7 +398,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Baz:{0}", baz_);
+            stringBuilder.AppendFormat(" Baz:{0}", baz_.ToStringEx());
         }
 
         private void Initialize()
@@ -556,7 +556,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Qux:{0}", qux_);
+            stringBuilder.AppendFormat(" Qux:{0}", qux_.ToStringEx());
         }
 
         private void Initialize()
@@ -714,7 +714,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Quux:{0}", quux_);
+            stringBuilder.AppendFormat(" Quux:{0}", quux_.ToStringEx());
         }
 
         private void Initialize()
@@ -931,7 +931,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Foo:{0}", foo_);
+            stringBuilder.AppendFormat(" Foo:{0}", foo_.ToStringEx());
             stringBuilder.AppendFormat(" Bar:{0}", bar_.ToStringEx());
         }
 
@@ -1109,7 +1109,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Baz:{0}", baz_);
+            stringBuilder.AppendFormat(" Baz:{0}", baz_.ToStringEx());
         }
 
         private void Initialize()
@@ -1285,7 +1285,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Qux:{0}", qux_);
+            stringBuilder.AppendFormat(" Qux:{0}", qux_.ToStringEx());
         }
 
         private void Initialize()
@@ -1461,7 +1461,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Quux:{0}", quux_);
+            stringBuilder.AppendFormat(" Quux:{0}", quux_.ToStringEx());
         }
 
         private void Initialize()
@@ -1637,7 +1637,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" SampleCell:{0}", sampleCell_);
+            stringBuilder.AppendFormat(" SampleCell:{0}", sampleCell_.ToStringEx());
         }
 
         private void Initialize()
@@ -1813,7 +1813,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" SampleCell:{0}", sampleCell_);
+            stringBuilder.AppendFormat(" SampleCell:{0}", sampleCell_.ToStringEx());
         }
 
         private void Initialize()
@@ -1989,7 +1989,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" SampleEvent:{0}", sampleEvent_);
+            stringBuilder.AppendFormat(" SampleEvent:{0}", sampleEvent_.ToStringEx());
         }
 
         private void Initialize()
@@ -2165,7 +2165,7 @@ namespace x2net.tests
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" SampleEvent:{0}", sampleEvent_);
+            stringBuilder.AppendFormat(" SampleEvent:{0}", sampleEvent_.ToStringEx());
         }
 
         private void Initialize()
