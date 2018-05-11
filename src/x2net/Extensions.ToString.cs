@@ -59,7 +59,7 @@ namespace x2net
 
         public static string ToStringEx(this DateTime self)
         {
-            return String.Format("'{0}'", self);
+            return self.ToString("\\'yyyy-MM-dd HH:mm:ss\\'");
         }
 
         public static string ToStringEx(this byte[] self)
