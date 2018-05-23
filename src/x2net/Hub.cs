@@ -22,7 +22,7 @@ namespace x2net
         private ReaderWriterLockSlim rwlock;
 
         /// <summary>
-        /// Gets the x2 subsystem heartbeat event.
+        /// Gets the shared instance of x2 subsystem heartbeat event.
         /// </summary>
         public static HeartbeatEvent HeartbeatEvent { get; private set; }
 
@@ -34,6 +34,7 @@ namespace x2net
         static Hub()
         {
             HeartbeatEvent = new HeartbeatEvent { _Transform = false };
+
             // Initialize the singleton instance.
             Instance = new Hub();
         }
@@ -67,6 +68,7 @@ namespace x2net
                 if (!cases.Contains(c))
                 {
                     cases.Add(c);
+                    Trace.Debug("hub: added case {0}", c.GetType().Name);
                 }
             }
             return this;
@@ -86,6 +88,7 @@ namespace x2net
                 if (!flows.Contains(flow))
                 {
                     flows.Add(flow);
+                    Trace.Debug("hub: attached flow {0}", flow.Name);
                 }
             }
             return this;
@@ -105,6 +108,7 @@ namespace x2net
                 if (flows.Remove(flow))
                 {
                     UnsubscribeInternal(flow);
+                    Trace.Debug("hub: detached flow {0}", flow.Name);
                 }
             }
             return this;
@@ -119,6 +123,7 @@ namespace x2net
             {
                 subscriptions.Clear();
                 flows.Clear();
+                Trace.Debug("hub: detached all the flows");
             }
         }
 
@@ -213,6 +218,8 @@ namespace x2net
                     if (index < 0) { index = 0; }
                     if (index > cases.Count) { index = cases.Count; }
                     cases.Insert(index, c);
+                    Trace.Debug("hub: inserted case {0} at index {1}",
+                        c.GetType().Name, index);
                 }
             }
             return this;
@@ -238,6 +245,7 @@ namespace x2net
             using (new WriteLock(rwlock))
             {
                 cases.Remove(c);
+                Trace.Debug("hub: removed case {0}", c.GetType().Name);
             }
             return this;
         }
@@ -251,7 +259,9 @@ namespace x2net
             }
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
-                snapshot[i].Setup();
+                var c = snapshot[i];
+                Trace.Log("hub: setting up case {0}", c.GetType().Name);
+                c.Setup();
             }
         }
 
@@ -264,7 +274,10 @@ namespace x2net
             }
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
-                snapshot[i].Startup();
+                var flow = snapshot[i];
+                Trace.Log("hub: starting flow {0}", flow.Name);
+                flow.Startup();
+                Trace.Debug("hub: started flow {0}", flow.Name);
             }
         }
 
@@ -273,7 +286,7 @@ namespace x2net
         /// </summary>
         public static void Startup()
         {
-            Trace.Info("starting up");
+            Trace.Debug("starting up");
 
             Instance.Setup();
 
@@ -282,7 +295,7 @@ namespace x2net
             TimeFlow.Default.ReserveRepetition(HeartbeatEvent,
                 new TimeSpan(0, 0, Config.HeartbeatInterval));
 
-            Trace.Debug("started");
+            Trace.Info("started");
         }
 
         private void Teardown()
@@ -296,7 +309,9 @@ namespace x2net
             {
                 try
                 {
-                    snapshot[i].Teardown();
+                    var c = snapshot[i];
+                    Trace.Log("hub: tearing down case {0}", c.GetType().Name);
+                    c.Teardown();
                 }
                 catch
                 {
@@ -316,7 +331,10 @@ namespace x2net
             {
                 try
                 {
-                    snapshot[i].Shutdown();
+                    var flow = snapshot[i];
+                    Trace.Log("hub: stopping flow {0}", flow.Name);
+                    flow.Shutdown();
+                    Trace.Debug("hub: stopped flow {0}", flow.Name);
                 }
                 catch (Exception e)
                 {
@@ -330,7 +348,7 @@ namespace x2net
         /// </summary>
         public static void Shutdown()
         {
-            Trace.Info("shutting down");
+            Trace.Debug("shutting down");
             try
             {
                 TimeFlow.Default.CancelRepetition(HeartbeatEvent);
@@ -342,7 +360,7 @@ namespace x2net
             }
             finally
             {
-                Trace.Debug("stopped");
+                Trace.Info("stopped");
                 Instance.Teardown();  // won't throw
             }
         }

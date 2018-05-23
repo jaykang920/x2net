@@ -158,7 +158,9 @@ namespace x2net
             }
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
-                snapshot[i].Setup(holder);
+                var c = snapshot[i];
+                Trace.Log("caststack: setting up case {0}", c.GetType().Name);
+                c.Setup(holder);
             }
         }
 
@@ -175,7 +177,9 @@ namespace x2net
             {
                 try
                 {
-                    snapshot[i].Teardown(holder);
+                    var c = snapshot[i];
+                    Trace.Log("caststack: tearing down case {0}", c.GetType().Name);
+                    c.Teardown(holder);
                 }
                 catch (Exception e)
                 {

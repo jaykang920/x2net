@@ -241,6 +241,7 @@ namespace x2net
         public Flow Add(ICase c)
         {
             caseStack.Add(c);
+            Trace.Debug("flow {0}: added case {1}", Name, c.GetType().Name);
             return this;
         }
 
@@ -250,6 +251,7 @@ namespace x2net
         public Flow Remove(ICase c)
         {
             caseStack.Remove(c);
+            Trace.Debug("flow {0}: removed case {1}", Name, c.GetType().Name);
             return this;
         }
 
