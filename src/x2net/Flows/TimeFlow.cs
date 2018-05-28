@@ -336,7 +336,7 @@ namespace x2net
         : FrameBasedFlow<SynchronizedEventQueue>
 #endif
     {
-        private const string defaultName = "default";
+        private const string defaultName = "Default";
 
         private static Map map;
 
@@ -502,7 +502,8 @@ namespace x2net
                     TimeFlow timeFlow;
                     if (!timeFlows.TryGetValue(name, out timeFlow))
                     {
-                        timeFlow = new TimeFlow(name);
+                        var flowName = String.Format("TimeFlow.{0}", name);
+                        timeFlow = new TimeFlow(flowName);
                         timeFlows.Add(name, timeFlow);
                         timeFlow.Startup().Attach();
                     }
