@@ -1,3 +1,10 @@
+## 0.11.1 (2018-05-28)
+
+Features:
+
+- changed flow name of the default TimeFlow
+- added some log messages for startup/shutdown
+
 ## 0.11.0 (2018-05-11)
 
 Features:
