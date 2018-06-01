@@ -455,9 +455,12 @@ namespace x2net
 
         private void OnTimer(TimeoutEvent e)
         {
-            if (!session.IsBusy && sessionRefCount == 0)
+            if (!ReferenceEquals(session, null))
             {
-                Disconnect();
+                if (!session.IsBusy && sessionRefCount == 0)
+                {
+                    Disconnect();
+                }
             }
         }
 
