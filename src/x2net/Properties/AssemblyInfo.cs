@@ -4,4 +4,4 @@
 using System.Reflection;
 
 [assembly: AssemblyTitle("x2net")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("x2net")]
