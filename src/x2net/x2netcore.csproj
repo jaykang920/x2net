@@ -8,17 +8,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
 	<BaseOutputPath>../../bin</BaseOutputPath>
 	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
+    <DocumentationFile>$(BaseOutputPath)/$(Configuration)/$(TargetFramework)/x2net.xml</DocumentationFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DefineConstants>NET40;NETCORE</DefineConstants>
     <NoWarn>1591</NoWarn>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>../../bin/Release/netcoreapp2.0/x2net.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>../../bin/Debug/netcoreapp2.0/x2net.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
