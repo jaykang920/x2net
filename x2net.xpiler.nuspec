@@ -17,6 +17,7 @@
     <file src="LICENSE"/>
     <file src="bin/Release/x2net.xpiler.exe" target="tools"/>
     <file src="bin/Release/x2net.xpiler.pdb" target="tools"/>
+    <file src="bin/Release/netcoreapp2.0/x2net.xpiler.deps.json" target="tools/netcoreapp2.0"/>
     <file src="bin/Release/netcoreapp2.0/x2net.xpiler.dll" target="tools/netcoreapp2.0"/>
     <file src="bin/Release/netcoreapp2.0/x2net.xpiler.pdb" target="tools/netcoreapp2.0"/>
     <file src="bin/Release/netcoreapp2.0/x2net.xpiler.runtimeconfig.json" target="tools/netcoreapp2.0"/>
