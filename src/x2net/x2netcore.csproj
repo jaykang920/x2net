@@ -1,6 +1,4 @@
-﻿<Project>
-
-  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>x2net</AssemblyName>
@@ -20,12 +18,8 @@
 	</Compile>
   </ItemGroup>
 
-  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
-
-  <PropertyGroup>
-    <PreBuildEvent>pushd "$(ProjectDir)"
-dotnet ../../bin/$(ConfigurationName)/netcoreapp2.0/x2net.xpiler.dll -f . Links
-popd</PreBuildEvent>
-  </PropertyGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="cd $(ProjectDir)&#xD;&#xA;dotnet ../../bin/$(Configuration)/$(TargetFramework)/x2net.xpiler.dll -f . Links" />
+  </Target>
 
 </Project>
