@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd $(ProjectDir)&#xD;&#xA;dotnet ../../bin/$(Configuration)/$(TargetFramework)/x2net.xpiler.dll -f . Links" />
+    <Exec Command="cd &quot;$(ProjectDir)&quot;&#xD;&#xA;dotnet ../../bin/$(Configuration)/$(TargetFramework)/x2net.xpiler.dll -f . Links" />
   </Target>
 
 </Project>

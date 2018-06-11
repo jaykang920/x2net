@@ -1,6 +1,4 @@
-﻿<Project>
-
-  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>x2net.tests</AssemblyName>
@@ -10,6 +8,12 @@
 	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../../GlobalAssemblyInfo.cs">
+      <Link>Properties/GlobalAssemblyInfo.cs</Link>
+	</Compile>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="../../src/x2net/x2netcore.csproj" />
@@ -22,21 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="../../GlobalAssemblyInfo.cs">
-      <Link>Properties/GlobalAssemblyInfo.cs</Link>
-	</Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 
-  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
-
-  <PropertyGroup>
-    <PreBuildEvent>pushd "$(ProjectDir)"
-dotnet ../../bin/$(ConfigurationName)/netcoreapp2.0/x2net.xpiler.dll -f .
-popd</PreBuildEvent>
-  </PropertyGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="cd &quot;$(ProjectDir)&quot;&#xD;&#xA;dotnet ../../bin/$(Configuration)/$(TargetFramework)/x2net.xpiler.dll -f ." />
+  </Target>
 
 </Project>
