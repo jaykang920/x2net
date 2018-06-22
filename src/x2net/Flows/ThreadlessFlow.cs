@@ -15,6 +15,8 @@ namespace x2net
 #endif
     {
         public ThreadlessFlow() : base() { }
+
+        public ThreadlessFlow(string name) : base(name) { }
     }
 
     public class ThreadlessFlow<Q> : EventBasedFlow<Q> where Q : EventQueue, new()
@@ -23,6 +25,12 @@ namespace x2net
 
         public ThreadlessFlow()
         {
+        }
+
+        public ThreadlessFlow(string name)
+            : this()
+        {
+            this.name = name;
         }
 
         public override Flow Startup()
