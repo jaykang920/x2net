@@ -266,10 +266,12 @@ namespace x2net
         {
             connecting = true;
 
+            LinkSession session = Session;
             if (session != null &&
                 ((AbstractTcpSession)session).SocketConnected)
             {
-                throw new InvalidOperationException();
+                Disconnect();
+                Trace.Info("{0} disconnected to initiate a new connection", Name);
             }
 
             Connect(null, new IPEndPoint(ip, port));
@@ -277,12 +279,18 @@ namespace x2net
 
         public void Disconnect()
         {
-            LinkSession currentSession = Session;
-            if (ReferenceEquals(currentSession, null))
+            LinkSession session;
+            using (new WriteLock(rwlock))
             {
-                return;
+                if (ReferenceEquals(this.session, null))
+                {
+                    return;
+                }
+                session = this.session;
+                this.session = null;
+                connected = false;
             }
-            currentSession.Close();
+            session.Close();
         }
 
         private void Connect(Socket socket, EndPoint endpoint)
