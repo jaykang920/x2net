@@ -1,3 +1,7 @@
+Features:
+
+- FrameBasedFlow: changed the default time resolution to 15.625ms (64 frame/sec)
+
 ## 0.11.1 (2018-05-28)
 
 Features:

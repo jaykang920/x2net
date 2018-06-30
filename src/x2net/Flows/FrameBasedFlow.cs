@@ -95,7 +95,7 @@ namespace x2net
             syncRoot = new Object();
             thread = null;
 
-            // Default 15.625ms resolution (64 frame/sec)
+            // Default resolution is 15.625ms (64 frame/sec)
             Resolution = 156250;  // 15.625 * Time.TicksInMillisecond
 
             Time = new Time();
