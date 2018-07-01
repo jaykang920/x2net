@@ -33,7 +33,7 @@ namespace x2net
 
         public BlockCipher()
         {
-            settings = new Settings {
+            settings = new SettingsBuilder {
                 BlockSize = 128,
                 KeySize = 256,
                 RsaKeySize = 1024,
@@ -59,14 +59,14 @@ XzqLxNdl/ZSV9KvP6u5bcDQQeC9KbKQ5PpzGoGmMJNsVtXC0voOA3sYx9P+vVtEqhxn9eAKPOPqX9wRo
 rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
 /12BoEHHmwb3CVq6dHGsxRLUKG0DYBWQk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>
 "
-            };
+            }.Build();
 
             Initialize();
         }
 
         public BlockCipher(Settings settings)
         {
-            this.settings = settings;
+            this.settings = settings;  // reference-shared
 
             Initialize();
         }
@@ -99,52 +99,28 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
             encryptionKey = challenge.SubArray(0, KeySizeInBytes);
             encryptionIV = challenge.SubArray(KeySizeInBytes, BlockSizeInBytes);
 
-            using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
-            {
-                ImportRsaParameters(rsa, settings.PeerPublicKey);
-                return rsa.Encrypt(challenge, false);
-            }
+            return settings.PeerRsa.Encrypt(challenge, false);
         }
 
         public byte[] Handshake(byte[] challenge)
         {
             byte[] decrypted;
-            using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
-            {
-                ImportRsaParameters(rsa, settings.MyPrivateKey);
-                decrypted = rsa.Decrypt(challenge, false);
+            decrypted = settings.MyRsa.Decrypt(challenge, false);
 
-                decryptionKey = decrypted.SubArray(0, KeySizeInBytes);
-                decryptionIV = decrypted.SubArray(KeySizeInBytes, BlockSizeInBytes);
+            decryptionKey = decrypted.SubArray(0, KeySizeInBytes);
+            decryptionIV = decrypted.SubArray(KeySizeInBytes, BlockSizeInBytes);
 
-                // If we're free from old mono of such as Unity3D,
-                // we can simply sign the decrypted data to prove ourselves.
-                //return rsa.SignData(decrypted, new SHA1CryptoServiceProvider());
-            }
-            // But if not, replay the data decrypted with our private key.
-            using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
-            {
-                ImportRsaParameters(rsa, settings.PeerPublicKey);
-                return rsa.Encrypt(decrypted, false);
-            }
+            // Replay the decrypted data.
+            return settings.PeerRsa.Encrypt(decrypted, false);
         }
 
         public bool FinalizeHandshake(byte[] response)
         {
-            using (var rsa = new RSACryptoServiceProvider(settings.RsaKeySize))
-            {
-                byte[] expected = encryptionKey.Concat(encryptionIV);
+            byte[] expected = encryptionKey.Concat(encryptionIV);
 
-                // If we're free from old mono of such as Unity3D,
-                // we can simply verify the peer signature.
-                //rsa.FromXmlString(rsaPeerPublicKey);
-                //return rsa.VerifyData(expected, new SHA1CryptoServiceProvider(), response);
-
-                // But if not, verify the replayed data.
-                ImportRsaParameters(rsa, settings.MyPrivateKey);
-                byte[] actual = rsa.Decrypt(response, false);
-                return actual.EqualsEx(expected);
-            }
+            // Verify the replayed data.
+            byte[] actual = settings.MyRsa.Decrypt(response, false);
+            return actual.EqualsEx(expected);
         }
 
         public int Transform(Buffer buffer, int length)
@@ -278,44 +254,7 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
             }
         }
 
-        private void ImportRsaParameters(RSACryptoServiceProvider rsa, string xml)
-        {
-#if NETCORE
-            // RSACryptoServiceProvider.FromXmlString workaround for .NET Core 2.0 preview
-            RSAParameters parameters = new RSAParameters();
-
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(xml);
-
-            if (xmlDoc.DocumentElement.Name.Equals("RSAKeyValue"))
-            {
-                foreach (XmlNode node in xmlDoc.DocumentElement.ChildNodes)
-                {
-                    switch (node.Name)
-                    {
-                        case "Modulus": parameters.Modulus = Convert.FromBase64String(node.InnerText); break;
-                        case "Exponent": parameters.Exponent = Convert.FromBase64String(node.InnerText); break;
-                        case "P": parameters.P = Convert.FromBase64String(node.InnerText); break;
-                        case "Q": parameters.Q = Convert.FromBase64String(node.InnerText); break;
-                        case "DP": parameters.DP = Convert.FromBase64String(node.InnerText); break;
-                        case "DQ": parameters.DQ = Convert.FromBase64String(node.InnerText); break;
-                        case "InverseQ": parameters.InverseQ = Convert.FromBase64String(node.InnerText); break;
-                        case "D": parameters.D = Convert.FromBase64String(node.InnerText); break;
-                    }
-                }
-            }
-            else
-            {
-                throw new CryptographicException("Invalid XML RSA Parameters");
-            }
-
-            rsa.ImportParameters(parameters);
-#else
-            rsa.FromXmlString(xml);
-#endif
-        }
-
-        public class Settings
+        public class SettingsBuilder
         {
             public int BlockSize { get; set; }
             public int KeySize { get; set; }
@@ -323,6 +262,77 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
 
             public string MyPrivateKey { get; set; }
             public string PeerPublicKey { get; set; }
+
+            public Settings Build()
+            {
+                return Settings.Create(this);
+            }
+        }
+
+        public class Settings : SettingsBuilder
+        {
+            public RSACryptoServiceProvider MyRsa { get; private set; }
+            public RSACryptoServiceProvider PeerRsa { get; private set; }
+
+            // Prevent explicit instantiation.
+            private Settings() { }
+
+            internal static Settings Create(SettingsBuilder builder)
+            {
+                var result = new Settings {
+                    BlockSize = builder.BlockSize,
+                    KeySize = builder.KeySize,
+                    RsaKeySize = builder.RsaKeySize,
+                    MyPrivateKey = builder.MyPrivateKey,
+                    PeerPublicKey = builder.PeerPublicKey,
+
+                    MyRsa = new RSACryptoServiceProvider(builder.RsaKeySize),
+                    PeerRsa = new RSACryptoServiceProvider(builder.RsaKeySize)
+                };
+
+                ImportRsaParameters(result.MyRsa, result.MyPrivateKey);
+                ImportRsaParameters(result.PeerRsa, result.PeerPublicKey);
+
+                return result;
+            }
+
+            private static void ImportRsaParameters(
+                RSACryptoServiceProvider rsa, string xml)
+            {
+#if NETCORE
+                // RSACryptoServiceProvider.FromXmlString workaround for .NET Core 2.0
+                RSAParameters parameters = new RSAParameters();
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(xml);
+
+                if (xmlDoc.DocumentElement.Name.Equals("RSAKeyValue"))
+                {
+                    foreach (XmlNode node in xmlDoc.DocumentElement.ChildNodes)
+                    {
+                        switch (node.Name)
+                        {
+                            case "Modulus": parameters.Modulus = Convert.FromBase64String(node.InnerText); break;
+                            case "Exponent": parameters.Exponent = Convert.FromBase64String(node.InnerText); break;
+                            case "P": parameters.P = Convert.FromBase64String(node.InnerText); break;
+                            case "Q": parameters.Q = Convert.FromBase64String(node.InnerText); break;
+                            case "DP": parameters.DP = Convert.FromBase64String(node.InnerText); break;
+                            case "DQ": parameters.DQ = Convert.FromBase64String(node.InnerText); break;
+                            case "InverseQ": parameters.InverseQ = Convert.FromBase64String(node.InnerText); break;
+                            case "D": parameters.D = Convert.FromBase64String(node.InnerText); break;
+                        }
+                    }
+                }
+                else
+                {
+                    throw new CryptographicException("Invalid XML RSA Parameters");
+                }
+
+                rsa.ImportParameters(parameters);
+#else
+                rsa.FromXmlString(xml);
+#endif
+            }
         }
     }
 }
