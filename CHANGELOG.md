@@ -1,3 +1,7 @@
+Features:
+
+- Flow: added SlowScope* properties to override global config settings
+
 Performance:
 
 - FrameBasedFlow: changed the default time resolution to 15.625ms (64 frame/sec)
