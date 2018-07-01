@@ -1,6 +1,8 @@
-Features:
+Performance:
 
 - FrameBasedFlow: changed the default time resolution to 15.625ms (64 frame/sec)
+- BlockCiper: introduced SettingsBuilder to reuse RSACryptoServiceProvider instance
+- TimeFlow.Timer: changed simple lock to ReaderWriterLockSlim
 
 ## 0.11.1 (2018-05-28)
 
