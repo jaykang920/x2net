@@ -112,6 +112,7 @@ namespace x2net
     // TODO: time scaling
     public class Timer
     {
+        private ReaderWriterLockSlim rwlock;
         private PriorityQueue<DateTime, object> reserved;
         private Repeater repeater;
 
@@ -119,10 +120,16 @@ namespace x2net
 
         public Timer(TimerCallback callback)
         {
+            rwlock = new ReaderWriterLockSlim();
             reserved = new PriorityQueue<DateTime, object>();
             repeater = new Repeater(this);
 
             this.callback = callback;
+        }
+
+        ~Timer()
+        {
+            rwlock.Dispose();
         }
 
         public Token Reserve(object state, double seconds)
@@ -142,26 +149,41 @@ namespace x2net
 
         public Token ReserveAtUniversalTime(object state, DateTime universalTime)
         {
-            lock (reserved)
+            rwlock.EnterWriteLock();
+            try
             {
                 reserved.Enqueue(universalTime, state);
+            }
+            finally
+            {
+                rwlock.ExitWriteLock();
             }
             return new Token(universalTime, state);
         }
 
         public void Cancel(Token token)
         {
-            lock (reserved)
+            rwlock.EnterWriteLock();
+            try
             {
                 reserved.Remove(token.key, token.value);
+            }
+            finally
+            {
+                rwlock.ExitWriteLock();
             }
         }
 
         public void Cancel(Event e)
         {
-            lock (reserved)
+            rwlock.EnterWriteLock();
+            try
             {
                 reserved.Remove(e);
+            }
+            finally
+            {
+                rwlock.ExitWriteLock();
             }
         }
 
@@ -184,17 +206,31 @@ namespace x2net
         {
             DateTime utcNow = DateTime.UtcNow;
             IList<object> events = null;
-            lock (reserved)
+            rwlock.EnterUpgradeableReadLock();
+            try
             {
                 if (reserved.Count != 0)
                 {
                     DateTime next = reserved.Peek();
                     if (utcNow >= next)
                     {
-                        events = reserved.DequeueBundle();
+                        rwlock.EnterWriteLock();
+                        try
+                        {
+                            events = reserved.DequeueBundle();
+                        }
+                        finally
+                        {
+                            rwlock.ExitWriteLock();
+                        }
                     }
                 }
             }
+            finally
+            {
+                rwlock.ExitUpgradeableReadLock();
+            }
+
             if ((object)events != null)
             {
                 for (int i = 0; i < events.Count; ++i)
