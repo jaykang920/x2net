@@ -53,6 +53,9 @@ namespace x2net
         public TraceLevel SlowHandlerTraceLevel { get; set; }
         public int SlowHandlerLogThreshold { get; set; }
 
+        public TraceLevel SlowScopeTraceLevel { get; set; }
+        public int SlowScopeLogThreshold { get; set; }
+
         public TraceLevel LongQueueTraceLevel { get; set; }
         public int LongQueueLogThreshold { get; set; }
 
@@ -71,6 +74,8 @@ namespace x2net
 
             SlowHandlerTraceLevel = Config.Flow.Logging.SlowHandler.TraceLevel;
             SlowHandlerLogThreshold = Config.Flow.Logging.SlowHandler.Threshold;
+            SlowScopeTraceLevel = Config.Flow.Logging.SlowScope.TraceLevel;
+            SlowScopeLogThreshold = Config.Flow.Logging.SlowScope.Threshold;
             LongQueueTraceLevel = Config.Flow.Logging.LongQueue.TraceLevel;
             LongQueueLogThreshold = Config.Flow.Logging.LongQueue.Threshold;
         }
