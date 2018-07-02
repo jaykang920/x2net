@@ -127,8 +127,8 @@ namespace x2net
             static Coroutine()
             {
                 // Default values
-                MaxWaitHandles = 32768;
-                DefaultTimeout = 30.0;  // in seconds
+                MaxWaitHandles = 65536;
+                DefaultTimeout = 60.0;  // in seconds
             }
 
             /// <summary>

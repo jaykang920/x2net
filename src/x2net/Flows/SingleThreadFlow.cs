@@ -23,9 +23,13 @@ namespace x2net
     {
         protected Thread thread;
 
+        public ThreadPriority Priority { get; set; }
+
         public SingleThreadFlow()
         {
             thread = null;
+
+            Priority = ThreadPriority.Normal;
         }
 
         public SingleThreadFlow(string name)
@@ -43,7 +47,8 @@ namespace x2net
                     SetupInternal();
                     caseStack.Setup(this);
                     thread = new Thread(Run) {
-                        Name = name
+                        Name = name,
+                        Priority = Priority
                     };
                     thread.Start();
                     queue.Enqueue(new FlowStart());

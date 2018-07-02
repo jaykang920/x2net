@@ -28,6 +28,8 @@ namespace x2net
         protected List<Thread> threads;
         protected int numThreads;
 
+        public ThreadPriority Priority { get; set; }
+
         public MultiThreadFlow()
             : this(Environment.ProcessorCount)
         {
@@ -37,6 +39,8 @@ namespace x2net
         {
             threads = new List<Thread>();
             this.numThreads = numThreads;
+
+            Priority = ThreadPriority.Normal;
         }
 
         public MultiThreadFlow(string name)
@@ -61,7 +65,8 @@ namespace x2net
                     for (int i = 0; i < numThreads; ++i)
                     {
                         Thread thread = new Thread(Run) {
-                            Name = String.Format("{0} {1}", name, i + 1)
+                            Name = String.Format("{0} {1}", name, i + 1),
+                            Priority = Priority
                         };
                         threads.Add(thread);
                         thread.Start();

@@ -32,7 +32,7 @@ namespace x2net
             IncomingHeartbeatEnabled = true;
             OutgoingHeartbeatEnabled = true;
 
-            ThresholdFailuerCount = 3;
+            ThresholdFailuerCount = 4;
         }
 
         public override void Setup()
@@ -171,15 +171,12 @@ namespace x2net
                 else
                 {
                     int result = Interlocked.Increment(ref successiveFailureCount);
-                    if (result > 1)
-                    {
-                        Trace.Info("{0} {1} keepalive failure count {2}",
-                            Session.Link.Name, Session.InternalHandle, result);
-                    }
 
                     if (!Marked &&
                         result >= linkStrategy.ThresholdFailuerCount)
                     {
+                        Trace.Debug("{0} {1} keepalive failure count {2}",
+                            Session.Link.Name, Session.InternalHandle, result);
                         return true;
                     }
                 }
