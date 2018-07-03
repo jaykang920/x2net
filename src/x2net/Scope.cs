@@ -83,9 +83,9 @@ namespace x2net
 
             DateTime endTime = DateTime.UtcNow;
             long totalMillis = (long)(endTime - startTime).TotalMilliseconds;
-            if (totalMillis >= Config.Flow.Logging.SlowScope.Threshold)
+            if (totalMillis >= Flow.CurrentFlow.SlowScopeLogThreshold)
             {
-                Trace.Emit(Config.Flow.Logging.SlowScope.TraceLevel,
+                Trace.Emit(Flow.CurrentFlow.SlowScopeTraceLevel,
                     "{0} slow scope {1:#,0}ms on {2}",
                     Flow.CurrentFlow.Name, totalMillis, e);
             }
