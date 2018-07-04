@@ -1,5 +1,6 @@
 Features:
 
+- Coroutine: added Status property to indicate coroutine execution status
 - Flow: added SlowScope* properties to override global config settings
 
 Performance:
