@@ -30,6 +30,16 @@ namespace x2net
     }
 
     /// <summary>
+    /// Represents coroutine executions status.
+    /// </summary>
+    public enum CoroutineStatus
+    {
+        Ok,
+        Error,
+        Timeout
+    }
+
+    /// <summary>
     /// Provides the core programming interface for x2 coroutines.
     /// </summary>
     public class Coroutine
@@ -39,7 +49,15 @@ namespace x2net
         private bool started;
         private Coroutine parent;
 
+        /// <summary>
+        /// Gets or sets the coroutine execution result.
+        /// </summary>
         public object Result { get; set; }
+
+        /// <summary>
+        /// Gets or sets the coroutine execution status.
+        /// </summary>
+        public CoroutineStatus Status { get; set; }
 
         public Coroutine()
         {

@@ -79,6 +79,7 @@ namespace x2net
 
             Trace.Error("WaitForSingleEvent timeout for {0}", handlerToken.Key);
 
+            coroutine.Status = CoroutineStatus.Timeout;
             coroutine.Result = null;  // indicates timeout
             coroutine.Continue();
         }

@@ -116,6 +116,7 @@ namespace x2net
 
             Trace.Error("WaitForMultipleEvents timeout for {0}", expected);
 
+            coroutine.Status = CoroutineStatus.Timeout;
             coroutine.Result = actual;  // incomplete array indicates timeout
             coroutine.Continue();
         }
