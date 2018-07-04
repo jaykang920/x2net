@@ -265,33 +265,16 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
 
             public Settings Build()
             {
-                return Settings.Create(this);
-            }
-        }
+                Settings result = Settings.Create(this);
 
-        public class Settings : SettingsBuilder
-        {
-            public RSACryptoServiceProvider MyRsa { get; private set; }
-            public RSACryptoServiceProvider PeerRsa { get; private set; }
+                var myRsa = new RSACryptoServiceProvider(RsaKeySize);
+                var peerRsa = new RSACryptoServiceProvider(RsaKeySize);
 
-            // Prevent explicit instantiation.
-            private Settings() { }
+                ImportRsaParameters(myRsa, MyPrivateKey);
+                ImportRsaParameters(peerRsa, PeerPublicKey);
 
-            internal static Settings Create(SettingsBuilder builder)
-            {
-                var result = new Settings {
-                    BlockSize = builder.BlockSize,
-                    KeySize = builder.KeySize,
-                    RsaKeySize = builder.RsaKeySize,
-                    MyPrivateKey = builder.MyPrivateKey,
-                    PeerPublicKey = builder.PeerPublicKey,
-
-                    MyRsa = new RSACryptoServiceProvider(builder.RsaKeySize),
-                    PeerRsa = new RSACryptoServiceProvider(builder.RsaKeySize)
-                };
-
-                ImportRsaParameters(result.MyRsa, result.MyPrivateKey);
-                ImportRsaParameters(result.PeerRsa, result.PeerPublicKey);
+                result.MyRsa = myRsa;
+                result.PeerRsa = peerRsa;
 
                 return result;
             }
@@ -332,6 +315,26 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
 #else
                 rsa.FromXmlString(xml);
 #endif
+            }
+        }
+
+        public class Settings : SettingsBuilder
+        {
+            public RSACryptoServiceProvider MyRsa { get; internal set; }
+            public RSACryptoServiceProvider PeerRsa { get; internal set; }
+
+            // Prevent explicit instantiation.
+            private Settings() { }
+
+            internal static Settings Create(SettingsBuilder builder)
+            {
+                return new Settings {
+                    BlockSize = builder.BlockSize,
+                    KeySize = builder.KeySize,
+                    RsaKeySize = builder.RsaKeySize,
+                    MyPrivateKey = builder.MyPrivateKey,
+                    PeerPublicKey = builder.PeerPublicKey,
+                };
             }
         }
     }
