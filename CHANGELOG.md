@@ -1,3 +1,5 @@
+## 0.11.2 (2018-07-04)
+
 Features:
 
 - Coroutine: added Status property to indicate coroutine execution status
