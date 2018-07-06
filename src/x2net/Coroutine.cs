@@ -92,11 +92,13 @@ namespace x2net
             coroutine.Start(func(coroutine, arg1, arg2, arg3));
         }
 
+#if NET40
         public static void Start<T1, T2, T3, T4>(Func<Coroutine, T1, T2, T3, T4, IEnumerator> func, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             Coroutine coroutine = new Coroutine();
             coroutine.Start(func(coroutine, arg1, arg2, arg3, arg4));
         }
+#endif
 
         public void Start(IEnumerator routine)
         {
