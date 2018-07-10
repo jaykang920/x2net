@@ -6,32 +6,31 @@ using System;
 namespace x2net
 {
     /// <summary>
-    /// YieldInstruction that waits for multiple events.
+    /// YieldInstruction that waits for any of multiple events.
     /// </summary>
-    public class WaitForMultipleEvents : Yield
+    public class WaitForAnyEvent : Yield
     {
         private readonly Coroutine coroutine;
-        private readonly Event[] expected, actual;
+        private readonly Event[] expected;
 
         private readonly Binder.Token[] handlerTokens;
         private readonly Binder.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
-        private int count;
         private int waitHandle;
 
-        public WaitForMultipleEvents(Coroutine coroutine, params Event[] e)
+        public WaitForAnyEvent(Coroutine coroutine, params Event[] e)
             : this(coroutine, null, Config.Coroutine.DefaultTimeout, e)
         {
         }
 
-        public WaitForMultipleEvents(Coroutine coroutine, double seconds,
+        public WaitForAnyEvent(Coroutine coroutine, double seconds,
                 params Event[] e)
             : this(coroutine, null, seconds, e)
         {
         }
 
-        protected WaitForMultipleEvents(Coroutine coroutine, Event[] requests,
+        protected WaitForAnyEvent(Coroutine coroutine, Event[] requests,
             double seconds, params Event[] e)
         {
             this.coroutine = coroutine;
@@ -50,7 +49,6 @@ namespace x2net
             }
 
             expected = e;
-            actual = new Event[expected.Length];
 
             handlerTokens = new Binder.Token[expected.Length];
             for (int i = 0; i < expected.Length; ++i)
@@ -68,45 +66,48 @@ namespace x2net
 
         void OnEvent(Event e)
         {
-            for (int i = 0; i < expected.Length; ++i)
+            int i;
+            int length = expected.Length;
+            for (i = 0; i < length; ++i)
             {
-                if (actual[i] == null && expected[i].Equivalent(e))
+                if (expected[i].Equivalent(e))
                 {
-                    Flow.Unbind(handlerTokens[i]);
-                    handlerTokens[i] = new Binder.Token();
-                    actual[i] = e;
-                    ++count;
                     break;
                 }
             }
 
-            if (count >= expected.Length)
+            if (i >= length)
             {
-                if (timerToken.HasValue)
-                {
-                    TimeFlow.Default.Cancel(timerToken.Value);
-                    Flow.Unbind(timeoutToken);
-                }
-
-                if (waitHandle != 0)
-                {
-                    WaitHandlePool.Release(waitHandle);
-                }
-
-                coroutine.Result = actual;
-                coroutine.Continue();
+                return;
             }
+
+            for (i = 0; i < length; ++i)
+            {
+                Flow.Unbind(handlerTokens[i]);
+            }
+
+            if (timerToken.HasValue)
+            {
+                TimeFlow.Default.Cancel(timerToken.Value);
+                Flow.Unbind(timeoutToken);
+            }
+
+            if (waitHandle != 0)
+            {
+                WaitHandlePool.Release(waitHandle);
+            }
+
+            coroutine.Result = e;
+            coroutine.Continue();
         }
 
         void OnTimeout(TimeoutEvent e)
         {
-            for (int i = 0, count = actual.Length; i < count; ++i)
+            for (int i = 0, length = expected.Length; i < length; ++i)
             {
-                if (ReferenceEquals(actual[i], null))
-                {
-                    Flow.Unbind(handlerTokens[i]);
-                }
+                Flow.Unbind(handlerTokens[i]);
             }
+
             Flow.Unbind(timeoutToken);
 
             if (waitHandle != 0)
@@ -114,10 +115,10 @@ namespace x2net
                 WaitHandlePool.Release(waitHandle);
             }
 
-            Trace.Error("WaitForMultipleEvents timeout for {0}", expected);
+            Trace.Error("WaitForAnyEvent timeout for {0}", expected);
 
             coroutine.Status = CoroutineStatus.Timeout;
-            coroutine.Result = actual;  // incomplete array indicates timeout
+            coroutine.Result = null;
             coroutine.Continue();
         }
     }
@@ -125,15 +126,15 @@ namespace x2net
     /// <summary>
     /// YieldInstruction that posts requests and waits for multiple responses.
     /// </summary>
-    public class WaitForMultipleResponses : WaitForMultipleEvents
+    public class WaitForAnyResponse : WaitForAnyEvent
     {
-        public WaitForMultipleResponses(Coroutine coroutine, Event[] requests,
+        public WaitForAnyResponse(Coroutine coroutine, Event[] requests,
                 params Event[] responses)
             : this(coroutine, requests, Config.Coroutine.DefaultTimeout, responses)
         {
         }
 
-        public WaitForMultipleResponses(Coroutine coroutine, Event[] requests,
+        public WaitForAnyResponse(Coroutine coroutine, Event[] requests,
                 double seconds, params Event[] responses)
             : base(coroutine, requests, seconds, responses)
         {

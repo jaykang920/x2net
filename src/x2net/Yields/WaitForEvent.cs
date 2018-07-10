@@ -8,7 +8,7 @@ namespace x2net
     /// <summary>
     /// YieldInstruction that waits for a single event.
     /// </summary>
-    public class WaitForSingleEvent : Yield
+    public class WaitForEvent : Yield
     {
         private readonly Coroutine coroutine;
 
@@ -16,17 +16,17 @@ namespace x2net
         private readonly Binder.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
-        public WaitForSingleEvent(Coroutine coroutine, Event e)
+        public WaitForEvent(Coroutine coroutine, Event e)
             : this(coroutine, null, e, Config.Coroutine.DefaultTimeout)
         {
         }
 
-        public WaitForSingleEvent(Coroutine coroutine, Event e, double seconds)
+        public WaitForEvent(Coroutine coroutine, Event e, double seconds)
             : this(coroutine, null, e, seconds)
         {
         }
 
-        protected WaitForSingleEvent(Coroutine coroutine, Event request, Event e, double seconds)
+        protected WaitForEvent(Coroutine coroutine, Event request, Event e, double seconds)
         {
             this.coroutine = coroutine;
 
@@ -77,7 +77,7 @@ namespace x2net
                 WaitHandlePool.Release(waitHandle);
             }
 
-            Trace.Error("WaitForSingleEvent timeout for {0}", handlerToken.Key);
+            Trace.Error("WaitForEvent timeout for {0}", handlerToken.Key);
 
             coroutine.Status = CoroutineStatus.Timeout;
             coroutine.Result = null;  // indicates timeout
@@ -88,15 +88,15 @@ namespace x2net
     /// <summary>
     /// YieldInstruction that posts a request and waits for a single response.
     /// </summary>
-    public class WaitForSingleResponse : WaitForSingleEvent
+    public class WaitForResponse : WaitForEvent
     {
-        public WaitForSingleResponse(Coroutine coroutine, Event request,
+        public WaitForResponse(Coroutine coroutine, Event request,
                 Event response)
             : this(coroutine, request, response, Config.Coroutine.DefaultTimeout)
         {
         }
 
-        public WaitForSingleResponse(Coroutine coroutine, Event request,
+        public WaitForResponse(Coroutine coroutine, Event request,
                 Event response, double seconds)
             : base(coroutine, request, response, seconds)
         {

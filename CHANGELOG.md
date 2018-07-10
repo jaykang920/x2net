@@ -1,3 +1,7 @@
+## Features:
+
+- changed WaitFor*Event(s)/Response(s) interfaces
+
 ## 0.11.2 (2018-07-04)
 
 Features:

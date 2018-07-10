@@ -146,10 +146,11 @@
     <Compile Include="Util\Trace.cs" />
     <Compile Include="VerboseDeserializer.cs" />
     <Compile Include="VerboseSerializer.cs" />
+    <Compile Include="Yields\WaitForAllEvents.cs" />
     <Compile Include="Yields\WaitForCompletion.cs" />
-    <Compile Include="Yields\WaitForMultipleEvents.cs" />
+    <Compile Include="Yields\WaitForAnyEvent.cs" />
+    <Compile Include="Yields\WaitForEvent.cs" />
     <Compile Include="Yields\WaitForSeconds.cs" />
-    <Compile Include="Yields\WaitForSingleEvent.cs" />
     <Compile Include="Yields\WaitHandlePool.cs" />
   </ItemGroup>
   <ItemGroup>

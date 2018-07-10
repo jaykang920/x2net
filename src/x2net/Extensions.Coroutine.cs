@@ -33,77 +33,117 @@ namespace x2net
         /// <summary>
         /// Waits for a single event until the default timeout.
         /// </summary>
-        public static Yield WaitForSingleEvent(this Coroutine self, Event e)
+        public static Yield WaitForEvent(this Coroutine self, Event e)
         {
-            return new WaitForSingleEvent(self, e);
+            return new WaitForEvent(self, e);
         }
 
         /// <summary>
         /// Waits for a single event until the specified timeout in seconds.
         /// </summary>
-        public static Yield WaitForSingleEvent(this Coroutine self,
+        public static Yield WaitForEvent(this Coroutine self,
             Event e, double seconds)
         {
-            return new WaitForSingleEvent(self, e, seconds);
+            return new WaitForEvent(self, e, seconds);
         }
 
         /// <summary>
         /// Posts the request and waits for a single response until default timeout.
         /// </summary>
-        public static Yield WaitForSingleResponse(this Coroutine self,
+        public static Yield WaitForResponse(this Coroutine self,
             Event request, Event response)
         {
-            return new WaitForSingleResponse(self, request, response);
+            return new WaitForResponse(self, request, response);
         }
 
         /// <summary>
         /// Posts the request and waits for a single response until the specified
         /// timeout in seconds.
         /// </summary>
-        public static Yield WaitForSingleResponse(this Coroutine self,
+        public static Yield WaitForResponse(this Coroutine self,
             Event request, Event response, double seconds)
         {
-            return new WaitForSingleResponse(self, request, response, seconds);
+            return new WaitForResponse(self, request, response, seconds);
         }
 
-        // WaitForMultipleEvents/Responses
+        // WaitForAllEvents/Responses
 
         /// <summary>
-        /// Waits for multiple events until the default timeout.
+        /// Waits for all of multiple events until the default timeout.
         /// </summary>
-        public static Yield WaitForMultipleEvents(this Coroutine self,
+        public static Yield WaitForAllEvents(this Coroutine self,
             params Event[] e)
         {
-            return new WaitForMultipleEvents(self, e);
+            return new WaitForAllEvents(self, e);
         }
 
         /// <summary>
-        /// Waits for multiple events until the specified timeout in seconds.
+        /// Waits for all of multiple events until the specified timeout in seconds.
         /// </summary>
-        public static Yield WaitForMultipleEvents(this Coroutine self,
+        public static Yield WaitForAllEvents(this Coroutine self,
             double seconds, params Event[] e)
         {
-            return new WaitForMultipleEvents(self, seconds, e);
+            return new WaitForAllEvents(self, seconds, e);
         }
 
         /// <summary>
-        /// Posts the requests and waits for multiple responses until default
+        /// Posts the requests and waits for all of multiple responses until default
         /// timeout.
         /// </summary>
-        public static Yield WaitForMultipleResponses(this Coroutine self,
+        public static Yield WaitForAllResponses(this Coroutine self,
             Event[] requests, params Event[] responses)
         {
-            return new WaitForMultipleResponses(self, requests, responses);
+            return new WaitForAllResponses(self, requests, responses);
         }
 
         /// <summary>
-        /// Posts the requests and waits for multiple responses until the
+        /// Posts the requests and waits for all of multiple responses until the
         /// specified timeout in seconds.
         /// </summary>
-        public static Yield WaitForMultipleResponse(this Coroutine self,
+        public static Yield WaitForAllResponse(this Coroutine self,
             Event[] requests, double seconds, params Event[] responses)
         {
-            return new WaitForMultipleResponses(self, requests, seconds, responses);
+            return new WaitForAllResponses(self, requests, seconds, responses);
+        }
+
+        // WaitForAnyEvent/Response
+
+        /// <summary>
+        /// Waits for any of multiple events until the default timeout.
+        /// </summary>
+        public static Yield WaitForAnyEvent(this Coroutine self,
+            params Event[] e)
+        {
+            return new WaitForAnyEvent(self, e);
+        }
+
+        /// <summary>
+        /// Waits for any of multiple events until the specified timeout in seconds.
+        /// </summary>
+        public static Yield WaitForAnyEvent(this Coroutine self,
+            double seconds, params Event[] e)
+        {
+            return new WaitForAnyEvent(self, seconds, e);
+        }
+
+        /// <summary>
+        /// Posts the requests and waits for any of multiple responses until
+        /// default timeout.
+        /// </summary>
+        public static Yield WaitForAnyResponse(this Coroutine self,
+            Event[] requests, params Event[] responses)
+        {
+            return new WaitForAnyResponse(self, requests, responses);
+        }
+
+        /// <summary>
+        /// Posts the requests and waits for any of multiple responses until the
+        /// specified timeout in seconds.
+        /// </summary>
+        public static Yield WaitForAnyResponse(this Coroutine self,
+            Event[] requests, double seconds, params Event[] responses)
+        {
+            return new WaitForAnyResponse(self, requests, seconds, responses);
         }
 
         // WaitForCopmpletion
