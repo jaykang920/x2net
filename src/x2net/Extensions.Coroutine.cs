@@ -28,7 +28,7 @@ namespace x2net
             return new WaitForNothing(self);
         }
 
-        // WaitForSingleEvent/Response
+        // WaitForEvent/Response
 
         /// <summary>
         /// Waits for a single event until the default timeout.

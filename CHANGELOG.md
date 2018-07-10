@@ -1,6 +1,9 @@
-## Features:
+## 0.12.0 (2018-07-10)
 
-- changed WaitFor*Event(s)/Response(s) interfaces
+Features:
+
+- Coroutine: renamed WaitForSingle*/WaitForMultiple* to WaitFor*/WaitForAll*, respectively.
+- Coroutine: added WaitForAnyEvent/Response feature
 
 ## 0.11.2 (2018-07-04)
 
