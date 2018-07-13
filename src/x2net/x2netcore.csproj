@@ -6,7 +6,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
 	<BaseOutputPath>../../bin</BaseOutputPath>
 	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
-    <DocumentationFile>$(BaseOutputPath)/$(Configuration)/$(TargetFramework)/x2net.xml</DocumentationFile>
+    <DocumentationFile>$(TargetDir)/x2net.xml</DocumentationFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DefineConstants>NET40;NETCORE</DefineConstants>
     <NoWarn>1591</NoWarn>
