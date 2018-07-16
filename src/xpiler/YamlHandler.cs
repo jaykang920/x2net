@@ -1,6 +1,8 @@
 ﻿// Copyright (c) 2017, 2018 Jae-jun Kang
 // See the file LICENSE for details.
 
+#if YAML_HANDLER
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -171,3 +173,5 @@ namespace x2net.xpiler
         }
     }
 }
+
+#endif

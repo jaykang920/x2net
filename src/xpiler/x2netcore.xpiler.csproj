@@ -12,10 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="YamlDotNet" Version="4.2.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Include="../../GlobalAssemblyInfo.cs">
       <Link>Properties/GlobalAssemblyInfo.cs</Link>
 	</Compile>
