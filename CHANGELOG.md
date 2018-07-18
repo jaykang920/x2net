@@ -1,3 +1,9 @@
+## 0.12.1 (2018-07-18)
+
+Features:
+
+- Renamed class Binder to Binding
+
 ## 0.12.0 (2018-07-10)
 
 Features:

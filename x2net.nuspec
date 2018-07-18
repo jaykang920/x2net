@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>x2net</id>
-    <version>0.12.0</version>
+    <version>0.12.1</version>
     <authors>Jae-jun Kang</authors>
     <owners>Jae-jun Kang</owners>
     <licenseUrl>https://github.com/jaykang920/x2net/blob/master/LICENSE</licenseUrl>
@@ -16,11 +16,8 @@
   <files>
     <file src="LICENSE"/>
     <file src="bin/Release/net35/x2net.dll" target="lib/net35"/>
-    <file src="bin/Release/net35/x2net.xml" target="lib/net35"/>
     <file src="bin/Release/net40/x2net.dll" target="lib/net40"/>
-    <file src="bin/Release/net40/x2net.xml" target="lib/net40"/>
     <file src="bin/Release/netcoreapp2.0/x2net.deps.json" target="lib/netcoreapp2.0"/>
     <file src="bin/Release/netcoreapp2.0/x2net.dll" target="lib/netcoreapp2.0"/>
-    <file src="bin/Release/netcoreapp2.0/x2net.xml" target="lib/netcoreapp2.0"/>
   </files>
 </package>
