@@ -11,7 +11,7 @@ namespace x2net
     public class WaitForSeconds : Yield
     {
         private readonly Coroutine coroutine;
-        private readonly Binder.Token token;
+        private readonly Binding.Token token;
 
         public WaitForSeconds(Coroutine coroutine, double seconds)
         {
@@ -34,7 +34,7 @@ namespace x2net
     {
         private readonly Coroutine coroutine;
         private readonly object result;
-        private readonly Binder.Token token;
+        private readonly Binding.Token token;
 
         public WaitForNothing(Coroutine coroutine) : this(coroutine, null)
         {

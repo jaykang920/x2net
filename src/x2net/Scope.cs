@@ -10,17 +10,17 @@ namespace x2net
     /// </summary>
     public class Scope : IDisposable
     {
-        private Binder.Token? binderToken;
+        private Binding.Token? bindingToken;
         private DateTime startTime;
         private Event e;
 
         /// <summary>
-        /// Gets or sets the binder token to be recovered on disposal.
+        /// Gets or sets the binding token to be recovered on disposal.
         /// </summary>
-        public Binder.Token? BinderToken
+        public Binding.Token? BindingToken
         {
-            get { return binderToken; }
-            set { binderToken = value; }
+            get { return bindingToken; }
+            set { bindingToken = value; }
         }
 
         /// <summary>
@@ -70,10 +70,10 @@ namespace x2net
                 Cleanup(e);
             }
 
-            if (binderToken.HasValue &&
-                !ReferenceEquals(binderToken.Value.Key, null))
+            if (bindingToken.HasValue &&
+                !ReferenceEquals(bindingToken.Value.Key, null))
             {
-                Flow.Bind(binderToken.Value);
+                Flow.Bind(bindingToken.Value);
             }
 
             if (!ReferenceEquals(e, null))

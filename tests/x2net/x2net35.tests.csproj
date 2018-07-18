@@ -46,7 +46,7 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="BinderTest.cs" />
+    <Compile Include="BindingTest.cs" />
     <Compile Include="BufferTest.cs" />
     <Compile Include="CapoTest.cs" />
     <Compile Include="CellTest.cs" />

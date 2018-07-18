@@ -13,8 +13,8 @@ namespace x2net
         private readonly Coroutine coroutine;
         private readonly Event[] expected;
 
-        private readonly Binder.Token[] handlerTokens;
-        private readonly Binder.Token timeoutToken;
+        private readonly Binding.Token[] handlerTokens;
+        private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
         private int waitHandle;
@@ -50,7 +50,7 @@ namespace x2net
 
             expected = e;
 
-            handlerTokens = new Binder.Token[expected.Length];
+            handlerTokens = new Binding.Token[expected.Length];
             for (int i = 0; i < expected.Length; ++i)
             {
                 handlerTokens[i] = Flow.Bind(expected[i], OnEvent);

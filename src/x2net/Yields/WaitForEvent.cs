@@ -12,8 +12,8 @@ namespace x2net
     {
         private readonly Coroutine coroutine;
 
-        private readonly Binder.Token handlerToken;
-        private readonly Binder.Token timeoutToken;
+        private readonly Binding.Token handlerToken;
+        private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
         public WaitForEvent(Coroutine coroutine, Event e)

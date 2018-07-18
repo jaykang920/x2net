@@ -67,7 +67,7 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Binder.cs" />
+    <Compile Include="Binding.cs" />
     <Compile Include="Buffer.cs" />
     <Compile Include="BufferTransform.cs" />
     <Compile Include="BuiltinEvents.cs" />

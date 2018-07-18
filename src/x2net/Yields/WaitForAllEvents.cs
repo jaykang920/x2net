@@ -13,8 +13,8 @@ namespace x2net
         private readonly Coroutine coroutine;
         private readonly Event[] expected, actual;
 
-        private readonly Binder.Token[] handlerTokens;
-        private readonly Binder.Token timeoutToken;
+        private readonly Binding.Token[] handlerTokens;
+        private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
         private int count;
@@ -52,7 +52,7 @@ namespace x2net
             expected = e;
             actual = new Event[expected.Length];
 
-            handlerTokens = new Binder.Token[expected.Length];
+            handlerTokens = new Binding.Token[expected.Length];
             for (int i = 0; i < expected.Length; ++i)
             {
                 handlerTokens[i] = Flow.Bind(expected[i], OnEvent);
@@ -73,7 +73,7 @@ namespace x2net
                 if (actual[i] == null && expected[i].Equivalent(e))
                 {
                     Flow.Unbind(handlerTokens[i]);
-                    handlerTokens[i] = new Binder.Token();
+                    handlerTokens[i] = new Binding.Token();
                     actual[i] = e;
                     ++count;
                     break;

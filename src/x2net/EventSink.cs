@@ -31,7 +31,7 @@ namespace x2net
     {
         protected volatile bool disposed;
 
-        private List<Binder.Token> bindings;
+        private List<Binding.Token> bindings;
         private WeakReference flow;
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace x2net
         /// </summary>
         public EventSink(Flow flow)
         {
-            bindings = new List<Binder.Token>();
+            bindings = new List<Binding.Token>();
             this.flow = new WeakReference(flow);
         }
 
@@ -118,17 +118,17 @@ namespace x2net
             }
         }
 
-        public void Bind(Binder.Token binderToken)
+        public void Bind(Binding.Token bindingToken)
         {
             var flow = Flow;
             if (ReferenceEquals(flow, null))
             {
                 return;
             }
-            flow.Subscribe(binderToken);
+            flow.Subscribe(bindingToken);
         }
 
-        public Binder.Token? Bind<T>(T e, Action<T> handler)
+        public Binding.Token? Bind<T>(T e, Action<T> handler)
             where T : Event
         {
             var flow = Flow;
@@ -139,7 +139,7 @@ namespace x2net
             return flow.Subscribe(e, handler);
         }
 
-        public Binder.Token? Bind<T>(T e, Action<T> handler, Predicate<T> predicate)
+        public Binding.Token? Bind<T>(T e, Action<T> handler, Predicate<T> predicate)
             where T : Event
         {
             var flow = Flow;
@@ -150,7 +150,7 @@ namespace x2net
             return flow.Subscribe(e, handler, predicate);
         }
 
-        public Binder.Token? Bind<T>(T e, Func<Coroutine, T, IEnumerator> handler)
+        public Binding.Token? Bind<T>(T e, Func<Coroutine, T, IEnumerator> handler)
             where T : Event
         {
             var flow = Flow;
@@ -161,7 +161,7 @@ namespace x2net
             return flow.Subscribe(e, handler);
         }
 
-        public Binder.Token? Bind<T>(T e, Func<Coroutine, T, IEnumerator> handler,
+        public Binding.Token? Bind<T>(T e, Func<Coroutine, T, IEnumerator> handler,
             Predicate<T> predicate)
             where T : Event
         {
@@ -173,17 +173,17 @@ namespace x2net
             return flow.Subscribe(e, handler, predicate);
         }
 
-        public void Unbind(Binder.Token binderToken)
+        public void Unbind(Binding.Token bindingToken)
         {
             var flow = Flow;
             if (ReferenceEquals(flow, null))
             {
                 return;
             }
-            flow.Unsubscribe(binderToken);
+            flow.Unsubscribe(bindingToken);
         }
 
-        public Binder.Token? Unbind<T>(T e, Action<T> handler)
+        public Binding.Token? Unbind<T>(T e, Action<T> handler)
             where T : Event
         {
             var flow = Flow;
@@ -194,7 +194,7 @@ namespace x2net
             return flow.Unsubscribe(e, handler);
         }
 
-        public Binder.Token? Unbind<T>(T e, Action<T> handler, Predicate<T> predicate)
+        public Binding.Token? Unbind<T>(T e, Action<T> handler, Predicate<T> predicate)
             where T : Event
         {
             var flow = Flow;
@@ -205,7 +205,7 @@ namespace x2net
             return flow.Unsubscribe(e, handler, predicate);
         }
 
-        public Binder.Token? Unbind<T>(T e, Func<Coroutine, T, IEnumerator> handler)
+        public Binding.Token? Unbind<T>(T e, Func<Coroutine, T, IEnumerator> handler)
             where T : Event
         {
             var flow = Flow;
@@ -216,7 +216,7 @@ namespace x2net
             return flow.Unsubscribe(e, handler);
         }
 
-        public Binder.Token? Unbind<T>(T e, Func<Coroutine, T, IEnumerator> handler,
+        public Binding.Token? Unbind<T>(T e, Func<Coroutine, T, IEnumerator> handler,
             Predicate<T> predicate)
             where T : Event
         {
@@ -228,19 +228,19 @@ namespace x2net
             return flow.Unsubscribe(e, handler, predicate);
         }
 
-        internal void AddBinding(Binder.Token binderToken)
+        internal void AddBinding(Binding.Token bindingToken)
         {
             lock (bindings)
             {
-                bindings.Add(binderToken);
+                bindings.Add(bindingToken);
             }
         }
 
-        internal void RemoveBinding(Binder.Token binderToken)
+        internal void RemoveBinding(Binding.Token bindingToken)
         {
             lock (bindings)
             {
-                bindings.Remove(binderToken);
+                bindings.Remove(bindingToken);
             }
         }
     }

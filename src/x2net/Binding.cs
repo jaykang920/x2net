@@ -10,14 +10,14 @@ namespace x2net
     /// <summary>
     /// Manages evnet-handler bindings.
     /// </summary>
-    public class Binder
+    public class Binding
     {
         private Dictionary<Event, HandlerSet> handlerMap;
         private Filter filter;
 
         private ReaderWriterLockSlim rwlock;
 
-        public Binder()
+        public Binding()
         {
             handlerMap = new Dictionary<Event, HandlerSet>();
             filter = new Filter();
@@ -27,7 +27,7 @@ namespace x2net
             Diag = new Diagnostics(this);
         }
 
-        ~Binder()
+        ~Binding()
         {
             rwlock.Dispose();
         }
@@ -132,7 +132,7 @@ namespace x2net
             }
         }
 
-        public Binder.Token Unbind(Event e, Handler handler)
+        public Binding.Token Unbind(Event e, Handler handler)
         {
             rwlock.EnterWriteLock();
             try
@@ -322,9 +322,9 @@ namespace x2net
         /// </summary>
         public class Diagnostics
         {
-            private Binder owner;
+            private Binding owner;
 
-            internal Diagnostics(Binder owner)
+            internal Diagnostics(Binding owner)
             {
                 this.owner = owner;
             }
