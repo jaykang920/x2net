@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using Xunit;
@@ -50,10 +51,21 @@ namespace x2net.tests
             var equivalent = new EventEquivalent();
             List<Handler> handlerChain = new List<Handler>();
 
+            // Method handler
+
             binding.Bind(new SampleEvent1 { Foo = 1 }, new MethodHandler<SampleEvent1>(OnSampleEvent1));
             binding.Bind(new SampleEvent1 { Foo = 1 }, new MethodHandler<SampleEvent1>(OnSampleEvent1));
 
             binding.Unbind(new SampleEvent1 { Foo = 1 }, new MethodHandler<SampleEvent1>(OnSampleEvent1));
+
+            Assert.Equal(0, binding.BuildHandlerChain(new SampleEvent1 { Foo = 1 }, equivalent, handlerChain));
+
+            // Coroutine method handler
+
+            binding.Bind(new SampleEvent1 { Foo = 1 }, new CoroutineHandler<SampleEvent1>(OnSampleEvent1Coroutine));
+            binding.Bind(new SampleEvent1 { Foo = 1 }, new CoroutineHandler<SampleEvent1>(OnSampleEvent1Coroutine));
+
+            binding.Unbind(new SampleEvent1 { Foo = 1 }, new CoroutineHandler<SampleEvent1>(OnSampleEvent1Coroutine));
 
             Assert.Equal(0, binding.BuildHandlerChain(new SampleEvent1 { Foo = 1 }, equivalent, handlerChain));
 
@@ -198,6 +210,11 @@ namespace x2net.tests
 
         void OnSampleEvent1(SampleEvent1 e)
         {
+        }
+
+        IEnumerator OnSampleEvent1Coroutine(Coroutine coroutine, SampleEvent1 e)
+        {
+            yield break;
         }
 
         void OnSpecificSampleEvent1(SampleEvent1 e)
