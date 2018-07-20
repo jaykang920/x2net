@@ -12,10 +12,19 @@ namespace x2net
     /// </summary>
     public abstract class LinkStrategy
     {
+        /// <summary>
+        /// Gets or sets the link object associated with this link strategy.
+        /// </summary>
         public Link Link { get; set; }
 
+        /// <summary>
+        /// Called when the associated link is initialized.
+        /// </summary>
         public virtual void Setup() { }
 
+        /// <summary>
+        /// Called when the associated link is cleaned up.
+        /// </summary>
         public virtual void Teardown() { }
     }
 
@@ -24,11 +33,6 @@ namespace x2net
     /// </summary>
     public abstract class SessionBasedLinkStrategy : LinkStrategy
     {
-        public SessionBasedLink SessionBasedLink
-        {
-            get { return (SessionBasedLink)base.Link; }
-        }
-
         /// <summary>
         /// Called immediately once a new link session object is created.
         /// </summary>
@@ -48,14 +52,6 @@ namespace x2net
         public LinkSession Session { get; set; }
 
         public virtual bool Process(Event e) { return false; }
-
-        public virtual void Setup() { }
-
-        public virtual void Teardown() { }
-
-        public virtual void OnClose() { }
-
-        public virtual void OnDispose() { }
     }
 
     /// <summary>

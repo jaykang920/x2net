@@ -16,6 +16,9 @@ namespace x2net
         /// </summary>
         protected new static readonly Tag tag;
 
+        /// <summary>
+        /// Gets the type identifier of this event class.
+        /// </summary>
         public static int TypeId { get { return tag.TypeId; } }
 
         private string _channel;
@@ -85,7 +88,7 @@ namespace x2net
         protected Event(int length) : base(length + tag.NumProps) { }
 
         /// <summary>
-        /// Creates a new instance of the Event class.
+        /// Creates a new instance of this event class.
         /// </summary>
         public static Event New()
         {

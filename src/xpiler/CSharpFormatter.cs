@@ -380,7 +380,7 @@ namespace x2net.xpiler
                 Out(2, "{0} o = ({0})other;", def.Name);
                 foreach (var property in def.Properties)
                 {
-                    if (Types.IsCollection(property.TypeSpec.Type))
+                    if (Types.IsCollective(property.TypeSpec.Type))
                     {
                         Out(2, "if (!{0}.EqualsEx(o.{0}))", property.NativeName);
                     }
@@ -466,7 +466,7 @@ namespace x2net.xpiler
                 {
                     Out(2, "if (touched[{0}])", property.Index);
                     Out(2, "{");
-                    if (Types.IsCollection(property.TypeSpec.Type))
+                    if (Types.IsCollective(property.TypeSpec.Type))
                     {
                         Out(3, "if (!{0}.EqualsEx(o.{0}))", property.NativeName);
                     }
@@ -674,10 +674,10 @@ namespace x2net.xpiler
                 return type;  // custom type
             }
             return Types.IsPrimitive(type) ? nativeTypes[type]
-                                           : FormatCollectionType(typeSpec);
+                                           : FormatCollectiveType(typeSpec);
         }
 
-        private static string FormatCollectionType(TypeSpec typeSpec)
+        private static string FormatCollectiveType(TypeSpec typeSpec)
         {
             var sb = new StringBuilder(nativeTypes[typeSpec.Type]);
             if ((object)typeSpec.Details != null)

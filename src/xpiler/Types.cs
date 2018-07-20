@@ -30,8 +30,8 @@ namespace x2net.xpiler
 
     class TypeProperty
     {
-        public bool IsCollection { get; set; }
         public bool IsPrimitive { get; set; }
+        public bool IsCollective { get; set; }
         public bool DetailRequired { get; set; }
     }
 
@@ -95,22 +95,22 @@ namespace x2net.xpiler
                 DetailRequired = false
             });
 
-            // Collection types
+            // Collective types
             types.Add("bytes", new TypeProperty {
-                IsCollection = true,
                 IsPrimitive = false,
+                IsCollective = true,
                 DetailRequired = false
             });
             types.Add("list", new TypeProperty
             {
-                IsCollection = true,
                 IsPrimitive = false,
+                IsCollective = true,
                 DetailRequired = true
             });
             types.Add("map", new TypeProperty
             {
-                IsCollection = true,
                 IsPrimitive = false,
+                IsCollective = true,
                 DetailRequired = true
             });
         }
@@ -120,11 +120,11 @@ namespace x2net.xpiler
             return types.ContainsKey(type);
         }
 
-        public static bool IsCollection(string type)
+        public static bool IsCollective(string type)
         {
             TypeProperty typeProperty;
             return (types.TryGetValue(type, out typeProperty) ?
-                typeProperty.IsCollection : false);
+                typeProperty.IsCollective : false);
         }
 
         public static bool IsPrimitive(string type)
