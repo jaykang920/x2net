@@ -20,7 +20,7 @@ namespace x2net
         /// </summary>
         public bool OutgoingHeartbeatEnabled { get; set; }
 
-        public int ThresholdFailuerCount { get; set; }
+        public int MaxFailuerCount { get; set; }
 
         static KeepaliveStrategy()
         {
@@ -32,12 +32,7 @@ namespace x2net
             IncomingHeartbeatEnabled = true;
             OutgoingHeartbeatEnabled = true;
 
-            ThresholdFailuerCount = 4;
-        }
-
-        public override void Setup()
-        {
-            base.Setup();
+            MaxFailuerCount = 3;
         }
 
         public override void BeforeSessionSetup(LinkSession linkSession)
@@ -173,7 +168,7 @@ namespace x2net
                     int result = Interlocked.Increment(ref successiveFailureCount);
 
                     if (!Marked &&
-                        result >= linkStrategy.ThresholdFailuerCount)
+                        result > linkStrategy.MaxFailuerCount)
                     {
                         Trace.Debug("{0} {1} keepalive failure count {2}",
                             Session.Link.Name, Session.InternalHandle, result);
