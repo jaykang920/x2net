@@ -86,9 +86,9 @@ namespace x2net
         {
         }
 
-        protected FrameBasedFlow(bool queueing)
+        protected FrameBasedFlow(bool withQueue)
         {
-            if (queueing)
+            if (withQueue)
             {
                 queue = new T();
             }
@@ -201,7 +201,7 @@ namespace x2net
                         else
                         {
                             Thread.Sleep(1);
-                            break;
+                            continue;
                         }
                     }
                 }
@@ -240,8 +240,8 @@ namespace x2net
             Time.AfterUpdate();
         }
 
-        protected abstract void Start();
-        protected abstract void Stop();
+        protected virtual void Start() { }
+        protected virtual void Stop() { }
 
         protected abstract void Update();
     }
