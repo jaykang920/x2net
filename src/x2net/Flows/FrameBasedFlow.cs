@@ -139,13 +139,10 @@ namespace x2net
                 {
                     return;
                 }
+                shouldStop = true;
                 if (queue != null)
                 {
                     queue.Close(new FlowStop());
-                }
-                else
-                {
-                    shouldStop = true;
                 }
                 thread.Join();
                 thread = null;
@@ -194,14 +191,20 @@ namespace x2net
 
                             if (e.GetTypeId() == (int)BuiltinEventType.FlowStop)
                             {
-                                shouldStop = true;
                                 break;
                             }
                         }
                         else
                         {
-                            Thread.Sleep(1);
-                            continue;
+                            if (shouldStop)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Thread.Sleep(1);
+                                continue;
+                            }
                         }
                     }
                 }
