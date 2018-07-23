@@ -486,7 +486,6 @@ namespace x2net.xpiler
 
         private void FormatDeserialize(CellDef def)
         {
-            // Deserialize(Deserializer)
             Out(1, "public override void Deserialize(Deserializer deserializer)");
             Out(1, "{");
             Out(2, "base.Deserialize(deserializer);");
@@ -499,20 +498,6 @@ namespace x2net.xpiler
                     Out(2, "{");
                     Out(3, "deserializer.Read(out {0});", property.NativeName);
                     Out(2, "}");
-                }
-            }
-            Out(1, "}");
-
-            // Deserialize(VerboseDeserializer)
-            NewLine();
-            Out(1, "public override void Deserialize(VerboseDeserializer deserializer)");
-            Out(1, "{");
-            Out(2, "base.Deserialize(deserializer);");
-            if (def.HasProperties)
-            {
-                foreach (var property in def.Properties)
-                {
-                    Out(2, "deserializer.Read(\"{0}\", out {1});", property.Name, property.NativeName);
                 }
             }
             Out(1, "}");
@@ -543,7 +528,7 @@ namespace x2net.xpiler
             Out(2, "return length;");
             Out(1, "}");
 
-            // Serialize(Serializer)
+            // Serialize
             NewLine();
             Out(1, "public override void Serialize(Serializer serializer,");
             Out(2, "Type targetType, ref bool flag)");
@@ -559,26 +544,6 @@ namespace x2net.xpiler
                     Out(2, "{");
                     Out(3, "serializer.Write({0});", property.NativeName);
                     Out(2, "}");
-                }
-            }
-            Out(2, "if (targetType != null && targetType == typeof({0}))", def.Name);
-            Out(2, "{");
-            Out(3, "flag = false;");
-            Out(2, "}");
-            Out(1, "}");
-
-            // Serialize(VerboseSerializer)
-            NewLine();
-            Out(1, "public override void Serialize(VerboseSerializer serializer,");
-            Out(2, "Type targetType, ref bool flag)");
-            Out(1, "{");
-            Out(2, "base.Serialize(serializer, targetType, ref flag);");
-            Out(2, "if (!flag) { return; }");
-            if (def.HasProperties)
-            {
-                foreach (var property in def.Properties)
-                {
-                    Out(2, "serializer.Write(\"{0}\", {1});", property.Name, property.NativeName);
                 }
             }
             Out(2, "if (targetType != null && targetType == typeof({0}))", def.Name);

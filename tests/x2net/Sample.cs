@@ -175,13 +175,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Foo", out foo_);
-            deserializer.Read("Bar", out bar_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -216,19 +209,6 @@ namespace x2net.tests
             {
                 serializer.Write(bar_);
             }
-            if (targetType != null && targetType == typeof(SampleCell1))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Foo", foo_);
-            serializer.Write("Bar", bar_);
             if (targetType != null && targetType == typeof(SampleCell1))
             {
                 flag = false;
@@ -345,12 +325,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Baz", out baz_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -377,18 +351,6 @@ namespace x2net.tests
             {
                 serializer.Write(baz_);
             }
-            if (targetType != null && targetType == typeof(SampleCell2))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Baz", baz_);
             if (targetType != null && targetType == typeof(SampleCell2))
             {
                 flag = false;
@@ -503,12 +465,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Qux", out qux_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -535,18 +491,6 @@ namespace x2net.tests
             {
                 serializer.Write(qux_);
             }
-            if (targetType != null && targetType == typeof(SampleCell3))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Qux", qux_);
             if (targetType != null && targetType == typeof(SampleCell3))
             {
                 flag = false;
@@ -661,12 +605,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Quux", out quux_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -693,18 +631,6 @@ namespace x2net.tests
             {
                 serializer.Write(quux_);
             }
-            if (targetType != null && targetType == typeof(SampleCell4))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Quux", quux_);
             if (targetType != null && targetType == typeof(SampleCell4))
             {
                 flag = false;
@@ -868,13 +794,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Foo", out foo_);
-            deserializer.Read("Bar", out bar_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -909,19 +828,6 @@ namespace x2net.tests
             {
                 serializer.Write(bar_);
             }
-            if (targetType != null && targetType == typeof(SampleEvent1))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Foo", foo_);
-            serializer.Write("Bar", bar_);
             if (targetType != null && targetType == typeof(SampleEvent1))
             {
                 flag = false;
@@ -1056,12 +962,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Baz", out baz_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -1088,18 +988,6 @@ namespace x2net.tests
             {
                 serializer.Write(baz_);
             }
-            if (targetType != null && targetType == typeof(SampleEvent2))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Baz", baz_);
             if (targetType != null && targetType == typeof(SampleEvent2))
             {
                 flag = false;
@@ -1232,12 +1120,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Qux", out qux_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -1264,18 +1146,6 @@ namespace x2net.tests
             {
                 serializer.Write(qux_);
             }
-            if (targetType != null && targetType == typeof(SampleEvent3))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Qux", qux_);
             if (targetType != null && targetType == typeof(SampleEvent3))
             {
                 flag = false;
@@ -1408,12 +1278,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Quux", out quux_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -1440,18 +1304,6 @@ namespace x2net.tests
             {
                 serializer.Write(quux_);
             }
-            if (targetType != null && targetType == typeof(SampleEvent4))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Quux", quux_);
             if (targetType != null && targetType == typeof(SampleEvent4))
             {
                 flag = false;
@@ -1584,12 +1436,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("SampleCell", out sampleCell_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -1616,18 +1462,6 @@ namespace x2net.tests
             {
                 serializer.Write(sampleCell_);
             }
-            if (targetType != null && targetType == typeof(SampleEvent5))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("SampleCell", sampleCell_);
             if (targetType != null && targetType == typeof(SampleEvent5))
             {
                 flag = false;
@@ -1760,12 +1594,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("SampleCell", out sampleCell_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -1792,18 +1620,6 @@ namespace x2net.tests
             {
                 serializer.Write(sampleCell_);
             }
-            if (targetType != null && targetType == typeof(SampleEvent6))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("SampleCell", sampleCell_);
             if (targetType != null && targetType == typeof(SampleEvent6))
             {
                 flag = false;
@@ -1936,12 +1752,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("SampleEvent", out sampleEvent_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -1968,18 +1778,6 @@ namespace x2net.tests
             {
                 serializer.Write(sampleEvent_);
             }
-            if (targetType != null && targetType == typeof(SampleEvent7))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("SampleEvent", sampleEvent_);
             if (targetType != null && targetType == typeof(SampleEvent7))
             {
                 flag = false;
@@ -2112,12 +1910,6 @@ namespace x2net.tests
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("SampleEvent", out sampleEvent_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -2144,18 +1936,6 @@ namespace x2net.tests
             {
                 serializer.Write(sampleEvent_);
             }
-            if (targetType != null && targetType == typeof(SampleEvent8))
-            {
-                flag = false;
-            }
-        }
-
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("SampleEvent", sampleEvent_);
             if (targetType != null && targetType == typeof(SampleEvent8))
             {
                 flag = false;
