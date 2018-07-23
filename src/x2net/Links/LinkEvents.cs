@@ -498,6 +498,12 @@ namespace x2net
             }
         }
 
+        public override void Deserialize(VerboseDeserializer deserializer)
+        {
+            base.Deserialize(deserializer);
+            deserializer.Read("Data", out data_);
+        }
+
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -524,6 +530,18 @@ namespace x2net
             {
                 serializer.Write(data_);
             }
+            if (targetType != null && targetType == typeof(HandshakeReq))
+            {
+                flag = false;
+            }
+        }
+
+        public override void Serialize(VerboseSerializer serializer,
+            Type targetType, ref bool flag)
+        {
+            base.Serialize(serializer, targetType, ref flag);
+            if (!flag) { return; }
+            serializer.Write("Data", data_);
             if (targetType != null && targetType == typeof(HandshakeReq))
             {
                 flag = false;
@@ -656,6 +674,12 @@ namespace x2net
             }
         }
 
+        public override void Deserialize(VerboseDeserializer deserializer)
+        {
+            base.Deserialize(deserializer);
+            deserializer.Read("Data", out data_);
+        }
+
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -682,6 +706,18 @@ namespace x2net
             {
                 serializer.Write(data_);
             }
+            if (targetType != null && targetType == typeof(HandshakeResp))
+            {
+                flag = false;
+            }
+        }
+
+        public override void Serialize(VerboseSerializer serializer,
+            Type targetType, ref bool flag)
+        {
+            base.Serialize(serializer, targetType, ref flag);
+            if (!flag) { return; }
+            serializer.Write("Data", data_);
             if (targetType != null && targetType == typeof(HandshakeResp))
             {
                 flag = false;
@@ -814,6 +850,12 @@ namespace x2net
             }
         }
 
+        public override void Deserialize(VerboseDeserializer deserializer)
+        {
+            base.Deserialize(deserializer);
+            deserializer.Read("Result", out result_);
+        }
+
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -840,6 +882,18 @@ namespace x2net
             {
                 serializer.Write(result_);
             }
+            if (targetType != null && targetType == typeof(HandshakeAck))
+            {
+                flag = false;
+            }
+        }
+
+        public override void Serialize(VerboseSerializer serializer,
+            Type targetType, ref bool flag)
+        {
+            base.Serialize(serializer, targetType, ref flag);
+            if (!flag) { return; }
+            serializer.Write("Result", result_);
             if (targetType != null && targetType == typeof(HandshakeAck))
             {
                 flag = false;

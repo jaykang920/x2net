@@ -133,6 +133,11 @@ namespace x2net
             base.Deserialize(deserializer);
         }
 
+        public override void Deserialize(VerboseDeserializer deserializer)
+        {
+            base.Deserialize(deserializer);
+        }
+
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -145,6 +150,17 @@ namespace x2net
         }
 
         public override void Serialize(Serializer serializer,
+            Type targetType, ref bool flag)
+        {
+            base.Serialize(serializer, targetType, ref flag);
+            if (!flag) { return; }
+            if (targetType != null && targetType == typeof(HeartbeatEvent))
+            {
+                flag = false;
+            }
+        }
+
+        public override void Serialize(VerboseSerializer serializer,
             Type targetType, ref bool flag)
         {
             base.Serialize(serializer, targetType, ref flag);
