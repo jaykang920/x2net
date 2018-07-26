@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TcpSession
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TcpSession
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.TcpSession">
+  
+  
+  <h1 id="x2net_TcpSession" data-uid="x2net.TcpSession" class="text-break">Class TcpSession
+  </h1>
+  <div class="markdown level0 summary"><p>TCP/IP link session based on the Begin/End pattern.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="x2net.LinkSession.html">LinkSession</a></div>
+    <div class="level2"><a class="xref" href="x2net.AbstractTcpSession.html">AbstractTcpSession</a></div>
+    <div class="level3"><span class="xref">TcpSession</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_socket">AbstractTcpSession.socket</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_SocketConnected">AbstractTcpSession.SocketConnected</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_RemoteEndPoint">AbstractTcpSession.RemoteEndPoint</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_Socket">AbstractTcpSession.Socket</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_InternalHandle">AbstractTcpSession.InternalHandle</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_OnDisconnect">AbstractTcpSession.OnDisconnect()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_ToString">AbstractTcpSession.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_OnClose">AbstractTcpSession.OnClose()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_Dispose_System_Boolean_">AbstractTcpSession.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_BuildHeader_x2net_SendBuffer_System_Boolean_">AbstractTcpSession.BuildHeader(SendBuffer, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_ParseHeader">AbstractTcpSession.ParseHeader()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_OnEventReceived_x2net_Event_">AbstractTcpSession.OnEventReceived(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpSession.html#x2net_AbstractTcpSession_OnEventSent_x2net_Event_">AbstractTcpSession.OnEventSent(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_handle">LinkSession.handle</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_link">LinkSession.link</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_polarity">LinkSession.polarity</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_rxBuffer">LinkSession.rxBuffer</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_txBuffers">LinkSession.txBuffers</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_rxBufferList">LinkSession.rxBufferList</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_txBufferList">LinkSession.txBufferList</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_eventsSending">LinkSession.eventsSending</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_eventsToSend">LinkSession.eventsToSend</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_lengthToReceive">LinkSession.lengthToReceive</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_lengthToSend">LinkSession.lengthToSend</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_rxBeginning">LinkSession.rxBeginning</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_rxTransformed">LinkSession.rxTransformed</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_txFlag">LinkSession.txFlag</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_syncRoot">LinkSession.syncRoot</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_connected">LinkSession.connected</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_disposed">LinkSession.disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Context">LinkSession.Context</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Handle">LinkSession.Handle</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_IsBusy">LinkSession.IsBusy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Link">LinkSession.Link</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Polarity">LinkSession.Polarity</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Connected">LinkSession.Connected</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_ChannelStrategy">LinkSession.ChannelStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_HeartbeatStrategy">LinkSession.HeartbeatStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_HasChannelStrategy">LinkSession.HasChannelStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_HasHeartbeatStrategy">LinkSession.HasHeartbeatStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Close">LinkSession.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_CloseInternal">LinkSession.CloseInternal()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Dispose">LinkSession.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Send_x2net_Event_">LinkSession.Send(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_OnReceiveInternal_System_Int32_">LinkSession.OnReceiveInternal(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_OnDisconnect_System_Object_">LinkSession.OnDisconnect(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_OnSendInternal_System_Int32_">LinkSession.OnSendInternal(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Process_x2net_Event_">LinkSession.Process(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Diag">LinkSession.Diag</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_TcpSession_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TcpSession : AbstractTcpSession</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpSession__ctor_x2net_SessionBasedLink_Socket_.md&amp;value=---%0Auid%3A%20x2net.TcpSession.%23ctor(x2net.SessionBasedLink%2CSocket)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/TcpSession.cs/#L14">View Source</a>
+  </span>
+  <a id="x2net_TcpSession__ctor_" data-uid="x2net.TcpSession.#ctor*"></a>
+  <h4 id="x2net_TcpSession__ctor_x2net_SessionBasedLink_Socket_" data-uid="x2net.TcpSession.#ctor(x2net.SessionBasedLink,Socket)">TcpSession(SessionBasedLink, Socket)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TcpSession(SessionBasedLink link, Socket socket)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.SessionBasedLink.html">SessionBasedLink</a></td>
+        <td><span class="parametername">link</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Socket</span></td>
+        <td><span class="parametername">socket</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpSession_ReceiveInternal.md&amp;value=---%0Auid%3A%20x2net.TcpSession.ReceiveInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/TcpSession.cs/#L19">View Source</a>
+  </span>
+  <a id="x2net_TcpSession_ReceiveInternal_" data-uid="x2net.TcpSession.ReceiveInternal*"></a>
+  <h4 id="x2net_TcpSession_ReceiveInternal" data-uid="x2net.TcpSession.ReceiveInternal">ReceiveInternal()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ReceiveInternal()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_ReceiveInternal">LinkSession.ReceiveInternal()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpSession_SendInternal.md&amp;value=---%0Auid%3A%20x2net.TcpSession.SendInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/TcpSession.cs/#L37">View Source</a>
+  </span>
+  <a id="x2net_TcpSession_SendInternal_" data-uid="x2net.TcpSession.SendInternal*"></a>
+  <h4 id="x2net_TcpSession_SendInternal" data-uid="x2net.TcpSession.SendInternal">SendInternal()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void SendInternal()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_SendInternal">LinkSession.SendInternal()</a></div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpSession.md&amp;value=---%0Auid%3A%20x2net.TcpSession%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/TcpSession.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

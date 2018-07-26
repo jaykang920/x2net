@@ -1,0 +1,1023 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Buffer
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Buffer
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.Buffer">
+  
+  
+  <h1 id="x2net_Buffer" data-uid="x2net.Buffer" class="text-break">Class Buffer
+  </h1>
+  <div class="markdown level0 summary"><p>A variable-length byte buffer class whose capacity is limited to a
+multiple of a power of 2.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Buffer</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_Buffer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Buffer : IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer__ctor.md&amp;value=---%0Auid%3A%20x2net.Buffer.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L113">View Source</a>
+  </span>
+  <a id="x2net_Buffer__ctor_" data-uid="x2net.Buffer.#ctor*"></a>
+  <h4 id="x2net_Buffer__ctor" data-uid="x2net.Buffer.#ctor">Buffer()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the Buffer class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Buffer()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_BlockSize.md&amp;value=---%0Auid%3A%20x2net.Buffer.BlockSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L37">View Source</a>
+  </span>
+  <a id="x2net_Buffer_BlockSize_" data-uid="x2net.Buffer.BlockSize*"></a>
+  <h4 id="x2net_Buffer_BlockSize" data-uid="x2net.Buffer.BlockSize">BlockSize</h4>
+  <div class="markdown level1 summary"><p>Gets the block size in bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BlockSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Capacity.md&amp;value=---%0Auid%3A%20x2net.Buffer.Capacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L45">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Capacity_" data-uid="x2net.Buffer.Capacity*"></a>
+  <h4 id="x2net_Buffer_Capacity" data-uid="x2net.Buffer.Capacity">Capacity</h4>
+  <div class="markdown level1 summary"><p>Gets the maximum capacity of the buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Capacity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_FirstSegment.md&amp;value=---%0Auid%3A%20x2net.Buffer.FirstSegment%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L98">View Source</a>
+  </span>
+  <a id="x2net_Buffer_FirstSegment_" data-uid="x2net.Buffer.FirstSegment*"></a>
+  <h4 id="x2net_Buffer_FirstSegment" data-uid="x2net.Buffer.FirstSegment">FirstSegment</h4>
+  <div class="markdown level1 summary"><p>Gets the first segment of this buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Segment FirstSegment { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Segment.html">Segment</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_IsEmpty.md&amp;value=---%0Auid%3A%20x2net.Buffer.IsEmpty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L53">View Source</a>
+  </span>
+  <a id="x2net_Buffer_IsEmpty_" data-uid="x2net.Buffer.IsEmpty*"></a>
+  <h4 id="x2net_Buffer_IsEmpty" data-uid="x2net.Buffer.IsEmpty">IsEmpty</h4>
+  <div class="markdown level1 summary"><p>Checks whether the buffer is empty (i.e. whether its length is 0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEmpty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Item_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L363">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Item_" data-uid="x2net.Buffer.Item*"></a>
+  <h4 id="x2net_Buffer_Item_System_Int32_" data-uid="x2net.Buffer.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the byte at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte this[int index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Length.md&amp;value=---%0Auid%3A%20x2net.Buffer.Length%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L61">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Length_" data-uid="x2net.Buffer.Length*"></a>
+  <h4 id="x2net_Buffer_Length" data-uid="x2net.Buffer.Length">Length</h4>
+  <div class="markdown level1 summary"><p>Gets the length of the buffered bytes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Position.md&amp;value=---%0Auid%3A%20x2net.Buffer.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L69">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Position_" data-uid="x2net.Buffer.Position*"></a>
+  <h4 id="x2net_Buffer_Position" data-uid="x2net.Buffer.Position">Position</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the current zero-based position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Position { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_CheckLengthToRead_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.CheckLengthToRead(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L441">View Source</a>
+  </span>
+  <a id="x2net_Buffer_CheckLengthToRead_" data-uid="x2net.Buffer.CheckLengthToRead*"></a>
+  <h4 id="x2net_Buffer_CheckLengthToRead_System_Int32_" data-uid="x2net.Buffer.CheckLengthToRead(System.Int32)">CheckLengthToRead(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CheckLengthToRead(int numBytes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numBytes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_CopyFrom_System_Byte___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.CopyFrom(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L149">View Source</a>
+  </span>
+  <a id="x2net_Buffer_CopyFrom_" data-uid="x2net.Buffer.CopyFrom*"></a>
+  <h4 id="x2net_Buffer_CopyFrom_System_Byte___System_Int32_System_Int32_" data-uid="x2net.Buffer.CopyFrom(System.Byte[],System.Int32,System.Int32)">CopyFrom(Byte[], Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyFrom(byte[] buffer, int offset, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Dispose.md&amp;value=---%0Auid%3A%20x2net.Buffer.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L143">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Dispose_" data-uid="x2net.Buffer.Dispose*"></a>
+  <h4 id="x2net_Buffer_Dispose" data-uid="x2net.Buffer.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Implments IDisposable interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_EnsureCapacity_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.EnsureCapacity(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L452">View Source</a>
+  </span>
+  <a id="x2net_Buffer_EnsureCapacity_" data-uid="x2net.Buffer.EnsureCapacity*"></a>
+  <h4 id="x2net_Buffer_EnsureCapacity_System_Int32_" data-uid="x2net.Buffer.EnsureCapacity(System.Int32)">EnsureCapacity(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EnsureCapacity(int numBytes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numBytes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Finalize.md&amp;value=---%0Auid%3A%20x2net.Buffer.Finalize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L135">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Finalize_" data-uid="x2net.Buffer.Finalize*"></a>
+  <h4 id="x2net_Buffer_Finalize" data-uid="x2net.Buffer.Finalize">Finalize()</h4>
+  <div class="markdown level1 summary"><p>Destructor to return blocks to the pool</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Finalize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_GetByte.md&amp;value=---%0Auid%3A%20x2net.Buffer.GetByte%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L465">View Source</a>
+  </span>
+  <a id="x2net_Buffer_GetByte_" data-uid="x2net.Buffer.GetByte*"></a>
+  <h4 id="x2net_Buffer_GetByte" data-uid="x2net.Buffer.GetByte">GetByte()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte GetByte()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_ListAvailableSegments_IList_ArraySegment_System_Byte___.md&amp;value=---%0Auid%3A%20x2net.Buffer.ListAvailableSegments(IList%7BArraySegment%7BSystem.Byte%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L232">View Source</a>
+  </span>
+  <a id="x2net_Buffer_ListAvailableSegments_" data-uid="x2net.Buffer.ListAvailableSegments*"></a>
+  <h4 id="x2net_Buffer_ListAvailableSegments_IList_ArraySegment_System_Byte___" data-uid="x2net.Buffer.ListAvailableSegments(IList{ArraySegment{System.Byte}})">ListAvailableSegments(IList&lt;ArraySegment&lt;Byte&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ListAvailableSegments(IList&lt;ArraySegment&lt;byte&gt;&gt; blockList)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">ArraySegment</span>&lt;<span class="xref">System.Byte</span>&gt;&gt;</td>
+        <td><span class="parametername">blockList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_ListEndingSegments_IList_ArraySegment_System_Byte___System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.ListEndingSegments(IList%7BArraySegment%7BSystem.Byte%7D%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L193">View Source</a>
+  </span>
+  <a id="x2net_Buffer_ListEndingSegments_" data-uid="x2net.Buffer.ListEndingSegments*"></a>
+  <h4 id="x2net_Buffer_ListEndingSegments_IList_ArraySegment_System_Byte___System_Int32_" data-uid="x2net.Buffer.ListEndingSegments(IList{ArraySegment{System.Byte}},System.Int32)">ListEndingSegments(IList&lt;ArraySegment&lt;Byte&gt;&gt;, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ListEndingSegments(IList&lt;ArraySegment&lt;byte&gt;&gt; blockList, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">ArraySegment</span>&lt;<span class="xref">System.Byte</span>&gt;&gt;</td>
+        <td><span class="parametername">blockList</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_ListOccupiedSegments_IList_ArraySegment_System_Byte___.md&amp;value=---%0Auid%3A%20x2net.Buffer.ListOccupiedSegments(IList%7BArraySegment%7BSystem.Byte%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L183">View Source</a>
+  </span>
+  <a id="x2net_Buffer_ListOccupiedSegments_" data-uid="x2net.Buffer.ListOccupiedSegments*"></a>
+  <h4 id="x2net_Buffer_ListOccupiedSegments_IList_ArraySegment_System_Byte___" data-uid="x2net.Buffer.ListOccupiedSegments(IList{ArraySegment{System.Byte}})">ListOccupiedSegments(IList&lt;ArraySegment&lt;Byte&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ListOccupiedSegments(IList&lt;ArraySegment&lt;byte&gt;&gt; blockList)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">ArraySegment</span>&lt;<span class="xref">System.Byte</span>&gt;&gt;</td>
+        <td><span class="parametername">blockList</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_ListStartingSegments_IList_ArraySegment_System_Byte___System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.ListStartingSegments(IList%7BArraySegment%7BSystem.Byte%7D%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L188">View Source</a>
+  </span>
+  <a id="x2net_Buffer_ListStartingSegments_" data-uid="x2net.Buffer.ListStartingSegments*"></a>
+  <h4 id="x2net_Buffer_ListStartingSegments_IList_ArraySegment_System_Byte___System_Int32_" data-uid="x2net.Buffer.ListStartingSegments(IList{ArraySegment{System.Byte}},System.Int32)">ListStartingSegments(IList&lt;ArraySegment&lt;Byte&gt;&gt;, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ListStartingSegments(IList&lt;ArraySegment&lt;byte&gt;&gt; blockList, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">ArraySegment</span>&lt;<span class="xref">System.Byte</span>&gt;&gt;</td>
+        <td><span class="parametername">blockList</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_MarkToRead_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.MarkToRead(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L426">View Source</a>
+  </span>
+  <a id="x2net_Buffer_MarkToRead_" data-uid="x2net.Buffer.MarkToRead*"></a>
+  <h4 id="x2net_Buffer_MarkToRead_System_Int32_" data-uid="x2net.Buffer.MarkToRead(System.Int32)">MarkToRead(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MarkToRead(int lengthToRead)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">lengthToRead</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_PutByte_System_Byte_.md&amp;value=---%0Auid%3A%20x2net.Buffer.PutByte(System.Byte)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L471">View Source</a>
+  </span>
+  <a id="x2net_Buffer_PutByte_" data-uid="x2net.Buffer.PutByte*"></a>
+  <h4 id="x2net_Buffer_PutByte_System_Byte_" data-uid="x2net.Buffer.PutByte(System.Byte)">PutByte(Byte)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PutByte(byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Read_System_Byte___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.Read(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L268">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Read_" data-uid="x2net.Buffer.Read*"></a>
+  <h4 id="x2net_Buffer_Read_System_Byte___System_Int32_System_Int32_" data-uid="x2net.Buffer.Read(System.Byte[],System.Int32,System.Int32)">Read(Byte[], Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Read(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Reset.md&amp;value=---%0Auid%3A%20x2net.Buffer.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L275">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Reset_" data-uid="x2net.Buffer.Reset*"></a>
+  <h4 id="x2net_Buffer_Reset" data-uid="x2net.Buffer.Reset">Reset()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Rewind.md&amp;value=---%0Auid%3A%20x2net.Buffer.Rewind%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L284">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Rewind_" data-uid="x2net.Buffer.Rewind*"></a>
+  <h4 id="x2net_Buffer_Rewind" data-uid="x2net.Buffer.Rewind">Rewind()</h4>
+  <div class="markdown level1 summary"><p>Alias of (Position = 0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Rewind()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Shrink_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.Shrink(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L289">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Shrink_" data-uid="x2net.Buffer.Shrink*"></a>
+  <h4 id="x2net_Buffer_Shrink_System_Int32_" data-uid="x2net.Buffer.Shrink(System.Int32)">Shrink(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Shrink(int numBytes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numBytes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Stretch_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.Stretch(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L302">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Stretch_" data-uid="x2net.Buffer.Stretch*"></a>
+  <h4 id="x2net_Buffer_Stretch_System_Int32_" data-uid="x2net.Buffer.Stretch(System.Int32)">Stretch(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Stretch(int numBytes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">numBytes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_ToArray.md&amp;value=---%0Auid%3A%20x2net.Buffer.ToArray%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L314">View Source</a>
+  </span>
+  <a id="x2net_Buffer_ToArray_" data-uid="x2net.Buffer.ToArray*"></a>
+  <h4 id="x2net_Buffer_ToArray" data-uid="x2net.Buffer.ToArray">ToArray()</h4>
+  <div class="markdown level1 summary"><p>Returns a byte array containing all the bytes in this buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] ToArray()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_ToHexString.md&amp;value=---%0Auid%3A%20x2net.Buffer.ToHexString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L321">View Source</a>
+  </span>
+  <a id="x2net_Buffer_ToHexString_" data-uid="x2net.Buffer.ToHexString*"></a>
+  <h4 id="x2net_Buffer_ToHexString" data-uid="x2net.Buffer.ToHexString">ToHexString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToHexString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Trim.md&amp;value=---%0Auid%3A%20x2net.Buffer.Trim%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L379">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Trim_" data-uid="x2net.Buffer.Trim*"></a>
+  <h4 id="x2net_Buffer_Trim" data-uid="x2net.Buffer.Trim">Trim()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Trim()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer_Write_System_Byte___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Buffer.Write(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L435">View Source</a>
+  </span>
+  <a id="x2net_Buffer_Write_" data-uid="x2net.Buffer.Write*"></a>
+  <h4 id="x2net_Buffer_Write_System_Byte___System_Int32_System_Int32_" data-uid="x2net.Buffer.Write(System.Byte[],System.Int32,System.Int32)">Write(Byte[], Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Write(byte[] value, int offset, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ReadVariable_x2net_Buffer_System_UInt32__">Extensions.ReadVariable(Buffer, out UInt32)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Buffer.md&amp;value=---%0Auid%3A%20x2net.Buffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Buffer.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

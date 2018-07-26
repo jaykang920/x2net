@@ -1,0 +1,915 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TimeFlow
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TimeFlow
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.TimeFlow">
+  
+  
+  <h1 id="x2net_TimeFlow" data-uid="x2net.TimeFlow" class="text-break">Class TimeFlow
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="x2net.Flow.html">Flow</a></div>
+    <div class="level2"><a class="xref" href="x2net.FrameBasedFlow-1.html">FrameBasedFlow</a>&lt;<a class="xref" href="x2net.ConcurrentEventQueue.html">ConcurrentEventQueue</a>&gt;</div>
+    <div class="level3"><span class="xref">TimeFlow</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_queue">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.queue</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_syncRoot">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.syncRoot</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_thread">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.thread</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Resolution">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.Resolution</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Time">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.Time</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Feed_x2net_Event_">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.Feed(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Startup">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.Startup()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Shutdown">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.Shutdown()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_OnHeartbeat">FrameBasedFlow&lt;ConcurrentEventQueue&gt;.OnHeartbeat()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_currentFlow">Flow.currentFlow</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_equivalent">Flow.equivalent</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_handlerChain">Flow.handlerChain</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_binding">Flow.binding</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_caseStack">Flow.caseStack</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_name">Flow.name</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_CurrentFlow">Flow.CurrentFlow</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_DefaultExceptionHandler">Flow.DefaultExceptionHandler</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_ExceptionHandler">Flow.ExceptionHandler</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Name">Flow.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_SlowHandlerTraceLevel">Flow.SlowHandlerTraceLevel</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_SlowHandlerLogThreshold">Flow.SlowHandlerLogThreshold</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_SlowScopeTraceLevel">Flow.SlowScopeTraceLevel</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_SlowScopeLogThreshold">Flow.SlowScopeLogThreshold</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_LongQueueTraceLevel">Flow.LongQueueTraceLevel</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_LongQueueLogThreshold">Flow.LongQueueLogThreshold</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Bind__1___0_Action___0__">Flow.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Bind__1___0_Action___0__Predicate___0__">Flow.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">Flow.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">Flow.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Bind_x2net_Binding_Token_">Flow.Bind(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unbind__1___0_Action___0__">Flow.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unbind__1___0_Action___0__Predicate___0__">Flow.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">Flow.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">Flow.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unbind_x2net_Binding_Token_">Flow.Unbind(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Publish_x2net_Event_">Flow.Publish(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Subscribe__1___0_Action___0__">Flow.Subscribe&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Subscribe__1___0_Action___0__Predicate___0__">Flow.Subscribe&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Subscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__">Flow.Subscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Subscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">Flow.Subscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Subscribe_x2net_Binding_Token_">Flow.Subscribe(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_Action___0__">Flow.Unsubscribe&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_Action___0__Predicate___0__">Flow.Unsubscribe&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__">Flow.Unsubscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">Flow.Unsubscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Unsubscribe_x2net_Binding_Token_">Flow.Unsubscribe(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Attach">Flow.Attach()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Detach">Flow.Detach()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Add_x2net_ICase_">Flow.Add(ICase)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Remove_x2net_ICase_">Flow.Remove(ICase)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_SubscribeTo_System_String_">Flow.SubscribeTo(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_UnsubscribeFrom_System_String_">Flow.UnsubscribeFrom(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Dispatch_x2net_Event_">Flow.Dispatch(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Setup">Flow.Setup()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_SetupInternal">Flow.SetupInternal()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_Teardown">Flow.Teardown()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_TeardownInternal">Flow.TeardownInternal()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_OnStart">Flow.OnStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Flow.html#x2net_Flow_OnStop">Flow.OnStop()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_TimeFlow_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class TimeFlow : FrameBasedFlow&lt;ConcurrentEventQueue&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Default.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Default%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L384">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Default_" data-uid="x2net.TimeFlow.Default*"></a>
+  <h4 id="x2net_TimeFlow_Default" data-uid="x2net.TimeFlow.Default">Default</h4>
+  <div class="markdown level1 summary"><p>Gets the default(anonymous) TimeFlow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TimeFlow Default { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.TimeFlow.html">TimeFlow</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Cancel_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Cancel(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L473">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Cancel_" data-uid="x2net.TimeFlow.Cancel*"></a>
+  <h4 id="x2net_TimeFlow_Cancel_x2net_Event_" data-uid="x2net.TimeFlow.Cancel(x2net.Event)">Cancel(Event)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Cancel(Event e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Cancel_x2net_Timer_Token_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Cancel(x2net.Timer.Token)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L468">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Cancel_" data-uid="x2net.TimeFlow.Cancel*"></a>
+  <h4 id="x2net_TimeFlow_Cancel_x2net_Timer_Token_" data-uid="x2net.TimeFlow.Cancel(x2net.Timer.Token)">Cancel(Timer.Token)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Cancel(Timer.Token token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Timer.Token.html">Timer.Token</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_CancelRepetition_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.CancelRepetition(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L500">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_CancelRepetition_" data-uid="x2net.TimeFlow.CancelRepetition*"></a>
+  <h4 id="x2net_TimeFlow_CancelRepetition_x2net_Event_" data-uid="x2net.TimeFlow.CancelRepetition(x2net.Event)">CancelRepetition(Event)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CancelRepetition(Event e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Create_System_String_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Create(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L402">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Create_" data-uid="x2net.TimeFlow.Create*"></a>
+  <h4 id="x2net_TimeFlow_Create_System_String_" data-uid="x2net.TimeFlow.Create(System.String)">Create(String)</h4>
+  <div class="markdown level1 summary"><p>Creates a named TimeFlow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TimeFlow Create(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.TimeFlow.html">TimeFlow</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Get.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Get%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L415">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Get_" data-uid="x2net.TimeFlow.Get*"></a>
+  <h4 id="x2net_TimeFlow_Get" data-uid="x2net.TimeFlow.Get">Get()</h4>
+  <div class="markdown level1 summary"><p>Gets the default(anonymous) TimeFlow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TimeFlow Get()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.TimeFlow.html">TimeFlow</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Get_System_String_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Get(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L423">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Get_" data-uid="x2net.TimeFlow.Get*"></a>
+  <h4 id="x2net_TimeFlow_Get_System_String_" data-uid="x2net.TimeFlow.Get(System.String)">Get(String)</h4>
+  <div class="markdown level1 summary"><p>Gets the named TimeFlow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TimeFlow Get(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.TimeFlow.html">TimeFlow</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Reserve_x2net_Event_System_Double_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Reserve(x2net.Event%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L432">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Reserve_" data-uid="x2net.TimeFlow.Reserve*"></a>
+  <h4 id="x2net_TimeFlow_Reserve_x2net_Event_System_Double_" data-uid="x2net.TimeFlow.Reserve(x2net.Event,System.Double)">Reserve(Event, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Timer.Token Reserve(Event e, double seconds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">seconds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Timer.Token.html">Timer.Token</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Reserve_x2net_Event_TimeSpan_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Reserve(x2net.Event%2CTimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L441">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Reserve_" data-uid="x2net.TimeFlow.Reserve*"></a>
+  <h4 id="x2net_TimeFlow_Reserve_x2net_Event_TimeSpan_" data-uid="x2net.TimeFlow.Reserve(x2net.Event,TimeSpan)">Reserve(Event, TimeSpan)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Timer.Token Reserve(Event e, TimeSpan delay)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td><span class="parametername">delay</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Timer.Token.html">Timer.Token</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_ReserveAtLocalTime_x2net_Event_DateTime_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.ReserveAtLocalTime(x2net.Event%2CDateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L450">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_ReserveAtLocalTime_" data-uid="x2net.TimeFlow.ReserveAtLocalTime*"></a>
+  <h4 id="x2net_TimeFlow_ReserveAtLocalTime_x2net_Event_DateTime_" data-uid="x2net.TimeFlow.ReserveAtLocalTime(x2net.Event,DateTime)">ReserveAtLocalTime(Event, DateTime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Timer.Token ReserveAtLocalTime(Event e, DateTime localTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td><span class="parametername">localTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Timer.Token.html">Timer.Token</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_ReserveAtUniversalTime_x2net_Event_DateTime_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.ReserveAtUniversalTime(x2net.Event%2CDateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L459">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_ReserveAtUniversalTime_" data-uid="x2net.TimeFlow.ReserveAtUniversalTime*"></a>
+  <h4 id="x2net_TimeFlow_ReserveAtUniversalTime_x2net_Event_DateTime_" data-uid="x2net.TimeFlow.ReserveAtUniversalTime(x2net.Event,DateTime)">ReserveAtUniversalTime(Event, DateTime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Timer.Token ReserveAtUniversalTime(Event e, DateTime universalTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td><span class="parametername">universalTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Timer.Token.html">Timer.Token</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_ReserveRepetition_x2net_Event_DateTime_TimeSpan_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.ReserveRepetition(x2net.Event%2CDateTime%2CTimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L491">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_ReserveRepetition_" data-uid="x2net.TimeFlow.ReserveRepetition*"></a>
+  <h4 id="x2net_TimeFlow_ReserveRepetition_x2net_Event_DateTime_TimeSpan_" data-uid="x2net.TimeFlow.ReserveRepetition(x2net.Event,DateTime,TimeSpan)">ReserveRepetition(Event, DateTime, TimeSpan)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReserveRepetition(Event e, DateTime nextUtcTime, TimeSpan interval)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td><span class="parametername">nextUtcTime</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td><span class="parametername">interval</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_ReserveRepetition_x2net_Event_TimeSpan_.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.ReserveRepetition(x2net.Event%2CTimeSpan)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L482">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_ReserveRepetition_" data-uid="x2net.TimeFlow.ReserveRepetition*"></a>
+  <h4 id="x2net_TimeFlow_ReserveRepetition_x2net_Event_TimeSpan_" data-uid="x2net.TimeFlow.ReserveRepetition(x2net.Event,TimeSpan)">ReserveRepetition(Event, TimeSpan)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReserveRepetition(Event e, TimeSpan interval)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TimeSpan</span></td>
+        <td><span class="parametername">interval</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Start.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Start%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L509">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Start_" data-uid="x2net.TimeFlow.Start*"></a>
+  <h4 id="x2net_TimeFlow_Start" data-uid="x2net.TimeFlow.Start">Start()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Start()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">x2net.FrameBasedFlow&lt;x2net.ConcurrentEventQueue&gt;.Start()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Stop.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Stop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L510">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Stop_" data-uid="x2net.TimeFlow.Stop*"></a>
+  <h4 id="x2net_TimeFlow_Stop" data-uid="x2net.TimeFlow.Stop">Stop()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Stop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">x2net.FrameBasedFlow&lt;x2net.ConcurrentEventQueue&gt;.Stop()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow_Update.md&amp;value=---%0Auid%3A%20x2net.TimeFlow.Update%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L512">View Source</a>
+  </span>
+  <a id="x2net_TimeFlow_Update_" data-uid="x2net.TimeFlow.Update*"></a>
+  <h4 id="x2net_TimeFlow_Update" data-uid="x2net.TimeFlow.Update">Update()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Update()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">x2net.FrameBasedFlow&lt;x2net.ConcurrentEventQueue&gt;.Update()</span></div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TimeFlow.md&amp;value=---%0Auid%3A%20x2net.TimeFlow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flows/TimeFlow.cs/#L368" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

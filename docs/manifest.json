@@ -1,0 +1,1988 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/Shared/project-lyn/trunk/Shared/x2net/doc",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "k9Np8RUXrhqwl6NB7Mz1sA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "3laE7GiqP+m92nG+fBB4Ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.AbstractTcpClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.AbstractTcpClient.html",
+          "hash": "54zRe0EKmlSdIEavR27qqw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.AbstractTcpServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.AbstractTcpServer.html",
+          "hash": "bSz2KFLZsbv65PIVTsuybg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.AbstractTcpSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.AbstractTcpSession.html",
+          "hash": "ROCuV/TuJ9V2x2Kxklm/AA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.AbstractUdpLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.AbstractUdpLink.html",
+          "hash": "b7QYquwa1hsAR9k63REAdQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.AsyncTcpClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.AsyncTcpClient.html",
+          "hash": "SCuFGQtm38yliQ/VkbJLMg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.AsyncTcpServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.AsyncTcpServer.html",
+          "hash": "3cnNxZQjBllFqCwaMS+TDQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.AsyncTcpSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.AsyncTcpSession.html",
+          "hash": "Y3GrouCB2+8kATYaTW/ICQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.AsyncUdpLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.AsyncUdpLink.html",
+          "hash": "7W//P69Sj15TzYn/vnGxlg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Binding.Diagnostics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Binding.Diagnostics.html",
+          "hash": "adC4Eai7BGDgmX2+Lcqv5A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Binding.Token.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Binding.Token.html",
+          "hash": "6RKKnhXueitazDu1zqKMLQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Binding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Binding.html",
+          "hash": "NEufAyKznwY9xkdFybmB4Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.BlockCipher.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.BlockCipher.Settings.html",
+          "hash": "apTRBD6BKYcXaDVYZvQZUg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.BlockCipher.SettingsBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.BlockCipher.SettingsBuilder.html",
+          "hash": "6qRbeeeuAiT5DMzNHq2vmw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.BlockCipher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.BlockCipher.html",
+          "hash": "ZqhYH8RMvdobOxoyAafSZQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Buffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Buffer.html",
+          "hash": "aU9U9MOjcmj4RnAw6ndAzg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.BufferTransformSessionStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.BufferTransformSessionStrategy.html",
+          "hash": "LuLwS+06dV2iM7FgcnhmNg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.BufferTransformStack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.BufferTransformStack.html",
+          "hash": "Ae3FKHgLBtjZDDBjbzY3NQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.BufferTransformStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.BufferTransformStrategy.html",
+          "hash": "zH3E/IS7Z/q+sr4Ec87vsw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.BuiltinEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.BuiltinEventType.html",
+          "hash": "9lyf6jDsqNgAedpG0h6jog=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Capo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Capo-1.html",
+          "hash": "LgpFCMv7xsEs0dAZp0j9fw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Case.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Case.html",
+          "hash": "SwZIyxu5MX6mrsk8CYAYIg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.CaseStack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.CaseStack.html",
+          "hash": "2lV/bSeUY1GCFWc5F/qV2Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Cell.Tag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Cell.Tag.html",
+          "hash": "BFpP+5RD3g+q2K6nxJu3Rw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Cell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Cell.html",
+          "hash": "knNVJPugQSoTQoMerNn7mg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ChannelStrategy.SubStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ChannelStrategy.SubStrategy.html",
+          "hash": "vIISwh2f4sevlGosK8hF3Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ChannelStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ChannelStrategy.html",
+          "hash": "VrN1A+uMtt1gygGdcbSVXg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ClientKeepaliveStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ClientKeepaliveStrategy.html",
+          "hash": "mtffNucoRJ1dZlcEzXcbvg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ClientLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ClientLink.html",
+          "hash": "UIkM4jIbUvxLFEomPDz+sw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ConcurrentEventQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ConcurrentEventQueue.html",
+          "hash": "f8pKFgdpl98Ohjr1eTww1Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ConditionalCoroutineHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ConditionalCoroutineHandler-1.html",
+          "hash": "pjehwZp7uRHduS7IOfQj7Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ConditionalMethodHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ConditionalMethodHandler-1.html",
+          "hash": "CUpzPjCCKVtP2JKCH33Ngg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Buffer.RoomFactor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Buffer.RoomFactor.html",
+          "hash": "MzgmkuVLpxXXGXEe15Yb/w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Buffer.SizeExponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Buffer.SizeExponent.html",
+          "hash": "euMZXKxVtDFg0Z1euu+gbw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Buffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Buffer.html",
+          "hash": "8c/m3GR05NNrhFWS/kDofg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Coroutine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Coroutine.html",
+          "hash": "dOaupNLphdQ9MifhrOproQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Flow.Logging.LongQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Flow.Logging.LongQueue.html",
+          "hash": "yVgGz//16oREEit1yu+OHQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Flow.Logging.SlowHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Flow.Logging.SlowHandler.html",
+          "hash": "8BeUhTAdAxgdT+mYm7A6pA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Flow.Logging.SlowScope.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Flow.Logging.SlowScope.html",
+          "hash": "4f2HJkKGOqunntGyeJQYBA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Flow.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Flow.Logging.html",
+          "hash": "q9NgEDRojwe9pZEBRSs92A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.Flow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.Flow.html",
+          "hash": "2L11Y6thCeuyGXQ81uvVLw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Config.html",
+          "hash": "PRy2w6BOEhpdza4e/lc62Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ConstsInfo-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ConstsInfo-1.html",
+          "hash": "z1Rd49ICnDSlI5ScIhdXZg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Coroutine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Coroutine.html",
+          "hash": "bEmGX7zeG7RhYlqXgJpCYQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.CoroutineHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.CoroutineHandler-1.html",
+          "hash": "ICwvnyBXg0yyXVeoHhZ5Yg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.CoroutineStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.CoroutineStatus.html",
+          "hash": "RxZZ10aVIzR41/zU8NS35Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Deserializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Deserializer.html",
+          "hash": "xgoLpv3ZECgiIEH2sRSU0w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Event.Tag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Event.Tag.html",
+          "hash": "T1KVs7orwQH2fYYnH2FBQg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Event.html",
+          "hash": "kw4E6a2Pdt+PS8nyVi+Uzw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.EventBasedFlow-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.EventBasedFlow-1.html",
+          "hash": "4UjHOHyTDeXbjqGXHaEgLw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.EventEquivalent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.EventEquivalent.html",
+          "hash": "QUk8alCA+GZAI0If/L/mjQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.EventFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.EventFactory.html",
+          "hash": "NH04Kvgi4SX5tkULx6L0ag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.EventQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.EventQueue.html",
+          "hash": "Nwcmh3OsKGhsFcLqoWMyWQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.EventSink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.EventSink.html",
+          "hash": "rxL88PKVGc3EAGIbEiELnQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Extensions.html",
+          "hash": "nd5UpJ0ZGaJLemxDkEqcBg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Fingerprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Fingerprint.html",
+          "hash": "Q1kGKNahH1v9tDHEj0n1iw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Flow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Flow.html",
+          "hash": "u4zGS97qaEOClCRxL7x4Jg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.FlowStart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.FlowStart.html",
+          "hash": "PzTyU4XgEwbHaTJNSvOrAA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.FlowStop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.FlowStop.html",
+          "hash": "7OzRi9sC42WoUFBKyG7Axw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.FrameBasedFlow-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.FrameBasedFlow-1.html",
+          "hash": "IDFftwNFTjkrK2vY6Uy+FQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Getopt.Option.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Getopt.Option.html",
+          "hash": "mZcXVc3txfdesNFCIyjqgg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Getopt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Getopt.html",
+          "hash": "WTR+/fWSfeIWr2niBlG74w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Handler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Handler.html",
+          "hash": "RPnWg091gKRM/hW8SMuuhg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.HandshakeAck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.HandshakeAck.html",
+          "hash": "5TLnBa7M6DFdHBbw9Xw13Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.HandshakeReq.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.HandshakeReq.html",
+          "hash": "wLw7Qwhm8DtGLaFb1EcYMA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.HandshakeResp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.HandshakeResp.html",
+          "hash": "eXUe0Iz+2S4d6fhGrv9g/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Hash.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Hash.html",
+          "hash": "HrNiS0Ka7qiXzN0/2xEnsg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.HeartbeatEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.HeartbeatEvent.html",
+          "hash": "2fk9kYSPR0bn90t656yORg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.HeartbeatStrategy.SubStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.HeartbeatStrategy.SubStrategy.html",
+          "hash": "wTC215LMoOcbSGGc6bVzMA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.HeartbeatStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.HeartbeatStrategy.html",
+          "hash": "TFbE1Tnw02hTFPXzWjrnEQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Hub.Case.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Hub.Case.html",
+          "hash": "gkrH84NAPHov8qjQlgSaXQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Hub.Flows.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Hub.Flows.html",
+          "hash": "A0JUP4zG2CADwbklTlQaDQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Hub.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Hub.html",
+          "hash": "VaC3U6TIDzqqvMI6C2awsw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.IBufferTransform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.IBufferTransform.html",
+          "hash": "iUR/B0bQO77qW5kFnpJtYw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ICase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ICase.html",
+          "hash": "sVmTH0zxGwjgLbJPQmboXQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.IIndexable-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.IIndexable-1.html",
+          "hash": "ew2jobgFN3poJAfLoczYjQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.InvalidEncodingException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.InvalidEncodingException.html",
+          "hash": "2S0UsZsvm8e2bIEMs8kN4A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Inverse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Inverse.html",
+          "hash": "Y8wTPyDf0MXQAeW/MsnqaA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.KeepaliveSessionStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.KeepaliveSessionStrategy.html",
+          "hash": "vQQ1jCAEy4nETwIQFwhekQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.KeepaliveStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.KeepaliveStrategy.html",
+          "hash": "cComl6RAVQ+IAZ8HlUV0VA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Link.Diagnostics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Link.Diagnostics.html",
+          "hash": "+efG4Mqbey9wgfcaHswxBg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Link.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Link.html",
+          "hash": "iAqaY+OCNNa9o1SDfiAaJA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.LinkEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.LinkEventType.html",
+          "hash": "hi97a7S0JnJV9UJ2SrkHBA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.LinkHandlePool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.LinkHandlePool.html",
+          "hash": "vQFXvrOfVwoLlDm3xjFmbQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.LinkSession.Diagnostics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.LinkSession.Diagnostics.html",
+          "hash": "fKRpvIt82qFMlu2fbvmlCA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.LinkSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.LinkSession.html",
+          "hash": "N6JcDJ8QPXZuB+EieiUM3Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.LinkSessionConnected.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.LinkSessionConnected.html",
+          "hash": "3R/3ipsQQ3qEDEnd+a0R+w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.LinkSessionDisconnected.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.LinkSessionDisconnected.html",
+          "hash": "4ecSXmdUu68L+jrxawTM7w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.LinkSessionStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.LinkSessionStrategy.html",
+          "hash": "OVu0EC3E7+VCzo9EUUbOhA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.LinkStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.LinkStrategy.html",
+          "hash": "HboL66s2wk7UUkQkj5hAWg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.MethodHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.MethodHandler-1.html",
+          "hash": "YWQw+2q5PdZ/MyKrX1u5nQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.MultiThreadFlow-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.MultiThreadFlow-1.html",
+          "hash": "fZYVR+EiUbeyLS/EhVt56A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.MultiThreadFlow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.MultiThreadFlow.html",
+          "hash": "0h9SFAsbbvLZHti68AUvEQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.OutOfResourceException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.OutOfResourceException.html",
+          "hash": "O2vlgJ3HNS6BQStQ4rOZsA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.PeriodicEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.PeriodicEvent.html",
+          "hash": "QyvGwQvxsImK166U23r5fw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Pool-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Pool-1.html",
+          "hash": "+b3wWBSYTM7XaK1mncWjAQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.PriorityQueue-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.PriorityQueue-2.html",
+          "hash": "st6IPkk1RlxVGbP0RObExg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.RangedIntPool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.RangedIntPool.html",
+          "hash": "FDp/yhYaaoaWC0BLmb2/cg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ReadLock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ReadLock.html",
+          "hash": "YaZkn4wMDLtBIeDmeMXMJw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Scope.CleanupHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Scope.CleanupHandler.html",
+          "hash": "NVKojLf7AO9XqjGXsHZWLQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Scope.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Scope.html",
+          "hash": "wmuJIJe4PoOnrxa5QVOlrw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Segment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Segment.html",
+          "hash": "fWD3PkYt5D03PYpAXODEtw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SegmentPool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SegmentPool.html",
+          "hash": "GidO/4/S6Jx1M2l8aulo/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SegmentedBuffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SegmentedBuffer.html",
+          "hash": "wlLTZM4O71jB9KWvRwRDkg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SendBuffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SendBuffer.html",
+          "hash": "pH0vXjk6TcLaX7OgEohfVg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Serializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Serializer.html",
+          "hash": "TE3gH9KwMutSdIWtZPkB/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ServerKeepaliveStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ServerKeepaliveStrategy.html",
+          "hash": "kOIHcf+xo1MrEwSALcH9cA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ServerLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ServerLink.html",
+          "hash": "/5FF6CFuULfso5QQqYK4ag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SessionBasedLink.PreprocessEventHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SessionBasedLink.PreprocessEventHandler.html",
+          "hash": "l3O8I7Z899XZcuuqLEnE5Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SessionBasedLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SessionBasedLink.html",
+          "hash": "nAIP/yijo+TsZqi36rH4OA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SessionBasedLinkStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SessionBasedLinkStrategy.html",
+          "hash": "pW15al6t4YKCiGrLPxdkGw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SignalPool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SignalPool.html",
+          "hash": "zvTZZPYpQ/XK3/MR2rUacA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SimpleCipher.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SimpleCipher.Settings.html",
+          "hash": "FeLa1T/nlAMYz/gsUow3MA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SimpleCipher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SimpleCipher.html",
+          "hash": "7V2nM9hDRAEIB4llok60tA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SingleThreadFlow-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SingleThreadFlow-1.html",
+          "hash": "4jKCHoma1zbestPd4WWhkw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SingleThreadFlow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SingleThreadFlow.html",
+          "hash": "9zrhhlDTU96ZamWPTQKGIQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.StringSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.StringSerializer.html",
+          "hash": "wAJheEdgWVb8yAVwMwVYqQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.SynchronizedEventQueue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.SynchronizedEventQueue.html",
+          "hash": "2obTE7me8z5TkqjWzag01Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.TcpClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.TcpClient.html",
+          "hash": "ydfNmdJjVpSBvHVVt5ly8g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.TcpServer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.TcpServer.html",
+          "hash": "e3LOdctPxe+U3PPp7OoZow=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.TcpSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.TcpSession.html",
+          "hash": "WL0YEXcD8v/Z0STvUS6m1g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ThreadPoolFlow-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ThreadPoolFlow-1.html",
+          "hash": "biC7BWJDQruyo6bblbN7ZQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ThreadPoolFlow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ThreadPoolFlow.html",
+          "hash": "siVeIFV8+6hZHrODF0ZM7w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ThreadlessFlow-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ThreadlessFlow-1.html",
+          "hash": "w8NI8rarQvkw4+obVaeTfw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.ThreadlessFlow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.ThreadlessFlow.html",
+          "hash": "laa790TzCUKIcejGP2aNQw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Time.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Time.html",
+          "hash": "WW+WneDcQcaRg2x4vP1cag=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.TimeFlow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.TimeFlow.html",
+          "hash": "VDQMWJ04omHBkqVewIoARQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.TimeoutEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.TimeoutEvent.html",
+          "hash": "8YIrpQAJvd4ISSRyJYXsDw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Timer.Token.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Timer.Token.html",
+          "hash": "4NPe+V1LGMavrZ+CgTK6Nw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Timer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Timer.html",
+          "hash": "AMPYZF+iVEOGlduwaMm5Ww=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Trace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Trace.html",
+          "hash": "JTpW3/WTsU4iyG/q4RDWHA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.TraceHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.TraceHandler.html",
+          "hash": "4vvEmGiEqxQOWWaVs0cfPA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.TraceLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.TraceLevel.html",
+          "hash": "LlPyX1l8d65KCt2DGRnTKw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.UdpLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.UdpLink.html",
+          "hash": "SoOSWkxJA4zufUVlWdEbeQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.UpgradeableReadLock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.UpgradeableReadLock.html",
+          "hash": "lEsY+bBQzTwkivZl3p03dQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.VerboseDeserializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.VerboseDeserializer.html",
+          "hash": "S4syoqNBeFb1CMLabRE1MA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.VerboseSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.VerboseSerializer.html",
+          "hash": "WuM/PRm57xE/SH6Qqj3KCw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForAllEvents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForAllEvents.html",
+          "hash": "mYa9pJwOflBb5kU/MIM2sw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForAllResponses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForAllResponses.html",
+          "hash": "vUHlLilyNCuRJLUaxnDY1w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForAnyEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForAnyEvent.html",
+          "hash": "B8mdzyRNel/ndiUErIVyjw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForAnyResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForAnyResponse.html",
+          "hash": "FpWpSGZk/i5gptglReYbZA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForCompletion-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForCompletion-1.html",
+          "hash": "jThnmszyOqL7QaLawOVsaA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForCompletion-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForCompletion-2.html",
+          "hash": "XAVeuZ/U5i6eg4updnJF0A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForCompletion-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForCompletion-3.html",
+          "hash": "f2RGBOexHpxiDS6/TA6fzA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForCompletion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForCompletion.html",
+          "hash": "I26up2egNtv9KKVesQR8YQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForEvent.html",
+          "hash": "jYvvCwyI3Kzf2TXtYMcz6g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForNext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForNext.html",
+          "hash": "yxnBQ8nEFiVoOCXcKCfrhQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForResponse.html",
+          "hash": "pHzLvkui/JBitrh18Uwaaw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitForSeconds.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitForSeconds.html",
+          "hash": "XjBJXE2h0Pr5D6DwL5czLA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WaitHandlePool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WaitHandlePool.html",
+          "hash": "axhNB+6yT1mg3unXAYH00Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.WriteLock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.WriteLock.html",
+          "hash": "9DS7y6S2z30saib2g8eSgQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.Yield.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.Yield.html",
+          "hash": "pXCKLBQaPXgOjnnloppMnw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/x2net.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/x2net.html",
+          "hash": "lmcIDUnaVFuXew9q+1sAEA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/en/hello_world.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/en/hello_world.html",
+          "hash": "gve9xA7ZgNJeCsIsoeW/Tg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/en/install.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/en/install.html",
+          "hash": "d68djxuNBGbxwfYyNwt8YA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/index.html",
+          "hash": "h7PlD1DfWz8SZhQ7MHbbMA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ko/hello_world.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ko/hello_world.html",
+          "hash": "iZc1BmZEyO8Z+YNWqiG6CA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/ko/install.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/ko/install.html",
+          "hash": "vba38ZKwZ9DVMWwCgU4UNA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "pP74mvtQz/0kpIqiXMl+Vw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "4MlArEB4w++XK4g/LbaIQA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "+eZzeYAj5LVxvD55WT++Iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

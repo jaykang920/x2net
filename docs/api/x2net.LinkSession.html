@@ -1,0 +1,1487 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class LinkSession
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class LinkSession
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.LinkSession">
+  
+  
+  <h1 id="x2net_LinkSession" data-uid="x2net.LinkSession" class="text-break">Class LinkSession
+  </h1>
+  <div class="markdown level0 summary"><p>Abstract base class for concrete link sessions.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">LinkSession</span></div>
+      <div class="level2"><a class="xref" href="x2net.AbstractTcpSession.html">AbstractTcpSession</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_LinkSession_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class LinkSession : IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession__ctor_x2net_SessionBasedLink_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.%23ctor(x2net.SessionBasedLink)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L110">View Source</a>
+  </span>
+  <a id="x2net_LinkSession__ctor_" data-uid="x2net.LinkSession.#ctor*"></a>
+  <h4 id="x2net_LinkSession__ctor_x2net_SessionBasedLink_" data-uid="x2net.LinkSession.#ctor(x2net.SessionBasedLink)">LinkSession(SessionBasedLink)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the LinkSession class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected LinkSession(SessionBasedLink link)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.SessionBasedLink.html">SessionBasedLink</a></td>
+        <td><span class="parametername">link</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_ChannelStrategy.md&amp;value=---%0Auid%3A%20x2net.LinkSession.ChannelStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L95">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_ChannelStrategy" data-uid="x2net.LinkSession.ChannelStrategy">ChannelStrategy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public volatile ChannelStrategy.SubStrategy ChannelStrategy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.ChannelStrategy.SubStrategy.html">ChannelStrategy.SubStrategy</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_connected.md&amp;value=---%0Auid%3A%20x2net.LinkSession.connected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L37">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_connected" data-uid="x2net.LinkSession.connected">connected</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected volatile bool connected</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_disposed.md&amp;value=---%0Auid%3A%20x2net.LinkSession.disposed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L38">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_disposed" data-uid="x2net.LinkSession.disposed">disposed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected volatile bool disposed</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_eventsSending.md&amp;value=---%0Auid%3A%20x2net.LinkSession.eventsSending%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L24">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_eventsSending" data-uid="x2net.LinkSession.eventsSending">eventsSending</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Event&gt; eventsSending</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="x2net.Event.html">Event</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_eventsToSend.md&amp;value=---%0Auid%3A%20x2net.LinkSession.eventsToSend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L25">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_eventsToSend" data-uid="x2net.LinkSession.eventsToSend">eventsToSend</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Event&gt; eventsToSend</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="x2net.Event.html">Event</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_handle.md&amp;value=---%0Auid%3A%20x2net.LinkSession.handle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L15">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_handle" data-uid="x2net.LinkSession.handle">handle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int handle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_HeartbeatStrategy.md&amp;value=---%0Auid%3A%20x2net.LinkSession.HeartbeatStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L96">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_HeartbeatStrategy" data-uid="x2net.LinkSession.HeartbeatStrategy">HeartbeatStrategy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public volatile HeartbeatStrategy.SubStrategy HeartbeatStrategy</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.HeartbeatStrategy.SubStrategy.html">HeartbeatStrategy.SubStrategy</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_lengthToReceive.md&amp;value=---%0Auid%3A%20x2net.LinkSession.lengthToReceive%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L27">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_lengthToReceive" data-uid="x2net.LinkSession.lengthToReceive">lengthToReceive</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int lengthToReceive</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_lengthToSend.md&amp;value=---%0Auid%3A%20x2net.LinkSession.lengthToSend%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L28">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_lengthToSend" data-uid="x2net.LinkSession.lengthToSend">lengthToSend</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected int lengthToSend</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_link.md&amp;value=---%0Auid%3A%20x2net.LinkSession.link%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L16">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_link" data-uid="x2net.LinkSession.link">link</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SessionBasedLink link</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.SessionBasedLink.html">SessionBasedLink</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_polarity.md&amp;value=---%0Auid%3A%20x2net.LinkSession.polarity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L17">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_polarity" data-uid="x2net.LinkSession.polarity">polarity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool polarity</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_rxBeginning.md&amp;value=---%0Auid%3A%20x2net.LinkSession.rxBeginning%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L30">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_rxBeginning" data-uid="x2net.LinkSession.rxBeginning">rxBeginning</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool rxBeginning</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_rxBuffer.md&amp;value=---%0Auid%3A%20x2net.LinkSession.rxBuffer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L19">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_rxBuffer" data-uid="x2net.LinkSession.rxBuffer">rxBuffer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Buffer rxBuffer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Buffer.html">Buffer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_rxBufferList.md&amp;value=---%0Auid%3A%20x2net.LinkSession.rxBufferList%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L21">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_rxBufferList" data-uid="x2net.LinkSession.rxBufferList">rxBufferList</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;ArraySegment&lt;byte&gt;&gt; rxBufferList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">ArraySegment</span>&lt;<span class="xref">System.Byte</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_rxTransformed.md&amp;value=---%0Auid%3A%20x2net.LinkSession.rxTransformed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L31">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_rxTransformed" data-uid="x2net.LinkSession.rxTransformed">rxTransformed</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool rxTransformed</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_syncRoot.md&amp;value=---%0Auid%3A%20x2net.LinkSession.syncRoot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L35">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_syncRoot" data-uid="x2net.LinkSession.syncRoot">syncRoot</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected object syncRoot</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_txBufferList.md&amp;value=---%0Auid%3A%20x2net.LinkSession.txBufferList%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L22">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_txBufferList" data-uid="x2net.LinkSession.txBufferList">txBufferList</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;ArraySegment&lt;byte&gt;&gt; txBufferList</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">ArraySegment</span>&lt;<span class="xref">System.Byte</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_txBuffers.md&amp;value=---%0Auid%3A%20x2net.LinkSession.txBuffers%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L20">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_txBuffers" data-uid="x2net.LinkSession.txBuffers">txBuffers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;SendBuffer&gt; txBuffers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="x2net.SendBuffer.html">SendBuffer</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_txFlag.md&amp;value=---%0Auid%3A%20x2net.LinkSession.txFlag%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L33">View Source</a>
+  </span>
+  <h4 id="x2net_LinkSession_txFlag" data-uid="x2net.LinkSession.txFlag">txFlag</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool txFlag</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Connected.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Connected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L84">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Connected_" data-uid="x2net.LinkSession.Connected*"></a>
+  <h4 id="x2net_LinkSession_Connected" data-uid="x2net.LinkSession.Connected">Connected</h4>
+  <div class="markdown level1 summary"><p>Gets or sets whether this link session is in connected state or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Connected { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Context.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Context%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L43">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Context_" data-uid="x2net.LinkSession.Context*"></a>
+  <h4 id="x2net_LinkSession_Context" data-uid="x2net.LinkSession.Context">Context</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the context object associated with this link session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Context { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Diag.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Diag%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L525">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Diag_" data-uid="x2net.LinkSession.Diag*"></a>
+  <h4 id="x2net_LinkSession_Diag" data-uid="x2net.LinkSession.Diag">Diag</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the diagnostics object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LinkSession.Diagnostics Diag { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.LinkSession.Diagnostics.html">LinkSession.Diagnostics</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Handle.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Handle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L49">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Handle_" data-uid="x2net.LinkSession.Handle*"></a>
+  <h4 id="x2net_LinkSession_Handle" data-uid="x2net.LinkSession.Handle">Handle</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the link session handle that is unique in the current
+process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Handle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_HasChannelStrategy.md&amp;value=---%0Auid%3A%20x2net.LinkSession.HasChannelStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L98">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_HasChannelStrategy_" data-uid="x2net.LinkSession.HasChannelStrategy*"></a>
+  <h4 id="x2net_LinkSession_HasChannelStrategy" data-uid="x2net.LinkSession.HasChannelStrategy">HasChannelStrategy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasChannelStrategy { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_HasHeartbeatStrategy.md&amp;value=---%0Auid%3A%20x2net.LinkSession.HasHeartbeatStrategy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L102">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_HasHeartbeatStrategy_" data-uid="x2net.LinkSession.HasHeartbeatStrategy*"></a>
+  <h4 id="x2net_LinkSession_HasHeartbeatStrategy" data-uid="x2net.LinkSession.HasHeartbeatStrategy">HasHeartbeatStrategy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasHeartbeatStrategy { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_InternalHandle.md&amp;value=---%0Auid%3A%20x2net.LinkSession.InternalHandle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L89">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_InternalHandle_" data-uid="x2net.LinkSession.InternalHandle*"></a>
+  <h4 id="x2net_LinkSession_InternalHandle" data-uid="x2net.LinkSession.InternalHandle">InternalHandle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int InternalHandle { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_IsBusy.md&amp;value=---%0Auid%3A%20x2net.LinkSession.IsBusy%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L55">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_IsBusy_" data-uid="x2net.LinkSession.IsBusy*"></a>
+  <h4 id="x2net_LinkSession_IsBusy" data-uid="x2net.LinkSession.IsBusy">IsBusy</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsBusy { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Link.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Link%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L69">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Link_" data-uid="x2net.LinkSession.Link*"></a>
+  <h4 id="x2net_LinkSession_Link" data-uid="x2net.LinkSession.Link">Link</h4>
+  <div class="markdown level1 summary"><p>Gets the link associated with this session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionBasedLink Link { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.SessionBasedLink.html">SessionBasedLink</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Polarity.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Polarity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L75">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Polarity_" data-uid="x2net.LinkSession.Polarity*"></a>
+  <h4 id="x2net_LinkSession_Polarity" data-uid="x2net.LinkSession.Polarity">Polarity</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a boolean value indicating whether this session is an
+active (client) session. A passive (server) session will return false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Polarity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_BuildHeader_x2net_SendBuffer_System_Boolean_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.BuildHeader(x2net.SendBuffer%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L303">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_BuildHeader_" data-uid="x2net.LinkSession.BuildHeader*"></a>
+  <h4 id="x2net_LinkSession_BuildHeader_x2net_SendBuffer_System_Boolean_" data-uid="x2net.LinkSession.BuildHeader(x2net.SendBuffer,System.Boolean)">BuildHeader(SendBuffer, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void BuildHeader(SendBuffer sendBuffer, bool transformed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.SendBuffer.html">SendBuffer</a></td>
+        <td><span class="parametername">sendBuffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">transformed</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Close.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Close%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L134">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Close_" data-uid="x2net.LinkSession.Close*"></a>
+  <h4 id="x2net_LinkSession_Close" data-uid="x2net.LinkSession.Close">Close()</h4>
+  <div class="markdown level1 summary"><p>Actively closes this link session and releases all the associated
+resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Close()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_CloseInternal.md&amp;value=---%0Auid%3A%20x2net.LinkSession.CloseInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L143">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_CloseInternal_" data-uid="x2net.LinkSession.CloseInternal*"></a>
+  <h4 id="x2net_LinkSession_CloseInternal" data-uid="x2net.LinkSession.CloseInternal">CloseInternal()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CloseInternal()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Dispose.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L151">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Dispose_" data-uid="x2net.LinkSession.Dispose*"></a>
+  <h4 id="x2net_LinkSession_Dispose" data-uid="x2net.LinkSession.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Implements IDisposable interface.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L163">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Dispose_" data-uid="x2net.LinkSession.Dispose*"></a>
+  <h4 id="x2net_LinkSession_Dispose_System_Boolean_" data-uid="x2net.LinkSession.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Frees managed or unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Finalize.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Finalize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L125">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Finalize_" data-uid="x2net.LinkSession.Finalize*"></a>
+  <h4 id="x2net_LinkSession_Finalize" data-uid="x2net.LinkSession.Finalize">Finalize()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Finalize()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_OnClose.md&amp;value=---%0Auid%3A%20x2net.LinkSession.OnClose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L141">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_OnClose_" data-uid="x2net.LinkSession.OnClose*"></a>
+  <h4 id="x2net_LinkSession_OnClose" data-uid="x2net.LinkSession.OnClose">OnClose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void OnClose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_OnDisconnect_System_Object_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.OnDisconnect(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L446">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_OnDisconnect_" data-uid="x2net.LinkSession.OnDisconnect*"></a>
+  <h4 id="x2net_LinkSession_OnDisconnect_System_Object_" data-uid="x2net.LinkSession.OnDisconnect(System.Object)">OnDisconnect(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnDisconnect(object context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_OnEventReceived_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.OnEventReceived(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L505">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_OnEventReceived_" data-uid="x2net.LinkSession.OnEventReceived*"></a>
+  <h4 id="x2net_LinkSession_OnEventReceived_x2net_Event_" data-uid="x2net.LinkSession.OnEventReceived(x2net.Event)">OnEventReceived(Event)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnEventReceived(Event e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_OnEventSent_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.OnEventSent(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L510">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_OnEventSent_" data-uid="x2net.LinkSession.OnEventSent*"></a>
+  <h4 id="x2net_LinkSession_OnEventSent_x2net_Event_" data-uid="x2net.LinkSession.OnEventSent(x2net.Event)">OnEventSent(Event)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnEventSent(Event e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_OnReceiveInternal_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.OnReceiveInternal(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L309">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_OnReceiveInternal_" data-uid="x2net.LinkSession.OnReceiveInternal*"></a>
+  <h4 id="x2net_LinkSession_OnReceiveInternal_System_Int32_" data-uid="x2net.LinkSession.OnReceiveInternal(System.Int32)">OnReceiveInternal(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnReceiveInternal(int bytesTransferred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bytesTransferred</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_OnSendInternal_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.OnSendInternal(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L456">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_OnSendInternal_" data-uid="x2net.LinkSession.OnSendInternal*"></a>
+  <h4 id="x2net_LinkSession_OnSendInternal_System_Int32_" data-uid="x2net.LinkSession.OnSendInternal(System.Int32)">OnSendInternal(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void OnSendInternal(int bytesTransferred)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bytesTransferred</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_ParseHeader.md&amp;value=---%0Auid%3A%20x2net.LinkSession.ParseHeader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L304">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_ParseHeader_" data-uid="x2net.LinkSession.ParseHeader*"></a>
+  <h4 id="x2net_LinkSession_ParseHeader" data-uid="x2net.LinkSession.ParseHeader">ParseHeader()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool ParseHeader()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Process_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Process(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L500">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Process_" data-uid="x2net.LinkSession.Process*"></a>
+  <h4 id="x2net_LinkSession_Process_x2net_Event_" data-uid="x2net.LinkSession.Process(x2net.Event)">Process(Event)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool Process(Event e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_ReceiveInternal.md&amp;value=---%0Auid%3A%20x2net.LinkSession.ReceiveInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L306">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_ReceiveInternal_" data-uid="x2net.LinkSession.ReceiveInternal*"></a>
+  <h4 id="x2net_LinkSession_ReceiveInternal" data-uid="x2net.LinkSession.ReceiveInternal">ReceiveInternal()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void ReceiveInternal()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_Send_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.LinkSession.Send(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L192">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_Send_" data-uid="x2net.LinkSession.Send*"></a>
+  <h4 id="x2net_LinkSession_Send_x2net_Event_" data-uid="x2net.LinkSession.Send(x2net.Event)">Send(Event)</h4>
+  <div class="markdown level1 summary"><p>Sends out the specified event through this link session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Send(Event e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession_SendInternal.md&amp;value=---%0Auid%3A%20x2net.LinkSession.SendInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L307">View Source</a>
+  </span>
+  <a id="x2net_LinkSession_SendInternal_" data-uid="x2net.LinkSession.SendInternal*"></a>
+  <h4 id="x2net_LinkSession_SendInternal" data-uid="x2net.LinkSession.SendInternal">SendInternal()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void SendInternal()</code></pre>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_LinkSession.md&amp;value=---%0Auid%3A%20x2net.LinkSession%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkSession.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,573 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ClientLink
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ClientLink
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.ClientLink">
+  
+  
+  <h1 id="x2net_ClientLink" data-uid="x2net.ClientLink" class="text-break">Class ClientLink
+  </h1>
+  <div class="markdown level0 summary"><p>Common base class for single-session client links.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="x2net.EventSink.html">EventSink</a></div>
+    <div class="level2"><a class="xref" href="x2net.Case.html">Case</a></div>
+    <div class="level3"><a class="xref" href="x2net.Link.html">Link</a></div>
+    <div class="level4"><a class="xref" href="x2net.SessionBasedLink.html">SessionBasedLink</a></div>
+    <div class="level5"><span class="xref">ClientLink</span></div>
+      <div class="level6"><a class="xref" href="x2net.AbstractTcpClient.html">AbstractTcpClient</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="x2net.ICase.html">ICase</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_rwlock">SessionBasedLink.rwlock</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_Preprocess">SessionBasedLink.Preprocess</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_ChannelStrategy">SessionBasedLink.ChannelStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HeartbeatStrategy">SessionBasedLink.HeartbeatStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HasChannelStrategy">SessionBasedLink.HasChannelStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HasHeartbeatStrategy">SessionBasedLink.HasHeartbeatStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnLinkSessionConnectedInternal_System_Boolean_System_Object_">SessionBasedLink.OnLinkSessionConnectedInternal(Boolean, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnLinkSessionDisconnectedInternal_System_Int32_System_Object_">SessionBasedLink.OnLinkSessionDisconnectedInternal(Int32, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnSessionConnected_System_Boolean_System_Object_">SessionBasedLink.OnSessionConnected(Boolean, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnSessionDisconnected_System_Int32_System_Object_">SessionBasedLink.OnSessionDisconnected(Int32, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_InitiateSession_x2net_LinkSession_">SessionBasedLink.InitiateSession(LinkSession)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_SetupInternal">SessionBasedLink.SetupInternal()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_TeardownInternal">SessionBasedLink.TeardownInternal()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_EventFactory">Link.EventFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Name">Link.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Close">Link.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_CreateEvent_System_Int32_">Link.CreateEvent(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Diag">Link.Diag</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Setup_x2net_Flow_">Case.Setup(Flow)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Teardown_x2net_Flow_">Case.Teardown(Flow)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Start">Case.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Stop">Case.Stop()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Setup">Case.Setup()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Teardown">Case.Teardown()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_OnStart">Case.OnStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_OnStop">Case.OnStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_disposed">EventSink.disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Flow">EventSink.Flow</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Dispose">EventSink.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_EnsureNotDisposed">EventSink.EnsureNotDisposed()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind_x2net_Binding_Token_">EventSink.Bind(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind_x2net_Binding_Token_">EventSink.Unbind(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_ClientLink_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ClientLink : SessionBasedLink, ICase</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink__ctor_System_String_.md&amp;value=---%0Auid%3A%20x2net.ClientLink.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L35">View Source</a>
+  </span>
+  <a id="x2net_ClientLink__ctor_" data-uid="x2net.ClientLink.#ctor*"></a>
+  <h4 id="x2net_ClientLink__ctor_System_String_" data-uid="x2net.ClientLink.#ctor(System.String)">ClientLink(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the ClientLink class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ClientLink(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink_session.md&amp;value=---%0Auid%3A%20x2net.ClientLink.session%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L16">View Source</a>
+  </span>
+  <h4 id="x2net_ClientLink_session" data-uid="x2net.ClientLink.session">session</h4>
+  <div class="markdown level1 summary"><p>Current link session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected LinkSession session</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.LinkSession.html">LinkSession</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink_Session.md&amp;value=---%0Auid%3A%20x2net.ClientLink.Session%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L21">View Source</a>
+  </span>
+  <a id="x2net_ClientLink_Session_" data-uid="x2net.ClientLink.Session*"></a>
+  <h4 id="x2net_ClientLink_Session" data-uid="x2net.ClientLink.Session">Session</h4>
+  <div class="markdown level1 summary"><p>Gets the current link session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LinkSession Session { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.LinkSession.html">LinkSession</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20x2net.ClientLink.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L63">View Source</a>
+  </span>
+  <a id="x2net_ClientLink_Dispose_" data-uid="x2net.ClientLink.Dispose*"></a>
+  <h4 id="x2net_ClientLink_Dispose_System_Boolean_" data-uid="x2net.ClientLink.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Frees managed or unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_Dispose_System_Boolean_">SessionBasedLink.Dispose(Boolean)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink_OnConnectInternal_x2net_LinkSession_.md&amp;value=---%0Auid%3A%20x2net.ClientLink.OnConnectInternal(x2net.LinkSession)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L87">View Source</a>
+  </span>
+  <a id="x2net_ClientLink_OnConnectInternal_" data-uid="x2net.ClientLink.OnConnectInternal*"></a>
+  <h4 id="x2net_ClientLink_OnConnectInternal_x2net_LinkSession_" data-uid="x2net.ClientLink.OnConnectInternal(x2net.LinkSession)">OnConnectInternal(LinkSession)</h4>
+  <div class="markdown level1 summary"><p>Called by a derived link class on a successful connect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnConnectInternal(LinkSession session)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.LinkSession.html">LinkSession</a></td>
+        <td><span class="parametername">session</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink_OnSessionConnectedInternal_System_Boolean_System_Object_.md&amp;value=---%0Auid%3A%20x2net.ClientLink.OnSessionConnectedInternal(System.Boolean%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L93">View Source</a>
+  </span>
+  <a id="x2net_ClientLink_OnSessionConnectedInternal_" data-uid="x2net.ClientLink.OnSessionConnectedInternal*"></a>
+  <h4 id="x2net_ClientLink_OnSessionConnectedInternal_System_Boolean_System_Object_" data-uid="x2net.ClientLink.OnSessionConnectedInternal(System.Boolean,System.Object)">OnSessionConnectedInternal(Boolean, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnSessionConnectedInternal(bool result, object context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">result</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnSessionConnectedInternal_System_Boolean_System_Object_">SessionBasedLink.OnSessionConnectedInternal(Boolean, Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink_OnSessionDisconnectedInternal_System_Int32_System_Object_.md&amp;value=---%0Auid%3A%20x2net.ClientLink.OnSessionDisconnectedInternal(System.Int32%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L105">View Source</a>
+  </span>
+  <a id="x2net_ClientLink_OnSessionDisconnectedInternal_" data-uid="x2net.ClientLink.OnSessionDisconnectedInternal*"></a>
+  <h4 id="x2net_ClientLink_OnSessionDisconnectedInternal_System_Int32_System_Object_" data-uid="x2net.ClientLink.OnSessionDisconnectedInternal(System.Int32,System.Object)">OnSessionDisconnectedInternal(Int32, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnSessionDisconnectedInternal(int handle, object context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">handle</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnSessionDisconnectedInternal_System_Int32_System_Object_">SessionBasedLink.OnSessionDisconnectedInternal(Int32, Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink_Reconnect.md&amp;value=---%0Auid%3A%20x2net.ClientLink.Reconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L44">View Source</a>
+  </span>
+  <a id="x2net_ClientLink_Reconnect_" data-uid="x2net.ClientLink.Reconnect*"></a>
+  <h4 id="x2net_ClientLink_Reconnect" data-uid="x2net.ClientLink.Reconnect">Reconnect()</h4>
+  <div class="markdown level1 summary"><p>Tries to reconnect to the last successful remote address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Reconnect()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink_Send_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.ClientLink.Send(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L49">View Source</a>
+  </span>
+  <a id="x2net_ClientLink_Send_" data-uid="x2net.ClientLink.Send*"></a>
+  <h4 id="x2net_ClientLink_Send_x2net_Event_" data-uid="x2net.ClientLink.Send(x2net.Event)">Send(Event)</h4>
+  <div class="markdown level1 summary"><p>Sends out the specified event through this link channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Send(Event e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Link.html#x2net_Link_Send_x2net_Event_">Link.Send(Event)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="x2net.ICase.html">ICase</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_ClientLink.md&amp;value=---%0Auid%3A%20x2net.ClientLink%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/ClientLink.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

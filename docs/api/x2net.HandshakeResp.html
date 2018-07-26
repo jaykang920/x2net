@@ -1,0 +1,892 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class HandshakeResp
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class HandshakeResp
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.HandshakeResp">
+  
+  
+  <h1 id="x2net_HandshakeResp" data-uid="x2net.HandshakeResp" class="text-break">Class HandshakeResp
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="x2net.Cell.html">Cell</a></div>
+    <div class="level2"><a class="xref" href="x2net.Event.html">Event</a></div>
+    <div class="level3"><span class="xref">HandshakeResp</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event__Channel">Event._Channel</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event__Handle">Event._Handle</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event__Transform">Event._Transform</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event__WaitHandle">Event._WaitHandle</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_ToString">Event.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_GetHashCode">Event.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_GetHashCode_x2net_Fingerprint_System_Int32_">Event.GetHashCode(Fingerprint, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_fingerprint">Cell.fingerprint</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Equals_System_Object_">Cell.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Equivalent_x2net_Cell_">Cell.Equivalent(Cell)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Equivalent_x2net_Cell_x2net_Fingerprint_">Cell.Equivalent(Cell, Fingerprint)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_GetFingerprint">Cell.GetFingerprint()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_IsKindOf_x2net_Cell_">Cell.IsKindOf(Cell)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_ToString_StringBuilder_">Cell.ToString(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_GetLength">Cell.GetLength()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Serialize_x2net_Serializer_">Cell.Serialize(Serializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Serialize_x2net_VerboseSerializer_">Cell.Serialize(VerboseSerializer)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_HandshakeResp_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class HandshakeResp : Event</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp__ctor.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L592">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp__ctor_" data-uid="x2net.HandshakeResp.#ctor*"></a>
+  <h4 id="x2net_HandshakeResp__ctor" data-uid="x2net.HandshakeResp.#ctor">HandshakeResp()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HandshakeResp()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.%23ctor(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L598">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp__ctor_" data-uid="x2net.HandshakeResp.#ctor*"></a>
+  <h4 id="x2net_HandshakeResp__ctor_System_Int32_" data-uid="x2net.HandshakeResp.#ctor(System.Int32)">HandshakeResp(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected HandshakeResp(int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_tag.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.tag%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L565">View Source</a>
+  </span>
+  <h4 id="x2net_HandshakeResp_tag" data-uid="x2net.HandshakeResp.tag">tag</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static readonly Event.Tag tag</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.Tag.html">Event.Tag</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_Data.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.Data%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L571">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_Data_" data-uid="x2net.HandshakeResp.Data*"></a>
+  <h4 id="x2net_HandshakeResp_Data" data-uid="x2net.HandshakeResp.Data">Data</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] Data { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_TypeId.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.TypeId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L567">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_TypeId_" data-uid="x2net.HandshakeResp.TypeId*"></a>
+  <h4 id="x2net_HandshakeResp_TypeId" data-uid="x2net.HandshakeResp.TypeId">TypeId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int TypeId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_Describe_StringBuilder_.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.Describe(StringBuilder)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L727">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_Describe_" data-uid="x2net.HandshakeResp.Describe*"></a>
+  <h4 id="x2net_HandshakeResp_Describe_StringBuilder_" data-uid="x2net.HandshakeResp.Describe(StringBuilder)">Describe(StringBuilder)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Describe(StringBuilder stringBuilder)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">StringBuilder</span></td>
+        <td><span class="parametername">stringBuilder</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_Describe_StringBuilder_">Event.Describe(StringBuilder)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_Deserialize_x2net_Deserializer_.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.Deserialize(x2net.Deserializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L667">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_Deserialize_" data-uid="x2net.HandshakeResp.Deserialize*"></a>
+  <h4 id="x2net_HandshakeResp_Deserialize_x2net_Deserializer_" data-uid="x2net.HandshakeResp.Deserialize(x2net.Deserializer)">Deserialize(Deserializer)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Deserialize(Deserializer deserializer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Deserializer.html">Deserializer</a></td>
+        <td><span class="parametername">deserializer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_Deserialize_x2net_Deserializer_">Event.Deserialize(Deserializer)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_Deserialize_x2net_VerboseDeserializer_.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.Deserialize(x2net.VerboseDeserializer)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L677">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_Deserialize_" data-uid="x2net.HandshakeResp.Deserialize*"></a>
+  <h4 id="x2net_HandshakeResp_Deserialize_x2net_VerboseDeserializer_" data-uid="x2net.HandshakeResp.Deserialize(x2net.VerboseDeserializer)">Deserialize(VerboseDeserializer)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Deserialize(VerboseDeserializer deserializer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.VerboseDeserializer.html">VerboseDeserializer</a></td>
+        <td><span class="parametername">deserializer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_Deserialize_x2net_VerboseDeserializer_">Event.Deserialize(VerboseDeserializer)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_EqualsTo_x2net_Cell_.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.EqualsTo(x2net.Cell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L604">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_EqualsTo_" data-uid="x2net.HandshakeResp.EqualsTo*"></a>
+  <h4 id="x2net_HandshakeResp_EqualsTo_x2net_Cell_" data-uid="x2net.HandshakeResp.EqualsTo(x2net.Cell)">EqualsTo(Cell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool EqualsTo(Cell other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Cell.html">Cell</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_EqualsTo_x2net_Cell_">Event.EqualsTo(Cell)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_GetFactoryMethod.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.GetFactoryMethod%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L644">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_GetFactoryMethod_" data-uid="x2net.HandshakeResp.GetFactoryMethod*"></a>
+  <h4 id="x2net_HandshakeResp_GetFactoryMethod" data-uid="x2net.HandshakeResp.GetFactoryMethod">GetFactoryMethod()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Func&lt;Event&gt; GetFactoryMethod()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Event.html">Event</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_GetFactoryMethod">Event.GetFactoryMethod()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_GetHashCode_x2net_Fingerprint_.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.GetHashCode(x2net.Fingerprint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L618">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_GetHashCode_" data-uid="x2net.HandshakeResp.GetHashCode*"></a>
+  <h4 id="x2net_HandshakeResp_GetHashCode_x2net_Fingerprint_" data-uid="x2net.HandshakeResp.GetHashCode(x2net.Fingerprint)">GetHashCode(Fingerprint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode(Fingerprint fingerprint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Fingerprint.html">Fingerprint</a></td>
+        <td><span class="parametername">fingerprint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_GetHashCode_x2net_Fingerprint_">Event.GetHashCode(Fingerprint)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_GetLength_Type_System_Boolean__.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.GetLength(Type%2CSystem.Boolean%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L683">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_GetLength_" data-uid="x2net.HandshakeResp.GetLength*"></a>
+  <h4 id="x2net_HandshakeResp_GetLength_Type_System_Boolean__" data-uid="x2net.HandshakeResp.GetLength(Type,System.Boolean@)">GetLength(Type, ref Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetLength(Type targetType, ref bool flag)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Type</span></td>
+        <td><span class="parametername">targetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">flag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_GetLength_Type_System_Boolean__">Event.GetLength(Type, ref Boolean)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_GetTypeId.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.GetTypeId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L634">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_GetTypeId_" data-uid="x2net.HandshakeResp.GetTypeId*"></a>
+  <h4 id="x2net_HandshakeResp_GetTypeId" data-uid="x2net.HandshakeResp.GetTypeId">GetTypeId()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetTypeId()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_GetTypeId">Event.GetTypeId()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_GetTypeTag.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.GetTypeTag%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L639">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_GetTypeTag_" data-uid="x2net.HandshakeResp.GetTypeTag*"></a>
+  <h4 id="x2net_HandshakeResp_GetTypeTag" data-uid="x2net.HandshakeResp.GetTypeTag">GetTypeTag()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Cell.Tag GetTypeTag()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Cell.Tag.html">Cell.Tag</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_GetTypeTag">Event.GetTypeTag()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_IsEquivalent_x2net_Cell_x2net_Fingerprint_.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.IsEquivalent(x2net.Cell%2Cx2net.Fingerprint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L649">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_IsEquivalent_" data-uid="x2net.HandshakeResp.IsEquivalent*"></a>
+  <h4 id="x2net_HandshakeResp_IsEquivalent_x2net_Cell_x2net_Fingerprint_" data-uid="x2net.HandshakeResp.IsEquivalent(x2net.Cell,x2net.Fingerprint)">IsEquivalent(Cell, Fingerprint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool IsEquivalent(Cell other, Fingerprint fingerprint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Cell.html">Cell</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="x2net.Fingerprint.html">Fingerprint</a></td>
+        <td><span class="parametername">fingerprint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_IsEquivalent_x2net_Cell_x2net_Fingerprint_">Event.IsEquivalent(Cell, Fingerprint)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_New.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.New%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L587">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_New_" data-uid="x2net.HandshakeResp.New*"></a>
+  <h4 id="x2net_HandshakeResp_New" data-uid="x2net.HandshakeResp.New">New()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HandshakeResp New()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.HandshakeResp.html">HandshakeResp</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_Serialize_x2net_Serializer_Type_System_Boolean__.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.Serialize(x2net.Serializer%2CType%2CSystem.Boolean%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L699">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_Serialize_" data-uid="x2net.HandshakeResp.Serialize*"></a>
+  <h4 id="x2net_HandshakeResp_Serialize_x2net_Serializer_Type_System_Boolean__" data-uid="x2net.HandshakeResp.Serialize(x2net.Serializer,Type,System.Boolean@)">Serialize(Serializer, Type, ref Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Serialize(Serializer serializer, Type targetType, ref bool flag)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Serializer.html">Serializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Type</span></td>
+        <td><span class="parametername">targetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">flag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_Serialize_x2net_Serializer_Type_System_Boolean__">Event.Serialize(Serializer, Type, ref Boolean)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp_Serialize_x2net_VerboseSerializer_Type_System_Boolean__.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp.Serialize(x2net.VerboseSerializer%2CType%2CSystem.Boolean%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L715">View Source</a>
+  </span>
+  <a id="x2net_HandshakeResp_Serialize_" data-uid="x2net.HandshakeResp.Serialize*"></a>
+  <h4 id="x2net_HandshakeResp_Serialize_x2net_VerboseSerializer_Type_System_Boolean__" data-uid="x2net.HandshakeResp.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)">Serialize(VerboseSerializer, Type, ref Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Serialize(VerboseSerializer serializer, Type targetType, ref bool flag)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.VerboseSerializer.html">VerboseSerializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Type</span></td>
+        <td><span class="parametername">targetType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">flag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_Serialize_x2net_VerboseSerializer_Type_System_Boolean__">Event.Serialize(VerboseSerializer, Type, ref Boolean)</a></div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Bind__1___0_Action___0__">Extensions.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Bind__1___0_Action___0__Predicate___0__">Extensions.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">Extensions.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">Extensions.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_InResponseOf__1___0_x2net_Event_">Extensions.InResponseOf&lt;T&gt;(T, Event)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_InChannel__1___0_System_String_">Extensions.InChannel&lt;T&gt;(T, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Post_x2net_Event_">Extensions.Post(Event)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Action___0__">Extensions.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Action___0__Predicate___0__">Extensions.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">Extensions.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">Extensions.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_HandshakeResp.md&amp;value=---%0Auid%3A%20x2net.HandshakeResp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/LinkEvents.cs/#L563" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

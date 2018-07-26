@@ -22,7 +22,7 @@ Task("Clean")
 {
     CleanDirectory(outDir);
     CleanDirectory(testDir);
-	
+
 	// Intermediate
 	CleanDirectory(Directory("./src/x2net/obj"));
 	CleanDirectory(Directory("./src/xpiler/obj"));
@@ -72,7 +72,7 @@ Task("Core-Build")
     DotNetCoreRestore("./x2netcore.sln");
 
     var targetFramework = "netcoreapp2.0";
-	
+
 	var buildSettings =  new DotNetCoreBuildSettings {
         Framework = targetFramework,
         Configuration = configuration,
@@ -92,6 +92,18 @@ Task("Core-Tests")
     });
 });
 
+Task("DocFx")
+    .Does(() =>
+{
+    CleanDirectory("docs");
+    using(var process = StartAndReturnProcess("docfx", new ProcessSettings{
+        WorkingDirectory = "doc"
+    }))
+    {
+        process.WaitForExit();
+    }
+});
+
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS
 //////////////////////////////////////////////////////////////////////
@@ -101,6 +113,9 @@ Task("Default")
 
 Task("Core")
     .IsDependentOn("Core-Tests");
+
+Task("Doc")
+    .IsDependentOn("DocFx");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION

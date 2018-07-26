@@ -1,0 +1,1117 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AbstractTcpClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AbstractTcpClient
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.AbstractTcpClient">
+  
+  
+  <h1 id="x2net_AbstractTcpClient" data-uid="x2net.AbstractTcpClient" class="text-break">Class AbstractTcpClient
+  </h1>
+  <div class="markdown level0 summary"><p>Abstract base class for TCP/IP client links.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="x2net.EventSink.html">EventSink</a></div>
+    <div class="level2"><a class="xref" href="x2net.Case.html">Case</a></div>
+    <div class="level3"><a class="xref" href="x2net.Link.html">Link</a></div>
+    <div class="level4"><a class="xref" href="x2net.SessionBasedLink.html">SessionBasedLink</a></div>
+    <div class="level5"><a class="xref" href="x2net.ClientLink.html">ClientLink</a></div>
+    <div class="level6"><span class="xref">AbstractTcpClient</span></div>
+      <div class="level7"><a class="xref" href="x2net.AsyncTcpClient.html">AsyncTcpClient</a></div>
+      <div class="level7"><a class="xref" href="x2net.TcpClient.html">TcpClient</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="x2net.ICase.html">ICase</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_session">ClientLink.session</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_Session">ClientLink.Session</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_Send_x2net_Event_">ClientLink.Send(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_Dispose_System_Boolean_">ClientLink.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_rwlock">SessionBasedLink.rwlock</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_Preprocess">SessionBasedLink.Preprocess</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_ChannelStrategy">SessionBasedLink.ChannelStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HeartbeatStrategy">SessionBasedLink.HeartbeatStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HasChannelStrategy">SessionBasedLink.HasChannelStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HasHeartbeatStrategy">SessionBasedLink.HasHeartbeatStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnLinkSessionConnectedInternal_System_Boolean_System_Object_">SessionBasedLink.OnLinkSessionConnectedInternal(Boolean, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnLinkSessionDisconnectedInternal_System_Int32_System_Object_">SessionBasedLink.OnLinkSessionDisconnectedInternal(Int32, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnSessionConnected_System_Boolean_System_Object_">SessionBasedLink.OnSessionConnected(Boolean, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnSessionDisconnected_System_Int32_System_Object_">SessionBasedLink.OnSessionDisconnected(Int32, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_InitiateSession_x2net_LinkSession_">SessionBasedLink.InitiateSession(LinkSession)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_EventFactory">Link.EventFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Name">Link.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Close">Link.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_CreateEvent_System_Int32_">Link.CreateEvent(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Diag">Link.Diag</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Setup_x2net_Flow_">Case.Setup(Flow)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Teardown_x2net_Flow_">Case.Teardown(Flow)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Start">Case.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Stop">Case.Stop()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Setup">Case.Setup()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Teardown">Case.Teardown()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_OnStart">Case.OnStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_OnStop">Case.OnStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_disposed">EventSink.disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Flow">EventSink.Flow</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Dispose">EventSink.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_EnsureNotDisposed">EventSink.EnsureNotDisposed()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind_x2net_Binding_Token_">EventSink.Bind(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind_x2net_Binding_Token_">EventSink.Unbind(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_AbstractTcpClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class AbstractTcpClient : ClientLink, ICase</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient__ctor_System_String_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L115">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient__ctor_" data-uid="x2net.AbstractTcpClient.#ctor*"></a>
+  <h4 id="x2net_AbstractTcpClient__ctor_System_String_" data-uid="x2net.AbstractTcpClient.#ctor(System.String)">AbstractTcpClient(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the AbstractTcpClient class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected AbstractTcpClient(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_AutoReconnect.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.AutoReconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L91">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_AutoReconnect_" data-uid="x2net.AbstractTcpClient.AutoReconnect*"></a>
+  <h4 id="x2net_AbstractTcpClient_AutoReconnect" data-uid="x2net.AbstractTcpClient.AutoReconnect">AutoReconnect</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a boolean value indicating whether this link should
+start a new connection attempt automatically on disconnect, toward
+the previous remote endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AutoReconnect { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_Connected.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.Connected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L40">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_Connected_" data-uid="x2net.AbstractTcpClient.Connected*"></a>
+  <h4 id="x2net_AbstractTcpClient_Connected" data-uid="x2net.AbstractTcpClient.Connected">Connected</h4>
+  <div class="markdown level1 summary"><p>Gets whether this client link is currently connected or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Connected { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_DisconnectDelay.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.DisconnectDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L109">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_DisconnectDelay_" data-uid="x2net.AbstractTcpClient.DisconnectDelay*"></a>
+  <h4 id="x2net_AbstractTcpClient_DisconnectDelay" data-uid="x2net.AbstractTcpClient.DisconnectDelay">DisconnectDelay</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a length of time, in milliseconds, after which a
+disconnection is considered when the DisconnectOnComplete is set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DisconnectDelay { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_DisconnectOnComplete.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.DisconnectOnComplete%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L104">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_DisconnectOnComplete_" data-uid="x2net.AbstractTcpClient.DisconnectOnComplete*"></a>
+  <h4 id="x2net_AbstractTcpClient_DisconnectOnComplete" data-uid="x2net.AbstractTcpClient.DisconnectOnComplete">DisconnectOnComplete</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a boolean value indicating whether the connection is to
+be closed on completion of requested tasks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DisconnectOnComplete { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_MaxRetryCount.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.MaxRetryCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L78">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_MaxRetryCount_" data-uid="x2net.AbstractTcpClient.MaxRetryCount*"></a>
+  <h4 id="x2net_AbstractTcpClient_MaxRetryCount" data-uid="x2net.AbstractTcpClient.MaxRetryCount">MaxRetryCount</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the maximum number of connection retries before this
+link declares a connection failure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxRetryCount { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="x2net_AbstractTcpClient_MaxRetryCount_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Default value is 0 (no retry). A negative integer such as -1 means
+that the link should retry for unlimited times.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_NoDelay.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.NoDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L66">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_NoDelay_" data-uid="x2net.AbstractTcpClient.NoDelay*"></a>
+  <h4 id="x2net_AbstractTcpClient_NoDelay" data-uid="x2net.AbstractTcpClient.NoDelay">NoDelay</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a boolean value indicating whether the client sockets
+are not to use the Nagle algorithm.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool NoDelay { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_ReconnectDelay.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.ReconnectDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L95">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_ReconnectDelay_" data-uid="x2net.AbstractTcpClient.ReconnectDelay*"></a>
+  <h4 id="x2net_AbstractTcpClient_ReconnectDelay" data-uid="x2net.AbstractTcpClient.ReconnectDelay">ReconnectDelay</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a delay before an automatic reconnect, in milliseconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ReconnectDelay { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_RemoteHost.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.RemoteHost%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L54">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_RemoteHost_" data-uid="x2net.AbstractTcpClient.RemoteHost*"></a>
+  <h4 id="x2net_AbstractTcpClient_RemoteHost" data-uid="x2net.AbstractTcpClient.RemoteHost">RemoteHost</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the remote host address string to connect to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RemoteHost { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_RemotePort.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.RemotePort%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L58">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_RemotePort_" data-uid="x2net.AbstractTcpClient.RemotePort*"></a>
+  <h4 id="x2net_AbstractTcpClient_RemotePort" data-uid="x2net.AbstractTcpClient.RemotePort">RemotePort</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the remote port number to connect to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RemotePort { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_ResponseTimeout.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.ResponseTimeout%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L110">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_ResponseTimeout_" data-uid="x2net.AbstractTcpClient.ResponseTimeout*"></a>
+  <h4 id="x2net_AbstractTcpClient_ResponseTimeout" data-uid="x2net.AbstractTcpClient.ResponseTimeout">ResponseTimeout</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ResponseTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_RetryInterval.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.RetryInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L82">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_RetryInterval_" data-uid="x2net.AbstractTcpClient.RetryInterval*"></a>
+  <h4 id="x2net_AbstractTcpClient_RetryInterval" data-uid="x2net.AbstractTcpClient.RetryInterval">RetryInterval</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the connection retry interval time in milliseconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double RetryInterval { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_Connect.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.Connect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L131">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_Connect_" data-uid="x2net.AbstractTcpClient.Connect*"></a>
+  <h4 id="x2net_AbstractTcpClient_Connect" data-uid="x2net.AbstractTcpClient.Connect">Connect()</h4>
+  <div class="markdown level1 summary"><p>Connects to the endpoint RemoteHost:RemotePort.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Connect()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_Connect_IPAddress_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.Connect(IPAddress%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L265">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_Connect_" data-uid="x2net.AbstractTcpClient.Connect*"></a>
+  <h4 id="x2net_AbstractTcpClient_Connect_IPAddress_System_Int32_" data-uid="x2net.AbstractTcpClient.Connect(IPAddress,System.Int32)">Connect(IPAddress, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to the specified IP address and port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Connect(IPAddress ip, int port)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IPAddress</span></td>
+        <td><span class="parametername">ip</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">port</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_Connect_System_String_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.Connect(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L139">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_Connect_" data-uid="x2net.AbstractTcpClient.Connect*"></a>
+  <h4 id="x2net_AbstractTcpClient_Connect_System_String_" data-uid="x2net.AbstractTcpClient.Connect(System.String)">Connect(String)</h4>
+  <div class="markdown level1 summary"><p>Connects to the specified remote address (host:port).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Connect(string address)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_Connect_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.Connect(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L148">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_Connect_" data-uid="x2net.AbstractTcpClient.Connect*"></a>
+  <h4 id="x2net_AbstractTcpClient_Connect_System_String_System_Int32_" data-uid="x2net.AbstractTcpClient.Connect(System.String,System.Int32)">Connect(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Connects to the specified remote address. The port parameter is used
+when the given address does not contain a remote port number,</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Connect(string address, int port)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">port</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_ConnectAndRequest_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.ConnectAndRequest(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L225">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_ConnectAndRequest_" data-uid="x2net.AbstractTcpClient.ConnectAndRequest*"></a>
+  <h4 id="x2net_AbstractTcpClient_ConnectAndRequest_x2net_Event_" data-uid="x2net.AbstractTcpClient.ConnectAndRequest(x2net.Event)">ConnectAndRequest(Event)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConnectAndRequest(Event req)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">req</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_ConnectAndSend_x2net_Event_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.ConnectAndSend(x2net.Event)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L187">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_ConnectAndSend_" data-uid="x2net.AbstractTcpClient.ConnectAndSend*"></a>
+  <h4 id="x2net_AbstractTcpClient_ConnectAndSend_x2net_Event_" data-uid="x2net.AbstractTcpClient.ConnectAndSend(x2net.Event)">ConnectAndSend(Event)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ConnectAndSend(Event e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td><span class="parametername">e</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_ConnectInternal_Socket_EndPoint_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.ConnectInternal(Socket%2CEndPoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L381">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_ConnectInternal_" data-uid="x2net.AbstractTcpClient.ConnectInternal*"></a>
+  <h4 id="x2net_AbstractTcpClient_ConnectInternal_Socket_EndPoint_" data-uid="x2net.AbstractTcpClient.ConnectInternal(Socket,EndPoint)">ConnectInternal(Socket, EndPoint)</h4>
+  <div class="markdown level1 summary"><p>Provides an actual implementation of asynchronous Connect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void ConnectInternal(Socket socket, EndPoint endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Socket</span></td>
+        <td><span class="parametername">socket</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EndPoint</span></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_Disconnect.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.Disconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L280">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_Disconnect_" data-uid="x2net.AbstractTcpClient.Disconnect*"></a>
+  <h4 id="x2net_AbstractTcpClient_Disconnect" data-uid="x2net.AbstractTcpClient.Disconnect">Disconnect()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Disconnect()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_OnConnectError_Socket_EndPoint_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.OnConnectError(Socket%2CEndPoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L411">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_OnConnectError_" data-uid="x2net.AbstractTcpClient.OnConnectError*"></a>
+  <h4 id="x2net_AbstractTcpClient_OnConnectError_Socket_EndPoint_" data-uid="x2net.AbstractTcpClient.OnConnectError(Socket,EndPoint)">OnConnectError(Socket, EndPoint)</h4>
+  <div class="markdown level1 summary"><p>Called by a derived link class when a connection attempt fails.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnConnectError(Socket socket, EndPoint endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Socket</span></td>
+        <td><span class="parametername">socket</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EndPoint</span></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_OnConnectInternal_x2net_LinkSession_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.OnConnectInternal(x2net.LinkSession)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L386">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_OnConnectInternal_" data-uid="x2net.AbstractTcpClient.OnConnectInternal*"></a>
+  <h4 id="x2net_AbstractTcpClient_OnConnectInternal_x2net_LinkSession_" data-uid="x2net.AbstractTcpClient.OnConnectInternal(x2net.LinkSession)">OnConnectInternal(LinkSession)</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_OnConnectInternal_x2net_LinkSession_">OnConnectInternal(LinkSession)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnConnectInternal(LinkSession session)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.LinkSession.html">LinkSession</a></td>
+        <td><span class="parametername">session</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_OnConnectInternal_x2net_LinkSession_">ClientLink.OnConnectInternal(LinkSession)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_OnSessionConnectedInternal_System_Boolean_System_Object_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.OnSessionConnectedInternal(System.Boolean%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L324">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_OnSessionConnectedInternal_" data-uid="x2net.AbstractTcpClient.OnSessionConnectedInternal*"></a>
+  <h4 id="x2net_AbstractTcpClient_OnSessionConnectedInternal_System_Boolean_System_Object_" data-uid="x2net.AbstractTcpClient.OnSessionConnectedInternal(System.Boolean,System.Object)">OnSessionConnectedInternal(Boolean, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnSessionConnectedInternal(bool result, object context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">result</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_OnSessionConnectedInternal_System_Boolean_System_Object_">ClientLink.OnSessionConnectedInternal(Boolean, Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_OnSessionDisconnectedInternal_System_Int32_System_Object_.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.OnSessionDisconnectedInternal(System.Int32%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L353">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_OnSessionDisconnectedInternal_" data-uid="x2net.AbstractTcpClient.OnSessionDisconnectedInternal*"></a>
+  <h4 id="x2net_AbstractTcpClient_OnSessionDisconnectedInternal_System_Int32_System_Object_" data-uid="x2net.AbstractTcpClient.OnSessionDisconnectedInternal(System.Int32,System.Object)">OnSessionDisconnectedInternal(Int32, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnSessionDisconnectedInternal(int handle, object context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">handle</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_OnSessionDisconnectedInternal_System_Int32_System_Object_">ClientLink.OnSessionDisconnectedInternal(Int32, Object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_Reconnect.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.Reconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L308">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_Reconnect_" data-uid="x2net.AbstractTcpClient.Reconnect*"></a>
+  <h4 id="x2net_AbstractTcpClient_Reconnect" data-uid="x2net.AbstractTcpClient.Reconnect">Reconnect()</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_Reconnect">Reconnect()</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Reconnect()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_Reconnect">ClientLink.Reconnect()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_SetupInternal.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.SetupInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L440">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_SetupInternal_" data-uid="x2net.AbstractTcpClient.SetupInternal*"></a>
+  <h4 id="x2net_AbstractTcpClient_SetupInternal" data-uid="x2net.AbstractTcpClient.SetupInternal">SetupInternal()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void SetupInternal()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_SetupInternal">SessionBasedLink.SetupInternal()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient_TeardownInternal.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient.TeardownInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L453">View Source</a>
+  </span>
+  <a id="x2net_AbstractTcpClient_TeardownInternal_" data-uid="x2net.AbstractTcpClient.TeardownInternal*"></a>
+  <h4 id="x2net_AbstractTcpClient_TeardownInternal" data-uid="x2net.AbstractTcpClient.TeardownInternal">TeardownInternal()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void TeardownInternal()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_TeardownInternal">SessionBasedLink.TeardownInternal()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="x2net.ICase.html">ICase</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AbstractTcpClient.md&amp;value=---%0Auid%3A%20x2net.AbstractTcpClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AbstractTcpClient.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TcpClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TcpClient
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.TcpClient">
+  
+  
+  <h1 id="x2net_TcpClient" data-uid="x2net.TcpClient" class="text-break">Class TcpClient
+  </h1>
+  <div class="markdown level0 summary"><p>TCP/IP client link based on the Begin/End pattern.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="x2net.EventSink.html">EventSink</a></div>
+    <div class="level2"><a class="xref" href="x2net.Case.html">Case</a></div>
+    <div class="level3"><a class="xref" href="x2net.Link.html">Link</a></div>
+    <div class="level4"><a class="xref" href="x2net.SessionBasedLink.html">SessionBasedLink</a></div>
+    <div class="level5"><a class="xref" href="x2net.ClientLink.html">ClientLink</a></div>
+    <div class="level6"><a class="xref" href="x2net.AbstractTcpClient.html">AbstractTcpClient</a></div>
+    <div class="level7"><span class="xref">TcpClient</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="x2net.ICase.html">ICase</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connected">AbstractTcpClient.Connected</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_RemoteHost">AbstractTcpClient.RemoteHost</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_RemotePort">AbstractTcpClient.RemotePort</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_NoDelay">AbstractTcpClient.NoDelay</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_MaxRetryCount">AbstractTcpClient.MaxRetryCount</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_RetryInterval">AbstractTcpClient.RetryInterval</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_AutoReconnect">AbstractTcpClient.AutoReconnect</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ReconnectDelay">AbstractTcpClient.ReconnectDelay</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_DisconnectOnComplete">AbstractTcpClient.DisconnectOnComplete</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_DisconnectDelay">AbstractTcpClient.DisconnectDelay</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ResponseTimeout">AbstractTcpClient.ResponseTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connect">AbstractTcpClient.Connect()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connect_System_String_">AbstractTcpClient.Connect(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connect_System_String_System_Int32_">AbstractTcpClient.Connect(String, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectAndSend_x2net_Event_">AbstractTcpClient.ConnectAndSend(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectAndRequest_x2net_Event_">AbstractTcpClient.ConnectAndRequest(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connect_IPAddress_System_Int32_">AbstractTcpClient.Connect(IPAddress, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Disconnect">AbstractTcpClient.Disconnect()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Reconnect">AbstractTcpClient.Reconnect()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnSessionConnectedInternal_System_Boolean_System_Object_">AbstractTcpClient.OnSessionConnectedInternal(Boolean, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnSessionDisconnectedInternal_System_Int32_System_Object_">AbstractTcpClient.OnSessionDisconnectedInternal(Int32, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnConnectInternal_x2net_LinkSession_">AbstractTcpClient.OnConnectInternal(LinkSession)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnConnectError_Socket_EndPoint_">AbstractTcpClient.OnConnectError(Socket, EndPoint)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_SetupInternal">AbstractTcpClient.SetupInternal()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_TeardownInternal">AbstractTcpClient.TeardownInternal()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_session">ClientLink.session</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_Session">ClientLink.Session</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_Send_x2net_Event_">ClientLink.Send(Event)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.ClientLink.html#x2net_ClientLink_Dispose_System_Boolean_">ClientLink.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_rwlock">SessionBasedLink.rwlock</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_Preprocess">SessionBasedLink.Preprocess</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_ChannelStrategy">SessionBasedLink.ChannelStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HeartbeatStrategy">SessionBasedLink.HeartbeatStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HasChannelStrategy">SessionBasedLink.HasChannelStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_HasHeartbeatStrategy">SessionBasedLink.HasHeartbeatStrategy</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnLinkSessionConnectedInternal_System_Boolean_System_Object_">SessionBasedLink.OnLinkSessionConnectedInternal(Boolean, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnLinkSessionDisconnectedInternal_System_Int32_System_Object_">SessionBasedLink.OnLinkSessionDisconnectedInternal(Int32, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnSessionConnected_System_Boolean_System_Object_">SessionBasedLink.OnSessionConnected(Boolean, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_OnSessionDisconnected_System_Int32_System_Object_">SessionBasedLink.OnSessionDisconnected(Int32, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.SessionBasedLink.html#x2net_SessionBasedLink_InitiateSession_x2net_LinkSession_">SessionBasedLink.InitiateSession(LinkSession)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_EventFactory">Link.EventFactory</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Name">Link.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Close">Link.Close()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_CreateEvent_System_Int32_">Link.CreateEvent(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Link.html#x2net_Link_Diag">Link.Diag</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Setup_x2net_Flow_">Case.Setup(Flow)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Teardown_x2net_Flow_">Case.Teardown(Flow)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Start">Case.Start()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Stop">Case.Stop()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Setup">Case.Setup()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_Teardown">Case.Teardown()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_OnStart">Case.OnStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Case.html#x2net_Case_OnStop">Case.OnStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_disposed">EventSink.disposed</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Flow">EventSink.Flow</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Dispose">EventSink.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_EnsureNotDisposed">EventSink.EnsureNotDisposed()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind_x2net_Binding_Token_">EventSink.Bind(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind_x2net_Binding_Token_">EventSink.Unbind(Binding.Token)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_TcpClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TcpClient : AbstractTcpClient, ICase</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpClient__ctor_System_String_.md&amp;value=---%0Auid%3A%20x2net.TcpClient.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/TcpClient.cs/#L20">View Source</a>
+  </span>
+  <a id="x2net_TcpClient__ctor_" data-uid="x2net.TcpClient.#ctor*"></a>
+  <h4 id="x2net_TcpClient__ctor_System_String_" data-uid="x2net.TcpClient.#ctor(System.String)">TcpClient(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the TcpClient class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TcpClient(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpClient_ConnectInternal_Socket_EndPoint_.md&amp;value=---%0Auid%3A%20x2net.TcpClient.ConnectInternal(Socket%2CEndPoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/TcpClient.cs/#L28">View Source</a>
+  </span>
+  <a id="x2net_TcpClient_ConnectInternal_" data-uid="x2net.TcpClient.ConnectInternal*"></a>
+  <h4 id="x2net_TcpClient_ConnectInternal_Socket_EndPoint_" data-uid="x2net.TcpClient.ConnectInternal(Socket,EndPoint)">ConnectInternal(Socket, EndPoint)</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectInternal_Socket_EndPoint_">ConnectInternal(Socket, EndPoint)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ConnectInternal(Socket socket, EndPoint endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Socket</span></td>
+        <td><span class="parametername">socket</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EndPoint</span></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectInternal_Socket_EndPoint_">AbstractTcpClient.ConnectInternal(Socket, EndPoint)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="x2net.ICase.html">ICase</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpClient.md&amp;value=---%0Auid%3A%20x2net.TcpClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/TcpClient.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

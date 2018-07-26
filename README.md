@@ -1,12 +1,12 @@
-x2net
-=====
+**x2net**
+=========
 
 [![NuGet](http://img.shields.io/nuget/v/x2net.svg?style=flat)](https://www.nuget.org/packages/x2net/)
 [![Build status](https://img.shields.io/appveyor/ci/jaykang920/x2net.svg?style=flat)](https://ci.appveyor.com/project/jaykang920/x2net)
 
-x2net is the reference port of [x2](https://github.com/jaykang920/x2) written in
-C#, targeting universal .NET environments covering Mono, .NET framework, and .NET
-Core.
+*x2net* is the reference port of [x2](https://github.com/jaykang920/x2) written
+in C#, targeting universal [.NET](https://www.microsoft.com/net) environments
+covering Mono, .NET Framework, and .NET Core.
 
 Features
 --------
@@ -68,14 +68,14 @@ Now we extend builtin TCP link cases to handle the network communication.
 public EchoServer : AsyncTcpServer
 {
     public EchoServer() : base("EchoServer") { }
-    
+
     protected override void Setup()
     {
         EventFactory.Resiger<EchoReq>();
         Bind(new EchoResp(), Send);
         Listen(6789);
     }
-    
+
     public static void Main()
     {
         Hub.Instance
@@ -99,7 +99,7 @@ public EchoServer : AsyncTcpServer
 public EchoClient : AsyncTcpClient
 {
     public EchoClient() : base("EchoClient") { }
-    
+
     protected override void Setup()
     {
         EventFactory.Resiger<EchoResp>();
@@ -107,7 +107,7 @@ public EchoClient : AsyncTcpClient
         Bind(new EchoResp(), resp => { Console.WriteLine(resp.Message); });
         Connect("127.0.0.1", 6789);
     }
-    
+
     public static void Main()
     {
         Hub.Instance
@@ -176,10 +176,13 @@ Documentation
 Contributions
 -------------
 
-We need your contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before you start.
+We need your contributions! Please read
+[CONTRIBUTING.md](https://github.com/jaykang920/x2net/blob/master/CONTRIBUTING.md)
+before you start.
 
 License
 -------
 
 x2net is distributed under [MIT License](http://opensource.org/licenses/MIT).
-See the file [LICENSE](LICENSE) for details.
+See the file [LICENSE](https://github.com/jaykang920/x2net/blob/master/LICENSE)
+for details.

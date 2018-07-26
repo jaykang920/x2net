@@ -1,0 +1,411 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class EventEquivalent
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class EventEquivalent
+   ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="x2net.EventEquivalent">
+  
+  
+  <h1 id="x2net_EventEquivalent" data-uid="x2net.EventEquivalent" class="text-break">Class EventEquivalent
+  </h1>
+  <div class="markdown level0 summary"><p>An event proxy to support hash table matching based on equivalence.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="x2net.Cell.html">Cell</a></div>
+    <div class="level2"><a class="xref" href="x2net.Event.html">Event</a></div>
+    <div class="level3"><span class="xref">EventEquivalent</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_tag">Event.tag</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_TypeId">Event.TypeId</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event__Channel">Event._Channel</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event__Handle">Event._Handle</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event__Transform">Event._Transform</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event__WaitHandle">Event._WaitHandle</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_New">Event.New()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_ToString">Event.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_Describe_StringBuilder_">Event.Describe(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_GetHashCode_x2net_Fingerprint_System_Int32_">Event.GetHashCode(Fingerprint, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_GetHashCode_x2net_Fingerprint_">Event.GetHashCode(Fingerprint)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_GetTypeId">Event.GetTypeId()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_GetTypeTag">Event.GetTypeTag()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_GetFactoryMethod">Event.GetFactoryMethod()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_IsEquivalent_x2net_Cell_x2net_Fingerprint_">Event.IsEquivalent(Cell, Fingerprint)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_Deserialize_x2net_Deserializer_">Event.Deserialize(Deserializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_Deserialize_x2net_VerboseDeserializer_">Event.Deserialize(VerboseDeserializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_GetLength_Type_System_Boolean__">Event.GetLength(Type, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_Serialize_x2net_Serializer_Type_System_Boolean__">Event.Serialize(Serializer, Type, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Event.html#x2net_Event_Serialize_x2net_VerboseSerializer_Type_System_Boolean__">Event.Serialize(VerboseSerializer, Type, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_fingerprint">Cell.fingerprint</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Equals_System_Object_">Cell.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Equivalent_x2net_Cell_">Cell.Equivalent(Cell)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Equivalent_x2net_Cell_x2net_Fingerprint_">Cell.Equivalent(Cell, Fingerprint)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_GetFingerprint">Cell.GetFingerprint()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_IsKindOf_x2net_Cell_">Cell.IsKindOf(Cell)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_ToString_StringBuilder_">Cell.ToString(StringBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_GetLength">Cell.GetLength()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Serialize_x2net_Serializer_">Cell.Serialize(Serializer)</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Cell.html#x2net_Cell_Serialize_x2net_VerboseSerializer_">Cell.Serialize(VerboseSerializer)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
+  <h6><strong>Assembly</strong>: x2net.dll</h6>
+  <h5 id="x2net_EventEquivalent_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class EventEquivalent : Event</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_EventEquivalent_InnerEvent.md&amp;value=---%0Auid%3A%20x2net.EventEquivalent.InnerEvent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Event.cs/#L334">View Source</a>
+  </span>
+  <a id="x2net_EventEquivalent_InnerEvent_" data-uid="x2net.EventEquivalent.InnerEvent*"></a>
+  <h4 id="x2net_EventEquivalent_InnerEvent" data-uid="x2net.EventEquivalent.InnerEvent">InnerEvent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Event InnerEvent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Event.html">Event</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_EventEquivalent_InnerTypeId.md&amp;value=---%0Auid%3A%20x2net.EventEquivalent.InnerTypeId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Event.cs/#L335">View Source</a>
+  </span>
+  <a id="x2net_EventEquivalent_InnerTypeId_" data-uid="x2net.EventEquivalent.InnerTypeId*"></a>
+  <h4 id="x2net_EventEquivalent_InnerTypeId" data-uid="x2net.EventEquivalent.InnerTypeId">InnerTypeId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int InnerTypeId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_EventEquivalent_EqualsTo_x2net_Cell_.md&amp;value=---%0Auid%3A%20x2net.EventEquivalent.EqualsTo(x2net.Cell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Event.cs/#L337">View Source</a>
+  </span>
+  <a id="x2net_EventEquivalent_EqualsTo_" data-uid="x2net.EventEquivalent.EqualsTo*"></a>
+  <h4 id="x2net_EventEquivalent_EqualsTo_x2net_Cell_" data-uid="x2net.EventEquivalent.EqualsTo(x2net.Cell)">EqualsTo(Cell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool EqualsTo(Cell other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="x2net.Cell.html">Cell</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_EqualsTo_x2net_Cell_">Event.EqualsTo(Cell)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_EventEquivalent_GetHashCode.md&amp;value=---%0Auid%3A%20x2net.EventEquivalent.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Event.cs/#L342">View Source</a>
+  </span>
+  <a id="x2net_EventEquivalent_GetHashCode_" data-uid="x2net.EventEquivalent.GetHashCode*"></a>
+  <h4 id="x2net_EventEquivalent_GetHashCode" data-uid="x2net.EventEquivalent.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="x2net.Event.html#x2net_Event_GetHashCode">Event.GetHashCode()</a></div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Bind__1___0_Action___0__">Extensions.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Bind__1___0_Action___0__Predicate___0__">Extensions.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">Extensions.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">Extensions.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_InResponseOf__1___0_x2net_Event_">Extensions.InResponseOf&lt;T&gt;(T, Event)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_InChannel__1___0_System_String_">Extensions.InChannel&lt;T&gt;(T, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Post_x2net_Event_">Extensions.Post(Event)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Action___0__">Extensions.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Action___0__Predicate___0__">Extensions.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">Extensions.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">Extensions.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="x2net.Extensions.html#x2net_Extensions_ToStringEx__1___0_">Extensions.ToStringEx&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_EventEquivalent.md&amp;value=---%0Auid%3A%20x2net.EventEquivalent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Event.cs/#L332" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
