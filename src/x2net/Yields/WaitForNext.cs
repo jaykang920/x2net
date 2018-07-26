@@ -6,26 +6,32 @@ using System;
 namespace x2net
 {
     /// <summary>
-    /// YieldInstruction that waits for the specified time in seconds.
+    /// YieldInstruction that waits for the next execution frame.
     /// </summary>
-    public class WaitForSeconds : Yield
+    public class WaitForNext : Yield
     {
         private readonly Coroutine coroutine;
+        private readonly object result;
         private readonly Binding.Token token;
 
-        public WaitForSeconds(Coroutine coroutine, double seconds)
+        public WaitForNext(Coroutine coroutine) : this(coroutine, null)
+        {
+        }
+
+        public WaitForNext(Coroutine coroutine, object result)
         {
             this.coroutine = coroutine;
+            this.result = result;
             TimeoutEvent e = new TimeoutEvent { Key = this };
             token = Flow.Bind(e, OnTimeout);
-            TimeFlow.Default.Reserve(e, seconds);
+            Hub.Post(e);
         }
 
         void OnTimeout(TimeoutEvent e)
         {
             Flow.Unbind(token);
 
-            coroutine.Result = e;
+            coroutine.Result = result;
             coroutine.Continue();
         }
     }

@@ -1,14 +1,18 @@
+Features:
+
+- Coroutine: renamed class WaitForNothing as WaitForNext
+
 ## 0.12.1 (2018-07-18)
 
 Features:
 
-- Renamed class Binder to Binding
+- Renamed class Binder as Binding
 
 ## 0.12.0 (2018-07-10)
 
 Features:
 
-- Coroutine: renamed WaitForSingle*/WaitForMultiple* to WaitFor*/WaitForAll*, respectively.
+- Coroutine: renamed WaitForSingle*/WaitForMultiple* as WaitFor*/WaitForAll*, respectively.
 - Coroutine: added WaitForAnyEvent/Response feature
 
 ## 0.11.2 (2018-07-04)

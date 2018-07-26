@@ -23,9 +23,9 @@ namespace x2net
         /// <summary>
         /// Waits untill the next handler execution chance.
         /// </summary>
-        public static Yield WaitForNothing(this Coroutine self)
+        public static Yield WaitForNext(this Coroutine self)
         {
-            return new WaitForNothing(self);
+            return new WaitForNext(self);
         }
 
         // WaitForEvent/Response

@@ -1,8 +1,10 @@
-[Bb]in/
-[Oo]bj/
 .nuget/
 .vs*/
-[Pp]ackages/
+/**/[Bb]in/
+/**/[Oo]bj/
+/**/[Pp]ackages/
+/**/TEMP/
+/**/DROP/
 
 *.sln.*
 *.suo

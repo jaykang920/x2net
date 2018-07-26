@@ -119,9 +119,9 @@
     <Compile Include="Links\Socket\TcpServer.cs" />
     <Compile Include="Links\Socket\TcpSession.cs" />
     <Compile Include="Links\Socket\UdpLink.cs" />
-    <Compile Include="Links\Strategies.cs" />
     <Compile Include="Links\Strategies\BufferTransformStrategy.cs" />
     <Compile Include="Links\Strategies\KeepaliveStrategy.cs" />
+    <Compile Include="Links\Strategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queues\ConcurrentEventQueue.cs" />
     <Compile Include="Queues\SynchronizedEventQueue.cs" />
@@ -150,6 +150,7 @@
     <Compile Include="Yields\WaitForCompletion.cs" />
     <Compile Include="Yields\WaitForAnyEvent.cs" />
     <Compile Include="Yields\WaitForEvent.cs" />
+    <Compile Include="Yields\WaitForNext.cs" />
     <Compile Include="Yields\WaitForSeconds.cs" />
     <Compile Include="Yields\WaitHandlePool.cs" />
   </ItemGroup>

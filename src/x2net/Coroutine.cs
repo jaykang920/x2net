@@ -109,7 +109,7 @@ namespace x2net
                 if (parent != null)
                 {
                     // Indirectly chain into the parent coroutine.
-                    new WaitForNothing(parent, Result);
+                    new WaitForNext(parent, Result);
                 }
             }
         }
