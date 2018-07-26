@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TCP Socket Client Server </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="TCP Socket Client Server ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="tcp-socket-client-server">TCP Socket Client Server</h2>
+
+<p>You can build up a simple TCP socket client/server application with x2net builtin links. Since x2net effectively separates the network transmission details from the application logic, you might see that it's somewhat different from the way you are accustomed to: calling a Send-like method within the application logic. In x2net, there are some cases or flows, so-called links, that send/receive events to/from a network. The key point is that your application logic remains unchanged while your networking details change.</p>
+<p>Follows the x2net builtin links that you can use to write a TCP socket client/server:</p>
+<ul>
+<li>TCP server cases</li>
+<li><code>AsyncTcpServer</code>: TCP socket server case based on SocketAsyncEventArgs pattern. Use this whenever possible.</li>
+<li><code>TcpServer</code>: TCP socket server case based on Begin/End pattern. Use this when <code>AsyncTcpServer</code> is not feasible.</li>
+<li>TCP client cases</li>
+<li><code>AsyncTcpClient</code>: TCP socket client case based on SocketAsyncEventArgs pattern. Use this whenever possible.</li>
+<li><code>TcpClient</code>: TCP socket client case based on Begin/End pattern. Use this when <code>AsyncTcpClient</code> is not feasible.</li>
+</ul>
+<p>All the above classes inherit from <code>Case</code>, and you may add them to any flow you want.</p>
+<h3 id="preparing-events">Preparing Events</h3>
+<p>Let's start with defining the two events, echo request and response, and deriving an application logic case from <code>Case</code>.</p>
+<pre><code class="lang-xml">&lt;x2&gt;
+    &lt;event name=&quot;EchoReq&quot; type=&quot;1&quot;&gt;
+        &lt;property name=&quot;Message&quot; type=&quot;string&quot;/&gt;
+    &lt;/event&gt;
+    &lt;event name=&quot;EchoResp&quot; type=&quot;2&quot;&gt;
+        &lt;property name=&quot;Message&quot; type=&quot;string&quot;/&gt;
+    &lt;/event&gt;
+&lt;/x2&gt;
+</code></pre>
+<pre><code class="lang-csharp">public class EchoCase : Case
+{
+    protected void Setup()
+    {
+        Bind(new EchoReq(), OnEchoReq);
+    }
+
+    void OnEchoReq(EchoReq req)
+    {
+        new EchoResp {
+            Message = req.Message
+        }.InResponseOf(req).Post();
+    }
+}
+</code></pre>
+<h3 id="tcp-socket-server">TCP Socket Server</h3>
+<p>Write your own server case derived from <code>AsyncTcpServer</code>, and override <code>protected void Setup()</code> method to start listening.</p>
+<pre><code class="lang-csharp">public class ServerCase : AsyncTcpServer
+{
+    public ServerCase() : base(&quot;EchoServer&quot;) { }
+
+    protected override void Setup()
+    {
+        EventFactory.Register&lt;EchoReq&gt;();
+        Bind(new EchoResp(), Send);
+        Listen(6789);
+    }
+}
+
+public class EchoServer
+{
+    public static void Main()
+    {
+        Hub.Instance
+            .Attach(new SingleThreadFlow()
+                .Add(new EchoCase())
+                .Add(new ServerCase()));
+
+        using (new Hub.Flows().Startup())
+        {
+            while (true)
+            {
+                string message = Console.ReadLine();
+                if (message = &quot;quit&quot;)
+                {
+                    break;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<p>When the server case receives an <code>EchoReq</code> event from the client socket, it posts up the event to the hub. Then the handler in <code>EchoCase</code> runs to create a new <code>EchoResp</code> event holding the same <code>Message</code> property as the request, and posts the response event to the hub. The server case receives the <code>EchoResp</code> event and sends it to the client.</p>
+<h3 id="tcp-socket-client">TCP Socket Client</h3>
+<p>Write your own client case derived from <code>AsyncTcpClient</code>, and override <code>protected void Setup()</code> method to start connecting.</p>
+<pre><code class="lang-csharp">public class ClientCase : AsyncTcpClient
+{
+    public ClientCase() : base(&quot;ClientCase&quot;) { }
+
+    protected override void Setup()
+    {
+        EventFactory.Register&lt;EchoResp&gt;();
+        Bind(new EchoReq(), Send);
+        Bind(new EchoResp(), OnEchoResp);
+        Connect(&quot;127.0.0.1&quot;, 6789);
+    }
+
+    void OnEchoResp(EchoResp e)
+    {
+        Console.WriteLine(e.Message);
+    }
+}
+
+public class EchoClient
+{
+    public static void Main()
+    {
+        Hub.Instance
+            .Attach(new SingleThreadFlow()
+                .Add(new ClientCase()));
+
+        using (new Hub.Flows().Startup())
+        {
+            while (true)
+            {
+                string message = Console.ReadLine();
+                if (message = &quot;quit&quot;)
+                {
+                    break;
+                }
+                else
+                {
+                    new EchoReq { Message = message }.Post();
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<p>When a text string input is ready at the console, the main thread creates a new <code>EchoReq</code> event and posts it up to the hub. The client case receives the <code>EchoReq</code> event and sends it to the server. When a <code>EchoResp</code> event arrives from the server, the client case posts the response event to the hub. Now the <code>EchoResp</code> event is available for local handlers.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

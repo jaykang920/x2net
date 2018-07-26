@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#53076;&#47336;&#54004; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#53076;&#47336;&#54004; ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="코루틴">코루틴</h2>
+
+<p>x2net의 코루틴은 .NET 프레임워크의 반복자를 이용해 구현된, 단일 스레드 내에서의 실행 중단과 재개를 지원하는 장치입니다. 코루틴을 사용하지 않는 경우 둘 이상의 핸들러로 분리되어야 했던 작업을 코루틴을 사용하면 하나의 메소드로 묶을 수 있어, 보다 직관적인 개발을 가능하게 해 줍니다.</p>
+<h3 id="제약-사항">제약 사항</h3>
+<p>.NET 프레임워크의 반복자도 그렇듯이, x2net의 코루틴도 범용적으로 쓸 수 있는 코루틴 라이브러리는 아닙니다. x2net의 코루틴을 사용하는 데에는 다음과 같은 제약 사항들이 있습니다.</p>
+<ul>
+<li>x2net 이벤트 핸들러 내에서만 사용할 수 있습니다.</li>
+<li>단일 스레드에서만 사용할 수 있습니다. 내장 플로우 중 <code>SingleThreadFlow</code> 또는 <code>ThreadlessFlow</code>의 호스트 스레드가 단일 스레드인 경우에는 사용할 수 있지만, <code>MultiThreadFlow</code>와 함께 사용할 수는 없습니다.</li>
+</ul>
+<h3 id="시간-지연">시간 지연</h3>
+<p>가장 간단한 예로 실행 중 시간 지연을 추가할 수 있는 <code>WaitForSeconds</code>의 용법을 살펴보겠습니다.</p>
+<pre><code class="lang-csharp">using System.Collections;
+
+using x2net;
+
+public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        Bind(new MyEvent(), OnMyEvent);
+    }
+
+    IEnumerator OnMyEvent(Coroutine coroutine, MyEvent e)
+    {
+        // 지금
+        yield return coroutine.WaitForSeconds(10);
+        // 10초 후
+    }
+}
+</code></pre>
+<p>이벤트 핸들러 <code>OnMyEvent</code>는 진입 후 10초가 지난 후 실행이 계속되어 종료됩니다. 코루틴의 장점은 이 지연 시간 동안 핸들러 실행 스레드자체는 중단되지 않는다는 것입니다. 코루틴 대기를 시작하면서 일단 핸들러가 리턴되면 실행 스레드는 다음 핸들러들의 처리를 계속할 수 있습니다. 설정된 시간이 지나면 제어가 <code>yield</code> 문 다음으로 되돌아와 중단되었던 처리를 계속할 수 있게 됩니다.</p>
+<h3 id="이벤트-대기">이벤트 대기</h3>
+<p>핸들러 실행 중에 특정 이벤트가 발생할 때까지 기다리고자 할 때는 <code>WaitForEvent</code>를 사용할 수 있습니다. 아래 예제의 이벤트 핸들러는 코루틴을 사용하지 않았다면 두 개로 분리될 수 밖에 없었을 것입니다.</p>
+<pre><code class="lang-csharp">using System.Collections;
+
+using x2net;
+
+public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        Bind(new MyEvent(), OnMyEvent);
+    }
+
+    IEnumerator OnMyEvent(Coroutine coroutine, MyEvent e)
+    {
+        // 지금
+
+        yield return coroutine.WaitForEvent(new MyOtherEvent());
+
+        // MyOtherEvent가 포스팅 된 후, 또는 타임아웃 시간이 경과했을 때
+        var result = coroutine.Result as MyOtherEvent;
+        if ((object)result != null)
+        {
+            // result는 발생한 MyOtherEvent 인스턴스
+        }
+        else
+        {
+            // 타임아웃
+        }
+    }
+}
+</code></pre>
+<p>이벤트 핸들러 <code>OnMyEvent</code>는 이제 진입 후 <code>yield</code> 문에 이르면 <code>MyOtherEvent</code>라는 또 다른 이벤트를 기다리며 대기 상태로 들어갑니다. 앞서 이야기했듯이 이 대기 시간 동안 스레드는 다음 핸들러들을 계속 처리할 수 있습니다. 지정된 <code>MyOtherEvent</code>가 발생하거나 그렇지 않은 채로 타임아웃 시간이 경과하면, <code>yield</code> 문 다음으로 제어가 넘어옵니다. 위의 예제는 <code>Coroutine</code> 객체의 <code>Result</code> 속성으로 타임아웃 여부를 판단하고 결과 이벤트 객체를 얻을 수 있음을 보여줍니다.</p>
+<h3 id="요청을-포스팅하고-응답-대기하기">요청을 포스팅하고 응답 대기하기</h3>
+<p>분산 처리 구조를 설계할 때 빈번히 필요로 하는 작업 중 하나는 요청을 보내고 그에 대한 응답을 받아 처리를 계속하는 것입니다. 이를 위해 위의 <code>WaitForEvent</code>에서 파생된 <code>WaitForResponse</code>를 사용할 수 있습니다.</p>
+<pre><code class="lang-csharp">using System.Collections;
+
+using x2net;
+
+public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        Bind(new MyEvent(), OnMyEvent);
+    }
+
+    IEnumerator OnMyEvent(Coroutine coroutine, MyEvent e)
+    {
+        // 지금
+
+        yield return coroutine.WaitForResponse(
+            new MyReq(),
+            new MyResp());
+
+        // MyResp가 포스팅 된 후, 또는 타임아웃 시간이 경과했을 때
+        var result = coroutine.Result as MyResp;
+        if ((object)result != null)
+        {
+            // result는 발생한 MyResp 인스턴스
+        }
+        else
+        {
+            // 타임아웃
+        }
+    }
+}
+</code></pre>
+<p><code>WaitForResponse</code>는 응답 이벤트 대기에 들어가기에 앞서 단순히 요청 이벤트를 포스팅 하도록 되어 있습니다. 포스팅 된 요청이 같은 프로세스에서 처리될지 네트워크 건너편의 다른 프로세스에서 처리될지에 대해서는 이 핸들러는 알지 못합니다. 어디에서든 처리가 성공해 응답 이벤트가 이 응용 프로그램 허브에 포스팅 되면, 제어는 <code>yield</code> 문 다음으로 넘어오고 <code>Coroutine</code> 객체의 <code>Result</code> 속성을 통해 결과 이벤트에 접근할 수 있습니다.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

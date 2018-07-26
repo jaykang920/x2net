@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hub and Flows </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Hub and Flows ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hub-and-flows">Hub and Flows</h1>
+
+<p>Hub and flows are the core constructs that form the outline of x2net applications, where x2net event processing begins when the flows attached to the hub start up, and ends when those flows shut down.</p>
+<h2 id="hub">Hub</h2>
+<p>Every x2net process runs around a single hub. Since the <code>Hub</code> class is implemented as a singleton (accessable through the <code>.Instance</code> static property), you don't have to explicitly instantiate it. Regardless whether it is a dedicated application that fully relies on x2net event processing or it is an existing application that lightly adopts x2net, any x2net program requires some common code that attaches flows to the hub, starts and stops them.</p>
+<p>The following code snippet shows how to create two flow instances, attach them to the hub, and start/stop them.</p>
+<pre><code class="lang-csharp">    Hub.Instance
+        .Attach(new SingleThreadFlow())  // returns Hub instance for method call chaining
+        .Attach(new MultiThreadFlow());
+
+    Hub.Startup();  // start up attached flows
+
+    // do something...
+
+    Hub.Shutdown();  // shut down attached flows
+</code></pre>
+<p>If there is no need to separate the startup and shutdown parts, you can just take advantage of the <code>Hub.Flows</code> utility object to use a <code>using</code> block around it to automate shutdown call on block exit.</p>
+<pre><code class="lang-csharp">    ...
+
+    using (new Hub.Flows().Startup())  // start up attached flows
+    {
+        // do something...
+
+        // attached flows are shut down implicitly on block exit
+    }
+</code></pre>
+<h2 id="flows">Flows</h2>
+<p>Concrete flows of x2net inherit from one of the two abstract classes, <code>EventBasedFlow</code> and <code>FrameBasedFlow</code>, according to whether they wait for an event or they run periodic updates and check for any event to process, respectively.</p>
+<p>One subclass of <code>FrameBasedFlow</code> is the <code>TimeFlow</code> class, which generates time-deferred or periodic events. We will look into the <code>TimeFlow</code> class in detail somewhere else.</p>
+<p>x2net provides the following three subtypes of <code>EventBasedFlow</code>, according to their threading models:</p>
+<ul>
+<li><code>SingleThreadFlow</code> : Owns a single execution thread</li>
+<li><code>MultiThreadFlow</code> : Owns multiple execution threads</li>
+<li><code>ThreadlessFlow</code> : No own execution thread. Mainly used to embed x2net into an application which demands that the logic processing must occur in its main thread (like a GUI program or a game client).</li>
+</ul>
+<p>You may use these builtin flow classes directly, or you may write your own flows that inherit from them. But you would better restrict your flow subclassing to the cases that you need some behaviors that are not supported by existing flows. Simply adding application logic, it is a better idea to configure <code>Case</code> subclasses and add them to basic flows, than to extend existing flows.</p>
+<h2 id="case">Case</h2>
+<p>Usually, writing your own application logic begins with subclassing the <code>Case</code> class and overriding the methods <code>Setup()</code> and <code>Teardown()</code> to define startup/cleanup routines, respectively.</p>
+<pre><code class="lang-csharp">public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        // Initialization code, especially initial event-handler binding
+    }
+
+    protected override void Teardown()
+    {
+        // Cleanup code, except event-handler unbinding, if required
+    }
+}
+</code></pre>
+<p>Once you got the cases you need, you can add them to any flow attached to the hub.</p>
+<pre><code class="lang-csharp">    Hub.Instance
+        .Attach(new SingleThreadFlow()
+            .Add(new MyCase())  // returns Flow instance for method call chaining
+            .Add(new OtherCase()))
+        .Attach(new MultiThreadFlow());
+
+    ...
+</code></pre>
+<h2 id="analyzing-startupshutdown-of-hubflows">Analyzing Startup/Shutdown of Hub/Flows</h2>
+<p>When you call the <code>Hub.Startup()</code> method after initially configuring flows and cases, the <code>Startup()</code> method of each flow is called in the order of attachment. Builtin flows have their own <code>Startup()</code> methods, normally implemented as the following sequence:</p>
+<ol>
+<li><code>protected void Setup()</code> method of the flow is called.</li>
+<li><code>protected void Setup()</code> method of each case is called in the order of addition. If you overrode that method in your subclass of <code>Case</code>, the overridden method is called.</li>
+<li>Initialization of execution context (such as starting threads) is performed according to the type of flow.</li>
+<li>A <code>FlowStart</code> event is put into the flow's event queue.</li>
+<li>When the event processing routine of the flow starts, it receives the above <code>FlowStart</code> as its first event, and the <code>protected void OnStart()</code> method of <code>Flow</code> is called on this event.</li>
+</ol>
+<p>In the above sequence, there are three methods you may override to initialize your application logic:</p>
+<ol>
+<li><code>protected void Setup()</code> of <code>Flow</code></li>
+<li><code>protected void Setup()</code> of <code>Case</code></li>
+<li><code>protected void OnStart()</code> of <code>Flow</code></li>
+<li><code>protected void OnStart()</code> of <code>Case</code></li>
+</ol>
+<p>1 and 2 are called usually in the main thread, while 3 is called in the flow's own execution context. Since subclassing <code>Case</code> is preferred over subclassing <code>Flow</code>, you will mostly use 2.</p>
+<p>When you call the <code>Hub.Shutdown()</code> method to terminate, the <code>Shutdown()</code> method of each flow is called in the reverse order of attachment. Builtin flows have their own <code>Shutdown()</code> methods, normally implemented as the following sequence:</p>
+<ol>
+<li>A <code>FlowStop</code> event is put into the flow's event queue.</li>
+<li>Before the event processing routine of the flow terminates, it receives the above <code>FlowStop</code> as its last event, and the <code>protected void OnStop()</code> method of <code>Flow</code> is called on this event.</li>
+<li>Termination of execution context (such as stopping threads) is performed according to the type of flow.</li>
+<li><code>protected void Teardown()</code> method of each case is called in the reverse order of addition. If you overrode that method in your subclass of <code>Case</code>, the overridden method is called.</li>
+<li><code>protected void Teardown()</code> method of the flow is called.</li>
+</ol>
+<p>In the above sequence, there are three methods you may override to terminate your application logic:</p>
+<ol>
+<li><code>protected void OnStop()</code> of <code>Case</code></li>
+<li><code>protected void OnStop()</code> of <code>Flow</code></li>
+<li><code>protected void Teardown()</code> of <code>Case</code></li>
+<li><code>protected void Teardown()</code> of <code>Flow</code></li>
+</ol>
+<p>1 is called in the flow's own execution context, while 2 and 3 are called usually in the main thread. Since subclassing <code>Case</code> is preferred over subclassing <code>Flow</code>, you will mostly use 2.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

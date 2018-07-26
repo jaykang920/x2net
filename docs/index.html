@@ -67,6 +67,10 @@
 <p><em>x2net</em> is the reference port of <a href="https://github.com/jaykang920/x2">x2</a> written
 in C#, targeting universal <a href="https://www.microsoft.com/net">.NET</a> environments
 covering Mono, .NET Framework, and .NET Core.</p>
+<p>In order to make full use of x2net, you need to understand the fundamental
+concepts and ideas of x2. At least, you should be familiar with basic
+<a href="https://github.com/jaykang920/x2/blob/master/concepts.md">x2 concepts</a>
+such as cell, event, hub, flow, case and link.</p>
 <h2 id="features">Features</h2>
 <h3 id="distributable-application-architecture">Distributable Application Architecture</h3>
 <p>Writing distributed (including client/server) applications has never been this
@@ -175,6 +179,7 @@ public EchoClient : AsyncTcpClient
 }
 </code></pre>
 <h2 id="requirements">Requirements</h2>
+<h3 id="net-framework-and-mono">.NET Framework and Mono</h3>
 <ul>
 <li>.NET framework 3.5 or newer equivalent environment to run</li>
 <li>Visual Studio 2008 (9.0) or newer equivalent tool to compile C# 3.0</li>
@@ -185,22 +190,18 @@ public EchoClient : AsyncTcpClient
 <li>Visual Studio 2017 (version 15.3) or newer</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<h3 id="binary">Binary</h3>
-<p>x2net can be installed via the <a href="https://docs.nuget.org/consume/package-manager-dialog">NuGet UI</a> (as <a href="https://www.nuget.org/packages/x2net">x2net</a>), or via the NuGet Package Manager console command:</p>
-<pre><code>PM&gt; Install-Package x2net
-</code></pre>
-<p>The xpiler converts x2 definition files into corresponding C# source code files.
-So most probably you will want to install the <a href="https://www.nuget.org/packages/x2net.xpiler">x2net.xpiler</a> too.</p>
-<pre><code>PM&gt; Install-Package x2net.xpiler
-</code></pre>
-<h3 id="source">Source</h3>
-<p>You may clone the latest source code of x2net from its <a href="https://github.com/jaykang920/x2net.git">GitHub repository</a>.</p>
-<p>Zipped archives containing specific tagged versions of the source code are available in <a href="https://github.com/jaykang920/x2net/releases">releases</a>.</p>
-<h3 id="unity3d">Unity3D</h3>
-<p>If you want to use x2net in Unity3D, you should build it with the conditional
-compile constant UNITY_WORKAROUND and drop the DLL into the Assets/Plugin folder.</p>
+<p>The following two NuGet packages can be installed via the
+<a href="https://docs.microsoft.com/en-us/nuget/tools/package-manager-ui">Package Manager UI</a>,
+or by the Package Manager console command <code>Install-Package</code>.</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/x2net">x2net</a></li>
+<li><a href="https://www.nuget.org/packages/x2net.xpiler">x2net.xpiler</a></li>
+</ul>
+<p>See <a href="https://jaykang920.github.io/x2net/articles/en/install.html">Installation</a>
+for more about installation.</p>
 <h2 id="documentation">Documentation</h2>
-<p><a href="https://github.com/jaykang920/x2net/wiki">x2net wiki</a> can be a good start point to learn how x2net applications are organized.</p>
+<p><a href="https://jaykang920.github.io/x2net/articles/index.html">Tutorials &amp; Guides</a> is
+a good start point to learn how x2net applications are organized.</p>
 <h2 id="contributions">Contributions</h2>
 <p>We need your contributions! Please read
 <a href="https://github.com/jaykang920/x2net/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>

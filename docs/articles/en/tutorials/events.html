@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello, World! </title>
+    <title>Creating and Posting Events </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Hello, World! ">
+    <meta name="title" content="Creating and Posting Events ">
     <meta name="generator" content="docfx 2.36.1.0">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
     
     
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -67,8 +67,37 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="hello-world">Hello, World!</h1>
+<h2 id="creating-and-posting-events">Creating and Posting Events</h2>
 
+<h3 id="creating-a-new-event">Creating a New Event</h3>
+<p>You can create a new instance of any event using the object allocation statement of the language. With C# object initializer block, you can initialize some public properties along with object allocation.</p>
+<pre><code class="lang-csharp">    var MyEvent1 = new MyEvent();
+
+    var myEvent2 = new MyEvent {
+        Foo = 1,
+        Bar = 2
+    };
+</code></pre>
+<h3 id="posting-events">Posting Events</h3>
+<p>You can post up an event to the hub, with the <code>Post()</code> static method of the <code>Hub</code> class.</p>
+<pre><code class="lang-csharp">    ...
+    var myEvent = new MyEvent {
+        Foo = 1,
+        Bar = 2
+    };
+    ...
+    Hub.Post(myEvent);
+</code></pre>
+<p>Once an event is posted to the hub, all the attached and running flows are notified with it.
+For convenience reason, x2net also provides an event extension method to support the following usage:</p>
+<pre><code class="lang-csharp">    ...
+    new MyEvent {
+        Foo = 1,
+        Bar = 2
+    }.Post();
+    ...
+</code></pre>
+<p>Since the <code>Hub</code> class is a singleton and posting events is thread-safe, you may interact with x2net at any point of your application simply by posting events.</p>
 </article>
           </div>
           
@@ -100,8 +129,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
   </body>
 </html>

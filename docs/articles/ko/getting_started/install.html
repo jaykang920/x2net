@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello, World! </title>
+    <title>&#49444;&#52824; </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Hello, World! ">
+    <meta name="title" content="&#49444;&#52824; ">
     <meta name="generator" content="docfx 2.36.1.0">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
     
     
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -67,9 +67,28 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="hello-world">Hello, World!</h1>
+<h1 id="설치">설치</h1>
 
-<p>한글</p>
+<h2 id="nuget">NuGet</h2>
+<p>NuGet 패키지 <a href="https://www.nuget.org/packages/x2net">x2net</a>은
+<a href="https://docs.microsoft.com/ko-kr/nuget/tools/package-manager-ui">패키지 관리자 UI</a>를 통해,
+또는 다음 패키지 관리자 콘솔 명령으로 설치할 수 있습니다.</p>
+<pre><code>PM&gt; Install-Package x2net
+</code></pre>
+<p>xpiler는 x2 정의 파일들을 각각에 대응하는 C# 소스 코드 파일로 변환합니다. 따라서 x2net을
+사용한다면 거의 <a href="https://www.nuget.org/packages/x2net.xpiler">x2net.xpiler 패키지</a>도
+함께 설치하게 될 것입니다.</p>
+<pre><code>PM&gt; Install-Package x2net.xpiler
+</code></pre>
+<h2 id="소스-코드">소스 코드</h2>
+<p><a href="https://github.com/jaykang920/x2net">GitHub 저장소</a>에서 x2net 소스 코드를 <code>clone</code>
+하거나 다운로드 받을 수 있습니다.</p>
+<p>특정한 태그 버전 소스 코드의 압축된 아카이브 파일들은
+<a href="https://github.com/jaykang920/x2net/releases">releases</a>에서 찾을 수 있습니다.</p>
+<h2 id="unity3d">Unity3D</h2>
+<p>.NET 프레임워크 4.5 이상을 사용하는 최근 버전의 Unity3D에서 x2net을 사용하는 데에는
+아무 문제가 없어야 합니다. 만약 Mono에 의존하는 오래된 버전의 Unity3D에서 x2net을
+사용하고자 한다면, 조건부 컴파일 상수 <code>UNITY_WORKAROUND</code>를 활성화하고 빌드해야 합니다.</p>
 </article>
           </div>
           
@@ -101,8 +120,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
   </body>
 </html>

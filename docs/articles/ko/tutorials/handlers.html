@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#51060;&#48292;&#53944; &#54648;&#46308;&#47084; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#51060;&#48292;&#53944; &#54648;&#46308;&#47084; ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="이벤트-핸들러">이벤트 핸들러</h2>
+
+<h3 id="이벤트-핸들러-작성하기">이벤트 핸들러 작성하기</h3>
+<p>x2net의 이벤트 핸들러는 내부적으로 .NET 프레임워크의 대리자(delegate)입니다. 인스턴스 메소드를 이벤트 핸들러로 사용하는 경우, 메소드가 반드시 <code>public</code>이어야 할 필요는 없습니다. 이벤트 핸들러는 해당 핸들러가 바인딩 될 이벤트의 정확한 타입의 이벤트는 인자로 받기 때문에, 이벤트 타입을 캐스팅할 필요도 없습니다. 다음 예제는 Foo 이벤트를 처리하는 인스턴스 메소드를 갖는 사용자 케이스를 작성하는 방법을 보여줍니다.</p>
+<pre><code class="lang-xml">&lt;x2&gt;
+    &lt;event name=&quot;Foo&quot; id=&quot;1&quot;&gt;
+        &lt;property name=&quot;Bar&quot; type=&quot;int32&quot;/&gt;
+    &lt;/event&gt;
+&lt;/x2&gt;
+</code></pre>
+<pre><code class="lang-csharp">public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        new Foo().Bind(OnFoo);
+    }
+
+    void OnFoo(Foo e)
+    {
+        // Do not change e.Bar here!
+        ...
+    }
+}
+</code></pre>
+<p>이벤트 핸들러는 인자로 전달 받은 이벤트의 속성을 변경해서는 안됩니다. 이벤트가 허브에 포스팅 되면 해당 이벤트 참조는 허브에 붙은 모든 플로우들에 공유되며, 각 플로우가 언제 그 이벤트를 처리하게 될 지는 알 수 없습니다. <strong>따라서 일단 허브에 포스팅 된 이벤트는 변경할 수 없는 (immutable) 객체로 간주해야 합니다.</strong> 예를 들어 하나의 이벤트가 두 개의 서로 다른 플로우에 큐잉되고 그 중 하나의 플로우가 실행한 핸들러에서 해당 이벤트의 특정 속성을 변경했다면, 다른 플로우의 핸들러가 변경되기 전의 값을 보게 될지 변경된 후의 값을 보게 될지 알 수 없게 됩니다.</p>
+<h3 id="이벤트-핸들러-바인딩">이벤트 핸들러 바인딩</h3>
+<p>x2net에서 각각의 플로우는 자신만의 이벤트-핸들러 바인딩 맵을 관리합니다. 플로우에 공급되는 이벤트에 대해 의미 있는 처리를 하려면 각 플로우의 실행 컨텍스트 내에서 이벤트-핸들러 바인딩을 추가해야 합니다. x2net은 대상 이벤트에 따라 정교하게 제어되는 핸들러들을 수시로 추가/제거할 것을 권장하지만, 다음과 같이 모든 이벤트를 수신해 타입 식별자에 따라 분기하는 전통적인 용법도 가능합니다.</p>
+<pre><code class="lang-csharp">   Flow.Bind(new Event(), OnEvent);
+</code></pre>
+<pre><code class="lang-csharp">    void OnEvent(Event e)
+    {
+        switch (e.GetTypeId())
+        {
+            case 1:
+                // do something
+                break;
+            case 2:
+                // do other thing
+                break;
+            ...
+        }
+    }
+</code></pre>
+<p>허브에 이벤트를 포스팅할 때처럼, 다음과 같은 보다 간편한 용법을 위해 이벤트 확장 메소드가 제공됩니다.</p>
+<pre><code class="lang-csharp">    new Event().Bind(OnEvnet);
+</code></pre>
+<p><code>Flow</code> 클래스는 현재 스레드를 실행 중인 플로우를 식별할 수 있는 <code>CurrentFlow</code>라는 스레드 로컬 속성을 갖고 있습니다. 우리가 현재 플로우에 바인딩을 추가하기 위해 단순히 <code>Flow.Bind()</code> 정적 메소드를 사용할 수 있는 것은 이 때문입니다.</p>
+<p>이미 등록된 바인딩을 제거하기 위해서는 단지 <code>Bind</code> 대신 <code>Unbind</code> 메소드를 사용하면 됩니다.</p>
+<pre><code class="lang-csharp">    Flow.Unbind(new Event(), OnEvent);  // or new Event().Unbind(OnEvnet);
+</code></pre>
+<h3 id="이벤트-계층-구조와-핸들러-바인딩">이벤트 계층 구조와 핸들러 바인딩</h3>
+<p>어떤 이벤트에 대해 바인딩 된 핸들러들이 실행될 때에는 이벤트의 상속 계층 구조를 거슬러 올라가며 바인딩 된 핸들러들이 모두 실행됩니다.</p>
+<pre><code class="lang-xml">&lt;x2&gt;
+    &lt;event name=&quot;Foo&quot; id=&quot;1&quot;&gt;
+    &lt;/event&gt;
+    &lt;event name=&quot;Bar&quot; id=&quot;1&quot; base=&quot;Foo&quot;&gt;
+    &lt;/event&gt;
+&lt;/x2&gt;
+</code></pre>
+<pre><code class="lang-csharp">        new Foo().Bind(OnFoo);
+        new Bar().Bind(OnBar);
+    ...
+
+    void OnFoo(Foo e) { ... }
+    void OnBar(Bar e) { ... }
+</code></pre>
+<p>예를 들어 위의 예제와 같이 <code>Foo</code> 이벤트를 상속 받는 <code>Bar</code> 이벤트가 있고 각각에 대한 핸들러가 바인딩 되어 있다면, <code>Foo</code> 이벤트 인스턴스가 처리될 때에는 <code>OnFoo</code>만이 호출되지만 <code>Bar</code> 이벤트 인스턴스가 처리될 때에는 <code>OnBar</code>와 <code>OnFoo</code>가 모두 호출됩니다.</p>
+<p>처음에 살펴본 예제에서 <code>Event</code>는 모든 이벤트의 상위 클래스이기 때문에 <code>Event</code>에 대한 핸들러를 바인딩하면 모든 이벤트를 수신할 수 있었습니다.</p>
+<h3 id="정교한-이벤트-디스패칭">정교한 이벤트 디스패칭</h3>
+<p>x2net에서는 이벤트의 하나 이상의 특정 속성이 정확히 원하는 값일 때에만 이벤트 핸들러가 호출되도록 바인딩할 수 있습니다. 예를 들어, 아래와 같은 경우에는 <code>Bar</code> 속성의 값이 정확히 1인 <code>Foo</code> 이벤트에 대해서만 <code>OnFoo</code> 핸들러가 호출되며, <code>Bar</code> 속성이 설정되지 않거나 1이 아닌 값으로 설정된 경우에는 호출되지 않습니다.</p>
+<pre><code class="lang-xml">&lt;x2&gt;
+    &lt;event name=&quot;Foo&quot; id=&quot;1&quot;&gt;
+        &lt;property name=&quot;Bar&quot; type=&quot;int32&quot;/&gt;
+    &lt;/event&gt;
+&lt;/x2&gt;
+</code></pre>
+<pre><code class="lang-csharp">        new Foo { Bar = 1 }.Bind(OnFoo);
+    ...
+
+    void OnFoo(Foo e)
+    {
+        // e.Bar == 1
+        ...
+    }
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

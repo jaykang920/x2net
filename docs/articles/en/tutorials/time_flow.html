@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TimeFlow and Heartbeat Event </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="TimeFlow and Heartbeat Event ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="timeflow-and-heartbeat-event">TimeFlow and Heartbeat Event</h2>
+
+<h3 id="timeflow">TimeFlow</h3>
+<p><code>TimeFlow</code> is a utility flow that posts time-deferred or periodic events to the application hub. You can acquire the singleton instance of the default time flow through the static property <code>TimeFlow.Default</code>.</p>
+<h4 id="reserving-deferred-events">Reserving Deferred Events</h4>
+<p>You can simply reserve an event to be posted after a given seconds as follows:</p>
+<pre><code class="lang-csharp">    // Reserve MyEvent after 10 seconds
+    TimeFlow.Default.Reserve(new MyEvent(), 10.0);
+</code></pre>
+<p>Or you may use the <code>TimeSpan</code> struct to achieve the same.</p>
+<pre><code class="lang-csharp">    // Reserve MyEvent after 10 seconds
+    TimeFlow.Default.Reserve(new MyEvent(), new TimeSpan(0, 0, 10));
+</code></pre>
+<p>If you want to reserve an event at a absolute time, you can use the methods that accept <code>DateTime</code> struct arguemtns.</p>
+<pre><code class="lang-csharp">    TimeFlow.Default.ReserveAtLocalTime(new MyEvent(), DateTime.Now + 1);
+
+    TimeFlow.Default.ReserveAtUniversalTime(new MyEvent(), DateTime.UtcNow + 1);
+</code></pre>
+<p>All these reservation methods returns <code>Timer.Token</code> struct values. In order to cancel a reserved event, you can call the <code>Cancel</code> method with the corresponding token.</p>
+<pre><code class="lang-csharp">    Timer.Token token = TimeFlow.Default.Reserver(new MyEvent(), 10);
+    ...
+    TimeFlow.Default.Cancel(token);
+</code></pre>
+<h4 id="reserving-periodic-events">Reserving Periodic Events</h4>
+<pre><code class="lang-csharp">    // Reserve MyEvent every 10 seconds
+    TimeFlow.Default.ReserveRepetition(new MyEvent(), new TimeSpan(0, 0, 10));
+
+    // Reserve MyEvent after 1 minute, then every 10 seconds
+    TimeFlow.Default.ReserveRepetition(new MyEvent(),
+        DateTime.UtcNow.AddMinutes(1), new TimeSpan(0, 0, 10));
+</code></pre>
+<p>You can call the <code>CancelRepetition</code> method to cancel a periodic event.</p>
+<pre><code class="lang-csharp">    TimeFlow.Default.CancelRepetition(new MyEvent());
+</code></pre>
+<h3 id="heartbeat-event">Heartbeat Event</h3>
+<p>When <code>Hub.Startup()</code> is called, x2net automatically reserves the periodic heartbeat event on the default time flow. You may override <code>protected void OnHeartbeat()</code> method of the <code>Flow</code> class to define what you want to do periodically. Or you can add a handler binding into your case to handle the heartbeat event as follows:</p>
+<pre><code class="lang-csharp">public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
+    }
+
+    void OnHeartbeatEvent(HeartbeatEvent e)
+    {
+        // do something
+    }
+}
+</code></pre>
+<p>The default heartbeat interval is 5 seconds. You may change the heartbeat interval by assigning <code>Config.HeartbeatInterval</code> property in seconds, before calling <code>Hub.Startup()</code>. But beware of the side effects: changing the heartbeat interval will affect the Keepalive interval of builtin TCP links and other internals.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

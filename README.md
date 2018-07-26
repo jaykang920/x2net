@@ -8,6 +8,11 @@
 in C#, targeting universal [.NET](https://www.microsoft.com/net) environments
 covering Mono, .NET Framework, and .NET Core.
 
+In order to make full use of x2net, you need to understand the fundamental
+concepts and ideas of x2. At least, you should be familiar with basic
+[x2 concepts](https://github.com/jaykang920/x2/blob/master/concepts.md)
+such as cell, event, hub, flow, case and link.
+
 Features
 --------
 
@@ -135,6 +140,8 @@ public EchoClient : AsyncTcpClient
 Requirements
 ------------
 
+### .NET Framework and Mono
+
 * .NET framework 3.5 or newer equivalent environment to run
 * Visual Studio 2008 (9.0) or newer equivalent tool to compile C# 3.0
 
@@ -146,32 +153,21 @@ Requirements
 Installation
 ------------
 
-### Binary
+The following two NuGet packages can be installed via the
+[Package Manager UI](https://docs.microsoft.com/en-us/nuget/tools/package-manager-ui),
+or by the Package Manager console command `Install-Package`.
 
-x2net can be installed via the [NuGet UI](https://docs.nuget.org/consume/package-manager-dialog) (as [x2net](https://www.nuget.org/packages/x2net)), or via the NuGet Package Manager console command:
+* [x2net](https://www.nuget.org/packages/x2net)
+* [x2net.xpiler](https://www.nuget.org/packages/x2net.xpiler)
 
-    PM> Install-Package x2net
-
-The xpiler converts x2 definition files into corresponding C# source code files.
-So most probably you will want to install the [x2net.xpiler](https://www.nuget.org/packages/x2net.xpiler) too.
-
-    PM> Install-Package x2net.xpiler
-
-### Source
-
-You may clone the latest source code of x2net from its [GitHub repository](https://github.com/jaykang920/x2net.git).
-
-Zipped archives containing specific tagged versions of the source code are available in [releases](https://github.com/jaykang920/x2net/releases).
-
-### Unity3D
-
-If you want to use x2net in Unity3D, you should build it with the conditional
-compile constant UNITY_WORKAROUND and drop the DLL into the Assets/Plugin folder.
+See [Installation](https://jaykang920.github.io/x2net/articles/en/install.html)
+for more about installation.
 
 Documentation
 -------------
 
-[x2net wiki](https://github.com/jaykang920/x2net/wiki) can be a good start point to learn how x2net applications are organized.
+[Tutorials & Guides](https://jaykang920.github.io/x2net/articles/index.html) is
+a good start point to learn how x2net applications are organized.
 
 Contributions
 -------------

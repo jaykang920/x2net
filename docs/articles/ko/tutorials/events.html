@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Tutorials &amp; Guides </title>
+    <title>&#51060;&#48292;&#53944;&#51032; &#49373;&#49457;&#44284; &#54252;&#49828;&#54021; </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Tutorials &amp; Guides ">
+    <meta name="title" content="&#51060;&#48292;&#53944;&#51032; &#49373;&#49457;&#44284; &#54252;&#49828;&#54021; ">
     <meta name="generator" content="docfx 2.36.1.0">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
     
     
     
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -67,8 +67,37 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="tutorials--guides">Tutorials &amp; Guides</h1>
+<h2 id="이벤트의-생성과-포스팅">이벤트의 생성과 포스팅</h2>
 
+<h3 id="새-이벤트-만들기">새 이벤트 만들기</h3>
+<p>언어의 객체 생성 구문을 이용해 새로운 이벤트 객체를 생성할 수 있고, C# 언어의 객체 초기화 블록을 사용하면 객체 생성과 함께 공용 속성 초기화를 간단히 할 수 있습니다.</p>
+<pre><code class="lang-csharp">    var MyEvent1 = new MyEvent();
+
+    var myEvent2 = new MyEvent {
+        Foo = 1,
+        Bar = 2
+    };
+</code></pre>
+<h3 id="허브에-이벤트-포스팅-하기">허브에 이벤트 포스팅 하기</h3>
+<p><code>Hub</code> 클래스의 <code>Post()</code> 정적 메소드를 이용해 이벤트를 허브에 포스팅 할 수 있습니다.</p>
+<pre><code class="lang-csharp">    ...
+    var myEvent = new MyEvent {
+        Foo = 1,
+        Bar = 2
+    };
+    ...
+    Hub.Post(myEvent);
+</code></pre>
+<p>이벤트가 허브에 포스팅 되면, 허브에 붙어 실행 중인 모든 플로우들이 해당 이벤트를 전달 받습니다.
+편의를 위해 다음과 같은 용법을 지원하기 위한 이벤트 확장 메소드도 제공됩니다..</p>
+<pre><code class="lang-csharp">    ...
+    new MyEvent {
+        Foo = 1,
+        Bar = 2
+    }.Post();
+    ...
+</code></pre>
+<p><code>Hub</code> 클래스가 싱글턴이고 이벤트 포스팅은 스레드 안전하기 때문에, x2net의 실행 컨텍스트가 아닌 응용 프로그램의 어느 곳에서든 허브에 이벤트를 포스팅함으로써 x2net과 상호 작용할 수 있습니다.</p>
 </article>
           </div>
           
@@ -100,8 +129,8 @@
       </footer>
     </div>
     
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
   </body>
 </html>

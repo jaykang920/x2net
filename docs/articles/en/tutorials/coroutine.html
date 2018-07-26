@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Coroutine </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Coroutine ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="coroutine">Coroutine</h2>
+
+<p>x2net coroutines are implemented on top of .NET framework iterators, to support suspending and resuming execution within a single thread. x2net coroutines let you work with more intuitive code, binding a couple of sequential tasks into one handler method.</p>
+<h3 id="constraints">Constraints</h3>
+<p>Just like .NET framework iterators which they are based on, x2net coroutines do not form a general-purpose coroutine library. There are some constraints using x2net coroutines.</p>
+<ul>
+<li>They can be used within x2net event handlers.</li>
+<li>They can be used within a single thread. So you can use them with builtin <code>SingleThreadFlow</code> and <code>ThreadlessFlow</code> (providing that the host thread is single), but not with <code>MultiThreadFlow</code>.</li>
+</ul>
+<h3 id="time-delay">Time Delay</h3>
+<p>First, we will look into the most simple one, <code>WaitForSeconds</code> that introduces a time delay into execution.</p>
+<pre><code class="lang-csharp">using System.Collections;
+
+using x2net;
+
+public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        Bind(new MyEvent(), OnMyEvent);
+    }
+
+    IEnumerator OnMyEvent(Coroutine coroutine, MyEvent e)
+    {
+        // now
+        yield return coroutine.WaitForSeconds(10);
+        // 10 seconds later
+    }
+}
+</code></pre>
+<p>In the above example, the event handler <code>OnMyEvent</code> starts, waits for 10 seconds, and resumes to finish. Please note that the execution thread doesn't block during the wait time. Once a coroutine handler returns prematurely on a <code>yield</code> statement, the execution thread continues to invoke as many next handlers as they can. After the specified seconds, the control returns to the next line of the <code>yield</code> statement and goes on.</p>
+<h3 id="waiting-for-events">Waiting for Events</h3>
+<p>When you want to wait for a specific event within an event handler, you can use <code>WaitForEvent</code>. Without coroutines, you would have two separate event handlers for it.</p>
+<pre><code class="lang-csharp">using System.Collections;
+
+using x2net;
+
+public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        Bind(new MyEvent(), OnMyEvent);
+    }
+
+    IEnumerator OnMyEvent(Coroutine coroutine, MyEvent e)
+    {
+        // now
+
+        yield return coroutine.WaitForEvent(new MyOtherEvent());
+
+        // On MyOtherEvent posted, or timeout occurred
+        var result = coroutine.Result as MyOtherEvent;
+        if ((object)result != null)
+        {
+            // result is the MyOtherEvent instance posted
+        }
+        else
+        {
+            // timeout
+        }
+    }
+}
+</code></pre>
+<p>Now when the control reaches the <code>yield</code> statement of the event handler <code>OnMyEvent</code>, it starts to wait for another event <code>MyOtherEvent</code> being posted. As said before, the execution thread doesn't block and continues to invoke next handlers. When the desired <code>MyOtherEvent</code> is posted or the timeout occurs, the control returns to the next line of the <code>yield</code> statement. You can see that it is possible to check for timeout and acquire the resultant event instance through the <code>Result</code> property of the <code>Coroutine</code> object.</p>
+<h3 id="posting-requests-and-waiting-for-responses">Posting Requests and Waiting for Responses</h3>
+<p>Designing a distributed application, one of the most frequent tasks is sending a request and receiving a response to go on. For this purpose, you can use <code>WaitForResponse</code> derived from <code>WaitForEvent</code>.</p>
+<pre><code class="lang-csharp">using System.Collections;
+
+using x2net;
+
+public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        Bind(new MyEvent(), OnMyEvent);
+    }
+
+    IEnumerator OnMyEvent(Coroutine coroutine, MyEvent e)
+    {
+        // now
+
+        yield return coroutine.WaitForResponse(
+            new MyReq(),
+            new MyResp());
+
+        // On MyResp posted, or timeout occurred
+        var result = coroutine.Result as MyResp;
+        if ((object)result != null)
+        {
+            // result is the MyResp instance posted
+        }
+        else
+        {
+            // timeout
+        }
+    }
+}
+</code></pre>
+<p><code>WaitForResponse</code> simply posts the request event when it starts to wait. Due to the nature of x2net, this handler has no idea about where the posted request is actually handled. However, if the request is successfully handled and the response event is posted to the hub, the control returns to the next line of <code>yield</code> statement and you can access the resultant event through the <code>Result</code> property of the <code>Coroutine</code> object.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

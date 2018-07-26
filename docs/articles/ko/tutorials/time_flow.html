@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#53440;&#51076; &#54540;&#47196;&#50864;&#50752; &#54616;&#53944;&#48708;&#53944; &#51060;&#48292;&#53944; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#53440;&#51076; &#54540;&#47196;&#50864;&#50752; &#54616;&#53944;&#48708;&#53944; &#51060;&#48292;&#53944; ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="타임-플로우와-하트비트-이벤트">타임 플로우와 하트비트 이벤트</h2>
+
+<h3 id="timeflow">TimeFlow</h3>
+<p><code>TimeFlow</code>는 시간 지연된 이벤트 또는 반복적으로 발생하는 이벤트 들을 응용 프로그램 이벤트 허브에 포스팅하기 위해 사용되는 유틸리티 플로우입니다. <code>TimeFlow.Default</code> 정적 속성으로 기본 타임 플로우의 싱글턴 인스턴스를 얻어 사용할 수 있습니다.</p>
+<h4 id="시간-지연된-이벤트-포스팅-예약하기">시간 지연된 이벤트 포스팅 예약하기</h4>
+<p>간단히 지금으로부터 몇 초 후에 이벤트가 포스팅 되기를 원한다면 다음과 같이 예약할 수 있습니다.</p>
+<pre><code class="lang-csharp">    // 10초 후에 MyEvent 예약
+    TimeFlow.Default.Reserve(new MyEvent(), 10.0);
+</code></pre>
+<p>같은 작업을 위해 <code>TimeSpan</code> 구조체를 사용할 수도 있습니다.</p>
+<pre><code class="lang-csharp">    // 10초 후에 MyEvent 예약
+    TimeFlow.Default.Reserve(new MyEvent(), new TimeSpan(0, 0, 10));
+</code></pre>
+<p>예약할 시간이 지금으로부터의 상대 시간이 아니라 절대 시간이라면 다음과 같이 <code>DateTime</code> 구조체를 사용하는 예약 함수들을 사용할 수 있습니다.</p>
+<pre><code class="lang-csharp">    TimeFlow.Default.ReserveAtLocalTime(new MyEvent(), DateTime.Now + 1);
+
+    TimeFlow.Default.ReserveAtUniversalTime(new MyEvent(), DateTime.UtcNow + 1);
+</code></pre>
+<p>위의 모든 예약 메소드들은 <code>Timer.Token</code> 구조체 형식을 반환합니다. 예약된 이벤트를 취소하기 위해서는 이 토큰을 인자로 <code>Cancel</code> 메소드를 호출하면 됩니다.</p>
+<pre><code class="lang-csharp">    Timer.Token token = TimeFlow.Default.Reserver(new MyEvent(), 10);
+    ...
+    TimeFlow.Default.Cancel(token);
+</code></pre>
+<h4 id="반복적인-이벤트-포스팅-예약하기">반복적인 이벤트 포스팅 예약하기</h4>
+<pre><code class="lang-csharp">    // 지금부터 매 10초마다 MyEvent 예약
+    TimeFlow.Default.ReserveRepetition(new MyEvent(), new TimeSpan(0, 0, 10));
+
+    // 지금으로부터 1분 후, 그리고 그로부터 매 10초마다 MyEvent 예약
+    TimeFlow.Default.ReserveRepetition(new MyEvent(),
+        DateTime.UtcNow.AddMinutes(1), new TimeSpan(0, 0, 10));
+</code></pre>
+<p>이벤트 반복 예약을 취소하기 위해서는 동일한 이벤트를 인자로 <code>CancelRepetition</code>을 호출하면 됩니다.</p>
+<pre><code class="lang-csharp">    TimeFlow.Default.CancelRepetition(new MyEvent());
+</code></pre>
+<h3 id="하트비트-이벤트">하트비트 이벤트</h3>
+<p>하트비트 이벤트는 <code>Hub.Startup()</code>이 호출될 때 기본 타임 플로우에 자동으로 반복이 예약되어 주기적으로 포스팅 됩니다. <code>Flow</code> 클래스의 <code>protected void OnHeartbeat()</code> 메소드를 오버라이드하면 하트비트 이벤트가 발생할 때마다 실행할 작업을 지정할 수 있지만, 보통 플로우가 아닌 케이스를 상속 받을 것이기 때문에 여러분의 케이스에서 다음처럼 핸들러 바인딩을 추가할 수도 있습니다.</p>
+<pre><code class="lang-csharp">public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        Bind(Hub.HeartbeatEvent, OnHeartbeatEvent);
+    }
+
+    void OnHeartbeatEvent(HeartbeatEvent e)
+    {
+        // do something
+    }
+}
+</code></pre>
+<p>하트비트 이벤트의 주기는 x2net 서브시스템을 시작하기 전에 <code>Config.HeartbeatInterval</code> 속성에 초 단위로 지정할 수 있으며, 디폴트 값은 5초입니다. 하트비트 이벤트 주기를 변경하는 것은 내장 TCP 링크의 Keepalive 주기 등에 영향을 미칠 수 있기 때문에 신중하게 고려해서 결정해야 합니다.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

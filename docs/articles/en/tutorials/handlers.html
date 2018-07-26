@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Event Handlers </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Event Handlers ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="event-handlers">Event Handlers</h2>
+
+<h3 id="writing-event-handlers">Writing Event Handlers</h3>
+<p>x2net event handlers are internally .NET framework delegates. When you use an instance method as a event handler, the method does not have to be <code>public</code>. You neither have to type-cast the event argument of a handler, since it can be the same type as what you bind your handler with. The following example shows a custom case with an instance method handling <code>Foo</code> events.</p>
+<pre><code class="lang-xml">&lt;x2&gt;
+    &lt;event name=&quot;Foo&quot; id=&quot;1&quot;&gt;
+        &lt;property name=&quot;Bar&quot; type=&quot;int32&quot;/&gt;
+    &lt;/event&gt;
+&lt;/x2&gt;
+</code></pre>
+<pre><code class="lang-csharp">public class MyCase : Case
+{
+    protected override void Setup()
+    {
+        new Foo().Bind(OnFoo);
+    }
+
+    void OnFoo(Foo e)
+    {
+        // Do not change e.Bar here!
+        ...
+    }
+}
+</code></pre>
+<p>An event handler should not change the properties of the event passed in. When an event is posted to the hub, all the flows attached to the hub share its reference, and there is no way to tell when the event will be processed in each flow. <strong>Once an event is posted to the hub, you should treat it as an immutable object.</strong> For example, let's say that one event was queued into two separate flows and one of the flows made a change to a specific property of the event. When the other flow is ready to handle the event, we cannot be sure whether the property has a value before or after the change.</p>
+<h3 id="binding-event-handlers">Binding Event Handlers</h3>
+<p>In x2net, each flow manages its own map of event-hander bindings. In order to do something meaningful upon the events that is fed to a flow, you need to add some event-handler bindings within the execution context of the flow. Although x2net encourages frequent handler binding/unbinding on precisely configured target events, you can still rely on the old traditional approach with global event handler switching on event types.</p>
+<pre><code class="lang-csharp">   Flow.Bind(new Event(), OnEvent);
+</code></pre>
+<pre><code class="lang-csharp">    void OnEvent(Event e)
+    {
+        switch (e.GetTypeId())
+        {
+            case 1:
+                // do something
+                break;
+            case 2:
+                // do other thing
+                break;
+            ...
+        }
+    }
+</code></pre>
+<p>Just like the case of event posting, event extension methods are provided to support the following convenient usage.</p>
+<pre><code class="lang-csharp">    new Event().Bind(OnEvnet);
+</code></pre>
+<p>The <code>Flow</code> class has a thread-static property <code>CurrentFlow</code> that identifies the flow executing the current thread. That's why you can simply call <code>Flow.Bind()</code> static method to register a binding to the current flow.</p>
+<p>In order to remove a previously installed binding, you just call <code>Unbind</code> methods instead of <code>Bind</code>.</p>
+<pre><code class="lang-csharp">    Flow.Unbind(new Event(), OnEvent);  // or new Event().Unbind(OnEvnet);
+</code></pre>
+<h3 id="event-hierarchy-and-handler-binding">Event Hierarchy and Handler Binding</h3>
+<p>When event handlers are selected for an event, the inheritance hierarchy of the event is reverse-scanned to find handler bindings for each event.</p>
+<pre><code class="lang-xml">&lt;x2&gt;
+    &lt;event name=&quot;Foo&quot; id=&quot;1&quot;&gt;
+    &lt;/event&gt;
+    &lt;event name=&quot;Bar&quot; id=&quot;1&quot; base=&quot;Foo&quot;&gt;
+    &lt;/event&gt;
+&lt;/x2&gt;
+</code></pre>
+<pre><code class="lang-csharp">        new Foo().Bind(OnFoo);
+        new Bar().Bind(OnBar);
+    ...
+
+    void OnFoo(Foo e) { ... }
+    void OnBar(Bar e) { ... }
+</code></pre>
+<p>In the above example, <code>Bar</code> event inherits from <code>Foo</code> event and both events have handler bindings. Handling 'Foo' event instance, only <code>OnFoo</code> handler is called. Handling <code>Bar</code> event instance, both <code>OnBar</code> and <code>OnFoo</code> handlers are called.</p>
+<p>In the first example, the handler <code>OnEvent</code> could receive all the events since the <code>Event</code> class is the common base class for all custom event types.</p>
+<h3 id="precise-event-dispatching">Precise Event Dispatching</h3>
+<p>In x2net, you may have a handler binding that would be called exactly when some event properties match desired values. In the example below, <code>OnFoo</code> handler is called on a <code>Foo</code> event whose <code>Bar</code> property value is exactly 1. The handler is not called on a <code>Foo</code> event if its <code>Bar</code> property value is not 1.</p>
+<pre><code class="lang-xml">&lt;x2&gt;
+    &lt;event name=&quot;Foo&quot; id=&quot;1&quot;&gt;
+        &lt;property name=&quot;Bar&quot; type=&quot;int32&quot;/&gt;
+    &lt;/event&gt;
+&lt;/x2&gt;
+</code></pre>
+<pre><code class="lang-csharp">        new Foo { Bar = 1 }.Bind(OnFoo);
+    ...
+
+    void OnFoo(Foo e)
+    {
+        // e.Bar == 1
+        ...
+    }
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

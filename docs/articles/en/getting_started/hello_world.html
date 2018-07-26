@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hello, World! </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Hello, World! ">
+    <meta name="generator" content="docfx 2.36.1.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hello-world">Hello, World!</h1>
+
+<p>We start with a very simple console application that prints out a greeting, accepting a name input.</p>
+<pre><code class="lang-csharp">using System;
+
+class Hello0
+{
+    public static void Main()
+    {
+        while (true)
+        {
+            string input= Console.ReadLine();
+            if (input == &quot;bye&quot;)
+            {
+                break;
+            }
+            Console.WriteLine(&quot;Hello, {0}!&quot;, input);
+        }
+    }
+}
+</code></pre>
+<p>Yes, this is not so interesting. Though it's not very probable, let's say we are told that this application should support distribution across multiple threads, even across multiple processes in a client/server architecture. Of course, we think it's crazy, but we will see how we can meet the requirements with x2net.</p>
+<h2 id="preparing-shared-knowledge">Preparing Shared Knowledge</h2>
+<p>Constants, date types and message types that are shared among participating processes of a distributable application should be defined in one or more x2 definition files, and be converted to C# source files with xpiler. Since this is a trivial example, we create a single x2 definition file, name it <code>HelloWorld.xml</code>, and define two events as follows:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;x2&gt;
+  &lt;definitions&gt;
+    &lt;event name=&quot;HelloReq&quot; id=&quot;1&quot;&gt;
+        &lt;property name=&quot;Name&quot; type=&quot;string&quot;/&gt;
+    &lt;/event&gt;
+    &lt;event name=&quot;HelloResp&quot; id=&quot;2&quot;&gt;
+        &lt;property name=&quot;Message&quot; type=&quot;string&quot;/&gt;
+    &lt;/event&gt;
+  &lt;/definitions&gt;
+&lt;/x2&gt;
+</code></pre>
+<p>In the directory where the definition file resides, we generate the 'HelloWorld.cs' source file, running xpiler.exe.</p>
+<pre><code>path_to_xpiler/x2net.xpiler.exe .
+</code></pre>
+<p>Bringing the generated C# source file, the two events <code>HelloReq</code> and <code>HelloResp</code> are available as C# class types.</p>
+<p>It's usually a good idea to build the shared knowledge as a separate class library so that it can be referenced from multiple projects.</p>
+<h2 id="partitioning-application-logic">Partitioning Application Logic</h2>
+<p>Now we define actions that works on the above messages. We pick up two key tasks in the original application, and encapsulate them into respective x2 cases.</p>
+<pre><code class="lang-csharp">public class HelloCase : Case
+{
+    protected override void Setup()
+    {
+        new HelloReq().Bind(req =&gt; {
+            new HelloResp {
+                Message = String.Format(&quot;Hello, {0}!&quot;, req.Name)
+            }.InResponseOf(req).Post();
+        });
+    }
+}
+</code></pre>
+<pre><code class="lang-csharp">public class OutputCase : Case
+{
+    protected override void Setup()
+    {
+        new HelloResp().Bind(e =&gt; Console.WriteLine(e.Message));
+    }
+}
+</code></pre>
+<p><code>HelloCase</code> binds a delegate handler for every <code>HelloReq</code> event. The handler creates a new <code>HelloResp</code> event in response, fills its <code>Result</code> property with the combined greeting, and posts it up to the hub.</p>
+<p><code>OutputCase</code> binds a delegate handler for every <code>CapitalizeResp</code> event. The handler prints out the <code>Result</code> property of the response event.</p>
+<p>Since x2 cases might run on any flow in any process, it is also a good idea to package them into a fine-grained set of class libraries for easy re-structuring.</p>
+<h2 id="going-multithreaded">Going Multithreaded</h2>
+<p>Now we can write our first x2net application, using the events and cases prepared above.</p>
+<pre><code class="lang-csharp">using System;
+
+using x2net;
+
+class Hello1
+{
+    public static void Main()
+    {
+        Hub.Instance
+            .Attach(new SingleThreadFlow()
+                .Add(new HelloCase())
+                .Add(new OutputCase()));
+
+        using (new Hub.Flows().Startup())
+        {
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input == &quot;bye&quot;)
+                {
+                    break;
+                }
+                new HelloReq { Name = input }.Post();
+            }
+        }
+    }
+}
+</code></pre>
+<p>This new application seems to work the same as the original one. But it effectively runs the greeting and output tasks in a separate thread.</p>
+<p>Once we have built up an x2 application structure, it's quite easy to reconfigure its threading model or distribution topology, without modifying the case logic. For example, the following trivial change will introduce another thread to separate the console output task from the greeting task:</p>
+<pre><code class="lang-csharp">    public static void Main()
+    {
+        Hub.Instance
+            .Attach(new SingleThreadFlow(&quot;HelloFlow&quot;)
+                .Add(new HelloCase()))
+            .Attach(new SingleThreadFlow(&quot;OutputFlow&quot;)
+                .Add(new OutputCase()));
+        ...
+</code></pre>
+<h2 id="going-clientserver">Going Client/Server</h2>
+<p>Now it is not so difficult to distribute the application execution through a client/server topology. Please note that the logic cases remain unchanged, while we re-write the other part of the code supporting communication.</p>
+<p>More detailed discussion can be found in [[TCP Socket Client Server]].</p>
+<h3 id="hello-server">Hello Server</h3>
+<pre><code class="lang-csharp">using System;
+
+using x2net;
+
+class Hello2Server
+{
+    class HelloServer : AsyncTcpServer
+    {
+        public HelloServer() : base(&quot;HelloServer&quot;) { }
+
+        protected override void Setup()
+        {
+            EventFactory.Register&lt;HelloReq&gt;();
+            new HelloResp().Bind(Send);
+            Listen(6789);
+        }
+    }
+
+    public static void Main()
+    {
+        Hub.Instance
+            .Attach(new SingleThreadFlow()
+                .Add(new HelloCase())
+                .Add(new HelloServer()));
+
+        using (new Hub.Flows().Startup())
+        {
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input == &quot;bye&quot;)
+                {
+                    break;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="hello-client">Hello Client</h3>
+<pre><code class="lang-csharp">using System;
+
+using x2net;
+
+class Hello2Client
+{
+    class HelloClient : TcpClient
+    {
+        public HelloClient() : base(&quot;HelloClient&quot;) { }
+
+        protected override void Setup()
+        {
+            EventFactory.Register&lt;HelloResp&gt;();
+            new HelloReq().Bind(Send);
+            Connect(&quot;127.0.0.1&quot;, 6789);
+        }
+    }
+
+    public static void Main()
+    {
+        Hub.Instance
+            .Attach(new SingleThreadFlow()
+                .Add(new OutputCase())
+                .Add(new HelloClient()));
+
+        using (new Hub.Flows().Startup())
+        {
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input == &quot;bye&quot;)
+                {
+                    break;
+                }
+                new HelloReq { Name = input }.Post();
+            }
+        }
+    }
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
