@@ -87,107 +87,16 @@ wire format comes extremely efficient.</p>
 <li>Time-deferred or periodic event supply</li>
 <li>Coroutines to join multiple sequential event handlers</li>
 </ul>
-<h2 id="example">Example</h2>
-<p>Here we develop a simple TCP echo client/server, starting with defining two events.</p>
-<pre><code class="lang-xml">&lt;x2&gt;
-  &lt;definitions&gt;
-    &lt;event name=&quot;EchoReq&quot; type=&quot;1&quot;&gt;
-        &lt;property name=&quot;Message&quot; type=&quot;string&quot;/&gt;
-    &lt;/event&gt;
-    &lt;event name=&quot;EchoResp&quot; type=&quot;2&quot;&gt;
-        &lt;property name=&quot;Message&quot; type=&quot;string&quot;/&gt;
-    &lt;/event&gt;
-  &lt;/definitions&gt;
-&lt;/x2&gt;
-</code></pre>
-<p>And we encapsulate our core function (generating echo response) into a case.
-Please note that this logic case knows nothing about the communication detail.</p>
-<pre><code class="lang-csharp">public EchoCase : Case
-{
-    protected override void Setup()
-    {
-        Bind(new EchoReq(),
-            req =&gt; { new EchoResp { Message = req.Message }.InResponseOf(req).Post(); });
-    }
-}
-</code></pre>
-<p>Now we extend builtin TCP link cases to handle the network communication.</p>
-<pre><code class="lang-csharp">public EchoServer : AsyncTcpServer
-{
-    public EchoServer() : base(&quot;EchoServer&quot;) { }
-
-    protected override void Setup()
-    {
-        EventFactory.Resiger&lt;EchoReq&gt;();
-        Bind(new EchoResp(), Send);
-        Listen(6789);
-    }
-
-    public static void Main()
-    {
-        Hub.Instance
-            .Attach(new SingleThreadFlow()
-                .Add(new EchoCase())
-                .Add(new EchoServer());
-        using (new Hub.Flows().Startup())
-        {
-            while (true)
-            {
-                string message = Console.ReadLine();
-                if (message == &quot;quit&quot;)
-                {
-                    break;
-                }
-            }
-        }
-    }
-}
-
-public EchoClient : AsyncTcpClient
-{
-    public EchoClient() : base(&quot;EchoClient&quot;) { }
-
-    protected override void Setup()
-    {
-        EventFactory.Resiger&lt;EchoResp&gt;();
-        Bind(new EchoReq(), Send);
-        Bind(new EchoResp(), resp =&gt; { Console.WriteLine(resp.Message); });
-        Connect(&quot;127.0.0.1&quot;, 6789);
-    }
-
-    public static void Main()
-    {
-        Hub.Instance
-            .Attach(new SingleThreadFlow()
-                .Add(new EchoClient()));
-        using (new Hub.Flows().Startup())
-        {
-            while (true)
-            {
-                string message = Console.ReadLine();
-                if (message == &quot;quit&quot;)
-                {
-                    break;
-                }
-                else
-                {
-                    new EchoReq { Message = message }.Post();
-                }
-            }
-        }
-    }
-}
-</code></pre>
 <h2 id="requirements">Requirements</h2>
-<h3 id="net-framework-and-mono">.NET Framework and Mono</h3>
-<ul>
-<li>.NET framework 3.5 or newer equivalent environment to run</li>
-<li>Visual Studio 2008 (9.0) or newer equivalent tool to compile C# 3.0</li>
-</ul>
 <h3 id="net-core">.NET Core</h3>
 <ul>
 <li>.NET Core 2.0 or newer</li>
 <li>Visual Studio 2017 (version 15.3) or newer</li>
+</ul>
+<h3 id="net-framework-mono">.NET Framework (Mono)</h3>
+<ul>
+<li>.NET framework 3.5 or newer equivalent environment to run</li>
+<li>Visual Studio 2008 (9.0) or newer equivalent tool to compile C# 3.0</li>
 </ul>
 <h2 id="installation">Installation</h2>
 <p>The following two NuGet packages can be installed via the

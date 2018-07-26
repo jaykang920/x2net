@@ -35,120 +35,18 @@ wire format comes extremely efficient.
 * Time-deferred or periodic event supply
 * Coroutines to join multiple sequential event handlers
 
-Example
--------
-
-Here we develop a simple TCP echo client/server, starting with defining two events.
-
-```xml
-<x2>
-  <definitions>
-    <event name="EchoReq" type="1">
-        <property name="Message" type="string"/>
-    </event>
-    <event name="EchoResp" type="2">
-        <property name="Message" type="string"/>
-    </event>
-  </definitions>
-</x2>
-```
-
-And we encapsulate our core function (generating echo response) into a case.
-Please note that this logic case knows nothing about the communication detail.
-
-```csharp
-public EchoCase : Case
-{
-    protected override void Setup()
-    {
-        Bind(new EchoReq(),
-            req => { new EchoResp { Message = req.Message }.InResponseOf(req).Post(); });
-    }
-}
-```
-
-Now we extend builtin TCP link cases to handle the network communication.
-
-```csharp
-public EchoServer : AsyncTcpServer
-{
-    public EchoServer() : base("EchoServer") { }
-
-    protected override void Setup()
-    {
-        EventFactory.Resiger<EchoReq>();
-        Bind(new EchoResp(), Send);
-        Listen(6789);
-    }
-
-    public static void Main()
-    {
-        Hub.Instance
-            .Attach(new SingleThreadFlow()
-                .Add(new EchoCase())
-                .Add(new EchoServer());
-        using (new Hub.Flows().Startup())
-        {
-            while (true)
-            {
-                string message = Console.ReadLine();
-                if (message == "quit")
-                {
-                    break;
-                }
-            }
-        }
-    }
-}
-
-public EchoClient : AsyncTcpClient
-{
-    public EchoClient() : base("EchoClient") { }
-
-    protected override void Setup()
-    {
-        EventFactory.Resiger<EchoResp>();
-        Bind(new EchoReq(), Send);
-        Bind(new EchoResp(), resp => { Console.WriteLine(resp.Message); });
-        Connect("127.0.0.1", 6789);
-    }
-
-    public static void Main()
-    {
-        Hub.Instance
-            .Attach(new SingleThreadFlow()
-                .Add(new EchoClient()));
-        using (new Hub.Flows().Startup())
-        {
-            while (true)
-            {
-                string message = Console.ReadLine();
-                if (message == "quit")
-                {
-                    break;
-                }
-                else
-                {
-                    new EchoReq { Message = message }.Post();
-                }
-            }
-        }
-    }
-}
-```
-
 Requirements
 ------------
-
-### .NET Framework and Mono
-
-* .NET framework 3.5 or newer equivalent environment to run
-* Visual Studio 2008 (9.0) or newer equivalent tool to compile C# 3.0
 
 ### .NET Core
 
 * .NET Core 2.0 or newer
 * Visual Studio 2017 (version 15.3) or newer
+
+### .NET Framework (Mono)
+
+* .NET framework 3.5 or newer equivalent environment to run
+* Visual Studio 2008 (9.0) or newer equivalent tool to compile C# 3.0
 
 Installation
 ------------

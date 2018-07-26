@@ -1992,7 +1992,7 @@
           "hash": "/69Hbidn6d9QRa4k4CSqWQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -2145,10 +2145,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "cJJqFjaaHSXkT4oCEbjfJg=="
+          "hash": "suz8V8FQgqQcg5GrCjToKw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
