@@ -2719,12 +2719,6 @@ references:
   commentId: M:x2net.Cell.Deserialize(x2net.Deserializer)
   fullName: x2net.Cell.Deserialize(x2net.Deserializer)
   nameWithType: Cell.Deserialize(Deserializer)
-- uid: x2net.Cell.Deserialize(x2net.VerboseDeserializer)
-  name: Deserialize(VerboseDeserializer)
-  href: api/x2net.Cell.html#x2net_Cell_Deserialize_x2net_VerboseDeserializer_
-  commentId: M:x2net.Cell.Deserialize(x2net.VerboseDeserializer)
-  fullName: x2net.Cell.Deserialize(x2net.VerboseDeserializer)
-  nameWithType: Cell.Deserialize(VerboseDeserializer)
 - uid: x2net.Cell.Deserialize*
   name: Deserialize
   href: api/x2net.Cell.html#x2net_Cell_Deserialize_
@@ -2917,21 +2911,6 @@ references:
   fullName.vb: x2net.Cell.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
   nameWithType: Cell.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: Cell.Serialize(Serializer, Type, ByRef Boolean)
-- uid: x2net.Cell.Serialize(x2net.VerboseSerializer)
-  name: Serialize(VerboseSerializer)
-  href: api/x2net.Cell.html#x2net_Cell_Serialize_x2net_VerboseSerializer_
-  commentId: M:x2net.Cell.Serialize(x2net.VerboseSerializer)
-  fullName: x2net.Cell.Serialize(x2net.VerboseSerializer)
-  nameWithType: Cell.Serialize(VerboseSerializer)
-- uid: x2net.Cell.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name: Serialize(VerboseSerializer, Type, ref Boolean)
-  href: api/x2net.Cell.html#x2net_Cell_Serialize_x2net_VerboseSerializer_Type_System_Boolean__
-  commentId: M:x2net.Cell.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name.vb: Serialize(VerboseSerializer, Type, ByRef Boolean)
-  fullName: x2net.Cell.Serialize(x2net.VerboseSerializer, Type, ref System.Boolean)
-  fullName.vb: x2net.Cell.Serialize(x2net.VerboseSerializer, Type, ByRef System.Boolean)
-  nameWithType: Cell.Serialize(VerboseSerializer, Type, ref Boolean)
-  nameWithType.vb: Cell.Serialize(VerboseSerializer, Type, ByRef Boolean)
 - uid: x2net.Cell.Serialize*
   name: Serialize
   href: api/x2net.Cell.html#x2net_Cell_Serialize_
@@ -4389,12 +4368,6 @@ references:
   commentId: M:x2net.Event.Deserialize(x2net.Deserializer)
   fullName: x2net.Event.Deserialize(x2net.Deserializer)
   nameWithType: Event.Deserialize(Deserializer)
-- uid: x2net.Event.Deserialize(x2net.VerboseDeserializer)
-  name: Deserialize(VerboseDeserializer)
-  href: api/x2net.Event.html#x2net_Event_Deserialize_x2net_VerboseDeserializer_
-  commentId: M:x2net.Event.Deserialize(x2net.VerboseDeserializer)
-  fullName: x2net.Event.Deserialize(x2net.VerboseDeserializer)
-  nameWithType: Event.Deserialize(VerboseDeserializer)
 - uid: x2net.Event.Deserialize*
   name: Deserialize
   href: api/x2net.Event.html#x2net_Event_Deserialize_
@@ -4530,15 +4503,6 @@ references:
   fullName.vb: x2net.Event.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
   nameWithType: Event.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: Event.Serialize(Serializer, Type, ByRef Boolean)
-- uid: x2net.Event.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name: Serialize(VerboseSerializer, Type, ref Boolean)
-  href: api/x2net.Event.html#x2net_Event_Serialize_x2net_VerboseSerializer_Type_System_Boolean__
-  commentId: M:x2net.Event.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name.vb: Serialize(VerboseSerializer, Type, ByRef Boolean)
-  fullName: x2net.Event.Serialize(x2net.VerboseSerializer, Type, ref System.Boolean)
-  fullName.vb: x2net.Event.Serialize(x2net.VerboseSerializer, Type, ByRef System.Boolean)
-  nameWithType: Event.Serialize(VerboseSerializer, Type, ref Boolean)
-  nameWithType.vb: Event.Serialize(VerboseSerializer, Type, ByRef Boolean)
 - uid: x2net.Event.Serialize*
   name: Serialize
   href: api/x2net.Event.html#x2net_Event_Serialize_
@@ -6254,19 +6218,6 @@ references:
   isSpec: "True"
   fullName: x2net.Flow.SetupInternal
   nameWithType: Flow.SetupInternal
-- uid: x2net.Flow.Shutdown
-  name: Shutdown()
-  href: api/x2net.Flow.html#x2net_Flow_Shutdown
-  commentId: M:x2net.Flow.Shutdown
-  fullName: x2net.Flow.Shutdown()
-  nameWithType: Flow.Shutdown()
-- uid: x2net.Flow.Shutdown*
-  name: Shutdown
-  href: api/x2net.Flow.html#x2net_Flow_Shutdown_
-  commentId: Overload:x2net.Flow.Shutdown
-  isSpec: "True"
-  fullName: x2net.Flow.Shutdown
-  nameWithType: Flow.Shutdown
 - uid: x2net.Flow.SlowHandlerLogThreshold
   name: SlowHandlerLogThreshold
   href: api/x2net.Flow.html#x2net_Flow_SlowHandlerLogThreshold
@@ -6319,19 +6270,32 @@ references:
   isSpec: "True"
   fullName: x2net.Flow.SlowScopeTraceLevel
   nameWithType: Flow.SlowScopeTraceLevel
-- uid: x2net.Flow.Startup
-  name: Startup()
-  href: api/x2net.Flow.html#x2net_Flow_Startup
-  commentId: M:x2net.Flow.Startup
-  fullName: x2net.Flow.Startup()
-  nameWithType: Flow.Startup()
-- uid: x2net.Flow.Startup*
-  name: Startup
-  href: api/x2net.Flow.html#x2net_Flow_Startup_
-  commentId: Overload:x2net.Flow.Startup
+- uid: x2net.Flow.Start
+  name: Start()
+  href: api/x2net.Flow.html#x2net_Flow_Start
+  commentId: M:x2net.Flow.Start
+  fullName: x2net.Flow.Start()
+  nameWithType: Flow.Start()
+- uid: x2net.Flow.Start*
+  name: Start
+  href: api/x2net.Flow.html#x2net_Flow_Start_
+  commentId: Overload:x2net.Flow.Start
   isSpec: "True"
-  fullName: x2net.Flow.Startup
-  nameWithType: Flow.Startup
+  fullName: x2net.Flow.Start
+  nameWithType: Flow.Start
+- uid: x2net.Flow.Stop
+  name: Stop()
+  href: api/x2net.Flow.html#x2net_Flow_Stop
+  commentId: M:x2net.Flow.Stop
+  fullName: x2net.Flow.Stop()
+  nameWithType: Flow.Stop()
+- uid: x2net.Flow.Stop*
+  name: Stop
+  href: api/x2net.Flow.html#x2net_Flow_Stop_
+  commentId: Overload:x2net.Flow.Stop
+  isSpec: "True"
+  fullName: x2net.Flow.Stop
+  nameWithType: Flow.Stop
 - uid: x2net.Flow.Subscribe(x2net.Binding.Token)
   name: Subscribe(Binding.Token)
   href: api/x2net.Flow.html#x2net_Flow_Subscribe_x2net_Binding_Token_
@@ -6861,6 +6825,40 @@ references:
   fullName.vb: x2net.FrameBasedFlow(Of T).FrameBasedFlow
   nameWithType: FrameBasedFlow<T>.FrameBasedFlow
   nameWithType.vb: FrameBasedFlow(Of T).FrameBasedFlow
+- uid: x2net.FrameBasedFlow`1.Begin
+  name: Begin()
+  href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Begin
+  commentId: M:x2net.FrameBasedFlow`1.Begin
+  fullName: x2net.FrameBasedFlow<T>.Begin()
+  fullName.vb: x2net.FrameBasedFlow(Of T).Begin()
+  nameWithType: FrameBasedFlow<T>.Begin()
+  nameWithType.vb: FrameBasedFlow(Of T).Begin()
+- uid: x2net.FrameBasedFlow`1.Begin*
+  name: Begin
+  href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Begin_
+  commentId: Overload:x2net.FrameBasedFlow`1.Begin
+  isSpec: "True"
+  fullName: x2net.FrameBasedFlow<T>.Begin
+  fullName.vb: x2net.FrameBasedFlow(Of T).Begin
+  nameWithType: FrameBasedFlow<T>.Begin
+  nameWithType.vb: FrameBasedFlow(Of T).Begin
+- uid: x2net.FrameBasedFlow`1.End
+  name: End()
+  href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_End
+  commentId: M:x2net.FrameBasedFlow`1.End
+  fullName: x2net.FrameBasedFlow<T>.End()
+  fullName.vb: x2net.FrameBasedFlow(Of T).End()
+  nameWithType: FrameBasedFlow<T>.End()
+  nameWithType.vb: FrameBasedFlow(Of T).End()
+- uid: x2net.FrameBasedFlow`1.End*
+  name: End
+  href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_End_
+  commentId: Overload:x2net.FrameBasedFlow`1.End
+  isSpec: "True"
+  fullName: x2net.FrameBasedFlow<T>.End
+  fullName.vb: x2net.FrameBasedFlow(Of T).End
+  nameWithType: FrameBasedFlow<T>.End
+  nameWithType.vb: FrameBasedFlow(Of T).End
 - uid: x2net.FrameBasedFlow`1.Feed(x2net.Event)
   name: Feed(Event)
   href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Feed_x2net_Event_
@@ -6920,23 +6918,6 @@ references:
   fullName.vb: x2net.FrameBasedFlow(Of T).Resolution
   nameWithType: FrameBasedFlow<T>.Resolution
   nameWithType.vb: FrameBasedFlow(Of T).Resolution
-- uid: x2net.FrameBasedFlow`1.Shutdown
-  name: Shutdown()
-  href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Shutdown
-  commentId: M:x2net.FrameBasedFlow`1.Shutdown
-  fullName: x2net.FrameBasedFlow<T>.Shutdown()
-  fullName.vb: x2net.FrameBasedFlow(Of T).Shutdown()
-  nameWithType: FrameBasedFlow<T>.Shutdown()
-  nameWithType.vb: FrameBasedFlow(Of T).Shutdown()
-- uid: x2net.FrameBasedFlow`1.Shutdown*
-  name: Shutdown
-  href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Shutdown_
-  commentId: Overload:x2net.FrameBasedFlow`1.Shutdown
-  isSpec: "True"
-  fullName: x2net.FrameBasedFlow<T>.Shutdown
-  fullName.vb: x2net.FrameBasedFlow(Of T).Shutdown
-  nameWithType: FrameBasedFlow<T>.Shutdown
-  nameWithType.vb: FrameBasedFlow(Of T).Shutdown
 - uid: x2net.FrameBasedFlow`1.Start
   name: Start()
   href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Start
@@ -6954,23 +6935,6 @@ references:
   fullName.vb: x2net.FrameBasedFlow(Of T).Start
   nameWithType: FrameBasedFlow<T>.Start
   nameWithType.vb: FrameBasedFlow(Of T).Start
-- uid: x2net.FrameBasedFlow`1.Startup
-  name: Startup()
-  href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Startup
-  commentId: M:x2net.FrameBasedFlow`1.Startup
-  fullName: x2net.FrameBasedFlow<T>.Startup()
-  fullName.vb: x2net.FrameBasedFlow(Of T).Startup()
-  nameWithType: FrameBasedFlow<T>.Startup()
-  nameWithType.vb: FrameBasedFlow(Of T).Startup()
-- uid: x2net.FrameBasedFlow`1.Startup*
-  name: Startup
-  href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Startup_
-  commentId: Overload:x2net.FrameBasedFlow`1.Startup
-  isSpec: "True"
-  fullName: x2net.FrameBasedFlow<T>.Startup
-  fullName.vb: x2net.FrameBasedFlow(Of T).Startup
-  nameWithType: FrameBasedFlow<T>.Startup
-  nameWithType.vb: FrameBasedFlow(Of T).Startup
 - uid: x2net.FrameBasedFlow`1.Stop
   name: Stop()
   href: api/x2net.FrameBasedFlow-1.html#x2net_FrameBasedFlow_1_Stop
@@ -7376,12 +7340,6 @@ references:
   commentId: M:x2net.HandshakeAck.Deserialize(x2net.Deserializer)
   fullName: x2net.HandshakeAck.Deserialize(x2net.Deserializer)
   nameWithType: HandshakeAck.Deserialize(Deserializer)
-- uid: x2net.HandshakeAck.Deserialize(x2net.VerboseDeserializer)
-  name: Deserialize(VerboseDeserializer)
-  href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_Deserialize_x2net_VerboseDeserializer_
-  commentId: M:x2net.HandshakeAck.Deserialize(x2net.VerboseDeserializer)
-  fullName: x2net.HandshakeAck.Deserialize(x2net.VerboseDeserializer)
-  nameWithType: HandshakeAck.Deserialize(VerboseDeserializer)
 - uid: x2net.HandshakeAck.Deserialize*
   name: Deserialize
   href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_Deserialize_
@@ -7518,15 +7476,6 @@ references:
   fullName.vb: x2net.HandshakeAck.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
   nameWithType: HandshakeAck.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: HandshakeAck.Serialize(Serializer, Type, ByRef Boolean)
-- uid: x2net.HandshakeAck.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name: Serialize(VerboseSerializer, Type, ref Boolean)
-  href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_Serialize_x2net_VerboseSerializer_Type_System_Boolean__
-  commentId: M:x2net.HandshakeAck.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name.vb: Serialize(VerboseSerializer, Type, ByRef Boolean)
-  fullName: x2net.HandshakeAck.Serialize(x2net.VerboseSerializer, Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeAck.Serialize(x2net.VerboseSerializer, Type, ByRef System.Boolean)
-  nameWithType: HandshakeAck.Serialize(VerboseSerializer, Type, ref Boolean)
-  nameWithType.vb: HandshakeAck.Serialize(VerboseSerializer, Type, ByRef Boolean)
 - uid: x2net.HandshakeAck.Serialize*
   name: Serialize
   href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_Serialize_
@@ -7610,12 +7559,6 @@ references:
   commentId: M:x2net.HandshakeReq.Deserialize(x2net.Deserializer)
   fullName: x2net.HandshakeReq.Deserialize(x2net.Deserializer)
   nameWithType: HandshakeReq.Deserialize(Deserializer)
-- uid: x2net.HandshakeReq.Deserialize(x2net.VerboseDeserializer)
-  name: Deserialize(VerboseDeserializer)
-  href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_Deserialize_x2net_VerboseDeserializer_
-  commentId: M:x2net.HandshakeReq.Deserialize(x2net.VerboseDeserializer)
-  fullName: x2net.HandshakeReq.Deserialize(x2net.VerboseDeserializer)
-  nameWithType: HandshakeReq.Deserialize(VerboseDeserializer)
 - uid: x2net.HandshakeReq.Deserialize*
   name: Deserialize
   href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_Deserialize_
@@ -7739,15 +7682,6 @@ references:
   fullName.vb: x2net.HandshakeReq.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
   nameWithType: HandshakeReq.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: HandshakeReq.Serialize(Serializer, Type, ByRef Boolean)
-- uid: x2net.HandshakeReq.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name: Serialize(VerboseSerializer, Type, ref Boolean)
-  href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_Serialize_x2net_VerboseSerializer_Type_System_Boolean__
-  commentId: M:x2net.HandshakeReq.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name.vb: Serialize(VerboseSerializer, Type, ByRef Boolean)
-  fullName: x2net.HandshakeReq.Serialize(x2net.VerboseSerializer, Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeReq.Serialize(x2net.VerboseSerializer, Type, ByRef System.Boolean)
-  nameWithType: HandshakeReq.Serialize(VerboseSerializer, Type, ref Boolean)
-  nameWithType.vb: HandshakeReq.Serialize(VerboseSerializer, Type, ByRef Boolean)
 - uid: x2net.HandshakeReq.Serialize*
   name: Serialize
   href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_Serialize_
@@ -7831,12 +7765,6 @@ references:
   commentId: M:x2net.HandshakeResp.Deserialize(x2net.Deserializer)
   fullName: x2net.HandshakeResp.Deserialize(x2net.Deserializer)
   nameWithType: HandshakeResp.Deserialize(Deserializer)
-- uid: x2net.HandshakeResp.Deserialize(x2net.VerboseDeserializer)
-  name: Deserialize(VerboseDeserializer)
-  href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_Deserialize_x2net_VerboseDeserializer_
-  commentId: M:x2net.HandshakeResp.Deserialize(x2net.VerboseDeserializer)
-  fullName: x2net.HandshakeResp.Deserialize(x2net.VerboseDeserializer)
-  nameWithType: HandshakeResp.Deserialize(VerboseDeserializer)
 - uid: x2net.HandshakeResp.Deserialize*
   name: Deserialize
   href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_Deserialize_
@@ -7960,15 +7888,6 @@ references:
   fullName.vb: x2net.HandshakeResp.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
   nameWithType: HandshakeResp.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: HandshakeResp.Serialize(Serializer, Type, ByRef Boolean)
-- uid: x2net.HandshakeResp.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name: Serialize(VerboseSerializer, Type, ref Boolean)
-  href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_Serialize_x2net_VerboseSerializer_Type_System_Boolean__
-  commentId: M:x2net.HandshakeResp.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name.vb: Serialize(VerboseSerializer, Type, ByRef Boolean)
-  fullName: x2net.HandshakeResp.Serialize(x2net.VerboseSerializer, Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeResp.Serialize(x2net.VerboseSerializer, Type, ByRef System.Boolean)
-  nameWithType: HandshakeResp.Serialize(VerboseSerializer, Type, ref Boolean)
-  nameWithType.vb: HandshakeResp.Serialize(VerboseSerializer, Type, ByRef Boolean)
 - uid: x2net.HandshakeResp.Serialize*
   name: Serialize
   href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_Serialize_
@@ -8287,12 +8206,6 @@ references:
   commentId: M:x2net.HeartbeatEvent.Deserialize(x2net.Deserializer)
   fullName: x2net.HeartbeatEvent.Deserialize(x2net.Deserializer)
   nameWithType: HeartbeatEvent.Deserialize(Deserializer)
-- uid: x2net.HeartbeatEvent.Deserialize(x2net.VerboseDeserializer)
-  name: Deserialize(VerboseDeserializer)
-  href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_Deserialize_x2net_VerboseDeserializer_
-  commentId: M:x2net.HeartbeatEvent.Deserialize(x2net.VerboseDeserializer)
-  fullName: x2net.HeartbeatEvent.Deserialize(x2net.VerboseDeserializer)
-  nameWithType: HeartbeatEvent.Deserialize(VerboseDeserializer)
 - uid: x2net.HeartbeatEvent.Deserialize*
   name: Deserialize
   href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_Deserialize_
@@ -8416,15 +8329,6 @@ references:
   fullName.vb: x2net.HeartbeatEvent.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
   nameWithType: HeartbeatEvent.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: HeartbeatEvent.Serialize(Serializer, Type, ByRef Boolean)
-- uid: x2net.HeartbeatEvent.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name: Serialize(VerboseSerializer, Type, ref Boolean)
-  href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_Serialize_x2net_VerboseSerializer_Type_System_Boolean__
-  commentId: M:x2net.HeartbeatEvent.Serialize(x2net.VerboseSerializer,Type,System.Boolean@)
-  name.vb: Serialize(VerboseSerializer, Type, ByRef Boolean)
-  fullName: x2net.HeartbeatEvent.Serialize(x2net.VerboseSerializer, Type, ref System.Boolean)
-  fullName.vb: x2net.HeartbeatEvent.Serialize(x2net.VerboseSerializer, Type, ByRef System.Boolean)
-  nameWithType: HeartbeatEvent.Serialize(VerboseSerializer, Type, ref Boolean)
-  nameWithType.vb: HeartbeatEvent.Serialize(VerboseSerializer, Type, ByRef Boolean)
 - uid: x2net.HeartbeatEvent.Serialize*
   name: Serialize
   href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_Serialize_
@@ -10922,40 +10826,40 @@ references:
   fullName.vb: x2net.MultiThreadFlow(Of T).Priority
   nameWithType: MultiThreadFlow<T>.Priority
   nameWithType.vb: MultiThreadFlow(Of T).Priority
-- uid: x2net.MultiThreadFlow`1.Shutdown
-  name: Shutdown()
-  href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_Shutdown
-  commentId: M:x2net.MultiThreadFlow`1.Shutdown
-  fullName: x2net.MultiThreadFlow<T>.Shutdown()
-  fullName.vb: x2net.MultiThreadFlow(Of T).Shutdown()
-  nameWithType: MultiThreadFlow<T>.Shutdown()
-  nameWithType.vb: MultiThreadFlow(Of T).Shutdown()
-- uid: x2net.MultiThreadFlow`1.Shutdown*
-  name: Shutdown
-  href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_Shutdown_
-  commentId: Overload:x2net.MultiThreadFlow`1.Shutdown
+- uid: x2net.MultiThreadFlow`1.Start
+  name: Start()
+  href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_Start
+  commentId: M:x2net.MultiThreadFlow`1.Start
+  fullName: x2net.MultiThreadFlow<T>.Start()
+  fullName.vb: x2net.MultiThreadFlow(Of T).Start()
+  nameWithType: MultiThreadFlow<T>.Start()
+  nameWithType.vb: MultiThreadFlow(Of T).Start()
+- uid: x2net.MultiThreadFlow`1.Start*
+  name: Start
+  href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_Start_
+  commentId: Overload:x2net.MultiThreadFlow`1.Start
   isSpec: "True"
-  fullName: x2net.MultiThreadFlow<T>.Shutdown
-  fullName.vb: x2net.MultiThreadFlow(Of T).Shutdown
-  nameWithType: MultiThreadFlow<T>.Shutdown
-  nameWithType.vb: MultiThreadFlow(Of T).Shutdown
-- uid: x2net.MultiThreadFlow`1.Startup
-  name: Startup()
-  href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_Startup
-  commentId: M:x2net.MultiThreadFlow`1.Startup
-  fullName: x2net.MultiThreadFlow<T>.Startup()
-  fullName.vb: x2net.MultiThreadFlow(Of T).Startup()
-  nameWithType: MultiThreadFlow<T>.Startup()
-  nameWithType.vb: MultiThreadFlow(Of T).Startup()
-- uid: x2net.MultiThreadFlow`1.Startup*
-  name: Startup
-  href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_Startup_
-  commentId: Overload:x2net.MultiThreadFlow`1.Startup
+  fullName: x2net.MultiThreadFlow<T>.Start
+  fullName.vb: x2net.MultiThreadFlow(Of T).Start
+  nameWithType: MultiThreadFlow<T>.Start
+  nameWithType.vb: MultiThreadFlow(Of T).Start
+- uid: x2net.MultiThreadFlow`1.Stop
+  name: Stop()
+  href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_Stop
+  commentId: M:x2net.MultiThreadFlow`1.Stop
+  fullName: x2net.MultiThreadFlow<T>.Stop()
+  fullName.vb: x2net.MultiThreadFlow(Of T).Stop()
+  nameWithType: MultiThreadFlow<T>.Stop()
+  nameWithType.vb: MultiThreadFlow(Of T).Stop()
+- uid: x2net.MultiThreadFlow`1.Stop*
+  name: Stop
+  href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_Stop_
+  commentId: Overload:x2net.MultiThreadFlow`1.Stop
   isSpec: "True"
-  fullName: x2net.MultiThreadFlow<T>.Startup
-  fullName.vb: x2net.MultiThreadFlow(Of T).Startup
-  nameWithType: MultiThreadFlow<T>.Startup
-  nameWithType.vb: MultiThreadFlow(Of T).Startup
+  fullName: x2net.MultiThreadFlow<T>.Stop
+  fullName.vb: x2net.MultiThreadFlow(Of T).Stop
+  nameWithType: MultiThreadFlow<T>.Stop
+  nameWithType.vb: MultiThreadFlow(Of T).Stop
 - uid: x2net.MultiThreadFlow`1.threads
   name: threads
   href: api/x2net.MultiThreadFlow-1.html#x2net_MultiThreadFlow_1_threads
@@ -12914,40 +12818,40 @@ references:
   fullName.vb: x2net.SingleThreadFlow(Of T).Priority
   nameWithType: SingleThreadFlow<T>.Priority
   nameWithType.vb: SingleThreadFlow(Of T).Priority
-- uid: x2net.SingleThreadFlow`1.Shutdown
-  name: Shutdown()
-  href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_Shutdown
-  commentId: M:x2net.SingleThreadFlow`1.Shutdown
-  fullName: x2net.SingleThreadFlow<T>.Shutdown()
-  fullName.vb: x2net.SingleThreadFlow(Of T).Shutdown()
-  nameWithType: SingleThreadFlow<T>.Shutdown()
-  nameWithType.vb: SingleThreadFlow(Of T).Shutdown()
-- uid: x2net.SingleThreadFlow`1.Shutdown*
-  name: Shutdown
-  href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_Shutdown_
-  commentId: Overload:x2net.SingleThreadFlow`1.Shutdown
+- uid: x2net.SingleThreadFlow`1.Start
+  name: Start()
+  href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_Start
+  commentId: M:x2net.SingleThreadFlow`1.Start
+  fullName: x2net.SingleThreadFlow<T>.Start()
+  fullName.vb: x2net.SingleThreadFlow(Of T).Start()
+  nameWithType: SingleThreadFlow<T>.Start()
+  nameWithType.vb: SingleThreadFlow(Of T).Start()
+- uid: x2net.SingleThreadFlow`1.Start*
+  name: Start
+  href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_Start_
+  commentId: Overload:x2net.SingleThreadFlow`1.Start
   isSpec: "True"
-  fullName: x2net.SingleThreadFlow<T>.Shutdown
-  fullName.vb: x2net.SingleThreadFlow(Of T).Shutdown
-  nameWithType: SingleThreadFlow<T>.Shutdown
-  nameWithType.vb: SingleThreadFlow(Of T).Shutdown
-- uid: x2net.SingleThreadFlow`1.Startup
-  name: Startup()
-  href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_Startup
-  commentId: M:x2net.SingleThreadFlow`1.Startup
-  fullName: x2net.SingleThreadFlow<T>.Startup()
-  fullName.vb: x2net.SingleThreadFlow(Of T).Startup()
-  nameWithType: SingleThreadFlow<T>.Startup()
-  nameWithType.vb: SingleThreadFlow(Of T).Startup()
-- uid: x2net.SingleThreadFlow`1.Startup*
-  name: Startup
-  href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_Startup_
-  commentId: Overload:x2net.SingleThreadFlow`1.Startup
+  fullName: x2net.SingleThreadFlow<T>.Start
+  fullName.vb: x2net.SingleThreadFlow(Of T).Start
+  nameWithType: SingleThreadFlow<T>.Start
+  nameWithType.vb: SingleThreadFlow(Of T).Start
+- uid: x2net.SingleThreadFlow`1.Stop
+  name: Stop()
+  href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_Stop
+  commentId: M:x2net.SingleThreadFlow`1.Stop
+  fullName: x2net.SingleThreadFlow<T>.Stop()
+  fullName.vb: x2net.SingleThreadFlow(Of T).Stop()
+  nameWithType: SingleThreadFlow<T>.Stop()
+  nameWithType.vb: SingleThreadFlow(Of T).Stop()
+- uid: x2net.SingleThreadFlow`1.Stop*
+  name: Stop
+  href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_Stop_
+  commentId: Overload:x2net.SingleThreadFlow`1.Stop
   isSpec: "True"
-  fullName: x2net.SingleThreadFlow<T>.Startup
-  fullName.vb: x2net.SingleThreadFlow(Of T).Startup
-  nameWithType: SingleThreadFlow<T>.Startup
-  nameWithType.vb: SingleThreadFlow(Of T).Startup
+  fullName: x2net.SingleThreadFlow<T>.Stop
+  fullName.vb: x2net.SingleThreadFlow(Of T).Stop
+  nameWithType: SingleThreadFlow<T>.Stop
+  nameWithType.vb: SingleThreadFlow(Of T).Stop
 - uid: x2net.SingleThreadFlow`1.thread
   name: thread
   href: api/x2net.SingleThreadFlow-1.html#x2net_SingleThreadFlow_1_thread
@@ -12956,448 +12860,6 @@ references:
   fullName.vb: x2net.SingleThreadFlow(Of T).thread
   nameWithType: SingleThreadFlow<T>.thread
   nameWithType.vb: SingleThreadFlow(Of T).thread
-- uid: x2net.StringSerializer
-  name: StringSerializer
-  href: api/x2net.StringSerializer.html
-  commentId: T:x2net.StringSerializer
-  fullName: x2net.StringSerializer
-  nameWithType: StringSerializer
-- uid: x2net.StringSerializer.#ctor
-  name: StringSerializer()
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer__ctor
-  commentId: M:x2net.StringSerializer.#ctor
-  fullName: x2net.StringSerializer.StringSerializer()
-  nameWithType: StringSerializer.StringSerializer()
-- uid: x2net.StringSerializer.#ctor*
-  name: StringSerializer
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer__ctor_
-  commentId: Overload:x2net.StringSerializer.#ctor
-  isSpec: "True"
-  fullName: x2net.StringSerializer.StringSerializer
-  nameWithType: StringSerializer.StringSerializer
-- uid: x2net.StringSerializer.StringBuilder
-  name: StringBuilder
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_StringBuilder
-  commentId: P:x2net.StringSerializer.StringBuilder
-  fullName: x2net.StringSerializer.StringBuilder
-  nameWithType: StringSerializer.StringBuilder
-- uid: x2net.StringSerializer.StringBuilder*
-  name: StringBuilder
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_StringBuilder_
-  commentId: Overload:x2net.StringSerializer.StringBuilder
-  isSpec: "True"
-  fullName: x2net.StringSerializer.StringBuilder
-  nameWithType: StringSerializer.StringBuilder
-- uid: x2net.StringSerializer.ToString
-  name: ToString()
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_ToString
-  commentId: M:x2net.StringSerializer.ToString
-  fullName: x2net.StringSerializer.ToString()
-  nameWithType: StringSerializer.ToString()
-- uid: x2net.StringSerializer.ToString*
-  name: ToString
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_ToString_
-  commentId: Overload:x2net.StringSerializer.ToString
-  isSpec: "True"
-  fullName: x2net.StringSerializer.ToString
-  nameWithType: StringSerializer.ToString
-- uid: x2net.StringSerializer.Write(DateTime)
-  name: Write(DateTime)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_DateTime_
-  commentId: M:x2net.StringSerializer.Write(DateTime)
-  fullName: x2net.StringSerializer.Write(DateTime)
-  nameWithType: StringSerializer.Write(DateTime)
-- uid: x2net.StringSerializer.Write(List{DateTime})
-  name: Write(List<DateTime>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_DateTime__
-  commentId: M:x2net.StringSerializer.Write(List{DateTime})
-  name.vb: Write(List(Of DateTime))
-  fullName: x2net.StringSerializer.Write(List<DateTime>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of DateTime))
-  nameWithType: StringSerializer.Write(List<DateTime>)
-  nameWithType.vb: StringSerializer.Write(List(Of DateTime))
-- uid: x2net.StringSerializer.Write(List{List{System.Int32}})
-  name: Write(List<List<Int32>>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_List_System_Int32___
-  commentId: M:x2net.StringSerializer.Write(List{List{System.Int32}})
-  name.vb: Write(List(Of List(Of Int32)))
-  fullName: x2net.StringSerializer.Write(List<List<System.Int32>>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of List(Of System.Int32)))
-  nameWithType: StringSerializer.Write(List<List<Int32>>)
-  nameWithType.vb: StringSerializer.Write(List(Of List(Of Int32)))
-- uid: x2net.StringSerializer.Write(List{List{System.String}})
-  name: Write(List<List<String>>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_List_System_String___
-  commentId: M:x2net.StringSerializer.Write(List{List{System.String}})
-  name.vb: Write(List(Of List(Of String)))
-  fullName: x2net.StringSerializer.Write(List<List<System.String>>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of List(Of System.String)))
-  nameWithType: StringSerializer.Write(List<List<String>>)
-  nameWithType.vb: StringSerializer.Write(List(Of List(Of String)))
-- uid: x2net.StringSerializer.Write(List{System.Boolean})
-  name: Write(List<Boolean>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_Boolean__
-  commentId: M:x2net.StringSerializer.Write(List{System.Boolean})
-  name.vb: Write(List(Of Boolean))
-  fullName: x2net.StringSerializer.Write(List<System.Boolean>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.Boolean))
-  nameWithType: StringSerializer.Write(List<Boolean>)
-  nameWithType.vb: StringSerializer.Write(List(Of Boolean))
-- uid: x2net.StringSerializer.Write(List{System.Byte})
-  name: Write(List<Byte>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_Byte__
-  commentId: M:x2net.StringSerializer.Write(List{System.Byte})
-  name.vb: Write(List(Of Byte))
-  fullName: x2net.StringSerializer.Write(List<System.Byte>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.Byte))
-  nameWithType: StringSerializer.Write(List<Byte>)
-  nameWithType.vb: StringSerializer.Write(List(Of Byte))
-- uid: x2net.StringSerializer.Write(List{System.Double})
-  name: Write(List<Double>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_Double__
-  commentId: M:x2net.StringSerializer.Write(List{System.Double})
-  name.vb: Write(List(Of Double))
-  fullName: x2net.StringSerializer.Write(List<System.Double>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.Double))
-  nameWithType: StringSerializer.Write(List<Double>)
-  nameWithType.vb: StringSerializer.Write(List(Of Double))
-- uid: x2net.StringSerializer.Write(List{System.Int16})
-  name: Write(List<Int16>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_Int16__
-  commentId: M:x2net.StringSerializer.Write(List{System.Int16})
-  name.vb: Write(List(Of Int16))
-  fullName: x2net.StringSerializer.Write(List<System.Int16>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.Int16))
-  nameWithType: StringSerializer.Write(List<Int16>)
-  nameWithType.vb: StringSerializer.Write(List(Of Int16))
-- uid: x2net.StringSerializer.Write(List{System.Int32})
-  name: Write(List<Int32>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_Int32__
-  commentId: M:x2net.StringSerializer.Write(List{System.Int32})
-  name.vb: Write(List(Of Int32))
-  fullName: x2net.StringSerializer.Write(List<System.Int32>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.Int32))
-  nameWithType: StringSerializer.Write(List<Int32>)
-  nameWithType.vb: StringSerializer.Write(List(Of Int32))
-- uid: x2net.StringSerializer.Write(List{System.Int64})
-  name: Write(List<Int64>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_Int64__
-  commentId: M:x2net.StringSerializer.Write(List{System.Int64})
-  name.vb: Write(List(Of Int64))
-  fullName: x2net.StringSerializer.Write(List<System.Int64>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.Int64))
-  nameWithType: StringSerializer.Write(List<Int64>)
-  nameWithType.vb: StringSerializer.Write(List(Of Int64))
-- uid: x2net.StringSerializer.Write(List{System.SByte})
-  name: Write(List<SByte>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_SByte__
-  commentId: M:x2net.StringSerializer.Write(List{System.SByte})
-  name.vb: Write(List(Of SByte))
-  fullName: x2net.StringSerializer.Write(List<System.SByte>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.SByte))
-  nameWithType: StringSerializer.Write(List<SByte>)
-  nameWithType.vb: StringSerializer.Write(List(Of SByte))
-- uid: x2net.StringSerializer.Write(List{System.Single})
-  name: Write(List<Single>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_Single__
-  commentId: M:x2net.StringSerializer.Write(List{System.Single})
-  name.vb: Write(List(Of Single))
-  fullName: x2net.StringSerializer.Write(List<System.Single>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.Single))
-  nameWithType: StringSerializer.Write(List<Single>)
-  nameWithType.vb: StringSerializer.Write(List(Of Single))
-- uid: x2net.StringSerializer.Write(List{System.String})
-  name: Write(List<String>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_List_System_String__
-  commentId: M:x2net.StringSerializer.Write(List{System.String})
-  name.vb: Write(List(Of String))
-  fullName: x2net.StringSerializer.Write(List<System.String>)
-  fullName.vb: x2net.StringSerializer.Write(List(Of System.String))
-  nameWithType: StringSerializer.Write(List<String>)
-  nameWithType.vb: StringSerializer.Write(List(Of String))
-- uid: x2net.StringSerializer.Write(System.Boolean)
-  name: Write(Boolean)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_Boolean_
-  commentId: M:x2net.StringSerializer.Write(System.Boolean)
-  fullName: x2net.StringSerializer.Write(System.Boolean)
-  nameWithType: StringSerializer.Write(Boolean)
-- uid: x2net.StringSerializer.Write(System.Byte)
-  name: Write(Byte)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_Byte_
-  commentId: M:x2net.StringSerializer.Write(System.Byte)
-  fullName: x2net.StringSerializer.Write(System.Byte)
-  nameWithType: StringSerializer.Write(Byte)
-- uid: x2net.StringSerializer.Write(System.Byte[])
-  name: Write(Byte[])
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_Byte___
-  commentId: M:x2net.StringSerializer.Write(System.Byte[])
-  name.vb: Write(Byte())
-  fullName: x2net.StringSerializer.Write(System.Byte[])
-  fullName.vb: x2net.StringSerializer.Write(System.Byte())
-  nameWithType: StringSerializer.Write(Byte[])
-  nameWithType.vb: StringSerializer.Write(Byte())
-- uid: x2net.StringSerializer.Write(System.Double)
-  name: Write(Double)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_Double_
-  commentId: M:x2net.StringSerializer.Write(System.Double)
-  fullName: x2net.StringSerializer.Write(System.Double)
-  nameWithType: StringSerializer.Write(Double)
-- uid: x2net.StringSerializer.Write(System.Int16)
-  name: Write(Int16)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_Int16_
-  commentId: M:x2net.StringSerializer.Write(System.Int16)
-  fullName: x2net.StringSerializer.Write(System.Int16)
-  nameWithType: StringSerializer.Write(Int16)
-- uid: x2net.StringSerializer.Write(System.Int32)
-  name: Write(Int32)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_Int32_
-  commentId: M:x2net.StringSerializer.Write(System.Int32)
-  fullName: x2net.StringSerializer.Write(System.Int32)
-  nameWithType: StringSerializer.Write(Int32)
-- uid: x2net.StringSerializer.Write(System.Int64)
-  name: Write(Int64)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_Int64_
-  commentId: M:x2net.StringSerializer.Write(System.Int64)
-  fullName: x2net.StringSerializer.Write(System.Int64)
-  nameWithType: StringSerializer.Write(Int64)
-- uid: x2net.StringSerializer.Write(System.SByte)
-  name: Write(SByte)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_SByte_
-  commentId: M:x2net.StringSerializer.Write(System.SByte)
-  fullName: x2net.StringSerializer.Write(System.SByte)
-  nameWithType: StringSerializer.Write(SByte)
-- uid: x2net.StringSerializer.Write(System.Single)
-  name: Write(Single)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_Single_
-  commentId: M:x2net.StringSerializer.Write(System.Single)
-  fullName: x2net.StringSerializer.Write(System.Single)
-  nameWithType: StringSerializer.Write(Single)
-- uid: x2net.StringSerializer.Write(System.String)
-  name: Write(String)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_
-  commentId: M:x2net.StringSerializer.Write(System.String)
-  fullName: x2net.StringSerializer.Write(System.String)
-  nameWithType: StringSerializer.Write(String)
-- uid: x2net.StringSerializer.Write(System.String,DateTime)
-  name: Write(String, DateTime)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_DateTime_
-  commentId: M:x2net.StringSerializer.Write(System.String,DateTime)
-  fullName: x2net.StringSerializer.Write(System.String, DateTime)
-  nameWithType: StringSerializer.Write(String, DateTime)
-- uid: x2net.StringSerializer.Write(System.String,List{DateTime})
-  name: Write(String, List<DateTime>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_DateTime__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{DateTime})
-  name.vb: Write(String, List(Of DateTime))
-  fullName: x2net.StringSerializer.Write(System.String, List<DateTime>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of DateTime))
-  nameWithType: StringSerializer.Write(String, List<DateTime>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of DateTime))
-- uid: x2net.StringSerializer.Write(System.String,List{List{System.Int32}})
-  name: Write(String, List<List<Int32>>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_List_System_Int32___
-  commentId: M:x2net.StringSerializer.Write(System.String,List{List{System.Int32}})
-  name.vb: Write(String, List(Of List(Of Int32)))
-  fullName: x2net.StringSerializer.Write(System.String, List<List<System.Int32>>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of List(Of System.Int32)))
-  nameWithType: StringSerializer.Write(String, List<List<Int32>>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of List(Of Int32)))
-- uid: x2net.StringSerializer.Write(System.String,List{List{System.String}})
-  name: Write(String, List<List<String>>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_List_System_String___
-  commentId: M:x2net.StringSerializer.Write(System.String,List{List{System.String}})
-  name.vb: Write(String, List(Of List(Of String)))
-  fullName: x2net.StringSerializer.Write(System.String, List<List<System.String>>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of List(Of System.String)))
-  nameWithType: StringSerializer.Write(String, List<List<String>>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of List(Of String)))
-- uid: x2net.StringSerializer.Write(System.String,List{System.Boolean})
-  name: Write(String, List<Boolean>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_Boolean__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.Boolean})
-  name.vb: Write(String, List(Of Boolean))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.Boolean>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.Boolean))
-  nameWithType: StringSerializer.Write(String, List<Boolean>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of Boolean))
-- uid: x2net.StringSerializer.Write(System.String,List{System.Byte})
-  name: Write(String, List<Byte>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_Byte__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.Byte})
-  name.vb: Write(String, List(Of Byte))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.Byte>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.Byte))
-  nameWithType: StringSerializer.Write(String, List<Byte>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of Byte))
-- uid: x2net.StringSerializer.Write(System.String,List{System.Double})
-  name: Write(String, List<Double>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_Double__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.Double})
-  name.vb: Write(String, List(Of Double))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.Double>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.Double))
-  nameWithType: StringSerializer.Write(String, List<Double>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of Double))
-- uid: x2net.StringSerializer.Write(System.String,List{System.Int16})
-  name: Write(String, List<Int16>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_Int16__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.Int16})
-  name.vb: Write(String, List(Of Int16))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.Int16>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.Int16))
-  nameWithType: StringSerializer.Write(String, List<Int16>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of Int16))
-- uid: x2net.StringSerializer.Write(System.String,List{System.Int32})
-  name: Write(String, List<Int32>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_Int32__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.Int32})
-  name.vb: Write(String, List(Of Int32))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.Int32>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.Int32))
-  nameWithType: StringSerializer.Write(String, List<Int32>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of Int32))
-- uid: x2net.StringSerializer.Write(System.String,List{System.Int64})
-  name: Write(String, List<Int64>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_Int64__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.Int64})
-  name.vb: Write(String, List(Of Int64))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.Int64>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.Int64))
-  nameWithType: StringSerializer.Write(String, List<Int64>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of Int64))
-- uid: x2net.StringSerializer.Write(System.String,List{System.SByte})
-  name: Write(String, List<SByte>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_SByte__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.SByte})
-  name.vb: Write(String, List(Of SByte))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.SByte>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.SByte))
-  nameWithType: StringSerializer.Write(String, List<SByte>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of SByte))
-- uid: x2net.StringSerializer.Write(System.String,List{System.Single})
-  name: Write(String, List<Single>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_Single__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.Single})
-  name.vb: Write(String, List(Of Single))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.Single>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.Single))
-  nameWithType: StringSerializer.Write(String, List<Single>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of Single))
-- uid: x2net.StringSerializer.Write(System.String,List{System.String})
-  name: Write(String, List<String>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_List_System_String__
-  commentId: M:x2net.StringSerializer.Write(System.String,List{System.String})
-  name.vb: Write(String, List(Of String))
-  fullName: x2net.StringSerializer.Write(System.String, List<System.String>)
-  fullName.vb: x2net.StringSerializer.Write(System.String, List(Of System.String))
-  nameWithType: StringSerializer.Write(String, List<String>)
-  nameWithType.vb: StringSerializer.Write(String, List(Of String))
-- uid: x2net.StringSerializer.Write(System.String,System.Boolean)
-  name: Write(String, Boolean)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_Boolean_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.Boolean)
-  fullName: x2net.StringSerializer.Write(System.String, System.Boolean)
-  nameWithType: StringSerializer.Write(String, Boolean)
-- uid: x2net.StringSerializer.Write(System.String,System.Byte)
-  name: Write(String, Byte)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_Byte_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.Byte)
-  fullName: x2net.StringSerializer.Write(System.String, System.Byte)
-  nameWithType: StringSerializer.Write(String, Byte)
-- uid: x2net.StringSerializer.Write(System.String,System.Byte[])
-  name: Write(String, Byte[])
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_Byte___
-  commentId: M:x2net.StringSerializer.Write(System.String,System.Byte[])
-  name.vb: Write(String, Byte())
-  fullName: x2net.StringSerializer.Write(System.String, System.Byte[])
-  fullName.vb: x2net.StringSerializer.Write(System.String, System.Byte())
-  nameWithType: StringSerializer.Write(String, Byte[])
-  nameWithType.vb: StringSerializer.Write(String, Byte())
-- uid: x2net.StringSerializer.Write(System.String,System.Double)
-  name: Write(String, Double)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_Double_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.Double)
-  fullName: x2net.StringSerializer.Write(System.String, System.Double)
-  nameWithType: StringSerializer.Write(String, Double)
-- uid: x2net.StringSerializer.Write(System.String,System.Int16)
-  name: Write(String, Int16)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_Int16_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.Int16)
-  fullName: x2net.StringSerializer.Write(System.String, System.Int16)
-  nameWithType: StringSerializer.Write(String, Int16)
-- uid: x2net.StringSerializer.Write(System.String,System.Int32)
-  name: Write(String, Int32)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_Int32_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.Int32)
-  fullName: x2net.StringSerializer.Write(System.String, System.Int32)
-  nameWithType: StringSerializer.Write(String, Int32)
-- uid: x2net.StringSerializer.Write(System.String,System.Int64)
-  name: Write(String, Int64)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_Int64_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.Int64)
-  fullName: x2net.StringSerializer.Write(System.String, System.Int64)
-  nameWithType: StringSerializer.Write(String, Int64)
-- uid: x2net.StringSerializer.Write(System.String,System.SByte)
-  name: Write(String, SByte)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_SByte_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.SByte)
-  fullName: x2net.StringSerializer.Write(System.String, System.SByte)
-  nameWithType: StringSerializer.Write(String, SByte)
-- uid: x2net.StringSerializer.Write(System.String,System.Single)
-  name: Write(String, Single)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_Single_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.Single)
-  fullName: x2net.StringSerializer.Write(System.String, System.Single)
-  nameWithType: StringSerializer.Write(String, Single)
-- uid: x2net.StringSerializer.Write(System.String,System.String)
-  name: Write(String, String)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_System_String_System_String_
-  commentId: M:x2net.StringSerializer.Write(System.String,System.String)
-  fullName: x2net.StringSerializer.Write(System.String, System.String)
-  nameWithType: StringSerializer.Write(String, String)
-- uid: x2net.StringSerializer.Write*
-  name: Write
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write_
-  commentId: Overload:x2net.StringSerializer.Write
-  isSpec: "True"
-  fullName: x2net.StringSerializer.Write
-  nameWithType: StringSerializer.Write
-- uid: x2net.StringSerializer.Write``1(``0)
-  name: Write<T>(T)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write__1___0_
-  commentId: M:x2net.StringSerializer.Write``1(``0)
-  name.vb: Write(Of T)(T)
-  fullName: x2net.StringSerializer.Write<T>(T)
-  fullName.vb: x2net.StringSerializer.Write(Of T)(T)
-  nameWithType: StringSerializer.Write<T>(T)
-  nameWithType.vb: StringSerializer.Write(Of T)(T)
-- uid: x2net.StringSerializer.Write``1(List{``0})
-  name: Write<T>(List<T>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write__1_List___0__
-  commentId: M:x2net.StringSerializer.Write``1(List{``0})
-  name.vb: Write(Of T)(List(Of T))
-  fullName: x2net.StringSerializer.Write<T>(List<T>)
-  fullName.vb: x2net.StringSerializer.Write(Of T)(List(Of T))
-  nameWithType: StringSerializer.Write<T>(List<T>)
-  nameWithType.vb: StringSerializer.Write(Of T)(List(Of T))
-- uid: x2net.StringSerializer.Write``1(System.String,``0)
-  name: Write<T>(String, T)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write__1_System_String___0_
-  commentId: M:x2net.StringSerializer.Write``1(System.String,``0)
-  name.vb: Write(Of T)(String, T)
-  fullName: x2net.StringSerializer.Write<T>(System.String, T)
-  fullName.vb: x2net.StringSerializer.Write(Of T)(System.String, T)
-  nameWithType: StringSerializer.Write<T>(String, T)
-  nameWithType.vb: StringSerializer.Write(Of T)(String, T)
-- uid: x2net.StringSerializer.Write``1(System.String,List{``0})
-  name: Write<T>(String, List<T>)
-  href: api/x2net.StringSerializer.html#x2net_StringSerializer_Write__1_System_String_List___0__
-  commentId: M:x2net.StringSerializer.Write``1(System.String,List{``0})
-  name.vb: Write(Of T)(String, List(Of T))
-  fullName: x2net.StringSerializer.Write<T>(System.String, List<T>)
-  fullName.vb: x2net.StringSerializer.Write(Of T)(System.String, List(Of T))
-  nameWithType: StringSerializer.Write<T>(String, List<T>)
-  nameWithType.vb: StringSerializer.Write(Of T)(String, List(Of T))
 - uid: x2net.SynchronizedEventQueue
   name: SynchronizedEventQueue
   href: api/x2net.SynchronizedEventQueue.html
@@ -13678,40 +13140,40 @@ references:
   fullName.vb: x2net.ThreadlessFlow(Of Q).running
   nameWithType: ThreadlessFlow<Q>.running
   nameWithType.vb: ThreadlessFlow(Of Q).running
-- uid: x2net.ThreadlessFlow`1.Shutdown
-  name: Shutdown()
-  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Shutdown
-  commentId: M:x2net.ThreadlessFlow`1.Shutdown
-  fullName: x2net.ThreadlessFlow<Q>.Shutdown()
-  fullName.vb: x2net.ThreadlessFlow(Of Q).Shutdown()
-  nameWithType: ThreadlessFlow<Q>.Shutdown()
-  nameWithType.vb: ThreadlessFlow(Of Q).Shutdown()
-- uid: x2net.ThreadlessFlow`1.Shutdown*
-  name: Shutdown
-  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Shutdown_
-  commentId: Overload:x2net.ThreadlessFlow`1.Shutdown
+- uid: x2net.ThreadlessFlow`1.Start
+  name: Start()
+  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Start
+  commentId: M:x2net.ThreadlessFlow`1.Start
+  fullName: x2net.ThreadlessFlow<Q>.Start()
+  fullName.vb: x2net.ThreadlessFlow(Of Q).Start()
+  nameWithType: ThreadlessFlow<Q>.Start()
+  nameWithType.vb: ThreadlessFlow(Of Q).Start()
+- uid: x2net.ThreadlessFlow`1.Start*
+  name: Start
+  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Start_
+  commentId: Overload:x2net.ThreadlessFlow`1.Start
   isSpec: "True"
-  fullName: x2net.ThreadlessFlow<Q>.Shutdown
-  fullName.vb: x2net.ThreadlessFlow(Of Q).Shutdown
-  nameWithType: ThreadlessFlow<Q>.Shutdown
-  nameWithType.vb: ThreadlessFlow(Of Q).Shutdown
-- uid: x2net.ThreadlessFlow`1.Startup
-  name: Startup()
-  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Startup
-  commentId: M:x2net.ThreadlessFlow`1.Startup
-  fullName: x2net.ThreadlessFlow<Q>.Startup()
-  fullName.vb: x2net.ThreadlessFlow(Of Q).Startup()
-  nameWithType: ThreadlessFlow<Q>.Startup()
-  nameWithType.vb: ThreadlessFlow(Of Q).Startup()
-- uid: x2net.ThreadlessFlow`1.Startup*
-  name: Startup
-  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Startup_
-  commentId: Overload:x2net.ThreadlessFlow`1.Startup
+  fullName: x2net.ThreadlessFlow<Q>.Start
+  fullName.vb: x2net.ThreadlessFlow(Of Q).Start
+  nameWithType: ThreadlessFlow<Q>.Start
+  nameWithType.vb: ThreadlessFlow(Of Q).Start
+- uid: x2net.ThreadlessFlow`1.Stop
+  name: Stop()
+  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Stop
+  commentId: M:x2net.ThreadlessFlow`1.Stop
+  fullName: x2net.ThreadlessFlow<Q>.Stop()
+  fullName.vb: x2net.ThreadlessFlow(Of Q).Stop()
+  nameWithType: ThreadlessFlow<Q>.Stop()
+  nameWithType.vb: ThreadlessFlow(Of Q).Stop()
+- uid: x2net.ThreadlessFlow`1.Stop*
+  name: Stop
+  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Stop_
+  commentId: Overload:x2net.ThreadlessFlow`1.Stop
   isSpec: "True"
-  fullName: x2net.ThreadlessFlow<Q>.Startup
-  fullName.vb: x2net.ThreadlessFlow(Of Q).Startup
-  nameWithType: ThreadlessFlow<Q>.Startup
-  nameWithType.vb: ThreadlessFlow(Of Q).Startup
+  fullName: x2net.ThreadlessFlow<Q>.Stop
+  fullName.vb: x2net.ThreadlessFlow(Of Q).Stop
+  nameWithType: ThreadlessFlow<Q>.Stop
+  nameWithType.vb: ThreadlessFlow(Of Q).Stop
 - uid: x2net.ThreadlessFlow`1.TryDequeue(x2net.Event@)
   name: TryDequeue(out Event)
   href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_TryDequeue_x2net_Event__
@@ -13877,40 +13339,40 @@ references:
   fullName.vb: x2net.ThreadPoolFlow(Of T).ThreadPoolFlow
   nameWithType: ThreadPoolFlow<T>.ThreadPoolFlow
   nameWithType.vb: ThreadPoolFlow(Of T).ThreadPoolFlow
-- uid: x2net.ThreadPoolFlow`1.Shutdown
-  name: Shutdown()
-  href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_Shutdown
-  commentId: M:x2net.ThreadPoolFlow`1.Shutdown
-  fullName: x2net.ThreadPoolFlow<T>.Shutdown()
-  fullName.vb: x2net.ThreadPoolFlow(Of T).Shutdown()
-  nameWithType: ThreadPoolFlow<T>.Shutdown()
-  nameWithType.vb: ThreadPoolFlow(Of T).Shutdown()
-- uid: x2net.ThreadPoolFlow`1.Shutdown*
-  name: Shutdown
-  href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_Shutdown_
-  commentId: Overload:x2net.ThreadPoolFlow`1.Shutdown
+- uid: x2net.ThreadPoolFlow`1.Start
+  name: Start()
+  href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_Start
+  commentId: M:x2net.ThreadPoolFlow`1.Start
+  fullName: x2net.ThreadPoolFlow<T>.Start()
+  fullName.vb: x2net.ThreadPoolFlow(Of T).Start()
+  nameWithType: ThreadPoolFlow<T>.Start()
+  nameWithType.vb: ThreadPoolFlow(Of T).Start()
+- uid: x2net.ThreadPoolFlow`1.Start*
+  name: Start
+  href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_Start_
+  commentId: Overload:x2net.ThreadPoolFlow`1.Start
   isSpec: "True"
-  fullName: x2net.ThreadPoolFlow<T>.Shutdown
-  fullName.vb: x2net.ThreadPoolFlow(Of T).Shutdown
-  nameWithType: ThreadPoolFlow<T>.Shutdown
-  nameWithType.vb: ThreadPoolFlow(Of T).Shutdown
-- uid: x2net.ThreadPoolFlow`1.Startup
-  name: Startup()
-  href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_Startup
-  commentId: M:x2net.ThreadPoolFlow`1.Startup
-  fullName: x2net.ThreadPoolFlow<T>.Startup()
-  fullName.vb: x2net.ThreadPoolFlow(Of T).Startup()
-  nameWithType: ThreadPoolFlow<T>.Startup()
-  nameWithType.vb: ThreadPoolFlow(Of T).Startup()
-- uid: x2net.ThreadPoolFlow`1.Startup*
-  name: Startup
-  href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_Startup_
-  commentId: Overload:x2net.ThreadPoolFlow`1.Startup
+  fullName: x2net.ThreadPoolFlow<T>.Start
+  fullName.vb: x2net.ThreadPoolFlow(Of T).Start
+  nameWithType: ThreadPoolFlow<T>.Start
+  nameWithType.vb: ThreadPoolFlow(Of T).Start
+- uid: x2net.ThreadPoolFlow`1.Stop
+  name: Stop()
+  href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_Stop
+  commentId: M:x2net.ThreadPoolFlow`1.Stop
+  fullName: x2net.ThreadPoolFlow<T>.Stop()
+  fullName.vb: x2net.ThreadPoolFlow(Of T).Stop()
+  nameWithType: ThreadPoolFlow<T>.Stop()
+  nameWithType.vb: ThreadPoolFlow(Of T).Stop()
+- uid: x2net.ThreadPoolFlow`1.Stop*
+  name: Stop
+  href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_Stop_
+  commentId: Overload:x2net.ThreadPoolFlow`1.Stop
   isSpec: "True"
-  fullName: x2net.ThreadPoolFlow<T>.Startup
-  fullName.vb: x2net.ThreadPoolFlow(Of T).Startup
-  nameWithType: ThreadPoolFlow<T>.Startup
-  nameWithType.vb: ThreadPoolFlow(Of T).Startup
+  fullName: x2net.ThreadPoolFlow<T>.Stop
+  fullName.vb: x2net.ThreadPoolFlow(Of T).Stop
+  nameWithType: ThreadPoolFlow<T>.Stop
+  nameWithType.vb: ThreadPoolFlow(Of T).Stop
 - uid: x2net.ThreadPoolFlow`1.thread
   name: thread
   href: api/x2net.ThreadPoolFlow-1.html#x2net_ThreadPoolFlow_1_thread
@@ -14047,6 +13509,19 @@ references:
   commentId: T:x2net.TimeFlow
   fullName: x2net.TimeFlow
   nameWithType: TimeFlow
+- uid: x2net.TimeFlow.Begin
+  name: Begin()
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_Begin
+  commentId: M:x2net.TimeFlow.Begin
+  fullName: x2net.TimeFlow.Begin()
+  nameWithType: TimeFlow.Begin()
+- uid: x2net.TimeFlow.Begin*
+  name: Begin
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_Begin_
+  commentId: Overload:x2net.TimeFlow.Begin
+  isSpec: "True"
+  fullName: x2net.TimeFlow.Begin
+  nameWithType: TimeFlow.Begin
 - uid: x2net.TimeFlow.Cancel(x2net.Event)
   name: Cancel(Event)
   href: api/x2net.TimeFlow.html#x2net_TimeFlow_Cancel_x2net_Event_
@@ -14105,6 +13580,19 @@ references:
   isSpec: "True"
   fullName: x2net.TimeFlow.Default
   nameWithType: TimeFlow.Default
+- uid: x2net.TimeFlow.End
+  name: End()
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_End
+  commentId: M:x2net.TimeFlow.End
+  fullName: x2net.TimeFlow.End()
+  nameWithType: TimeFlow.End()
+- uid: x2net.TimeFlow.End*
+  name: End
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_End_
+  commentId: Overload:x2net.TimeFlow.End
+  isSpec: "True"
+  fullName: x2net.TimeFlow.End
+  nameWithType: TimeFlow.End
 - uid: x2net.TimeFlow.Get
   name: Get()
   href: api/x2net.TimeFlow.html#x2net_TimeFlow_Get
@@ -14188,32 +13676,6 @@ references:
   isSpec: "True"
   fullName: x2net.TimeFlow.ReserveRepetition
   nameWithType: TimeFlow.ReserveRepetition
-- uid: x2net.TimeFlow.Start
-  name: Start()
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_Start
-  commentId: M:x2net.TimeFlow.Start
-  fullName: x2net.TimeFlow.Start()
-  nameWithType: TimeFlow.Start()
-- uid: x2net.TimeFlow.Start*
-  name: Start
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_Start_
-  commentId: Overload:x2net.TimeFlow.Start
-  isSpec: "True"
-  fullName: x2net.TimeFlow.Start
-  nameWithType: TimeFlow.Start
-- uid: x2net.TimeFlow.Stop
-  name: Stop()
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_Stop
-  commentId: M:x2net.TimeFlow.Stop
-  fullName: x2net.TimeFlow.Stop()
-  nameWithType: TimeFlow.Stop()
-- uid: x2net.TimeFlow.Stop*
-  name: Stop
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_Stop_
-  commentId: Overload:x2net.TimeFlow.Stop
-  isSpec: "True"
-  fullName: x2net.TimeFlow.Stop
-  nameWithType: TimeFlow.Stop
 - uid: x2net.TimeFlow.Update
   name: Update()
   href: api/x2net.TimeFlow.html#x2net_TimeFlow_Update
@@ -14969,872 +14431,6 @@ references:
   isSpec: "True"
   fullName: x2net.UpgradeableReadLock.Dispose
   nameWithType: UpgradeableReadLock.Dispose
-- uid: x2net.VerboseDeserializer
-  name: VerboseDeserializer
-  href: api/x2net.VerboseDeserializer.html
-  commentId: T:x2net.VerboseDeserializer
-  fullName: x2net.VerboseDeserializer
-  nameWithType: VerboseDeserializer
-- uid: x2net.VerboseDeserializer.Read(DateTime@)
-  name: Read(out DateTime)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_DateTime__
-  commentId: M:x2net.VerboseDeserializer.Read(DateTime@)
-  name.vb: Read(ByRef DateTime)
-  fullName: x2net.VerboseDeserializer.Read(out DateTime)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef DateTime)
-  nameWithType: VerboseDeserializer.Read(out DateTime)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef DateTime)
-- uid: x2net.VerboseDeserializer.Read(List{DateTime}@)
-  name: Read(out List<DateTime>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_DateTime___
-  commentId: M:x2net.VerboseDeserializer.Read(List{DateTime}@)
-  name.vb: Read(ByRef List(Of DateTime))
-  fullName: x2net.VerboseDeserializer.Read(out List<DateTime>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of DateTime))
-  nameWithType: VerboseDeserializer.Read(out List<DateTime>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of DateTime))
-- uid: x2net.VerboseDeserializer.Read(List{List{System.Int32}}@)
-  name: Read(out List<List<Int32>>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_List_System_Int32____
-  commentId: M:x2net.VerboseDeserializer.Read(List{List{System.Int32}}@)
-  name.vb: Read(ByRef List(Of List(Of Int32)))
-  fullName: x2net.VerboseDeserializer.Read(out List<List<System.Int32>>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of List(Of System.Int32)))
-  nameWithType: VerboseDeserializer.Read(out List<List<Int32>>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of List(Of Int32)))
-- uid: x2net.VerboseDeserializer.Read(List{List{System.String}}@)
-  name: Read(out List<List<String>>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_List_System_String____
-  commentId: M:x2net.VerboseDeserializer.Read(List{List{System.String}}@)
-  name.vb: Read(ByRef List(Of List(Of String)))
-  fullName: x2net.VerboseDeserializer.Read(out List<List<System.String>>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of List(Of System.String)))
-  nameWithType: VerboseDeserializer.Read(out List<List<String>>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of List(Of String)))
-- uid: x2net.VerboseDeserializer.Read(List{System.Boolean}@)
-  name: Read(out List<Boolean>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_Boolean___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.Boolean}@)
-  name.vb: Read(ByRef List(Of Boolean))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.Boolean>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.Boolean))
-  nameWithType: VerboseDeserializer.Read(out List<Boolean>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of Boolean))
-- uid: x2net.VerboseDeserializer.Read(List{System.Byte}@)
-  name: Read(out List<Byte>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_Byte___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.Byte}@)
-  name.vb: Read(ByRef List(Of Byte))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.Byte>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.Byte))
-  nameWithType: VerboseDeserializer.Read(out List<Byte>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of Byte))
-- uid: x2net.VerboseDeserializer.Read(List{System.Double}@)
-  name: Read(out List<Double>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_Double___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.Double}@)
-  name.vb: Read(ByRef List(Of Double))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.Double>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.Double))
-  nameWithType: VerboseDeserializer.Read(out List<Double>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of Double))
-- uid: x2net.VerboseDeserializer.Read(List{System.Int16}@)
-  name: Read(out List<Int16>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_Int16___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.Int16}@)
-  name.vb: Read(ByRef List(Of Int16))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.Int16>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.Int16))
-  nameWithType: VerboseDeserializer.Read(out List<Int16>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of Int16))
-- uid: x2net.VerboseDeserializer.Read(List{System.Int32}@)
-  name: Read(out List<Int32>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_Int32___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.Int32}@)
-  name.vb: Read(ByRef List(Of Int32))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.Int32>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.Int32))
-  nameWithType: VerboseDeserializer.Read(out List<Int32>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of Int32))
-- uid: x2net.VerboseDeserializer.Read(List{System.Int64}@)
-  name: Read(out List<Int64>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_Int64___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.Int64}@)
-  name.vb: Read(ByRef List(Of Int64))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.Int64>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.Int64))
-  nameWithType: VerboseDeserializer.Read(out List<Int64>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of Int64))
-- uid: x2net.VerboseDeserializer.Read(List{System.SByte}@)
-  name: Read(out List<SByte>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_SByte___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.SByte}@)
-  name.vb: Read(ByRef List(Of SByte))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.SByte>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.SByte))
-  nameWithType: VerboseDeserializer.Read(out List<SByte>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of SByte))
-- uid: x2net.VerboseDeserializer.Read(List{System.Single}@)
-  name: Read(out List<Single>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_Single___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.Single}@)
-  name.vb: Read(ByRef List(Of Single))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.Single>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.Single))
-  nameWithType: VerboseDeserializer.Read(out List<Single>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of Single))
-- uid: x2net.VerboseDeserializer.Read(List{System.String}@)
-  name: Read(out List<String>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_List_System_String___
-  commentId: M:x2net.VerboseDeserializer.Read(List{System.String}@)
-  name.vb: Read(ByRef List(Of String))
-  fullName: x2net.VerboseDeserializer.Read(out List<System.String>)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef List(Of System.String))
-  nameWithType: VerboseDeserializer.Read(out List<String>)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef List(Of String))
-- uid: x2net.VerboseDeserializer.Read(System.Boolean@)
-  name: Read(out Boolean)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_Boolean__
-  commentId: M:x2net.VerboseDeserializer.Read(System.Boolean@)
-  name.vb: Read(ByRef Boolean)
-  fullName: x2net.VerboseDeserializer.Read(out System.Boolean)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.Boolean)
-  nameWithType: VerboseDeserializer.Read(out Boolean)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef Boolean)
-- uid: x2net.VerboseDeserializer.Read(System.Byte@)
-  name: Read(out Byte)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_Byte__
-  commentId: M:x2net.VerboseDeserializer.Read(System.Byte@)
-  name.vb: Read(ByRef Byte)
-  fullName: x2net.VerboseDeserializer.Read(out System.Byte)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.Byte)
-  nameWithType: VerboseDeserializer.Read(out Byte)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef Byte)
-- uid: x2net.VerboseDeserializer.Read(System.Byte[]@)
-  name: Read(out Byte[])
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_Byte____
-  commentId: M:x2net.VerboseDeserializer.Read(System.Byte[]@)
-  name.vb: Read(ByRef Byte())
-  fullName: x2net.VerboseDeserializer.Read(out System.Byte[])
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.Byte())
-  nameWithType: VerboseDeserializer.Read(out Byte[])
-  nameWithType.vb: VerboseDeserializer.Read(ByRef Byte())
-- uid: x2net.VerboseDeserializer.Read(System.Double@)
-  name: Read(out Double)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_Double__
-  commentId: M:x2net.VerboseDeserializer.Read(System.Double@)
-  name.vb: Read(ByRef Double)
-  fullName: x2net.VerboseDeserializer.Read(out System.Double)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.Double)
-  nameWithType: VerboseDeserializer.Read(out Double)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef Double)
-- uid: x2net.VerboseDeserializer.Read(System.Int16@)
-  name: Read(out Int16)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_Int16__
-  commentId: M:x2net.VerboseDeserializer.Read(System.Int16@)
-  name.vb: Read(ByRef Int16)
-  fullName: x2net.VerboseDeserializer.Read(out System.Int16)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.Int16)
-  nameWithType: VerboseDeserializer.Read(out Int16)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef Int16)
-- uid: x2net.VerboseDeserializer.Read(System.Int32@)
-  name: Read(out Int32)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_Int32__
-  commentId: M:x2net.VerboseDeserializer.Read(System.Int32@)
-  name.vb: Read(ByRef Int32)
-  fullName: x2net.VerboseDeserializer.Read(out System.Int32)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.Int32)
-  nameWithType: VerboseDeserializer.Read(out Int32)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef Int32)
-- uid: x2net.VerboseDeserializer.Read(System.Int64@)
-  name: Read(out Int64)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_Int64__
-  commentId: M:x2net.VerboseDeserializer.Read(System.Int64@)
-  name.vb: Read(ByRef Int64)
-  fullName: x2net.VerboseDeserializer.Read(out System.Int64)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.Int64)
-  nameWithType: VerboseDeserializer.Read(out Int64)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef Int64)
-- uid: x2net.VerboseDeserializer.Read(System.SByte@)
-  name: Read(out SByte)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_SByte__
-  commentId: M:x2net.VerboseDeserializer.Read(System.SByte@)
-  name.vb: Read(ByRef SByte)
-  fullName: x2net.VerboseDeserializer.Read(out System.SByte)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.SByte)
-  nameWithType: VerboseDeserializer.Read(out SByte)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef SByte)
-- uid: x2net.VerboseDeserializer.Read(System.Single@)
-  name: Read(out Single)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_Single__
-  commentId: M:x2net.VerboseDeserializer.Read(System.Single@)
-  name.vb: Read(ByRef Single)
-  fullName: x2net.VerboseDeserializer.Read(out System.Single)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.Single)
-  nameWithType: VerboseDeserializer.Read(out Single)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef Single)
-- uid: x2net.VerboseDeserializer.Read(System.String,DateTime@)
-  name: Read(String, out DateTime)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_DateTime__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,DateTime@)
-  name.vb: Read(String, ByRef DateTime)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out DateTime)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef DateTime)
-  nameWithType: VerboseDeserializer.Read(String, out DateTime)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef DateTime)
-- uid: x2net.VerboseDeserializer.Read(System.String,List{DateTime}@)
-  name: Read(String, out List<DateTime>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_DateTime___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{DateTime}@)
-  name.vb: Read(String, ByRef List(Of DateTime))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<DateTime>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of DateTime))
-  nameWithType: VerboseDeserializer.Read(String, out List<DateTime>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of DateTime))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{List{System.Int32}}@)
-  name: Read(String, out List<List<Int32>>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_List_System_Int32____
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{List{System.Int32}}@)
-  name.vb: Read(String, ByRef List(Of List(Of Int32)))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<List<System.Int32>>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of List(Of System.Int32)))
-  nameWithType: VerboseDeserializer.Read(String, out List<List<Int32>>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of List(Of Int32)))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{List{System.String}}@)
-  name: Read(String, out List<List<String>>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_List_System_String____
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{List{System.String}}@)
-  name.vb: Read(String, ByRef List(Of List(Of String)))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<List<System.String>>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of List(Of System.String)))
-  nameWithType: VerboseDeserializer.Read(String, out List<List<String>>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of List(Of String)))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.Boolean}@)
-  name: Read(String, out List<Boolean>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_Boolean___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.Boolean}@)
-  name.vb: Read(String, ByRef List(Of Boolean))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.Boolean>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.Boolean))
-  nameWithType: VerboseDeserializer.Read(String, out List<Boolean>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of Boolean))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.Byte}@)
-  name: Read(String, out List<Byte>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_Byte___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.Byte}@)
-  name.vb: Read(String, ByRef List(Of Byte))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.Byte>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.Byte))
-  nameWithType: VerboseDeserializer.Read(String, out List<Byte>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of Byte))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.Double}@)
-  name: Read(String, out List<Double>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_Double___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.Double}@)
-  name.vb: Read(String, ByRef List(Of Double))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.Double>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.Double))
-  nameWithType: VerboseDeserializer.Read(String, out List<Double>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of Double))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.Int16}@)
-  name: Read(String, out List<Int16>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_Int16___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.Int16}@)
-  name.vb: Read(String, ByRef List(Of Int16))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.Int16>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.Int16))
-  nameWithType: VerboseDeserializer.Read(String, out List<Int16>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of Int16))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.Int32}@)
-  name: Read(String, out List<Int32>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_Int32___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.Int32}@)
-  name.vb: Read(String, ByRef List(Of Int32))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.Int32>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.Int32))
-  nameWithType: VerboseDeserializer.Read(String, out List<Int32>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of Int32))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.Int64}@)
-  name: Read(String, out List<Int64>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_Int64___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.Int64}@)
-  name.vb: Read(String, ByRef List(Of Int64))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.Int64>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.Int64))
-  nameWithType: VerboseDeserializer.Read(String, out List<Int64>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of Int64))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.SByte}@)
-  name: Read(String, out List<SByte>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_SByte___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.SByte}@)
-  name.vb: Read(String, ByRef List(Of SByte))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.SByte>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.SByte))
-  nameWithType: VerboseDeserializer.Read(String, out List<SByte>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of SByte))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.Single}@)
-  name: Read(String, out List<Single>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_Single___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.Single}@)
-  name.vb: Read(String, ByRef List(Of Single))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.Single>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.Single))
-  nameWithType: VerboseDeserializer.Read(String, out List<Single>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of Single))
-- uid: x2net.VerboseDeserializer.Read(System.String,List{System.String}@)
-  name: Read(String, out List<String>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_List_System_String___
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,List{System.String}@)
-  name.vb: Read(String, ByRef List(Of String))
-  fullName: x2net.VerboseDeserializer.Read(System.String, out List<System.String>)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef List(Of System.String))
-  nameWithType: VerboseDeserializer.Read(String, out List<String>)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef List(Of String))
-- uid: x2net.VerboseDeserializer.Read(System.String,System.Boolean@)
-  name: Read(String, out Boolean)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_Boolean__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.Boolean@)
-  name.vb: Read(String, ByRef Boolean)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.Boolean)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.Boolean)
-  nameWithType: VerboseDeserializer.Read(String, out Boolean)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef Boolean)
-- uid: x2net.VerboseDeserializer.Read(System.String,System.Byte@)
-  name: Read(String, out Byte)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_Byte__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.Byte@)
-  name.vb: Read(String, ByRef Byte)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.Byte)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.Byte)
-  nameWithType: VerboseDeserializer.Read(String, out Byte)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef Byte)
-- uid: x2net.VerboseDeserializer.Read(System.String,System.Byte[]@)
-  name: Read(String, out Byte[])
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_Byte____
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.Byte[]@)
-  name.vb: Read(String, ByRef Byte())
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.Byte[])
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.Byte())
-  nameWithType: VerboseDeserializer.Read(String, out Byte[])
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef Byte())
-- uid: x2net.VerboseDeserializer.Read(System.String,System.Double@)
-  name: Read(String, out Double)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_Double__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.Double@)
-  name.vb: Read(String, ByRef Double)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.Double)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.Double)
-  nameWithType: VerboseDeserializer.Read(String, out Double)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef Double)
-- uid: x2net.VerboseDeserializer.Read(System.String,System.Int16@)
-  name: Read(String, out Int16)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_Int16__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.Int16@)
-  name.vb: Read(String, ByRef Int16)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.Int16)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.Int16)
-  nameWithType: VerboseDeserializer.Read(String, out Int16)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef Int16)
-- uid: x2net.VerboseDeserializer.Read(System.String,System.Int32@)
-  name: Read(String, out Int32)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_Int32__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.Int32@)
-  name.vb: Read(String, ByRef Int32)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.Int32)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.Int32)
-  nameWithType: VerboseDeserializer.Read(String, out Int32)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef Int32)
-- uid: x2net.VerboseDeserializer.Read(System.String,System.Int64@)
-  name: Read(String, out Int64)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_Int64__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.Int64@)
-  name.vb: Read(String, ByRef Int64)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.Int64)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.Int64)
-  nameWithType: VerboseDeserializer.Read(String, out Int64)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef Int64)
-- uid: x2net.VerboseDeserializer.Read(System.String,System.SByte@)
-  name: Read(String, out SByte)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_SByte__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.SByte@)
-  name.vb: Read(String, ByRef SByte)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.SByte)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.SByte)
-  nameWithType: VerboseDeserializer.Read(String, out SByte)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef SByte)
-- uid: x2net.VerboseDeserializer.Read(System.String,System.Single@)
-  name: Read(String, out Single)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_Single__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.Single@)
-  name.vb: Read(String, ByRef Single)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.Single)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.Single)
-  nameWithType: VerboseDeserializer.Read(String, out Single)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef Single)
-- uid: x2net.VerboseDeserializer.Read(System.String,System.String@)
-  name: Read(String, out String)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String_System_String__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String,System.String@)
-  name.vb: Read(String, ByRef String)
-  fullName: x2net.VerboseDeserializer.Read(System.String, out System.String)
-  fullName.vb: x2net.VerboseDeserializer.Read(System.String, ByRef System.String)
-  nameWithType: VerboseDeserializer.Read(String, out String)
-  nameWithType.vb: VerboseDeserializer.Read(String, ByRef String)
-- uid: x2net.VerboseDeserializer.Read(System.String@)
-  name: Read(out String)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_System_String__
-  commentId: M:x2net.VerboseDeserializer.Read(System.String@)
-  name.vb: Read(ByRef String)
-  fullName: x2net.VerboseDeserializer.Read(out System.String)
-  fullName.vb: x2net.VerboseDeserializer.Read(ByRef System.String)
-  nameWithType: VerboseDeserializer.Read(out String)
-  nameWithType.vb: VerboseDeserializer.Read(ByRef String)
-- uid: x2net.VerboseDeserializer.Read*
-  name: Read
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read_
-  commentId: Overload:x2net.VerboseDeserializer.Read
-  isSpec: "True"
-  fullName: x2net.VerboseDeserializer.Read
-  nameWithType: VerboseDeserializer.Read
-- uid: x2net.VerboseDeserializer.Read``1(``0@)
-  name: Read<T>(out T)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read__1___0__
-  commentId: M:x2net.VerboseDeserializer.Read``1(``0@)
-  name.vb: Read(Of T)(ByRef T)
-  fullName: x2net.VerboseDeserializer.Read<T>(out T)
-  fullName.vb: x2net.VerboseDeserializer.Read(Of T)(ByRef T)
-  nameWithType: VerboseDeserializer.Read<T>(out T)
-  nameWithType.vb: VerboseDeserializer.Read(Of T)(ByRef T)
-- uid: x2net.VerboseDeserializer.Read``1(List{``0}@)
-  name: Read<T>(out List<T>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read__1_List___0___
-  commentId: M:x2net.VerboseDeserializer.Read``1(List{``0}@)
-  name.vb: Read(Of T)(ByRef List(Of T))
-  fullName: x2net.VerboseDeserializer.Read<T>(out List<T>)
-  fullName.vb: x2net.VerboseDeserializer.Read(Of T)(ByRef List(Of T))
-  nameWithType: VerboseDeserializer.Read<T>(out List<T>)
-  nameWithType.vb: VerboseDeserializer.Read(Of T)(ByRef List(Of T))
-- uid: x2net.VerboseDeserializer.Read``1(System.String,``0@)
-  name: Read<T>(String, out T)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read__1_System_String___0__
-  commentId: M:x2net.VerboseDeserializer.Read``1(System.String,``0@)
-  name.vb: Read(Of T)(String, ByRef T)
-  fullName: x2net.VerboseDeserializer.Read<T>(System.String, out T)
-  fullName.vb: x2net.VerboseDeserializer.Read(Of T)(System.String, ByRef T)
-  nameWithType: VerboseDeserializer.Read<T>(String, out T)
-  nameWithType.vb: VerboseDeserializer.Read(Of T)(String, ByRef T)
-- uid: x2net.VerboseDeserializer.Read``1(System.String,List{``0}@)
-  name: Read<T>(String, out List<T>)
-  href: api/x2net.VerboseDeserializer.html#x2net_VerboseDeserializer_Read__1_System_String_List___0___
-  commentId: M:x2net.VerboseDeserializer.Read``1(System.String,List{``0}@)
-  name.vb: Read(Of T)(String, ByRef List(Of T))
-  fullName: x2net.VerboseDeserializer.Read<T>(System.String, out List<T>)
-  fullName.vb: x2net.VerboseDeserializer.Read(Of T)(System.String, ByRef List(Of T))
-  nameWithType: VerboseDeserializer.Read<T>(String, out List<T>)
-  nameWithType.vb: VerboseDeserializer.Read(Of T)(String, ByRef List(Of T))
-- uid: x2net.VerboseSerializer
-  name: VerboseSerializer
-  href: api/x2net.VerboseSerializer.html
-  commentId: T:x2net.VerboseSerializer
-  fullName: x2net.VerboseSerializer
-  nameWithType: VerboseSerializer
-- uid: x2net.VerboseSerializer.Write(DateTime)
-  name: Write(DateTime)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_DateTime_
-  commentId: M:x2net.VerboseSerializer.Write(DateTime)
-  fullName: x2net.VerboseSerializer.Write(DateTime)
-  nameWithType: VerboseSerializer.Write(DateTime)
-- uid: x2net.VerboseSerializer.Write(List{DateTime})
-  name: Write(List<DateTime>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_DateTime__
-  commentId: M:x2net.VerboseSerializer.Write(List{DateTime})
-  name.vb: Write(List(Of DateTime))
-  fullName: x2net.VerboseSerializer.Write(List<DateTime>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of DateTime))
-  nameWithType: VerboseSerializer.Write(List<DateTime>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of DateTime))
-- uid: x2net.VerboseSerializer.Write(List{List{System.Int32}})
-  name: Write(List<List<Int32>>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_List_System_Int32___
-  commentId: M:x2net.VerboseSerializer.Write(List{List{System.Int32}})
-  name.vb: Write(List(Of List(Of Int32)))
-  fullName: x2net.VerboseSerializer.Write(List<List<System.Int32>>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of List(Of System.Int32)))
-  nameWithType: VerboseSerializer.Write(List<List<Int32>>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of List(Of Int32)))
-- uid: x2net.VerboseSerializer.Write(List{List{System.String}})
-  name: Write(List<List<String>>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_List_System_String___
-  commentId: M:x2net.VerboseSerializer.Write(List{List{System.String}})
-  name.vb: Write(List(Of List(Of String)))
-  fullName: x2net.VerboseSerializer.Write(List<List<System.String>>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of List(Of System.String)))
-  nameWithType: VerboseSerializer.Write(List<List<String>>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of List(Of String)))
-- uid: x2net.VerboseSerializer.Write(List{System.Boolean})
-  name: Write(List<Boolean>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_Boolean__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.Boolean})
-  name.vb: Write(List(Of Boolean))
-  fullName: x2net.VerboseSerializer.Write(List<System.Boolean>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.Boolean))
-  nameWithType: VerboseSerializer.Write(List<Boolean>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of Boolean))
-- uid: x2net.VerboseSerializer.Write(List{System.Byte})
-  name: Write(List<Byte>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_Byte__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.Byte})
-  name.vb: Write(List(Of Byte))
-  fullName: x2net.VerboseSerializer.Write(List<System.Byte>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.Byte))
-  nameWithType: VerboseSerializer.Write(List<Byte>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of Byte))
-- uid: x2net.VerboseSerializer.Write(List{System.Double})
-  name: Write(List<Double>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_Double__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.Double})
-  name.vb: Write(List(Of Double))
-  fullName: x2net.VerboseSerializer.Write(List<System.Double>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.Double))
-  nameWithType: VerboseSerializer.Write(List<Double>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of Double))
-- uid: x2net.VerboseSerializer.Write(List{System.Int16})
-  name: Write(List<Int16>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_Int16__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.Int16})
-  name.vb: Write(List(Of Int16))
-  fullName: x2net.VerboseSerializer.Write(List<System.Int16>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.Int16))
-  nameWithType: VerboseSerializer.Write(List<Int16>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of Int16))
-- uid: x2net.VerboseSerializer.Write(List{System.Int32})
-  name: Write(List<Int32>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_Int32__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.Int32})
-  name.vb: Write(List(Of Int32))
-  fullName: x2net.VerboseSerializer.Write(List<System.Int32>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.Int32))
-  nameWithType: VerboseSerializer.Write(List<Int32>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of Int32))
-- uid: x2net.VerboseSerializer.Write(List{System.Int64})
-  name: Write(List<Int64>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_Int64__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.Int64})
-  name.vb: Write(List(Of Int64))
-  fullName: x2net.VerboseSerializer.Write(List<System.Int64>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.Int64))
-  nameWithType: VerboseSerializer.Write(List<Int64>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of Int64))
-- uid: x2net.VerboseSerializer.Write(List{System.SByte})
-  name: Write(List<SByte>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_SByte__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.SByte})
-  name.vb: Write(List(Of SByte))
-  fullName: x2net.VerboseSerializer.Write(List<System.SByte>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.SByte))
-  nameWithType: VerboseSerializer.Write(List<SByte>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of SByte))
-- uid: x2net.VerboseSerializer.Write(List{System.Single})
-  name: Write(List<Single>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_Single__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.Single})
-  name.vb: Write(List(Of Single))
-  fullName: x2net.VerboseSerializer.Write(List<System.Single>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.Single))
-  nameWithType: VerboseSerializer.Write(List<Single>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of Single))
-- uid: x2net.VerboseSerializer.Write(List{System.String})
-  name: Write(List<String>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_List_System_String__
-  commentId: M:x2net.VerboseSerializer.Write(List{System.String})
-  name.vb: Write(List(Of String))
-  fullName: x2net.VerboseSerializer.Write(List<System.String>)
-  fullName.vb: x2net.VerboseSerializer.Write(List(Of System.String))
-  nameWithType: VerboseSerializer.Write(List<String>)
-  nameWithType.vb: VerboseSerializer.Write(List(Of String))
-- uid: x2net.VerboseSerializer.Write(System.Boolean)
-  name: Write(Boolean)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_Boolean_
-  commentId: M:x2net.VerboseSerializer.Write(System.Boolean)
-  fullName: x2net.VerboseSerializer.Write(System.Boolean)
-  nameWithType: VerboseSerializer.Write(Boolean)
-- uid: x2net.VerboseSerializer.Write(System.Byte)
-  name: Write(Byte)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_Byte_
-  commentId: M:x2net.VerboseSerializer.Write(System.Byte)
-  fullName: x2net.VerboseSerializer.Write(System.Byte)
-  nameWithType: VerboseSerializer.Write(Byte)
-- uid: x2net.VerboseSerializer.Write(System.Byte[])
-  name: Write(Byte[])
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_Byte___
-  commentId: M:x2net.VerboseSerializer.Write(System.Byte[])
-  name.vb: Write(Byte())
-  fullName: x2net.VerboseSerializer.Write(System.Byte[])
-  fullName.vb: x2net.VerboseSerializer.Write(System.Byte())
-  nameWithType: VerboseSerializer.Write(Byte[])
-  nameWithType.vb: VerboseSerializer.Write(Byte())
-- uid: x2net.VerboseSerializer.Write(System.Double)
-  name: Write(Double)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_Double_
-  commentId: M:x2net.VerboseSerializer.Write(System.Double)
-  fullName: x2net.VerboseSerializer.Write(System.Double)
-  nameWithType: VerboseSerializer.Write(Double)
-- uid: x2net.VerboseSerializer.Write(System.Int16)
-  name: Write(Int16)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_Int16_
-  commentId: M:x2net.VerboseSerializer.Write(System.Int16)
-  fullName: x2net.VerboseSerializer.Write(System.Int16)
-  nameWithType: VerboseSerializer.Write(Int16)
-- uid: x2net.VerboseSerializer.Write(System.Int32)
-  name: Write(Int32)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_Int32_
-  commentId: M:x2net.VerboseSerializer.Write(System.Int32)
-  fullName: x2net.VerboseSerializer.Write(System.Int32)
-  nameWithType: VerboseSerializer.Write(Int32)
-- uid: x2net.VerboseSerializer.Write(System.Int64)
-  name: Write(Int64)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_Int64_
-  commentId: M:x2net.VerboseSerializer.Write(System.Int64)
-  fullName: x2net.VerboseSerializer.Write(System.Int64)
-  nameWithType: VerboseSerializer.Write(Int64)
-- uid: x2net.VerboseSerializer.Write(System.SByte)
-  name: Write(SByte)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_SByte_
-  commentId: M:x2net.VerboseSerializer.Write(System.SByte)
-  fullName: x2net.VerboseSerializer.Write(System.SByte)
-  nameWithType: VerboseSerializer.Write(SByte)
-- uid: x2net.VerboseSerializer.Write(System.Single)
-  name: Write(Single)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_Single_
-  commentId: M:x2net.VerboseSerializer.Write(System.Single)
-  fullName: x2net.VerboseSerializer.Write(System.Single)
-  nameWithType: VerboseSerializer.Write(Single)
-- uid: x2net.VerboseSerializer.Write(System.String)
-  name: Write(String)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_
-  commentId: M:x2net.VerboseSerializer.Write(System.String)
-  fullName: x2net.VerboseSerializer.Write(System.String)
-  nameWithType: VerboseSerializer.Write(String)
-- uid: x2net.VerboseSerializer.Write(System.String,DateTime)
-  name: Write(String, DateTime)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_DateTime_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,DateTime)
-  fullName: x2net.VerboseSerializer.Write(System.String, DateTime)
-  nameWithType: VerboseSerializer.Write(String, DateTime)
-- uid: x2net.VerboseSerializer.Write(System.String,List{DateTime})
-  name: Write(String, List<DateTime>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_DateTime__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{DateTime})
-  name.vb: Write(String, List(Of DateTime))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<DateTime>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of DateTime))
-  nameWithType: VerboseSerializer.Write(String, List<DateTime>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of DateTime))
-- uid: x2net.VerboseSerializer.Write(System.String,List{List{System.Int32}})
-  name: Write(String, List<List<Int32>>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_List_System_Int32___
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{List{System.Int32}})
-  name.vb: Write(String, List(Of List(Of Int32)))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<List<System.Int32>>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of List(Of System.Int32)))
-  nameWithType: VerboseSerializer.Write(String, List<List<Int32>>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of List(Of Int32)))
-- uid: x2net.VerboseSerializer.Write(System.String,List{List{System.String}})
-  name: Write(String, List<List<String>>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_List_System_String___
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{List{System.String}})
-  name.vb: Write(String, List(Of List(Of String)))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<List<System.String>>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of List(Of System.String)))
-  nameWithType: VerboseSerializer.Write(String, List<List<String>>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of List(Of String)))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.Boolean})
-  name: Write(String, List<Boolean>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_Boolean__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.Boolean})
-  name.vb: Write(String, List(Of Boolean))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.Boolean>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.Boolean))
-  nameWithType: VerboseSerializer.Write(String, List<Boolean>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of Boolean))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.Byte})
-  name: Write(String, List<Byte>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_Byte__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.Byte})
-  name.vb: Write(String, List(Of Byte))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.Byte>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.Byte))
-  nameWithType: VerboseSerializer.Write(String, List<Byte>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of Byte))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.Double})
-  name: Write(String, List<Double>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_Double__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.Double})
-  name.vb: Write(String, List(Of Double))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.Double>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.Double))
-  nameWithType: VerboseSerializer.Write(String, List<Double>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of Double))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.Int16})
-  name: Write(String, List<Int16>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_Int16__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.Int16})
-  name.vb: Write(String, List(Of Int16))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.Int16>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.Int16))
-  nameWithType: VerboseSerializer.Write(String, List<Int16>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of Int16))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.Int32})
-  name: Write(String, List<Int32>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_Int32__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.Int32})
-  name.vb: Write(String, List(Of Int32))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.Int32>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.Int32))
-  nameWithType: VerboseSerializer.Write(String, List<Int32>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of Int32))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.Int64})
-  name: Write(String, List<Int64>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_Int64__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.Int64})
-  name.vb: Write(String, List(Of Int64))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.Int64>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.Int64))
-  nameWithType: VerboseSerializer.Write(String, List<Int64>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of Int64))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.SByte})
-  name: Write(String, List<SByte>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_SByte__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.SByte})
-  name.vb: Write(String, List(Of SByte))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.SByte>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.SByte))
-  nameWithType: VerboseSerializer.Write(String, List<SByte>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of SByte))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.Single})
-  name: Write(String, List<Single>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_Single__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.Single})
-  name.vb: Write(String, List(Of Single))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.Single>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.Single))
-  nameWithType: VerboseSerializer.Write(String, List<Single>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of Single))
-- uid: x2net.VerboseSerializer.Write(System.String,List{System.String})
-  name: Write(String, List<String>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_List_System_String__
-  commentId: M:x2net.VerboseSerializer.Write(System.String,List{System.String})
-  name.vb: Write(String, List(Of String))
-  fullName: x2net.VerboseSerializer.Write(System.String, List<System.String>)
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, List(Of System.String))
-  nameWithType: VerboseSerializer.Write(String, List<String>)
-  nameWithType.vb: VerboseSerializer.Write(String, List(Of String))
-- uid: x2net.VerboseSerializer.Write(System.String,System.Boolean)
-  name: Write(String, Boolean)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_Boolean_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.Boolean)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.Boolean)
-  nameWithType: VerboseSerializer.Write(String, Boolean)
-- uid: x2net.VerboseSerializer.Write(System.String,System.Byte)
-  name: Write(String, Byte)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_Byte_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.Byte)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.Byte)
-  nameWithType: VerboseSerializer.Write(String, Byte)
-- uid: x2net.VerboseSerializer.Write(System.String,System.Byte[])
-  name: Write(String, Byte[])
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_Byte___
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.Byte[])
-  name.vb: Write(String, Byte())
-  fullName: x2net.VerboseSerializer.Write(System.String, System.Byte[])
-  fullName.vb: x2net.VerboseSerializer.Write(System.String, System.Byte())
-  nameWithType: VerboseSerializer.Write(String, Byte[])
-  nameWithType.vb: VerboseSerializer.Write(String, Byte())
-- uid: x2net.VerboseSerializer.Write(System.String,System.Double)
-  name: Write(String, Double)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_Double_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.Double)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.Double)
-  nameWithType: VerboseSerializer.Write(String, Double)
-- uid: x2net.VerboseSerializer.Write(System.String,System.Int16)
-  name: Write(String, Int16)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_Int16_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.Int16)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.Int16)
-  nameWithType: VerboseSerializer.Write(String, Int16)
-- uid: x2net.VerboseSerializer.Write(System.String,System.Int32)
-  name: Write(String, Int32)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_Int32_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.Int32)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.Int32)
-  nameWithType: VerboseSerializer.Write(String, Int32)
-- uid: x2net.VerboseSerializer.Write(System.String,System.Int64)
-  name: Write(String, Int64)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_Int64_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.Int64)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.Int64)
-  nameWithType: VerboseSerializer.Write(String, Int64)
-- uid: x2net.VerboseSerializer.Write(System.String,System.SByte)
-  name: Write(String, SByte)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_SByte_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.SByte)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.SByte)
-  nameWithType: VerboseSerializer.Write(String, SByte)
-- uid: x2net.VerboseSerializer.Write(System.String,System.Single)
-  name: Write(String, Single)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_Single_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.Single)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.Single)
-  nameWithType: VerboseSerializer.Write(String, Single)
-- uid: x2net.VerboseSerializer.Write(System.String,System.String)
-  name: Write(String, String)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_System_String_System_String_
-  commentId: M:x2net.VerboseSerializer.Write(System.String,System.String)
-  fullName: x2net.VerboseSerializer.Write(System.String, System.String)
-  nameWithType: VerboseSerializer.Write(String, String)
-- uid: x2net.VerboseSerializer.Write*
-  name: Write
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write_
-  commentId: Overload:x2net.VerboseSerializer.Write
-  isSpec: "True"
-  fullName: x2net.VerboseSerializer.Write
-  nameWithType: VerboseSerializer.Write
-- uid: x2net.VerboseSerializer.Write``1(``0)
-  name: Write<T>(T)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write__1___0_
-  commentId: M:x2net.VerboseSerializer.Write``1(``0)
-  name.vb: Write(Of T)(T)
-  fullName: x2net.VerboseSerializer.Write<T>(T)
-  fullName.vb: x2net.VerboseSerializer.Write(Of T)(T)
-  nameWithType: VerboseSerializer.Write<T>(T)
-  nameWithType.vb: VerboseSerializer.Write(Of T)(T)
-- uid: x2net.VerboseSerializer.Write``1(List{``0})
-  name: Write<T>(List<T>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write__1_List___0__
-  commentId: M:x2net.VerboseSerializer.Write``1(List{``0})
-  name.vb: Write(Of T)(List(Of T))
-  fullName: x2net.VerboseSerializer.Write<T>(List<T>)
-  fullName.vb: x2net.VerboseSerializer.Write(Of T)(List(Of T))
-  nameWithType: VerboseSerializer.Write<T>(List<T>)
-  nameWithType.vb: VerboseSerializer.Write(Of T)(List(Of T))
-- uid: x2net.VerboseSerializer.Write``1(System.String,``0)
-  name: Write<T>(String, T)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write__1_System_String___0_
-  commentId: M:x2net.VerboseSerializer.Write``1(System.String,``0)
-  name.vb: Write(Of T)(String, T)
-  fullName: x2net.VerboseSerializer.Write<T>(System.String, T)
-  fullName.vb: x2net.VerboseSerializer.Write(Of T)(System.String, T)
-  nameWithType: VerboseSerializer.Write<T>(String, T)
-  nameWithType.vb: VerboseSerializer.Write(Of T)(String, T)
-- uid: x2net.VerboseSerializer.Write``1(System.String,List{``0})
-  name: Write<T>(String, List<T>)
-  href: api/x2net.VerboseSerializer.html#x2net_VerboseSerializer_Write__1_System_String_List___0__
-  commentId: M:x2net.VerboseSerializer.Write``1(System.String,List{``0})
-  name.vb: Write(Of T)(String, List(Of T))
-  fullName: x2net.VerboseSerializer.Write<T>(System.String, List<T>)
-  fullName.vb: x2net.VerboseSerializer.Write(Of T)(System.String, List(Of T))
-  nameWithType: VerboseSerializer.Write<T>(String, List<T>)
-  nameWithType.vb: VerboseSerializer.Write(Of T)(String, List(Of T))
 - uid: x2net.WaitForAllEvents
   name: WaitForAllEvents
   href: api/x2net.WaitForAllEvents.html
