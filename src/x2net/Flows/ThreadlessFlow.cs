@@ -33,7 +33,7 @@ namespace x2net
             this.name = name;
         }
 
-        public override Flow Startup()
+        public override Flow Start()
         {
             lock (syncRoot)
             {
@@ -54,7 +54,7 @@ namespace x2net
             return this;
         }
 
-        public override void Shutdown()
+        public override void Stop()
         {
             lock (syncRoot)
             {

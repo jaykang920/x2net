@@ -105,7 +105,6 @@
     <Compile Include="Serializer.cs" />
     <Compile Include="Serializer.GetLength.cs" />
     <Compile Include="Serializer.Write.cs" />
-    <Compile Include="Serializers\StringSerializer.cs" />
     <Compile Include="Transforms\SimpleCipher.cs" />
     <Compile Include="Transforms\BlockCipher.cs" />
     <Compile Include="Transforms\Inverse.cs" />
@@ -120,8 +119,6 @@
     <Compile Include="Util\ReadWriteLock.cs" />
     <Compile Include="Util\SegmentPool.cs" />
     <Compile Include="Util\Trace.cs" />
-    <Compile Include="VerboseDeserializer.cs" />
-    <Compile Include="VerboseSerializer.cs" />
     <Compile Include="LinkHandlePool.cs" />
     <Compile Include="Yields\WaitForAllEvents.cs" />
     <Compile Include="Yields\WaitForAnyEvent.cs" />

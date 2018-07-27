@@ -276,7 +276,7 @@ namespace x2net
             {
                 var flow = snapshot[i];
                 Trace.Log("hub: starting flow {0}", flow.Name);
-                flow.Startup();
+                flow.Start();
                 Trace.Debug("hub: started flow {0}", flow.Name);
             }
         }
@@ -333,7 +333,7 @@ namespace x2net
                 {
                     var flow = snapshot[i];
                     Trace.Log("hub: stopping flow {0}", flow.Name);
-                    flow.Shutdown();
+                    flow.Stop();
                     Trace.Debug("hub: stopped flow {0}", flow.Name);
                 }
                 catch (Exception e)

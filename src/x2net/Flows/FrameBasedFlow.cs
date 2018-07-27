@@ -110,7 +110,7 @@ namespace x2net
             queue.Enqueue(e);
         }
 
-        public override Flow Startup()
+        public override Flow Start()
         {
             lock (syncRoot)
             {
@@ -131,7 +131,7 @@ namespace x2net
             return this;
         }
 
-        public override void Shutdown()
+        public override void Stop()
         {
             lock (syncRoot)
             {
@@ -174,7 +174,7 @@ namespace x2net
                 handlerChain = new List<Handler>();
             }
 
-            StartInternal();
+            BeginInternal();
 
             while (!shouldStop)
             {
@@ -217,7 +217,7 @@ namespace x2net
                 }
             }
 
-            Stop();
+            End();
 
             if (queue != null)
             {
@@ -227,11 +227,11 @@ namespace x2net
             currentFlow = null;
         }
 
-        private void StartInternal()
+        private void BeginInternal()
         {
             Time.Initialize();
 
-            Start();
+            Begin();
         }
 
         private void UpdateInternal()
@@ -243,8 +243,8 @@ namespace x2net
             Time.AfterUpdate();
         }
 
-        protected virtual void Start() { }
-        protected virtual void Stop() { }
+        protected virtual void Begin() { }
+        protected virtual void End() { }
 
         protected abstract void Update();
     }

@@ -225,8 +225,8 @@ namespace x2net
             binding.UnbindInternal(token);
         }
 
-        public abstract Flow Startup();
-        public abstract void Shutdown();
+        public abstract Flow Start();
+        public abstract void Stop();
 
         public Flow Attach()
         {

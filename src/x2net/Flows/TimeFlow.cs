@@ -506,8 +506,8 @@ namespace x2net
             timer.CancelRepetition(e);
         }
 
-        protected override void Start() { }
-        protected override void Stop() { }
+        protected override void Begin() { }
+        protected override void End() { }
 
         protected override void Update()
         {
@@ -541,7 +541,7 @@ namespace x2net
                         var flowName = String.Format("TimeFlow.{0}", name);
                         timeFlow = new TimeFlow(flowName);
                         timeFlows.Add(name, timeFlow);
-                        timeFlow.Startup().Attach();
+                        timeFlow.Start().Attach();
                     }
                     return timeFlow;
                 }

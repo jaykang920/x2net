@@ -204,13 +204,6 @@ namespace x2net
             fingerprint.Deserialize(deserializer);
         }
 
-        /// <summary>
-        /// Overridden by subclasses to build a verbose deserialization chain.
-        /// </summary>
-        public virtual void Deserialize(VerboseDeserializer deserializer)
-        {
-        }
-
         public int GetLength()
         {
             bool flag = true;
@@ -238,20 +231,6 @@ namespace x2net
             Type targetType, ref bool flag)
         {
             fingerprint.Serialize(serializer);
-        }
-
-        public void Serialize(VerboseSerializer serializer)
-        {
-            bool flag = true;
-            Serialize(serializer, null, ref flag);
-        }
-
-        /// <summary>
-        /// Overridden by subclasses to build a verbose serialization chain.
-        /// </summary>
-        public virtual void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
         }
 
         #endregion  // Serialization

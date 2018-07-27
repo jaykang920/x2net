@@ -245,15 +245,6 @@ namespace x2net
         }
 
         /// <summary>
-        /// Overridden by subclasses to build a verbose deserialization chain.
-        /// </summary>
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("_WaitHandle", out _waitHandle);
-        }
-
-        /// <summary>
         /// Overridden by subclasses to build an encoded length computation chain.
         /// </summary>
         public override int GetLength(Type targetType, ref bool flag)
@@ -283,20 +274,6 @@ namespace x2net
             {
                 serializer.Write(_waitHandle);
             }
-            if (targetType != null && targetType == typeof(Event))
-            {
-                flag = false;
-            }
-        }
-
-        /// <summary>
-        /// Overridden by subclasses to build a verbose serialization chain.
-        /// </summary>
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            serializer.Write("_WaitHandle", _waitHandle);
             if (targetType != null && targetType == typeof(Event))
             {
                 flag = false;

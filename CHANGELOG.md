@@ -1,6 +1,10 @@
+## 0.13.0 (2018-07-27)
+
 Features:
 
+- Flow: changed interface - replaced Startup/Shutdown with Start/Stop
 - Coroutine: renamed class WaitForNothing as WaitForNext
+- Removed VerboseSerializer and VerboseDeserializer
 
 ## 0.12.1 (2018-07-18)
 
