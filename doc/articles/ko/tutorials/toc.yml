@@ -1,3 +1,5 @@
+- name: x2 기초
+  href: x2.md
 - name: 허브와 플로우
   href: hub_and_flows.md
 - name: 이벤트 생성과 포스팅

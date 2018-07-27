@@ -1,3 +1,5 @@
+- name: x2 Basics
+  href: x2.md
 - name: Hub and Flows
   href: hub_and_flows.md
 - name: Creating and Posting Events

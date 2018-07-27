@@ -9,8 +9,8 @@ in C#, targeting universal [.NET](https://www.microsoft.com/net) environments
 covering Mono, .NET Framework, and .NET Core.
 
 In order to make full use of x2net, you need to understand the fundamental
-concepts and ideas of x2. At least, you should be familiar with basic
-[x2 concepts](https://github.com/jaykang920/x2/blob/master/concepts.md)
+concepts and ideas of x2. At least, you should be familiar with
+[basic x2 concepts](https://jaykang920.github.io/x2net/articles/en/tutorials/x2.html)
 such as cell, event, hub, flow, case and link.
 
 Features
@@ -58,7 +58,7 @@ or by the Package Manager console command `Install-Package`.
 * [x2net](https://www.nuget.org/packages/x2net)
 * [x2net.xpiler](https://www.nuget.org/packages/x2net.xpiler)
 
-See [Installation](https://jaykang920.github.io/x2net/articles/en/install.html)
+See [Installation](https://jaykang920.github.io/x2net/articles/en/getting_started/install.html)
 for more about installation.
 
 Documentation
