@@ -131,7 +131,7 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
             using (var ms = new MemoryStream(length + BlockSizeInBytes))
             using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
             {
-#if UNITY_WORKAROUND
+#if (UNITY_WORKAROUND && UNITY_MONO)
                 // Workaround for ancient mono 2.0 of Unity3D
                 // Multiple Write() calls are not properly handled there.
 
@@ -191,7 +191,7 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
             using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
             {
                 byte[] nextIV = new byte[BlockSizeInBytes];
-#if UNITY_WORKAROUND
+#if (UNITY_WORKAROUND && UNITY_MONO)
                 // Workaround for ancient mono 2.0 of Unity3D
                 // Multiple Write() calls are not properly handled there.
 

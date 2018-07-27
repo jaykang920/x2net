@@ -41,7 +41,7 @@
     <DebugType>full</DebugType>
     <OutputPath>../../bin/Debug/unity3d</OutputPath>
     <IntermediateOutputPath>obj/Debug/unity3d</IntermediateOutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_WORKAROUND</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;UNITY_WORKAROUND;UNITY_MONO</DefineConstants>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -53,7 +53,7 @@
     <Optimize>true</Optimize>
     <OutputPath>../../bin/Release/unity3d</OutputPath>
     <IntermediateOutputPath>obj/Release/unity3d</IntermediateOutputPath>
-    <DefineConstants>UNITY_WORKAROUND</DefineConstants>
+    <DefineConstants>UNITY_WORKAROUND;UNITY_MONO</DefineConstants>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>

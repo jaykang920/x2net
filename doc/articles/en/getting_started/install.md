@@ -24,7 +24,9 @@ available in [releases](https://github.com/jaykang920/x2net/releases).
 
 ## Unity3D
 
-You should experience no problem using x2net with recent versions of Unit3D running
-.NET Framework 4.5 or higher. If you want to use x2net in old versions of Unity3D
-depending on Mono, then you should activate the conditional compile constant
-`UNITY_WORKAROUND`.
+When you use x2net in Unity3D, you need to activate the conditional compile flag
+`UNITY_WORKAROUND`. You should experience no problem using x2net with recent
+versions of Unit3D running .NET Framework 4.5 or higher.
+
+If you want to use x2net in older versions of Unity3D depending on Mono, then you
+should activate the conditional compile flag `UNITY_MONO` too.

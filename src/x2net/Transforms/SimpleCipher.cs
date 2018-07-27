@@ -98,7 +98,7 @@ namespace x2net
             using (var ms = new MemoryStream(length + BlockSizeInBytes))
             using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
             {
-#if UNITY_WORKAROUND
+#if (UNITY_WORKAROUND && UNITY_MONO)
                 // Workaround for ancient mono 2.0 of Unity3D
                 // Multiple Write() calls are not properly handled there.
 
@@ -153,7 +153,7 @@ namespace x2net
             using (var ms = new MemoryStream(length))
             using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
             {
-#if UNITY_WORKAROUND
+#if (UNITY_WORKAROUND && UNITY_MONO)
                 // Workaround for ancient mono 2.0 of Unity3D
                 // Multiple Write() calls are not properly handled there.
 
