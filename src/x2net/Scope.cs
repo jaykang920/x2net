@@ -11,7 +11,7 @@ namespace x2net
     public class Scope : IDisposable
     {
         private Binding.Token? bindingToken;
-        private DateTime startTime;
+        private readonly DateTime startTime;
         private Event e;
 
         /// <summary>
