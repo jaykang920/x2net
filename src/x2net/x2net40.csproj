@@ -135,7 +135,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>pushd "$(ProjectDir)"
-..\..\bin\$(ConfigGroup)\x2net.xpiler.exe -f . Links
+..\..\bin\$(ConfigGroup)\x2net.xpiler.exe . Links
 popd</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
