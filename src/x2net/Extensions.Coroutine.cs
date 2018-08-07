@@ -187,5 +187,14 @@ namespace x2net
             return new WaitForCompletion<T1, T2, T3>(self, func, arg1, arg2, arg3);
         }
 
+        /// <summary>
+        /// Waits for the completion of another coroutine with three additional
+        /// arguments.
+        /// </summary>
+        public static Yield WaitForCompletion<T1, T2, T3, T4>(this Coroutine self,
+            Func<Coroutine, T1, T2, T3, T4, IEnumerator> func, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+        {
+            return new WaitForCompletion<T1, T2, T3, T4>(self, func, arg1, arg2, arg3, arg4);
+        }
     }
 }
