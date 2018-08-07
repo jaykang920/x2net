@@ -187,6 +187,7 @@ namespace x2net
             return new WaitForCompletion<T1, T2, T3>(self, func, arg1, arg2, arg3);
         }
 
+#if NET40
         /// <summary>
         /// Waits for the completion of another coroutine with three additional
         /// arguments.
@@ -196,5 +197,6 @@ namespace x2net
         {
             return new WaitForCompletion<T1, T2, T3, T4>(self, func, arg1, arg2, arg3, arg4);
         }
+#endif
     }
 }

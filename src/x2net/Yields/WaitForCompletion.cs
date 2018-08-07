@@ -61,6 +61,7 @@ namespace x2net
         }
     }
 
+#if NET40
     /// <summary>
     /// YieldInstruction that waits for the completion of another coroutine with
     /// three additional arguments.
@@ -74,4 +75,5 @@ namespace x2net
             c.Start(func(c, arg1, arg2, arg3, arg4));
         }
     }
+#endif
 }
