@@ -1,6 +1,7 @@
 Features:
 
 - xpiler: now preserves property name cases for local cells/events
+- added 4-arg WaitForCompletion
 
 ## 0.13.0 (2018-07-27)
 
