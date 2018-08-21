@@ -10,7 +10,6 @@ namespace x2net
     /// </summary>
     public enum TraceLevel
     {
-        All,
         Trace,
         Debug,
         Info,
