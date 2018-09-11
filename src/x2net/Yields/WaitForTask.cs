@@ -1,4 +1,4 @@
-﻿#if NET40
+﻿#if NET45
 
 using System.Threading;
 using System.Threading.Tasks;

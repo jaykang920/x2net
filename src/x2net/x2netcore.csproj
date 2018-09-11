@@ -8,7 +8,7 @@
 	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
     <DocumentationFile>$(TargetDir)/x2net.xml</DocumentationFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <DefineConstants>NET40;NETCORE</DefineConstants>
+    <DefineConstants>NET40;NET45;NETCORE</DefineConstants>
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
 

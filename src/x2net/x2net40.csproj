@@ -126,6 +126,7 @@
     <Compile Include="Yields\WaitForEvent.cs" />
     <Compile Include="Yields\WaitForNext.cs" />
     <Compile Include="Yields\WaitForSeconds.cs" />
+    <Compile Include="Yields\WaitForTask.cs" />
     <Compile Include="Yields\WaitHandlePool.cs" />
   </ItemGroup>
   <ItemGroup>
