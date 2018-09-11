@@ -60,7 +60,7 @@ namespace x2net.xpiler
             var index = Options.Parse(args);
             if (index >= args.Length)
             {
-                Console.WriteLine("error: at least one input path required");
+                Console.WriteLine("{0} error: at least one input path required", System.Reflection.Assembly.GetExecutingAssembly().EntryPoint.DeclaringType.Namespace);
                 return 2;
             }
 

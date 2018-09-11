@@ -3,6 +3,9 @@
 
 using System;
 using System.Collections;
+#if NET40
+using System.Threading.Tasks;
+#endif
 
 namespace x2net
 {
@@ -100,7 +103,7 @@ namespace x2net
         /// Posts the requests and waits for all of multiple responses until the
         /// specified timeout in seconds.
         /// </summary>
-        public static Yield WaitForAllResponse(this Coroutine self,
+        public static Yield WaitForAllResponses(this Coroutine self,
             Event[] requests, double seconds, params Event[] responses)
         {
             return new WaitForAllResponses(self, requests, seconds, responses);
@@ -196,6 +199,38 @@ namespace x2net
             Func<Coroutine, T1, T2, T3, T4, IEnumerator> func, T1 arg1, T2 arg2, T3 arg3, T4 arg4)
         {
             return new WaitForCompletion<T1, T2, T3, T4>(self, func, arg1, arg2, arg3, arg4);
+        }
+
+        /// <summary>
+        /// Waits for a single task until the default timeout.
+        /// </summary>
+        public static Yield WaitForTask(this Coroutine self, Task task)
+        {
+            return new WaitForTask(self, task);
+        }
+
+        /// <summary>
+        /// Waits for a single task until the specified timeout in seconds.
+        /// </summary>
+        public static Yield WaitForTask(this Coroutine self, Task task, double seconds)
+        {
+            return new WaitForTask(self, task, seconds);
+        }
+
+        /// <summary>
+        /// Waits for a single task until the default timeout.
+        /// </summary>
+        public static Yield WaitForTask<T>(this Coroutine self, Task<T> task)
+        {
+            return new WaitForTask<T>(self, task);
+        }
+
+        /// <summary>
+        /// Waits for a single task until the specified timeout in seconds.
+        /// </summary>
+        public static Yield WaitForTask<T>(this Coroutine self, Task<T> task, double seconds)
+        {
+            return new WaitForTask<T>(self, task, seconds);
         }
 #endif
     }
