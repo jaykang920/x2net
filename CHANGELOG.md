@@ -3,6 +3,7 @@ Features:
 - xpiler: now preserves property name cases for local cells/events
 - Coroutine: added 4-arg WaitForCompletion
 - Coroutine: added WaitForTask
+- Scope: added support for extending
 
 ## 0.13.0 (2018-07-27)
 
