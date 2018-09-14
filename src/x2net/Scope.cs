@@ -14,7 +14,7 @@ namespace x2net
         protected Event e;
 
         protected readonly DateTime startTime;
-        protected long totalMillis;
+        protected double totalMillis;
 
         /// <summary>
         /// Gets or sets the binding token to be recovered on disposal.
@@ -84,8 +84,8 @@ namespace x2net
             }
 
             DateTime endTime = DateTime.UtcNow;
-            totalMillis = (long)(endTime - startTime).TotalMilliseconds;
-            if (totalMillis >= Flow.CurrentFlow.SlowScopeLogThreshold &&
+            totalMillis = (endTime - startTime).TotalMilliseconds;
+            if ((int)totalMillis >= Flow.CurrentFlow.SlowScopeLogThreshold &&
                 Config.TraceLevel <= Flow.CurrentFlow.SlowScopeTraceLevel)
             {
                 Trace.Emit(Flow.CurrentFlow.SlowScopeTraceLevel,
