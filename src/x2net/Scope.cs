@@ -10,9 +10,11 @@ namespace x2net
     /// </summary>
     public class Scope : IDisposable
     {
-        private Binding.Token? bindingToken;
-        private readonly DateTime startTime;
-        private Event e;
+        protected Binding.Token? bindingToken;
+        protected Event e;
+
+        protected readonly DateTime startTime;
+        protected long totalMillis;
 
         /// <summary>
         /// Gets or sets the binding token to be recovered on disposal.
@@ -82,13 +84,22 @@ namespace x2net
             }
 
             DateTime endTime = DateTime.UtcNow;
-            long totalMillis = (long)(endTime - startTime).TotalMilliseconds;
-            if (totalMillis >= Flow.CurrentFlow.SlowScopeLogThreshold)
+            totalMillis = (long)(endTime - startTime).TotalMilliseconds;
+            if (totalMillis >= Flow.CurrentFlow.SlowScopeLogThreshold &&
+                Config.TraceLevel <= Flow.CurrentFlow.SlowScopeTraceLevel)
             {
                 Trace.Emit(Flow.CurrentFlow.SlowScopeTraceLevel,
                     "{0} slow scope {1:#,0}ms on {2}",
                     Flow.CurrentFlow.Name, totalMillis, e);
             }
+
+            OnDispose();
         }
+
+        /// <summary>
+        /// Overridden by subclasses to build up a cleanup chain along the
+        /// inheritance hierarchy.
+        /// </summary>
+        protected virtual void OnDispose() { }
     }
 }

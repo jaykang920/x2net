@@ -336,7 +336,8 @@ namespace x2net
 
                     DateTime end = DateTime.UtcNow;
                     long totalMilliseconds = (long)(end - begin).TotalMilliseconds;
-                    if (totalMilliseconds >= SlowHandlerLogThreshold)
+                    if (totalMilliseconds >= SlowHandlerLogThreshold &&
+                        Config.TraceLevel <= SlowHandlerTraceLevel)
                     {
                         var methodInfo = handler.Action.Method;
                         Trace.Emit(SlowHandlerTraceLevel,
