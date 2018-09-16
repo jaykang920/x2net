@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>x2net.xpiler</AssemblyName>
+    <RootNamespace>x2net.xpiler</RootNamespace>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <OutputType>Exe</OutputType>
+	<BaseOutputPath>../../bin</BaseOutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DefineConstants>YAML_HANDLER</DefineConstants>
+
+    <PackageVersion>0.14.0</PackageVersion>
+    <PackageId>x2net.xpiler.tool</PackageId>
+    <Authors>Jae-jun Kang</Authors>
+    <Description>Generates C# source code files out of x2 definition files.</Description>
+    <Copyright>Copyright © 2017, 2018 Jae-jun Kang</Copyright>
+    <PackageLicenseUrl>https://github.com/jaykang920/x2net/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/jaykang920/x2net</PackageProjectUrl>
+    <PackageTags>x2 x2net xpiler</PackageTags>
+
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>x2net.xpiler</ToolCommandName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../../GlobalAssemblyInfo.cs">
+      <Link>Properties/GlobalAssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="YamlDotNet" Version="5.0.1" />
+  </ItemGroup>
+  
+</Project>
