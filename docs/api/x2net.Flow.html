@@ -83,11 +83,35 @@
       <div class="level2"><a class="xref" href="x2net.EventBasedFlow-1.html">EventBasedFlow&lt;T&gt;</a></div>
       <div class="level2"><a class="xref" href="x2net.FrameBasedFlow-1.html">FrameBasedFlow&lt;T&gt;</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
   <h6><strong>Assembly</strong>: x2net.dll</h6>
   <h5 id="x2net_Flow_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Flow : object</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Flow</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -178,7 +202,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected static Flow currentFlow</code></pre>
+    <pre><code class="lang-csharp hljs">[ThreadStatic]
+protected static Flow currentFlow</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -207,7 +232,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected static EventEquivalent equivalent</code></pre>
+    <pre><code class="lang-csharp hljs">[ThreadStatic]
+protected static EventEquivalent equivalent</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,7 +262,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected static List&lt;Handler&gt; handlerChain</code></pre>
+    <pre><code class="lang-csharp hljs">[ThreadStatic]
+protected static List&lt;Handler&gt; handlerChain</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -248,7 +275,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">List</span>&lt;<a class="xref" href="x2net.Handler.html">Handler</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="x2net.Handler.html">Handler</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -341,7 +368,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<span class="xref">System.String</span>, <span class="xref">Exception</span>&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Exception</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -372,7 +399,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<span class="xref">System.String</span>, <span class="xref">Exception</span>&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Exception</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -702,13 +729,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Bind__1___0_Action___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Bind%60%601(%60%600%2CAction%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Bind__1___0_System_Action___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Bind%60%601(%60%600%2CSystem.Action%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L83">View Source</a>
   </span>
   <a id="x2net_Flow_Bind_" data-uid="x2net.Flow.Bind*"></a>
-  <h4 id="x2net_Flow_Bind__1___0_Action___0__" data-uid="x2net.Flow.Bind``1(``0,Action{``0})">Bind&lt;T&gt;(T, Action&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Bind__1___0_System_Action___0__" data-uid="x2net.Flow.Bind``1(``0,System.Action{``0})">Bind&lt;T&gt;(T, Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -732,7 +759,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
@@ -770,13 +797,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Bind__1___0_Action___0__Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Bind%60%601(%60%600%2CAction%7B%60%600%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Bind__1___0_System_Action___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Bind%60%601(%60%600%2CSystem.Action%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L89">View Source</a>
   </span>
   <a id="x2net_Flow_Bind_" data-uid="x2net.Flow.Bind*"></a>
-  <h4 id="x2net_Flow_Bind__1___0_Action___0__Predicate___0__" data-uid="x2net.Flow.Bind``1(``0,Action{``0},Predicate{``0})">Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Bind__1___0_System_Action___0__System_Predicate___0__" data-uid="x2net.Flow.Bind``1(``0,System.Action{``0},System.Predicate{``0})">Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -800,12 +827,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Predicate</span>&lt;T&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -843,13 +870,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__.md&amp;value=---%0Auid%3A%20x2net.Flow.Bind%60%601(%60%600%2CFunc%7Bx2net.Coroutine%2C%60%600%2CIEnumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__.md&amp;value=---%0Auid%3A%20x2net.Flow.Bind%60%601(%60%600%2CSystem.Func%7Bx2net.Coroutine%2C%60%600%2CSystem.Collections.IEnumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L96">View Source</a>
   </span>
   <a id="x2net_Flow_Bind_" data-uid="x2net.Flow.Bind*"></a>
-  <h4 id="x2net_Flow_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__" data-uid="x2net.Flow.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})">Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</h4>
+  <h4 id="x2net_Flow_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__" data-uid="x2net.Flow.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})">Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -873,7 +900,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">IEnumerator</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">System.Collections.IEnumerator</span>&gt;</td>
         <td><span class="parametername">routine</span></td>
         <td></td>
       </tr>
@@ -911,13 +938,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Bind%60%601(%60%600%2CFunc%7Bx2net.Coroutine%2C%60%600%2CIEnumerator%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Bind%60%601(%60%600%2CSystem.Func%7Bx2net.Coroutine%2C%60%600%2CSystem.Collections.IEnumerator%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L102">View Source</a>
   </span>
   <a id="x2net_Flow_Bind_" data-uid="x2net.Flow.Bind*"></a>
-  <h4 id="x2net_Flow_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__" data-uid="x2net.Flow.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})">Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__" data-uid="x2net.Flow.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})">Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -941,12 +968,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">IEnumerator</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">System.Collections.IEnumerator</span>&gt;</td>
         <td><span class="parametername">routine</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Predicate</span>&lt;T&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -1082,7 +1109,7 @@
     <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_OnHeartbeat.md&amp;value=---%0Auid%3A%20x2net.Flow.OnHeartbeat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L396">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L397">View Source</a>
   </span>
   <a id="x2net_Flow_OnHeartbeat_" data-uid="x2net.Flow.OnHeartbeat*"></a>
   <h4 id="x2net_Flow_OnHeartbeat" data-uid="x2net.Flow.OnHeartbeat">OnHeartbeat()</h4>
@@ -1098,7 +1125,7 @@
     <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_OnStart.md&amp;value=---%0Auid%3A%20x2net.Flow.OnStart%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L401">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L402">View Source</a>
   </span>
   <a id="x2net_Flow_OnStart_" data-uid="x2net.Flow.OnStart*"></a>
   <h4 id="x2net_Flow_OnStart" data-uid="x2net.Flow.OnStart">OnStart()</h4>
@@ -1114,7 +1141,7 @@
     <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_OnStop.md&amp;value=---%0Auid%3A%20x2net.Flow.OnStop%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L406">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L407">View Source</a>
   </span>
   <a id="x2net_Flow_OnStop_" data-uid="x2net.Flow.OnStop*"></a>
   <h4 id="x2net_Flow_OnStop" data-uid="x2net.Flow.OnStop">OnStop()</h4>
@@ -1210,7 +1237,7 @@
     <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Setup.md&amp;value=---%0Auid%3A%20x2net.Flow.Setup%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L362">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L363">View Source</a>
   </span>
   <a id="x2net_Flow_Setup_" data-uid="x2net.Flow.Setup*"></a>
   <h4 id="x2net_Flow_Setup" data-uid="x2net.Flow.Setup">Setup()</h4>
@@ -1226,7 +1253,7 @@
     <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_SetupInternal.md&amp;value=---%0Auid%3A%20x2net.Flow.SetupInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L367">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L368">View Source</a>
   </span>
   <a id="x2net_Flow_SetupInternal_" data-uid="x2net.Flow.SetupInternal*"></a>
   <h4 id="x2net_Flow_SetupInternal" data-uid="x2net.Flow.SetupInternal">SetupInternal()</h4>
@@ -1316,13 +1343,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Subscribe__1___0_Action___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Subscribe%60%601(%60%600%2CAction%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Subscribe__1___0_System_Action___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Subscribe%60%601(%60%600%2CSystem.Action%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L158">View Source</a>
   </span>
   <a id="x2net_Flow_Subscribe_" data-uid="x2net.Flow.Subscribe*"></a>
-  <h4 id="x2net_Flow_Subscribe__1___0_Action___0__" data-uid="x2net.Flow.Subscribe``1(``0,Action{``0})">Subscribe&lt;T&gt;(T, Action&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Subscribe__1___0_System_Action___0__" data-uid="x2net.Flow.Subscribe``1(``0,System.Action{``0})">Subscribe&lt;T&gt;(T, Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1346,7 +1373,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
@@ -1384,13 +1411,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Subscribe__1___0_Action___0__Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Subscribe%60%601(%60%600%2CAction%7B%60%600%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Subscribe__1___0_System_Action___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Subscribe%60%601(%60%600%2CSystem.Action%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L164">View Source</a>
   </span>
   <a id="x2net_Flow_Subscribe_" data-uid="x2net.Flow.Subscribe*"></a>
-  <h4 id="x2net_Flow_Subscribe__1___0_Action___0__Predicate___0__" data-uid="x2net.Flow.Subscribe``1(``0,Action{``0},Predicate{``0})">Subscribe&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Subscribe__1___0_System_Action___0__System_Predicate___0__" data-uid="x2net.Flow.Subscribe``1(``0,System.Action{``0},System.Predicate{``0})">Subscribe&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1414,12 +1441,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Predicate</span>&lt;T&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -1457,13 +1484,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Subscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__.md&amp;value=---%0Auid%3A%20x2net.Flow.Subscribe%60%601(%60%600%2CFunc%7Bx2net.Coroutine%2C%60%600%2CIEnumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Subscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__.md&amp;value=---%0Auid%3A%20x2net.Flow.Subscribe%60%601(%60%600%2CSystem.Func%7Bx2net.Coroutine%2C%60%600%2CSystem.Collections.IEnumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L172">View Source</a>
   </span>
   <a id="x2net_Flow_Subscribe_" data-uid="x2net.Flow.Subscribe*"></a>
-  <h4 id="x2net_Flow_Subscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__" data-uid="x2net.Flow.Subscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator})">Subscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</h4>
+  <h4 id="x2net_Flow_Subscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__" data-uid="x2net.Flow.Subscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})">Subscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1487,7 +1514,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">IEnumerator</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">System.Collections.IEnumerator</span>&gt;</td>
         <td><span class="parametername">routine</span></td>
         <td></td>
       </tr>
@@ -1525,13 +1552,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Subscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Subscribe%60%601(%60%600%2CFunc%7Bx2net.Coroutine%2C%60%600%2CIEnumerator%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Subscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Subscribe%60%601(%60%600%2CSystem.Func%7Bx2net.Coroutine%2C%60%600%2CSystem.Collections.IEnumerator%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L178">View Source</a>
   </span>
   <a id="x2net_Flow_Subscribe_" data-uid="x2net.Flow.Subscribe*"></a>
-  <h4 id="x2net_Flow_Subscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__" data-uid="x2net.Flow.Subscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})">Subscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Subscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__" data-uid="x2net.Flow.Subscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})">Subscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1555,12 +1582,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">IEnumerator</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">System.Collections.IEnumerator</span>&gt;</td>
         <td><span class="parametername">routine</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Predicate</span>&lt;T&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -1649,7 +1676,7 @@
     <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Teardown.md&amp;value=---%0Auid%3A%20x2net.Flow.Teardown%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L379">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L380">View Source</a>
   </span>
   <a id="x2net_Flow_Teardown_" data-uid="x2net.Flow.Teardown*"></a>
   <h4 id="x2net_Flow_Teardown" data-uid="x2net.Flow.Teardown">Teardown()</h4>
@@ -1665,7 +1692,7 @@
     <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_TeardownInternal.md&amp;value=---%0Auid%3A%20x2net.Flow.TeardownInternal%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L384">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L385">View Source</a>
   </span>
   <a id="x2net_Flow_TeardownInternal_" data-uid="x2net.Flow.TeardownInternal*"></a>
   <h4 id="x2net_Flow_TeardownInternal" data-uid="x2net.Flow.TeardownInternal">TeardownInternal()</h4>
@@ -1710,13 +1737,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unbind__1___0_Action___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unbind%60%601(%60%600%2CAction%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unbind__1___0_System_Action___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unbind%60%601(%60%600%2CSystem.Action%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L114">View Source</a>
   </span>
   <a id="x2net_Flow_Unbind_" data-uid="x2net.Flow.Unbind*"></a>
-  <h4 id="x2net_Flow_Unbind__1___0_Action___0__" data-uid="x2net.Flow.Unbind``1(``0,Action{``0})">Unbind&lt;T&gt;(T, Action&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Unbind__1___0_System_Action___0__" data-uid="x2net.Flow.Unbind``1(``0,System.Action{``0})">Unbind&lt;T&gt;(T, Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1740,7 +1767,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
@@ -1778,13 +1805,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unbind__1___0_Action___0__Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unbind%60%601(%60%600%2CAction%7B%60%600%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unbind__1___0_System_Action___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unbind%60%601(%60%600%2CSystem.Action%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L120">View Source</a>
   </span>
   <a id="x2net_Flow_Unbind_" data-uid="x2net.Flow.Unbind*"></a>
-  <h4 id="x2net_Flow_Unbind__1___0_Action___0__Predicate___0__" data-uid="x2net.Flow.Unbind``1(``0,Action{``0},Predicate{``0})">Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Unbind__1___0_System_Action___0__System_Predicate___0__" data-uid="x2net.Flow.Unbind``1(``0,System.Action{``0},System.Predicate{``0})">Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1808,12 +1835,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
         <td><span class="parametername">action</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Predicate</span>&lt;T&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -1851,13 +1878,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unbind%60%601(%60%600%2CFunc%7Bx2net.Coroutine%2C%60%600%2CIEnumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unbind%60%601(%60%600%2CSystem.Func%7Bx2net.Coroutine%2C%60%600%2CSystem.Collections.IEnumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L127">View Source</a>
   </span>
   <a id="x2net_Flow_Unbind_" data-uid="x2net.Flow.Unbind*"></a>
-  <h4 id="x2net_Flow_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__" data-uid="x2net.Flow.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})">Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</h4>
+  <h4 id="x2net_Flow_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__" data-uid="x2net.Flow.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})">Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1881,7 +1908,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">IEnumerator</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">System.Collections.IEnumerator</span>&gt;</td>
         <td><span class="parametername">routine</span></td>
         <td></td>
       </tr>
@@ -1919,13 +1946,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unbind%60%601(%60%600%2CFunc%7Bx2net.Coroutine%2C%60%600%2CIEnumerator%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unbind%60%601(%60%600%2CSystem.Func%7Bx2net.Coroutine%2C%60%600%2CSystem.Collections.IEnumerator%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L133">View Source</a>
   </span>
   <a id="x2net_Flow_Unbind_" data-uid="x2net.Flow.Unbind*"></a>
-  <h4 id="x2net_Flow_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__" data-uid="x2net.Flow.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})">Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__" data-uid="x2net.Flow.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})">Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -1949,12 +1976,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">IEnumerator</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">System.Collections.IEnumerator</span>&gt;</td>
         <td><span class="parametername">routine</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Predicate</span>&lt;T&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -2024,13 +2051,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unsubscribe__1___0_Action___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unsubscribe%60%601(%60%600%2CAction%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unsubscribe__1___0_System_Action___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unsubscribe%60%601(%60%600%2CSystem.Action%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L191">View Source</a>
   </span>
   <a id="x2net_Flow_Unsubscribe_" data-uid="x2net.Flow.Unsubscribe*"></a>
-  <h4 id="x2net_Flow_Unsubscribe__1___0_Action___0__" data-uid="x2net.Flow.Unsubscribe``1(``0,Action{``0})">Unsubscribe&lt;T&gt;(T, Action&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Unsubscribe__1___0_System_Action___0__" data-uid="x2net.Flow.Unsubscribe``1(``0,System.Action{``0})">Unsubscribe&lt;T&gt;(T, Action&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2054,7 +2081,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
         <td><span class="parametername">handler</span></td>
         <td></td>
       </tr>
@@ -2092,13 +2119,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unsubscribe__1___0_Action___0__Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unsubscribe%60%601(%60%600%2CAction%7B%60%600%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unsubscribe__1___0_System_Action___0__System_Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unsubscribe%60%601(%60%600%2CSystem.Action%7B%60%600%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L197">View Source</a>
   </span>
   <a id="x2net_Flow_Unsubscribe_" data-uid="x2net.Flow.Unsubscribe*"></a>
-  <h4 id="x2net_Flow_Unsubscribe__1___0_Action___0__Predicate___0__" data-uid="x2net.Flow.Unsubscribe``1(``0,Action{``0},Predicate{``0})">Unsubscribe&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Unsubscribe__1___0_System_Action___0__System_Predicate___0__" data-uid="x2net.Flow.Unsubscribe``1(``0,System.Action{``0},System.Predicate{``0})">Unsubscribe&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2122,12 +2149,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Action</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;T&gt;</td>
         <td><span class="parametername">handler</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Predicate</span>&lt;T&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>
@@ -2165,13 +2192,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unsubscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unsubscribe%60%601(%60%600%2CFunc%7Bx2net.Coroutine%2C%60%600%2CIEnumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unsubscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unsubscribe%60%601(%60%600%2CSystem.Func%7Bx2net.Coroutine%2C%60%600%2CSystem.Collections.IEnumerator%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L204">View Source</a>
   </span>
   <a id="x2net_Flow_Unsubscribe_" data-uid="x2net.Flow.Unsubscribe*"></a>
-  <h4 id="x2net_Flow_Unsubscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__" data-uid="x2net.Flow.Unsubscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator})">Unsubscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</h4>
+  <h4 id="x2net_Flow_Unsubscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__" data-uid="x2net.Flow.Unsubscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})">Unsubscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2195,7 +2222,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">IEnumerator</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">System.Collections.IEnumerator</span>&gt;</td>
         <td><span class="parametername">handler</span></td>
         <td></td>
       </tr>
@@ -2233,13 +2260,13 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unsubscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unsubscribe%60%601(%60%600%2CFunc%7Bx2net.Coroutine%2C%60%600%2CIEnumerator%7D%2CPredicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Flow_Unsubscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__.md&amp;value=---%0Auid%3A%20x2net.Flow.Unsubscribe%60%601(%60%600%2CSystem.Func%7Bx2net.Coroutine%2C%60%600%2CSystem.Collections.IEnumerator%7D%2CSystem.Predicate%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Flow.cs/#L210">View Source</a>
   </span>
   <a id="x2net_Flow_Unsubscribe_" data-uid="x2net.Flow.Unsubscribe*"></a>
-  <h4 id="x2net_Flow_Unsubscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__" data-uid="x2net.Flow.Unsubscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})">Unsubscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</h4>
+  <h4 id="x2net_Flow_Unsubscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__" data-uid="x2net.Flow.Unsubscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})">Unsubscribe&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -2263,12 +2290,12 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">IEnumerator</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="x2net.Coroutine.html">Coroutine</a>, T, <span class="xref">System.Collections.IEnumerator</span>&gt;</td>
         <td><span class="parametername">handler</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Predicate</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Predicate</span>&lt;T&gt;</td>
         <td><span class="parametername">predicate</span></td>
         <td></td>
       </tr>

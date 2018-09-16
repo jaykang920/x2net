@@ -87,6 +87,7 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
     <div><a class="xref" href="x2net.ICase.html">ICase</a></div>
   </div>
   <div class="inheritedMembers">
@@ -131,16 +132,16 @@
       <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_Listen">AbstractUdpLink.Listen()</a>
     </div>
     <div>
-      <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_AddEndPoint_EndPoint_">AbstractUdpLink.AddEndPoint(EndPoint)</a>
+      <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_AddEndPoint_System_Net_EndPoint_">AbstractUdpLink.AddEndPoint(EndPoint)</a>
     </div>
     <div>
       <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_GetEndPoint_System_Int32_">AbstractUdpLink.GetEndPoint(Int32)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_GetHandle_EndPoint_">AbstractUdpLink.GetHandle(EndPoint)</a>
+      <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_GetHandle_System_Net_EndPoint_">AbstractUdpLink.GetHandle(EndPoint)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_RemoveEndPoint_EndPoint_">AbstractUdpLink.RemoveEndPoint(EndPoint)</a>
+      <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_RemoveEndPoint_System_Net_EndPoint_">AbstractUdpLink.RemoveEndPoint(EndPoint)</a>
     </div>
     <div>
       <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_RemoveHandle_System_Int32_">AbstractUdpLink.RemoveHandle(Int32)</a>
@@ -152,7 +153,7 @@
       <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_BeginReceiveFrom">AbstractUdpLink.BeginReceiveFrom()</a>
     </div>
     <div>
-      <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_OnReceiveFromInternal_System_Int32_EndPoint_">AbstractUdpLink.OnReceiveFromInternal(Int32, EndPoint)</a>
+      <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_OnReceiveFromInternal_System_Int32_System_Net_EndPoint_">AbstractUdpLink.OnReceiveFromInternal(Int32, EndPoint)</a>
     </div>
     <div>
       <a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_OnSendToInternal_System_Int32_">AbstractUdpLink.OnSendToInternal(Int32)</a>
@@ -218,38 +219,59 @@
       <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind_x2net_Binding_Token_">EventSink.Bind(Binding.Token)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Action___0__System_Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
       <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind_x2net_Binding_Token_">EventSink.Unbind(Binding.Token)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Action___0__System_Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
   <h6><strong>Assembly</strong>: x2net.dll</h6>
   <h5 id="x2net_UdpLink_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class UdpLink : AbstractUdpLink, ICase</code></pre>
+    <pre><code class="lang-csharp hljs">public class UdpLink : AbstractUdpLink, IDisposable, ICase</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -307,13 +329,13 @@
   <div><a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_ReceiveFromInternal">AbstractUdpLink.ReceiveFromInternal()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_UdpLink_SendToInternal_EndPoint_.md&amp;value=---%0Auid%3A%20x2net.UdpLink.SendToInternal(EndPoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_UdpLink_SendToInternal_System_Net_EndPoint_.md&amp;value=---%0Auid%3A%20x2net.UdpLink.SendToInternal(System.Net.EndPoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/UdpLink.cs/#L41">View Source</a>
   </span>
   <a id="x2net_UdpLink_SendToInternal_" data-uid="x2net.UdpLink.SendToInternal*"></a>
-  <h4 id="x2net_UdpLink_SendToInternal_EndPoint_" data-uid="x2net.UdpLink.SendToInternal(EndPoint)">SendToInternal(EndPoint)</h4>
+  <h4 id="x2net_UdpLink_SendToInternal_System_Net_EndPoint_" data-uid="x2net.UdpLink.SendToInternal(System.Net.EndPoint)">SendToInternal(EndPoint)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -331,15 +353,18 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">EndPoint</span></td>
+        <td><span class="xref">System.Net.EndPoint</span></td>
         <td><span class="parametername">endPoint</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_SendToInternal_EndPoint_">AbstractUdpLink.SendToInternal(EndPoint)</a></div>
+  <div><a class="xref" href="x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_SendToInternal_System_Net_EndPoint_">AbstractUdpLink.SendToInternal(EndPoint)</a></div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
   <div>
       <a class="xref" href="x2net.ICase.html">ICase</a>
   </div>

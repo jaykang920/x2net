@@ -14,6 +14,13 @@ So most probably you will want to install the
 
     PM> Install-Package x2net.xpiler
 
+### .NET Core Global Tool
+
+If you are using .NET Core SDK 2.1 or newer, you may install and run `x2net.xpiler`
+as a .NET Core global tool with the following command:
+
+    dotnet tool install -g x2net.xpiler.tool
+
 ## Source
 
 You may `clone` or download the source code of x2net from its

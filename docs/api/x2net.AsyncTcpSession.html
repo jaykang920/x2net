@@ -83,6 +83,10 @@
     <div class="level2"><a class="xref" href="x2net.AbstractTcpSession.html">AbstractTcpSession</a></div>
     <div class="level3"><span class="xref">AsyncTcpSession</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -229,24 +233,42 @@
     <div>
       <a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_Diag">LinkSession.Diag</a>
     </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
   <h6><strong>Assembly</strong>: x2net.dll</h6>
   <h5 id="x2net_AsyncTcpSession_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class AsyncTcpSession : AbstractTcpSession</code></pre>
+    <pre><code class="lang-csharp hljs">public class AsyncTcpSession : AbstractTcpSession, IDisposable</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AsyncTcpSession__ctor_x2net_SessionBasedLink_Socket_.md&amp;value=---%0Auid%3A%20x2net.AsyncTcpSession.%23ctor(x2net.SessionBasedLink%2CSocket)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_AsyncTcpSession__ctor_x2net_SessionBasedLink_System_Net_Sockets_Socket_.md&amp;value=---%0Auid%3A%20x2net.AsyncTcpSession.%23ctor(x2net.SessionBasedLink%2CSystem.Net.Sockets.Socket)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/AsyncTcpSession.cs/#L17">View Source</a>
   </span>
   <a id="x2net_AsyncTcpSession__ctor_" data-uid="x2net.AsyncTcpSession.#ctor*"></a>
-  <h4 id="x2net_AsyncTcpSession__ctor_x2net_SessionBasedLink_Socket_" data-uid="x2net.AsyncTcpSession.#ctor(x2net.SessionBasedLink,Socket)">AsyncTcpSession(SessionBasedLink, Socket)</h4>
+  <h4 id="x2net_AsyncTcpSession__ctor_x2net_SessionBasedLink_System_Net_Sockets_Socket_" data-uid="x2net.AsyncTcpSession.#ctor(x2net.SessionBasedLink,System.Net.Sockets.Socket)">AsyncTcpSession(SessionBasedLink, Socket)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -269,7 +291,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">Socket</span></td>
+        <td><span class="xref">System.Net.Sockets.Socket</span></td>
         <td><span class="parametername">socket</span></td>
         <td></td>
       </tr>
@@ -346,6 +368,10 @@
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="x2net.LinkSession.html#x2net_LinkSession_SendInternal">LinkSession.SendInternal()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>

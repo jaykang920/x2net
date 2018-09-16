@@ -45,11 +45,11 @@ references:
   commentId: M:x2net.AbstractTcpClient.Connect
   fullName: x2net.AbstractTcpClient.Connect()
   nameWithType: AbstractTcpClient.Connect()
-- uid: x2net.AbstractTcpClient.Connect(IPAddress,System.Int32)
+- uid: x2net.AbstractTcpClient.Connect(System.Net.IPAddress,System.Int32)
   name: Connect(IPAddress, Int32)
-  href: api/x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connect_IPAddress_System_Int32_
-  commentId: M:x2net.AbstractTcpClient.Connect(IPAddress,System.Int32)
-  fullName: x2net.AbstractTcpClient.Connect(IPAddress, System.Int32)
+  href: api/x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connect_System_Net_IPAddress_System_Int32_
+  commentId: M:x2net.AbstractTcpClient.Connect(System.Net.IPAddress,System.Int32)
+  fullName: x2net.AbstractTcpClient.Connect(System.Net.IPAddress, System.Int32)
   nameWithType: AbstractTcpClient.Connect(IPAddress, Int32)
 - uid: x2net.AbstractTcpClient.Connect(System.String)
   name: Connect(String)
@@ -109,11 +109,11 @@ references:
   isSpec: "True"
   fullName: x2net.AbstractTcpClient.Connected
   nameWithType: AbstractTcpClient.Connected
-- uid: x2net.AbstractTcpClient.ConnectInternal(Socket,EndPoint)
+- uid: x2net.AbstractTcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)
   name: ConnectInternal(Socket, EndPoint)
-  href: api/x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectInternal_Socket_EndPoint_
-  commentId: M:x2net.AbstractTcpClient.ConnectInternal(Socket,EndPoint)
-  fullName: x2net.AbstractTcpClient.ConnectInternal(Socket, EndPoint)
+  href: api/x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectInternal_System_Net_Sockets_Socket_System_Net_EndPoint_
+  commentId: M:x2net.AbstractTcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)
+  fullName: x2net.AbstractTcpClient.ConnectInternal(System.Net.Sockets.Socket, System.Net.EndPoint)
   nameWithType: AbstractTcpClient.ConnectInternal(Socket, EndPoint)
 - uid: x2net.AbstractTcpClient.ConnectInternal*
   name: ConnectInternal
@@ -187,11 +187,11 @@ references:
   isSpec: "True"
   fullName: x2net.AbstractTcpClient.NoDelay
   nameWithType: AbstractTcpClient.NoDelay
-- uid: x2net.AbstractTcpClient.OnConnectError(Socket,EndPoint)
+- uid: x2net.AbstractTcpClient.OnConnectError(System.Net.Sockets.Socket,System.Net.EndPoint)
   name: OnConnectError(Socket, EndPoint)
-  href: api/x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnConnectError_Socket_EndPoint_
-  commentId: M:x2net.AbstractTcpClient.OnConnectError(Socket,EndPoint)
-  fullName: x2net.AbstractTcpClient.OnConnectError(Socket, EndPoint)
+  href: api/x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnConnectError_System_Net_Sockets_Socket_System_Net_EndPoint_
+  commentId: M:x2net.AbstractTcpClient.OnConnectError(System.Net.Sockets.Socket,System.Net.EndPoint)
+  fullName: x2net.AbstractTcpClient.OnConnectError(System.Net.Sockets.Socket, System.Net.EndPoint)
   nameWithType: AbstractTcpClient.OnConnectError(Socket, EndPoint)
 - uid: x2net.AbstractTcpClient.OnConnectError*
   name: OnConnectError
@@ -388,18 +388,18 @@ references:
   isSpec: "True"
   fullName: x2net.AbstractTcpServer.Dispose
   nameWithType: AbstractTcpServer.Dispose
-- uid: x2net.AbstractTcpServer.Listen(IPAddress,System.Int32)
-  name: Listen(IPAddress, Int32)
-  href: api/x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_Listen_IPAddress_System_Int32_
-  commentId: M:x2net.AbstractTcpServer.Listen(IPAddress,System.Int32)
-  fullName: x2net.AbstractTcpServer.Listen(IPAddress, System.Int32)
-  nameWithType: AbstractTcpServer.Listen(IPAddress, Int32)
 - uid: x2net.AbstractTcpServer.Listen(System.Int32)
   name: Listen(Int32)
   href: api/x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_Listen_System_Int32_
   commentId: M:x2net.AbstractTcpServer.Listen(System.Int32)
   fullName: x2net.AbstractTcpServer.Listen(System.Int32)
   nameWithType: AbstractTcpServer.Listen(Int32)
+- uid: x2net.AbstractTcpServer.Listen(System.Net.IPAddress,System.Int32)
+  name: Listen(IPAddress, Int32)
+  href: api/x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_Listen_System_Net_IPAddress_System_Int32_
+  commentId: M:x2net.AbstractTcpServer.Listen(System.Net.IPAddress,System.Int32)
+  fullName: x2net.AbstractTcpServer.Listen(System.Net.IPAddress, System.Int32)
+  nameWithType: AbstractTcpServer.Listen(IPAddress, Int32)
 - uid: x2net.AbstractTcpServer.Listen(System.String,System.Int32)
   name: Listen(String, Int32)
   href: api/x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_Listen_System_String_System_Int32_
@@ -464,11 +464,11 @@ references:
   commentId: T:x2net.AbstractTcpSession
   fullName: x2net.AbstractTcpSession
   nameWithType: AbstractTcpSession
-- uid: x2net.AbstractTcpSession.#ctor(x2net.SessionBasedLink,Socket)
+- uid: x2net.AbstractTcpSession.#ctor(x2net.SessionBasedLink,System.Net.Sockets.Socket)
   name: AbstractTcpSession(SessionBasedLink, Socket)
-  href: api/x2net.AbstractTcpSession.html#x2net_AbstractTcpSession__ctor_x2net_SessionBasedLink_Socket_
-  commentId: M:x2net.AbstractTcpSession.#ctor(x2net.SessionBasedLink,Socket)
-  fullName: x2net.AbstractTcpSession.AbstractTcpSession(x2net.SessionBasedLink, Socket)
+  href: api/x2net.AbstractTcpSession.html#x2net_AbstractTcpSession__ctor_x2net_SessionBasedLink_System_Net_Sockets_Socket_
+  commentId: M:x2net.AbstractTcpSession.#ctor(x2net.SessionBasedLink,System.Net.Sockets.Socket)
+  fullName: x2net.AbstractTcpSession.AbstractTcpSession(x2net.SessionBasedLink, System.Net.Sockets.Socket)
   nameWithType: AbstractTcpSession.AbstractTcpSession(SessionBasedLink, Socket)
 - uid: x2net.AbstractTcpSession.#ctor*
   name: AbstractTcpSession
@@ -658,11 +658,11 @@ references:
   isSpec: "True"
   fullName: x2net.AbstractUdpLink.AbstractUdpLink
   nameWithType: AbstractUdpLink.AbstractUdpLink
-- uid: x2net.AbstractUdpLink.AddEndPoint(EndPoint)
+- uid: x2net.AbstractUdpLink.AddEndPoint(System.Net.EndPoint)
   name: AddEndPoint(EndPoint)
-  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_AddEndPoint_EndPoint_
-  commentId: M:x2net.AbstractUdpLink.AddEndPoint(EndPoint)
-  fullName: x2net.AbstractUdpLink.AddEndPoint(EndPoint)
+  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_AddEndPoint_System_Net_EndPoint_
+  commentId: M:x2net.AbstractUdpLink.AddEndPoint(System.Net.EndPoint)
+  fullName: x2net.AbstractUdpLink.AddEndPoint(System.Net.EndPoint)
   nameWithType: AbstractUdpLink.AddEndPoint(EndPoint)
 - uid: x2net.AbstractUdpLink.AddEndPoint*
   name: AddEndPoint
@@ -736,11 +736,11 @@ references:
   isSpec: "True"
   fullName: x2net.AbstractUdpLink.GetEndPoint
   nameWithType: AbstractUdpLink.GetEndPoint
-- uid: x2net.AbstractUdpLink.GetHandle(EndPoint)
+- uid: x2net.AbstractUdpLink.GetHandle(System.Net.EndPoint)
   name: GetHandle(EndPoint)
-  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_GetHandle_EndPoint_
-  commentId: M:x2net.AbstractUdpLink.GetHandle(EndPoint)
-  fullName: x2net.AbstractUdpLink.GetHandle(EndPoint)
+  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_GetHandle_System_Net_EndPoint_
+  commentId: M:x2net.AbstractUdpLink.GetHandle(System.Net.EndPoint)
+  fullName: x2net.AbstractUdpLink.GetHandle(System.Net.EndPoint)
   nameWithType: AbstractUdpLink.GetHandle(EndPoint)
 - uid: x2net.AbstractUdpLink.GetHandle*
   name: GetHandle
@@ -768,11 +768,11 @@ references:
   commentId: F:x2net.AbstractUdpLink.map
   fullName: x2net.AbstractUdpLink.map
   nameWithType: AbstractUdpLink.map
-- uid: x2net.AbstractUdpLink.OnReceiveFromInternal(System.Int32,EndPoint)
+- uid: x2net.AbstractUdpLink.OnReceiveFromInternal(System.Int32,System.Net.EndPoint)
   name: OnReceiveFromInternal(Int32, EndPoint)
-  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_OnReceiveFromInternal_System_Int32_EndPoint_
-  commentId: M:x2net.AbstractUdpLink.OnReceiveFromInternal(System.Int32,EndPoint)
-  fullName: x2net.AbstractUdpLink.OnReceiveFromInternal(System.Int32, EndPoint)
+  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_OnReceiveFromInternal_System_Int32_System_Net_EndPoint_
+  commentId: M:x2net.AbstractUdpLink.OnReceiveFromInternal(System.Int32,System.Net.EndPoint)
+  fullName: x2net.AbstractUdpLink.OnReceiveFromInternal(System.Int32, System.Net.EndPoint)
   nameWithType: AbstractUdpLink.OnReceiveFromInternal(Int32, EndPoint)
 - uid: x2net.AbstractUdpLink.OnReceiveFromInternal*
   name: OnReceiveFromInternal
@@ -807,11 +807,11 @@ references:
   isSpec: "True"
   fullName: x2net.AbstractUdpLink.ReceiveFromInternal
   nameWithType: AbstractUdpLink.ReceiveFromInternal
-- uid: x2net.AbstractUdpLink.RemoveEndPoint(EndPoint)
+- uid: x2net.AbstractUdpLink.RemoveEndPoint(System.Net.EndPoint)
   name: RemoveEndPoint(EndPoint)
-  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_RemoveEndPoint_EndPoint_
-  commentId: M:x2net.AbstractUdpLink.RemoveEndPoint(EndPoint)
-  fullName: x2net.AbstractUdpLink.RemoveEndPoint(EndPoint)
+  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_RemoveEndPoint_System_Net_EndPoint_
+  commentId: M:x2net.AbstractUdpLink.RemoveEndPoint(System.Net.EndPoint)
+  fullName: x2net.AbstractUdpLink.RemoveEndPoint(System.Net.EndPoint)
   nameWithType: AbstractUdpLink.RemoveEndPoint(EndPoint)
 - uid: x2net.AbstractUdpLink.RemoveEndPoint*
   name: RemoveEndPoint
@@ -864,11 +864,11 @@ references:
   isSpec: "True"
   fullName: x2net.AbstractUdpLink.Send
   nameWithType: AbstractUdpLink.Send
-- uid: x2net.AbstractUdpLink.SendToInternal(EndPoint)
+- uid: x2net.AbstractUdpLink.SendToInternal(System.Net.EndPoint)
   name: SendToInternal(EndPoint)
-  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_SendToInternal_EndPoint_
-  commentId: M:x2net.AbstractUdpLink.SendToInternal(EndPoint)
-  fullName: x2net.AbstractUdpLink.SendToInternal(EndPoint)
+  href: api/x2net.AbstractUdpLink.html#x2net_AbstractUdpLink_SendToInternal_System_Net_EndPoint_
+  commentId: M:x2net.AbstractUdpLink.SendToInternal(System.Net.EndPoint)
+  fullName: x2net.AbstractUdpLink.SendToInternal(System.Net.EndPoint)
   nameWithType: AbstractUdpLink.SendToInternal(EndPoint)
 - uid: x2net.AbstractUdpLink.SendToInternal*
   name: SendToInternal
@@ -926,11 +926,11 @@ references:
   isSpec: "True"
   fullName: x2net.AsyncTcpClient.AsyncTcpClient
   nameWithType: AsyncTcpClient.AsyncTcpClient
-- uid: x2net.AsyncTcpClient.ConnectInternal(Socket,EndPoint)
+- uid: x2net.AsyncTcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)
   name: ConnectInternal(Socket, EndPoint)
-  href: api/x2net.AsyncTcpClient.html#x2net_AsyncTcpClient_ConnectInternal_Socket_EndPoint_
-  commentId: M:x2net.AsyncTcpClient.ConnectInternal(Socket,EndPoint)
-  fullName: x2net.AsyncTcpClient.ConnectInternal(Socket, EndPoint)
+  href: api/x2net.AsyncTcpClient.html#x2net_AsyncTcpClient_ConnectInternal_System_Net_Sockets_Socket_System_Net_EndPoint_
+  commentId: M:x2net.AsyncTcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)
+  fullName: x2net.AsyncTcpClient.ConnectInternal(System.Net.Sockets.Socket, System.Net.EndPoint)
   nameWithType: AsyncTcpClient.ConnectInternal(Socket, EndPoint)
 - uid: x2net.AsyncTcpClient.ConnectInternal*
   name: ConnectInternal
@@ -1003,11 +1003,11 @@ references:
   commentId: T:x2net.AsyncTcpSession
   fullName: x2net.AsyncTcpSession
   nameWithType: AsyncTcpSession
-- uid: x2net.AsyncTcpSession.#ctor(x2net.SessionBasedLink,Socket)
+- uid: x2net.AsyncTcpSession.#ctor(x2net.SessionBasedLink,System.Net.Sockets.Socket)
   name: AsyncTcpSession(SessionBasedLink, Socket)
-  href: api/x2net.AsyncTcpSession.html#x2net_AsyncTcpSession__ctor_x2net_SessionBasedLink_Socket_
-  commentId: M:x2net.AsyncTcpSession.#ctor(x2net.SessionBasedLink,Socket)
-  fullName: x2net.AsyncTcpSession.AsyncTcpSession(x2net.SessionBasedLink, Socket)
+  href: api/x2net.AsyncTcpSession.html#x2net_AsyncTcpSession__ctor_x2net_SessionBasedLink_System_Net_Sockets_Socket_
+  commentId: M:x2net.AsyncTcpSession.#ctor(x2net.SessionBasedLink,System.Net.Sockets.Socket)
+  fullName: x2net.AsyncTcpSession.AsyncTcpSession(x2net.SessionBasedLink, System.Net.Sockets.Socket)
   nameWithType: AsyncTcpSession.AsyncTcpSession(SessionBasedLink, Socket)
 - uid: x2net.AsyncTcpSession.#ctor*
   name: AsyncTcpSession
@@ -1100,11 +1100,11 @@ references:
   isSpec: "True"
   fullName: x2net.AsyncUdpLink.ReceiveFromInternal
   nameWithType: AsyncUdpLink.ReceiveFromInternal
-- uid: x2net.AsyncUdpLink.SendToInternal(EndPoint)
+- uid: x2net.AsyncUdpLink.SendToInternal(System.Net.EndPoint)
   name: SendToInternal(EndPoint)
-  href: api/x2net.AsyncUdpLink.html#x2net_AsyncUdpLink_SendToInternal_EndPoint_
-  commentId: M:x2net.AsyncUdpLink.SendToInternal(EndPoint)
-  fullName: x2net.AsyncUdpLink.SendToInternal(EndPoint)
+  href: api/x2net.AsyncUdpLink.html#x2net_AsyncUdpLink_SendToInternal_System_Net_EndPoint_
+  commentId: M:x2net.AsyncUdpLink.SendToInternal(System.Net.EndPoint)
+  fullName: x2net.AsyncUdpLink.SendToInternal(System.Net.EndPoint)
   nameWithType: AsyncUdpLink.SendToInternal(EndPoint)
 - uid: x2net.AsyncUdpLink.SendToInternal*
   name: SendToInternal
@@ -1151,13 +1151,13 @@ references:
   isSpec: "True"
   fullName: x2net.Binding.Bind
   nameWithType: Binding.Bind
-- uid: x2net.Binding.BuildHandlerChain(x2net.Event,x2net.EventEquivalent,List{x2net.Handler})
+- uid: x2net.Binding.BuildHandlerChain(x2net.Event,x2net.EventEquivalent,System.Collections.Generic.List{x2net.Handler})
   name: BuildHandlerChain(Event, EventEquivalent, List<Handler>)
-  href: api/x2net.Binding.html#x2net_Binding_BuildHandlerChain_x2net_Event_x2net_EventEquivalent_List_x2net_Handler__
-  commentId: M:x2net.Binding.BuildHandlerChain(x2net.Event,x2net.EventEquivalent,List{x2net.Handler})
+  href: api/x2net.Binding.html#x2net_Binding_BuildHandlerChain_x2net_Event_x2net_EventEquivalent_System_Collections_Generic_List_x2net_Handler__
+  commentId: M:x2net.Binding.BuildHandlerChain(x2net.Event,x2net.EventEquivalent,System.Collections.Generic.List{x2net.Handler})
   name.vb: BuildHandlerChain(Event, EventEquivalent, List(Of Handler))
-  fullName: x2net.Binding.BuildHandlerChain(x2net.Event, x2net.EventEquivalent, List<x2net.Handler>)
-  fullName.vb: x2net.Binding.BuildHandlerChain(x2net.Event, x2net.EventEquivalent, List(Of x2net.Handler))
+  fullName: x2net.Binding.BuildHandlerChain(x2net.Event, x2net.EventEquivalent, System.Collections.Generic.List<x2net.Handler>)
+  fullName.vb: x2net.Binding.BuildHandlerChain(x2net.Event, x2net.EventEquivalent, System.Collections.Generic.List(Of x2net.Handler))
   nameWithType: Binding.BuildHandlerChain(Event, EventEquivalent, List<Handler>)
   nameWithType.vb: Binding.BuildHandlerChain(Event, EventEquivalent, List(Of Handler))
 - uid: x2net.Binding.BuildHandlerChain*
@@ -1747,13 +1747,13 @@ references:
   isSpec: "True"
   fullName: x2net.Buffer.Length
   nameWithType: Buffer.Length
-- uid: x2net.Buffer.ListAvailableSegments(IList{ArraySegment{System.Byte}})
+- uid: x2net.Buffer.ListAvailableSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})
   name: ListAvailableSegments(IList<ArraySegment<Byte>>)
-  href: api/x2net.Buffer.html#x2net_Buffer_ListAvailableSegments_IList_ArraySegment_System_Byte___
-  commentId: M:x2net.Buffer.ListAvailableSegments(IList{ArraySegment{System.Byte}})
+  href: api/x2net.Buffer.html#x2net_Buffer_ListAvailableSegments_System_Collections_Generic_IList_System_ArraySegment_System_Byte___
+  commentId: M:x2net.Buffer.ListAvailableSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})
   name.vb: ListAvailableSegments(IList(Of ArraySegment(Of Byte)))
-  fullName: x2net.Buffer.ListAvailableSegments(IList<ArraySegment<System.Byte>>)
-  fullName.vb: x2net.Buffer.ListAvailableSegments(IList(Of ArraySegment(Of System.Byte)))
+  fullName: x2net.Buffer.ListAvailableSegments(System.Collections.Generic.IList<System.ArraySegment<System.Byte>>)
+  fullName.vb: x2net.Buffer.ListAvailableSegments(System.Collections.Generic.IList(Of System.ArraySegment(Of System.Byte)))
   nameWithType: Buffer.ListAvailableSegments(IList<ArraySegment<Byte>>)
   nameWithType.vb: Buffer.ListAvailableSegments(IList(Of ArraySegment(Of Byte)))
 - uid: x2net.Buffer.ListAvailableSegments*
@@ -1763,13 +1763,13 @@ references:
   isSpec: "True"
   fullName: x2net.Buffer.ListAvailableSegments
   nameWithType: Buffer.ListAvailableSegments
-- uid: x2net.Buffer.ListEndingSegments(IList{ArraySegment{System.Byte}},System.Int32)
+- uid: x2net.Buffer.ListEndingSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.Int32)
   name: ListEndingSegments(IList<ArraySegment<Byte>>, Int32)
-  href: api/x2net.Buffer.html#x2net_Buffer_ListEndingSegments_IList_ArraySegment_System_Byte___System_Int32_
-  commentId: M:x2net.Buffer.ListEndingSegments(IList{ArraySegment{System.Byte}},System.Int32)
+  href: api/x2net.Buffer.html#x2net_Buffer_ListEndingSegments_System_Collections_Generic_IList_System_ArraySegment_System_Byte___System_Int32_
+  commentId: M:x2net.Buffer.ListEndingSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.Int32)
   name.vb: ListEndingSegments(IList(Of ArraySegment(Of Byte)), Int32)
-  fullName: x2net.Buffer.ListEndingSegments(IList<ArraySegment<System.Byte>>, System.Int32)
-  fullName.vb: x2net.Buffer.ListEndingSegments(IList(Of ArraySegment(Of System.Byte)), System.Int32)
+  fullName: x2net.Buffer.ListEndingSegments(System.Collections.Generic.IList<System.ArraySegment<System.Byte>>, System.Int32)
+  fullName.vb: x2net.Buffer.ListEndingSegments(System.Collections.Generic.IList(Of System.ArraySegment(Of System.Byte)), System.Int32)
   nameWithType: Buffer.ListEndingSegments(IList<ArraySegment<Byte>>, Int32)
   nameWithType.vb: Buffer.ListEndingSegments(IList(Of ArraySegment(Of Byte)), Int32)
 - uid: x2net.Buffer.ListEndingSegments*
@@ -1779,13 +1779,13 @@ references:
   isSpec: "True"
   fullName: x2net.Buffer.ListEndingSegments
   nameWithType: Buffer.ListEndingSegments
-- uid: x2net.Buffer.ListOccupiedSegments(IList{ArraySegment{System.Byte}})
+- uid: x2net.Buffer.ListOccupiedSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})
   name: ListOccupiedSegments(IList<ArraySegment<Byte>>)
-  href: api/x2net.Buffer.html#x2net_Buffer_ListOccupiedSegments_IList_ArraySegment_System_Byte___
-  commentId: M:x2net.Buffer.ListOccupiedSegments(IList{ArraySegment{System.Byte}})
+  href: api/x2net.Buffer.html#x2net_Buffer_ListOccupiedSegments_System_Collections_Generic_IList_System_ArraySegment_System_Byte___
+  commentId: M:x2net.Buffer.ListOccupiedSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})
   name.vb: ListOccupiedSegments(IList(Of ArraySegment(Of Byte)))
-  fullName: x2net.Buffer.ListOccupiedSegments(IList<ArraySegment<System.Byte>>)
-  fullName.vb: x2net.Buffer.ListOccupiedSegments(IList(Of ArraySegment(Of System.Byte)))
+  fullName: x2net.Buffer.ListOccupiedSegments(System.Collections.Generic.IList<System.ArraySegment<System.Byte>>)
+  fullName.vb: x2net.Buffer.ListOccupiedSegments(System.Collections.Generic.IList(Of System.ArraySegment(Of System.Byte)))
   nameWithType: Buffer.ListOccupiedSegments(IList<ArraySegment<Byte>>)
   nameWithType.vb: Buffer.ListOccupiedSegments(IList(Of ArraySegment(Of Byte)))
 - uid: x2net.Buffer.ListOccupiedSegments*
@@ -1795,13 +1795,13 @@ references:
   isSpec: "True"
   fullName: x2net.Buffer.ListOccupiedSegments
   nameWithType: Buffer.ListOccupiedSegments
-- uid: x2net.Buffer.ListStartingSegments(IList{ArraySegment{System.Byte}},System.Int32)
+- uid: x2net.Buffer.ListStartingSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.Int32)
   name: ListStartingSegments(IList<ArraySegment<Byte>>, Int32)
-  href: api/x2net.Buffer.html#x2net_Buffer_ListStartingSegments_IList_ArraySegment_System_Byte___System_Int32_
-  commentId: M:x2net.Buffer.ListStartingSegments(IList{ArraySegment{System.Byte}},System.Int32)
+  href: api/x2net.Buffer.html#x2net_Buffer_ListStartingSegments_System_Collections_Generic_IList_System_ArraySegment_System_Byte___System_Int32_
+  commentId: M:x2net.Buffer.ListStartingSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}},System.Int32)
   name.vb: ListStartingSegments(IList(Of ArraySegment(Of Byte)), Int32)
-  fullName: x2net.Buffer.ListStartingSegments(IList<ArraySegment<System.Byte>>, System.Int32)
-  fullName.vb: x2net.Buffer.ListStartingSegments(IList(Of ArraySegment(Of System.Byte)), System.Int32)
+  fullName: x2net.Buffer.ListStartingSegments(System.Collections.Generic.IList<System.ArraySegment<System.Byte>>, System.Int32)
+  fullName.vb: x2net.Buffer.ListStartingSegments(System.Collections.Generic.IList(Of System.ArraySegment(Of System.Byte)), System.Int32)
   nameWithType: Buffer.ListStartingSegments(IList<ArraySegment<Byte>>, Int32)
   nameWithType.vb: Buffer.ListStartingSegments(IList(Of ArraySegment(Of Byte)), Int32)
 - uid: x2net.Buffer.ListStartingSegments*
@@ -2700,11 +2700,11 @@ references:
   isSpec: "True"
   fullName: x2net.Cell.Cell
   nameWithType: Cell.Cell
-- uid: x2net.Cell.Describe(StringBuilder)
+- uid: x2net.Cell.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.Cell.html#x2net_Cell_Describe_StringBuilder_
-  commentId: M:x2net.Cell.Describe(StringBuilder)
-  fullName: x2net.Cell.Describe(StringBuilder)
+  href: api/x2net.Cell.html#x2net_Cell_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.Cell.Describe(System.Text.StringBuilder)
+  fullName: x2net.Cell.Describe(System.Text.StringBuilder)
   nameWithType: Cell.Describe(StringBuilder)
 - uid: x2net.Cell.Describe*
   name: Describe
@@ -2815,13 +2815,13 @@ references:
   commentId: M:x2net.Cell.GetLength
   fullName: x2net.Cell.GetLength()
   nameWithType: Cell.GetLength()
-- uid: x2net.Cell.GetLength(Type,System.Boolean@)
+- uid: x2net.Cell.GetLength(System.Type,System.Boolean@)
   name: GetLength(Type, ref Boolean)
-  href: api/x2net.Cell.html#x2net_Cell_GetLength_Type_System_Boolean__
-  commentId: M:x2net.Cell.GetLength(Type,System.Boolean@)
+  href: api/x2net.Cell.html#x2net_Cell_GetLength_System_Type_System_Boolean__
+  commentId: M:x2net.Cell.GetLength(System.Type,System.Boolean@)
   name.vb: GetLength(Type, ByRef Boolean)
-  fullName: x2net.Cell.GetLength(Type, ref System.Boolean)
-  fullName.vb: x2net.Cell.GetLength(Type, ByRef System.Boolean)
+  fullName: x2net.Cell.GetLength(System.Type, ref System.Boolean)
+  fullName.vb: x2net.Cell.GetLength(System.Type, ByRef System.Boolean)
   nameWithType: Cell.GetLength(Type, ref Boolean)
   nameWithType.vb: Cell.GetLength(Type, ByRef Boolean)
 - uid: x2net.Cell.GetLength*
@@ -2902,13 +2902,13 @@ references:
   commentId: M:x2net.Cell.Serialize(x2net.Serializer)
   fullName: x2net.Cell.Serialize(x2net.Serializer)
   nameWithType: Cell.Serialize(Serializer)
-- uid: x2net.Cell.Serialize(x2net.Serializer,Type,System.Boolean@)
+- uid: x2net.Cell.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name: Serialize(Serializer, Type, ref Boolean)
-  href: api/x2net.Cell.html#x2net_Cell_Serialize_x2net_Serializer_Type_System_Boolean__
-  commentId: M:x2net.Cell.Serialize(x2net.Serializer,Type,System.Boolean@)
+  href: api/x2net.Cell.html#x2net_Cell_Serialize_x2net_Serializer_System_Type_System_Boolean__
+  commentId: M:x2net.Cell.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name.vb: Serialize(Serializer, Type, ByRef Boolean)
-  fullName: x2net.Cell.Serialize(x2net.Serializer, Type, ref System.Boolean)
-  fullName.vb: x2net.Cell.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
+  fullName: x2net.Cell.Serialize(x2net.Serializer, System.Type, ref System.Boolean)
+  fullName.vb: x2net.Cell.Serialize(x2net.Serializer, System.Type, ByRef System.Boolean)
   nameWithType: Cell.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: Cell.Serialize(Serializer, Type, ByRef Boolean)
 - uid: x2net.Cell.Serialize*
@@ -2930,11 +2930,11 @@ references:
   commentId: T:x2net.Cell.Tag
   fullName: x2net.Cell.Tag
   nameWithType: Cell.Tag
-- uid: x2net.Cell.Tag.#ctor(x2net.Cell.Tag,Type,System.Int32)
+- uid: x2net.Cell.Tag.#ctor(x2net.Cell.Tag,System.Type,System.Int32)
   name: Tag(Cell.Tag, Type, Int32)
-  href: api/x2net.Cell.Tag.html#x2net_Cell_Tag__ctor_x2net_Cell_Tag_Type_System_Int32_
-  commentId: M:x2net.Cell.Tag.#ctor(x2net.Cell.Tag,Type,System.Int32)
-  fullName: x2net.Cell.Tag.Tag(x2net.Cell.Tag, Type, System.Int32)
+  href: api/x2net.Cell.Tag.html#x2net_Cell_Tag__ctor_x2net_Cell_Tag_System_Type_System_Int32_
+  commentId: M:x2net.Cell.Tag.#ctor(x2net.Cell.Tag,System.Type,System.Int32)
+  fullName: x2net.Cell.Tag.Tag(x2net.Cell.Tag, System.Type, System.Int32)
   nameWithType: Cell.Tag.Tag(Cell.Tag, Type, Int32)
 - uid: x2net.Cell.Tag.#ctor*
   name: Tag
@@ -3001,11 +3001,11 @@ references:
   commentId: M:x2net.Cell.ToString
   fullName: x2net.Cell.ToString()
   nameWithType: Cell.ToString()
-- uid: x2net.Cell.ToString(StringBuilder)
+- uid: x2net.Cell.ToString(System.Text.StringBuilder)
   name: ToString(StringBuilder)
-  href: api/x2net.Cell.html#x2net_Cell_ToString_StringBuilder_
-  commentId: M:x2net.Cell.ToString(StringBuilder)
-  fullName: x2net.Cell.ToString(StringBuilder)
+  href: api/x2net.Cell.html#x2net_Cell_ToString_System_Text_StringBuilder_
+  commentId: M:x2net.Cell.ToString(System.Text.StringBuilder)
+  fullName: x2net.Cell.ToString(System.Text.StringBuilder)
   nameWithType: Cell.ToString(StringBuilder)
 - uid: x2net.Cell.ToString*
   name: ToString
@@ -3335,13 +3335,13 @@ references:
   fullName.vb: x2net.ConditionalCoroutineHandler(Of T)
   nameWithType: ConditionalCoroutineHandler<T>
   nameWithType.vb: ConditionalCoroutineHandler(Of T)
-- uid: x2net.ConditionalCoroutineHandler`1.#ctor(Func{x2net.Coroutine,`0,IEnumerator},Predicate{`0})
+- uid: x2net.ConditionalCoroutineHandler`1.#ctor(System.Func{x2net.Coroutine,`0,System.Collections.IEnumerator},System.Predicate{`0})
   name: ConditionalCoroutineHandler(Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.ConditionalCoroutineHandler-1.html#x2net_ConditionalCoroutineHandler_1__ctor_Func_x2net_Coroutine__0_IEnumerator__Predicate__0__
-  commentId: M:x2net.ConditionalCoroutineHandler`1.#ctor(Func{x2net.Coroutine,`0,IEnumerator},Predicate{`0})
+  href: api/x2net.ConditionalCoroutineHandler-1.html#x2net_ConditionalCoroutineHandler_1__ctor_System_Func_x2net_Coroutine__0_System_Collections_IEnumerator__System_Predicate__0__
+  commentId: M:x2net.ConditionalCoroutineHandler`1.#ctor(System.Func{x2net.Coroutine,`0,System.Collections.IEnumerator},System.Predicate{`0})
   name.vb: ConditionalCoroutineHandler(Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.ConditionalCoroutineHandler<T>.ConditionalCoroutineHandler(Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.ConditionalCoroutineHandler(Of T).ConditionalCoroutineHandler(Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.ConditionalCoroutineHandler<T>.ConditionalCoroutineHandler(System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.ConditionalCoroutineHandler(Of T).ConditionalCoroutineHandler(System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: ConditionalCoroutineHandler<T>.ConditionalCoroutineHandler(Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: ConditionalCoroutineHandler(Of T).ConditionalCoroutineHandler(Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.ConditionalCoroutineHandler`1.#ctor*
@@ -3379,13 +3379,13 @@ references:
   fullName.vb: x2net.ConditionalMethodHandler(Of T)
   nameWithType: ConditionalMethodHandler<T>
   nameWithType.vb: ConditionalMethodHandler(Of T)
-- uid: x2net.ConditionalMethodHandler`1.#ctor(Action{`0},Predicate{`0})
+- uid: x2net.ConditionalMethodHandler`1.#ctor(System.Action{`0},System.Predicate{`0})
   name: ConditionalMethodHandler(Action<T>, Predicate<T>)
-  href: api/x2net.ConditionalMethodHandler-1.html#x2net_ConditionalMethodHandler_1__ctor_Action__0__Predicate__0__
-  commentId: M:x2net.ConditionalMethodHandler`1.#ctor(Action{`0},Predicate{`0})
+  href: api/x2net.ConditionalMethodHandler-1.html#x2net_ConditionalMethodHandler_1__ctor_System_Action__0__System_Predicate__0__
+  commentId: M:x2net.ConditionalMethodHandler`1.#ctor(System.Action{`0},System.Predicate{`0})
   name.vb: ConditionalMethodHandler(Action(Of T), Predicate(Of T))
-  fullName: x2net.ConditionalMethodHandler<T>.ConditionalMethodHandler(Action<T>, Predicate<T>)
-  fullName.vb: x2net.ConditionalMethodHandler(Of T).ConditionalMethodHandler(Action(Of T), Predicate(Of T))
+  fullName: x2net.ConditionalMethodHandler<T>.ConditionalMethodHandler(System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.ConditionalMethodHandler(Of T).ConditionalMethodHandler(System.Action(Of T), System.Predicate(Of T))
   nameWithType: ConditionalMethodHandler<T>.ConditionalMethodHandler(Action<T>, Predicate<T>)
   nameWithType.vb: ConditionalMethodHandler(Of T).ConditionalMethodHandler(Action(Of T), Predicate(Of T))
 - uid: x2net.ConditionalMethodHandler`1.#ctor*
@@ -3875,21 +3875,21 @@ references:
   isSpec: "True"
   fullName: x2net.Coroutine.Result
   nameWithType: Coroutine.Result
-- uid: x2net.Coroutine.Start(Func{x2net.Coroutine,IEnumerator})
+- uid: x2net.Coroutine.Start(System.Collections.IEnumerator)
+  name: Start(IEnumerator)
+  href: api/x2net.Coroutine.html#x2net_Coroutine_Start_System_Collections_IEnumerator_
+  commentId: M:x2net.Coroutine.Start(System.Collections.IEnumerator)
+  fullName: x2net.Coroutine.Start(System.Collections.IEnumerator)
+  nameWithType: Coroutine.Start(IEnumerator)
+- uid: x2net.Coroutine.Start(System.Func{x2net.Coroutine,System.Collections.IEnumerator})
   name: Start(Func<Coroutine, IEnumerator>)
-  href: api/x2net.Coroutine.html#x2net_Coroutine_Start_Func_x2net_Coroutine_IEnumerator__
-  commentId: M:x2net.Coroutine.Start(Func{x2net.Coroutine,IEnumerator})
+  href: api/x2net.Coroutine.html#x2net_Coroutine_Start_System_Func_x2net_Coroutine_System_Collections_IEnumerator__
+  commentId: M:x2net.Coroutine.Start(System.Func{x2net.Coroutine,System.Collections.IEnumerator})
   name.vb: Start(Func(Of Coroutine, IEnumerator))
-  fullName: x2net.Coroutine.Start(Func<x2net.Coroutine, IEnumerator>)
-  fullName.vb: x2net.Coroutine.Start(Func(Of x2net.Coroutine, IEnumerator))
+  fullName: x2net.Coroutine.Start(System.Func<x2net.Coroutine, System.Collections.IEnumerator>)
+  fullName.vb: x2net.Coroutine.Start(System.Func(Of x2net.Coroutine, System.Collections.IEnumerator))
   nameWithType: Coroutine.Start(Func<Coroutine, IEnumerator>)
   nameWithType.vb: Coroutine.Start(Func(Of Coroutine, IEnumerator))
-- uid: x2net.Coroutine.Start(IEnumerator)
-  name: Start(IEnumerator)
-  href: api/x2net.Coroutine.html#x2net_Coroutine_Start_IEnumerator_
-  commentId: M:x2net.Coroutine.Start(IEnumerator)
-  fullName: x2net.Coroutine.Start(IEnumerator)
-  nameWithType: Coroutine.Start(IEnumerator)
 - uid: x2net.Coroutine.Start*
   name: Start
   href: api/x2net.Coroutine.html#x2net_Coroutine_Start_
@@ -3897,40 +3897,40 @@ references:
   isSpec: "True"
   fullName: x2net.Coroutine.Start
   nameWithType: Coroutine.Start
-- uid: x2net.Coroutine.Start``1(Func{x2net.Coroutine,``0,IEnumerator},``0)
+- uid: x2net.Coroutine.Start``1(System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},``0)
   name: Start<T>(Func<Coroutine, T, IEnumerator>, T)
-  href: api/x2net.Coroutine.html#x2net_Coroutine_Start__1_Func_x2net_Coroutine___0_IEnumerator____0_
-  commentId: M:x2net.Coroutine.Start``1(Func{x2net.Coroutine,``0,IEnumerator},``0)
+  href: api/x2net.Coroutine.html#x2net_Coroutine_Start__1_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator____0_
+  commentId: M:x2net.Coroutine.Start``1(System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},``0)
   name.vb: Start(Of T)(Func(Of Coroutine, T, IEnumerator), T)
-  fullName: x2net.Coroutine.Start<T>(Func<x2net.Coroutine, T, IEnumerator>, T)
-  fullName.vb: x2net.Coroutine.Start(Of T)(Func(Of x2net.Coroutine, T, IEnumerator), T)
+  fullName: x2net.Coroutine.Start<T>(System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, T)
+  fullName.vb: x2net.Coroutine.Start(Of T)(System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), T)
   nameWithType: Coroutine.Start<T>(Func<Coroutine, T, IEnumerator>, T)
   nameWithType.vb: Coroutine.Start(Of T)(Func(Of Coroutine, T, IEnumerator), T)
-- uid: x2net.Coroutine.Start``2(Func{x2net.Coroutine,``0,``1,IEnumerator},``0,``1)
+- uid: x2net.Coroutine.Start``2(System.Func{x2net.Coroutine,``0,``1,System.Collections.IEnumerator},``0,``1)
   name: Start<T1, T2>(Func<Coroutine, T1, T2, IEnumerator>, T1, T2)
-  href: api/x2net.Coroutine.html#x2net_Coroutine_Start__2_Func_x2net_Coroutine___0___1_IEnumerator____0___1_
-  commentId: M:x2net.Coroutine.Start``2(Func{x2net.Coroutine,``0,``1,IEnumerator},``0,``1)
+  href: api/x2net.Coroutine.html#x2net_Coroutine_Start__2_System_Func_x2net_Coroutine___0___1_System_Collections_IEnumerator____0___1_
+  commentId: M:x2net.Coroutine.Start``2(System.Func{x2net.Coroutine,``0,``1,System.Collections.IEnumerator},``0,``1)
   name.vb: Start(Of T1, T2)(Func(Of Coroutine, T1, T2, IEnumerator), T1, T2)
-  fullName: x2net.Coroutine.Start<T1, T2>(Func<x2net.Coroutine, T1, T2, IEnumerator>, T1, T2)
-  fullName.vb: x2net.Coroutine.Start(Of T1, T2)(Func(Of x2net.Coroutine, T1, T2, IEnumerator), T1, T2)
+  fullName: x2net.Coroutine.Start<T1, T2>(System.Func<x2net.Coroutine, T1, T2, System.Collections.IEnumerator>, T1, T2)
+  fullName.vb: x2net.Coroutine.Start(Of T1, T2)(System.Func(Of x2net.Coroutine, T1, T2, System.Collections.IEnumerator), T1, T2)
   nameWithType: Coroutine.Start<T1, T2>(Func<Coroutine, T1, T2, IEnumerator>, T1, T2)
   nameWithType.vb: Coroutine.Start(Of T1, T2)(Func(Of Coroutine, T1, T2, IEnumerator), T1, T2)
-- uid: x2net.Coroutine.Start``3(Func{x2net.Coroutine,``0,``1,``2,IEnumerator},``0,``1,``2)
+- uid: x2net.Coroutine.Start``3(System.Func{x2net.Coroutine,``0,``1,``2,System.Collections.IEnumerator},``0,``1,``2)
   name: Start<T1, T2, T3>(Func<Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
-  href: api/x2net.Coroutine.html#x2net_Coroutine_Start__3_Func_x2net_Coroutine___0___1___2_IEnumerator____0___1___2_
-  commentId: M:x2net.Coroutine.Start``3(Func{x2net.Coroutine,``0,``1,``2,IEnumerator},``0,``1,``2)
+  href: api/x2net.Coroutine.html#x2net_Coroutine_Start__3_System_Func_x2net_Coroutine___0___1___2_System_Collections_IEnumerator____0___1___2_
+  commentId: M:x2net.Coroutine.Start``3(System.Func{x2net.Coroutine,``0,``1,``2,System.Collections.IEnumerator},``0,``1,``2)
   name.vb: Start(Of T1, T2, T3)(Func(Of Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
-  fullName: x2net.Coroutine.Start<T1, T2, T3>(Func<x2net.Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
-  fullName.vb: x2net.Coroutine.Start(Of T1, T2, T3)(Func(Of x2net.Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
+  fullName: x2net.Coroutine.Start<T1, T2, T3>(System.Func<x2net.Coroutine, T1, T2, T3, System.Collections.IEnumerator>, T1, T2, T3)
+  fullName.vb: x2net.Coroutine.Start(Of T1, T2, T3)(System.Func(Of x2net.Coroutine, T1, T2, T3, System.Collections.IEnumerator), T1, T2, T3)
   nameWithType: Coroutine.Start<T1, T2, T3>(Func<Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
   nameWithType.vb: Coroutine.Start(Of T1, T2, T3)(Func(Of Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
-- uid: x2net.Coroutine.Start``4(Func{x2net.Coroutine,``0,``1,``2,``3,IEnumerator},``0,``1,``2,``3)
+- uid: x2net.Coroutine.Start``4(System.Func{x2net.Coroutine,``0,``1,``2,``3,System.Collections.IEnumerator},``0,``1,``2,``3)
   name: Start<T1, T2, T3, T4>(Func<Coroutine, T1, T2, T3, T4, IEnumerator>, T1, T2, T3, T4)
-  href: api/x2net.Coroutine.html#x2net_Coroutine_Start__4_Func_x2net_Coroutine___0___1___2___3_IEnumerator____0___1___2___3_
-  commentId: M:x2net.Coroutine.Start``4(Func{x2net.Coroutine,``0,``1,``2,``3,IEnumerator},``0,``1,``2,``3)
+  href: api/x2net.Coroutine.html#x2net_Coroutine_Start__4_System_Func_x2net_Coroutine___0___1___2___3_System_Collections_IEnumerator____0___1___2___3_
+  commentId: M:x2net.Coroutine.Start``4(System.Func{x2net.Coroutine,``0,``1,``2,``3,System.Collections.IEnumerator},``0,``1,``2,``3)
   name.vb: Start(Of T1, T2, T3, T4)(Func(Of Coroutine, T1, T2, T3, T4, IEnumerator), T1, T2, T3, T4)
-  fullName: x2net.Coroutine.Start<T1, T2, T3, T4>(Func<x2net.Coroutine, T1, T2, T3, T4, IEnumerator>, T1, T2, T3, T4)
-  fullName.vb: x2net.Coroutine.Start(Of T1, T2, T3, T4)(Func(Of x2net.Coroutine, T1, T2, T3, T4, IEnumerator), T1, T2, T3, T4)
+  fullName: x2net.Coroutine.Start<T1, T2, T3, T4>(System.Func<x2net.Coroutine, T1, T2, T3, T4, System.Collections.IEnumerator>, T1, T2, T3, T4)
+  fullName.vb: x2net.Coroutine.Start(Of T1, T2, T3, T4)(System.Func(Of x2net.Coroutine, T1, T2, T3, T4, System.Collections.IEnumerator), T1, T2, T3, T4)
   nameWithType: Coroutine.Start<T1, T2, T3, T4>(Func<Coroutine, T1, T2, T3, T4, IEnumerator>, T1, T2, T3, T4)
   nameWithType.vb: Coroutine.Start(Of T1, T2, T3, T4)(Func(Of Coroutine, T1, T2, T3, T4, IEnumerator), T1, T2, T3, T4)
 - uid: x2net.Coroutine.Status
@@ -3955,13 +3955,13 @@ references:
   fullName.vb: x2net.CoroutineHandler(Of T)
   nameWithType: CoroutineHandler<T>
   nameWithType.vb: CoroutineHandler(Of T)
-- uid: x2net.CoroutineHandler`1.#ctor(Func{x2net.Coroutine,`0,IEnumerator})
+- uid: x2net.CoroutineHandler`1.#ctor(System.Func{x2net.Coroutine,`0,System.Collections.IEnumerator})
   name: CoroutineHandler(Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.CoroutineHandler-1.html#x2net_CoroutineHandler_1__ctor_Func_x2net_Coroutine__0_IEnumerator__
-  commentId: M:x2net.CoroutineHandler`1.#ctor(Func{x2net.Coroutine,`0,IEnumerator})
+  href: api/x2net.CoroutineHandler-1.html#x2net_CoroutineHandler_1__ctor_System_Func_x2net_Coroutine__0_System_Collections_IEnumerator__
+  commentId: M:x2net.CoroutineHandler`1.#ctor(System.Func{x2net.Coroutine,`0,System.Collections.IEnumerator})
   name.vb: CoroutineHandler(Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.CoroutineHandler<T>.CoroutineHandler(Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.CoroutineHandler(Of T).CoroutineHandler(Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.CoroutineHandler<T>.CoroutineHandler(System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.CoroutineHandler(Of T).CoroutineHandler(System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: CoroutineHandler<T>.CoroutineHandler(Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: CoroutineHandler(Of T).CoroutineHandler(Func(Of Coroutine, T, IEnumerator))
 - uid: x2net.CoroutineHandler`1.#ctor*
@@ -4064,15 +4064,6 @@ references:
   isSpec: "True"
   fullName: x2net.Deserializer.Deserializer
   nameWithType: Deserializer.Deserializer
-- uid: x2net.Deserializer.Read(DateTime@)
-  name: Read(out DateTime)
-  href: api/x2net.Deserializer.html#x2net_Deserializer_Read_DateTime__
-  commentId: M:x2net.Deserializer.Read(DateTime@)
-  name.vb: Read(ByRef DateTime)
-  fullName: x2net.Deserializer.Read(out DateTime)
-  fullName.vb: x2net.Deserializer.Read(ByRef DateTime)
-  nameWithType: Deserializer.Read(out DateTime)
-  nameWithType.vb: Deserializer.Read(ByRef DateTime)
 - uid: x2net.Deserializer.Read(System.Boolean@)
   name: Read(out Boolean)
   href: api/x2net.Deserializer.html#x2net_Deserializer_Read_System_Boolean__
@@ -4100,6 +4091,15 @@ references:
   fullName.vb: x2net.Deserializer.Read(ByRef System.Byte())
   nameWithType: Deserializer.Read(out Byte[])
   nameWithType.vb: Deserializer.Read(ByRef Byte())
+- uid: x2net.Deserializer.Read(System.DateTime@)
+  name: Read(out DateTime)
+  href: api/x2net.Deserializer.html#x2net_Deserializer_Read_System_DateTime__
+  commentId: M:x2net.Deserializer.Read(System.DateTime@)
+  name.vb: Read(ByRef DateTime)
+  fullName: x2net.Deserializer.Read(out System.DateTime)
+  fullName.vb: x2net.Deserializer.Read(ByRef System.DateTime)
+  nameWithType: Deserializer.Read(out DateTime)
+  nameWithType.vb: Deserializer.Read(ByRef DateTime)
 - uid: x2net.Deserializer.Read(System.Double@)
   name: Read(out Double)
   href: api/x2net.Deserializer.html#x2net_Deserializer_Read_System_Double__
@@ -4186,22 +4186,22 @@ references:
   fullName.vb: x2net.Deserializer.Read_(Of T)(T)
   nameWithType: Deserializer.Read_<T>(T)
   nameWithType.vb: Deserializer.Read_(Of T)(T)
-- uid: x2net.Deserializer.Read_``1(List{``0})
+- uid: x2net.Deserializer.Read_``1(System.Collections.Generic.List{``0})
   name: Read_<T>(List<T>)
-  href: api/x2net.Deserializer.html#x2net_Deserializer_Read___1_List___0__
-  commentId: M:x2net.Deserializer.Read_``1(List{``0})
+  href: api/x2net.Deserializer.html#x2net_Deserializer_Read___1_System_Collections_Generic_List___0__
+  commentId: M:x2net.Deserializer.Read_``1(System.Collections.Generic.List{``0})
   name.vb: Read_(Of T)(List(Of T))
-  fullName: x2net.Deserializer.Read_<T>(List<T>)
-  fullName.vb: x2net.Deserializer.Read_(Of T)(List(Of T))
+  fullName: x2net.Deserializer.Read_<T>(System.Collections.Generic.List<T>)
+  fullName.vb: x2net.Deserializer.Read_(Of T)(System.Collections.Generic.List(Of T))
   nameWithType: Deserializer.Read_<T>(List<T>)
   nameWithType.vb: Deserializer.Read_(Of T)(List(Of T))
-- uid: x2net.Deserializer.Read_``2(Dictionary{``0,``1})
+- uid: x2net.Deserializer.Read_``2(System.Collections.Generic.Dictionary{``0,``1})
   name: Read_<T, U>(Dictionary<T, U>)
-  href: api/x2net.Deserializer.html#x2net_Deserializer_Read___2_Dictionary___0___1__
-  commentId: M:x2net.Deserializer.Read_``2(Dictionary{``0,``1})
+  href: api/x2net.Deserializer.html#x2net_Deserializer_Read___2_System_Collections_Generic_Dictionary___0___1__
+  commentId: M:x2net.Deserializer.Read_``2(System.Collections.Generic.Dictionary{``0,``1})
   name.vb: Read_(Of T, U)(Dictionary(Of T, U))
-  fullName: x2net.Deserializer.Read_<T, U>(Dictionary<T, U>)
-  fullName.vb: x2net.Deserializer.Read_(Of T, U)(Dictionary(Of T, U))
+  fullName: x2net.Deserializer.Read_<T, U>(System.Collections.Generic.Dictionary<T, U>)
+  fullName.vb: x2net.Deserializer.Read_(Of T, U)(System.Collections.Generic.Dictionary(Of T, U))
   nameWithType: Deserializer.Read_<T, U>(Dictionary<T, U>)
   nameWithType.vb: Deserializer.Read_(Of T, U)(Dictionary(Of T, U))
 - uid: x2net.Deserializer.Read``1(``0@)
@@ -4213,22 +4213,22 @@ references:
   fullName.vb: x2net.Deserializer.Read(Of T)(ByRef T)
   nameWithType: Deserializer.Read<T>(out T)
   nameWithType.vb: Deserializer.Read(Of T)(ByRef T)
-- uid: x2net.Deserializer.Read``1(List{``0}@)
+- uid: x2net.Deserializer.Read``1(System.Collections.Generic.List{``0}@)
   name: Read<T>(out List<T>)
-  href: api/x2net.Deserializer.html#x2net_Deserializer_Read__1_List___0___
-  commentId: M:x2net.Deserializer.Read``1(List{``0}@)
+  href: api/x2net.Deserializer.html#x2net_Deserializer_Read__1_System_Collections_Generic_List___0___
+  commentId: M:x2net.Deserializer.Read``1(System.Collections.Generic.List{``0}@)
   name.vb: Read(Of T)(ByRef List(Of T))
-  fullName: x2net.Deserializer.Read<T>(out List<T>)
-  fullName.vb: x2net.Deserializer.Read(Of T)(ByRef List(Of T))
+  fullName: x2net.Deserializer.Read<T>(out System.Collections.Generic.List<T>)
+  fullName.vb: x2net.Deserializer.Read(Of T)(ByRef System.Collections.Generic.List(Of T))
   nameWithType: Deserializer.Read<T>(out List<T>)
   nameWithType.vb: Deserializer.Read(Of T)(ByRef List(Of T))
-- uid: x2net.Deserializer.Read``2(Dictionary{``0,``1}@)
+- uid: x2net.Deserializer.Read``2(System.Collections.Generic.Dictionary{``0,``1}@)
   name: Read<T, U>(out Dictionary<T, U>)
-  href: api/x2net.Deserializer.html#x2net_Deserializer_Read__2_Dictionary___0___1___
-  commentId: M:x2net.Deserializer.Read``2(Dictionary{``0,``1}@)
+  href: api/x2net.Deserializer.html#x2net_Deserializer_Read__2_System_Collections_Generic_Dictionary___0___1___
+  commentId: M:x2net.Deserializer.Read``2(System.Collections.Generic.Dictionary{``0,``1}@)
   name.vb: Read(Of T, U)(ByRef Dictionary(Of T, U))
-  fullName: x2net.Deserializer.Read<T, U>(out Dictionary<T, U>)
-  fullName.vb: x2net.Deserializer.Read(Of T, U)(ByRef Dictionary(Of T, U))
+  fullName: x2net.Deserializer.Read<T, U>(out System.Collections.Generic.Dictionary<T, U>)
+  fullName.vb: x2net.Deserializer.Read(Of T, U)(ByRef System.Collections.Generic.Dictionary(Of T, U))
   nameWithType: Deserializer.Read<T, U>(out Dictionary<T, U>)
   nameWithType.vb: Deserializer.Read(Of T, U)(ByRef Dictionary(Of T, U))
 - uid: x2net.Deserializer.ReadNonnegative(System.Int32@)
@@ -4349,11 +4349,11 @@ references:
   isSpec: "True"
   fullName: x2net.Event._WaitHandle
   nameWithType: Event._WaitHandle
-- uid: x2net.Event.Describe(StringBuilder)
+- uid: x2net.Event.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.Event.html#x2net_Event_Describe_StringBuilder_
-  commentId: M:x2net.Event.Describe(StringBuilder)
-  fullName: x2net.Event.Describe(StringBuilder)
+  href: api/x2net.Event.html#x2net_Event_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.Event.Describe(System.Text.StringBuilder)
+  fullName: x2net.Event.Describe(System.Text.StringBuilder)
   nameWithType: Event.Describe(StringBuilder)
 - uid: x2net.Event.Describe*
   name: Describe
@@ -4426,13 +4426,13 @@ references:
   isSpec: "True"
   fullName: x2net.Event.GetHashCode
   nameWithType: Event.GetHashCode
-- uid: x2net.Event.GetLength(Type,System.Boolean@)
+- uid: x2net.Event.GetLength(System.Type,System.Boolean@)
   name: GetLength(Type, ref Boolean)
-  href: api/x2net.Event.html#x2net_Event_GetLength_Type_System_Boolean__
-  commentId: M:x2net.Event.GetLength(Type,System.Boolean@)
+  href: api/x2net.Event.html#x2net_Event_GetLength_System_Type_System_Boolean__
+  commentId: M:x2net.Event.GetLength(System.Type,System.Boolean@)
   name.vb: GetLength(Type, ByRef Boolean)
-  fullName: x2net.Event.GetLength(Type, ref System.Boolean)
-  fullName.vb: x2net.Event.GetLength(Type, ByRef System.Boolean)
+  fullName: x2net.Event.GetLength(System.Type, ref System.Boolean)
+  fullName.vb: x2net.Event.GetLength(System.Type, ByRef System.Boolean)
   nameWithType: Event.GetLength(Type, ref Boolean)
   nameWithType.vb: Event.GetLength(Type, ByRef Boolean)
 - uid: x2net.Event.GetLength*
@@ -4494,13 +4494,13 @@ references:
   isSpec: "True"
   fullName: x2net.Event.New
   nameWithType: Event.New
-- uid: x2net.Event.Serialize(x2net.Serializer,Type,System.Boolean@)
+- uid: x2net.Event.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name: Serialize(Serializer, Type, ref Boolean)
-  href: api/x2net.Event.html#x2net_Event_Serialize_x2net_Serializer_Type_System_Boolean__
-  commentId: M:x2net.Event.Serialize(x2net.Serializer,Type,System.Boolean@)
+  href: api/x2net.Event.html#x2net_Event_Serialize_x2net_Serializer_System_Type_System_Boolean__
+  commentId: M:x2net.Event.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name.vb: Serialize(Serializer, Type, ByRef Boolean)
-  fullName: x2net.Event.Serialize(x2net.Serializer, Type, ref System.Boolean)
-  fullName.vb: x2net.Event.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
+  fullName: x2net.Event.Serialize(x2net.Serializer, System.Type, ref System.Boolean)
+  fullName.vb: x2net.Event.Serialize(x2net.Serializer, System.Type, ByRef System.Boolean)
   nameWithType: Event.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: Event.Serialize(Serializer, Type, ByRef Boolean)
 - uid: x2net.Event.Serialize*
@@ -4522,11 +4522,11 @@ references:
   commentId: T:x2net.Event.Tag
   fullName: x2net.Event.Tag
   nameWithType: Event.Tag
-- uid: x2net.Event.Tag.#ctor(x2net.Event.Tag,Type,System.Int32,System.Int32)
+- uid: x2net.Event.Tag.#ctor(x2net.Event.Tag,System.Type,System.Int32,System.Int32)
   name: Tag(Event.Tag, Type, Int32, Int32)
-  href: api/x2net.Event.Tag.html#x2net_Event_Tag__ctor_x2net_Event_Tag_Type_System_Int32_System_Int32_
-  commentId: M:x2net.Event.Tag.#ctor(x2net.Event.Tag,Type,System.Int32,System.Int32)
-  fullName: x2net.Event.Tag.Tag(x2net.Event.Tag, Type, System.Int32, System.Int32)
+  href: api/x2net.Event.Tag.html#x2net_Event_Tag__ctor_x2net_Event_Tag_System_Type_System_Int32_System_Int32_
+  commentId: M:x2net.Event.Tag.#ctor(x2net.Event.Tag,System.Type,System.Int32,System.Int32)
+  fullName: x2net.Event.Tag.Tag(x2net.Event.Tag, System.Type, System.Int32, System.Int32)
   nameWithType: Event.Tag.Tag(Event.Tag, Type, Int32, Int32)
 - uid: x2net.Event.Tag.#ctor*
   name: Tag
@@ -4753,35 +4753,35 @@ references:
   isSpec: "True"
   fullName: x2net.EventFactory.Global
   nameWithType: EventFactory.Global
-- uid: x2net.EventFactory.Register(Assembly)
-  name: Register(Assembly)
-  href: api/x2net.EventFactory.html#x2net_EventFactory_Register_Assembly_
-  commentId: M:x2net.EventFactory.Register(Assembly)
-  fullName: x2net.EventFactory.Register(Assembly)
-  nameWithType: EventFactory.Register(Assembly)
-- uid: x2net.EventFactory.Register(Assembly,Type[])
-  name: Register(Assembly, Type[])
-  href: api/x2net.EventFactory.html#x2net_EventFactory_Register_Assembly_Type___
-  commentId: M:x2net.EventFactory.Register(Assembly,Type[])
-  name.vb: Register(Assembly, Type())
-  fullName: x2net.EventFactory.Register(Assembly, Type[])
-  fullName.vb: x2net.EventFactory.Register(Assembly, Type())
-  nameWithType: EventFactory.Register(Assembly, Type[])
-  nameWithType.vb: EventFactory.Register(Assembly, Type())
-- uid: x2net.EventFactory.Register(System.Int32,Func{x2net.Event})
+- uid: x2net.EventFactory.Register(System.Int32,System.Func{x2net.Event})
   name: Register(Int32, Func<Event>)
-  href: api/x2net.EventFactory.html#x2net_EventFactory_Register_System_Int32_Func_x2net_Event__
-  commentId: M:x2net.EventFactory.Register(System.Int32,Func{x2net.Event})
+  href: api/x2net.EventFactory.html#x2net_EventFactory_Register_System_Int32_System_Func_x2net_Event__
+  commentId: M:x2net.EventFactory.Register(System.Int32,System.Func{x2net.Event})
   name.vb: Register(Int32, Func(Of Event))
-  fullName: x2net.EventFactory.Register(System.Int32, Func<x2net.Event>)
-  fullName.vb: x2net.EventFactory.Register(System.Int32, Func(Of x2net.Event))
+  fullName: x2net.EventFactory.Register(System.Int32, System.Func<x2net.Event>)
+  fullName.vb: x2net.EventFactory.Register(System.Int32, System.Func(Of x2net.Event))
   nameWithType: EventFactory.Register(Int32, Func<Event>)
   nameWithType.vb: EventFactory.Register(Int32, Func(Of Event))
-- uid: x2net.EventFactory.Register(Type)
+- uid: x2net.EventFactory.Register(System.Reflection.Assembly)
+  name: Register(Assembly)
+  href: api/x2net.EventFactory.html#x2net_EventFactory_Register_System_Reflection_Assembly_
+  commentId: M:x2net.EventFactory.Register(System.Reflection.Assembly)
+  fullName: x2net.EventFactory.Register(System.Reflection.Assembly)
+  nameWithType: EventFactory.Register(Assembly)
+- uid: x2net.EventFactory.Register(System.Reflection.Assembly,System.Type[])
+  name: Register(Assembly, Type[])
+  href: api/x2net.EventFactory.html#x2net_EventFactory_Register_System_Reflection_Assembly_System_Type___
+  commentId: M:x2net.EventFactory.Register(System.Reflection.Assembly,System.Type[])
+  name.vb: Register(Assembly, Type())
+  fullName: x2net.EventFactory.Register(System.Reflection.Assembly, System.Type[])
+  fullName.vb: x2net.EventFactory.Register(System.Reflection.Assembly, System.Type())
+  nameWithType: EventFactory.Register(Assembly, Type[])
+  nameWithType.vb: EventFactory.Register(Assembly, Type())
+- uid: x2net.EventFactory.Register(System.Type)
   name: Register(Type)
-  href: api/x2net.EventFactory.html#x2net_EventFactory_Register_Type_
-  commentId: M:x2net.EventFactory.Register(Type)
-  fullName: x2net.EventFactory.Register(Type)
+  href: api/x2net.EventFactory.html#x2net_EventFactory_Register_System_Type_
+  commentId: M:x2net.EventFactory.Register(System.Type)
+  fullName: x2net.EventFactory.Register(System.Type)
   nameWithType: EventFactory.Register(Type)
 - uid: x2net.EventFactory.Register*
   name: Register
@@ -4917,40 +4917,40 @@ references:
   isSpec: "True"
   fullName: x2net.EventSink.Bind
   nameWithType: EventSink.Bind
-- uid: x2net.EventSink.Bind``1(``0,Action{``0})
+- uid: x2net.EventSink.Bind``1(``0,System.Action{``0})
   name: Bind<T>(T, Action<T>)
-  href: api/x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__
-  commentId: M:x2net.EventSink.Bind``1(``0,Action{``0})
+  href: api/x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Action___0__
+  commentId: M:x2net.EventSink.Bind``1(``0,System.Action{``0})
   name.vb: Bind(Of T)(T, Action(Of T))
-  fullName: x2net.EventSink.Bind<T>(T, Action<T>)
-  fullName.vb: x2net.EventSink.Bind(Of T)(T, Action(Of T))
+  fullName: x2net.EventSink.Bind<T>(T, System.Action<T>)
+  fullName.vb: x2net.EventSink.Bind(Of T)(T, System.Action(Of T))
   nameWithType: EventSink.Bind<T>(T, Action<T>)
   nameWithType.vb: EventSink.Bind(Of T)(T, Action(Of T))
-- uid: x2net.EventSink.Bind``1(``0,Action{``0},Predicate{``0})
+- uid: x2net.EventSink.Bind``1(``0,System.Action{``0},System.Predicate{``0})
   name: Bind<T>(T, Action<T>, Predicate<T>)
-  href: api/x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__Predicate___0__
-  commentId: M:x2net.EventSink.Bind``1(``0,Action{``0},Predicate{``0})
+  href: api/x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Action___0__System_Predicate___0__
+  commentId: M:x2net.EventSink.Bind``1(``0,System.Action{``0},System.Predicate{``0})
   name.vb: Bind(Of T)(T, Action(Of T), Predicate(Of T))
-  fullName: x2net.EventSink.Bind<T>(T, Action<T>, Predicate<T>)
-  fullName.vb: x2net.EventSink.Bind(Of T)(T, Action(Of T), Predicate(Of T))
+  fullName: x2net.EventSink.Bind<T>(T, System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.EventSink.Bind(Of T)(T, System.Action(Of T), System.Predicate(Of T))
   nameWithType: EventSink.Bind<T>(T, Action<T>, Predicate<T>)
   nameWithType.vb: EventSink.Bind(Of T)(T, Action(Of T), Predicate(Of T))
-- uid: x2net.EventSink.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+- uid: x2net.EventSink.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name: Bind<T>(T, Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__
-  commentId: M:x2net.EventSink.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+  href: api/x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__
+  commentId: M:x2net.EventSink.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name.vb: Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.EventSink.Bind<T>(T, Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.EventSink.Bind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.EventSink.Bind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.EventSink.Bind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: EventSink.Bind<T>(T, Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: EventSink.Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-- uid: x2net.EventSink.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+- uid: x2net.EventSink.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name: Bind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__
-  commentId: M:x2net.EventSink.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+  href: api/x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__
+  commentId: M:x2net.EventSink.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name.vb: Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.EventSink.Bind<T>(T, Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.EventSink.Bind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.EventSink.Bind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.EventSink.Bind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: EventSink.Bind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: EventSink.Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.EventSink.Dispose
@@ -5017,40 +5017,40 @@ references:
   isSpec: "True"
   fullName: x2net.EventSink.Unbind
   nameWithType: EventSink.Unbind
-- uid: x2net.EventSink.Unbind``1(``0,Action{``0})
+- uid: x2net.EventSink.Unbind``1(``0,System.Action{``0})
   name: Unbind<T>(T, Action<T>)
-  href: api/x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__
-  commentId: M:x2net.EventSink.Unbind``1(``0,Action{``0})
+  href: api/x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Action___0__
+  commentId: M:x2net.EventSink.Unbind``1(``0,System.Action{``0})
   name.vb: Unbind(Of T)(T, Action(Of T))
-  fullName: x2net.EventSink.Unbind<T>(T, Action<T>)
-  fullName.vb: x2net.EventSink.Unbind(Of T)(T, Action(Of T))
+  fullName: x2net.EventSink.Unbind<T>(T, System.Action<T>)
+  fullName.vb: x2net.EventSink.Unbind(Of T)(T, System.Action(Of T))
   nameWithType: EventSink.Unbind<T>(T, Action<T>)
   nameWithType.vb: EventSink.Unbind(Of T)(T, Action(Of T))
-- uid: x2net.EventSink.Unbind``1(``0,Action{``0},Predicate{``0})
+- uid: x2net.EventSink.Unbind``1(``0,System.Action{``0},System.Predicate{``0})
   name: Unbind<T>(T, Action<T>, Predicate<T>)
-  href: api/x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__Predicate___0__
-  commentId: M:x2net.EventSink.Unbind``1(``0,Action{``0},Predicate{``0})
+  href: api/x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Action___0__System_Predicate___0__
+  commentId: M:x2net.EventSink.Unbind``1(``0,System.Action{``0},System.Predicate{``0})
   name.vb: Unbind(Of T)(T, Action(Of T), Predicate(Of T))
-  fullName: x2net.EventSink.Unbind<T>(T, Action<T>, Predicate<T>)
-  fullName.vb: x2net.EventSink.Unbind(Of T)(T, Action(Of T), Predicate(Of T))
+  fullName: x2net.EventSink.Unbind<T>(T, System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.EventSink.Unbind(Of T)(T, System.Action(Of T), System.Predicate(Of T))
   nameWithType: EventSink.Unbind<T>(T, Action<T>, Predicate<T>)
   nameWithType.vb: EventSink.Unbind(Of T)(T, Action(Of T), Predicate(Of T))
-- uid: x2net.EventSink.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+- uid: x2net.EventSink.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name: Unbind<T>(T, Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__
-  commentId: M:x2net.EventSink.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+  href: api/x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__
+  commentId: M:x2net.EventSink.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name.vb: Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.EventSink.Unbind<T>(T, Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.EventSink.Unbind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.EventSink.Unbind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.EventSink.Unbind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: EventSink.Unbind<T>(T, Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: EventSink.Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-- uid: x2net.EventSink.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+- uid: x2net.EventSink.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name: Unbind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__
-  commentId: M:x2net.EventSink.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+  href: api/x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__
+  commentId: M:x2net.EventSink.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name.vb: Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.EventSink.Unbind<T>(T, Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.EventSink.Unbind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.EventSink.Unbind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.EventSink.Unbind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: EventSink.Unbind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: EventSink.Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.Extensions
@@ -5066,40 +5066,40 @@ references:
   isSpec: "True"
   fullName: x2net.Extensions.Bind
   nameWithType: Extensions.Bind
-- uid: x2net.Extensions.Bind``1(``0,Action{``0})
+- uid: x2net.Extensions.Bind``1(``0,System.Action{``0})
   name: Bind<T>(T, Action<T>)
-  href: api/x2net.Extensions.html#x2net_Extensions_Bind__1___0_Action___0__
-  commentId: M:x2net.Extensions.Bind``1(``0,Action{``0})
+  href: api/x2net.Extensions.html#x2net_Extensions_Bind__1___0_System_Action___0__
+  commentId: M:x2net.Extensions.Bind``1(``0,System.Action{``0})
   name.vb: Bind(Of T)(T, Action(Of T))
-  fullName: x2net.Extensions.Bind<T>(T, Action<T>)
-  fullName.vb: x2net.Extensions.Bind(Of T)(T, Action(Of T))
+  fullName: x2net.Extensions.Bind<T>(T, System.Action<T>)
+  fullName.vb: x2net.Extensions.Bind(Of T)(T, System.Action(Of T))
   nameWithType: Extensions.Bind<T>(T, Action<T>)
   nameWithType.vb: Extensions.Bind(Of T)(T, Action(Of T))
-- uid: x2net.Extensions.Bind``1(``0,Action{``0},Predicate{``0})
+- uid: x2net.Extensions.Bind``1(``0,System.Action{``0},System.Predicate{``0})
   name: Bind<T>(T, Action<T>, Predicate<T>)
-  href: api/x2net.Extensions.html#x2net_Extensions_Bind__1___0_Action___0__Predicate___0__
-  commentId: M:x2net.Extensions.Bind``1(``0,Action{``0},Predicate{``0})
+  href: api/x2net.Extensions.html#x2net_Extensions_Bind__1___0_System_Action___0__System_Predicate___0__
+  commentId: M:x2net.Extensions.Bind``1(``0,System.Action{``0},System.Predicate{``0})
   name.vb: Bind(Of T)(T, Action(Of T), Predicate(Of T))
-  fullName: x2net.Extensions.Bind<T>(T, Action<T>, Predicate<T>)
-  fullName.vb: x2net.Extensions.Bind(Of T)(T, Action(Of T), Predicate(Of T))
+  fullName: x2net.Extensions.Bind<T>(T, System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.Extensions.Bind(Of T)(T, System.Action(Of T), System.Predicate(Of T))
   nameWithType: Extensions.Bind<T>(T, Action<T>, Predicate<T>)
   nameWithType.vb: Extensions.Bind(Of T)(T, Action(Of T), Predicate(Of T))
-- uid: x2net.Extensions.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+- uid: x2net.Extensions.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name: Bind<T>(T, Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.Extensions.html#x2net_Extensions_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__
-  commentId: M:x2net.Extensions.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+  href: api/x2net.Extensions.html#x2net_Extensions_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__
+  commentId: M:x2net.Extensions.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name.vb: Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.Extensions.Bind<T>(T, Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.Extensions.Bind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.Extensions.Bind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.Extensions.Bind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: Extensions.Bind<T>(T, Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: Extensions.Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-- uid: x2net.Extensions.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+- uid: x2net.Extensions.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name: Bind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.Extensions.html#x2net_Extensions_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__
-  commentId: M:x2net.Extensions.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+  href: api/x2net.Extensions.html#x2net_Extensions_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__
+  commentId: M:x2net.Extensions.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name.vb: Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.Extensions.Bind<T>(T, Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.Extensions.Bind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.Extensions.Bind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.Extensions.Bind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: Extensions.Bind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: Extensions.Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.Extensions.Concat(System.Byte[],System.Byte[])
@@ -5118,12 +5118,6 @@ references:
   isSpec: "True"
   fullName: x2net.Extensions.Concat
   nameWithType: Extensions.Concat
-- uid: x2net.Extensions.EqualsEx(DateTime,DateTime)
-  name: EqualsEx(DateTime, DateTime)
-  href: api/x2net.Extensions.html#x2net_Extensions_EqualsEx_DateTime_DateTime_
-  commentId: M:x2net.Extensions.EqualsEx(DateTime,DateTime)
-  fullName: x2net.Extensions.EqualsEx(DateTime, DateTime)
-  nameWithType: Extensions.EqualsEx(DateTime, DateTime)
 - uid: x2net.Extensions.EqualsEx(System.Boolean,System.Boolean)
   name: EqualsEx(Boolean, Boolean)
   href: api/x2net.Extensions.html#x2net_Extensions_EqualsEx_System_Boolean_System_Boolean_
@@ -5145,6 +5139,12 @@ references:
   fullName.vb: x2net.Extensions.EqualsEx(System.Byte(), System.Byte())
   nameWithType: Extensions.EqualsEx(Byte[], Byte[])
   nameWithType.vb: Extensions.EqualsEx(Byte(), Byte())
+- uid: x2net.Extensions.EqualsEx(System.DateTime,System.DateTime)
+  name: EqualsEx(DateTime, DateTime)
+  href: api/x2net.Extensions.html#x2net_Extensions_EqualsEx_System_DateTime_System_DateTime_
+  commentId: M:x2net.Extensions.EqualsEx(System.DateTime,System.DateTime)
+  fullName: x2net.Extensions.EqualsEx(System.DateTime, System.DateTime)
+  nameWithType: Extensions.EqualsEx(DateTime, DateTime)
 - uid: x2net.Extensions.EqualsEx(System.Double,System.Double)
   name: EqualsEx(Double, Double)
   href: api/x2net.Extensions.html#x2net_Extensions_EqualsEx_System_Double_System_Double_
@@ -5203,22 +5203,22 @@ references:
   fullName.vb: x2net.Extensions.EqualsEx(Of T)(T, T)
   nameWithType: Extensions.EqualsEx<T>(T, T)
   nameWithType.vb: Extensions.EqualsEx(Of T)(T, T)
-- uid: x2net.Extensions.EqualsEx``1(List{``0},List{``0})
+- uid: x2net.Extensions.EqualsEx``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})
   name: EqualsEx<T>(List<T>, List<T>)
-  href: api/x2net.Extensions.html#x2net_Extensions_EqualsEx__1_List___0__List___0__
-  commentId: M:x2net.Extensions.EqualsEx``1(List{``0},List{``0})
+  href: api/x2net.Extensions.html#x2net_Extensions_EqualsEx__1_System_Collections_Generic_List___0__System_Collections_Generic_List___0__
+  commentId: M:x2net.Extensions.EqualsEx``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})
   name.vb: EqualsEx(Of T)(List(Of T), List(Of T))
-  fullName: x2net.Extensions.EqualsEx<T>(List<T>, List<T>)
-  fullName.vb: x2net.Extensions.EqualsEx(Of T)(List(Of T), List(Of T))
+  fullName: x2net.Extensions.EqualsEx<T>(System.Collections.Generic.List<T>, System.Collections.Generic.List<T>)
+  fullName.vb: x2net.Extensions.EqualsEx(Of T)(System.Collections.Generic.List(Of T), System.Collections.Generic.List(Of T))
   nameWithType: Extensions.EqualsEx<T>(List<T>, List<T>)
   nameWithType.vb: Extensions.EqualsEx(Of T)(List(Of T), List(Of T))
-- uid: x2net.Extensions.EqualsEx``2(Dictionary{``0,``1},Dictionary{``0,``1})
+- uid: x2net.Extensions.EqualsEx``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.Dictionary{``0,``1})
   name: EqualsEx<T, U>(Dictionary<T, U>, Dictionary<T, U>)
-  href: api/x2net.Extensions.html#x2net_Extensions_EqualsEx__2_Dictionary___0___1__Dictionary___0___1__
-  commentId: M:x2net.Extensions.EqualsEx``2(Dictionary{``0,``1},Dictionary{``0,``1})
+  href: api/x2net.Extensions.html#x2net_Extensions_EqualsEx__2_System_Collections_Generic_Dictionary___0___1__System_Collections_Generic_Dictionary___0___1__
+  commentId: M:x2net.Extensions.EqualsEx``2(System.Collections.Generic.Dictionary{``0,``1},System.Collections.Generic.Dictionary{``0,``1})
   name.vb: EqualsEx(Of T, U)(Dictionary(Of T, U), Dictionary(Of T, U))
-  fullName: x2net.Extensions.EqualsEx<T, U>(Dictionary<T, U>, Dictionary<T, U>)
-  fullName.vb: x2net.Extensions.EqualsEx(Of T, U)(Dictionary(Of T, U), Dictionary(Of T, U))
+  fullName: x2net.Extensions.EqualsEx<T, U>(System.Collections.Generic.Dictionary<T, U>, System.Collections.Generic.Dictionary<T, U>)
+  fullName.vb: x2net.Extensions.EqualsEx(Of T, U)(System.Collections.Generic.Dictionary(Of T, U), System.Collections.Generic.Dictionary(Of T, U))
   nameWithType: Extensions.EqualsEx<T, U>(Dictionary<T, U>, Dictionary<T, U>)
   nameWithType.vb: Extensions.EqualsEx(Of T, U)(Dictionary(Of T, U), Dictionary(Of T, U))
 - uid: x2net.Extensions.InChannel*
@@ -5289,13 +5289,13 @@ references:
   isSpec: "True"
   fullName: x2net.Extensions.Resize
   nameWithType: Extensions.Resize
-- uid: x2net.Extensions.Resize``1(IList{``0},System.Int32)
+- uid: x2net.Extensions.Resize``1(System.Collections.Generic.IList{``0},System.Int32)
   name: Resize<T>(IList<T>, Int32)
-  href: api/x2net.Extensions.html#x2net_Extensions_Resize__1_IList___0__System_Int32_
-  commentId: M:x2net.Extensions.Resize``1(IList{``0},System.Int32)
+  href: api/x2net.Extensions.html#x2net_Extensions_Resize__1_System_Collections_Generic_IList___0__System_Int32_
+  commentId: M:x2net.Extensions.Resize``1(System.Collections.Generic.IList{``0},System.Int32)
   name.vb: Resize(Of T)(IList(Of T), Int32)
-  fullName: x2net.Extensions.Resize<T>(IList<T>, System.Int32)
-  fullName.vb: x2net.Extensions.Resize(Of T)(IList(Of T), System.Int32)
+  fullName: x2net.Extensions.Resize<T>(System.Collections.Generic.IList<T>, System.Int32)
+  fullName.vb: x2net.Extensions.Resize(Of T)(System.Collections.Generic.IList(Of T), System.Int32)
   nameWithType: Extensions.Resize<T>(IList<T>, Int32)
   nameWithType.vb: Extensions.Resize(Of T)(IList(Of T), Int32)
 - uid: x2net.Extensions.SubArray(System.Byte[],System.Int32,System.Int32)
@@ -5323,12 +5323,6 @@ references:
   fullName.vb: x2net.Extensions.SubArray(Of T)(T(), System.Int32, System.Int32)
   nameWithType: Extensions.SubArray<T>(T[], Int32, Int32)
   nameWithType.vb: Extensions.SubArray(Of T)(T(), Int32, Int32)
-- uid: x2net.Extensions.ToStringEx(DateTime)
-  name: ToStringEx(DateTime)
-  href: api/x2net.Extensions.html#x2net_Extensions_ToStringEx_DateTime_
-  commentId: M:x2net.Extensions.ToStringEx(DateTime)
-  fullName: x2net.Extensions.ToStringEx(DateTime)
-  nameWithType: Extensions.ToStringEx(DateTime)
 - uid: x2net.Extensions.ToStringEx(System.Boolean)
   name: ToStringEx(Boolean)
   href: api/x2net.Extensions.html#x2net_Extensions_ToStringEx_System_Boolean_
@@ -5350,6 +5344,12 @@ references:
   fullName.vb: x2net.Extensions.ToStringEx(System.Byte())
   nameWithType: Extensions.ToStringEx(Byte[])
   nameWithType.vb: Extensions.ToStringEx(Byte())
+- uid: x2net.Extensions.ToStringEx(System.DateTime)
+  name: ToStringEx(DateTime)
+  href: api/x2net.Extensions.html#x2net_Extensions_ToStringEx_System_DateTime_
+  commentId: M:x2net.Extensions.ToStringEx(System.DateTime)
+  fullName: x2net.Extensions.ToStringEx(System.DateTime)
+  nameWithType: Extensions.ToStringEx(DateTime)
 - uid: x2net.Extensions.ToStringEx(System.Double)
   name: ToStringEx(Double)
   href: api/x2net.Extensions.html#x2net_Extensions_ToStringEx_System_Double_
@@ -5408,22 +5408,22 @@ references:
   fullName.vb: x2net.Extensions.ToStringEx(Of T)(T)
   nameWithType: Extensions.ToStringEx<T>(T)
   nameWithType.vb: Extensions.ToStringEx(Of T)(T)
-- uid: x2net.Extensions.ToStringEx``1(List{``0})
+- uid: x2net.Extensions.ToStringEx``1(System.Collections.Generic.List{``0})
   name: ToStringEx<T>(List<T>)
-  href: api/x2net.Extensions.html#x2net_Extensions_ToStringEx__1_List___0__
-  commentId: M:x2net.Extensions.ToStringEx``1(List{``0})
+  href: api/x2net.Extensions.html#x2net_Extensions_ToStringEx__1_System_Collections_Generic_List___0__
+  commentId: M:x2net.Extensions.ToStringEx``1(System.Collections.Generic.List{``0})
   name.vb: ToStringEx(Of T)(List(Of T))
-  fullName: x2net.Extensions.ToStringEx<T>(List<T>)
-  fullName.vb: x2net.Extensions.ToStringEx(Of T)(List(Of T))
+  fullName: x2net.Extensions.ToStringEx<T>(System.Collections.Generic.List<T>)
+  fullName.vb: x2net.Extensions.ToStringEx(Of T)(System.Collections.Generic.List(Of T))
   nameWithType: Extensions.ToStringEx<T>(List<T>)
   nameWithType.vb: Extensions.ToStringEx(Of T)(List(Of T))
-- uid: x2net.Extensions.ToStringEx``2(Dictionary{``0,``1})
+- uid: x2net.Extensions.ToStringEx``2(System.Collections.Generic.Dictionary{``0,``1})
   name: ToStringEx<T, U>(Dictionary<T, U>)
-  href: api/x2net.Extensions.html#x2net_Extensions_ToStringEx__2_Dictionary___0___1__
-  commentId: M:x2net.Extensions.ToStringEx``2(Dictionary{``0,``1})
+  href: api/x2net.Extensions.html#x2net_Extensions_ToStringEx__2_System_Collections_Generic_Dictionary___0___1__
+  commentId: M:x2net.Extensions.ToStringEx``2(System.Collections.Generic.Dictionary{``0,``1})
   name.vb: ToStringEx(Of T, U)(Dictionary(Of T, U))
-  fullName: x2net.Extensions.ToStringEx<T, U>(Dictionary<T, U>)
-  fullName.vb: x2net.Extensions.ToStringEx(Of T, U)(Dictionary(Of T, U))
+  fullName: x2net.Extensions.ToStringEx<T, U>(System.Collections.Generic.Dictionary<T, U>)
+  fullName.vb: x2net.Extensions.ToStringEx(Of T, U)(System.Collections.Generic.Dictionary(Of T, U))
   nameWithType: Extensions.ToStringEx<T, U>(Dictionary<T, U>)
   nameWithType.vb: Extensions.ToStringEx(Of T, U)(Dictionary(Of T, U))
 - uid: x2net.Extensions.Unbind*
@@ -5433,40 +5433,40 @@ references:
   isSpec: "True"
   fullName: x2net.Extensions.Unbind
   nameWithType: Extensions.Unbind
-- uid: x2net.Extensions.Unbind``1(``0,Action{``0})
+- uid: x2net.Extensions.Unbind``1(``0,System.Action{``0})
   name: Unbind<T>(T, Action<T>)
-  href: api/x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Action___0__
-  commentId: M:x2net.Extensions.Unbind``1(``0,Action{``0})
+  href: api/x2net.Extensions.html#x2net_Extensions_Unbind__1___0_System_Action___0__
+  commentId: M:x2net.Extensions.Unbind``1(``0,System.Action{``0})
   name.vb: Unbind(Of T)(T, Action(Of T))
-  fullName: x2net.Extensions.Unbind<T>(T, Action<T>)
-  fullName.vb: x2net.Extensions.Unbind(Of T)(T, Action(Of T))
+  fullName: x2net.Extensions.Unbind<T>(T, System.Action<T>)
+  fullName.vb: x2net.Extensions.Unbind(Of T)(T, System.Action(Of T))
   nameWithType: Extensions.Unbind<T>(T, Action<T>)
   nameWithType.vb: Extensions.Unbind(Of T)(T, Action(Of T))
-- uid: x2net.Extensions.Unbind``1(``0,Action{``0},Predicate{``0})
+- uid: x2net.Extensions.Unbind``1(``0,System.Action{``0},System.Predicate{``0})
   name: Unbind<T>(T, Action<T>, Predicate<T>)
-  href: api/x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Action___0__Predicate___0__
-  commentId: M:x2net.Extensions.Unbind``1(``0,Action{``0},Predicate{``0})
+  href: api/x2net.Extensions.html#x2net_Extensions_Unbind__1___0_System_Action___0__System_Predicate___0__
+  commentId: M:x2net.Extensions.Unbind``1(``0,System.Action{``0},System.Predicate{``0})
   name.vb: Unbind(Of T)(T, Action(Of T), Predicate(Of T))
-  fullName: x2net.Extensions.Unbind<T>(T, Action<T>, Predicate<T>)
-  fullName.vb: x2net.Extensions.Unbind(Of T)(T, Action(Of T), Predicate(Of T))
+  fullName: x2net.Extensions.Unbind<T>(T, System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.Extensions.Unbind(Of T)(T, System.Action(Of T), System.Predicate(Of T))
   nameWithType: Extensions.Unbind<T>(T, Action<T>, Predicate<T>)
   nameWithType.vb: Extensions.Unbind(Of T)(T, Action(Of T), Predicate(Of T))
-- uid: x2net.Extensions.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+- uid: x2net.Extensions.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name: Unbind<T>(T, Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__
-  commentId: M:x2net.Extensions.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+  href: api/x2net.Extensions.html#x2net_Extensions_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__
+  commentId: M:x2net.Extensions.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name.vb: Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.Extensions.Unbind<T>(T, Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.Extensions.Unbind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.Extensions.Unbind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.Extensions.Unbind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: Extensions.Unbind<T>(T, Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: Extensions.Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-- uid: x2net.Extensions.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+- uid: x2net.Extensions.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name: Unbind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.Extensions.html#x2net_Extensions_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__
-  commentId: M:x2net.Extensions.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+  href: api/x2net.Extensions.html#x2net_Extensions_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__
+  commentId: M:x2net.Extensions.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name.vb: Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.Extensions.Unbind<T>(T, Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.Extensions.Unbind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.Extensions.Unbind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.Extensions.Unbind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: Extensions.Unbind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: Extensions.Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.Extensions.WaitForAllEvents(x2net.Coroutine,System.Double,x2net.Event[])
@@ -5494,22 +5494,15 @@ references:
   isSpec: "True"
   fullName: x2net.Extensions.WaitForAllEvents
   nameWithType: Extensions.WaitForAllEvents
-- uid: x2net.Extensions.WaitForAllResponse(x2net.Coroutine,x2net.Event[],System.Double,x2net.Event[])
-  name: WaitForAllResponse(Coroutine, Event[], Double, Event[])
-  href: api/x2net.Extensions.html#x2net_Extensions_WaitForAllResponse_x2net_Coroutine_x2net_Event___System_Double_x2net_Event___
-  commentId: M:x2net.Extensions.WaitForAllResponse(x2net.Coroutine,x2net.Event[],System.Double,x2net.Event[])
-  name.vb: WaitForAllResponse(Coroutine, Event(), Double, Event())
-  fullName: x2net.Extensions.WaitForAllResponse(x2net.Coroutine, x2net.Event[], System.Double, x2net.Event[])
-  fullName.vb: x2net.Extensions.WaitForAllResponse(x2net.Coroutine, x2net.Event(), System.Double, x2net.Event())
-  nameWithType: Extensions.WaitForAllResponse(Coroutine, Event[], Double, Event[])
-  nameWithType.vb: Extensions.WaitForAllResponse(Coroutine, Event(), Double, Event())
-- uid: x2net.Extensions.WaitForAllResponse*
-  name: WaitForAllResponse
-  href: api/x2net.Extensions.html#x2net_Extensions_WaitForAllResponse_
-  commentId: Overload:x2net.Extensions.WaitForAllResponse
-  isSpec: "True"
-  fullName: x2net.Extensions.WaitForAllResponse
-  nameWithType: Extensions.WaitForAllResponse
+- uid: x2net.Extensions.WaitForAllResponses(x2net.Coroutine,x2net.Event[],System.Double,x2net.Event[])
+  name: WaitForAllResponses(Coroutine, Event[], Double, Event[])
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForAllResponses_x2net_Coroutine_x2net_Event___System_Double_x2net_Event___
+  commentId: M:x2net.Extensions.WaitForAllResponses(x2net.Coroutine,x2net.Event[],System.Double,x2net.Event[])
+  name.vb: WaitForAllResponses(Coroutine, Event(), Double, Event())
+  fullName: x2net.Extensions.WaitForAllResponses(x2net.Coroutine, x2net.Event[], System.Double, x2net.Event[])
+  fullName.vb: x2net.Extensions.WaitForAllResponses(x2net.Coroutine, x2net.Event(), System.Double, x2net.Event())
+  nameWithType: Extensions.WaitForAllResponses(Coroutine, Event[], Double, Event[])
+  nameWithType.vb: Extensions.WaitForAllResponses(Coroutine, Event(), Double, Event())
 - uid: x2net.Extensions.WaitForAllResponses(x2net.Coroutine,x2net.Event[],x2net.Event[])
   name: WaitForAllResponses(Coroutine, Event[], Event[])
   href: api/x2net.Extensions.html#x2net_Extensions_WaitForAllResponses_x2net_Coroutine_x2net_Event___x2net_Event___
@@ -5576,13 +5569,13 @@ references:
   isSpec: "True"
   fullName: x2net.Extensions.WaitForAnyResponse
   nameWithType: Extensions.WaitForAnyResponse
-- uid: x2net.Extensions.WaitForCompletion(x2net.Coroutine,Func{x2net.Coroutine,IEnumerator})
+- uid: x2net.Extensions.WaitForCompletion(x2net.Coroutine,System.Func{x2net.Coroutine,System.Collections.IEnumerator})
   name: WaitForCompletion(Coroutine, Func<Coroutine, IEnumerator>)
-  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion_x2net_Coroutine_Func_x2net_Coroutine_IEnumerator__
-  commentId: M:x2net.Extensions.WaitForCompletion(x2net.Coroutine,Func{x2net.Coroutine,IEnumerator})
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion_x2net_Coroutine_System_Func_x2net_Coroutine_System_Collections_IEnumerator__
+  commentId: M:x2net.Extensions.WaitForCompletion(x2net.Coroutine,System.Func{x2net.Coroutine,System.Collections.IEnumerator})
   name.vb: WaitForCompletion(Coroutine, Func(Of Coroutine, IEnumerator))
-  fullName: x2net.Extensions.WaitForCompletion(x2net.Coroutine, Func<x2net.Coroutine, IEnumerator>)
-  fullName.vb: x2net.Extensions.WaitForCompletion(x2net.Coroutine, Func(Of x2net.Coroutine, IEnumerator))
+  fullName: x2net.Extensions.WaitForCompletion(x2net.Coroutine, System.Func<x2net.Coroutine, System.Collections.IEnumerator>)
+  fullName.vb: x2net.Extensions.WaitForCompletion(x2net.Coroutine, System.Func(Of x2net.Coroutine, System.Collections.IEnumerator))
   nameWithType: Extensions.WaitForCompletion(Coroutine, Func<Coroutine, IEnumerator>)
   nameWithType.vb: Extensions.WaitForCompletion(Coroutine, Func(Of Coroutine, IEnumerator))
 - uid: x2net.Extensions.WaitForCompletion*
@@ -5592,33 +5585,42 @@ references:
   isSpec: "True"
   fullName: x2net.Extensions.WaitForCompletion
   nameWithType: Extensions.WaitForCompletion
-- uid: x2net.Extensions.WaitForCompletion``1(x2net.Coroutine,Func{x2net.Coroutine,``0,IEnumerator},``0)
+- uid: x2net.Extensions.WaitForCompletion``1(x2net.Coroutine,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},``0)
   name: WaitForCompletion<T>(Coroutine, Func<Coroutine, T, IEnumerator>, T)
-  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion__1_x2net_Coroutine_Func_x2net_Coroutine___0_IEnumerator____0_
-  commentId: M:x2net.Extensions.WaitForCompletion``1(x2net.Coroutine,Func{x2net.Coroutine,``0,IEnumerator},``0)
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion__1_x2net_Coroutine_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator____0_
+  commentId: M:x2net.Extensions.WaitForCompletion``1(x2net.Coroutine,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},``0)
   name.vb: WaitForCompletion(Of T)(Coroutine, Func(Of Coroutine, T, IEnumerator), T)
-  fullName: x2net.Extensions.WaitForCompletion<T>(x2net.Coroutine, Func<x2net.Coroutine, T, IEnumerator>, T)
-  fullName.vb: x2net.Extensions.WaitForCompletion(Of T)(x2net.Coroutine, Func(Of x2net.Coroutine, T, IEnumerator), T)
+  fullName: x2net.Extensions.WaitForCompletion<T>(x2net.Coroutine, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, T)
+  fullName.vb: x2net.Extensions.WaitForCompletion(Of T)(x2net.Coroutine, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), T)
   nameWithType: Extensions.WaitForCompletion<T>(Coroutine, Func<Coroutine, T, IEnumerator>, T)
   nameWithType.vb: Extensions.WaitForCompletion(Of T)(Coroutine, Func(Of Coroutine, T, IEnumerator), T)
-- uid: x2net.Extensions.WaitForCompletion``2(x2net.Coroutine,Func{x2net.Coroutine,``0,``1,IEnumerator},``0,``1)
+- uid: x2net.Extensions.WaitForCompletion``2(x2net.Coroutine,System.Func{x2net.Coroutine,``0,``1,System.Collections.IEnumerator},``0,``1)
   name: WaitForCompletion<T1, T2>(Coroutine, Func<Coroutine, T1, T2, IEnumerator>, T1, T2)
-  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion__2_x2net_Coroutine_Func_x2net_Coroutine___0___1_IEnumerator____0___1_
-  commentId: M:x2net.Extensions.WaitForCompletion``2(x2net.Coroutine,Func{x2net.Coroutine,``0,``1,IEnumerator},``0,``1)
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion__2_x2net_Coroutine_System_Func_x2net_Coroutine___0___1_System_Collections_IEnumerator____0___1_
+  commentId: M:x2net.Extensions.WaitForCompletion``2(x2net.Coroutine,System.Func{x2net.Coroutine,``0,``1,System.Collections.IEnumerator},``0,``1)
   name.vb: WaitForCompletion(Of T1, T2)(Coroutine, Func(Of Coroutine, T1, T2, IEnumerator), T1, T2)
-  fullName: x2net.Extensions.WaitForCompletion<T1, T2>(x2net.Coroutine, Func<x2net.Coroutine, T1, T2, IEnumerator>, T1, T2)
-  fullName.vb: x2net.Extensions.WaitForCompletion(Of T1, T2)(x2net.Coroutine, Func(Of x2net.Coroutine, T1, T2, IEnumerator), T1, T2)
+  fullName: x2net.Extensions.WaitForCompletion<T1, T2>(x2net.Coroutine, System.Func<x2net.Coroutine, T1, T2, System.Collections.IEnumerator>, T1, T2)
+  fullName.vb: x2net.Extensions.WaitForCompletion(Of T1, T2)(x2net.Coroutine, System.Func(Of x2net.Coroutine, T1, T2, System.Collections.IEnumerator), T1, T2)
   nameWithType: Extensions.WaitForCompletion<T1, T2>(Coroutine, Func<Coroutine, T1, T2, IEnumerator>, T1, T2)
   nameWithType.vb: Extensions.WaitForCompletion(Of T1, T2)(Coroutine, Func(Of Coroutine, T1, T2, IEnumerator), T1, T2)
-- uid: x2net.Extensions.WaitForCompletion``3(x2net.Coroutine,Func{x2net.Coroutine,``0,``1,``2,IEnumerator},``0,``1,``2)
+- uid: x2net.Extensions.WaitForCompletion``3(x2net.Coroutine,System.Func{x2net.Coroutine,``0,``1,``2,System.Collections.IEnumerator},``0,``1,``2)
   name: WaitForCompletion<T1, T2, T3>(Coroutine, Func<Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
-  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion__3_x2net_Coroutine_Func_x2net_Coroutine___0___1___2_IEnumerator____0___1___2_
-  commentId: M:x2net.Extensions.WaitForCompletion``3(x2net.Coroutine,Func{x2net.Coroutine,``0,``1,``2,IEnumerator},``0,``1,``2)
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion__3_x2net_Coroutine_System_Func_x2net_Coroutine___0___1___2_System_Collections_IEnumerator____0___1___2_
+  commentId: M:x2net.Extensions.WaitForCompletion``3(x2net.Coroutine,System.Func{x2net.Coroutine,``0,``1,``2,System.Collections.IEnumerator},``0,``1,``2)
   name.vb: WaitForCompletion(Of T1, T2, T3)(Coroutine, Func(Of Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
-  fullName: x2net.Extensions.WaitForCompletion<T1, T2, T3>(x2net.Coroutine, Func<x2net.Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
-  fullName.vb: x2net.Extensions.WaitForCompletion(Of T1, T2, T3)(x2net.Coroutine, Func(Of x2net.Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
+  fullName: x2net.Extensions.WaitForCompletion<T1, T2, T3>(x2net.Coroutine, System.Func<x2net.Coroutine, T1, T2, T3, System.Collections.IEnumerator>, T1, T2, T3)
+  fullName.vb: x2net.Extensions.WaitForCompletion(Of T1, T2, T3)(x2net.Coroutine, System.Func(Of x2net.Coroutine, T1, T2, T3, System.Collections.IEnumerator), T1, T2, T3)
   nameWithType: Extensions.WaitForCompletion<T1, T2, T3>(Coroutine, Func<Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
   nameWithType.vb: Extensions.WaitForCompletion(Of T1, T2, T3)(Coroutine, Func(Of Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
+- uid: x2net.Extensions.WaitForCompletion``4(x2net.Coroutine,System.Func{x2net.Coroutine,``0,``1,``2,``3,System.Collections.IEnumerator},``0,``1,``2,``3)
+  name: WaitForCompletion<T1, T2, T3, T4>(Coroutine, Func<Coroutine, T1, T2, T3, T4, IEnumerator>, T1, T2, T3, T4)
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForCompletion__4_x2net_Coroutine_System_Func_x2net_Coroutine___0___1___2___3_System_Collections_IEnumerator____0___1___2___3_
+  commentId: M:x2net.Extensions.WaitForCompletion``4(x2net.Coroutine,System.Func{x2net.Coroutine,``0,``1,``2,``3,System.Collections.IEnumerator},``0,``1,``2,``3)
+  name.vb: WaitForCompletion(Of T1, T2, T3, T4)(Coroutine, Func(Of Coroutine, T1, T2, T3, T4, IEnumerator), T1, T2, T3, T4)
+  fullName: x2net.Extensions.WaitForCompletion<T1, T2, T3, T4>(x2net.Coroutine, System.Func<x2net.Coroutine, T1, T2, T3, T4, System.Collections.IEnumerator>, T1, T2, T3, T4)
+  fullName.vb: x2net.Extensions.WaitForCompletion(Of T1, T2, T3, T4)(x2net.Coroutine, System.Func(Of x2net.Coroutine, T1, T2, T3, T4, System.Collections.IEnumerator), T1, T2, T3, T4)
+  nameWithType: Extensions.WaitForCompletion<T1, T2, T3, T4>(Coroutine, Func<Coroutine, T1, T2, T3, T4, IEnumerator>, T1, T2, T3, T4)
+  nameWithType.vb: Extensions.WaitForCompletion(Of T1, T2, T3, T4)(Coroutine, Func(Of Coroutine, T1, T2, T3, T4, IEnumerator), T1, T2, T3, T4)
 - uid: x2net.Extensions.WaitForEvent(x2net.Coroutine,x2net.Event)
   name: WaitForEvent(Coroutine, Event)
   href: api/x2net.Extensions.html#x2net_Extensions_WaitForEvent_x2net_Coroutine_x2net_Event_
@@ -5683,6 +5685,43 @@ references:
   isSpec: "True"
   fullName: x2net.Extensions.WaitForSeconds
   nameWithType: Extensions.WaitForSeconds
+- uid: x2net.Extensions.WaitForTask(x2net.Coroutine,System.Threading.Tasks.Task)
+  name: WaitForTask(Coroutine, Task)
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForTask_x2net_Coroutine_System_Threading_Tasks_Task_
+  commentId: M:x2net.Extensions.WaitForTask(x2net.Coroutine,System.Threading.Tasks.Task)
+  fullName: x2net.Extensions.WaitForTask(x2net.Coroutine, System.Threading.Tasks.Task)
+  nameWithType: Extensions.WaitForTask(Coroutine, Task)
+- uid: x2net.Extensions.WaitForTask(x2net.Coroutine,System.Threading.Tasks.Task,System.Double)
+  name: WaitForTask(Coroutine, Task, Double)
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForTask_x2net_Coroutine_System_Threading_Tasks_Task_System_Double_
+  commentId: M:x2net.Extensions.WaitForTask(x2net.Coroutine,System.Threading.Tasks.Task,System.Double)
+  fullName: x2net.Extensions.WaitForTask(x2net.Coroutine, System.Threading.Tasks.Task, System.Double)
+  nameWithType: Extensions.WaitForTask(Coroutine, Task, Double)
+- uid: x2net.Extensions.WaitForTask*
+  name: WaitForTask
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForTask_
+  commentId: Overload:x2net.Extensions.WaitForTask
+  isSpec: "True"
+  fullName: x2net.Extensions.WaitForTask
+  nameWithType: Extensions.WaitForTask
+- uid: x2net.Extensions.WaitForTask``1(x2net.Coroutine,System.Threading.Tasks.Task{``0})
+  name: WaitForTask<T>(Coroutine, Task<T>)
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForTask__1_x2net_Coroutine_System_Threading_Tasks_Task___0__
+  commentId: M:x2net.Extensions.WaitForTask``1(x2net.Coroutine,System.Threading.Tasks.Task{``0})
+  name.vb: WaitForTask(Of T)(Coroutine, Task(Of T))
+  fullName: x2net.Extensions.WaitForTask<T>(x2net.Coroutine, System.Threading.Tasks.Task<T>)
+  fullName.vb: x2net.Extensions.WaitForTask(Of T)(x2net.Coroutine, System.Threading.Tasks.Task(Of T))
+  nameWithType: Extensions.WaitForTask<T>(Coroutine, Task<T>)
+  nameWithType.vb: Extensions.WaitForTask(Of T)(Coroutine, Task(Of T))
+- uid: x2net.Extensions.WaitForTask``1(x2net.Coroutine,System.Threading.Tasks.Task{``0},System.Double)
+  name: WaitForTask<T>(Coroutine, Task<T>, Double)
+  href: api/x2net.Extensions.html#x2net_Extensions_WaitForTask__1_x2net_Coroutine_System_Threading_Tasks_Task___0__System_Double_
+  commentId: M:x2net.Extensions.WaitForTask``1(x2net.Coroutine,System.Threading.Tasks.Task{``0},System.Double)
+  name.vb: WaitForTask(Of T)(Coroutine, Task(Of T), Double)
+  fullName: x2net.Extensions.WaitForTask<T>(x2net.Coroutine, System.Threading.Tasks.Task<T>, System.Double)
+  fullName.vb: x2net.Extensions.WaitForTask(Of T)(x2net.Coroutine, System.Threading.Tasks.Task(Of T), System.Double)
+  nameWithType: Extensions.WaitForTask<T>(Coroutine, Task<T>, Double)
+  nameWithType.vb: Extensions.WaitForTask(Of T)(Coroutine, Task(Of T), Double)
 - uid: x2net.Fingerprint
   name: Fingerprint
   href: api/x2net.Fingerprint.html
@@ -5938,40 +5977,40 @@ references:
   isSpec: "True"
   fullName: x2net.Flow.Bind
   nameWithType: Flow.Bind
-- uid: x2net.Flow.Bind``1(``0,Action{``0})
+- uid: x2net.Flow.Bind``1(``0,System.Action{``0})
   name: Bind<T>(T, Action<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Bind__1___0_Action___0__
-  commentId: M:x2net.Flow.Bind``1(``0,Action{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Bind__1___0_System_Action___0__
+  commentId: M:x2net.Flow.Bind``1(``0,System.Action{``0})
   name.vb: Bind(Of T)(T, Action(Of T))
-  fullName: x2net.Flow.Bind<T>(T, Action<T>)
-  fullName.vb: x2net.Flow.Bind(Of T)(T, Action(Of T))
+  fullName: x2net.Flow.Bind<T>(T, System.Action<T>)
+  fullName.vb: x2net.Flow.Bind(Of T)(T, System.Action(Of T))
   nameWithType: Flow.Bind<T>(T, Action<T>)
   nameWithType.vb: Flow.Bind(Of T)(T, Action(Of T))
-- uid: x2net.Flow.Bind``1(``0,Action{``0},Predicate{``0})
+- uid: x2net.Flow.Bind``1(``0,System.Action{``0},System.Predicate{``0})
   name: Bind<T>(T, Action<T>, Predicate<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Bind__1___0_Action___0__Predicate___0__
-  commentId: M:x2net.Flow.Bind``1(``0,Action{``0},Predicate{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Bind__1___0_System_Action___0__System_Predicate___0__
+  commentId: M:x2net.Flow.Bind``1(``0,System.Action{``0},System.Predicate{``0})
   name.vb: Bind(Of T)(T, Action(Of T), Predicate(Of T))
-  fullName: x2net.Flow.Bind<T>(T, Action<T>, Predicate<T>)
-  fullName.vb: x2net.Flow.Bind(Of T)(T, Action(Of T), Predicate(Of T))
+  fullName: x2net.Flow.Bind<T>(T, System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.Flow.Bind(Of T)(T, System.Action(Of T), System.Predicate(Of T))
   nameWithType: Flow.Bind<T>(T, Action<T>, Predicate<T>)
   nameWithType.vb: Flow.Bind(Of T)(T, Action(Of T), Predicate(Of T))
-- uid: x2net.Flow.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+- uid: x2net.Flow.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name: Bind<T>(T, Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.Flow.html#x2net_Flow_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__
-  commentId: M:x2net.Flow.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+  href: api/x2net.Flow.html#x2net_Flow_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__
+  commentId: M:x2net.Flow.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name.vb: Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.Flow.Bind<T>(T, Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.Flow.Bind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.Flow.Bind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.Flow.Bind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: Flow.Bind<T>(T, Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: Flow.Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-- uid: x2net.Flow.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+- uid: x2net.Flow.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name: Bind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__
-  commentId: M:x2net.Flow.Bind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__
+  commentId: M:x2net.Flow.Bind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name.vb: Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.Flow.Bind<T>(T, Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.Flow.Bind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.Flow.Bind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.Flow.Bind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: Flow.Bind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: Flow.Bind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.Flow.binding
@@ -6309,40 +6348,40 @@ references:
   isSpec: "True"
   fullName: x2net.Flow.Subscribe
   nameWithType: Flow.Subscribe
-- uid: x2net.Flow.Subscribe``1(``0,Action{``0})
+- uid: x2net.Flow.Subscribe``1(``0,System.Action{``0})
   name: Subscribe<T>(T, Action<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Subscribe__1___0_Action___0__
-  commentId: M:x2net.Flow.Subscribe``1(``0,Action{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Subscribe__1___0_System_Action___0__
+  commentId: M:x2net.Flow.Subscribe``1(``0,System.Action{``0})
   name.vb: Subscribe(Of T)(T, Action(Of T))
-  fullName: x2net.Flow.Subscribe<T>(T, Action<T>)
-  fullName.vb: x2net.Flow.Subscribe(Of T)(T, Action(Of T))
+  fullName: x2net.Flow.Subscribe<T>(T, System.Action<T>)
+  fullName.vb: x2net.Flow.Subscribe(Of T)(T, System.Action(Of T))
   nameWithType: Flow.Subscribe<T>(T, Action<T>)
   nameWithType.vb: Flow.Subscribe(Of T)(T, Action(Of T))
-- uid: x2net.Flow.Subscribe``1(``0,Action{``0},Predicate{``0})
+- uid: x2net.Flow.Subscribe``1(``0,System.Action{``0},System.Predicate{``0})
   name: Subscribe<T>(T, Action<T>, Predicate<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Subscribe__1___0_Action___0__Predicate___0__
-  commentId: M:x2net.Flow.Subscribe``1(``0,Action{``0},Predicate{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Subscribe__1___0_System_Action___0__System_Predicate___0__
+  commentId: M:x2net.Flow.Subscribe``1(``0,System.Action{``0},System.Predicate{``0})
   name.vb: Subscribe(Of T)(T, Action(Of T), Predicate(Of T))
-  fullName: x2net.Flow.Subscribe<T>(T, Action<T>, Predicate<T>)
-  fullName.vb: x2net.Flow.Subscribe(Of T)(T, Action(Of T), Predicate(Of T))
+  fullName: x2net.Flow.Subscribe<T>(T, System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.Flow.Subscribe(Of T)(T, System.Action(Of T), System.Predicate(Of T))
   nameWithType: Flow.Subscribe<T>(T, Action<T>, Predicate<T>)
   nameWithType.vb: Flow.Subscribe(Of T)(T, Action(Of T), Predicate(Of T))
-- uid: x2net.Flow.Subscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+- uid: x2net.Flow.Subscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name: Subscribe<T>(T, Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.Flow.html#x2net_Flow_Subscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__
-  commentId: M:x2net.Flow.Subscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+  href: api/x2net.Flow.html#x2net_Flow_Subscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__
+  commentId: M:x2net.Flow.Subscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name.vb: Subscribe(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.Flow.Subscribe<T>(T, Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.Flow.Subscribe(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.Flow.Subscribe<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.Flow.Subscribe(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: Flow.Subscribe<T>(T, Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: Flow.Subscribe(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-- uid: x2net.Flow.Subscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+- uid: x2net.Flow.Subscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name: Subscribe<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Subscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__
-  commentId: M:x2net.Flow.Subscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Subscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__
+  commentId: M:x2net.Flow.Subscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name.vb: Subscribe(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.Flow.Subscribe<T>(T, Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.Flow.Subscribe(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.Flow.Subscribe<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.Flow.Subscribe(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: Flow.Subscribe<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: Flow.Subscribe(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.Flow.SubscribeTo(System.String)
@@ -6397,40 +6436,40 @@ references:
   isSpec: "True"
   fullName: x2net.Flow.Unbind
   nameWithType: Flow.Unbind
-- uid: x2net.Flow.Unbind``1(``0,Action{``0})
+- uid: x2net.Flow.Unbind``1(``0,System.Action{``0})
   name: Unbind<T>(T, Action<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Unbind__1___0_Action___0__
-  commentId: M:x2net.Flow.Unbind``1(``0,Action{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Unbind__1___0_System_Action___0__
+  commentId: M:x2net.Flow.Unbind``1(``0,System.Action{``0})
   name.vb: Unbind(Of T)(T, Action(Of T))
-  fullName: x2net.Flow.Unbind<T>(T, Action<T>)
-  fullName.vb: x2net.Flow.Unbind(Of T)(T, Action(Of T))
+  fullName: x2net.Flow.Unbind<T>(T, System.Action<T>)
+  fullName.vb: x2net.Flow.Unbind(Of T)(T, System.Action(Of T))
   nameWithType: Flow.Unbind<T>(T, Action<T>)
   nameWithType.vb: Flow.Unbind(Of T)(T, Action(Of T))
-- uid: x2net.Flow.Unbind``1(``0,Action{``0},Predicate{``0})
+- uid: x2net.Flow.Unbind``1(``0,System.Action{``0},System.Predicate{``0})
   name: Unbind<T>(T, Action<T>, Predicate<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Unbind__1___0_Action___0__Predicate___0__
-  commentId: M:x2net.Flow.Unbind``1(``0,Action{``0},Predicate{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Unbind__1___0_System_Action___0__System_Predicate___0__
+  commentId: M:x2net.Flow.Unbind``1(``0,System.Action{``0},System.Predicate{``0})
   name.vb: Unbind(Of T)(T, Action(Of T), Predicate(Of T))
-  fullName: x2net.Flow.Unbind<T>(T, Action<T>, Predicate<T>)
-  fullName.vb: x2net.Flow.Unbind(Of T)(T, Action(Of T), Predicate(Of T))
+  fullName: x2net.Flow.Unbind<T>(T, System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.Flow.Unbind(Of T)(T, System.Action(Of T), System.Predicate(Of T))
   nameWithType: Flow.Unbind<T>(T, Action<T>, Predicate<T>)
   nameWithType.vb: Flow.Unbind(Of T)(T, Action(Of T), Predicate(Of T))
-- uid: x2net.Flow.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+- uid: x2net.Flow.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name: Unbind<T>(T, Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.Flow.html#x2net_Flow_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__
-  commentId: M:x2net.Flow.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+  href: api/x2net.Flow.html#x2net_Flow_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__
+  commentId: M:x2net.Flow.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name.vb: Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.Flow.Unbind<T>(T, Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.Flow.Unbind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.Flow.Unbind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.Flow.Unbind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: Flow.Unbind<T>(T, Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: Flow.Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-- uid: x2net.Flow.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+- uid: x2net.Flow.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name: Unbind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__
-  commentId: M:x2net.Flow.Unbind``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__
+  commentId: M:x2net.Flow.Unbind``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name.vb: Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.Flow.Unbind<T>(T, Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.Flow.Unbind(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.Flow.Unbind<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.Flow.Unbind(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: Flow.Unbind<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: Flow.Unbind(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.Flow.Unsubscribe(x2net.Binding.Token)
@@ -6446,40 +6485,40 @@ references:
   isSpec: "True"
   fullName: x2net.Flow.Unsubscribe
   nameWithType: Flow.Unsubscribe
-- uid: x2net.Flow.Unsubscribe``1(``0,Action{``0})
+- uid: x2net.Flow.Unsubscribe``1(``0,System.Action{``0})
   name: Unsubscribe<T>(T, Action<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_Action___0__
-  commentId: M:x2net.Flow.Unsubscribe``1(``0,Action{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_System_Action___0__
+  commentId: M:x2net.Flow.Unsubscribe``1(``0,System.Action{``0})
   name.vb: Unsubscribe(Of T)(T, Action(Of T))
-  fullName: x2net.Flow.Unsubscribe<T>(T, Action<T>)
-  fullName.vb: x2net.Flow.Unsubscribe(Of T)(T, Action(Of T))
+  fullName: x2net.Flow.Unsubscribe<T>(T, System.Action<T>)
+  fullName.vb: x2net.Flow.Unsubscribe(Of T)(T, System.Action(Of T))
   nameWithType: Flow.Unsubscribe<T>(T, Action<T>)
   nameWithType.vb: Flow.Unsubscribe(Of T)(T, Action(Of T))
-- uid: x2net.Flow.Unsubscribe``1(``0,Action{``0},Predicate{``0})
+- uid: x2net.Flow.Unsubscribe``1(``0,System.Action{``0},System.Predicate{``0})
   name: Unsubscribe<T>(T, Action<T>, Predicate<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_Action___0__Predicate___0__
-  commentId: M:x2net.Flow.Unsubscribe``1(``0,Action{``0},Predicate{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_System_Action___0__System_Predicate___0__
+  commentId: M:x2net.Flow.Unsubscribe``1(``0,System.Action{``0},System.Predicate{``0})
   name.vb: Unsubscribe(Of T)(T, Action(Of T), Predicate(Of T))
-  fullName: x2net.Flow.Unsubscribe<T>(T, Action<T>, Predicate<T>)
-  fullName.vb: x2net.Flow.Unsubscribe(Of T)(T, Action(Of T), Predicate(Of T))
+  fullName: x2net.Flow.Unsubscribe<T>(T, System.Action<T>, System.Predicate<T>)
+  fullName.vb: x2net.Flow.Unsubscribe(Of T)(T, System.Action(Of T), System.Predicate(Of T))
   nameWithType: Flow.Unsubscribe<T>(T, Action<T>, Predicate<T>)
   nameWithType.vb: Flow.Unsubscribe(Of T)(T, Action(Of T), Predicate(Of T))
-- uid: x2net.Flow.Unsubscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+- uid: x2net.Flow.Unsubscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name: Unsubscribe<T>(T, Func<Coroutine, T, IEnumerator>)
-  href: api/x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__
-  commentId: M:x2net.Flow.Unsubscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator})
+  href: api/x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__
+  commentId: M:x2net.Flow.Unsubscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator})
   name.vb: Unsubscribe(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-  fullName: x2net.Flow.Unsubscribe<T>(T, Func<x2net.Coroutine, T, IEnumerator>)
-  fullName.vb: x2net.Flow.Unsubscribe(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator))
+  fullName: x2net.Flow.Unsubscribe<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>)
+  fullName.vb: x2net.Flow.Unsubscribe(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator))
   nameWithType: Flow.Unsubscribe<T>(T, Func<Coroutine, T, IEnumerator>)
   nameWithType.vb: Flow.Unsubscribe(Of T)(T, Func(Of Coroutine, T, IEnumerator))
-- uid: x2net.Flow.Unsubscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+- uid: x2net.Flow.Unsubscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name: Unsubscribe<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
-  href: api/x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__
-  commentId: M:x2net.Flow.Unsubscribe``1(``0,Func{x2net.Coroutine,``0,IEnumerator},Predicate{``0})
+  href: api/x2net.Flow.html#x2net_Flow_Unsubscribe__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__
+  commentId: M:x2net.Flow.Unsubscribe``1(``0,System.Func{x2net.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})
   name.vb: Unsubscribe(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
-  fullName: x2net.Flow.Unsubscribe<T>(T, Func<x2net.Coroutine, T, IEnumerator>, Predicate<T>)
-  fullName.vb: x2net.Flow.Unsubscribe(Of T)(T, Func(Of x2net.Coroutine, T, IEnumerator), Predicate(Of T))
+  fullName: x2net.Flow.Unsubscribe<T>(T, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, System.Predicate<T>)
+  fullName.vb: x2net.Flow.Unsubscribe(Of T)(T, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), System.Predicate(Of T))
   nameWithType: Flow.Unsubscribe<T>(T, Func<Coroutine, T, IEnumerator>, Predicate<T>)
   nameWithType.vb: Flow.Unsubscribe(Of T)(T, Func(Of Coroutine, T, IEnumerator), Predicate(Of T))
 - uid: x2net.Flow.UnsubscribeFrom(System.String)
@@ -6520,11 +6559,11 @@ references:
   isSpec: "True"
   fullName: x2net.FlowStart.FlowStart
   nameWithType: FlowStart.FlowStart
-- uid: x2net.FlowStart.Describe(StringBuilder)
+- uid: x2net.FlowStart.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.FlowStart.html#x2net_FlowStart_Describe_StringBuilder_
-  commentId: M:x2net.FlowStart.Describe(StringBuilder)
-  fullName: x2net.FlowStart.Describe(StringBuilder)
+  href: api/x2net.FlowStart.html#x2net_FlowStart_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.FlowStart.Describe(System.Text.StringBuilder)
+  fullName: x2net.FlowStart.Describe(System.Text.StringBuilder)
   nameWithType: FlowStart.Describe(StringBuilder)
 - uid: x2net.FlowStart.Describe*
   name: Describe
@@ -6668,11 +6707,11 @@ references:
   isSpec: "True"
   fullName: x2net.FlowStop.FlowStop
   nameWithType: FlowStop.FlowStop
-- uid: x2net.FlowStop.Describe(StringBuilder)
+- uid: x2net.FlowStop.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.FlowStop.html#x2net_FlowStop_Describe_StringBuilder_
-  commentId: M:x2net.FlowStop.Describe(StringBuilder)
-  fullName: x2net.FlowStop.Describe(StringBuilder)
+  href: api/x2net.FlowStop.html#x2net_FlowStop_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.FlowStop.Describe(System.Text.StringBuilder)
+  fullName: x2net.FlowStop.Describe(System.Text.StringBuilder)
   nameWithType: FlowStop.Describe(StringBuilder)
 - uid: x2net.FlowStop.Describe*
   name: Describe
@@ -7321,11 +7360,11 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeAck.HandshakeAck
   nameWithType: HandshakeAck.HandshakeAck
-- uid: x2net.HandshakeAck.Describe(StringBuilder)
+- uid: x2net.HandshakeAck.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_Describe_StringBuilder_
-  commentId: M:x2net.HandshakeAck.Describe(StringBuilder)
-  fullName: x2net.HandshakeAck.Describe(StringBuilder)
+  href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.HandshakeAck.Describe(System.Text.StringBuilder)
+  fullName: x2net.HandshakeAck.Describe(System.Text.StringBuilder)
   nameWithType: HandshakeAck.Describe(StringBuilder)
 - uid: x2net.HandshakeAck.Describe*
   name: Describe
@@ -7386,13 +7425,13 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeAck.GetHashCode
   nameWithType: HandshakeAck.GetHashCode
-- uid: x2net.HandshakeAck.GetLength(Type,System.Boolean@)
+- uid: x2net.HandshakeAck.GetLength(System.Type,System.Boolean@)
   name: GetLength(Type, ref Boolean)
-  href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_GetLength_Type_System_Boolean__
-  commentId: M:x2net.HandshakeAck.GetLength(Type,System.Boolean@)
+  href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_GetLength_System_Type_System_Boolean__
+  commentId: M:x2net.HandshakeAck.GetLength(System.Type,System.Boolean@)
   name.vb: GetLength(Type, ByRef Boolean)
-  fullName: x2net.HandshakeAck.GetLength(Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeAck.GetLength(Type, ByRef System.Boolean)
+  fullName: x2net.HandshakeAck.GetLength(System.Type, ref System.Boolean)
+  fullName.vb: x2net.HandshakeAck.GetLength(System.Type, ByRef System.Boolean)
   nameWithType: HandshakeAck.GetLength(Type, ref Boolean)
   nameWithType.vb: HandshakeAck.GetLength(Type, ByRef Boolean)
 - uid: x2net.HandshakeAck.GetLength*
@@ -7467,13 +7506,13 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeAck.Result
   nameWithType: HandshakeAck.Result
-- uid: x2net.HandshakeAck.Serialize(x2net.Serializer,Type,System.Boolean@)
+- uid: x2net.HandshakeAck.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name: Serialize(Serializer, Type, ref Boolean)
-  href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_Serialize_x2net_Serializer_Type_System_Boolean__
-  commentId: M:x2net.HandshakeAck.Serialize(x2net.Serializer,Type,System.Boolean@)
+  href: api/x2net.HandshakeAck.html#x2net_HandshakeAck_Serialize_x2net_Serializer_System_Type_System_Boolean__
+  commentId: M:x2net.HandshakeAck.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name.vb: Serialize(Serializer, Type, ByRef Boolean)
-  fullName: x2net.HandshakeAck.Serialize(x2net.Serializer, Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeAck.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
+  fullName: x2net.HandshakeAck.Serialize(x2net.Serializer, System.Type, ref System.Boolean)
+  fullName.vb: x2net.HandshakeAck.Serialize(x2net.Serializer, System.Type, ByRef System.Boolean)
   nameWithType: HandshakeAck.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: HandshakeAck.Serialize(Serializer, Type, ByRef Boolean)
 - uid: x2net.HandshakeAck.Serialize*
@@ -7540,11 +7579,11 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeReq.Data
   nameWithType: HandshakeReq.Data
-- uid: x2net.HandshakeReq.Describe(StringBuilder)
+- uid: x2net.HandshakeReq.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_Describe_StringBuilder_
-  commentId: M:x2net.HandshakeReq.Describe(StringBuilder)
-  fullName: x2net.HandshakeReq.Describe(StringBuilder)
+  href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.HandshakeReq.Describe(System.Text.StringBuilder)
+  fullName: x2net.HandshakeReq.Describe(System.Text.StringBuilder)
   nameWithType: HandshakeReq.Describe(StringBuilder)
 - uid: x2net.HandshakeReq.Describe*
   name: Describe
@@ -7605,13 +7644,13 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeReq.GetHashCode
   nameWithType: HandshakeReq.GetHashCode
-- uid: x2net.HandshakeReq.GetLength(Type,System.Boolean@)
+- uid: x2net.HandshakeReq.GetLength(System.Type,System.Boolean@)
   name: GetLength(Type, ref Boolean)
-  href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_GetLength_Type_System_Boolean__
-  commentId: M:x2net.HandshakeReq.GetLength(Type,System.Boolean@)
+  href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_GetLength_System_Type_System_Boolean__
+  commentId: M:x2net.HandshakeReq.GetLength(System.Type,System.Boolean@)
   name.vb: GetLength(Type, ByRef Boolean)
-  fullName: x2net.HandshakeReq.GetLength(Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeReq.GetLength(Type, ByRef System.Boolean)
+  fullName: x2net.HandshakeReq.GetLength(System.Type, ref System.Boolean)
+  fullName.vb: x2net.HandshakeReq.GetLength(System.Type, ByRef System.Boolean)
   nameWithType: HandshakeReq.GetLength(Type, ref Boolean)
   nameWithType.vb: HandshakeReq.GetLength(Type, ByRef Boolean)
 - uid: x2net.HandshakeReq.GetLength*
@@ -7673,13 +7712,13 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeReq.New
   nameWithType: HandshakeReq.New
-- uid: x2net.HandshakeReq.Serialize(x2net.Serializer,Type,System.Boolean@)
+- uid: x2net.HandshakeReq.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name: Serialize(Serializer, Type, ref Boolean)
-  href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_Serialize_x2net_Serializer_Type_System_Boolean__
-  commentId: M:x2net.HandshakeReq.Serialize(x2net.Serializer,Type,System.Boolean@)
+  href: api/x2net.HandshakeReq.html#x2net_HandshakeReq_Serialize_x2net_Serializer_System_Type_System_Boolean__
+  commentId: M:x2net.HandshakeReq.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name.vb: Serialize(Serializer, Type, ByRef Boolean)
-  fullName: x2net.HandshakeReq.Serialize(x2net.Serializer, Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeReq.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
+  fullName: x2net.HandshakeReq.Serialize(x2net.Serializer, System.Type, ref System.Boolean)
+  fullName.vb: x2net.HandshakeReq.Serialize(x2net.Serializer, System.Type, ByRef System.Boolean)
   nameWithType: HandshakeReq.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: HandshakeReq.Serialize(Serializer, Type, ByRef Boolean)
 - uid: x2net.HandshakeReq.Serialize*
@@ -7746,11 +7785,11 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeResp.Data
   nameWithType: HandshakeResp.Data
-- uid: x2net.HandshakeResp.Describe(StringBuilder)
+- uid: x2net.HandshakeResp.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_Describe_StringBuilder_
-  commentId: M:x2net.HandshakeResp.Describe(StringBuilder)
-  fullName: x2net.HandshakeResp.Describe(StringBuilder)
+  href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.HandshakeResp.Describe(System.Text.StringBuilder)
+  fullName: x2net.HandshakeResp.Describe(System.Text.StringBuilder)
   nameWithType: HandshakeResp.Describe(StringBuilder)
 - uid: x2net.HandshakeResp.Describe*
   name: Describe
@@ -7811,13 +7850,13 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeResp.GetHashCode
   nameWithType: HandshakeResp.GetHashCode
-- uid: x2net.HandshakeResp.GetLength(Type,System.Boolean@)
+- uid: x2net.HandshakeResp.GetLength(System.Type,System.Boolean@)
   name: GetLength(Type, ref Boolean)
-  href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_GetLength_Type_System_Boolean__
-  commentId: M:x2net.HandshakeResp.GetLength(Type,System.Boolean@)
+  href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_GetLength_System_Type_System_Boolean__
+  commentId: M:x2net.HandshakeResp.GetLength(System.Type,System.Boolean@)
   name.vb: GetLength(Type, ByRef Boolean)
-  fullName: x2net.HandshakeResp.GetLength(Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeResp.GetLength(Type, ByRef System.Boolean)
+  fullName: x2net.HandshakeResp.GetLength(System.Type, ref System.Boolean)
+  fullName.vb: x2net.HandshakeResp.GetLength(System.Type, ByRef System.Boolean)
   nameWithType: HandshakeResp.GetLength(Type, ref Boolean)
   nameWithType.vb: HandshakeResp.GetLength(Type, ByRef Boolean)
 - uid: x2net.HandshakeResp.GetLength*
@@ -7879,13 +7918,13 @@ references:
   isSpec: "True"
   fullName: x2net.HandshakeResp.New
   nameWithType: HandshakeResp.New
-- uid: x2net.HandshakeResp.Serialize(x2net.Serializer,Type,System.Boolean@)
+- uid: x2net.HandshakeResp.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name: Serialize(Serializer, Type, ref Boolean)
-  href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_Serialize_x2net_Serializer_Type_System_Boolean__
-  commentId: M:x2net.HandshakeResp.Serialize(x2net.Serializer,Type,System.Boolean@)
+  href: api/x2net.HandshakeResp.html#x2net_HandshakeResp_Serialize_x2net_Serializer_System_Type_System_Boolean__
+  commentId: M:x2net.HandshakeResp.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name.vb: Serialize(Serializer, Type, ByRef Boolean)
-  fullName: x2net.HandshakeResp.Serialize(x2net.Serializer, Type, ref System.Boolean)
-  fullName.vb: x2net.HandshakeResp.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
+  fullName: x2net.HandshakeResp.Serialize(x2net.Serializer, System.Type, ref System.Boolean)
+  fullName.vb: x2net.HandshakeResp.Serialize(x2net.Serializer, System.Type, ByRef System.Boolean)
   nameWithType: HandshakeResp.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: HandshakeResp.Serialize(Serializer, Type, ByRef Boolean)
 - uid: x2net.HandshakeResp.Serialize*
@@ -7945,12 +7984,6 @@ references:
   commentId: F:x2net.Hash.Seed
   fullName: x2net.Hash.Seed
   nameWithType: Hash.Seed
-- uid: x2net.Hash.Update(DateTime)
-  name: Update(DateTime)
-  href: api/x2net.Hash.html#x2net_Hash_Update_DateTime_
-  commentId: M:x2net.Hash.Update(DateTime)
-  fullName: x2net.Hash.Update(DateTime)
-  nameWithType: Hash.Update(DateTime)
 - uid: x2net.Hash.Update(System.Boolean)
   name: Update(Boolean)
   href: api/x2net.Hash.html#x2net_Hash_Update_System_Boolean_
@@ -7972,6 +8005,12 @@ references:
   fullName.vb: x2net.Hash.Update(System.Byte())
   nameWithType: Hash.Update(Byte[])
   nameWithType.vb: Hash.Update(Byte())
+- uid: x2net.Hash.Update(System.DateTime)
+  name: Update(DateTime)
+  href: api/x2net.Hash.html#x2net_Hash_Update_System_DateTime_
+  commentId: M:x2net.Hash.Update(System.DateTime)
+  fullName: x2net.Hash.Update(System.DateTime)
+  nameWithType: Hash.Update(DateTime)
 - uid: x2net.Hash.Update(System.Double)
   name: Update(Double)
   href: api/x2net.Hash.html#x2net_Hash_Update_System_Double_
@@ -7990,12 +8029,6 @@ references:
   commentId: M:x2net.Hash.Update(System.Int32)
   fullName: x2net.Hash.Update(System.Int32)
   nameWithType: Hash.Update(Int32)
-- uid: x2net.Hash.Update(System.Int32,DateTime)
-  name: Update(Int32, DateTime)
-  href: api/x2net.Hash.html#x2net_Hash_Update_System_Int32_DateTime_
-  commentId: M:x2net.Hash.Update(System.Int32,DateTime)
-  fullName: x2net.Hash.Update(System.Int32, DateTime)
-  nameWithType: Hash.Update(Int32, DateTime)
 - uid: x2net.Hash.Update(System.Int32,System.Boolean)
   name: Update(Int32, Boolean)
   href: api/x2net.Hash.html#x2net_Hash_Update_System_Int32_System_Boolean_
@@ -8017,6 +8050,12 @@ references:
   fullName.vb: x2net.Hash.Update(System.Int32, System.Byte())
   nameWithType: Hash.Update(Int32, Byte[])
   nameWithType.vb: Hash.Update(Int32, Byte())
+- uid: x2net.Hash.Update(System.Int32,System.DateTime)
+  name: Update(Int32, DateTime)
+  href: api/x2net.Hash.html#x2net_Hash_Update_System_Int32_System_DateTime_
+  commentId: M:x2net.Hash.Update(System.Int32,System.DateTime)
+  fullName: x2net.Hash.Update(System.Int32, System.DateTime)
+  nameWithType: Hash.Update(Int32, DateTime)
 - uid: x2net.Hash.Update(System.Int32,System.Double)
   name: Update(Int32, Double)
   href: api/x2net.Hash.html#x2net_Hash_Update_System_Int32_System_Double_
@@ -8135,13 +8174,13 @@ references:
   fullName.vb: x2net.Hash.Update(Of T)(T)
   nameWithType: Hash.Update<T>(T)
   nameWithType.vb: Hash.Update(Of T)(T)
-- uid: x2net.Hash.Update``1(List{``0})
+- uid: x2net.Hash.Update``1(System.Collections.Generic.List{``0})
   name: Update<T>(List<T>)
-  href: api/x2net.Hash.html#x2net_Hash_Update__1_List___0__
-  commentId: M:x2net.Hash.Update``1(List{``0})
+  href: api/x2net.Hash.html#x2net_Hash_Update__1_System_Collections_Generic_List___0__
+  commentId: M:x2net.Hash.Update``1(System.Collections.Generic.List{``0})
   name.vb: Update(Of T)(List(Of T))
-  fullName: x2net.Hash.Update<T>(List<T>)
-  fullName.vb: x2net.Hash.Update(Of T)(List(Of T))
+  fullName: x2net.Hash.Update<T>(System.Collections.Generic.List<T>)
+  fullName.vb: x2net.Hash.Update(Of T)(System.Collections.Generic.List(Of T))
   nameWithType: Hash.Update<T>(List<T>)
   nameWithType.vb: Hash.Update(Of T)(List(Of T))
 - uid: x2net.Hash.Update``1(System.Int32,``0)
@@ -8153,13 +8192,13 @@ references:
   fullName.vb: x2net.Hash.Update(Of T)(System.Int32, T)
   nameWithType: Hash.Update<T>(Int32, T)
   nameWithType.vb: Hash.Update(Of T)(Int32, T)
-- uid: x2net.Hash.Update``1(System.Int32,List{``0})
+- uid: x2net.Hash.Update``1(System.Int32,System.Collections.Generic.List{``0})
   name: Update<T>(Int32, List<T>)
-  href: api/x2net.Hash.html#x2net_Hash_Update__1_System_Int32_List___0__
-  commentId: M:x2net.Hash.Update``1(System.Int32,List{``0})
+  href: api/x2net.Hash.html#x2net_Hash_Update__1_System_Int32_System_Collections_Generic_List___0__
+  commentId: M:x2net.Hash.Update``1(System.Int32,System.Collections.Generic.List{``0})
   name.vb: Update(Of T)(Int32, List(Of T))
-  fullName: x2net.Hash.Update<T>(System.Int32, List<T>)
-  fullName.vb: x2net.Hash.Update(Of T)(System.Int32, List(Of T))
+  fullName: x2net.Hash.Update<T>(System.Int32, System.Collections.Generic.List<T>)
+  fullName.vb: x2net.Hash.Update(Of T)(System.Int32, System.Collections.Generic.List(Of T))
   nameWithType: Hash.Update<T>(Int32, List<T>)
   nameWithType.vb: Hash.Update(Of T)(Int32, List(Of T))
 - uid: x2net.HeartbeatEvent
@@ -8187,11 +8226,11 @@ references:
   isSpec: "True"
   fullName: x2net.HeartbeatEvent.HeartbeatEvent
   nameWithType: HeartbeatEvent.HeartbeatEvent
-- uid: x2net.HeartbeatEvent.Describe(StringBuilder)
+- uid: x2net.HeartbeatEvent.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_Describe_StringBuilder_
-  commentId: M:x2net.HeartbeatEvent.Describe(StringBuilder)
-  fullName: x2net.HeartbeatEvent.Describe(StringBuilder)
+  href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.HeartbeatEvent.Describe(System.Text.StringBuilder)
+  fullName: x2net.HeartbeatEvent.Describe(System.Text.StringBuilder)
   nameWithType: HeartbeatEvent.Describe(StringBuilder)
 - uid: x2net.HeartbeatEvent.Describe*
   name: Describe
@@ -8252,13 +8291,13 @@ references:
   isSpec: "True"
   fullName: x2net.HeartbeatEvent.GetHashCode
   nameWithType: HeartbeatEvent.GetHashCode
-- uid: x2net.HeartbeatEvent.GetLength(Type,System.Boolean@)
+- uid: x2net.HeartbeatEvent.GetLength(System.Type,System.Boolean@)
   name: GetLength(Type, ref Boolean)
-  href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_GetLength_Type_System_Boolean__
-  commentId: M:x2net.HeartbeatEvent.GetLength(Type,System.Boolean@)
+  href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_GetLength_System_Type_System_Boolean__
+  commentId: M:x2net.HeartbeatEvent.GetLength(System.Type,System.Boolean@)
   name.vb: GetLength(Type, ByRef Boolean)
-  fullName: x2net.HeartbeatEvent.GetLength(Type, ref System.Boolean)
-  fullName.vb: x2net.HeartbeatEvent.GetLength(Type, ByRef System.Boolean)
+  fullName: x2net.HeartbeatEvent.GetLength(System.Type, ref System.Boolean)
+  fullName.vb: x2net.HeartbeatEvent.GetLength(System.Type, ByRef System.Boolean)
   nameWithType: HeartbeatEvent.GetLength(Type, ref Boolean)
   nameWithType.vb: HeartbeatEvent.GetLength(Type, ByRef Boolean)
 - uid: x2net.HeartbeatEvent.GetLength*
@@ -8320,13 +8359,13 @@ references:
   isSpec: "True"
   fullName: x2net.HeartbeatEvent.New
   nameWithType: HeartbeatEvent.New
-- uid: x2net.HeartbeatEvent.Serialize(x2net.Serializer,Type,System.Boolean@)
+- uid: x2net.HeartbeatEvent.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name: Serialize(Serializer, Type, ref Boolean)
-  href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_Serialize_x2net_Serializer_Type_System_Boolean__
-  commentId: M:x2net.HeartbeatEvent.Serialize(x2net.Serializer,Type,System.Boolean@)
+  href: api/x2net.HeartbeatEvent.html#x2net_HeartbeatEvent_Serialize_x2net_Serializer_System_Type_System_Boolean__
+  commentId: M:x2net.HeartbeatEvent.Serialize(x2net.Serializer,System.Type,System.Boolean@)
   name.vb: Serialize(Serializer, Type, ByRef Boolean)
-  fullName: x2net.HeartbeatEvent.Serialize(x2net.Serializer, Type, ref System.Boolean)
-  fullName.vb: x2net.HeartbeatEvent.Serialize(x2net.Serializer, Type, ByRef System.Boolean)
+  fullName: x2net.HeartbeatEvent.Serialize(x2net.Serializer, System.Type, ref System.Boolean)
+  fullName.vb: x2net.HeartbeatEvent.Serialize(x2net.Serializer, System.Type, ByRef System.Boolean)
   nameWithType: HeartbeatEvent.Serialize(Serializer, Type, ref Boolean)
   nameWithType.vb: HeartbeatEvent.Serialize(Serializer, Type, ByRef Boolean)
 - uid: x2net.HeartbeatEvent.Serialize*
@@ -8599,11 +8638,11 @@ references:
   commentId: M:x2net.Hub.GetFlows(System.String)
   fullName: x2net.Hub.GetFlows(System.String)
   nameWithType: Hub.GetFlows(String)
-- uid: x2net.Hub.GetFlows(Type)
+- uid: x2net.Hub.GetFlows(System.Type)
   name: GetFlows(Type)
-  href: api/x2net.Hub.html#x2net_Hub_GetFlows_Type_
-  commentId: M:x2net.Hub.GetFlows(Type)
-  fullName: x2net.Hub.GetFlows(Type)
+  href: api/x2net.Hub.html#x2net_Hub_GetFlows_System_Type_
+  commentId: M:x2net.Hub.GetFlows(System.Type)
+  fullName: x2net.Hub.GetFlows(System.Type)
   nameWithType: Hub.GetFlows(Type)
 - uid: x2net.Hub.GetFlows*
   name: GetFlows
@@ -8926,11 +8965,11 @@ references:
   commentId: M:x2net.InvalidEncodingException.#ctor(System.String)
   fullName: x2net.InvalidEncodingException.InvalidEncodingException(System.String)
   nameWithType: InvalidEncodingException.InvalidEncodingException(String)
-- uid: x2net.InvalidEncodingException.#ctor(System.String,Exception)
+- uid: x2net.InvalidEncodingException.#ctor(System.String,System.Exception)
   name: InvalidEncodingException(String, Exception)
-  href: api/x2net.InvalidEncodingException.html#x2net_InvalidEncodingException__ctor_System_String_Exception_
-  commentId: M:x2net.InvalidEncodingException.#ctor(System.String,Exception)
-  fullName: x2net.InvalidEncodingException.InvalidEncodingException(System.String, Exception)
+  href: api/x2net.InvalidEncodingException.html#x2net_InvalidEncodingException__ctor_System_String_System_Exception_
+  commentId: M:x2net.InvalidEncodingException.#ctor(System.String,System.Exception)
+  fullName: x2net.InvalidEncodingException.InvalidEncodingException(System.String, System.Exception)
   nameWithType: InvalidEncodingException.InvalidEncodingException(String, Exception)
 - uid: x2net.InvalidEncodingException.#ctor*
   name: InvalidEncodingException
@@ -10232,11 +10271,11 @@ references:
   isSpec: "True"
   fullName: x2net.LinkSessionConnected.Context
   nameWithType: LinkSessionConnected.Context
-- uid: x2net.LinkSessionConnected.Describe(StringBuilder)
+- uid: x2net.LinkSessionConnected.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.LinkSessionConnected.html#x2net_LinkSessionConnected_Describe_StringBuilder_
-  commentId: M:x2net.LinkSessionConnected.Describe(StringBuilder)
-  fullName: x2net.LinkSessionConnected.Describe(StringBuilder)
+  href: api/x2net.LinkSessionConnected.html#x2net_LinkSessionConnected_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.LinkSessionConnected.Describe(System.Text.StringBuilder)
+  fullName: x2net.LinkSessionConnected.Describe(System.Text.StringBuilder)
   nameWithType: LinkSessionConnected.Describe(StringBuilder)
 - uid: x2net.LinkSessionConnected.Describe*
   name: Describe
@@ -10419,11 +10458,11 @@ references:
   isSpec: "True"
   fullName: x2net.LinkSessionDisconnected.Context
   nameWithType: LinkSessionDisconnected.Context
-- uid: x2net.LinkSessionDisconnected.Describe(StringBuilder)
+- uid: x2net.LinkSessionDisconnected.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.LinkSessionDisconnected.html#x2net_LinkSessionDisconnected_Describe_StringBuilder_
-  commentId: M:x2net.LinkSessionDisconnected.Describe(StringBuilder)
-  fullName: x2net.LinkSessionDisconnected.Describe(StringBuilder)
+  href: api/x2net.LinkSessionDisconnected.html#x2net_LinkSessionDisconnected_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.LinkSessionDisconnected.Describe(System.Text.StringBuilder)
+  fullName: x2net.LinkSessionDisconnected.Describe(System.Text.StringBuilder)
   nameWithType: LinkSessionDisconnected.Describe(StringBuilder)
 - uid: x2net.LinkSessionDisconnected.Describe*
   name: Describe
@@ -10654,13 +10693,13 @@ references:
   fullName.vb: x2net.MethodHandler(Of T)
   nameWithType: MethodHandler<T>
   nameWithType.vb: MethodHandler(Of T)
-- uid: x2net.MethodHandler`1.#ctor(Action{`0})
+- uid: x2net.MethodHandler`1.#ctor(System.Action{`0})
   name: MethodHandler(Action<T>)
-  href: api/x2net.MethodHandler-1.html#x2net_MethodHandler_1__ctor_Action__0__
-  commentId: M:x2net.MethodHandler`1.#ctor(Action{`0})
+  href: api/x2net.MethodHandler-1.html#x2net_MethodHandler_1__ctor_System_Action__0__
+  commentId: M:x2net.MethodHandler`1.#ctor(System.Action{`0})
   name.vb: MethodHandler(Action(Of T))
-  fullName: x2net.MethodHandler<T>.MethodHandler(Action<T>)
-  fullName.vb: x2net.MethodHandler(Of T).MethodHandler(Action(Of T))
+  fullName: x2net.MethodHandler<T>.MethodHandler(System.Action<T>)
+  fullName.vb: x2net.MethodHandler(Of T).MethodHandler(System.Action(Of T))
   nameWithType: MethodHandler<T>.MethodHandler(Action<T>)
   nameWithType.vb: MethodHandler(Of T).MethodHandler(Action(Of T))
 - uid: x2net.MethodHandler`1.#ctor*
@@ -10886,11 +10925,11 @@ references:
   commentId: M:x2net.OutOfResourceException.#ctor(System.String)
   fullName: x2net.OutOfResourceException.OutOfResourceException(System.String)
   nameWithType: OutOfResourceException.OutOfResourceException(String)
-- uid: x2net.OutOfResourceException.#ctor(System.String,Exception)
+- uid: x2net.OutOfResourceException.#ctor(System.String,System.Exception)
   name: OutOfResourceException(String, Exception)
-  href: api/x2net.OutOfResourceException.html#x2net_OutOfResourceException__ctor_System_String_Exception_
-  commentId: M:x2net.OutOfResourceException.#ctor(System.String,Exception)
-  fullName: x2net.OutOfResourceException.OutOfResourceException(System.String, Exception)
+  href: api/x2net.OutOfResourceException.html#x2net_OutOfResourceException__ctor_System_String_System_Exception_
+  commentId: M:x2net.OutOfResourceException.#ctor(System.String,System.Exception)
+  fullName: x2net.OutOfResourceException.OutOfResourceException(System.String, System.Exception)
   nameWithType: OutOfResourceException.OutOfResourceException(String, Exception)
 - uid: x2net.OutOfResourceException.#ctor*
   name: OutOfResourceException
@@ -10924,11 +10963,11 @@ references:
   isSpec: "True"
   fullName: x2net.PeriodicEvent.PeriodicEvent
   nameWithType: PeriodicEvent.PeriodicEvent
-- uid: x2net.PeriodicEvent.Describe(StringBuilder)
+- uid: x2net.PeriodicEvent.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.PeriodicEvent.html#x2net_PeriodicEvent_Describe_StringBuilder_
-  commentId: M:x2net.PeriodicEvent.Describe(StringBuilder)
-  fullName: x2net.PeriodicEvent.Describe(StringBuilder)
+  href: api/x2net.PeriodicEvent.html#x2net_PeriodicEvent_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.PeriodicEvent.Describe(System.Text.StringBuilder)
+  fullName: x2net.PeriodicEvent.Describe(System.Text.StringBuilder)
   nameWithType: PeriodicEvent.Describe(StringBuilder)
 - uid: x2net.PeriodicEvent.Describe*
   name: Describe
@@ -11406,11 +11445,11 @@ references:
   commentId: T:x2net.ReadLock
   fullName: x2net.ReadLock
   nameWithType: ReadLock
-- uid: x2net.ReadLock.#ctor(ReaderWriterLockSlim)
+- uid: x2net.ReadLock.#ctor(System.Threading.ReaderWriterLockSlim)
   name: ReadLock(ReaderWriterLockSlim)
-  href: api/x2net.ReadLock.html#x2net_ReadLock__ctor_ReaderWriterLockSlim_
-  commentId: M:x2net.ReadLock.#ctor(ReaderWriterLockSlim)
-  fullName: x2net.ReadLock.ReadLock(ReaderWriterLockSlim)
+  href: api/x2net.ReadLock.html#x2net_ReadLock__ctor_System_Threading_ReaderWriterLockSlim_
+  commentId: M:x2net.ReadLock.#ctor(System.Threading.ReaderWriterLockSlim)
+  fullName: x2net.ReadLock.ReadLock(System.Threading.ReaderWriterLockSlim)
   nameWithType: ReadLock.ReadLock(ReaderWriterLockSlim)
 - uid: x2net.ReadLock.#ctor*
   name: ReadLock
@@ -11457,6 +11496,12 @@ references:
   isSpec: "True"
   fullName: x2net.Scope.Scope
   nameWithType: Scope.Scope
+- uid: x2net.Scope.bindingToken
+  name: bindingToken
+  href: api/x2net.Scope.html#x2net_Scope_bindingToken
+  commentId: F:x2net.Scope.bindingToken
+  fullName: x2net.Scope.bindingToken
+  nameWithType: Scope.bindingToken
 - uid: x2net.Scope.BindingToken
   name: BindingToken
   href: api/x2net.Scope.html#x2net_Scope_BindingToken
@@ -11495,6 +11540,12 @@ references:
   isSpec: "True"
   fullName: x2net.Scope.Dispose
   nameWithType: Scope.Dispose
+- uid: x2net.Scope.e
+  name: e
+  href: api/x2net.Scope.html#x2net_Scope_e
+  commentId: F:x2net.Scope.e
+  fullName: x2net.Scope.e
+  nameWithType: Scope.e
 - uid: x2net.Scope.Event
   name: Event
   href: api/x2net.Scope.html#x2net_Scope_Event
@@ -11508,6 +11559,31 @@ references:
   isSpec: "True"
   fullName: x2net.Scope.Event
   nameWithType: Scope.Event
+- uid: x2net.Scope.OnDispose
+  name: OnDispose()
+  href: api/x2net.Scope.html#x2net_Scope_OnDispose
+  commentId: M:x2net.Scope.OnDispose
+  fullName: x2net.Scope.OnDispose()
+  nameWithType: Scope.OnDispose()
+- uid: x2net.Scope.OnDispose*
+  name: OnDispose
+  href: api/x2net.Scope.html#x2net_Scope_OnDispose_
+  commentId: Overload:x2net.Scope.OnDispose
+  isSpec: "True"
+  fullName: x2net.Scope.OnDispose
+  nameWithType: Scope.OnDispose
+- uid: x2net.Scope.startTime
+  name: startTime
+  href: api/x2net.Scope.html#x2net_Scope_startTime
+  commentId: F:x2net.Scope.startTime
+  fullName: x2net.Scope.startTime
+  nameWithType: Scope.startTime
+- uid: x2net.Scope.totalMillis
+  name: totalMillis
+  href: api/x2net.Scope.html#x2net_Scope_totalMillis
+  commentId: F:x2net.Scope.totalMillis
+  fullName: x2net.Scope.totalMillis
+  nameWithType: Scope.totalMillis
 - uid: x2net.Segment
   name: Segment
   href: api/x2net.Segment.html
@@ -11543,11 +11619,11 @@ references:
   isSpec: "True"
   fullName: x2net.Segment.Array
   nameWithType: Segment.Array
-- uid: x2net.Segment.Equals(Object)
+- uid: x2net.Segment.Equals(System.Object)
   name: Equals(Object)
-  href: api/x2net.Segment.html#x2net_Segment_Equals_Object_
-  commentId: M:x2net.Segment.Equals(Object)
-  fullName: x2net.Segment.Equals(Object)
+  href: api/x2net.Segment.html#x2net_Segment_Equals_System_Object_
+  commentId: M:x2net.Segment.Equals(System.Object)
+  fullName: x2net.Segment.Equals(System.Object)
   nameWithType: Segment.Equals(Object)
 - uid: x2net.Segment.Equals(x2net.Segment)
   name: Equals(Segment)
@@ -11797,13 +11873,13 @@ references:
   isSpec: "True"
   fullName: x2net.SendBuffer.Length
   nameWithType: SendBuffer.Length
-- uid: x2net.SendBuffer.ListOccupiedSegments(IList{ArraySegment{System.Byte}})
+- uid: x2net.SendBuffer.ListOccupiedSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})
   name: ListOccupiedSegments(IList<ArraySegment<Byte>>)
-  href: api/x2net.SendBuffer.html#x2net_SendBuffer_ListOccupiedSegments_IList_ArraySegment_System_Byte___
-  commentId: M:x2net.SendBuffer.ListOccupiedSegments(IList{ArraySegment{System.Byte}})
+  href: api/x2net.SendBuffer.html#x2net_SendBuffer_ListOccupiedSegments_System_Collections_Generic_IList_System_ArraySegment_System_Byte___
+  commentId: M:x2net.SendBuffer.ListOccupiedSegments(System.Collections.Generic.IList{System.ArraySegment{System.Byte}})
   name.vb: ListOccupiedSegments(IList(Of ArraySegment(Of Byte)))
-  fullName: x2net.SendBuffer.ListOccupiedSegments(IList<ArraySegment<System.Byte>>)
-  fullName.vb: x2net.SendBuffer.ListOccupiedSegments(IList(Of ArraySegment(Of System.Byte)))
+  fullName: x2net.SendBuffer.ListOccupiedSegments(System.Collections.Generic.IList<System.ArraySegment<System.Byte>>)
+  fullName.vb: x2net.SendBuffer.ListOccupiedSegments(System.Collections.Generic.IList(Of System.ArraySegment(Of System.Byte)))
   nameWithType: SendBuffer.ListOccupiedSegments(IList<ArraySegment<Byte>>)
   nameWithType.vb: SendBuffer.ListOccupiedSegments(IList(Of ArraySegment(Of Byte)))
 - uid: x2net.SendBuffer.ListOccupiedSegments*
@@ -11845,12 +11921,6 @@ references:
   isSpec: "True"
   fullName: x2net.Serializer.Serializer
   nameWithType: Serializer.Serializer
-- uid: x2net.Serializer.GetLength(DateTime)
-  name: GetLength(DateTime)
-  href: api/x2net.Serializer.html#x2net_Serializer_GetLength_DateTime_
-  commentId: M:x2net.Serializer.GetLength(DateTime)
-  fullName: x2net.Serializer.GetLength(DateTime)
-  nameWithType: Serializer.GetLength(DateTime)
 - uid: x2net.Serializer.GetLength(System.Boolean)
   name: GetLength(Boolean)
   href: api/x2net.Serializer.html#x2net_Serializer_GetLength_System_Boolean_
@@ -11872,6 +11942,12 @@ references:
   fullName.vb: x2net.Serializer.GetLength(System.Byte())
   nameWithType: Serializer.GetLength(Byte[])
   nameWithType.vb: Serializer.GetLength(Byte())
+- uid: x2net.Serializer.GetLength(System.DateTime)
+  name: GetLength(DateTime)
+  href: api/x2net.Serializer.html#x2net_Serializer_GetLength_System_DateTime_
+  commentId: M:x2net.Serializer.GetLength(System.DateTime)
+  fullName: x2net.Serializer.GetLength(System.DateTime)
+  nameWithType: Serializer.GetLength(DateTime)
 - uid: x2net.Serializer.GetLength(System.Double)
   name: GetLength(Double)
   href: api/x2net.Serializer.html#x2net_Serializer_GetLength_System_Double_
@@ -11930,22 +12006,22 @@ references:
   fullName.vb: x2net.Serializer.GetLength(Of T)(T)
   nameWithType: Serializer.GetLength<T>(T)
   nameWithType.vb: Serializer.GetLength(Of T)(T)
-- uid: x2net.Serializer.GetLength``1(List{``0})
+- uid: x2net.Serializer.GetLength``1(System.Collections.Generic.List{``0})
   name: GetLength<T>(List<T>)
-  href: api/x2net.Serializer.html#x2net_Serializer_GetLength__1_List___0__
-  commentId: M:x2net.Serializer.GetLength``1(List{``0})
+  href: api/x2net.Serializer.html#x2net_Serializer_GetLength__1_System_Collections_Generic_List___0__
+  commentId: M:x2net.Serializer.GetLength``1(System.Collections.Generic.List{``0})
   name.vb: GetLength(Of T)(List(Of T))
-  fullName: x2net.Serializer.GetLength<T>(List<T>)
-  fullName.vb: x2net.Serializer.GetLength(Of T)(List(Of T))
+  fullName: x2net.Serializer.GetLength<T>(System.Collections.Generic.List<T>)
+  fullName.vb: x2net.Serializer.GetLength(Of T)(System.Collections.Generic.List(Of T))
   nameWithType: Serializer.GetLength<T>(List<T>)
   nameWithType.vb: Serializer.GetLength(Of T)(List(Of T))
-- uid: x2net.Serializer.GetLength``2(Dictionary{``0,``1})
+- uid: x2net.Serializer.GetLength``2(System.Collections.Generic.Dictionary{``0,``1})
   name: GetLength<T, U>(Dictionary<T, U>)
-  href: api/x2net.Serializer.html#x2net_Serializer_GetLength__2_Dictionary___0___1__
-  commentId: M:x2net.Serializer.GetLength``2(Dictionary{``0,``1})
+  href: api/x2net.Serializer.html#x2net_Serializer_GetLength__2_System_Collections_Generic_Dictionary___0___1__
+  commentId: M:x2net.Serializer.GetLength``2(System.Collections.Generic.Dictionary{``0,``1})
   name.vb: GetLength(Of T, U)(Dictionary(Of T, U))
-  fullName: x2net.Serializer.GetLength<T, U>(Dictionary<T, U>)
-  fullName.vb: x2net.Serializer.GetLength(Of T, U)(Dictionary(Of T, U))
+  fullName: x2net.Serializer.GetLength<T, U>(System.Collections.Generic.Dictionary<T, U>)
+  fullName.vb: x2net.Serializer.GetLength(Of T, U)(System.Collections.Generic.Dictionary(Of T, U))
   nameWithType: Serializer.GetLength<T, U>(Dictionary<T, U>)
   nameWithType.vb: Serializer.GetLength(Of T, U)(Dictionary(Of T, U))
 - uid: x2net.Serializer.GetLengthNonnegative(System.Int32)
@@ -11961,12 +12037,6 @@ references:
   isSpec: "True"
   fullName: x2net.Serializer.GetLengthNonnegative
   nameWithType: Serializer.GetLengthNonnegative
-- uid: x2net.Serializer.Write(DateTime)
-  name: Write(DateTime)
-  href: api/x2net.Serializer.html#x2net_Serializer_Write_DateTime_
-  commentId: M:x2net.Serializer.Write(DateTime)
-  fullName: x2net.Serializer.Write(DateTime)
-  nameWithType: Serializer.Write(DateTime)
 - uid: x2net.Serializer.Write(System.Boolean)
   name: Write(Boolean)
   href: api/x2net.Serializer.html#x2net_Serializer_Write_System_Boolean_
@@ -11988,6 +12058,12 @@ references:
   fullName.vb: x2net.Serializer.Write(System.Byte())
   nameWithType: Serializer.Write(Byte[])
   nameWithType.vb: Serializer.Write(Byte())
+- uid: x2net.Serializer.Write(System.DateTime)
+  name: Write(DateTime)
+  href: api/x2net.Serializer.html#x2net_Serializer_Write_System_DateTime_
+  commentId: M:x2net.Serializer.Write(System.DateTime)
+  fullName: x2net.Serializer.Write(System.DateTime)
+  nameWithType: Serializer.Write(DateTime)
 - uid: x2net.Serializer.Write(System.Double)
   name: Write(Double)
   href: api/x2net.Serializer.html#x2net_Serializer_Write_System_Double_
@@ -12046,22 +12122,22 @@ references:
   fullName.vb: x2net.Serializer.Write(Of T)(T)
   nameWithType: Serializer.Write<T>(T)
   nameWithType.vb: Serializer.Write(Of T)(T)
-- uid: x2net.Serializer.Write``1(List{``0})
+- uid: x2net.Serializer.Write``1(System.Collections.Generic.List{``0})
   name: Write<T>(List<T>)
-  href: api/x2net.Serializer.html#x2net_Serializer_Write__1_List___0__
-  commentId: M:x2net.Serializer.Write``1(List{``0})
+  href: api/x2net.Serializer.html#x2net_Serializer_Write__1_System_Collections_Generic_List___0__
+  commentId: M:x2net.Serializer.Write``1(System.Collections.Generic.List{``0})
   name.vb: Write(Of T)(List(Of T))
-  fullName: x2net.Serializer.Write<T>(List<T>)
-  fullName.vb: x2net.Serializer.Write(Of T)(List(Of T))
+  fullName: x2net.Serializer.Write<T>(System.Collections.Generic.List<T>)
+  fullName.vb: x2net.Serializer.Write(Of T)(System.Collections.Generic.List(Of T))
   nameWithType: Serializer.Write<T>(List<T>)
   nameWithType.vb: Serializer.Write(Of T)(List(Of T))
-- uid: x2net.Serializer.Write``2(Dictionary{``0,``1})
+- uid: x2net.Serializer.Write``2(System.Collections.Generic.Dictionary{``0,``1})
   name: Write<T, U>(Dictionary<T, U>)
-  href: api/x2net.Serializer.html#x2net_Serializer_Write__2_Dictionary___0___1__
-  commentId: M:x2net.Serializer.Write``2(Dictionary{``0,``1})
+  href: api/x2net.Serializer.html#x2net_Serializer_Write__2_System_Collections_Generic_Dictionary___0___1__
+  commentId: M:x2net.Serializer.Write``2(System.Collections.Generic.Dictionary{``0,``1})
   name.vb: Write(Of T, U)(Dictionary(Of T, U))
-  fullName: x2net.Serializer.Write<T, U>(Dictionary<T, U>)
-  fullName.vb: x2net.Serializer.Write(Of T, U)(Dictionary(Of T, U))
+  fullName: x2net.Serializer.Write<T, U>(System.Collections.Generic.Dictionary<T, U>)
+  fullName.vb: x2net.Serializer.Write(Of T, U)(System.Collections.Generic.Dictionary(Of T, U))
   nameWithType: Serializer.Write<T, U>(Dictionary<T, U>)
   nameWithType.vb: Serializer.Write(Of T, U)(Dictionary(Of T, U))
 - uid: x2net.Serializer.WriteNonnegative(System.Int32)
@@ -12966,11 +13042,11 @@ references:
   isSpec: "True"
   fullName: x2net.TcpClient.TcpClient
   nameWithType: TcpClient.TcpClient
-- uid: x2net.TcpClient.ConnectInternal(Socket,EndPoint)
+- uid: x2net.TcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)
   name: ConnectInternal(Socket, EndPoint)
-  href: api/x2net.TcpClient.html#x2net_TcpClient_ConnectInternal_Socket_EndPoint_
-  commentId: M:x2net.TcpClient.ConnectInternal(Socket,EndPoint)
-  fullName: x2net.TcpClient.ConnectInternal(Socket, EndPoint)
+  href: api/x2net.TcpClient.html#x2net_TcpClient_ConnectInternal_System_Net_Sockets_Socket_System_Net_EndPoint_
+  commentId: M:x2net.TcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)
+  fullName: x2net.TcpClient.ConnectInternal(System.Net.Sockets.Socket, System.Net.EndPoint)
   nameWithType: TcpClient.ConnectInternal(Socket, EndPoint)
 - uid: x2net.TcpClient.ConnectInternal*
   name: ConnectInternal
@@ -13017,11 +13093,11 @@ references:
   commentId: T:x2net.TcpSession
   fullName: x2net.TcpSession
   nameWithType: TcpSession
-- uid: x2net.TcpSession.#ctor(x2net.SessionBasedLink,Socket)
+- uid: x2net.TcpSession.#ctor(x2net.SessionBasedLink,System.Net.Sockets.Socket)
   name: TcpSession(SessionBasedLink, Socket)
-  href: api/x2net.TcpSession.html#x2net_TcpSession__ctor_x2net_SessionBasedLink_Socket_
-  commentId: M:x2net.TcpSession.#ctor(x2net.SessionBasedLink,Socket)
-  fullName: x2net.TcpSession.TcpSession(x2net.SessionBasedLink, Socket)
+  href: api/x2net.TcpSession.html#x2net_TcpSession__ctor_x2net_SessionBasedLink_System_Net_Sockets_Socket_
+  commentId: M:x2net.TcpSession.#ctor(x2net.SessionBasedLink,System.Net.Sockets.Socket)
+  fullName: x2net.TcpSession.TcpSession(x2net.SessionBasedLink, System.Net.Sockets.Socket)
   nameWithType: TcpSession.TcpSession(SessionBasedLink, Socket)
 - uid: x2net.TcpSession.#ctor*
   name: TcpSession
@@ -13217,13 +13293,13 @@ references:
   fullName.vb: x2net.ThreadlessFlow(Of Q).TryDispatchAll()
   nameWithType: ThreadlessFlow<Q>.TryDispatchAll()
   nameWithType.vb: ThreadlessFlow(Of Q).TryDispatchAll()
-- uid: x2net.ThreadlessFlow`1.TryDispatchAll(List{x2net.Event})
+- uid: x2net.ThreadlessFlow`1.TryDispatchAll(System.Collections.Generic.List{x2net.Event})
   name: TryDispatchAll(List<Event>)
-  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_TryDispatchAll_List_x2net_Event__
-  commentId: M:x2net.ThreadlessFlow`1.TryDispatchAll(List{x2net.Event})
+  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_TryDispatchAll_System_Collections_Generic_List_x2net_Event__
+  commentId: M:x2net.ThreadlessFlow`1.TryDispatchAll(System.Collections.Generic.List{x2net.Event})
   name.vb: TryDispatchAll(List(Of Event))
-  fullName: x2net.ThreadlessFlow<Q>.TryDispatchAll(List<x2net.Event>)
-  fullName.vb: x2net.ThreadlessFlow(Of Q).TryDispatchAll(List(Of x2net.Event))
+  fullName: x2net.ThreadlessFlow<Q>.TryDispatchAll(System.Collections.Generic.List<x2net.Event>)
+  fullName.vb: x2net.ThreadlessFlow(Of Q).TryDispatchAll(System.Collections.Generic.List(Of x2net.Event))
   nameWithType: ThreadlessFlow<Q>.TryDispatchAll(List<Event>)
   nameWithType.vb: ThreadlessFlow(Of Q).TryDispatchAll(List(Of Event))
 - uid: x2net.ThreadlessFlow`1.TryDispatchAll*
@@ -13244,13 +13320,13 @@ references:
   fullName.vb: x2net.ThreadlessFlow(Of Q).Wait(System.Double, ByRef x2net.Event(), x2net.Event())
   nameWithType: ThreadlessFlow<Q>.Wait(Double, out Event[], Event[])
   nameWithType.vb: ThreadlessFlow(Of Q).Wait(Double, ByRef Event(), Event())
-- uid: x2net.ThreadlessFlow`1.Wait(TimeSpan,x2net.Event[]@,x2net.Event[])
+- uid: x2net.ThreadlessFlow`1.Wait(System.TimeSpan,x2net.Event[]@,x2net.Event[])
   name: Wait(TimeSpan, out Event[], Event[])
-  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Wait_TimeSpan_x2net_Event____x2net_Event___
-  commentId: M:x2net.ThreadlessFlow`1.Wait(TimeSpan,x2net.Event[]@,x2net.Event[])
+  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Wait_System_TimeSpan_x2net_Event____x2net_Event___
+  commentId: M:x2net.ThreadlessFlow`1.Wait(System.TimeSpan,x2net.Event[]@,x2net.Event[])
   name.vb: Wait(TimeSpan, ByRef Event(), Event())
-  fullName: x2net.ThreadlessFlow<Q>.Wait(TimeSpan, out x2net.Event[], x2net.Event[])
-  fullName.vb: x2net.ThreadlessFlow(Of Q).Wait(TimeSpan, ByRef x2net.Event(), x2net.Event())
+  fullName: x2net.ThreadlessFlow<Q>.Wait(System.TimeSpan, out x2net.Event[], x2net.Event[])
+  fullName.vb: x2net.ThreadlessFlow(Of Q).Wait(System.TimeSpan, ByRef x2net.Event(), x2net.Event())
   nameWithType: ThreadlessFlow<Q>.Wait(TimeSpan, out Event[], Event[])
   nameWithType.vb: ThreadlessFlow(Of Q).Wait(TimeSpan, ByRef Event(), Event())
 - uid: x2net.ThreadlessFlow`1.Wait*
@@ -13271,13 +13347,13 @@ references:
   fullName.vb: x2net.ThreadlessFlow(Of Q).Wait(Of T)(T, ByRef T, System.Double)
   nameWithType: ThreadlessFlow<Q>.Wait<T>(T, out T, Double)
   nameWithType.vb: ThreadlessFlow(Of Q).Wait(Of T)(T, ByRef T, Double)
-- uid: x2net.ThreadlessFlow`1.Wait``1(``0,``0@,TimeSpan)
+- uid: x2net.ThreadlessFlow`1.Wait``1(``0,``0@,System.TimeSpan)
   name: Wait<T>(T, out T, TimeSpan)
-  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Wait__1___0___0__TimeSpan_
-  commentId: M:x2net.ThreadlessFlow`1.Wait``1(``0,``0@,TimeSpan)
+  href: api/x2net.ThreadlessFlow-1.html#x2net_ThreadlessFlow_1_Wait__1___0___0__System_TimeSpan_
+  commentId: M:x2net.ThreadlessFlow`1.Wait``1(``0,``0@,System.TimeSpan)
   name.vb: Wait(Of T)(T, ByRef T, TimeSpan)
-  fullName: x2net.ThreadlessFlow<Q>.Wait<T>(T, out T, TimeSpan)
-  fullName.vb: x2net.ThreadlessFlow(Of Q).Wait(Of T)(T, ByRef T, TimeSpan)
+  fullName: x2net.ThreadlessFlow<Q>.Wait<T>(T, out T, System.TimeSpan)
+  fullName.vb: x2net.ThreadlessFlow(Of Q).Wait(Of T)(T, ByRef T, System.TimeSpan)
   nameWithType: ThreadlessFlow<Q>.Wait<T>(T, out T, TimeSpan)
   nameWithType.vb: ThreadlessFlow(Of Q).Wait(Of T)(T, ByRef T, TimeSpan)
 - uid: x2net.ThreadPoolFlow
@@ -13618,11 +13694,11 @@ references:
   commentId: M:x2net.TimeFlow.Reserve(x2net.Event,System.Double)
   fullName: x2net.TimeFlow.Reserve(x2net.Event, System.Double)
   nameWithType: TimeFlow.Reserve(Event, Double)
-- uid: x2net.TimeFlow.Reserve(x2net.Event,TimeSpan)
+- uid: x2net.TimeFlow.Reserve(x2net.Event,System.TimeSpan)
   name: Reserve(Event, TimeSpan)
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_Reserve_x2net_Event_TimeSpan_
-  commentId: M:x2net.TimeFlow.Reserve(x2net.Event,TimeSpan)
-  fullName: x2net.TimeFlow.Reserve(x2net.Event, TimeSpan)
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_Reserve_x2net_Event_System_TimeSpan_
+  commentId: M:x2net.TimeFlow.Reserve(x2net.Event,System.TimeSpan)
+  fullName: x2net.TimeFlow.Reserve(x2net.Event, System.TimeSpan)
   nameWithType: TimeFlow.Reserve(Event, TimeSpan)
 - uid: x2net.TimeFlow.Reserve*
   name: Reserve
@@ -13631,11 +13707,11 @@ references:
   isSpec: "True"
   fullName: x2net.TimeFlow.Reserve
   nameWithType: TimeFlow.Reserve
-- uid: x2net.TimeFlow.ReserveAtLocalTime(x2net.Event,DateTime)
+- uid: x2net.TimeFlow.ReserveAtLocalTime(x2net.Event,System.DateTime)
   name: ReserveAtLocalTime(Event, DateTime)
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_ReserveAtLocalTime_x2net_Event_DateTime_
-  commentId: M:x2net.TimeFlow.ReserveAtLocalTime(x2net.Event,DateTime)
-  fullName: x2net.TimeFlow.ReserveAtLocalTime(x2net.Event, DateTime)
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_ReserveAtLocalTime_x2net_Event_System_DateTime_
+  commentId: M:x2net.TimeFlow.ReserveAtLocalTime(x2net.Event,System.DateTime)
+  fullName: x2net.TimeFlow.ReserveAtLocalTime(x2net.Event, System.DateTime)
   nameWithType: TimeFlow.ReserveAtLocalTime(Event, DateTime)
 - uid: x2net.TimeFlow.ReserveAtLocalTime*
   name: ReserveAtLocalTime
@@ -13644,11 +13720,11 @@ references:
   isSpec: "True"
   fullName: x2net.TimeFlow.ReserveAtLocalTime
   nameWithType: TimeFlow.ReserveAtLocalTime
-- uid: x2net.TimeFlow.ReserveAtUniversalTime(x2net.Event,DateTime)
+- uid: x2net.TimeFlow.ReserveAtUniversalTime(x2net.Event,System.DateTime)
   name: ReserveAtUniversalTime(Event, DateTime)
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_ReserveAtUniversalTime_x2net_Event_DateTime_
-  commentId: M:x2net.TimeFlow.ReserveAtUniversalTime(x2net.Event,DateTime)
-  fullName: x2net.TimeFlow.ReserveAtUniversalTime(x2net.Event, DateTime)
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_ReserveAtUniversalTime_x2net_Event_System_DateTime_
+  commentId: M:x2net.TimeFlow.ReserveAtUniversalTime(x2net.Event,System.DateTime)
+  fullName: x2net.TimeFlow.ReserveAtUniversalTime(x2net.Event, System.DateTime)
   nameWithType: TimeFlow.ReserveAtUniversalTime(Event, DateTime)
 - uid: x2net.TimeFlow.ReserveAtUniversalTime*
   name: ReserveAtUniversalTime
@@ -13657,17 +13733,17 @@ references:
   isSpec: "True"
   fullName: x2net.TimeFlow.ReserveAtUniversalTime
   nameWithType: TimeFlow.ReserveAtUniversalTime
-- uid: x2net.TimeFlow.ReserveRepetition(x2net.Event,DateTime,TimeSpan)
+- uid: x2net.TimeFlow.ReserveRepetition(x2net.Event,System.DateTime,System.TimeSpan)
   name: ReserveRepetition(Event, DateTime, TimeSpan)
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_ReserveRepetition_x2net_Event_DateTime_TimeSpan_
-  commentId: M:x2net.TimeFlow.ReserveRepetition(x2net.Event,DateTime,TimeSpan)
-  fullName: x2net.TimeFlow.ReserveRepetition(x2net.Event, DateTime, TimeSpan)
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_ReserveRepetition_x2net_Event_System_DateTime_System_TimeSpan_
+  commentId: M:x2net.TimeFlow.ReserveRepetition(x2net.Event,System.DateTime,System.TimeSpan)
+  fullName: x2net.TimeFlow.ReserveRepetition(x2net.Event, System.DateTime, System.TimeSpan)
   nameWithType: TimeFlow.ReserveRepetition(Event, DateTime, TimeSpan)
-- uid: x2net.TimeFlow.ReserveRepetition(x2net.Event,TimeSpan)
+- uid: x2net.TimeFlow.ReserveRepetition(x2net.Event,System.TimeSpan)
   name: ReserveRepetition(Event, TimeSpan)
-  href: api/x2net.TimeFlow.html#x2net_TimeFlow_ReserveRepetition_x2net_Event_TimeSpan_
-  commentId: M:x2net.TimeFlow.ReserveRepetition(x2net.Event,TimeSpan)
-  fullName: x2net.TimeFlow.ReserveRepetition(x2net.Event, TimeSpan)
+  href: api/x2net.TimeFlow.html#x2net_TimeFlow_ReserveRepetition_x2net_Event_System_TimeSpan_
+  commentId: M:x2net.TimeFlow.ReserveRepetition(x2net.Event,System.TimeSpan)
+  fullName: x2net.TimeFlow.ReserveRepetition(x2net.Event, System.TimeSpan)
   nameWithType: TimeFlow.ReserveRepetition(Event, TimeSpan)
 - uid: x2net.TimeFlow.ReserveRepetition*
   name: ReserveRepetition
@@ -13714,11 +13790,11 @@ references:
   isSpec: "True"
   fullName: x2net.TimeoutEvent.TimeoutEvent
   nameWithType: TimeoutEvent.TimeoutEvent
-- uid: x2net.TimeoutEvent.Describe(StringBuilder)
+- uid: x2net.TimeoutEvent.Describe(System.Text.StringBuilder)
   name: Describe(StringBuilder)
-  href: api/x2net.TimeoutEvent.html#x2net_TimeoutEvent_Describe_StringBuilder_
-  commentId: M:x2net.TimeoutEvent.Describe(StringBuilder)
-  fullName: x2net.TimeoutEvent.Describe(StringBuilder)
+  href: api/x2net.TimeoutEvent.html#x2net_TimeoutEvent_Describe_System_Text_StringBuilder_
+  commentId: M:x2net.TimeoutEvent.Describe(System.Text.StringBuilder)
+  fullName: x2net.TimeoutEvent.Describe(System.Text.StringBuilder)
   nameWithType: TimeoutEvent.Describe(StringBuilder)
 - uid: x2net.TimeoutEvent.Describe*
   name: Describe
@@ -13869,11 +13945,11 @@ references:
   commentId: T:x2net.Timer
   fullName: x2net.Timer
   nameWithType: Timer
-- uid: x2net.Timer.#ctor(TimerCallback)
+- uid: x2net.Timer.#ctor(System.Threading.TimerCallback)
   name: Timer(TimerCallback)
-  href: api/x2net.Timer.html#x2net_Timer__ctor_TimerCallback_
-  commentId: M:x2net.Timer.#ctor(TimerCallback)
-  fullName: x2net.Timer.Timer(TimerCallback)
+  href: api/x2net.Timer.html#x2net_Timer__ctor_System_Threading_TimerCallback_
+  commentId: M:x2net.Timer.#ctor(System.Threading.TimerCallback)
+  fullName: x2net.Timer.Timer(System.Threading.TimerCallback)
   nameWithType: Timer.Timer(TimerCallback)
 - uid: x2net.Timer.#ctor*
   name: Timer
@@ -13933,11 +14009,11 @@ references:
   commentId: M:x2net.Timer.Reserve(System.Object,System.Double)
   fullName: x2net.Timer.Reserve(System.Object, System.Double)
   nameWithType: Timer.Reserve(Object, Double)
-- uid: x2net.Timer.Reserve(System.Object,TimeSpan)
+- uid: x2net.Timer.Reserve(System.Object,System.TimeSpan)
   name: Reserve(Object, TimeSpan)
-  href: api/x2net.Timer.html#x2net_Timer_Reserve_System_Object_TimeSpan_
-  commentId: M:x2net.Timer.Reserve(System.Object,TimeSpan)
-  fullName: x2net.Timer.Reserve(System.Object, TimeSpan)
+  href: api/x2net.Timer.html#x2net_Timer_Reserve_System_Object_System_TimeSpan_
+  commentId: M:x2net.Timer.Reserve(System.Object,System.TimeSpan)
+  fullName: x2net.Timer.Reserve(System.Object, System.TimeSpan)
   nameWithType: Timer.Reserve(Object, TimeSpan)
 - uid: x2net.Timer.Reserve*
   name: Reserve
@@ -13946,11 +14022,11 @@ references:
   isSpec: "True"
   fullName: x2net.Timer.Reserve
   nameWithType: Timer.Reserve
-- uid: x2net.Timer.ReserveAtLocalTime(System.Object,DateTime)
+- uid: x2net.Timer.ReserveAtLocalTime(System.Object,System.DateTime)
   name: ReserveAtLocalTime(Object, DateTime)
-  href: api/x2net.Timer.html#x2net_Timer_ReserveAtLocalTime_System_Object_DateTime_
-  commentId: M:x2net.Timer.ReserveAtLocalTime(System.Object,DateTime)
-  fullName: x2net.Timer.ReserveAtLocalTime(System.Object, DateTime)
+  href: api/x2net.Timer.html#x2net_Timer_ReserveAtLocalTime_System_Object_System_DateTime_
+  commentId: M:x2net.Timer.ReserveAtLocalTime(System.Object,System.DateTime)
+  fullName: x2net.Timer.ReserveAtLocalTime(System.Object, System.DateTime)
   nameWithType: Timer.ReserveAtLocalTime(Object, DateTime)
 - uid: x2net.Timer.ReserveAtLocalTime*
   name: ReserveAtLocalTime
@@ -13959,11 +14035,11 @@ references:
   isSpec: "True"
   fullName: x2net.Timer.ReserveAtLocalTime
   nameWithType: Timer.ReserveAtLocalTime
-- uid: x2net.Timer.ReserveAtUniversalTime(System.Object,DateTime)
+- uid: x2net.Timer.ReserveAtUniversalTime(System.Object,System.DateTime)
   name: ReserveAtUniversalTime(Object, DateTime)
-  href: api/x2net.Timer.html#x2net_Timer_ReserveAtUniversalTime_System_Object_DateTime_
-  commentId: M:x2net.Timer.ReserveAtUniversalTime(System.Object,DateTime)
-  fullName: x2net.Timer.ReserveAtUniversalTime(System.Object, DateTime)
+  href: api/x2net.Timer.html#x2net_Timer_ReserveAtUniversalTime_System_Object_System_DateTime_
+  commentId: M:x2net.Timer.ReserveAtUniversalTime(System.Object,System.DateTime)
+  fullName: x2net.Timer.ReserveAtUniversalTime(System.Object, System.DateTime)
   nameWithType: Timer.ReserveAtUniversalTime(Object, DateTime)
 - uid: x2net.Timer.ReserveAtUniversalTime*
   name: ReserveAtUniversalTime
@@ -13972,17 +14048,17 @@ references:
   isSpec: "True"
   fullName: x2net.Timer.ReserveAtUniversalTime
   nameWithType: Timer.ReserveAtUniversalTime
-- uid: x2net.Timer.ReserveRepetition(System.Object,DateTime,TimeSpan)
+- uid: x2net.Timer.ReserveRepetition(System.Object,System.DateTime,System.TimeSpan)
   name: ReserveRepetition(Object, DateTime, TimeSpan)
-  href: api/x2net.Timer.html#x2net_Timer_ReserveRepetition_System_Object_DateTime_TimeSpan_
-  commentId: M:x2net.Timer.ReserveRepetition(System.Object,DateTime,TimeSpan)
-  fullName: x2net.Timer.ReserveRepetition(System.Object, DateTime, TimeSpan)
+  href: api/x2net.Timer.html#x2net_Timer_ReserveRepetition_System_Object_System_DateTime_System_TimeSpan_
+  commentId: M:x2net.Timer.ReserveRepetition(System.Object,System.DateTime,System.TimeSpan)
+  fullName: x2net.Timer.ReserveRepetition(System.Object, System.DateTime, System.TimeSpan)
   nameWithType: Timer.ReserveRepetition(Object, DateTime, TimeSpan)
-- uid: x2net.Timer.ReserveRepetition(System.Object,TimeSpan)
+- uid: x2net.Timer.ReserveRepetition(System.Object,System.TimeSpan)
   name: ReserveRepetition(Object, TimeSpan)
-  href: api/x2net.Timer.html#x2net_Timer_ReserveRepetition_System_Object_TimeSpan_
-  commentId: M:x2net.Timer.ReserveRepetition(System.Object,TimeSpan)
-  fullName: x2net.Timer.ReserveRepetition(System.Object, TimeSpan)
+  href: api/x2net.Timer.html#x2net_Timer_ReserveRepetition_System_Object_System_TimeSpan_
+  commentId: M:x2net.Timer.ReserveRepetition(System.Object,System.TimeSpan)
+  fullName: x2net.Timer.ReserveRepetition(System.Object, System.TimeSpan)
   nameWithType: Timer.ReserveRepetition(Object, TimeSpan)
 - uid: x2net.Timer.ReserveRepetition*
   name: ReserveRepetition
@@ -14010,11 +14086,11 @@ references:
   commentId: T:x2net.Timer.Token
   fullName: x2net.Timer.Token
   nameWithType: Timer.Token
-- uid: x2net.Timer.Token.#ctor(DateTime,System.Object)
+- uid: x2net.Timer.Token.#ctor(System.DateTime,System.Object)
   name: Token(DateTime, Object)
-  href: api/x2net.Timer.Token.html#x2net_Timer_Token__ctor_DateTime_System_Object_
-  commentId: M:x2net.Timer.Token.#ctor(DateTime,System.Object)
-  fullName: x2net.Timer.Token.Token(DateTime, System.Object)
+  href: api/x2net.Timer.Token.html#x2net_Timer_Token__ctor_System_DateTime_System_Object_
+  commentId: M:x2net.Timer.Token.#ctor(System.DateTime,System.Object)
+  fullName: x2net.Timer.Token.Token(System.DateTime, System.Object)
   nameWithType: Timer.Token.Token(DateTime, Object)
 - uid: x2net.Timer.Token.#ctor*
   name: Token
@@ -14127,11 +14203,11 @@ references:
   commentId: M:x2net.Trace.Error(System.String)
   fullName: x2net.Trace.Error(System.String)
   nameWithType: Trace.Error(String)
-- uid: x2net.Trace.Error(System.String,Exception)
+- uid: x2net.Trace.Error(System.String,System.Exception)
   name: Error(String, Exception)
-  href: api/x2net.Trace.html#x2net_Trace_Error_System_String_Exception_
-  commentId: M:x2net.Trace.Error(System.String,Exception)
-  fullName: x2net.Trace.Error(System.String, Exception)
+  href: api/x2net.Trace.html#x2net_Trace_Error_System_String_System_Exception_
+  commentId: M:x2net.Trace.Error(System.String,System.Exception)
+  fullName: x2net.Trace.Error(System.String, System.Exception)
   nameWithType: Trace.Error(String, Exception)
 - uid: x2net.Trace.Error(System.String,System.Object)
   name: Error(String, Object)
@@ -14312,12 +14388,6 @@ references:
   commentId: T:x2net.TraceLevel
   fullName: x2net.TraceLevel
   nameWithType: TraceLevel
-- uid: x2net.TraceLevel.All
-  name: All
-  href: api/x2net.TraceLevel.html#x2net_TraceLevel_All
-  commentId: F:x2net.TraceLevel.All
-  fullName: x2net.TraceLevel.All
-  nameWithType: TraceLevel.All
 - uid: x2net.TraceLevel.Debug
   name: Debug
   href: api/x2net.TraceLevel.html#x2net_TraceLevel_Debug
@@ -14386,11 +14456,11 @@ references:
   isSpec: "True"
   fullName: x2net.UdpLink.ReceiveFromInternal
   nameWithType: UdpLink.ReceiveFromInternal
-- uid: x2net.UdpLink.SendToInternal(EndPoint)
+- uid: x2net.UdpLink.SendToInternal(System.Net.EndPoint)
   name: SendToInternal(EndPoint)
-  href: api/x2net.UdpLink.html#x2net_UdpLink_SendToInternal_EndPoint_
-  commentId: M:x2net.UdpLink.SendToInternal(EndPoint)
-  fullName: x2net.UdpLink.SendToInternal(EndPoint)
+  href: api/x2net.UdpLink.html#x2net_UdpLink_SendToInternal_System_Net_EndPoint_
+  commentId: M:x2net.UdpLink.SendToInternal(System.Net.EndPoint)
+  fullName: x2net.UdpLink.SendToInternal(System.Net.EndPoint)
   nameWithType: UdpLink.SendToInternal(EndPoint)
 - uid: x2net.UdpLink.SendToInternal*
   name: SendToInternal
@@ -14405,11 +14475,11 @@ references:
   commentId: T:x2net.UpgradeableReadLock
   fullName: x2net.UpgradeableReadLock
   nameWithType: UpgradeableReadLock
-- uid: x2net.UpgradeableReadLock.#ctor(ReaderWriterLockSlim)
+- uid: x2net.UpgradeableReadLock.#ctor(System.Threading.ReaderWriterLockSlim)
   name: UpgradeableReadLock(ReaderWriterLockSlim)
-  href: api/x2net.UpgradeableReadLock.html#x2net_UpgradeableReadLock__ctor_ReaderWriterLockSlim_
-  commentId: M:x2net.UpgradeableReadLock.#ctor(ReaderWriterLockSlim)
-  fullName: x2net.UpgradeableReadLock.UpgradeableReadLock(ReaderWriterLockSlim)
+  href: api/x2net.UpgradeableReadLock.html#x2net_UpgradeableReadLock__ctor_System_Threading_ReaderWriterLockSlim_
+  commentId: M:x2net.UpgradeableReadLock.#ctor(System.Threading.ReaderWriterLockSlim)
+  fullName: x2net.UpgradeableReadLock.UpgradeableReadLock(System.Threading.ReaderWriterLockSlim)
   nameWithType: UpgradeableReadLock.UpgradeableReadLock(ReaderWriterLockSlim)
 - uid: x2net.UpgradeableReadLock.#ctor*
   name: UpgradeableReadLock
@@ -14579,13 +14649,13 @@ references:
   commentId: T:x2net.WaitForCompletion
   fullName: x2net.WaitForCompletion
   nameWithType: WaitForCompletion
-- uid: x2net.WaitForCompletion.#ctor(x2net.Coroutine,Func{x2net.Coroutine,IEnumerator})
+- uid: x2net.WaitForCompletion.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,System.Collections.IEnumerator})
   name: WaitForCompletion(Coroutine, Func<Coroutine, IEnumerator>)
-  href: api/x2net.WaitForCompletion.html#x2net_WaitForCompletion__ctor_x2net_Coroutine_Func_x2net_Coroutine_IEnumerator__
-  commentId: M:x2net.WaitForCompletion.#ctor(x2net.Coroutine,Func{x2net.Coroutine,IEnumerator})
+  href: api/x2net.WaitForCompletion.html#x2net_WaitForCompletion__ctor_x2net_Coroutine_System_Func_x2net_Coroutine_System_Collections_IEnumerator__
+  commentId: M:x2net.WaitForCompletion.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,System.Collections.IEnumerator})
   name.vb: WaitForCompletion(Coroutine, Func(Of Coroutine, IEnumerator))
-  fullName: x2net.WaitForCompletion.WaitForCompletion(x2net.Coroutine, Func<x2net.Coroutine, IEnumerator>)
-  fullName.vb: x2net.WaitForCompletion.WaitForCompletion(x2net.Coroutine, Func(Of x2net.Coroutine, IEnumerator))
+  fullName: x2net.WaitForCompletion.WaitForCompletion(x2net.Coroutine, System.Func<x2net.Coroutine, System.Collections.IEnumerator>)
+  fullName.vb: x2net.WaitForCompletion.WaitForCompletion(x2net.Coroutine, System.Func(Of x2net.Coroutine, System.Collections.IEnumerator))
   nameWithType: WaitForCompletion.WaitForCompletion(Coroutine, Func<Coroutine, IEnumerator>)
   nameWithType.vb: WaitForCompletion.WaitForCompletion(Coroutine, Func(Of Coroutine, IEnumerator))
 - uid: x2net.WaitForCompletion.#ctor*
@@ -14604,13 +14674,13 @@ references:
   fullName.vb: x2net.WaitForCompletion(Of T)
   nameWithType: WaitForCompletion<T>
   nameWithType.vb: WaitForCompletion(Of T)
-- uid: x2net.WaitForCompletion`1.#ctor(x2net.Coroutine,Func{x2net.Coroutine,`0,IEnumerator},`0)
+- uid: x2net.WaitForCompletion`1.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,`0,System.Collections.IEnumerator},`0)
   name: WaitForCompletion(Coroutine, Func<Coroutine, T, IEnumerator>, T)
-  href: api/x2net.WaitForCompletion-1.html#x2net_WaitForCompletion_1__ctor_x2net_Coroutine_Func_x2net_Coroutine__0_IEnumerator___0_
-  commentId: M:x2net.WaitForCompletion`1.#ctor(x2net.Coroutine,Func{x2net.Coroutine,`0,IEnumerator},`0)
+  href: api/x2net.WaitForCompletion-1.html#x2net_WaitForCompletion_1__ctor_x2net_Coroutine_System_Func_x2net_Coroutine__0_System_Collections_IEnumerator___0_
+  commentId: M:x2net.WaitForCompletion`1.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,`0,System.Collections.IEnumerator},`0)
   name.vb: WaitForCompletion(Coroutine, Func(Of Coroutine, T, IEnumerator), T)
-  fullName: x2net.WaitForCompletion<T>.WaitForCompletion(x2net.Coroutine, Func<x2net.Coroutine, T, IEnumerator>, T)
-  fullName.vb: x2net.WaitForCompletion(Of T).WaitForCompletion(x2net.Coroutine, Func(Of x2net.Coroutine, T, IEnumerator), T)
+  fullName: x2net.WaitForCompletion<T>.WaitForCompletion(x2net.Coroutine, System.Func<x2net.Coroutine, T, System.Collections.IEnumerator>, T)
+  fullName.vb: x2net.WaitForCompletion(Of T).WaitForCompletion(x2net.Coroutine, System.Func(Of x2net.Coroutine, T, System.Collections.IEnumerator), T)
   nameWithType: WaitForCompletion<T>.WaitForCompletion(Coroutine, Func<Coroutine, T, IEnumerator>, T)
   nameWithType.vb: WaitForCompletion(Of T).WaitForCompletion(Coroutine, Func(Of Coroutine, T, IEnumerator), T)
 - uid: x2net.WaitForCompletion`1.#ctor*
@@ -14631,13 +14701,13 @@ references:
   fullName.vb: x2net.WaitForCompletion(Of T1, T2)
   nameWithType: WaitForCompletion<T1, T2>
   nameWithType.vb: WaitForCompletion(Of T1, T2)
-- uid: x2net.WaitForCompletion`2.#ctor(x2net.Coroutine,Func{x2net.Coroutine,`0,`1,IEnumerator},`0,`1)
+- uid: x2net.WaitForCompletion`2.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,`0,`1,System.Collections.IEnumerator},`0,`1)
   name: WaitForCompletion(Coroutine, Func<Coroutine, T1, T2, IEnumerator>, T1, T2)
-  href: api/x2net.WaitForCompletion-2.html#x2net_WaitForCompletion_2__ctor_x2net_Coroutine_Func_x2net_Coroutine__0__1_IEnumerator___0__1_
-  commentId: M:x2net.WaitForCompletion`2.#ctor(x2net.Coroutine,Func{x2net.Coroutine,`0,`1,IEnumerator},`0,`1)
+  href: api/x2net.WaitForCompletion-2.html#x2net_WaitForCompletion_2__ctor_x2net_Coroutine_System_Func_x2net_Coroutine__0__1_System_Collections_IEnumerator___0__1_
+  commentId: M:x2net.WaitForCompletion`2.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,`0,`1,System.Collections.IEnumerator},`0,`1)
   name.vb: WaitForCompletion(Coroutine, Func(Of Coroutine, T1, T2, IEnumerator), T1, T2)
-  fullName: x2net.WaitForCompletion<T1, T2>.WaitForCompletion(x2net.Coroutine, Func<x2net.Coroutine, T1, T2, IEnumerator>, T1, T2)
-  fullName.vb: x2net.WaitForCompletion(Of T1, T2).WaitForCompletion(x2net.Coroutine, Func(Of x2net.Coroutine, T1, T2, IEnumerator), T1, T2)
+  fullName: x2net.WaitForCompletion<T1, T2>.WaitForCompletion(x2net.Coroutine, System.Func<x2net.Coroutine, T1, T2, System.Collections.IEnumerator>, T1, T2)
+  fullName.vb: x2net.WaitForCompletion(Of T1, T2).WaitForCompletion(x2net.Coroutine, System.Func(Of x2net.Coroutine, T1, T2, System.Collections.IEnumerator), T1, T2)
   nameWithType: WaitForCompletion<T1, T2>.WaitForCompletion(Coroutine, Func<Coroutine, T1, T2, IEnumerator>, T1, T2)
   nameWithType.vb: WaitForCompletion(Of T1, T2).WaitForCompletion(Coroutine, Func(Of Coroutine, T1, T2, IEnumerator), T1, T2)
 - uid: x2net.WaitForCompletion`2.#ctor*
@@ -14658,13 +14728,13 @@ references:
   fullName.vb: x2net.WaitForCompletion(Of T1, T2, T3)
   nameWithType: WaitForCompletion<T1, T2, T3>
   nameWithType.vb: WaitForCompletion(Of T1, T2, T3)
-- uid: x2net.WaitForCompletion`3.#ctor(x2net.Coroutine,Func{x2net.Coroutine,`0,`1,`2,IEnumerator},`0,`1,`2)
+- uid: x2net.WaitForCompletion`3.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,`0,`1,`2,System.Collections.IEnumerator},`0,`1,`2)
   name: WaitForCompletion(Coroutine, Func<Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
-  href: api/x2net.WaitForCompletion-3.html#x2net_WaitForCompletion_3__ctor_x2net_Coroutine_Func_x2net_Coroutine__0__1__2_IEnumerator___0__1__2_
-  commentId: M:x2net.WaitForCompletion`3.#ctor(x2net.Coroutine,Func{x2net.Coroutine,`0,`1,`2,IEnumerator},`0,`1,`2)
+  href: api/x2net.WaitForCompletion-3.html#x2net_WaitForCompletion_3__ctor_x2net_Coroutine_System_Func_x2net_Coroutine__0__1__2_System_Collections_IEnumerator___0__1__2_
+  commentId: M:x2net.WaitForCompletion`3.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,`0,`1,`2,System.Collections.IEnumerator},`0,`1,`2)
   name.vb: WaitForCompletion(Coroutine, Func(Of Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
-  fullName: x2net.WaitForCompletion<T1, T2, T3>.WaitForCompletion(x2net.Coroutine, Func<x2net.Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
-  fullName.vb: x2net.WaitForCompletion(Of T1, T2, T3).WaitForCompletion(x2net.Coroutine, Func(Of x2net.Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
+  fullName: x2net.WaitForCompletion<T1, T2, T3>.WaitForCompletion(x2net.Coroutine, System.Func<x2net.Coroutine, T1, T2, T3, System.Collections.IEnumerator>, T1, T2, T3)
+  fullName.vb: x2net.WaitForCompletion(Of T1, T2, T3).WaitForCompletion(x2net.Coroutine, System.Func(Of x2net.Coroutine, T1, T2, T3, System.Collections.IEnumerator), T1, T2, T3)
   nameWithType: WaitForCompletion<T1, T2, T3>.WaitForCompletion(Coroutine, Func<Coroutine, T1, T2, T3, IEnumerator>, T1, T2, T3)
   nameWithType.vb: WaitForCompletion(Of T1, T2, T3).WaitForCompletion(Coroutine, Func(Of Coroutine, T1, T2, T3, IEnumerator), T1, T2, T3)
 - uid: x2net.WaitForCompletion`3.#ctor*
@@ -14676,6 +14746,33 @@ references:
   fullName.vb: x2net.WaitForCompletion(Of T1, T2, T3).WaitForCompletion
   nameWithType: WaitForCompletion<T1, T2, T3>.WaitForCompletion
   nameWithType.vb: WaitForCompletion(Of T1, T2, T3).WaitForCompletion
+- uid: x2net.WaitForCompletion`4
+  name: WaitForCompletion<T1, T2, T3, T4>
+  href: api/x2net.WaitForCompletion-4.html
+  commentId: T:x2net.WaitForCompletion`4
+  name.vb: WaitForCompletion(Of T1, T2, T3, T4)
+  fullName: x2net.WaitForCompletion<T1, T2, T3, T4>
+  fullName.vb: x2net.WaitForCompletion(Of T1, T2, T3, T4)
+  nameWithType: WaitForCompletion<T1, T2, T3, T4>
+  nameWithType.vb: WaitForCompletion(Of T1, T2, T3, T4)
+- uid: x2net.WaitForCompletion`4.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,`0,`1,`2,`3,System.Collections.IEnumerator},`0,`1,`2,`3)
+  name: WaitForCompletion(Coroutine, Func<Coroutine, T1, T2, T3, T4, IEnumerator>, T1, T2, T3, T4)
+  href: api/x2net.WaitForCompletion-4.html#x2net_WaitForCompletion_4__ctor_x2net_Coroutine_System_Func_x2net_Coroutine__0__1__2__3_System_Collections_IEnumerator___0__1__2__3_
+  commentId: M:x2net.WaitForCompletion`4.#ctor(x2net.Coroutine,System.Func{x2net.Coroutine,`0,`1,`2,`3,System.Collections.IEnumerator},`0,`1,`2,`3)
+  name.vb: WaitForCompletion(Coroutine, Func(Of Coroutine, T1, T2, T3, T4, IEnumerator), T1, T2, T3, T4)
+  fullName: x2net.WaitForCompletion<T1, T2, T3, T4>.WaitForCompletion(x2net.Coroutine, System.Func<x2net.Coroutine, T1, T2, T3, T4, System.Collections.IEnumerator>, T1, T2, T3, T4)
+  fullName.vb: x2net.WaitForCompletion(Of T1, T2, T3, T4).WaitForCompletion(x2net.Coroutine, System.Func(Of x2net.Coroutine, T1, T2, T3, T4, System.Collections.IEnumerator), T1, T2, T3, T4)
+  nameWithType: WaitForCompletion<T1, T2, T3, T4>.WaitForCompletion(Coroutine, Func<Coroutine, T1, T2, T3, T4, IEnumerator>, T1, T2, T3, T4)
+  nameWithType.vb: WaitForCompletion(Of T1, T2, T3, T4).WaitForCompletion(Coroutine, Func(Of Coroutine, T1, T2, T3, T4, IEnumerator), T1, T2, T3, T4)
+- uid: x2net.WaitForCompletion`4.#ctor*
+  name: WaitForCompletion
+  href: api/x2net.WaitForCompletion-4.html#x2net_WaitForCompletion_4__ctor_
+  commentId: Overload:x2net.WaitForCompletion`4.#ctor
+  isSpec: "True"
+  fullName: x2net.WaitForCompletion<T1, T2, T3, T4>.WaitForCompletion
+  fullName.vb: x2net.WaitForCompletion(Of T1, T2, T3, T4).WaitForCompletion
+  nameWithType: WaitForCompletion<T1, T2, T3, T4>.WaitForCompletion
+  nameWithType.vb: WaitForCompletion(Of T1, T2, T3, T4).WaitForCompletion
 - uid: x2net.WaitForEvent
   name: WaitForEvent
   href: api/x2net.WaitForEvent.html
@@ -14776,6 +14873,67 @@ references:
   isSpec: "True"
   fullName: x2net.WaitForSeconds.WaitForSeconds
   nameWithType: WaitForSeconds.WaitForSeconds
+- uid: x2net.WaitForTask
+  name: WaitForTask
+  href: api/x2net.WaitForTask.html
+  commentId: T:x2net.WaitForTask
+  fullName: x2net.WaitForTask
+  nameWithType: WaitForTask
+- uid: x2net.WaitForTask.#ctor(x2net.Coroutine,System.Threading.Tasks.Task)
+  name: WaitForTask(Coroutine, Task)
+  href: api/x2net.WaitForTask.html#x2net_WaitForTask__ctor_x2net_Coroutine_System_Threading_Tasks_Task_
+  commentId: M:x2net.WaitForTask.#ctor(x2net.Coroutine,System.Threading.Tasks.Task)
+  fullName: x2net.WaitForTask.WaitForTask(x2net.Coroutine, System.Threading.Tasks.Task)
+  nameWithType: WaitForTask.WaitForTask(Coroutine, Task)
+- uid: x2net.WaitForTask.#ctor(x2net.Coroutine,System.Threading.Tasks.Task,System.Double)
+  name: WaitForTask(Coroutine, Task, Double)
+  href: api/x2net.WaitForTask.html#x2net_WaitForTask__ctor_x2net_Coroutine_System_Threading_Tasks_Task_System_Double_
+  commentId: M:x2net.WaitForTask.#ctor(x2net.Coroutine,System.Threading.Tasks.Task,System.Double)
+  fullName: x2net.WaitForTask.WaitForTask(x2net.Coroutine, System.Threading.Tasks.Task, System.Double)
+  nameWithType: WaitForTask.WaitForTask(Coroutine, Task, Double)
+- uid: x2net.WaitForTask.#ctor*
+  name: WaitForTask
+  href: api/x2net.WaitForTask.html#x2net_WaitForTask__ctor_
+  commentId: Overload:x2net.WaitForTask.#ctor
+  isSpec: "True"
+  fullName: x2net.WaitForTask.WaitForTask
+  nameWithType: WaitForTask.WaitForTask
+- uid: x2net.WaitForTask`1
+  name: WaitForTask<T>
+  href: api/x2net.WaitForTask-1.html
+  commentId: T:x2net.WaitForTask`1
+  name.vb: WaitForTask(Of T)
+  fullName: x2net.WaitForTask<T>
+  fullName.vb: x2net.WaitForTask(Of T)
+  nameWithType: WaitForTask<T>
+  nameWithType.vb: WaitForTask(Of T)
+- uid: x2net.WaitForTask`1.#ctor(x2net.Coroutine,System.Threading.Tasks.Task{`0})
+  name: WaitForTask(Coroutine, Task<T>)
+  href: api/x2net.WaitForTask-1.html#x2net_WaitForTask_1__ctor_x2net_Coroutine_System_Threading_Tasks_Task__0__
+  commentId: M:x2net.WaitForTask`1.#ctor(x2net.Coroutine,System.Threading.Tasks.Task{`0})
+  name.vb: WaitForTask(Coroutine, Task(Of T))
+  fullName: x2net.WaitForTask<T>.WaitForTask(x2net.Coroutine, System.Threading.Tasks.Task<T>)
+  fullName.vb: x2net.WaitForTask(Of T).WaitForTask(x2net.Coroutine, System.Threading.Tasks.Task(Of T))
+  nameWithType: WaitForTask<T>.WaitForTask(Coroutine, Task<T>)
+  nameWithType.vb: WaitForTask(Of T).WaitForTask(Coroutine, Task(Of T))
+- uid: x2net.WaitForTask`1.#ctor(x2net.Coroutine,System.Threading.Tasks.Task{`0},System.Double)
+  name: WaitForTask(Coroutine, Task<T>, Double)
+  href: api/x2net.WaitForTask-1.html#x2net_WaitForTask_1__ctor_x2net_Coroutine_System_Threading_Tasks_Task__0__System_Double_
+  commentId: M:x2net.WaitForTask`1.#ctor(x2net.Coroutine,System.Threading.Tasks.Task{`0},System.Double)
+  name.vb: WaitForTask(Coroutine, Task(Of T), Double)
+  fullName: x2net.WaitForTask<T>.WaitForTask(x2net.Coroutine, System.Threading.Tasks.Task<T>, System.Double)
+  fullName.vb: x2net.WaitForTask(Of T).WaitForTask(x2net.Coroutine, System.Threading.Tasks.Task(Of T), System.Double)
+  nameWithType: WaitForTask<T>.WaitForTask(Coroutine, Task<T>, Double)
+  nameWithType.vb: WaitForTask(Of T).WaitForTask(Coroutine, Task(Of T), Double)
+- uid: x2net.WaitForTask`1.#ctor*
+  name: WaitForTask
+  href: api/x2net.WaitForTask-1.html#x2net_WaitForTask_1__ctor_
+  commentId: Overload:x2net.WaitForTask`1.#ctor
+  isSpec: "True"
+  fullName: x2net.WaitForTask<T>.WaitForTask
+  fullName.vb: x2net.WaitForTask(Of T).WaitForTask
+  nameWithType: WaitForTask<T>.WaitForTask
+  nameWithType.vb: WaitForTask(Of T).WaitForTask
 - uid: x2net.WaitHandlePool
   name: WaitHandlePool
   href: api/x2net.WaitHandlePool.html
@@ -14814,11 +14972,11 @@ references:
   commentId: T:x2net.WriteLock
   fullName: x2net.WriteLock
   nameWithType: WriteLock
-- uid: x2net.WriteLock.#ctor(ReaderWriterLockSlim)
+- uid: x2net.WriteLock.#ctor(System.Threading.ReaderWriterLockSlim)
   name: WriteLock(ReaderWriterLockSlim)
-  href: api/x2net.WriteLock.html#x2net_WriteLock__ctor_ReaderWriterLockSlim_
-  commentId: M:x2net.WriteLock.#ctor(ReaderWriterLockSlim)
-  fullName: x2net.WriteLock.WriteLock(ReaderWriterLockSlim)
+  href: api/x2net.WriteLock.html#x2net_WriteLock__ctor_System_Threading_ReaderWriterLockSlim_
+  commentId: M:x2net.WriteLock.#ctor(System.Threading.ReaderWriterLockSlim)
+  fullName: x2net.WriteLock.WriteLock(System.Threading.ReaderWriterLockSlim)
   nameWithType: WriteLock.WriteLock(ReaderWriterLockSlim)
 - uid: x2net.WriteLock.#ctor*
   name: WriteLock

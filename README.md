@@ -57,6 +57,7 @@ or by the Package Manager console command `Install-Package`.
 
 * [x2net](https://www.nuget.org/packages/x2net)
 * [x2net.xpiler](https://www.nuget.org/packages/x2net.xpiler)
+* [x2net.xpiler.tools](https://www.nuget.org/packages/x2net.xpiler.tool) (.NET Core global tool for SDK 2.1+)
 
 See [Installation](https://jaykang920.github.io/x2net/articles/en/getting_started/install.html)
 for more about installation.

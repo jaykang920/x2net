@@ -14,6 +14,13 @@ xpiler는 x2 정의 파일들을 각각에 대응하는 C# 소스 코드 파일�
 
     PM> Install-Package x2net.xpiler
 
+### .NET Core 전역 도구
+
+.NET Core SDK 2.1 이상을 사용하고 있다면 다음과 같은 명령으로 `x2net.xpiler`를 .NET
+Core 전역 도구로 설치해 사용할 수 있습니다.
+
+    dotnet tool install -g x2net.xpiler.tool
+
 ## 소스 코드
 
 [GitHub 저장소](https://github.com/jaykang920/x2net)에서 x2net 소스 코드를 `clone`

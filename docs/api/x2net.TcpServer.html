@@ -89,6 +89,7 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
     <div><a class="xref" href="x2net.ICase.html">ICase</a></div>
   </div>
   <div class="inheritedMembers">
@@ -109,7 +110,7 @@
       <a class="xref" href="x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_Listen_System_String_System_Int32_">AbstractTcpServer.Listen(String, Int32)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_Listen_IPAddress_System_Int32_">AbstractTcpServer.Listen(IPAddress, Int32)</a>
+      <a class="xref" href="x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_Listen_System_Net_IPAddress_System_Int32_">AbstractTcpServer.Listen(IPAddress, Int32)</a>
     </div>
     <div>
       <a class="xref" href="x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_Dispose_System_Boolean_">AbstractTcpServer.Dispose(Boolean)</a>
@@ -232,38 +233,59 @@
       <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind_x2net_Binding_Token_">EventSink.Bind(Binding.Token)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Action___0__System_Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
       <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind_x2net_Binding_Token_">EventSink.Unbind(Binding.Token)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Action___0__System_Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
   <h6><strong>Assembly</strong>: x2net.dll</h6>
   <h5 id="x2net_TcpServer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TcpServer : AbstractTcpServer, ICase</code></pre>
+    <pre><code class="lang-csharp hljs">public class TcpServer : AbstractTcpServer, IDisposable, ICase</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -321,6 +343,9 @@
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="x2net.AbstractTcpServer.html#x2net_AbstractTcpServer_AcceptInternal">AbstractTcpServer.AcceptInternal()</a></div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
   <div>
       <a class="xref" href="x2net.ICase.html">ICase</a>
   </div>

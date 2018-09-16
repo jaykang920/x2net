@@ -89,6 +89,7 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
     <div><a class="xref" href="x2net.ICase.html">ICase</a></div>
   </div>
   <div class="inheritedMembers">
@@ -142,7 +143,7 @@
       <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectAndRequest_x2net_Event_">AbstractTcpClient.ConnectAndRequest(Event)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connect_IPAddress_System_Int32_">AbstractTcpClient.Connect(IPAddress, Int32)</a>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Connect_System_Net_IPAddress_System_Int32_">AbstractTcpClient.Connect(IPAddress, Int32)</a>
     </div>
     <div>
       <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_Disconnect">AbstractTcpClient.Disconnect()</a>
@@ -160,7 +161,7 @@
       <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnConnectInternal_x2net_LinkSession_">AbstractTcpClient.OnConnectInternal(LinkSession)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnConnectError_Socket_EndPoint_">AbstractTcpClient.OnConnectError(Socket, EndPoint)</a>
+      <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_OnConnectError_System_Net_Sockets_Socket_System_Net_EndPoint_">AbstractTcpClient.OnConnectError(Socket, EndPoint)</a>
     </div>
     <div>
       <a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_SetupInternal">AbstractTcpClient.SetupInternal()</a>
@@ -268,38 +269,59 @@
       <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind_x2net_Binding_Token_">EventSink.Bind(Binding.Token)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Action___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Action___0__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Action___0__System_Predicate___0__">EventSink.Bind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Bind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__">EventSink.Bind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
       <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind_x2net_Binding_Token_">EventSink.Unbind(Binding.Token)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Action___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Action___0__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Action___0__System_Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Action&lt;T&gt;, Predicate&lt;T&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_Func_x2net_Coroutine___0_IEnumerator__Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+      <a class="xref" href="x2net.EventSink.html#x2net_EventSink_Unbind__1___0_System_Func_x2net_Coroutine___0_System_Collections_IEnumerator__System_Predicate___0__">EventSink.Unbind&lt;T&gt;(T, Func&lt;Coroutine, T, IEnumerator&gt;, Predicate&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
   <h6><strong>Assembly</strong>: x2net.dll</h6>
   <h5 id="x2net_TcpClient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class TcpClient : AbstractTcpClient, ICase</code></pre>
+    <pre><code class="lang-csharp hljs">public class TcpClient : AbstractTcpClient, IDisposable, ICase</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -340,14 +362,14 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpClient_ConnectInternal_Socket_EndPoint_.md&amp;value=---%0Auid%3A%20x2net.TcpClient.ConnectInternal(Socket%2CEndPoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_TcpClient_ConnectInternal_System_Net_Sockets_Socket_System_Net_EndPoint_.md&amp;value=---%0Auid%3A%20x2net.TcpClient.ConnectInternal(System.Net.Sockets.Socket%2CSystem.Net.EndPoint)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Links/Socket/TcpClient.cs/#L28">View Source</a>
   </span>
   <a id="x2net_TcpClient_ConnectInternal_" data-uid="x2net.TcpClient.ConnectInternal*"></a>
-  <h4 id="x2net_TcpClient_ConnectInternal_Socket_EndPoint_" data-uid="x2net.TcpClient.ConnectInternal(Socket,EndPoint)">ConnectInternal(Socket, EndPoint)</h4>
-  <div class="markdown level1 summary"><p><a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectInternal_Socket_EndPoint_">ConnectInternal(Socket, EndPoint)</a></p>
+  <h4 id="x2net_TcpClient_ConnectInternal_System_Net_Sockets_Socket_System_Net_EndPoint_" data-uid="x2net.TcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)">ConnectInternal(Socket, EndPoint)</h4>
+  <div class="markdown level1 summary"><p><a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectInternal_System_Net_Sockets_Socket_System_Net_EndPoint_">ConnectInternal(Socket, EndPoint)</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -365,20 +387,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Socket</span></td>
+        <td><span class="xref">System.Net.Sockets.Socket</span></td>
         <td><span class="parametername">socket</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">EndPoint</span></td>
+        <td><span class="xref">System.Net.EndPoint</span></td>
         <td><span class="parametername">endpoint</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectInternal_Socket_EndPoint_">AbstractTcpClient.ConnectInternal(Socket, EndPoint)</a></div>
+  <div><a class="xref" href="x2net.AbstractTcpClient.html#x2net_AbstractTcpClient_ConnectInternal_System_Net_Sockets_Socket_System_Net_EndPoint_">AbstractTcpClient.ConnectInternal(Socket, EndPoint)</a></div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
   <div>
       <a class="xref" href="x2net.ICase.html">ICase</a>
   </div>

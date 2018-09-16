@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Getopt.Option
+    <title>Class WaitForTask
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Getopt.Option
+    <meta name="title" content="Class WaitForTask
    ">
     <meta name="generator" content="docfx 2.36.1.0">
     
@@ -68,20 +68,38 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="x2net.Getopt.Option">
+            <article class="content wrap" id="_content" data-uid="x2net.WaitForTask">
   
   
-  <h1 id="x2net_Getopt_Option" data-uid="x2net.Getopt.Option" class="text-break">Class Getopt.Option
+  <h1 id="x2net_WaitForTask" data-uid="x2net.WaitForTask" class="text-break">Class WaitForTask
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>YieldInstruction that waits for the specified task.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Getopt.Option</span></div>
+    <div class="level1"><a class="xref" href="x2net.Yield.html">Yield</a></div>
+    <div class="level2"><span class="xref">WaitForTask</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.IEnumerator</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="x2net.Yield.html#x2net_Yield_Continue">Yield.Continue()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Yield.html#x2net_Yield_Current">Yield.Current</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Yield.html#x2net_Yield_MoveNext">Yield.MoveNext()</a>
+    </div>
+    <div>
+      <a class="xref" href="x2net.Yield.html#x2net_Yield_Reset">Yield.Reset()</a>
+    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -106,26 +124,26 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
   <h6><strong>Assembly</strong>: x2net.dll</h6>
-  <h5 id="x2net_Getopt_Option_syntax">Syntax</h5>
+  <h5 id="x2net_WaitForTask_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Option</code></pre>
+    <pre><code class="lang-csharp hljs">public class WaitForTask : Yield, IEnumerator</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Getopt_Option__ctor_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20x2net.Getopt.Option.%23ctor(System.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_WaitForTask__ctor_x2net_Coroutine_System_Threading_Tasks_Task_.md&amp;value=---%0Auid%3A%20x2net.WaitForTask.%23ctor(x2net.Coroutine%2CSystem.Threading.Tasks.Task)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Util/Getopt.cs/#L30">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Yields/WaitForTask.cs/#L19">View Source</a>
   </span>
-  <a id="x2net_Getopt_Option__ctor_" data-uid="x2net.Getopt.Option.#ctor*"></a>
-  <h4 id="x2net_Getopt_Option__ctor_System_String_System_Int32_System_Int32_" data-uid="x2net.Getopt.Option.#ctor(System.String,System.Int32,System.Int32)">Option(String, Int32, Int32)</h4>
+  <a id="x2net_WaitForTask__ctor_" data-uid="x2net.WaitForTask.#ctor*"></a>
+  <h4 id="x2net_WaitForTask__ctor_x2net_Coroutine_System_Threading_Tasks_Task_" data-uid="x2net.WaitForTask.#ctor(x2net.Coroutine,System.Threading.Tasks.Task)">WaitForTask(Coroutine, Task)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Option(string name, int hasArg, int value)</code></pre>
+    <pre><code class="lang-csharp hljs">public WaitForTask(Coroutine coroutine, Task task)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -138,114 +156,63 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">name</span></td>
+        <td><a class="xref" href="x2net.Coroutine.html">Coroutine</a></td>
+        <td><span class="parametername">coroutine</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">hasArg</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">value</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Getopt_Option_HasArg.md&amp;value=---%0Auid%3A%20x2net.Getopt.Option.HasArg%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Util/Getopt.cs/#L27">View Source</a>
-  </span>
-  <a id="x2net_Getopt_Option_HasArg_" data-uid="x2net.Getopt.Option.HasArg*"></a>
-  <h4 id="x2net_Getopt_Option_HasArg" data-uid="x2net.Getopt.Option.HasArg">HasArg</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int HasArg { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><span class="parametername">task</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Getopt_Option_Name.md&amp;value=---%0Auid%3A%20x2net.Getopt.Option.Name%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_WaitForTask__ctor_x2net_Coroutine_System_Threading_Tasks_Task_System_Double_.md&amp;value=---%0Auid%3A%20x2net.WaitForTask.%23ctor(x2net.Coroutine%2CSystem.Threading.Tasks.Task%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Util/Getopt.cs/#L26">View Source</a>
+    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Yields/WaitForTask.cs/#L24">View Source</a>
   </span>
-  <a id="x2net_Getopt_Option_Name_" data-uid="x2net.Getopt.Option.Name*"></a>
-  <h4 id="x2net_Getopt_Option_Name" data-uid="x2net.Getopt.Option.Name">Name</h4>
+  <a id="x2net_WaitForTask__ctor_" data-uid="x2net.WaitForTask.#ctor*"></a>
+  <h4 id="x2net_WaitForTask__ctor_x2net_Coroutine_System_Threading_Tasks_Task_System_Double_" data-uid="x2net.WaitForTask.#ctor(x2net.Coroutine,System.Threading.Tasks.Task,System.Double)">WaitForTask(Coroutine, Task, Double)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public WaitForTask(Coroutine coroutine, Task task, double seconds)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.String</span></td>
+        <td><a class="xref" href="x2net.Coroutine.html">Coroutine</a></td>
+        <td><span class="parametername">coroutine</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><span class="parametername">task</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">seconds</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Getopt_Option_Value.md&amp;value=---%0Auid%3A%20x2net.Getopt.Option.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Util/Getopt.cs/#L28">View Source</a>
-  </span>
-  <a id="x2net_Getopt_Option_Value_" data-uid="x2net.Getopt.Option.Value*"></a>
-  <h4 id="x2net_Getopt_Option_Value" data-uid="x2net.Getopt.Option.Value">Value</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Value { get; }</code></pre>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.IEnumerator</span>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
@@ -261,10 +228,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_Getopt_Option.md&amp;value=---%0Auid%3A%20x2net.Getopt.Option%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/jaykang920/x2net/new/master/apiSpec/new?filename=x2net_WaitForTask.md&amp;value=---%0Auid%3A%20x2net.WaitForTask%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Util/Getopt.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/jaykang920/x2net/blob/master/src/x2net/Yields/WaitForTask.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

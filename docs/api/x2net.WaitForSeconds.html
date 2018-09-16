@@ -82,6 +82,10 @@
     <div class="level1"><a class="xref" href="x2net.Yield.html">Yield</a></div>
     <div class="level2"><span class="xref">WaitForSeconds</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.IEnumerator</span></div>
+  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
@@ -96,12 +100,33 @@
     <div>
       <a class="xref" href="x2net.Yield.html#x2net_Yield_Reset">Yield.Reset()</a>
     </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="x2net.html">x2net</a></h6>
   <h6><strong>Assembly</strong>: x2net.dll</h6>
   <h5 id="x2net_WaitForSeconds_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class WaitForSeconds : Yield</code></pre>
+    <pre><code class="lang-csharp hljs">public class WaitForSeconds : Yield, IEnumerator</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -142,6 +167,10 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.IEnumerator</span>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="x2net.Extensions.html#x2net_Extensions_EqualsEx__1___0___0_">Extensions.EqualsEx&lt;T&gt;(T, T)</a>
