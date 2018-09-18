@@ -1,7 +1,7 @@
 .nuget/
 .vs*/
 /**/[Bb]in/
-/**/[Oo]bj/
+/**/[Oo]bj*/
 /**/[Pp]ackages/
 /**/TEMP/
 /**/DROP/
