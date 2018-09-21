@@ -79,6 +79,10 @@ namespace x2net.xpiler
                         {
                             definition.IsLocal = true;
                         }
+                        if (!String.IsNullOrEmpty(def.AsIs) && def.AsIs.ToLower() == "true")
+                        {
+                            definition.AsIs = true;
+                        }
                         if (isEvent)
                         {
                             ((EventDef)definition).Id = def.Id;
@@ -155,6 +159,7 @@ namespace x2net.xpiler
             public string Id { get; set; }
             public string Base { get; set; }
             public string Local { get; set; }
+            public string AsIs { get; set; }
             public List<Element> Elements { get; set; }
             public List<Property> Properties { get; set; }
         }

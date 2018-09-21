@@ -1,3 +1,7 @@
+Features:
+
+- xpiler: now preserves property name cases for cells/events marked as 'asIs'
+
 ## 0.14.0 (2018-09-16)
 
 Features:

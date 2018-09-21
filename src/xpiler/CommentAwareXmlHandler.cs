@@ -232,11 +232,19 @@ namespace x2net.xpiler
                 ((EventDef)def).Id = id;
             }
             def.Base = elem.GetAttribute("base");
+
             var local = elem.GetAttribute("local");
             if (!String.IsNullOrEmpty(local) && local.EndsWith("rue"))
             {
                 def.IsLocal = true;
             }
+
+            var asIs = elem.GetAttribute("asIs");
+            if (!String.IsNullOrEmpty(asIs) && asIs.EndsWith("rue"))
+            {
+                def.AsIs = true;
+            }
+
             def.Comment = comment;
 
             string subComment = null;
