@@ -610,7 +610,7 @@ namespace x2net.xpiler
                 property.Index = index++;
 
                 property.NativeName = FirstToLower(property.Name) + "_";
-                if (!def.AsIs)
+                if (!def.IsLocal && !def.AsIs)
                 {
                     property.Name = FirstToUpper(property.Name);
                 }
