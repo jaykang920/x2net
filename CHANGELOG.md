@@ -1,3 +1,7 @@
+Bugfixes:
+
+- BlockCipher.InverseTransform: fixed the last ciphertext block copy bug
+
 Features:
 
 - xpiler: now preserves property name cases for cells/events marked as 'asIs'

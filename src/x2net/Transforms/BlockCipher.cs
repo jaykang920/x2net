@@ -213,9 +213,12 @@ rUhA26OQBIcVzlMyarM8XVhZqk5RJDP64VFz3m+VMmghAgJLUPKDORmIPlc18FuaTsZjxoIwfuVojrDH
                 for (var i = buffers.Count - 1; bytesCopied < BlockSizeInBytes && i >= 0; --i)
                 {
                     var segment = buffers[i];
-                    int bytesToCopy = Math.Min(segment.Count, BlockSizeInBytes);
-                    System.Buffer.BlockCopy(segment.Array, segment.Offset + segment.Count - bytesToCopy,
-                        nextIV, BlockSizeInBytes - bytesCopied - bytesToCopy, bytesToCopy);
+                    int maxToCopy = BlockSizeInBytes - bytesCopied;
+                    int bytesToCopy = Math.Min(segment.Count, maxToCopy);
+                    System.Buffer.BlockCopy(
+                        segment.Array, segment.Offset + segment.Count - bytesToCopy,
+                        nextIV, maxToCopy - bytesToCopy,
+                        bytesToCopy);
                     bytesCopied += bytesToCopy;
                 }
 
