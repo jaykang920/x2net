@@ -166,15 +166,15 @@ namespace x2net
 
         private void CopyTo(byte[] buffer, int offset, int length)
         {
-            int blockIndex = offset >> sizeExponent;
-            int srcOffset = offset & remainderMask;
+            int blockIndex = position >> sizeExponent;
+            int srcOffset = position & remainderMask;
             int bytesToCopy, bytesCopied = 0;
             while (bytesCopied < length)
             {
                 bytesToCopy = Math.Min(BlockSize - srcOffset, length - bytesCopied);
                 Segment block = blocks[blockIndex++];
                 System.Buffer.BlockCopy(block.Array, block.Offset + srcOffset,
-                  buffer, bytesCopied, bytesToCopy);
+                  buffer, offset + bytesCopied, bytesToCopy);
                 srcOffset = 0;
                 bytesCopied += bytesToCopy;
             }
@@ -268,7 +268,7 @@ namespace x2net
         public void Read(byte[] buffer, int offset, int count)
         {
             CheckLengthToRead(count);
-            CopyTo(buffer, position, count);
+            CopyTo(buffer, offset, count);
             Position = Position + count;
         }
 
