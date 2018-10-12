@@ -121,6 +121,12 @@ namespace x2net
 
                 return true;
             }
+            catch (ObjectDisposedException)
+            {
+                Trace.Log("{0} {1} accept error: closed immediately",
+                    Name, tcpSession.InternalHandle);
+                return false;
+            }
             catch (Exception ex)
             {
                 Trace.Warn("{0} {1} accept error: {2}",
