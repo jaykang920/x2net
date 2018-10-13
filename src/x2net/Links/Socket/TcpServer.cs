@@ -29,16 +29,10 @@ namespace x2net
         // Asynchronous callback for BeginAccept
         private void OnAccept(IAsyncResult asyncResult)
         {
+            System.Net.Sockets.Socket clientSocket = null;
             try
             {
-                var clientSocket = socket.EndAccept(asyncResult);
-                var session = new TcpSession(this, clientSocket);
-
-                if (!OnAcceptInternal(session))
-                {
-                    OnLinkSessionConnectedInternal(false, clientSocket.RemoteEndPoint);
-                    session.CloseInternal();
-                }
+                clientSocket = socket.EndAccept(asyncResult);
             }
             catch (ObjectDisposedException)
             {
@@ -48,6 +42,28 @@ namespace x2net
             catch (Exception e)
             {
                 Trace.Error("{0} accept error : {1}", Name, e.Message);
+            }
+
+            if (!ReferenceEquals(clientSocket, null))
+            {
+                try
+                {
+                    var session = new TcpSession(this, clientSocket);
+
+                    if (!OnAcceptInternal(session))
+                    {
+                        OnLinkSessionConnectedInternal(false, clientSocket.RemoteEndPoint);
+                        session.CloseInternal();
+                    }
+                }
+                catch (ObjectDisposedException)
+                {
+                    // log
+                }
+                catch (Exception e)
+                {
+                    Trace.Error("{0} accept error : {1}", Name, e);
+                }
             }
 
             AcceptInternal();

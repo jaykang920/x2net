@@ -72,7 +72,7 @@ namespace x2net
             catch (Exception e)
             {
                 Trace.Error("{0} error listening on {1} : {2}",
-                    Name, endpoint, e.Message);
+                    Name, endpoint, e);
 
                 throw;
             }

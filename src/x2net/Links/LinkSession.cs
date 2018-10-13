@@ -364,7 +364,7 @@ namespace x2net
                     catch (Exception e)
                     {
                         Trace.Error("{0} {1} buffer inv transform error: {2}",
-                            link.Name, InternalHandle, e.Message);
+                            link.Name, InternalHandle, e);
                         goto next;
                     }
                 }

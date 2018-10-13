@@ -355,7 +355,8 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Trace.Error("{0} {1} buffer inv transform error: {2}", Name, handle, e.Message);
+                    Trace.Error("{0} {1} buffer inv transform error: {2}",
+                        Name, handle, e);
                     return;
                 }
             }

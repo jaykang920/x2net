@@ -104,9 +104,13 @@ namespace x2net
                     }
                 }
             }
+            catch (ObjectDisposedException)
+            {
+                // log
+            }
             catch (Exception ex)
             {
-                Trace.Error("{0} accept error : {1}", Name, ex.Message);
+                Trace.Error("{0} accept error : {1}", Name, ex);
             }
 
             AcceptImpl(e);  // chain into the next accept

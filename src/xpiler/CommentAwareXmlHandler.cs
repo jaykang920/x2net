@@ -18,7 +18,7 @@ namespace x2net.xpiler
             }
             catch (Exception e)
             {
-                Console.Error.WriteLine(e.Message);
+                Console.Error.WriteLine(e);
                 return false;
             }
 

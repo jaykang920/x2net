@@ -63,7 +63,7 @@ namespace x2net
             catch (Exception e)
             {
                 Trace.Error("{0} error connecting to {1} : {2}",
-                    Name, endpoint, e.Message);
+                    Name, endpoint, e);
 
                 OnConnectError(socket, endpoint);
             }
