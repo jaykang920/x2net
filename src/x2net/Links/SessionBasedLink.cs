@@ -77,13 +77,24 @@ namespace x2net
                 session.Connected = true;
             }
 
-            OnSessionConnectedInternal(result, context);
+            try
+            {
+                OnSessionConnectedInternal(result, context);
 
-            Hub.Post(new LinkSessionConnected {
-                LinkName = Name,
-                Result = result,
-                Context = context
-            });
+                Hub.Post(new LinkSessionConnected {
+                    LinkName = Name,
+                    Result = result,
+                    Context = context
+                });
+            }
+            catch (Exception e)
+            {
+                if (result == false)
+                {
+                    return;
+                }
+                Trace.Error(e.ToString());
+            }
         }
 
         /// <summary>

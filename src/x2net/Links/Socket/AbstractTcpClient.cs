@@ -118,6 +118,8 @@ namespace x2net
             // Default socket options
             NoDelay = true;
 
+            ReconnectDelay = 1000;  // 1 sec by default
+
             DisconnectDelay = 200;  // 200ms by default
             ResponseTimeout = 30;  // 30 seconds by default
 
