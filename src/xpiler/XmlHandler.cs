@@ -25,7 +25,7 @@ namespace x2net.xpiler
                 }
                 catch (InvalidOperationException)
                 {
-                    // Not a valid x2 document.
+                    // not a valid x2 document
                     return true;
                 }
                 catch (Exception e)

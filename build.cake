@@ -69,25 +69,32 @@ Task("Run-Unit-Tests")
 Task("Core-Build")
     .Does(() =>
 {
-    DotNetCoreRestore("./x2netcore.sln");
+    DotNetCoreRestore("./x2net.core.sln");
 
     var targetFramework = "netcoreapp2.0";
-
 	var buildSettings =  new DotNetCoreBuildSettings {
         Framework = targetFramework,
         Configuration = configuration,
         OutputDirectory = outDir + Directory(targetFramework)
     };
+    DotNetCoreBuild("./src/xpiler/x2net.xpiler.core.csproj", buildSettings);
+    DotNetCoreBuild("./src/x2net/x2net.core.csproj", buildSettings);
 
-    DotNetCoreBuild("./src/xpiler/x2netcore.xpiler.csproj", buildSettings);
-    DotNetCoreBuild("./src/x2net/x2netcore.csproj", buildSettings);
+    targetFramework = "netcoreapp2.1";
+	buildSettings =  new DotNetCoreBuildSettings {
+        Framework = targetFramework,
+        Configuration = configuration,
+        OutputDirectory = outDir + Directory(targetFramework)
+    };
+    DotNetCoreBuild("./src/xpiler/x2net.xpiler.core.csproj", buildSettings);
+    DotNetCoreBuild("./src/x2net/x2net.core.csproj", buildSettings);
 });
 
 Task("Core-Tests")
     .IsDependentOn("Core-Build")
     .Does(() =>
 {
-    DotNetCoreTest("./tests/x2net/x2netcore.tests.csproj", new DotNetCoreTestSettings {
+    DotNetCoreTest("./tests/x2net/x2net.tests.core.csproj", new DotNetCoreTestSettings {
         Configuration = configuration
     });
 });

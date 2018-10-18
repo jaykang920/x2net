@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2netcore", "src\x2net\x2netcore.csproj", "{21783765-A720-4F69-82AA-13BE584C396A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2net.core", "src\x2net\x2net.core.csproj", "{21783765-A720-4F69-82AA-13BE584C396A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{89EFBB2B-2C4B-4B2E-970F-9B1A25FF2CF4} = {89EFBB2B-2C4B-4B2E-970F-9B1A25FF2CF4}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2netcore.xpiler", "src\xpiler\x2netcore.xpiler.csproj", "{89EFBB2B-2C4B-4B2E-970F-9B1A25FF2CF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2net.xpiler.core", "src\xpiler\x2net.xpiler.core.csproj", "{89EFBB2B-2C4B-4B2E-970F-9B1A25FF2CF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2netcore.tests", "tests\x2net\x2netcore.tests.csproj", "{A6D3CD97-0A45-482B-8930-2A86737CE045}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2net.tests.core", "tests\x2net\x2net.tests.core.csproj", "{A6D3CD97-0A45-482B-8930-2A86737CE045}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

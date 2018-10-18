@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>x2net.tests</AssemblyName>
     <RootNamespace>x2net.tests</RootNamespace>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
 	<BaseOutputPath>bin</BaseOutputPath>
 	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../../src/x2net/x2netcore.csproj" />
+    <ProjectReference Include="../../src/x2net/x2net.core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>x2net.xpiler</AssemblyName>
     <RootNamespace>x2net.xpiler</RootNamespace>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
     <OutputType>Exe</OutputType>
 	<BaseOutputPath>../../bin</BaseOutputPath>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -13,7 +13,7 @@
   <ItemGroup>
     <Compile Include="../../GlobalAssemblyInfo.cs">
       <Link>Properties/GlobalAssemblyInfo.cs</Link>
-	</Compile>
+    </Compile>
   </ItemGroup>
-  
+
 </Project>

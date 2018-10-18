@@ -31,6 +31,11 @@ namespace x2net.xpiler
                     writer.Flush();
                 }
             }
+            catch (IOException)
+            {
+                // mayt be in the middle of processing
+                return true;
+            }
             catch (Exception e)
             {
                 Console.Error.WriteLine(e);

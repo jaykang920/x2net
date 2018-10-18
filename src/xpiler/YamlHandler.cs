@@ -29,6 +29,16 @@ namespace x2net.xpiler
                 {
                     doc = deserializer.Deserialize<Document>(sr);
                 }
+                catch (YamlDotNet.Core.YamlException ye)
+                {
+                    if (ye.InnerException is System.Runtime.Serialization.SerializationException)
+                    {
+                        // not a valid x2 document
+                        return true;
+                    }
+                    Console.WriteLine(ye);
+                    return false;
+                }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);

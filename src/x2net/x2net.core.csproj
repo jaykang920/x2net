@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyName>x2net</AssemblyName>
     <RootNamespace>x2net</RootNamespace>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
 	<BaseOutputPath>../../bin</BaseOutputPath>
 	<BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
     <DocumentationFile>$(TargetDir)/x2net.xml</DocumentationFile>
