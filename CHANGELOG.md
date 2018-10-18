@@ -1,9 +1,12 @@
+## 0.15.0 (2018-10-18)
+
 Bugfixes:
 
 - BlockCipher.InverseTransform: fixed the last ciphertext block copy bug
 
 Features:
 
+- added target framework netcoreapp2.1
 - xpiler: now preserves property name cases for cells/events marked as 'asIs'
 
 ## 0.14.0 (2018-09-16)
