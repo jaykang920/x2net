@@ -4,6 +4,7 @@
     <AssemblyName>x2net.xpiler</AssemblyName>
     <RootNamespace>x2net.xpiler</RootNamespace>
     <TargetFrameworks>netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
+    <TargetLatestRuntimePatch>false</TargetLatestRuntimePatch>	
     <OutputType>Exe</OutputType>
 	<BaseOutputPath>../../bin</BaseOutputPath>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
