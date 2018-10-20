@@ -8,7 +8,7 @@
     <licenseUrl>https://github.com/jaykang920/x2net/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/jaykang920/x2net</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>x2net is the reference port of x2 written in C# targeting universal .NET environments.</description>
+    <description>The reference port of x2 written in C# targeting universal .NET environments.</description>
     <copyright>Copyright © 2017, 2018 Jae-jun Kang</copyright>
     <tags>x2 x2net event-driven distributed messaging communications network socket</tags>
   </metadata>
