@@ -23,7 +23,8 @@ namespace x2net.xpiler
                 .WithNamingConvention(new HyphenatedNamingConvention())
                 .Build();
 
-            using (var sr = new StreamReader(new FileStream(path, FileMode.Open)))
+            using (var sr = new StreamReader(new FileStream(path,
+                FileMode.Open, FileAccess.Read, FileShare.Read)))
             {
                 try
                 {

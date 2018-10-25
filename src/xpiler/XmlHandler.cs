@@ -17,7 +17,8 @@ namespace x2net.xpiler
 
             var serializer = new XmlSerializer(typeof(Root));
 
-            using (var fs = new FileStream(path, FileMode.Open))
+            using (var fs = new FileStream(path,
+                FileMode.Open, FileAccess.Read, FileShare.Read))
             {
                 try
                 {
