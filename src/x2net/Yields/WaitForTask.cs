@@ -39,8 +39,8 @@ namespace x2net
             }
 
             cts = new CancellationTokenSource();
-            Task.Factory.StartNew(async () => {
-                await task.ConfigureAwait(false);
+            Task.Factory.StartNew(() => {
+                task.Wait();
                 Hub.Post(e);
             }, cts.Token);
         }
@@ -107,8 +107,8 @@ namespace x2net
             }
 
             cts = new CancellationTokenSource();
-            Task.Factory.StartNew(async () => {
-                await task.ConfigureAwait(false);
+            Task.Factory.StartNew(() => {
+                task.Wait();
                 Hub.Post(e);
             }, cts.Token);
         }
