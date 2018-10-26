@@ -1,3 +1,7 @@
+Features:
+
+- added BlockingCollectionEventQueue contribued by @barowa
+
 ## 0.15.0 (2018-10-18)
 
 Bugfixes:
