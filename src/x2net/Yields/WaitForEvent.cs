@@ -38,6 +38,7 @@ namespace x2net
             }
 
             handlerToken = Flow.Bind(e, OnEvent);
+            // No timeout when seconds <= 0
             if (seconds > 0)
             {
                 TimeoutEvent timeoutEvent = new TimeoutEvent { Key = this };

@@ -11,9 +11,11 @@ namespace x2net
     public class WaitForTask : Yield
     {
         private readonly Coroutine coroutine;
-        private readonly Binding.Token token;
+
+        private readonly Binding.Token handlerToken;
         private readonly Binding.Token timeoutToken;
-        private readonly Timer.Token timerToken;
+        private readonly Timer.Token? timerToken;
+
         private readonly CancellationTokenSource cts;
 
         public WaitForTask(Coroutine coroutine, Task task)
@@ -26,27 +28,35 @@ namespace x2net
             this.coroutine = coroutine;
 
             TimeoutEvent e = new TimeoutEvent { Key = task };
-            token = Flow.Bind(e, OnResult);
+            handlerToken = Flow.Bind(e, OnResult);
 
-            TimeoutEvent timeout = new TimeoutEvent { Key = this };
-            timeoutToken = Flow.Bind(timeout, OnTimeout);
-            timerToken = TimeFlow.Default.Reserve(timeout, seconds);
+            // No timeout when seconds <= 0
+            if (seconds > 0)
+            {
+                TimeoutEvent timeoutEvent = new TimeoutEvent { Key = this };
+                timeoutToken = Flow.Bind(timeoutEvent, OnTimeout);
+                timerToken = TimeFlow.Default.Reserve(timeoutEvent, seconds);
+            }
 
             cts = new CancellationTokenSource();
             Task.Factory.StartNew(async () => {
                 await task.ConfigureAwait(false);
                 Hub.Post(e);
-                TimeFlow.Default.Cancel(timerToken);
             }, cts.Token);
         }
 
         void OnResult(TimeoutEvent e)
         {
-            Flow.Unbind(token);
-            Flow.Unbind(timeoutToken);
+            Flow.Unbind(handlerToken);
+
+            if (timerToken.HasValue)
+            {
+                TimeFlow.Default.Cancel(timerToken.Value);
+                Flow.Unbind(timeoutToken);
+            }
 
             var task = (Task)e.Key;
-            coroutine.Result = null;
+            coroutine.Result = task;
             coroutine.Continue();
         }
 
@@ -54,7 +64,7 @@ namespace x2net
         {
             cts.Cancel();
 
-            Flow.Unbind(token);
+            Flow.Unbind(handlerToken);
             Flow.Unbind(timeoutToken);
 
             coroutine.Status = CoroutineStatus.Timeout;
@@ -69,9 +79,11 @@ namespace x2net
     public class WaitForTask<T> : Yield
     {
         private readonly Coroutine coroutine;
-        private readonly Binding.Token token;
+
+        private readonly Binding.Token handlerToken;
         private readonly Binding.Token timeoutToken;
-        private readonly Timer.Token timerToken;
+        private readonly Timer.Token? timerToken;
+
         private readonly CancellationTokenSource cts;
 
         public WaitForTask(Coroutine coroutine, Task<T> task)
@@ -84,24 +96,32 @@ namespace x2net
             this.coroutine = coroutine;
 
             TimeoutEvent e = new TimeoutEvent { Key = task };
-            token = Flow.Bind(e, OnResult);
+            handlerToken = Flow.Bind(e, OnResult);
 
-            TimeoutEvent timeout = new TimeoutEvent { Key = this };
-            timeoutToken = Flow.Bind(timeout, OnTimeout);
-            timerToken = TimeFlow.Default.Reserve(timeout, seconds);
+            // No timeout when seconds <= 0
+            if (seconds > 0)
+            {
+                TimeoutEvent timeoutEvent = new TimeoutEvent { Key = this };
+                timeoutToken = Flow.Bind(timeoutEvent, OnTimeout);
+                timerToken = TimeFlow.Default.Reserve(timeoutEvent, seconds);
+            }
 
             cts = new CancellationTokenSource();
             Task.Factory.StartNew(async () => {
                 await task.ConfigureAwait(false);
                 Hub.Post(e);
-                TimeFlow.Default.Cancel(timerToken);
             }, cts.Token);
         }
 
         void OnResult(TimeoutEvent e)
         {
-            Flow.Unbind(token);
-            Flow.Unbind(timeoutToken);
+            Flow.Unbind(handlerToken);
+
+            if (timerToken.HasValue)
+            {
+                TimeFlow.Default.Cancel(timerToken.Value);
+                Flow.Unbind(timeoutToken);
+            }
 
             var task = (Task<T>)e.Key;
             coroutine.Result = task.Result;
@@ -112,7 +132,7 @@ namespace x2net
         {
             cts.Cancel();
 
-            Flow.Unbind(token);
+            Flow.Unbind(handlerToken);
             Flow.Unbind(timeoutToken);
 
             coroutine.Status = CoroutineStatus.Timeout;
