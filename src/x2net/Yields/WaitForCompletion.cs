@@ -75,5 +75,18 @@ namespace x2net
             c.Start(func(c, arg1, arg2, arg3, arg4));
         }
     }
+    /// <summary>
+    /// YieldInstruction that waits for the completion of another coroutine with
+    /// three additional arguments.
+    /// </summary>
+    public class WaitForCompletion<T1, T2, T3, T4, T5> : Yield
+    {
+        public WaitForCompletion(Coroutine coroutine,
+            Func<Coroutine, T1, T2, T3, T4, T5, IEnumerator> func, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
+        {
+            Coroutine c = new Coroutine(coroutine);
+            c.Start(func(c, arg1, arg2, arg3, arg4, arg5));
+        }
+    }
 #endif
 }

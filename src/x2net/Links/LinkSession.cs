@@ -427,6 +427,11 @@ namespace x2net
                     }
                 }
             next:
+                if (disposed)
+                {
+                    return;
+                }
+
                 rxBuffer.Trim();
                 if (rxBuffer.IsEmpty || !ParseHeader())
                 {
