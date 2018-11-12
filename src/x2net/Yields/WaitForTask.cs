@@ -10,8 +10,6 @@ namespace x2net
     /// </summary>
     public class WaitForTask : Yield
     {
-        private readonly Coroutine coroutine;
-
         private readonly Binding.Token handlerToken;
         private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
@@ -24,9 +22,8 @@ namespace x2net
         }
 
         public WaitForTask(Coroutine coroutine, Task task, double seconds)
+            : base(coroutine)
         {
-            this.coroutine = coroutine;
-
             TimeoutEvent e = new TimeoutEvent { Key = task };
             handlerToken = Flow.Bind(e, OnResult);
 
@@ -78,8 +75,6 @@ namespace x2net
     /// </summary>
     public class WaitForTask<T> : Yield
     {
-        private readonly Coroutine coroutine;
-
         private readonly Binding.Token handlerToken;
         private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
@@ -92,9 +87,8 @@ namespace x2net
         }
 
         public WaitForTask(Coroutine coroutine, Task<T> task, double seconds)
+            : base(coroutine)
         {
-            this.coroutine = coroutine;
-
             TimeoutEvent e = new TimeoutEvent { Key = task };
             handlerToken = Flow.Bind(e, OnResult);
 

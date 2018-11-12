@@ -10,12 +10,11 @@ namespace x2net
     /// </summary>
     public class WaitForSeconds : Yield
     {
-        private readonly Coroutine coroutine;
         private readonly Binding.Token token;
 
         public WaitForSeconds(Coroutine coroutine, double seconds)
+            : base(coroutine)
         {
-            this.coroutine = coroutine;
             TimeoutEvent e = new TimeoutEvent { Key = this };
             token = Flow.Bind(e, OnTimeout);
             TimeFlow.Default.Reserve(e, seconds);

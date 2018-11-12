@@ -14,6 +14,13 @@ namespace x2net
     /// </summary>
     public abstract class Yield : IEnumerator
     {
+        protected readonly Coroutine coroutine;
+
+        protected Yield(Coroutine coroutine)
+        {
+            this.coroutine = coroutine;
+        }
+
         // Alias of MoveNext()
         public bool Continue()
         {

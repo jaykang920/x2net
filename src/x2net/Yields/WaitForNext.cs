@@ -10,7 +10,6 @@ namespace x2net
     /// </summary>
     public class WaitForNext : Yield
     {
-        private readonly Coroutine coroutine;
         private readonly object result;
         private readonly Binding.Token token;
 
@@ -19,8 +18,8 @@ namespace x2net
         }
 
         public WaitForNext(Coroutine coroutine, object result)
+            : base(coroutine)
         {
-            this.coroutine = coroutine;
             this.result = result;
             TimeoutEvent e = new TimeoutEvent { Key = this };
             token = Flow.Bind(e, OnTimeout);

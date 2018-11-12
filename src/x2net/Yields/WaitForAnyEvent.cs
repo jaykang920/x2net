@@ -10,7 +10,6 @@ namespace x2net
     /// </summary>
     public class WaitForAnyEvent : Yield
     {
-        private readonly Coroutine coroutine;
         private readonly Event[] expected;
 
         private readonly Binding.Token[] handlerTokens;
@@ -32,9 +31,8 @@ namespace x2net
 
         protected WaitForAnyEvent(Coroutine coroutine, Event[] requests,
             double seconds, params Event[] e)
+            : base(coroutine)
         {
-            this.coroutine = coroutine;
-
             if (!ReferenceEquals(requests, null))
             {
                 waitHandle = WaitHandlePool.Acquire();

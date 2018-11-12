@@ -10,8 +10,6 @@ namespace x2net
     /// </summary>
     public class WaitForEvent : Yield
     {
-        private readonly Coroutine coroutine;
-
         private readonly Binding.Token handlerToken;
         private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
@@ -27,9 +25,8 @@ namespace x2net
         }
 
         protected WaitForEvent(Coroutine coroutine, Event request, Event e, double seconds)
+            : base(coroutine)
         {
-            this.coroutine = coroutine;
-
             if (!ReferenceEquals(request, null))
             {
                 int waitHandle = WaitHandlePool.Acquire();
