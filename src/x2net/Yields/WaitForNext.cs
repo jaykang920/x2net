@@ -18,6 +18,11 @@ namespace x2net
         {
         }
 
+        public WaitForNext(Coroutine coroutine, object result)
+            : this(coroutine, result, CoroutineStatus.Ok)
+        {
+        }
+
         public WaitForNext(Coroutine coroutine, object result, CoroutineStatus status)
             : base(coroutine)
         {

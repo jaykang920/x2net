@@ -125,7 +125,7 @@ namespace x2net
                 if (parent != null)
                 {
                     // Indirectly chain into the parent coroutine.
-                    new WaitForNext(parent, Result);
+                    new WaitForNext(parent, Result, Status);
                 }
             }
         }
@@ -149,6 +149,7 @@ namespace x2net
             {
                 // Chain into the parent coroutine.
                 parent.Result = Result;
+                parent.Status = Status;
                 parent.Continue();
             }
 
