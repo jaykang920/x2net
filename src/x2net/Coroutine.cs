@@ -14,6 +14,9 @@ namespace x2net
     /// </summary>
     public abstract class Yield : IEnumerator
     {
+        /// <summary>
+        /// Coroutine instance where this yield instruction works upon.
+        /// </summary>
         protected readonly Coroutine coroutine;
 
         protected Yield(Coroutine coroutine)
