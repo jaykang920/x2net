@@ -114,18 +114,19 @@ namespace x2net
             {
                 dequeued.Add(e);
             }
-            if (!ReferenceEquals(events, null))
-            {
-                events.AddRange(dequeued);
-            }
-
             int count = dequeued.Count;
-            for (int i = 0; i < count; ++i)
+            if (count != 0)
             {
-                Dispatch(dequeued[i]);
+                if (!ReferenceEquals(events, null))
+                {
+                    events.AddRange(dequeued);
+                }
+                for (int i = 0; i < count; ++i)
+                {
+                    Dispatch(dequeued[i]);
+                }
+                dequeued.Clear();
             }
-            dequeued.Clear();
-
             return count;
         }
 

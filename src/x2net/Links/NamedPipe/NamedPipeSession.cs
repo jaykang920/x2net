@@ -9,9 +9,24 @@ using System.Threading.Tasks;
 
 namespace x2net
 {
+    /// <summary>
+    /// Named pipe link sessions.
+    /// </summary>
     public class NamedPipeSession : LinkSession
     {
         protected PipeStream stream;
+
+        protected internal override int InternalHandle
+        {
+            get
+            {
+                if (handle == 0)
+                {
+                    return -(stream.SafePipeHandle.DangerousGetHandle().ToInt32());
+                }
+                return base.InternalHandle;
+            }
+        }
 
         /// <summary>
         /// Gets the underlying pipe stream.
@@ -42,16 +57,14 @@ namespace x2net
             OnDisconnect(this);
         }
 
-        /*
         /// <summary>
         /// Returns a string that represents the current object.
         /// </summary>
         public override string ToString()
         {
-            return String.Format("{0} {1} {2}",
-                GetType().Name, InternalHandle, remoteEndPoint);
+            return String.Format("{0} {1}",
+                GetType().Name, InternalHandle);
         }
-        */
 
         protected override void OnClose()
         {
@@ -62,24 +75,22 @@ namespace x2net
         {
             if (disposed) { return; }
 
-            /*
-            if (socket != null)
+            if (stream != null)
             {
                 try
                 {
-                    if (socket.Connected)
-                    {
-                        socket.Shutdown(SocketShutdown.Both);
-                    }
-                    socket.Close();
+                    stream.Close();
                 }
                 catch (Exception e)
                 {
                     Trace.Warn("{0} {1} close : {2}",
                         Link.Name, InternalHandle, e.Message);
                 }
+                finally
+                {
+                    stream = null;
+                }
             }
-            */
 
             base.Dispose(disposing);
         }
@@ -129,7 +140,6 @@ namespace x2net
                             var buffer = buffers[i];
                             stream.Write(buffer.Array, buffer.Offset, buffer.Count);
                             bytes += buffer.Count;
-                            Trace.Info("NamedPipeSession: sent {0} bytes", buffer.Count);
                         }
                     }
                     catch (Exception ex)

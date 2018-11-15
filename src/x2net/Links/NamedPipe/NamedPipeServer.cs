@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace x2net
 {
+    /// <summary>
+    /// Named pipe server link.
+    /// </summary>
     public class NamedPipeServer : ServerLink
     {
         CancellationTokenSource cts;
@@ -26,36 +29,28 @@ namespace x2net
 
         void Accept()
         {
-            Trace.Info("NamedPipeServer: listening on {0}", Name);
+            Trace.Info("NamedPipeServer: listening on '{0}'", Name);
             while (!disposed)
             {
-                Trace.Info("NamedServerPipe: accept loop");
-
-                var stream = new NamedPipeServerStream(Name, PipeDirection.InOut, -1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
+                var stream = new NamedPipeServerStream(Name, PipeDirection.InOut,
+                    NamedPipeServerStream.MaxAllowedServerInstances,
+                    PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
 
                 Task task = stream.WaitForConnectionAsync(cts.Token);
                 task.Wait();
-                Trace.Warn("NamedServerPipe: task status {0}", task.Status);
                 if (task.Status == TaskStatus.Canceled)
                 {
-                    Trace.Info("NamedServerPipe: cancelled listening");
                     stream.Close();
                     break;
                 }
-                // hendle
-                Trace.Info("NamedServerPipe: accepted");
                 var session = new NamedPipeSession(this, stream);
                 OnAcceptInternal(session);
             }
-            // hendle
-            Trace.Info("NamedServerPipe: exit listening");
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposed) { return; }
-
-            Trace.Info("NamedPipeServer: disposing");
 
             cts.Cancel();
 

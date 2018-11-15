@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace x2net
 {
+    /// <summary>
+    /// Named pipe client link.
+    /// </summary>
     public class NamedPipeClient : ClientLink
     {
         private const string localhost = ".";
@@ -25,17 +28,16 @@ namespace x2net
         public void Connect()
         {
             Task.Run(() => {
-                Trace.Info("NamedPipeClient: connecting to {0}", Name);
+                Trace.Info("NamedPipeClient: connecting to '{0}'", Name);
                 var stream = new NamedPipeClientStream(localhost, Name, PipeDirection.InOut, PipeOptions.Asynchronous);
                 Task task = stream.ConnectAsync(cts.Token);
                 task.Wait();
                 if (task.Status == TaskStatus.Canceled)
                 {
-                    Trace.Info("NamedPipeClient: cancelled connecting");
                     stream.Close();
                     return;
                 }
-                Trace.Info("NamedPipeClient: connected to {0}", Name);
+                Trace.Info("NamedPipeClient: connected to '{0}'", Name);
 
                 var session = new NamedPipeSession(this, stream);
                 OnConnectInternal(session);
@@ -45,8 +47,6 @@ namespace x2net
         protected override void Dispose(bool disposing)
         {
             if (disposed) { return; }
-
-            Trace.Info("NamedPipeClient: disposing");
 
             cts.Cancel();
 
