@@ -22,6 +22,7 @@ namespace x2net
     public class ThreadlessFlow<Q> : EventBasedFlow<Q> where Q : EventQueue, new()
     {
         protected bool running;
+        protected List<Event> dequeued;
 
         public ThreadlessFlow()
         {
@@ -46,6 +47,8 @@ namespace x2net
                     equivalent = new EventEquivalent();
                     handlerChain = new List<Handler>();
 
+                    dequeued = new List<Event>();
+
                     running = true;
 
                     queue.Enqueue(new FlowStart());
@@ -64,6 +67,8 @@ namespace x2net
                 }
                 queue.Close(new FlowStop());
                 running = false;
+
+                dequeued = null;
 
                 handlerChain = null;
                 equivalent = null;
@@ -102,25 +107,26 @@ namespace x2net
 
         public int TryDispatchAll(List<Event> events)
         {
-            int n = 0;
-            bool shouldCopy = !ReferenceEquals(events, null);
-            while (true)
+            Event e;
+
+            dequeued.Clear();
+            while (queue.TryDequeue(out e))
             {
-                Event e;
-                if (!queue.TryDequeue(out e))
-                {
-                    break;
-                }
-
-                Dispatch(e);
-
-                if (shouldCopy)
-                {
-                    events.Add(e);
-                }
-                ++n;
+                dequeued.Add(e);
             }
-            return n;
+            if (!ReferenceEquals(events, null))
+            {
+                events.AddRange(dequeued);
+            }
+
+            int count = dequeued.Count;
+            for (int i = 0; i < count; ++i)
+            {
+                Dispatch(dequeued[i]);
+            }
+            dequeued.Clear();
+
+            return count;
         }
 
         public bool TryDequeue(out Event e)
