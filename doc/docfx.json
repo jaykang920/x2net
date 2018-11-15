@@ -4,8 +4,11 @@
       "src": [
         {
           "src": "../src",
-          "files": ["x2net/x2netcore.csproj"],
-          "exclude": [ "**/bin/**", "**/obj/**" ]
+          "files": ["x2net/x2net.core.csproj"],
+          "exclude": [ "**/bin/**", "**/obj/**" ],
+          "properties": {
+            "TargetFramework": "net45"
+          }
         }
       ],
       "dest": "api",
