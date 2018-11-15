@@ -1,6 +1,8 @@
 // Copyright (c) 2017, 2018 Jae-jun Kang
 // See the file LICENSE for details.
 
+#if NET45
+
 using System;
 using System.IO.Pipes;
 using System.Threading;
@@ -93,3 +95,5 @@ namespace x2net
         }
     }
 }
+
+#endif

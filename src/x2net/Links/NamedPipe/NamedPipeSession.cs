@@ -1,6 +1,8 @@
 ﻿// Copyright (c) 2017, 2018 Jae-jun Kang
 // See the file LICENSE for details.
 
+#if NET45
+
 using System;
 using System.IO.Pipes;
 using System.Threading.Tasks;
@@ -127,7 +129,7 @@ namespace x2net
                             var buffer = buffers[i];
                             stream.Write(buffer.Array, buffer.Offset, buffer.Count);
                             bytes += buffer.Count;
-                            Trace.Info($"NamedPipeSession: sent {buffer.Count} bytes");
+                            Trace.Info("NamedPipeSession: sent {0} bytes", buffer.Count);
                         }
                     }
                     catch (Exception ex)
@@ -221,3 +223,5 @@ namespace x2net
         }
     }
 }
+
+#endif
