@@ -1,3 +1,5 @@
+## 0.16.0 (2018-11-15)
+
 Features:
 
 - added NamedPipeClient/Server link cases
