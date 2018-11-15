@@ -30,6 +30,7 @@ namespace x2net
         void Accept()
         {
             Trace.Info("NamedPipeServer: listening on '{0}'", Name);
+
             while (!disposed)
             {
                 var stream = new NamedPipeServerStream(Name, PipeDirection.InOut,
@@ -43,6 +44,8 @@ namespace x2net
                     stream.Close();
                     break;
                 }
+                Trace.Info("NamedPipeServer: accepted on '{0}'", Name);
+
                 var session = new NamedPipeSession(this, stream);
                 OnAcceptInternal(session);
             }

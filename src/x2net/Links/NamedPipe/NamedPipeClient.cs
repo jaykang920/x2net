@@ -29,15 +29,19 @@ namespace x2net
         {
             Task.Run(() => {
                 Trace.Info("NamedPipeClient: connecting to '{0}'", Name);
-                var stream = new NamedPipeClientStream(localhost, Name, PipeDirection.InOut, PipeOptions.Asynchronous);
+
+                var stream = new NamedPipeClientStream(localhost, Name,
+                    PipeDirection.InOut, PipeOptions.Asynchronous);
+
                 Task task = stream.ConnectAsync(cts.Token);
                 task.Wait();
                 if (task.Status == TaskStatus.Canceled)
                 {
+                    Trace.Info("NamedPipeClient: cancelled connecting");
                     stream.Close();
                     return;
                 }
-                Trace.Info("NamedPipeClient: connected to '{0}'", Name);
+                Trace.Info("NamedPipeClient: connected to {0}", Name);
 
                 var session = new NamedPipeSession(this, stream);
                 OnConnectInternal(session);
@@ -47,6 +51,8 @@ namespace x2net
         protected override void Dispose(bool disposing)
         {
             if (disposed) { return; }
+
+            Trace.Info("NamedPipeClient: disposing");
 
             cts.Cancel();
 
