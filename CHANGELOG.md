@@ -1,5 +1,6 @@
 Features:
 
+- added NamedPipeClient/Server link cases
 - added BlockingCollectionEventQueue contribued by @barowa
 
 ## 0.15.0 (2018-10-18)
