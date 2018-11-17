@@ -83,14 +83,17 @@ namespace x2net
                 Hub.Post(e);
             }
 
-            DateTime endTime = DateTime.UtcNow;
-            totalMillis = (endTime - startTime).TotalMilliseconds;
-            if ((int)totalMillis >= Flow.CurrentFlow.SlowScopeLogThreshold &&
-                Config.TraceLevel <= Flow.CurrentFlow.SlowScopeTraceLevel)
+            if (!ReferenceEquals(Flow.CurrentFlow, null))
             {
-                Trace.Emit(Flow.CurrentFlow.SlowScopeTraceLevel,
-                    "{0} slow scope {1:#,0}ms on {2}",
-                    Flow.CurrentFlow.Name, totalMillis, e);
+                DateTime endTime = DateTime.UtcNow;
+                totalMillis = (endTime - startTime).TotalMilliseconds;
+                if ((int)totalMillis >= Flow.CurrentFlow.SlowScopeLogThreshold &&
+                    Config.TraceLevel <= Flow.CurrentFlow.SlowScopeTraceLevel)
+                {
+                    Trace.Emit(Flow.CurrentFlow.SlowScopeTraceLevel,
+                        "{0} slow scope {1:#,0}ms on {2}",
+                        Flow.CurrentFlow.Name, totalMillis, e);
+                }
             }
 
             OnDispose();
