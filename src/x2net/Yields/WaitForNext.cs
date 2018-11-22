@@ -28,12 +28,12 @@ namespace x2net
         {
             this.result = result;
             this.status = status;
-            TimeoutEvent e = new TimeoutEvent { Key = this };
-            token = Flow.Bind(e, OnTimeout);
+            var e = new LocalEvent { Key = this };
+            token = Flow.Bind(e, OnEvent);
             Hub.Post(e);
         }
 
-        void OnTimeout(TimeoutEvent e)
+        void OnEvent(LocalEvent e)
         {
             Flow.Unbind(token);
 
