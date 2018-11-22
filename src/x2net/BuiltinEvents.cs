@@ -16,8 +16,9 @@ namespace x2net
         public const int HeartbeatEvent = -1;
         public const int FlowStart = -2;
         public const int FlowStop = -3;
-        public const int TimeoutEvent = -4;
-        public const int PeriodicEvent = -5;
+        public const int LocalEvent = -4;
+        public const int TimeoutEvent = -5;
+        public const int PeriodicEvent = -6;
 
         private static ConstsInfo<int> info;
 
@@ -27,8 +28,9 @@ namespace x2net
             info.Add("HeartbeatEvent", -1);
             info.Add("FlowStart", -2);
             info.Add("FlowStop", -3);
-            info.Add("TimeoutEvent", -4);
-            info.Add("PeriodicEvent", -5);
+            info.Add("LocalEvent", -4);
+            info.Add("TimeoutEvent", -5);
+            info.Add("PeriodicEvent", -6);
         }
 
         public static bool ContainsName(string name)
@@ -316,9 +318,9 @@ namespace x2net
     }
 
     /// <summary>
-    /// A local timeout event.
+    /// A local event.
     /// </summary>
-    public class TimeoutEvent : Event
+    public class LocalEvent : Event
     {
         protected static new readonly Tag tag;
 
@@ -353,23 +355,23 @@ namespace x2net
             }
         }
 
-        static TimeoutEvent()
+        static LocalEvent()
         {
-            tag = new Tag(Event.tag, typeof(TimeoutEvent), 2,
-                    (int)BuiltinEventType.TimeoutEvent);
+            tag = new Tag(Event.tag, typeof(LocalEvent), 2,
+                    (int)BuiltinEventType.LocalEvent);
         }
 
-        public new static TimeoutEvent New()
+        public new static LocalEvent New()
         {
-            return new TimeoutEvent();
+            return new LocalEvent();
         }
 
-        public TimeoutEvent()
+        public LocalEvent()
             : base(tag.NumProps)
         {
         }
 
-        protected TimeoutEvent(int length)
+        protected LocalEvent(int length)
             : base(length + tag.NumProps)
         {
         }
@@ -380,7 +382,7 @@ namespace x2net
             {
                 return false;
             }
-            TimeoutEvent o = (TimeoutEvent)other;
+            LocalEvent o = (LocalEvent)other;
             if (key_ != o.key_)
             {
                 return false;
@@ -425,7 +427,7 @@ namespace x2net
 
         public override Func<Event> GetFactoryMethod()
         {
-            return TimeoutEvent.New;
+            return LocalEvent.New;
         }
 
         protected override bool IsEquivalent(Cell other, Fingerprint fingerprint)
@@ -434,7 +436,7 @@ namespace x2net
             {
                 return false;
             }
-            TimeoutEvent o = (TimeoutEvent)other;
+            LocalEvent o = (LocalEvent)other;
             var touched = new Capo<bool>(fingerprint, tag.Offset);
             if (touched[0])
             {
@@ -462,46 +464,92 @@ namespace x2net
     }
 
     /// <summary>
-    /// A local periodically recurring event.
+    /// A local timeout event.
     /// </summary>
-    public class PeriodicEvent : Event
+    public class TimeoutEvent : LocalEvent
     {
         protected static new readonly Tag tag;
 
         public static new int TypeId { get { return tag.TypeId; } }
 
-        private object key_;
-        private int intParam_;
-
-        /// <summary>
-        /// Event key object.
-        /// </summary>
-        public object Key
+        static TimeoutEvent()
         {
-            get { return key_; }
-            set
-            {
-                fingerprint.Touch(tag.Offset + 0);
-                key_ = value;
-            }
+            tag = new Tag(LocalEvent.tag, typeof(TimeoutEvent), 0,
+                    (int)BuiltinEventType.TimeoutEvent);
         }
 
-        /// <summary>
-        /// Optional integer parameter
-        /// </summary>
-        public int IntParam
+        public new static TimeoutEvent New()
         {
-            get { return intParam_; }
-            set
-            {
-                fingerprint.Touch(tag.Offset + 1);
-                intParam_ = value;
-            }
+            return new TimeoutEvent();
         }
+
+        public TimeoutEvent()
+            : base(tag.NumProps)
+        {
+        }
+
+        protected TimeoutEvent(int length)
+            : base(length + tag.NumProps)
+        {
+        }
+
+        protected override bool EqualsTo(Cell other)
+        {
+            if (!base.EqualsTo(other))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override int GetHashCode(Fingerprint fingerprint)
+        {
+            var hash = new Hash(base.GetHashCode(fingerprint));
+            return hash.Code;
+        }
+
+        public override int GetTypeId()
+        {
+            return tag.TypeId;
+        }
+
+        public override Cell.Tag GetTypeTag() 
+        {
+            return tag;
+        }
+
+        public override Func<Event> GetFactoryMethod()
+        {
+            return TimeoutEvent.New;
+        }
+
+        protected override bool IsEquivalent(Cell other, Fingerprint fingerprint)
+        {
+            if (!base.IsEquivalent(other, fingerprint))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        protected override void Describe(StringBuilder stringBuilder)
+        {
+            base.Describe(stringBuilder);
+        }
+    }
+
+    /// <summary>
+    /// A local periodically recurring event.
+    /// </summary>
+    public class PeriodicEvent : LocalEvent
+    {
+        protected static new readonly Tag tag;
+
+        public static new int TypeId { get { return tag.TypeId; } }
 
         static PeriodicEvent()
         {
-            tag = new Tag(Event.tag, typeof(PeriodicEvent), 2,
+            tag = new Tag(LocalEvent.tag, typeof(PeriodicEvent), 0,
                     (int)BuiltinEventType.PeriodicEvent);
         }
 
@@ -526,36 +574,12 @@ namespace x2net
             {
                 return false;
             }
-            PeriodicEvent o = (PeriodicEvent)other;
-            if (key_ != o.key_)
-            {
-                return false;
-            }
-            if (intParam_ != o.intParam_)
-            {
-                return false;
-            }
             return true;
         }
 
         public override int GetHashCode(Fingerprint fingerprint)
         {
             var hash = new Hash(base.GetHashCode(fingerprint));
-            if (fingerprint.Length <= tag.Offset)
-            {
-                return hash.Code;
-            }
-            var touched = new Capo<bool>(fingerprint, tag.Offset);
-            if (touched[0])
-            {
-                hash.Update(tag.Offset + 0);
-                hash.Update(key_);
-            }
-            if (touched[1])
-            {
-                hash.Update(tag.Offset + 1);
-                hash.Update(intParam_);
-            }
             return hash.Code;
         }
 
@@ -580,30 +604,12 @@ namespace x2net
             {
                 return false;
             }
-            PeriodicEvent o = (PeriodicEvent)other;
-            var touched = new Capo<bool>(fingerprint, tag.Offset);
-            if (touched[0])
-            {
-                if (key_ != o.key_)
-                {
-                    return false;
-                }
-            }
-            if (touched[1])
-            {
-                if (intParam_ != o.intParam_)
-                {
-                    return false;
-                }
-            }
             return true;
         }
 
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Key:{0}", key_.ToStringEx());
-            stringBuilder.AppendFormat(" IntParam:{0}", intParam_.ToStringEx());
         }
     }
 }
