@@ -1,3 +1,7 @@
+Features:
+
+- introduced builtin event LocalEvent
+
 Bugfixes:
 
 - Scope: fixed possible crash on exit in ThreadPoolFlow
