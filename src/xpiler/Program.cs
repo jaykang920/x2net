@@ -76,7 +76,7 @@ namespace x2net.xpiler
         {
             if (Directory.Exists(path))
             {
-                ProcessDir(path);
+                ProcessDir(path, null);
             }
             else if (File.Exists(path))
             {
@@ -84,16 +84,31 @@ namespace x2net.xpiler
             }
             else
             {
-                Console.Error.WriteLine("{0} doesn't exist.", path);
-                error = true;
+                if (path.IndexOfAny(new char[] { '*', '?' }) >= 0)
+                {
+                    ProcessDir(".", path);
+                }
+                else
+                {
+                    Console.Error.WriteLine("{0} doesn't exist.", path);
+                    error = true;
+                }
             }
         }
 
-        private void ProcessDir(string path)
+        private void ProcessDir(string path, string searchPattern)
         {
             Console.WriteLine("Directory {0}", Path.GetFullPath(path));
             var di = new DirectoryInfo(path);
-            var entries = di.GetFileSystemInfos();
+            FileSystemInfo[] entries;
+            if (ReferenceEquals(searchPattern, null))
+            {
+                entries = di.GetFileSystemInfos();
+            }
+            else
+            {
+                entries = di.GetFileSystemInfos(searchPattern);
+            }
             foreach (var entry in entries)
             {
                 var pathname = Path.Combine(path, entry.Name);
@@ -102,7 +117,7 @@ namespace x2net.xpiler
                     if (options.Recursive)
                     {
                         subDirs.Push(entry.Name);
-                        ProcessDir(pathname);
+                        ProcessDir(pathname, searchPattern);
                         subDirs.Pop();
                     }
                 }

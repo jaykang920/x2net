@@ -1,5 +1,6 @@
 Features:
 
+- xpiler: now supports wildcard search pattern matching in arguments (not regex)
 - introduced builtin event LocalEvent
 
 Bugfixes:
