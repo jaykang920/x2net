@@ -9,7 +9,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DefineConstants>YAML_HANDLER</DefineConstants>
 
-    <PackageVersion>0.15.0</PackageVersion>
+    <PackageVersion>0.17.0</PackageVersion>
     <PackageId>x2net.xpiler.tool</PackageId>
     <Authors>Jae-jun Kang</Authors>
     <Description>.NET Core 2.1 global tool that generates C# source code files out of x2 definition files.</Description>
