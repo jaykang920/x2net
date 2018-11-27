@@ -84,7 +84,7 @@ namespace x2net
 
         public override void OnHeartbeat()
         {
-            var snapshot = Link.TakeSessionsSnapshot();
+            var snapshot = Link.GetSessions();
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
                 var linkSession = snapshot[i];

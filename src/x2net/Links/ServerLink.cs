@@ -46,7 +46,7 @@ namespace x2net
         /// </summary>
         public void Broadcast(Event e)
         {
-            var snapshot = TakeSessionsSnapshot();
+            var snapshot = GetSessions();
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
                 snapshot[i].Send(e);
@@ -69,7 +69,17 @@ namespace x2net
             session.Send(e);
         }
 
-        public IList<LinkSession> TakeSessionsSnapshot()
+        public LinkSession GetSession(int handle)
+        {
+            using (new ReadLock(rwlock))
+            {
+                LinkSession result = null;
+                sessions.TryGetValue(handle, out result);
+                return result;
+            }
+        }
+
+        public IList<LinkSession> GetSessions()
         {
             using (new ReadLock(rwlock))
             {
@@ -85,7 +95,7 @@ namespace x2net
             if (disposed) { return; }
 
             // Close all the active sessions.
-            var snapshot = TakeSessionsSnapshot();
+            var snapshot = GetSessions();
             for (int i = 0, count = snapshot.Count; i < count; ++i)
             {
                 snapshot[i].Close();
