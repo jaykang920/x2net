@@ -13,6 +13,7 @@ namespace x2net
         protected Binding.Token? bindingToken;
         protected Event e;
 
+        protected Flow flow;
         protected readonly DateTime startTime;
         protected double totalMillis;
 
@@ -50,15 +51,15 @@ namespace x2net
         /// </summary>
         public Scope()
         {
+            flow = Flow.CurrentFlow;
             startTime = DateTime.UtcNow;
         }
 
         /// <summary>
         /// Initializes a new Scope object with the specified event.
         /// </summary>
-        public Scope(Event e)
+        public Scope(Event e) : base()
         {
-            startTime = DateTime.UtcNow;
             this.e = e;
         }
 
@@ -86,7 +87,6 @@ namespace x2net
             DateTime endTime = DateTime.UtcNow;
             totalMillis = (endTime - startTime).TotalMilliseconds;
 
-            var flow = Flow.CurrentFlow;
             if (!ReferenceEquals(flow, null))
             {
                 if ((int)totalMillis >= flow.SlowScopeLogThreshold &&
