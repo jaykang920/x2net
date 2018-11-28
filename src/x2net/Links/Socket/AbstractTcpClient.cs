@@ -369,11 +369,14 @@ namespace x2net
                 }
             }
 
-            if (AutoReconnect && !DisconnectOnComplete)
+            if (!closing)
             {
-                Thread.Sleep(ReconnectDelay);
+                if (AutoReconnect && !DisconnectOnComplete)
+                {
+                    Thread.Sleep(ReconnectDelay);
 
-                Reconnect();
+                    Reconnect();
+                }
             }
         }
 

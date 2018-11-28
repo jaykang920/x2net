@@ -1,3 +1,9 @@
+## 0.17.1 (2018-11-28)
+
+Bugfixes:
+
+- AbstractTcpClient: now it doesn't reconnect on active close
+
 ## 0.17.0 (2018-11-27)
 
 Features:

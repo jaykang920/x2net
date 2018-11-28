@@ -12,6 +12,11 @@ namespace x2net
     /// </summary>
     public abstract class Link : Case
     {
+        /// <summary>
+        /// Indicates whether this link is in the middle of active closing.
+        /// </summary>
+        protected volatile bool closing;
+
         private static HashSet<string> names;
 
         /// <summary>
@@ -58,6 +63,8 @@ namespace x2net
         /// </summary>
         public void Close()
         {
+            closing = true;
+
             Dispose();
         }
 
