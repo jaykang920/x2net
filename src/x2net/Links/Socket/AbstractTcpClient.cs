@@ -90,7 +90,8 @@ namespace x2net
         /// </summary>
         public bool AutoReconnect { get; set; }
         /// <summary>
-        /// Gets or sets a delay before an automatic reconnect, in milliseconds.
+        /// Gets or sets an average delay before automatic reconnect, 
+        /// in milliseconds, around which an actual delay is picked randomly.
         /// </summary>
         public int ReconnectDelay { get; set; }
 
@@ -117,6 +118,8 @@ namespace x2net
         {
             // Default socket options
             NoDelay = true;
+
+            RetryInterval = 1000;  // 1 sec by default
 
             ReconnectDelay = 1000;  // 1 sec by default
 
@@ -373,7 +376,14 @@ namespace x2net
             {
                 if (AutoReconnect && !DisconnectOnComplete)
                 {
-                    Thread.Sleep(ReconnectDelay);
+                    if (ReconnectDelay > 0)
+                    {
+                        int min = ReconnectDelay >> 1;
+                        int max = ReconnectDelay + min + 1;
+                        int delay = new Random().Next(min, max);
+
+                        Thread.Sleep(delay);
+                    }
 
                     Reconnect();
                 }
