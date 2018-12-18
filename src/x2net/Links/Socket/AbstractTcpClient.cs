@@ -77,7 +77,7 @@ namespace x2net
         /// </remarks>
         public int MaxRetryCount { get; set; }
         /// <summary>
-        /// Gets or sets the connection retry interval time in milliseconds.
+        /// Gets or sets the initial connection retry interval time in milliseconds.
         /// </summary>
         public double RetryInterval { get; set; }
 
@@ -90,7 +90,7 @@ namespace x2net
         /// </summary>
         public bool AutoReconnect { get; set; }
         /// <summary>
-        /// Gets or sets an average delay before automatic reconnect, 
+        /// Gets or sets the average delay before automatic reconnect, 
         /// in milliseconds, around which an actual delay is picked randomly.
         /// </summary>
         public int ReconnectDelay { get; set; }
@@ -428,16 +428,17 @@ namespace x2net
             if (MaxRetryCount < 0 ||
                 (MaxRetryCount > 0 && retryCount < MaxRetryCount))
             {
-                if (MaxRetryCount > 0)
-                {
-                    ++retryCount;
-                }
+                // Exponential backoff applied (up to x8)
+                int count = Math.Min(retryCount, 3);
+                double interval = RetryInterval * (1 << count);
+
+                ++retryCount;
 
                 double elapsedMillisecs =
                     (DateTime.UtcNow - startTime).TotalMilliseconds;
-                if (elapsedMillisecs < RetryInterval)
+                if (elapsedMillisecs < interval)
                 {
-                    Thread.Sleep((int)(RetryInterval - elapsedMillisecs));
+                    Thread.Sleep((int)(interval - elapsedMillisecs));
                 }
 
                 Connect(socket, endpoint);
