@@ -416,7 +416,15 @@ namespace x2net
         public float TimeScale
         {
             get { return timer.TimeScale; }
-            set { timer.TimeScale = value; }
+            set
+            {
+                if (name.Substring(9) == defaultName)
+                {
+                    // Not allowed is changing the time scale of default time flow.
+                    throw new InvalidOperationException();
+                }
+                timer.TimeScale = value;
+            }
         }
 
         static TimeFlow()
