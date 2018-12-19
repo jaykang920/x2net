@@ -109,7 +109,6 @@ namespace x2net
         }
     }
 
-    // TODO: time scaling
     public class Timer
     {
         private ReaderWriterLockSlim rwlock;
@@ -118,6 +117,14 @@ namespace x2net
 
         private readonly TimerCallback callback;
 
+        // Carries the non-scaled UTC time of previous tick.
+        private DateTime utcPrev;
+
+        /// <summary>
+        /// Gets or sets the scale at which the time is passing in this timer.
+        /// </summary>
+        public float TimeScale { get; set; }
+
         public Timer(TimerCallback callback)
         {
             rwlock = new ReaderWriterLockSlim();
@@ -125,6 +132,10 @@ namespace x2net
             repeater = new Repeater(this);
 
             this.callback = callback;
+
+            utcPrev = DateTime.UtcNow;
+
+            TimeScale = 1.0f;
         }
 
         ~Timer()
@@ -205,6 +216,22 @@ namespace x2net
         public void Tick()
         {
             DateTime utcNow = DateTime.UtcNow;
+
+            if (TimeScale == 1.0f)
+            {
+                utcPrev = utcNow;
+            }
+            else
+            {
+                var ticks = (utcNow - utcPrev).Ticks;
+                double scaledTicks = (double)ticks * TimeScale;
+
+                var temp = utcPrev.AddTicks((long)scaledTicks);
+
+                utcPrev = utcNow;
+                utcNow = temp;
+            }
+
             IList<object> events = null;
             rwlock.EnterUpgradeableReadLock();
             try
@@ -382,6 +409,15 @@ namespace x2net
         /// Gets the default(anonymous) TimeFlow.
         /// </summary>
         public static TimeFlow Default { get { return Get(); } }
+
+        /// <summary>
+        /// Gets or sets the scale at which the time is passing in this time flow.
+        /// </summary>
+        public float TimeScale
+        {
+            get { return timer.TimeScale; }
+            set { timer.TimeScale = value; }
+        }
 
         static TimeFlow()
         {
