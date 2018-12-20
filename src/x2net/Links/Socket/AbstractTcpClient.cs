@@ -378,9 +378,8 @@ namespace x2net
                 {
                     if (ReconnectDelay > 0)
                     {
-                        int min = ReconnectDelay >> 1;
-                        int max = ReconnectDelay + min + 1;
-                        int delay = new Random().Next(min, max);
+                        int max = (ReconnectDelay << 1) + 1;
+                        int delay = new Random().Next(max);
 
                         Thread.Sleep(delay);
                     }
