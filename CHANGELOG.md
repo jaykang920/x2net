@@ -1,6 +1,5 @@
 Features:
 
-- TimeFlow: added TimeScale property to control the scale at which the time is passing
 - AbstractTcpClient: applied exponential backoff to connection retry interval
 - AbstractTcpClient: randomized reconnect delay
 
