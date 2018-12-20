@@ -252,7 +252,7 @@ namespace x2net
                     pendingRecord = new PendingRecord {
                         HandleAllocated = handleAllocated,
                         TimeoutToken = 
-                            TimeFlow.Default.Reserve(timeoutEvent, ResponseTimeout)
+                            TimeFlow.Instance.Reserve(timeoutEvent, ResponseTimeout)
                     };
                     pendingRecords.Add(waitHandle, pendingRecord);
                 }
@@ -346,7 +346,7 @@ namespace x2net
 
                     if (DisconnectOnComplete)
                     {
-                        TimeFlow.Default.ReserveRepetition(new TimeoutEvent {
+                        TimeFlow.Instance.ReserveRepetition(new TimeoutEvent {
                             _Channel = Name,
                             Key = this
                         }, new TimeSpan(0, 0, 0, 0, DisconnectDelay));
@@ -365,7 +365,7 @@ namespace x2net
 
                 if (DisconnectOnComplete)
                 {
-                    TimeFlow.Default.CancelRepetition(new TimeoutEvent {
+                    TimeFlow.Instance.CancelRepetition(new TimeoutEvent {
                         _Channel = Name,
                         Key = this
                     });
@@ -512,7 +512,7 @@ namespace x2net
                     WaitHandlePool.Release(waitHandle);
                 }
 
-                TimeFlow.Default.Cancel(pendingRecord.TimeoutToken);
+                TimeFlow.Instance.Cancel(pendingRecord.TimeoutToken);
                 Unbind(new Event { _WaitHandle = waitHandle }, OnEvent);
                 Unbind((TimeoutEvent)pendingRecord.TimeoutToken.value, OnTimeout);
             }

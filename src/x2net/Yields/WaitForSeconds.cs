@@ -17,7 +17,7 @@ namespace x2net
         {
             TimeoutEvent e = new TimeoutEvent { Key = this };
             token = Flow.Bind(e, OnTimeout);
-            TimeFlow.Default.Reserve(e, seconds);
+            TimeFlow.Instance.Reserve(e, seconds);
         }
 
         void OnTimeout(TimeoutEvent e)

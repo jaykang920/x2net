@@ -60,7 +60,7 @@ namespace x2net
             {
                 TimeoutEvent timeoutEvent = new TimeoutEvent { Key = this };
                 timeoutToken = Flow.Bind(timeoutEvent, OnTimeout);
-                timerToken = TimeFlow.Default.Reserve(timeoutEvent, seconds);
+                timerToken = TimeFlow.Instance.Reserve(timeoutEvent, seconds);
             }
         }
 
@@ -82,7 +82,7 @@ namespace x2net
             {
                 if (timerToken.HasValue)
                 {
-                    TimeFlow.Default.Cancel(timerToken.Value);
+                    TimeFlow.Instance.Cancel(timerToken.Value);
                     Flow.Unbind(timeoutToken);
                 }
 

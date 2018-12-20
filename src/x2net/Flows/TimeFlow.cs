@@ -372,61 +372,23 @@ namespace x2net
         : FrameBasedFlow<SynchronizedEventQueue>
 #endif
     {
-        private const string defaultName = "Default";
-
-        private static Map map;
-
         private Timer timer;
 
         /// <summary>
-        /// Gets the default(anonymous) TimeFlow.
+        /// Gets the singleton instance of TimeFlow.
         /// </summary>
-        public static TimeFlow Default { get { return Get(); } }
+        public static TimeFlow Instance { get; private set; }
 
         static TimeFlow()
         {
-            map = new Map();
+            Instance = new TimeFlow();
 
-            Create(defaultName);
+            Instance.Start().Attach();
         }
 
-        private TimeFlow(string name)
+        private TimeFlow()
         {
             timer = new Timer(OnTimer);
-            this.name = name;
-        }
-
-        /// <summary>
-        /// Creates a named TimeFlow.
-        /// </summary>
-        public static TimeFlow Create(string name)
-        {
-            if (name == null)
-            {
-                throw new ArgumentNullException();
-            }
-            TimeFlow timeFlow = map.Create(name);
-            return timeFlow;
-        }
-
-        /// <summary>
-        /// Gets the default(anonymous) TimeFlow.
-        /// </summary>
-        public static TimeFlow Get()
-        {
-            return Get(defaultName);
-        }
-
-        /// <summary>
-        /// Gets the named TimeFlow.
-        /// </summary>
-        public static TimeFlow Get(string name)
-        {
-            if (name == null)
-            {
-                throw new ArgumentNullException();
-            }
-            return map.Get(name);
         }
 
         public Timer.Token Reserve(Event e, double seconds)
@@ -512,58 +474,6 @@ namespace x2net
         protected override void Update()
         {
             timer.Tick();
-        }
-
-        private class Map
-        {
-            private Dictionary<string, TimeFlow> timeFlows;
-            private ReaderWriterLockSlim rwlock;
-
-            public Map()
-            {
-                timeFlows = new Dictionary<string, TimeFlow>();
-                rwlock = new ReaderWriterLockSlim();
-            }
-
-            ~Map()
-            {
-                rwlock.Dispose();
-            }
-
-            internal TimeFlow Create(string name)
-            {
-                rwlock.EnterWriteLock();
-                try
-                {
-                    TimeFlow timeFlow;
-                    if (!timeFlows.TryGetValue(name, out timeFlow))
-                    {
-                        var flowName = String.Format("TimeFlow.{0}", name);
-                        timeFlow = new TimeFlow(flowName);
-                        timeFlows.Add(name, timeFlow);
-                        timeFlow.Start().Attach();
-                    }
-                    return timeFlow;
-                }
-                finally
-                {
-                    rwlock.ExitWriteLock();
-                }
-            }
-
-            internal TimeFlow Get(string name)
-            {
-                rwlock.EnterReadLock();
-                try
-                {
-                    TimeFlow timeFlow;
-                    return timeFlows.TryGetValue(name, out timeFlow) ? timeFlow : null;
-                }
-                finally
-                {
-                    rwlock.ExitReadLock();
-                }
-            }
         }
 
         void OnTimer(object state)

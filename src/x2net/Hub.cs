@@ -292,7 +292,7 @@ namespace x2net
 
             Instance.StartFlows();
 
-            TimeFlow.Default.ReserveRepetition(HeartbeatEvent,
+            TimeFlow.Instance.ReserveRepetition(HeartbeatEvent,
                 new TimeSpan(0, 0, Config.HeartbeatInterval));
 
             Trace.Info("started");
@@ -351,7 +351,7 @@ namespace x2net
             Trace.Debug("shutting down");
             try
             {
-                TimeFlow.Default.CancelRepetition(HeartbeatEvent);
+                TimeFlow.Instance.CancelRepetition(HeartbeatEvent);
                 Instance.StopFlows();
             }
             catch (Exception)
