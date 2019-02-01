@@ -1,20 +1,53 @@
 ﻿#if NET45
 
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace x2net
 {
+    internal sealed class SimpleScheduler : TaskScheduler
+    {
+        private static class EmptyArray<T>
+        {
+            internal static readonly T[] Value = new T[0];
+        }
+
+        protected override void QueueTask(Task task)
+        {
+            TryExecuteTask(task);
+        }
+
+        protected override bool TryExecuteTaskInline(Task task, bool taskWasPreviouslyQueued)
+        {
+            TryExecuteTask(task);
+            return true;
+        }
+
+        protected override IEnumerable<Task> GetScheduledTasks()
+        {
+            return EmptyArray<Task>.Value;
+        }
+
+        public override int MaximumConcurrencyLevel { get { return 1; } }
+    }
+
     /// <summary>
     /// YieldInstruction that waits for the specified task.
     /// </summary>
     public class WaitForTask : Yield
     {
+        private static TaskFactory taskFactory;
         private readonly Binding.Token handlerToken;
         private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
         private readonly CancellationTokenSource cts;
+
+        static WaitForTask()
+        {
+            taskFactory = new TaskFactory(new SimpleScheduler());
+        }
 
         public WaitForTask(Coroutine coroutine, Task task)
             : this(coroutine, task, Config.Coroutine.DefaultTimeout)
@@ -24,7 +57,7 @@ namespace x2net
         public WaitForTask(Coroutine coroutine, Task task, double seconds)
             : base(coroutine)
         {
-            TimeoutEvent e = new TimeoutEvent { Key = task };
+            LocalEvent e = new LocalEvent { Key = task };
             handlerToken = Flow.Bind(e, OnResult);
 
             // No timeout when seconds <= 0
@@ -36,13 +69,14 @@ namespace x2net
             }
 
             cts = new CancellationTokenSource();
-            Task.Factory.StartNew(() => {
-                task.Wait();
-                Hub.Post(e);
+            var flow = Flow.CurrentFlow;
+            taskFactory.StartNew(async () => {
+                await task.ConfigureAwait(false);
+                flow.Feed(e);
             }, cts.Token);
         }
 
-        void OnResult(TimeoutEvent e)
+        void OnResult(LocalEvent e)
         {
             Flow.Unbind(handlerToken);
 
@@ -53,6 +87,10 @@ namespace x2net
             }
 
             var task = (Task)e.Key;
+            if (task.Status != TaskStatus.RanToCompletion)
+            {
+                coroutine.Status = CoroutineStatus.Error;
+            }
             coroutine.Result = task;
             coroutine.Continue();
         }
@@ -75,11 +113,17 @@ namespace x2net
     /// </summary>
     public class WaitForTask<T> : Yield
     {
+        private static TaskFactory taskFactory;
         private readonly Binding.Token handlerToken;
         private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
         private readonly CancellationTokenSource cts;
+
+        static WaitForTask()
+        {
+            taskFactory = new TaskFactory(new SimpleScheduler());
+        }
 
         public WaitForTask(Coroutine coroutine, Task<T> task)
             : this(coroutine, task, Config.Coroutine.DefaultTimeout)
@@ -89,7 +133,7 @@ namespace x2net
         public WaitForTask(Coroutine coroutine, Task<T> task, double seconds)
             : base(coroutine)
         {
-            TimeoutEvent e = new TimeoutEvent { Key = task };
+            LocalEvent e = new LocalEvent { Key = task };
             handlerToken = Flow.Bind(e, OnResult);
 
             // No timeout when seconds <= 0
@@ -101,13 +145,14 @@ namespace x2net
             }
 
             cts = new CancellationTokenSource();
-            Task.Factory.StartNew(() => {
-                task.Wait();
-                Hub.Post(e);
+            var flow = Flow.CurrentFlow;
+            taskFactory.StartNew(async () => {
+                await task.ConfigureAwait(false);
+                flow.Feed(e);
             }, cts.Token);
         }
 
-        void OnResult(TimeoutEvent e)
+        void OnResult(LocalEvent e)
         {
             Flow.Unbind(handlerToken);
 
@@ -118,7 +163,15 @@ namespace x2net
             }
 
             var task = (Task<T>)e.Key;
-            coroutine.Result = task.Result;
+            if (task.Status == TaskStatus.RanToCompletion)
+            {
+                coroutine.Result = task.Result;
+            }
+            else
+            {
+                coroutine.Status = CoroutineStatus.Error;
+                coroutine.Result = task;
+            }
             coroutine.Continue();
         }
 
