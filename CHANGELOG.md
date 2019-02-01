@@ -1,3 +1,7 @@
+Bugfixes:
+
+- WaitForTask: @barowa fixed the performance issue on Linux
+
 Features:
 
 - AbstractTcpClient: applied exponential backoff to connection retry interval
