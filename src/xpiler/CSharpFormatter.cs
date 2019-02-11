@@ -224,6 +224,11 @@ namespace x2net.xpiler
             Out(2, "return info.ContainsValue(value);");
             Out(1, "}");
             NewLine();
+            Out(1, "public static IEnumerator<KeyValuePair<string, {0}>> GetEnumerator()", def.NativeType);
+            Out(1, "{");
+            Out(2, "return info.GetEnumerator();");
+            Out(1, "}");
+            NewLine();
             Out(1, "public static string GetName({0} value)", def.NativeType);
             Out(1, "{");
             Out(2, "return info.GetName(value);");

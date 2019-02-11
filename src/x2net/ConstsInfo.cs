@@ -33,6 +33,11 @@ namespace x2net
             return map.ContainsValue(value);
         }
 
+        public IEnumerator<KeyValuePair<string, T>> GetEnumerator()
+        {
+            return map.GetEnumerator();
+        }
+
         public string GetName(T value)
         {
             IList<T> values = map.Values;

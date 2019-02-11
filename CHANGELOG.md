@@ -6,6 +6,7 @@ Features:
 
 - AbstractTcpClient: applied exponential backoff to connection retry interval
 - AbstractTcpClient: randomized reconnect delay
+- Consts: added GetEnumerator() to enumerate key/value pairs
 
 ## 0.17.1 (2018-11-28)
 
