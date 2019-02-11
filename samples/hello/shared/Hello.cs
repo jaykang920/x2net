@@ -122,12 +122,6 @@ namespace hello
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Name", out name_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -160,22 +154,10 @@ namespace hello
             }
         }
 
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Name", name_);
-            if (targetType != null && targetType == typeof(HelloReq))
-            {
-                flag = false;
-            }
-        }
-
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Name=\"{0}\"", name_.Replace("\"", "\\\""));
+            stringBuilder.AppendFormat(" Name:{0}", name_.ToStringEx());
         }
 
         private void Initialize()
@@ -298,12 +280,6 @@ namespace hello
             }
         }
 
-        public override void Deserialize(VerboseDeserializer deserializer)
-        {
-            base.Deserialize(deserializer);
-            deserializer.Read("Message", out message_);
-        }
-
         public override int GetLength(Type targetType, ref bool flag)
         {
             int length = base.GetLength(targetType, ref flag);
@@ -336,22 +312,10 @@ namespace hello
             }
         }
 
-        public override void Serialize(VerboseSerializer serializer,
-            Type targetType, ref bool flag)
-        {
-            base.Serialize(serializer, targetType, ref flag);
-            if (!flag) { return; }
-            serializer.Write("Message", message_);
-            if (targetType != null && targetType == typeof(HelloResp))
-            {
-                flag = false;
-            }
-        }
-
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
-            stringBuilder.AppendFormat(" Message=\"{0}\"", message_.Replace("\"", "\\\""));
+            stringBuilder.AppendFormat(" Message:{0}", message_.ToStringEx());
         }
 
         private void Initialize()

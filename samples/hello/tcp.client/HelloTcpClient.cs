@@ -15,7 +15,7 @@ namespace hello
             };
             */
             // Uncomment the following line to enable heartbeat-based keepalive.
-            //HeartbeatStrategy = new ClientKeepaliveStrategy();
+            HeartbeatStrategy = new ClientKeepaliveStrategy();
         }
 
         protected override void Setup()
@@ -27,7 +27,7 @@ namespace hello
 
         public static void Main()
         {
-            Config.TraceLevel = TraceLevel.Debug;
+            Config.TraceLevel = TraceLevel.Trace;
             Trace.Handler = (level, message) => { Console.WriteLine(message); };
 
             Hub.Instance

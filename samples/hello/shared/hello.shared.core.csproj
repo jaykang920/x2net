@@ -19,7 +19,7 @@
   </Target>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\x2net\x2netcore.csproj" />
+    <ProjectReference Include="..\..\..\src\x2net\x2net.core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.udp.client", "hello\u
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hello.udp.server", "hello\udp.server\hello.udp.server.core.csproj", "{E0CC99A7-BAB7-4253-9FE8-234443C1C9BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2netcore", "..\src\x2net\x2netcore.csproj", "{5E4F3B22-E0B4-4E67-8CE7-E632D64F34AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "x2netcore", "..\src\x2net\x2net.core.csproj", "{5E4F3B22-E0B4-4E67-8CE7-E632D64F34AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

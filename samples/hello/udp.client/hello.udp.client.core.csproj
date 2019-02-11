@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\x2net\x2netcore.csproj" />
+    <ProjectReference Include="..\..\..\src\x2net\x2net.core.csproj" />
     <ProjectReference Include="..\shared\hello.shared.core.csproj" />
   </ItemGroup>
 
