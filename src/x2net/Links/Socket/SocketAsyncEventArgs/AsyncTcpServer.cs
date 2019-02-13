@@ -100,7 +100,7 @@ namespace x2net
                     }
                     else
                     {
-                        Trace.Error("{0} accept error : {1}", Name, e.SocketError);
+                        Trace.Warn("{0} accept error : {1}", Name, e.SocketError);
                     }
                 }
             }
@@ -110,7 +110,7 @@ namespace x2net
             }
             catch (Exception ex)
             {
-                Trace.Error("{0} accept error : {1}", Name, ex);
+                Trace.Warn("{0} accept error : {1}", Name, ex);
             }
 
             AcceptImpl(e);  // chain into the next accept

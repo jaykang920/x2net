@@ -93,7 +93,7 @@ namespace x2net
                 {
                     return;
                 }
-                Trace.Error(e.ToString());
+                Trace.Warn(e.ToString());
             }
         }
 

@@ -363,7 +363,7 @@ namespace x2net
                     }
                     catch (Exception e)
                     {
-                        Trace.Error("{0} {1} buffer inv transform error: {2}",
+                        Trace.Warn("{0} {1} buffer inv transform error: {2}",
                             link.Name, InternalHandle, e);
                         goto next;
                     }
@@ -384,7 +384,7 @@ namespace x2net
                 Event retrieved = link.CreateEvent(typeId);
                 if (ReferenceEquals(retrieved, null))
                 {
-                    Trace.Error("{0} {1} unknown event type id {2}",
+                    Trace.Warn("{0} {1} unknown event type id {2}",
                         link.Name, InternalHandle, typeId);
                     goto next;
                 }
@@ -396,7 +396,7 @@ namespace x2net
                     }
                     catch (Exception e)
                     {
-                        Trace.Error("{0} {1} error loading event {2}: {3}",
+                        Trace.Warn("{0} {1} error loading event {2}: {3}",
                             link.Name, InternalHandle, retrieved.GetTypeId(), e.ToString());
                         goto next;
                     }

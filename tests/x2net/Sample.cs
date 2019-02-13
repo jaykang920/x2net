@@ -32,6 +32,11 @@ namespace x2net.tests
             return info.ContainsValue(value);
         }
 
+        public static IEnumerator<KeyValuePair<string, int>> GetEnumerator()
+        {
+            return info.GetEnumerator();
+        }
+
         public static string GetName(int value)
         {
             return info.GetName(value);

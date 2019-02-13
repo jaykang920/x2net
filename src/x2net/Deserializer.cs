@@ -464,7 +464,7 @@ namespace x2net
                 }
                 if (ReferenceEquals(e, null))
                 {
-                    Trace.Error("error deserializing {0}: unknown event type id {1}",
+                    Trace.Warn("error deserializing {0}: unknown event type id {1}",
                         type.Name, typeId);
                 }
 
