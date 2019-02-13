@@ -1,3 +1,5 @@
+## 0.18.0 (2019-02-13)
+
 Bugfixes:
 
 - WaitForTask: @barowa fixed the performance issue on Linux
