@@ -67,7 +67,7 @@ namespace x2net
 
             if (sessionStrategy.OnHeartbeat())
             {
-                Trace.Warn("{0} {1} closing due to the keepalive failure",
+                Trace.Info("{0} {1} closing due to the keepalive failure",
                     Link.Name, linkSession.Handle);
                 
                 linkSession.Close();
@@ -98,7 +98,7 @@ namespace x2net
 
                 if (sessionStrategy.OnHeartbeat())
                 {
-                    Trace.Warn("{0} {1} closing due to the keepalive failure",
+                    Trace.Info("{0} {1} closing due to the keepalive failure",
                         Link.Name, linkSession.Handle);
 
                     linkSession.Close();

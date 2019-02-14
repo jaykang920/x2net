@@ -83,7 +83,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Trace.Warn("{0} {1} close : {2}",
+                    Trace.Info("{0} {1} close : {2}",
                         Link.Name, InternalHandle, e.Message);
                 }
                 finally

@@ -1,3 +1,7 @@
+Features:
+
+- Links: adjusted trace log levels
+
 ## 0.18.0 (2019-02-13)
 
 Bugfixes:

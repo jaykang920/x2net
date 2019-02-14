@@ -41,7 +41,7 @@ namespace x2net
             }
             catch (Exception e)
             {
-                Trace.Warn("{0} accept error : {1}", Name, e.Message);
+                Trace.Info("{0} accept error : {1}", Name, e.Message);
             }
 
             if (!ReferenceEquals(clientSocket, null))
@@ -62,7 +62,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Trace.Warn("{0} accept error : {1}", Name, e);
+                    Trace.Info("{0} accept error : {1}", Name, e);
                 }
             }
 

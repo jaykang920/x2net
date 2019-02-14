@@ -109,7 +109,7 @@ namespace x2net
                 }
                 else
                 {
-                    Trace.Warn("{0} recvfrom error {1}", Name, e.SocketError);
+                    Trace.Info("{0} recvfrom error {1}", Name, e.SocketError);
                 }
             }
 
@@ -135,7 +135,7 @@ namespace x2net
                 }
                 else
                 {
-                    Trace.Warn("{0} sendto error {1}", Name, e.SocketError);
+                    Trace.Info("{0} sendto error {1}", Name, e.SocketError);
                 }
             }
 

@@ -76,7 +76,7 @@ namespace x2net
             }
             catch (Exception e)
             {
-                Trace.Warn("{0} error disposing: {0}", e);
+                Trace.Info("{0} error disposing: {0}", e);
             }
 
             base.Dispose(disposing);
@@ -355,7 +355,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Trace.Error("{0} {1} buffer inv transform error: {2}",
+                    Trace.Warn("{0} {1} buffer inv transform error: {2}",
                         Name, handle, e);
                     return;
                 }
@@ -376,7 +376,7 @@ namespace x2net
             Event retrieved = CreateEvent(typeId);
             if (ReferenceEquals(retrieved, null))
             {
-                Trace.Warn("{0} {1} unknown event type id {2}",
+                Trace.Info("{0} {1} unknown event type id {2}",
                     Name, handle, typeId);
                 return;
             }
@@ -388,7 +388,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Trace.Warn("{0} {1} error loading event {2}: {3}", Name, handle, retrieved.GetTypeId(), e.ToString());
+                    Trace.Info("{0} {1} error loading event {2}: {3}", Name, handle, retrieved.GetTypeId(), e.ToString());
                     return;
                 }
 

@@ -129,7 +129,7 @@ namespace x2net
             }
             catch (Exception ex)
             {
-                Trace.Warn("{0} {1} accept error: {2}",
+                Trace.Info("{0} {1} accept error: {2}",
                     Name, tcpSession.InternalHandle, ex);
                 return false;
             }

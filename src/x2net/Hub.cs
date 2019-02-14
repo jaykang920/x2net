@@ -338,7 +338,7 @@ namespace x2net
                 }
                 catch (Exception e)
                 {
-                    Trace.Error("{0} shutdown: {2}", snapshot[i].Name, e);
+                    Trace.Warn("{0} shutdown: {2}", snapshot[i].Name, e);
                 }
             }
         }
