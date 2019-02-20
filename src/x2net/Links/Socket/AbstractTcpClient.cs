@@ -41,10 +41,17 @@ namespace x2net
         {
             get
             {
-                using (new ReadLock(rwlock))
+                try
                 {
-                    return (session != null &&
-                        ((AbstractTcpSession)session).SocketConnected);
+                    using (new ReadLock(rwlock))
+                    {
+                        return (session != null &&
+                            ((AbstractTcpSession)session).SocketConnected);
+                    }
+                }
+                catch
+                {
+                    return false;
                 }
             }
         }
