@@ -64,18 +64,25 @@ namespace x2net
         {
             if (disposed) { return; }
 
-            LinkSession session = null;
-            using (new WriteLock(rwlock))
+            try
             {
-                if (this.session != null)
+                LinkSession session = null;
+                using (new WriteLock(rwlock))
                 {
-                    session = this.session;
-                    this.session = null;
+                    if (this.session != null)
+                    {
+                        session = this.session;
+                        this.session = null;
+                    }
+                }
+                if (session != null)
+                {
+                    session.Close();
                 }
             }
-            if (session != null)
+            catch (Exception e)
             {
-                session.Close();
+                Trace.Debug(e.ToString());
             }
 
             base.Dispose(disposing);
