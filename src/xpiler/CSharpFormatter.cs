@@ -11,7 +11,7 @@ namespace x2net.xpiler
     class CSharpFormatter : Formatter
     {
         private const string Extension = ".cs";
-        
+
         public override string Description { get { return "C#"; } }
 
         public override bool Format(Unit unit, string outDir)
@@ -103,10 +103,12 @@ namespace x2net.xpiler
     class CSharpFormatterContext : FormatterContext
     {
         private const string Tab = "    ";
-        private int baseIndentation = 0;
 
         private static Dictionary<string, string> nativeTypes;
         private static Dictionary<string, string> defaultValues;
+        private static HashSet<string> keywords;
+
+        private int baseIndentation = 0;
 
         static CSharpFormatterContext()
         {
@@ -137,6 +139,21 @@ namespace x2net.xpiler
             defaultValues.Add("float64", ".0");
             defaultValues.Add("datetime", "new DateTime(621355968000000000)");
             defaultValues.Add("string", "");
+
+            keywords = new HashSet<string>  {
+                "abstract","event","new","struct","as","explicit","null","switch","base","extern",
+                "this","false","operator","throw","break","finally","out","true",
+                "fixed","override","try","case","params","typeof","catch","for",
+                "private","foreach","protected","checked","goto","public",
+                "unchecked","class","if","readonly","unsafe","const","implicit","ref",
+                "continue","in","return","using","virtual","default",
+                "interface","sealed","volatile","delegate","internal","do","is",
+                "sizeof","while","lock","stackalloc","else","static","enum",
+                "namespace",
+                "object","bool","byte","float","uint","char","ulong","ushort",
+                "decimal","int","sbyte","short","double","long","string","void",
+                "partial", "yield", "where"
+            };
         }
 
         public string Target { get; set; }
@@ -286,7 +303,12 @@ namespace x2net.xpiler
                 Out(2, "}");
                 Out(1, "}");
 
-                Out(1, "public bool _{1}_", property.NativeType, property.Name);
+                string name = property.Name;
+                if (name.StartsWith('@'))
+                {
+                    name = name.Substring(1);
+                }
+                Out(1, "public bool _{1}_", property.NativeType, name);
                 Out(1, "{");
                 Out(2, "get {{ return fingerprint.Get({0}); }}", property.Index);
                 Out(1, "}");
@@ -635,6 +657,16 @@ namespace x2net.xpiler
                     property.Name = FirstToUpper(property.Name);
                 }
 
+                // Avoid keywords
+                if (isKeyword(property.Name))
+                {
+                    property.Name = "@" + property.Name;
+                }
+                if (isKeyword(property.NativeName))
+                {
+                    property.NativeName = "@" + property.NativeName;
+                }
+
                 if (Types.IsPrimitive(property.TypeSpec.Type))
                 {
                     if (String.IsNullOrEmpty(property.DefaultValue))
@@ -777,6 +809,11 @@ namespace x2net.xpiler
                 }
             }
             return s;
+        }
+
+        private static bool isKeyword(string s)
+        {
+            return keywords.Contains(s);
         }
     }
 }
