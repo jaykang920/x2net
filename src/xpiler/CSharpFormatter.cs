@@ -1,5 +1,6 @@
 ﻿// Copyright (c) 2017, 2018 Jae-jun Kang
 // See the file LICENSE for details.
+//#define FINGERPRINT_PROPERTIES
 
 using System;
 using System.Collections.Generic;
@@ -302,7 +303,7 @@ namespace x2net.xpiler
                 Out(3, "{0} = value;", property.NativeName);
                 Out(2, "}");
                 Out(1, "}");
-
+#if  FINGERPRINT_PROPERTIES
                 string name = property.Name;
                 if (name.StartsWith('@'))
                 {
@@ -312,6 +313,7 @@ namespace x2net.xpiler
                 Out(1, "{");
                 Out(2, "get {{ return fingerprint.Get({0}); }}", property.Index);
                 Out(1, "}");
+#endif
             }
         }
 
