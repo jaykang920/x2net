@@ -1,6 +1,8 @@
 Features:
 
 - Links: adjusted trace log levels
+- xpiler: Added generated properties (with trailing underscore) to check whether
+  a property has been set explicitly or not
 
 ## 0.18.0 (2019-02-13)
 

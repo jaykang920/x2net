@@ -273,7 +273,9 @@ namespace x2net.xpiler
                 {
                     NewLine();
                 }
+
                 FormatComment(1, property.Comment);
+
                 Out(1, "public {0} {1}", property.NativeType, property.Name);
                 Out(1, "{");
                 Out(2, "get {{ return {0}; }}", property.NativeName);
@@ -282,6 +284,11 @@ namespace x2net.xpiler
                 Out(3, "fingerprint.Touch(tag.Offset + {0});", property.Index);
                 Out(3, "{0} = value;", property.NativeName);
                 Out(2, "}");
+                Out(1, "}");
+
+                Out(1, "public bool {1}_", property.NativeType, property.Name);
+                Out(1, "{");
+                Out(2, "get {{ return fingerprint.Get({0}); }}", property.Index);
                 Out(1, "}");
             }
         }
@@ -618,6 +625,9 @@ namespace x2net.xpiler
             foreach (var property in def.Properties)
             {
                 property.Index = index++;
+
+                property.Name = property.Name.TrimStart(' ', '\t', '\n', '\r', '_');
+                property.Name = property.Name.TrimEnd(' ', '\t', '\n', '\r', '_');
 
                 property.NativeName = FirstToLower(property.Name) + "_";
                 if (!def.IsLocal && !def.AsIs)

@@ -69,6 +69,10 @@ namespace x2net.tests
                 foo_ = value;
             }
         }
+        public bool Foo_
+        {
+            get { return fingerprint.Get(0); }
+        }
 
         public string Bar
         {
@@ -78,6 +82,10 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 1);
                 bar_ = value;
             }
+        }
+        public bool Bar_
+        {
+            get { return fingerprint.Get(1); }
         }
 
         static SampleCell1()
@@ -249,6 +257,10 @@ namespace x2net.tests
                 baz_ = value;
             }
         }
+        public bool Baz_
+        {
+            get { return fingerprint.Get(0); }
+        }
 
         static SampleCell2()
         {
@@ -389,6 +401,10 @@ namespace x2net.tests
                 qux_ = value;
             }
         }
+        public bool Qux_
+        {
+            get { return fingerprint.Get(0); }
+        }
 
         static SampleCell3()
         {
@@ -528,6 +544,10 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 quux_ = value;
             }
+        }
+        public bool Quux_
+        {
+            get { return fingerprint.Get(0); }
         }
 
         static SampleCell4()
@@ -672,6 +692,10 @@ namespace x2net.tests
                 foo_ = value;
             }
         }
+        public bool Foo_
+        {
+            get { return fingerprint.Get(0); }
+        }
 
         public string Bar
         {
@@ -681,6 +705,10 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 1);
                 bar_ = value;
             }
+        }
+        public bool Bar_
+        {
+            get { return fingerprint.Get(1); }
         }
 
         static SampleEvent1()
@@ -870,6 +898,10 @@ namespace x2net.tests
                 baz_ = value;
             }
         }
+        public bool Baz_
+        {
+            get { return fingerprint.Get(0); }
+        }
 
         static SampleEvent2()
         {
@@ -1027,6 +1059,10 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 qux_ = value;
             }
+        }
+        public bool Qux_
+        {
+            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent3()
@@ -1186,6 +1222,10 @@ namespace x2net.tests
                 quux_ = value;
             }
         }
+        public bool Quux_
+        {
+            get { return fingerprint.Get(0); }
+        }
 
         static SampleEvent4()
         {
@@ -1343,6 +1383,10 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 sampleCell_ = value;
             }
+        }
+        public bool SampleCell_
+        {
+            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent5()
@@ -1502,6 +1546,10 @@ namespace x2net.tests
                 sampleCell_ = value;
             }
         }
+        public bool SampleCell_
+        {
+            get { return fingerprint.Get(0); }
+        }
 
         static SampleEvent6()
         {
@@ -1660,6 +1708,10 @@ namespace x2net.tests
                 sampleEvent_ = value;
             }
         }
+        public bool SampleEvent_
+        {
+            get { return fingerprint.Get(0); }
+        }
 
         static SampleEvent7()
         {
@@ -1817,6 +1869,10 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 sampleEvent_ = value;
             }
+        }
+        public bool SampleEvent_
+        {
+            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent8()
