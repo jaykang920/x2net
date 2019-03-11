@@ -286,7 +286,7 @@ namespace x2net.xpiler
                 Out(2, "}");
                 Out(1, "}");
 
-                Out(1, "public bool {1}_", property.NativeType, property.Name);
+                Out(1, "public bool _{1}_", property.NativeType, property.Name);
                 Out(1, "{");
                 Out(2, "get {{ return fingerprint.Get({0}); }}", property.Index);
                 Out(1, "}");
