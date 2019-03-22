@@ -102,9 +102,17 @@ namespace x2net
             if (result)
             {
                 var session = (LinkSession)context;
-                using (new WriteLock(rwlock))
+                using (new UpgradeableReadLock(rwlock))
                 {
-                    this.session = session;
+                    var oldSession = this.session;
+                    if (!ReferenceEquals(oldSession, null))
+                    {
+                        oldSession.Close();
+                    }
+                    using (new WriteLock(rwlock))
+                    {
+                        this.session = session;
+                    }
                 }
             }
         }
@@ -113,7 +121,7 @@ namespace x2net
         {
             using (new WriteLock(rwlock))
             {
-                if (!ReferenceEquals(session, null))
+                if (!ReferenceEquals(session, null) && ReferenceEquals(session, context))
                 {
                     session = null;
                 }

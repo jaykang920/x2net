@@ -18,6 +18,7 @@ namespace x2net
         public ThreadPoolFlow(string name) : base(name) { }
     }
 
+    // Known issue: serious performance problmen on Linux
     public class ThreadPoolFlow<T> : EventBasedFlow<T> where T : EventQueue, new()
     {
         protected Thread thread;
