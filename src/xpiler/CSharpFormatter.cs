@@ -337,6 +337,7 @@ namespace x2net.xpiler
                 NewLine();
                 FormatSerialize(def);
             }
+            FormatUpdate(def);
             NewLine();
             FormatDescribe(def);
             if (!def.IsLocal)
@@ -604,6 +605,31 @@ namespace x2net.xpiler
             {
                 Out(2, "stringBuilder.AppendFormat(\" {0}:{{0}}\", {1}.ToStringEx());",
                     property.Name, property.NativeName);
+            }
+            Out(1, "}");
+        }
+
+        private void FormatUpdate(CellDef def)
+        {
+            foreach (var property in def.Properties)
+            {
+                NewLine();
+                Out(1, "public bool Has{0}()", FirstToUpper(property.Name));
+                Out(1, "{");
+                Out(2, "return fingerprint.Get({0});", property.Index);
+                Out(1, "}");
+            }
+
+            if (def.Properties.Count != 0)
+            {
+                NewLine();
+            }
+            Out(1, "public void Update({0} o)", def.Name);
+            Out(1, "{");
+            foreach (var property in def.Properties)
+            {
+                Out(2, "if (o.Has{0}()) {{ {1} = o.{1}; }}",
+                    FirstToUpper(property.Name), property.Name);
             }
             Out(1, "}");
         }

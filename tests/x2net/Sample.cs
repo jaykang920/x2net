@@ -69,10 +69,6 @@ namespace x2net.tests
                 foo_ = value;
             }
         }
-        public bool Foo_
-        {
-            get { return fingerprint.Get(0); }
-        }
 
         public string Bar
         {
@@ -82,10 +78,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 1);
                 bar_ = value;
             }
-        }
-        public bool Bar_
-        {
-            get { return fingerprint.Get(1); }
         }
 
         static SampleCell1()
@@ -228,6 +220,22 @@ namespace x2net.tests
             }
         }
 
+        public bool HasFoo()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public bool HasBar()
+        {
+            return fingerprint.Get(1);
+        }
+
+        public void Update(SampleCell1 o)
+        {
+            if (o.HasFoo()) { Foo = o.Foo; }
+            if (o.HasBar()) { Bar = o.Bar; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -256,10 +264,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 baz_ = value;
             }
-        }
-        public bool Baz_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleCell2()
@@ -374,6 +378,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasBaz()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleCell2 o)
+        {
+            if (o.HasBaz()) { Baz = o.Baz; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -400,10 +414,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 qux_ = value;
             }
-        }
-        public bool Qux_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleCell3()
@@ -518,6 +528,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasQux()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleCell3 o)
+        {
+            if (o.HasQux()) { Qux = o.Qux; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -544,10 +564,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 quux_ = value;
             }
-        }
-        public bool Quux_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleCell4()
@@ -662,6 +678,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasQuux()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleCell4 o)
+        {
+            if (o.HasQuux()) { Quux = o.Quux; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -692,10 +718,6 @@ namespace x2net.tests
                 foo_ = value;
             }
         }
-        public bool Foo_
-        {
-            get { return fingerprint.Get(0); }
-        }
 
         public string Bar
         {
@@ -705,10 +727,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 1);
                 bar_ = value;
             }
-        }
-        public bool Bar_
-        {
-            get { return fingerprint.Get(1); }
         }
 
         static SampleEvent1()
@@ -867,6 +885,22 @@ namespace x2net.tests
             }
         }
 
+        public bool HasFoo()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public bool HasBar()
+        {
+            return fingerprint.Get(1);
+        }
+
+        public void Update(SampleEvent1 o)
+        {
+            if (o.HasFoo()) { Foo = o.Foo; }
+            if (o.HasBar()) { Bar = o.Bar; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -897,10 +931,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 baz_ = value;
             }
-        }
-        public bool Baz_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent2()
@@ -1031,6 +1061,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasBaz()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleEvent2 o)
+        {
+            if (o.HasBaz()) { Baz = o.Baz; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -1059,10 +1099,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 qux_ = value;
             }
-        }
-        public bool Qux_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent3()
@@ -1193,6 +1229,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasQux()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleEvent3 o)
+        {
+            if (o.HasQux()) { Qux = o.Qux; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -1221,10 +1267,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 quux_ = value;
             }
-        }
-        public bool Quux_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent4()
@@ -1355,6 +1397,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasQuux()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleEvent4 o)
+        {
+            if (o.HasQuux()) { Quux = o.Quux; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -1383,10 +1435,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 sampleCell_ = value;
             }
-        }
-        public bool SampleCell_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent5()
@@ -1517,6 +1565,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasSampleCell()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleEvent5 o)
+        {
+            if (o.HasSampleCell()) { SampleCell = o.SampleCell; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -1545,10 +1603,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 sampleCell_ = value;
             }
-        }
-        public bool SampleCell_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent6()
@@ -1679,6 +1733,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasSampleCell()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleEvent6 o)
+        {
+            if (o.HasSampleCell()) { SampleCell = o.SampleCell; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -1707,10 +1771,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 sampleEvent_ = value;
             }
-        }
-        public bool SampleEvent_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent7()
@@ -1841,6 +1901,16 @@ namespace x2net.tests
             }
         }
 
+        public bool HasSampleEvent()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleEvent7 o)
+        {
+            if (o.HasSampleEvent()) { SampleEvent = o.SampleEvent; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -1869,10 +1939,6 @@ namespace x2net.tests
                 fingerprint.Touch(tag.Offset + 0);
                 sampleEvent_ = value;
             }
-        }
-        public bool SampleEvent_
-        {
-            get { return fingerprint.Get(0); }
         }
 
         static SampleEvent8()
@@ -2001,6 +2067,16 @@ namespace x2net.tests
             {
                 flag = false;
             }
+        }
+
+        public bool HasSampleEvent()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(SampleEvent8 o)
+        {
+            if (o.HasSampleEvent()) { SampleEvent = o.SampleEvent; }
         }
 
         protected override void Describe(StringBuilder stringBuilder)

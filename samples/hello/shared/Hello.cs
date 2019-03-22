@@ -154,6 +154,16 @@ namespace hello
             }
         }
 
+        public bool HasName()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(HelloReq o)
+        {
+            if (o.HasName()) { Name = o.Name; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -310,6 +320,16 @@ namespace hello
             {
                 flag = false;
             }
+        }
+
+        public bool HasMessage()
+        {
+            return fingerprint.Get(0);
+        }
+
+        public void Update(HelloResp o)
+        {
+            if (o.HasMessage()) { Message = o.Message; }
         }
 
         protected override void Describe(StringBuilder stringBuilder)
