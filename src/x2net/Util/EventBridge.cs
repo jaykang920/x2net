@@ -32,7 +32,7 @@ namespace x2net
             int waitHandle = WaitHandlePool.Acquire();
             try
             {
-                if (!(req is null))
+                if (!ReferenceEquals(req, null))
                 {
                     req._WaitHandle = waitHandle;
                     req.Post();
