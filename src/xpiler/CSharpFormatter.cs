@@ -1,6 +1,5 @@
 ﻿// Copyright (c) 2017, 2018 Jae-jun Kang
 // See the file LICENSE for details.
-//#define FINGERPRINT_PROPERTIES
 
 using System;
 using System.Collections.Generic;
@@ -294,7 +293,7 @@ namespace x2net.xpiler
 
                 FormatComment(1, property.Comment);
 
-                Out(1, "public {0} {1}", property.NativeType, property.Name);
+                Out(1, "public {0} {1}", property.NativeType, property.SafeName);
                 Out(1, "{");
                 Out(2, "get {{ return {0}; }}", property.NativeName);
                 Out(2, "set");
@@ -303,17 +302,6 @@ namespace x2net.xpiler
                 Out(3, "{0} = value;", property.NativeName);
                 Out(2, "}");
                 Out(1, "}");
-#if  FINGERPRINT_PROPERTIES
-                string name = property.Name;
-                if (name.StartsWith('@'))
-                {
-                    name = name.Substring(1);
-                }
-                Out(1, "public bool _{1}_", property.NativeType, name);
-                Out(1, "{");
-                Out(2, "get {{ return fingerprint.Get({0}); }}", property.Index);
-                Out(1, "}");
-#endif
             }
         }
 
@@ -629,7 +617,7 @@ namespace x2net.xpiler
             foreach (var property in def.Properties)
             {
                 Out(2, "if (o.Has{0}()) {{ {1} = o.{1}; }}",
-                    FirstToUpper(property.Name), property.Name);
+                    FirstToUpper(property.Name), property.SafeName);
             }
             Out(1, "}");
         }
@@ -688,11 +676,7 @@ namespace x2net.xpiler
                 // Avoid keywords
                 if (isKeyword(property.Name))
                 {
-                    property.Name = "@" + property.Name;
-                }
-                if (isKeyword(property.NativeName))
-                {
-                    property.NativeName = "@" + property.NativeName;
+                    property.SafeName = "@" + property.Name;
                 }
 
                 if (Types.IsPrimitive(property.TypeSpec.Type))
@@ -834,6 +818,14 @@ namespace x2net.xpiler
                 {
                     chars[0] = Char.ToUpper(chars[0]);
                     return new string(chars);
+                }
+                else if (chars[0] == '@')
+                {
+                    if (isKeyword(new string(chars, 1, chars.Length - 1)))
+                    {
+                        chars[1] = Char.ToUpper(chars[1]);
+                        return new string(chars, 1, chars.Length - 1);
+                    }
                 }
             }
             return s;

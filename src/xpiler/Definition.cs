@@ -85,6 +85,7 @@ namespace x2net.xpiler
         {
             public int Index { get; set; }
             public string Name { get; set; }
+            public string SafeName { get; set; }
             public TypeSpec TypeSpec { get; set; }
             public string DefaultValue { get; set; }
             public string NativeName { get; set; }
