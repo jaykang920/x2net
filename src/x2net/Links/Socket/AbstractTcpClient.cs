@@ -14,23 +14,11 @@ namespace x2net
     /// </summary>
     public abstract class AbstractTcpClient : ClientLink
     {
-        private class PendingRecord
-        {
-            public bool HandleAllocated { get; set; }
-            public int Count { get; set; }
-            public Timer.Token TimeoutToken { get; set; }
-        }
-
         private int retryCount;
         private DateTime startTime;
         private EndPoint remoteEndPoint;
 
         private volatile bool connecting;
-
-        private List<Event> eventQueue;
-        private bool connected;
-        private int sessionRefCount;
-        private Dictionary<int, PendingRecord> pendingRecords;
 
         // Connection properties
 
@@ -102,21 +90,6 @@ namespace x2net
         /// </summary>
         public int ReconnectDelay { get; set; }
 
-
-        // Connect-on-Demand properties
-
-        /// <summary>
-        /// Gets or sets a boolean value indicating whether the connection is to
-        /// be closed on completion of requested tasks.
-        /// </summary>
-        public bool DisconnectOnComplete { get; set; }
-        /// <summary>
-        /// Gets or sets a length of time, in milliseconds, after which a
-        /// disconnection is considered when the DisconnectOnComplete is set.
-        /// </summary>
-        public int DisconnectDelay { get; set; }
-        public int ResponseTimeout { get; set; }
-
         /// <summary>
         /// Initializes a new instance of the AbstractTcpClient class.
         /// </summary>
@@ -129,12 +102,6 @@ namespace x2net
             RetryInterval = 1000;  // 1 sec by default
 
             ReconnectDelay = 1000;  // 1 sec by default
-
-            DisconnectDelay = 200;  // 200ms by default
-            ResponseTimeout = 30;  // 30 seconds by default
-
-            eventQueue = new List<Event>();
-            pendingRecords = new Dictionary<int, PendingRecord>();
         }
 
         /// <summary>
@@ -196,81 +163,6 @@ namespace x2net
             Connect(ip, RemotePort);
         }
 
-        public void ConnectAndSend(Event e)
-        {
-            using (new UpgradeableReadLock(rwlock))
-            {
-                if (connected)
-                {
-                    session.Send(e);
-                    return;
-                }
-                else
-                {
-                    using (new WriteLock(rwlock))
-                    {
-                        // double check
-                        if (connected)
-                        {
-                            session.Send(e);
-                            return;
-                        }
-                        else
-                        {
-                            eventQueue.Add(e);
-                            if (connecting)
-                            {
-                                return;
-                            }
-                            else
-                            {
-                                connecting = true;
-                            }
-                        }
-                    }
-                }
-            }
-
-            Connect();
-        }
-
-        public void ConnectAndRequest(Event req)
-        {
-            int waitHandle = req._WaitHandle;
-
-            bool handleAllocated = false;
-            if (waitHandle == 0)
-            {
-                waitHandle = WaitHandlePool.Acquire();
-                req._WaitHandle = waitHandle;
-                handleAllocated = true;
-            }
-
-            lock (pendingRecords)
-            {
-                PendingRecord pendingRecord;
-                if (!pendingRecords.TryGetValue(waitHandle, out pendingRecord))
-                {
-                    TimeoutEvent timeoutEvent = new TimeoutEvent { Key = waitHandle };
-
-                    Bind(new Event { _WaitHandle = waitHandle }, OnEvent);
-                    Bind(timeoutEvent, OnTimeout);
-
-                    pendingRecord = new PendingRecord {
-                        HandleAllocated = handleAllocated,
-                        TimeoutToken = 
-                            TimeFlow.Instance.Reserve(timeoutEvent, ResponseTimeout)
-                    };
-                    pendingRecords.Add(waitHandle, pendingRecord);
-                }
-                ++pendingRecord.Count;
-            }
-
-            Interlocked.Increment(ref sessionRefCount);
-            
-            ConnectAndSend(req);
-        }
-
         /// <summary>
         /// Connects to the specified IP address and port.
         /// </summary>
@@ -300,7 +192,6 @@ namespace x2net
                 }
                 session = this.session;
                 this.session = null;
-                connected = false;
             }
             session.Close();
         }
@@ -338,50 +229,15 @@ namespace x2net
             base.OnSessionConnectedInternal(result, context);
 
             connecting = false;
-
-            if (result)
-            {
-                using (new WriteLock(rwlock))
-                {
-                    connected = true;
-
-                    for (int i = 0, count = eventQueue.Count; i < count; ++i)
-                    {
-                        ((LinkSession)context).Send(eventQueue[i]);
-                    }
-                    eventQueue.Clear();
-
-                    if (DisconnectOnComplete)
-                    {
-                        TimeFlow.Instance.ReserveRepetition(new TimeoutEvent {
-                            _Channel = Name,
-                            Key = this
-                        }, new TimeSpan(0, 0, 0, 0, DisconnectDelay));
-                    }
-                }
-            }
         }
 
         protected override void OnSessionDisconnectedInternal(int handle, object context)
         {
             base.OnSessionDisconnectedInternal(handle, context);
 
-            using (new WriteLock(rwlock))
-            {
-                connected = false;
-
-                if (DisconnectOnComplete)
-                {
-                    TimeFlow.Instance.CancelRepetition(new TimeoutEvent {
-                        _Channel = Name,
-                        Key = this
-                    });
-                }
-            }
-
             if (!closing)
             {
-                if (AutoReconnect && !DisconnectOnComplete)
+                if (AutoReconnect)
                 {
                     if (ReconnectDelay > 0)
                     {
@@ -468,8 +324,6 @@ namespace x2net
             {
                 holdingFlow.SubscribeTo(Name);
             }
-
-            Bind(new TimeoutEvent { Key = this }, OnTimer);
         }
 
         protected override void TeardownInternal()
@@ -481,78 +335,6 @@ namespace x2net
             }
 
             base.TeardownInternal();
-        }
-
-        private void OnTimer(TimeoutEvent e)
-        {
-            if (!ReferenceEquals(session, null))
-            {
-                if (!session.IsBusy && sessionRefCount == 0)
-                {
-                    Disconnect();
-                }
-            }
-        }
-
-        private void OnEvent(Event e)
-        {
-            int waitHandle = e._WaitHandle;
-
-            PendingRecord pendingRecord;
-            lock (pendingRecords)
-            {
-                if (!pendingRecords.TryGetValue(waitHandle, out pendingRecord))
-                {
-                    return;
-                }
-                if (--pendingRecord.Count == 0)
-                {
-                    pendingRecords.Remove(waitHandle);
-                }
-            }
-
-            if (pendingRecord.Count == 0)
-            {
-                if (pendingRecord.HandleAllocated)
-                {
-                    WaitHandlePool.Release(waitHandle);
-                }
-
-                TimeFlow.Instance.Cancel(pendingRecord.TimeoutToken);
-                Unbind(new Event { _WaitHandle = waitHandle }, OnEvent);
-                Unbind((TimeoutEvent)pendingRecord.TimeoutToken.value, OnTimeout);
-            }
-
-            Interlocked.Decrement(ref sessionRefCount);
-        }
-
-        private void OnTimeout(TimeoutEvent e)
-        {
-            Trace.Debug("{0} response timeout {1}", Name, e.Key);
-
-            int waitHandle = (int)e.Key;
-
-            int count = 0;
-            PendingRecord pendingRecord;
-            lock (pendingRecords)
-            {
-                if (!pendingRecords.TryGetValue(waitHandle, out pendingRecord))
-                {
-                    return;
-                }
-                count = pendingRecord.Count;
-                pendingRecords.Remove(waitHandle);
-            }
-
-            if (pendingRecord.HandleAllocated)
-            {
-                WaitHandlePool.Release(waitHandle);
-            }
-
-            Unbind(new Event { _WaitHandle = waitHandle }, OnEvent);
-            Unbind((TimeoutEvent)pendingRecord.TimeoutToken.value, OnTimeout);
-
-            Interlocked.Add(ref sessionRefCount, -count);
         }
     }
 }
