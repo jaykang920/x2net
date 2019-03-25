@@ -678,6 +678,10 @@ namespace x2net.xpiler
                 {
                     property.SafeName = "@" + property.Name;
                 }
+                else
+                {
+	                property.SafeName = property.Name;
+                }
 
                 if (Types.IsPrimitive(property.TypeSpec.Type))
                 {
