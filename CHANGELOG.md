@@ -1,8 +1,9 @@
+## 1.0.0 (2019-03-26)
+
 Features:
 
 - Links: adjusted trace log levels
-- xpiler: Added generated properties (with trailing underscore) to check whether
-  a property has been set explicitly or not
+- xpiler: Added generated methods to check whether a property has been set explicitly
 
 ## 0.18.0 (2019-02-13)
 

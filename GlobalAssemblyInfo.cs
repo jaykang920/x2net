@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 
 [assembly: AssemblyProduct("x2net")]
-[assembly: AssemblyCopyright("Copyright © 2017, 2018 Jae-jun Kang")]
+[assembly: AssemblyCopyright("Copyright © 2017-2019 Jae-jun Kang")]
 
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
@@ -9,5 +9,5 @@
 [assembly: AssemblyConfiguration("Release")]
 #endif
 
-[assembly: AssemblyVersion("0.18.0.0")]
-[assembly: AssemblyFileVersion("0.18.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2017, 2018 Jae-jun Kang
+﻿// Copyright (c) 2017-2019 Jae-jun Kang
 // See the file LICENSE for details.
 
 // Proposed and contributed by @barowa
