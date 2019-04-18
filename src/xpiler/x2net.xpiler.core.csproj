@@ -4,7 +4,7 @@
     <AssemblyName>x2net.xpiler</AssemblyName>
     <RootNamespace>x2net.xpiler</RootNamespace>
     <TargetFrameworks>netcoreapp2.1;netcoreapp2.0</TargetFrameworks>
-    <TargetLatestRuntimePatch>false</TargetLatestRuntimePatch>	
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
     <OutputType>Exe</OutputType>
 	<BaseOutputPath>../../bin</BaseOutputPath>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -17,4 +17,27 @@
     </Compile>
   </ItemGroup>
 
+  <!--
+  Work around https://github.com/dotnet/sdk/issues/543 with a default implementation of  
+  GetCopyToPublishDirectoryItems that simply returns whatever GetCopyToOutputDirectoryItems 
+  does with CopyToPublishDirectory implied by CopyToOutputDirectory, which is the same as
+  Microsoft.NET.Sdk default when CopyToPublishDirectory is not used. Microsoft.NET.Sdk projects 
+  will override this to allow the publish output to be customized independently from the build output.
+  -->
+  <Target
+      Name="GetCopyToPublishDirectoryItems" 
+      Returns="@(AllPublishItemsFullPathWithTargetPath)">
+
+    <ItemGroup>
+      <AllPublishItemsFullPathWithTargetPath Include="@(AllItemsFullPathWithTargetPath)">
+        <CopyToPublishDirectory>%(CopyToOutputDirectory)</CopyToPublishDirectory>
+      </AllPublishItemsFullPathWithTargetPath>
+    </ItemGroup>
+  </Target>
+
+  <Target Name="GetTargetPath" Returns="@(_FakeOutputPath)">
+    <ItemGroup>
+      <_FakeOutputPath Include="$(MSBuildProjectDirectory)\$(PackageOutputPath)\$(AssemblyName).UNK" />
+    </ItemGroup>
+  </Target>  
 </Project>
