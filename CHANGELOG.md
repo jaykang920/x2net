@@ -1,3 +1,7 @@
+Bugfixes:
+
+- Fixed .NET Core build issues with recent SDK distributions
+
 ## 1.0.0 (2019-03-26)
 
 Features:
