@@ -34,6 +34,8 @@ namespace x2net
         private List<Binding.Token> bindings;
         private WeakReference flow;
 
+        public bool Disposed { get { return disposed; } }
+
         /// <summary>
         /// Gets or sets the flow which this EventSink belongs to.
         /// </summary>
@@ -82,6 +84,7 @@ namespace x2net
         protected virtual void Dispose(bool disposing)
         {
             if (disposed) { return; }
+            disposed = true;
 
             try
             {
@@ -103,10 +106,6 @@ namespace x2net
             catch (Exception e)
             {
                 Trace.Warn("error removing EventSink bindings : {0}", e);
-            }
-            finally
-            {
-                disposed = true;
             }
         }
 

@@ -39,6 +39,17 @@ namespace x2net
 
         public Token Bind(Event e, Handler handler)
         {
+            var token = new Token(e, handler);
+            var eventSink = handler.Action.Target as EventSink;
+            if (!ReferenceEquals(eventSink, null))
+            {
+                if (eventSink.Disposed)
+                {
+                    Trace.Warn("tried to bind with disposed : {0} {1}", e, handler);
+                    return token;
+                }
+            }
+
             rwlock.EnterWriteLock();
             try
             {
@@ -49,12 +60,10 @@ namespace x2net
                     handlerMap.Add(e, handlers);
                 }
 
-                var token = new Token(e, handler);
                 if (handlers.Add(handler))
                 {
                     filter.Add(e.GetTypeId(), e.GetFingerprint());
 
-                    var eventSink = handler.Action.Target as EventSink;
                     if (!ReferenceEquals(eventSink, null))
                     {
                         eventSink.AddBinding(token);

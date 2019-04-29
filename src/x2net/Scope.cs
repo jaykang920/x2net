@@ -76,7 +76,15 @@ namespace x2net
             if (bindingToken.HasValue &&
                 !ReferenceEquals(bindingToken.Value.Key, null))
             {
-                Flow.Bind(bindingToken.Value);
+                var handler = bindingToken.Value.Value;
+                var eventSink = handler.Action.Target as EventSink;
+                if (!ReferenceEquals(eventSink, null))
+                {
+                    if (!eventSink.Disposed)
+                    {
+                        Flow.Bind(bindingToken.Value);
+                    }
+                }
             }
 
             if (!ReferenceEquals(e, null))
