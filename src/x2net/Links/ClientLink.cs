@@ -51,7 +51,7 @@ namespace x2net
             LinkSession currentSession = Session;
             if (ReferenceEquals(currentSession, null))
             {
-                Trace.Warn("{0} dropped event {1}", Name, e);
+                Trace.Info("{0} dropped event {1}", Name, e);
                 return;
             }
             currentSession.Send(e);

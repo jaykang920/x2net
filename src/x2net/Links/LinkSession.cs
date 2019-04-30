@@ -195,7 +195,7 @@ namespace x2net
             {
                 if (disposed)
                 {
-                    Trace.Warn("{0} {1} dropped {2}", link.Name, InternalHandle, e);
+                    Trace.Info("{0} {1} dropped {2}", link.Name, InternalHandle, e);
                     return;
                 }
 
