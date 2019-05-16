@@ -1,3 +1,5 @@
+## 1.0.1 (2019-05-16)
+
 Features:
 
 - WaitForCompletion: added 6-args version
