@@ -192,7 +192,7 @@ namespace x2net
 
 #if NET40
         /// <summary>
-        /// Waits for the completion of another coroutine with three additional
+        /// Waits for the completion of another coroutine with four additional
         /// arguments.
         /// </summary>
         public static Yield WaitForCompletion<T1, T2, T3, T4>(this Coroutine self,
@@ -201,13 +201,23 @@ namespace x2net
             return new WaitForCompletion<T1, T2, T3, T4>(self, func, arg1, arg2, arg3, arg4);
         }
         /// <summary>
-        /// Waits for the completion of another coroutine with three additional
+        /// Waits for the completion of another coroutine with five additional
         /// arguments.
         /// </summary>
         public static Yield WaitForCompletion<T1, T2, T3, T4, T5>(this Coroutine self,
             Func<Coroutine, T1, T2, T3, T4, T5, IEnumerator> func, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5)
         {
             return new WaitForCompletion<T1, T2, T3, T4, T5>(self, func, arg1, arg2, arg3, arg4, arg5);
+        }
+
+        /// <summary>
+        /// Waits for the completion of another coroutine with six additional
+        /// arguments.
+        /// </summary>
+        public static Yield WaitForCompletion<T1, T2, T3, T4, T5, T6>(this Coroutine self,
+            Func<Coroutine, T1, T2, T3, T4, T5, T6, IEnumerator> func, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6)
+        {
+            return new WaitForCompletion<T1, T2, T3, T4, T5, T6>(self, func, arg1, arg2, arg3, arg4, arg5, arg6);
         }
 
 #endif

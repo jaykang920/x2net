@@ -1,3 +1,7 @@
+Features:
+
+- WaitForCompletion: added 6-args version
+
 Bugfixes:
 
 - Fixed .NET Core build issues with recent SDK distributions

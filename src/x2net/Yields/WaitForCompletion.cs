@@ -68,7 +68,7 @@ namespace x2net
 #if NET40
     /// <summary>
     /// YieldInstruction that waits for the completion of another coroutine with
-    /// three additional arguments.
+    /// four additional arguments.
     /// </summary>
     public class WaitForCompletion<T1, T2, T3, T4> : Yield
     {
@@ -82,7 +82,7 @@ namespace x2net
     }
     /// <summary>
     /// YieldInstruction that waits for the completion of another coroutine with
-    /// three additional arguments.
+    /// five additional arguments.
     /// </summary>
     public class WaitForCompletion<T1, T2, T3, T4, T5> : Yield
     {
@@ -92,6 +92,21 @@ namespace x2net
         {
             Coroutine c = new Coroutine(coroutine);
             c.Start(func(c, arg1, arg2, arg3, arg4, arg5));
+        }
+    }
+
+    /// <summary>
+    /// YieldInstruction that waits for the completion of another coroutine with
+    /// siz additional arguments.
+    /// </summary>
+    public class WaitForCompletion<T1, T2, T3, T4, T5, T6> : Yield
+    {
+        public WaitForCompletion(Coroutine coroutine,
+            Func<Coroutine, T1, T2, T3, T4, T5, T6, IEnumerator> func, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6)
+            : base(coroutine)
+        {
+            Coroutine c = new Coroutine(coroutine);
+            c.Start(func(c, arg1, arg2, arg3, arg4, arg5, arg6));
         }
     }
 #endif
