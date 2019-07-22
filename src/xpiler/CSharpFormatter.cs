@@ -604,7 +604,7 @@ namespace x2net.xpiler
                 NewLine();
                 Out(1, "public bool Has{0}()", FirstToUpper(property.Name));
                 Out(1, "{");
-                Out(2, "return fingerprint.Get({0});", property.Index);
+                Out(2, "return fingerprint.Get(tag.Offset + {0});", property.Index);
                 Out(1, "}");
             }
 
