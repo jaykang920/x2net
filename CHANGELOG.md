@@ -1,3 +1,9 @@
+## 1.0.2 (2019-07-22)
+
+Bugfixes:
+
+- xpiler: fixed the indexing bug in HasX() methods
+
 ## 1.0.1 (2019-05-16)
 
 Features:

@@ -222,12 +222,12 @@ namespace x2net.tests
 
         public bool HasFoo()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public bool HasBar()
         {
-            return fingerprint.Get(1);
+            return fingerprint.Get(tag.Offset + 1);
         }
 
         public void Update(SampleCell1 o)
@@ -380,7 +380,7 @@ namespace x2net.tests
 
         public bool HasBaz()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleCell2 o)
@@ -530,7 +530,7 @@ namespace x2net.tests
 
         public bool HasQux()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleCell3 o)
@@ -680,7 +680,7 @@ namespace x2net.tests
 
         public bool HasQuux()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleCell4 o)
@@ -887,12 +887,12 @@ namespace x2net.tests
 
         public bool HasFoo()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public bool HasBar()
         {
-            return fingerprint.Get(1);
+            return fingerprint.Get(tag.Offset + 1);
         }
 
         public void Update(SampleEvent1 o)
@@ -1063,7 +1063,7 @@ namespace x2net.tests
 
         public bool HasBaz()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleEvent2 o)
@@ -1231,7 +1231,7 @@ namespace x2net.tests
 
         public bool HasQux()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleEvent3 o)
@@ -1399,7 +1399,7 @@ namespace x2net.tests
 
         public bool HasQuux()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleEvent4 o)
@@ -1567,7 +1567,7 @@ namespace x2net.tests
 
         public bool HasSampleCell()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleEvent5 o)
@@ -1735,7 +1735,7 @@ namespace x2net.tests
 
         public bool HasSampleCell()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleEvent6 o)
@@ -1903,7 +1903,7 @@ namespace x2net.tests
 
         public bool HasSampleEvent()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleEvent7 o)
@@ -2071,7 +2071,7 @@ namespace x2net.tests
 
         public bool HasSampleEvent()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(SampleEvent8 o)
