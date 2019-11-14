@@ -14,6 +14,8 @@ namespace x2net
         private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
+        private bool errorSuppressed;
+
         public WaitForEvent(Coroutine coroutine, Event e)
             : this(coroutine, null, e, Config.Coroutine.DefaultTimeout)
         {
@@ -42,6 +44,12 @@ namespace x2net
                 timeoutToken = Flow.Bind(timeoutEvent, OnTimeout);
                 timerToken = TimeFlow.Instance.Reserve(timeoutEvent, seconds);
             }
+        }
+
+        public WaitForEvent SuppressError(bool flag)
+        {
+            errorSuppressed = flag;
+            return this;
         }
 
         void OnEvent(Event e)
@@ -75,7 +83,10 @@ namespace x2net
                 WaitHandlePool.Release(waitHandle);
             }
 
-            Trace.Error("WaitForEvent timeout for {0}", handlerToken.Key);
+            if (!errorSuppressed)
+            {
+                Trace.Error("WaitForEvent timeout for {0}", handlerToken.Key);
+            }
 
             coroutine.Status = CoroutineStatus.Timeout;
             coroutine.Result = null;  // indicates timeout
