@@ -156,7 +156,7 @@ namespace hello
 
         public bool HasName()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(HelloReq o)
@@ -324,7 +324,7 @@ namespace hello
 
         public bool HasMessage()
         {
-            return fingerprint.Get(0);
+            return fingerprint.Get(tag.Offset + 0);
         }
 
         public void Update(HelloResp o)

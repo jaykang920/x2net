@@ -46,7 +46,8 @@ namespace x2net
     {
         Ok,
         Error,
-        Timeout
+        Timeout,
+        Canceled,
     }
 
     /// <summary>

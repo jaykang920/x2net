@@ -2,6 +2,7 @@
 // See the file LICENSE for details.
 
 using System;
+using System.Collections.Generic;
 
 namespace x2net
 {
@@ -10,11 +11,15 @@ namespace x2net
     /// </summary>
     public class WaitForEvent : Yield
     {
+        [ThreadStatic]
+        private static HashSet<WaitForEvent> waiting;
+
         private readonly Binding.Token handlerToken;
         private readonly Binding.Token timeoutToken;
         private readonly Timer.Token? timerToken;
 
         private bool errorSuppressed;
+        private Event request;
 
         public WaitForEvent(Coroutine coroutine, Event e)
             : this(coroutine, null, e, Config.Coroutine.DefaultTimeout)
@@ -31,6 +36,8 @@ namespace x2net
         {
             if (!ReferenceEquals(request, null))
             {
+                this.request = request;
+
                 int waitHandle = WaitHandlePool.Acquire();
                 request._WaitHandle = waitHandle;
                 e._WaitHandle = waitHandle;
@@ -44,8 +51,34 @@ namespace x2net
                 timeoutToken = Flow.Bind(timeoutEvent, OnTimeout);
                 timerToken = TimeFlow.Instance.Reserve(timeoutEvent, seconds);
             }
+
+            if (ReferenceEquals(waiting, null))
+            {
+                waiting = new HashSet<WaitForEvent>();
+            }
+            waiting.Add(this);
         }
 
+        /// <summary>
+        /// Immediately expires all the WaitForEvent instances that are wating
+        /// for a finite timeout.
+        /// </summary>
+        public static void ExpireAll()
+        {
+            if (ReferenceEquals(waiting, null))
+            {
+                return;
+            }
+
+            foreach (var instance in waiting)
+            {
+                new TimeoutEvent { Key = instance, IntParam = 1 }.Post();
+            }
+        }
+
+        /// <summary>
+        /// Suppresses x2 trace error logging on timeout.
+        /// </summary>
         public WaitForEvent SuppressError(bool flag)
         {
             errorSuppressed = flag;
@@ -54,6 +87,8 @@ namespace x2net
 
         void OnEvent(Event e)
         {
+            waiting.Remove(this);
+
             Flow.Unbind(handlerToken);
 
             if (timerToken.HasValue)
@@ -68,13 +103,22 @@ namespace x2net
                 WaitHandlePool.Release(waitHandle);
             }
 
+            request = null;
+
             coroutine.Result = e;
             coroutine.Continue();
         }
 
         void OnTimeout(TimeoutEvent e)
         {
+            waiting.Remove(this);
+
             Flow.Unbind(handlerToken);
+
+            if (e.IntParam != 0)
+            {
+                TimeFlow.Instance.Cancel(timerToken.Value);
+            }
             Flow.Unbind(timeoutToken);
 
             int waitHandle = handlerToken.Key._WaitHandle;
@@ -85,10 +129,27 @@ namespace x2net
 
             if (!errorSuppressed)
             {
-                Trace.Error("WaitForEvent timeout for {0}", handlerToken.Key);
+                string message = null;
+                var traceLevel = (e.IntParam == 0 ? TraceLevel.Error : TraceLevel.Warning);
+                var action = (e.IntParam == 0 ? "timeout" : "expired");
+                var typeName = handlerToken.Key.GetTypeTag().RuntimeType.FullName;
+                if (ReferenceEquals(request, null))
+                {
+                    message = string.Format("WaitForEvent {0} for {1}",
+                        action, typeName);
+                }
+                else
+                {
+                    message = string.Format("WaitForResponse {0} for {1} with request {2}",
+                        action, typeName, request);
+                }
+                Trace.Emit(traceLevel, message);
             }
 
-            coroutine.Status = CoroutineStatus.Timeout;
+            request = null;
+
+            coroutine.Status = (e.IntParam == 0 ?
+                CoroutineStatus.Timeout : CoroutineStatus.Canceled);
             coroutine.Result = null;  // indicates timeout
             coroutine.Continue();
         }

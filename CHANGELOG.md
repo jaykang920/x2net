@@ -1,3 +1,8 @@
+Features:
+
+- WaitForEvent: added a way to immediately expire all the waiting routines at once
+- WaitForEvent: improved timeout error log
+
 ## 1.0.2 (2019-07-22)
 
 Bugfixes:
