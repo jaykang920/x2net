@@ -43,6 +43,11 @@ namespace x2net
             return info.ContainsValue(value);
         }
 
+        public static IEnumerator<KeyValuePair<string, int>> GetEnumerator()
+        {
+            return info.GetEnumerator();
+        }
+
         public static string GetName(int value)
         {
             return info.GetName(value);
@@ -156,6 +161,9 @@ namespace x2net
                 flag = false;
             }
         }
+        public void Update(HeartbeatEvent o)
+        {
+        }
 
         protected override void Describe(StringBuilder stringBuilder)
         {
@@ -235,6 +243,9 @@ namespace x2net
             }
             return true;
         }
+        public void Update(FlowStart o)
+        {
+        }
 
         protected override void Describe(StringBuilder stringBuilder)
         {
@@ -309,6 +320,9 @@ namespace x2net
                 return false;
             }
             return true;
+        }
+        public void Update(FlowStop o)
+        {
         }
 
         protected override void Describe(StringBuilder stringBuilder)
@@ -455,6 +469,22 @@ namespace x2net
             return true;
         }
 
+        public bool HasKey()
+        {
+            return fingerprint.Get(tag.Offset + 0);
+        }
+
+        public bool HasIntParam()
+        {
+            return fingerprint.Get(tag.Offset + 1);
+        }
+
+        public void Update(LocalEvent o)
+        {
+            if (o.HasKey()) { Key = o.Key; }
+            if (o.HasIntParam()) { IntParam = o.IntParam; }
+        }
+
         protected override void Describe(StringBuilder stringBuilder)
         {
             base.Describe(stringBuilder);
@@ -531,6 +561,9 @@ namespace x2net
             }
             return true;
         }
+        public void Update(TimeoutEvent o)
+        {
+        }
 
         protected override void Describe(StringBuilder stringBuilder)
         {
@@ -605,6 +638,9 @@ namespace x2net
                 return false;
             }
             return true;
+        }
+        public void Update(PeriodicEvent o)
+        {
         }
 
         protected override void Describe(StringBuilder stringBuilder)

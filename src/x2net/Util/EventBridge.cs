@@ -32,15 +32,22 @@ namespace x2net
             int waitHandle = WaitHandlePool.Acquire();
             try
             {
-                if (!ReferenceEquals(req, null))
+                T expected, actual = null;
+
+                if (ReferenceEquals(req, null))
                 {
+                    expected = new T();
+                }
+                else
+                {
+                    expected = new T { _WaitHandle = waitHandle };
                     req._WaitHandle = waitHandle;
                     req.Post();
                 }
 
-                T resp = null;
-                flow.Wait(new T { _WaitHandle = waitHandle }, out resp, timeoutInSeconds);
-                return resp;
+                flow.Wait(expected, out actual, timeoutInSeconds);
+
+                return actual;
             }
             finally
             {
