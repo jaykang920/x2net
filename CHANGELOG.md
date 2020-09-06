@@ -1,3 +1,7 @@
+Bugfixes:
+
+- EventBridge: Fixed the problem that an expected event is not caught in case of null request
+
 Features:
 
 - WaitForEvent: added a way to immediately expire all the waiting routines at once
