@@ -1,3 +1,5 @@
+## 1.0.3 (2020-09-07)
+
 Bugfixes:
 
 - EventBridge: Fixed the problem that an expected event is not caught in case of null request
