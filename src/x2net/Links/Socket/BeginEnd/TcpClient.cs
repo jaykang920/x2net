@@ -12,7 +12,12 @@ namespace x2net
     /// </summary>
     public class TcpClient : AbstractTcpClient
     {
-        private EndPoint remoteEndPoint;
+        private class ConnectContext
+        {
+            public Socket Socket { get; set; }
+            public EndPoint RemoteEndPoint { get; set; }
+        }
+        private ConnectContext context;
 
         /// <summary>
         /// Initializes a new instance of the TcpClient class.
@@ -35,8 +40,12 @@ namespace x2net
                         endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                 }
 
-                remoteEndPoint = endpoint;
-                socket.BeginConnect(endpoint, OnConnect, socket);
+                var context = new ConnectContext {
+                    Socket = socket,
+                    RemoteEndPoint = endpoint,
+                };
+                socket.BeginConnect(endpoint, OnConnect, context);
+                this.context = context;
             }
             catch (Exception e)
             {
@@ -52,19 +61,32 @@ namespace x2net
         {
             if (disposed) { return; }
 
-            var socket = (Socket)asyncResult.AsyncState;
+            var context = (ConnectContext)asyncResult.AsyncState;
+            var socket = context.Socket;
             try
             {
                 socket.EndConnect(asyncResult);
 
-                OnConnectInternal(new TcpSession(this, socket));
+                if (ReferenceEquals(this.context, context))
+                {
+                    OnConnectInternal(new TcpSession(this, socket));
+                    this.context = null;
+                }
+                else
+                {
+                    socket.Close();
+                }
             }
             catch (Exception e)
             {
-                Trace.Info("{0} error connecting to {1} : {2}",
-                    Name, remoteEndPoint, e);
+                if (ReferenceEquals(this.context, context))
+                {
+                    Trace.Info("{0} error connecting to {1} : {2}",
+                        Name, context.RemoteEndPoint, e);
 
-                OnConnectError(socket, remoteEndPoint);
+                    OnConnectError(socket, context.RemoteEndPoint);
+                    this.context = null;
+                }
             }
         }
     }
